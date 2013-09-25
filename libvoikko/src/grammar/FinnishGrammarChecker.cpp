@@ -29,6 +29,8 @@
 #include "setup/setup.hpp"
 #include "grammar/FinnishGrammarChecker.hpp"
 
+#include <iostream>
+
 namespace libvoikko { namespace grammar {
 
 FinnishGrammarChecker::FinnishGrammarChecker()  {
@@ -38,7 +40,7 @@ FinnishGrammarChecker::FinnishGrammarChecker()  {
 
 FinnishGrammarChecker::FinnishGrammarChecker(const string & s)  {
 
-	
+	cerr << "FinnishGrammarChecker::FinnishGrammarChecker()" << endl;	
 }
 
 

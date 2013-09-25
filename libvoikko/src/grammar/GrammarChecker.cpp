@@ -26,24 +26,11 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#include <iostream>
+
 #include "setup/setup.hpp"
 #include "grammar/GrammarChecker.hpp"
 
 namespace libvoikko { namespace grammar {
-
-GrammarChecker::GrammarChecker()  {
-
-	
-}
-
-GrammarChecker::~GrammarChecker() {
-
-}
-
-void GrammarChecker::init() { 
-
-	return;
-}
-
 
 } }

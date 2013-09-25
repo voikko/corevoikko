@@ -44,14 +44,16 @@ using namespace std;
 namespace libvoikko { namespace setup {
 
 void V4DictionaryLoader::findDictionaries(const string & path) {
-	cerr << "V4DictionaryLoader::findDictionaries: " << path << endl ; 
+	//cerr << "V4DictionaryLoader::findDictionaries: " << path << endl ; 
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(HFST_DICTIONARY_VERSION);
-	cerr << "V4DictionaryLoader::findDictionaries: " << mainPath << endl ; 
+	//cerr << "V4DictionaryLoader::findDictionaries: " << mainPath << endl ; 
 	list<string> subDirectories = getListOfSubentries(mainPath);
 	string grammarBackend = "null";
+	string gramMorPath = ""; 
 	string grammarPath = "";
+	string gramMorBackend = "null";
 	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
 
 	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
@@ -59,14 +61,18 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 		if(dirName == "..") {
 			continue;
 		}
-		cerr << " findDictionaries: " << dirName << endl;
+		//cerr << " findDictionaries: " << dirName << endl;
 		list<string> subDirectories2 = getListOfSubentries(mainPath + "/" + dirName);
 		for (list<string>::iterator j = subDirectories2.begin(); j != subDirectories2.end(); ++j) {
 			string fileName = *j;
-			cerr << "   findDictionaries: " << fileName << endl;
+			//cerr << "   findDictionaries: " << fileName << endl;
 			if (fileName.find("gramchk.bin") != std::string::npos) {
 				grammarPath = mainPath + "/" + dirName + "/" + fileName;
 				grammarBackend = "vislcg3";
+			}
+			if (fileName.find("-desc.hfst") != std::string::npos) {
+				gramMorPath = mainPath + "/" + dirName + "/" + fileName;
+				gramMorBackend = "hfst";
 			}
 			if (fileName.find(".zhfst") != std::string::npos) {
 				string morBackend = "hfst";
@@ -74,7 +80,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				string suggestionBackend = "hfst";
 				string fullPath = mainPath + "/" + dirName + "/" + fileName;
 				// TODO implement null hyphenator
-				cerr << "   +found: " << fileName << endl;
+				//cerr << "   +found: " << fileName << endl;
 			
 				hfst_ol::ZHfstOspeller * speller = new hfst_ol::ZHfstOspeller();
 				try {
@@ -82,7 +88,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				}
 				catch (hfst_ol::ZHfstZipReadingError& zhzre) {
 					delete speller;
-					cerr << "   -broken :( " << fileName << endl;
+					//cerr << "   -broken :( " << fileName << endl;
 					continue; // broken dictionary
 				}
 				const hfst_ol::ZHfstOspellerXmlMetadata spellerMetadata = speller->get_metadata();
@@ -93,6 +99,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				string description = languageVersions[spellerMetadata.info_.locale_];
 				delete speller;
 
+/*
 				cerr << "V4DictionaryLoader::findDictionaries: " << mainPath << endl ; 
 				cerr << "  " << fullPath << endl;
 				cerr << "  " << grammarPath<< endl;
@@ -102,7 +109,8 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				cerr << "  " << suggestionBackend << endl;
 				cerr << "  " << hyphenatorBackend  << endl;
 				cerr << "  " << description << endl;
-				Dictionary dict = Dictionary(fullPath, grammarPath, morBackend, grammarBackend, 
+*/
+				Dictionary dict = Dictionary(fullPath, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, 
 								spellBackend, suggestionBackend,
 								hyphenatorBackend, language, description);
 				addDictionary(dict);

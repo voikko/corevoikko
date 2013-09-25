@@ -33,14 +33,14 @@
 #include "voikko_structs.h"
 
 #include "grammar/GrammarChecker.hpp"
-#include "grammar/GrammarChecker.hpp"
+#include "morphology/Analyzer.hpp"
 
 namespace libvoikko { namespace grammar {
 
 class CgGrammarChecker : public GrammarChecker {
 	public:
 		CgGrammarChecker();
-		CgGrammarChecker(const string & s);
+		CgGrammarChecker(const string & analyser, const string & rules);
 		
 		~CgGrammarChecker();
 

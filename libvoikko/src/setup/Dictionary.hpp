@@ -40,8 +40,10 @@ class Dictionary {
 
 	private:
 	std::string morPath;
+	std::string gramMorPath;
 	std::string grammarPath;
 	std::string morBackend;
+	std::string gramMorBackend;
 	std::string grammarBackend;
 	std::string spellBackend;
 	std::string suggestionBackend;
@@ -54,8 +56,10 @@ class Dictionary {
 	Dictionary();
 
 	Dictionary(const std::string & morPath,
+	           const std::string & gramMorPath,
 	           const std::string & grammarPath,
 	           const std::string & morBackend,
+	           const std::string & gramMorBackend,
 	           const std::string & grammarBackend,
 	           const std::string & spellBackend,
 	           const std::string & suggestionBackend,
@@ -74,8 +78,10 @@ class Dictionary {
 	Dictionary(const Dictionary & dictionary);
 
 	const std::string & getMorPath() const;
+	const std::string & getGramMorPath() const;
 	const std::string & getGrammarPath() const;
 	const std::string & getMorBackend() const;
+	const std::string & getGramMorBackend() const;
 	const std::string & getGrammarBackend() const;
 	const std::string & getSpellBackend() const;
 	const std::string & getSuggestionBackend() const;

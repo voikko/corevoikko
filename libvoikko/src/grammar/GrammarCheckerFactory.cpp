@@ -46,8 +46,10 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionar
 	                              throw(setup::DictionaryException) {
 
 	cerr << "morPath: " << dictionary.getMorPath() << endl; 
+	cerr << "gramMorPath: " << dictionary.getGramMorPath() << endl; 
 	cerr << "grammarPath: " << dictionary.getGrammarPath() << endl; 
 	cerr << "morBackend: " << dictionary.getMorBackend() << endl; 
+	cerr << "gramMorBackend: " << dictionary.getGramMorBackend() << endl; 
 	cerr << "grammarBackend: " << dictionary.getGrammarBackend() << endl; 
 
 	if (dictionary.getGrammarBackend() == "null") {
@@ -58,7 +60,10 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionar
 	}
 	#ifdef HAVE_VISLCG3
 	if (dictionary.getGrammarBackend() == "vislcg3") {
-		return new CgGrammarChecker(dictionary.getGrammarPath());
+		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
+		cerr << "   " << dictionary.getGramMorPath() << endl;	
+		cerr << "   " << dictionary.getGrammarBackend() << endl;	
+		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath());
 	}
 	#endif
 

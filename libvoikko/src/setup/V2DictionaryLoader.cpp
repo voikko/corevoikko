@@ -83,6 +83,10 @@ Dictionary V2DictionaryLoader::dictionaryFromPath(const string & path) {
 	language.setLanguage("fi");
 	string description;
 	string morBackend = "malaga";
+	string gramMorBackend = "finnish";
+	string grammarBackend = "finnish";
+	string grammarPath = "";
+	string gramMorPath = "";
 	string spellBackend = "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)";
 	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
 	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
@@ -113,7 +117,7 @@ Dictionary V2DictionaryLoader::dictionaryFromPath(const string & path) {
 		}
 	}
 	file.close();
-	return Dictionary(path, morBackend, spellBackend, suggestionBackend,
+	return Dictionary(path, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
 	                  hyphenatorBackend, language, description);
 }
 

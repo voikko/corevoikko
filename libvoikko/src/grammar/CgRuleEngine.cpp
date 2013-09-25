@@ -60,10 +60,10 @@ int CgRuleEngine::load(const std::string path) {
 	return 1;
 }
 
-void CgRuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
+void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) { 
+	fprintf(stderr, "CgRuleEngine::check\n");
 
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
-		fprintf(stderr, "CgRuleEngine::check\n");
 
 		for(size_t j = 0; j < paragraph->sentences[i]->tokenCount; j++) {
 			fprintf(stderr, "CgRuleEngine::check %ls (%d)\n", paragraph->sentences[i]->tokens[j].str, paragraph->sentences[i]->tokens[j].isValidWord);

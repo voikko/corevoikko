@@ -26,8 +26,12 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#include <iostream>
+
 #include "setup/setup.hpp"
 #include "grammar/CgGrammarChecker.hpp"
+#include "grammar/CgRuleEngine.hpp"
+#include "morphology/HfstAnalyzer.hpp"
 
 namespace libvoikko { namespace grammar {
 
@@ -36,9 +40,15 @@ CgGrammarChecker::CgGrammarChecker()  {
 	
 }
 
-CgGrammarChecker::CgGrammarChecker(const string & s)  {
+CgGrammarChecker::CgGrammarChecker(const string & analyser, const string & rules)  {
 
-	
+	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
+
+	ruleEngine = new CgRuleEngine();
+	ruleEngine->load(rules);
+
+	analyser = new morphology::HfstAnalyzer(analyser);
+
 }
 
 

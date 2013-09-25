@@ -44,19 +44,15 @@ class CgRuleEngine : public RuleEngine {
 		
 		~CgRuleEngine();
 		
-		void init();
 		int load(const std::string path);
 
-		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
+		void check(GcCache & cache, const Paragraph * para);
 	
 	private:
 		// Using the C API until we get a C++ one
 		cg3_grammar *grammar;
 		cg3_applicator *applicator;
 		
-
-		CgRuleEngine(CgRuleEngine const & other);
-		CgRuleEngine & operator = (const CgRuleEngine & other);
 };
 
 } }

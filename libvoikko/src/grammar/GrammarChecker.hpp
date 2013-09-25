@@ -31,24 +31,17 @@
 
 #include "grammar/RuleEngine.hpp"
 #include "grammar/GcCache.hpp"
+#include "morphology/Analyzer.hpp"
 
 namespace libvoikko { namespace grammar {
 
 class GrammarChecker {
 	public:
-		GrammarChecker();
-		
-		~GrammarChecker();
-		
-		void init();
 
 		RuleEngine * ruleEngine;
 		GcCache gc_cache;
+		morphology::Analyzer * analyser ; 
 	
-	private:
-
-		GrammarChecker(GrammarChecker const & other);
-		GrammarChecker & operator = (const GrammarChecker & other);
 };
 
 } }

@@ -36,8 +36,10 @@ namespace libvoikko { namespace setup {
 
 Dictionary::Dictionary() :
 	morPath(),
+	gramMorPath(),
 	grammarPath(),
 	morBackend(),
+	gramMorBackend(),
 	grammarBackend(),
 	spellBackend(),
 	suggestionBackend(),
@@ -61,9 +63,10 @@ Dictionary::Dictionary(const string & morPath, const string & morBackend,
 	language(language),
 	description(description),
 	isDefaultDict(false) {
-	cerr << "Dict(7) " << morPath << endl;
 }
-Dictionary::Dictionary(const string & morPath, const string & grammarPath, const string & morBackend,
+Dictionary::Dictionary(const string & morPath, const string & gramMorPath,
+			const string & grammarPath, const string & morBackend,
+                       const string & gramMorBackend,
                        const string & grammarBackend,
                        const string & spellBackend,
                        const string & suggestionBackend,
@@ -71,8 +74,10 @@ Dictionary::Dictionary(const string & morPath, const string & grammarPath, const
                        const LanguageTag & language,
                        const string & description) :
 	morPath(morPath),
+	gramMorPath(gramMorPath),
 	grammarPath(grammarPath),
 	morBackend(morBackend),
+	gramMorBackend(gramMorBackend),
 	grammarBackend(grammarBackend),
 	spellBackend(spellBackend),
 	suggestionBackend(suggestionBackend),
@@ -80,14 +85,14 @@ Dictionary::Dictionary(const string & morPath, const string & grammarPath, const
 	language(language),
 	description(description),
 	isDefaultDict(false) {
-
-	cerr << "Dict(9) " << morPath <<  " " << grammarBackend << endl;
 }
 
 Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
+	gramMorPath(dictionary.gramMorPath),
 	grammarPath(dictionary.grammarPath),
 	morBackend(dictionary.morBackend),
+	gramMorBackend(dictionary.gramMorBackend),
 	grammarBackend(dictionary.grammarBackend),
 	spellBackend(dictionary.spellBackend),
 	suggestionBackend(dictionary.suggestionBackend),
@@ -101,8 +106,17 @@ const string & Dictionary::getMorPath() const {
 	return morPath;
 }
 
+const string & Dictionary::getGramMorPath() const {
+	return gramMorPath;
+}
+
+
 const string & Dictionary::getMorBackend() const {
 	return morBackend;
+}
+
+const string & Dictionary::getGramMorBackend() const {
+	return gramMorBackend;
 }
 
 const string & Dictionary::getSpellBackend() const {

@@ -37,20 +37,7 @@
 #include <cstring>
 #include <cstdlib>
 
-//#include "grammar/FinnishRuleEngine/CapitalizationCheck.hpp"
-//#include "grammar/FinnishRuleEngine/checks.hpp"
-//#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
-//#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
-//#include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
-//#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
-//#ifdef HAVE_MALAGA
-//	#include "autocorrect/AutoCorrect.hpp"
-//#endif
-
-
 using namespace libvoikko::grammar;
-
-//using namespace libvoikko::autocorrect;
 
 namespace libvoikko {
 
@@ -116,14 +103,11 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		}
 	}
 	
-	//check::CapitalizationCheck capitalizationCheck;
-	//check::NegativeVerbCheck negativeVerbCheck;
-	//check::CompoundVerbCheck compoundVerbCheck;
-	//check::SidesanaCheck sidesanaCheck;
-	//check::MissingVerbCheck missingVerbCheck;
-	FinnishRuleEngine checks;
-	CgRuleEngine cgchecks;
-	cgchecks.load(std::string("/home/fran/.voikko/4/se-x-standard/sme-gramchk.bin"));
+	RuleEngine * checks = voikkoOptions->grammarChecker->ruleEngine;
+
+//	FinnishRuleEngine checks;
+//	CgRuleEngine cgchecks;
+//	cgchecks.load(std::string("/home/fran/.voikko/4/se-x-standard/sme-gramchk.bin"));
 /*	for (size_t i = 0; i < para->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
 		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
@@ -143,8 +127,8 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	//capitalizationCheck.check(voikkoOptions, para);
 	//gc_end_punctuation(voikkoOptions, para);
 */
-	checks.check(voikkoOptions, para);
-	cgchecks.check(voikkoOptions, para);
+	//checks.check(voikkoOptions, para);
+	checks->check(voikkoOptions->grammarChecker->gc_cache, para);
 
 	delete para;
 }
