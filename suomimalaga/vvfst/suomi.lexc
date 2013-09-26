@@ -84,8 +84,11 @@ EtuliitteenJatko_eln2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_eln2
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
-[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nimisanat	;
+[Bh]:	EtuliitteenJatko_elnH	;
+
+LEXICON EtuliitteenJatko_elnH
+[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+[Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nimisanat	;
 
 LEXICON EtuliitteenJatko_ell
 EtuliitteenJatko_ell2	;
@@ -93,10 +96,13 @@ EtuliitteenJatko_ell2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_ell2
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
-[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
-[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_n	;
+[Bh]:	EtuliitteenJatko_ellH	;
+
+LEXICON EtuliitteenJatko_ellH
+[Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
+[Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+[Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
+[Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_n	;
 
 LEXICON EtuliitteenJatko_elt
 EtuliitteenJatko_elt2	;
@@ -122,13 +128,16 @@ EtuliitteenJatko_elleln2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_elleln2
-[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Sanasto_n	;
-[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nl	;
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@	Sanasto_t	;
-[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
-[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
+[Bh]:	EtuliitteenJatko_ellelnH	;
+
+LEXICON EtuliitteenJatko_ellelnH
+[Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Sanasto_n	;
+[Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nl	;
+[Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@	Sanasto_t	;
+[Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
+[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
+[Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 
 LEXICON EtuliitteenJatko_ellelnelt
 EtuliitteenJatko_ellelnelt2	;

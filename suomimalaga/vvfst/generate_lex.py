@@ -210,12 +210,14 @@ def vowel_type_for_derived_verb(wordform):
 			return u"@P.V_SALLITTU.T@"
 	return u"@P.V_SALLITTU.T@"
 
-def get_prefix_jatko(word):
+def get_prefix_jatko(word, altform):
 	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
 	prefixJatko = u""
 	for flag in sorted(flags):
 		if flag in [u"eln", u"ell", u"elt", u"eltj"]:
 			prefixJatko = prefixJatko + flag
+	if altform.endswith(u"-"):
+		prefixJatko = prefixJatko + u"H"
 	return prefixJatko
 
 def get_adverb_jatko(word, altform):
@@ -330,7 +332,7 @@ def handle_word(word):
 		
 		if vfst_word_class == u"[Lp]":
 			entry = u'[Lp]%s%s:%s EtuliitteenJatko_%s;' \
-			        % (wordform, infoFlags, wordform, get_prefix_jatko(word))
+			        % (wordform, infoFlags, wordform, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,

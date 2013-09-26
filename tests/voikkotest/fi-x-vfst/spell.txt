@@ -2109,3 +2109,7 @@ neljästoista
 paras
 parhaassa
 parhaimmassa
+ei-kaunis
+!ei--kaunis
+!ei--
+!eikaunis
