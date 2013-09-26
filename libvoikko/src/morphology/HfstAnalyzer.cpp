@@ -27,7 +27,13 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-HfstAnalyzer::HfstAnalyzer(const string& ) throw(setup::DictionaryException) {
+HfstAnalyzer::HfstAnalyzer(const string& s) throw(setup::DictionaryException) {
+	cerr << "HfstAnalyzer::HfstAnalyzer: " << s << endl;
+	if(s.find(".zhfst") != std::string::npos) {
+		return;
+	}
+	FILE *fd = fopen(s.c_str(), "rb");
+	t = new hfst_ol::Transducer(fd);
 
 }
 
@@ -47,11 +53,17 @@ list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
 }
 
 list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
+	cerr << "HfstAnalyzer::analyze (" << string(word) << ")" << endl;
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
+	vector<string> res = t->lookup(word);
+	for(vector<string>::iterator it = res.begin(); it != res.end(); it++) {
+		cerr << "  analysis: " << *it << endl; 
+	}
+
 	return analysisList;
 }
 

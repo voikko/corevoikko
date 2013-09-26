@@ -55,6 +55,13 @@ HfstAnalysis::HfstAnalysis()  {
 	
 }
 
+HfstAnalysis::HfstAnalysis(morphology::Analyzer * a)  {
+
+	analyser = a;
+	
+}
+
+
 HfstAnalysis::~HfstAnalysis() {
 
 }
@@ -70,21 +77,10 @@ void HfstAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token
 	                                                   token->tokenlen);
 	const std::string swordBuffer(utils::StringUtils::utf8FromUcs4(wordBuffer));
 	fprintf(stderr, "HfstAnalysis::analyse_token (%ls)\n", wordBuffer);
-	std::filebuf fb;
-//	std::set< std::pair<float, std::vector<std::string> > > analyses;
-/*
-	HfstOneLevelPaths analyses;
-	FILE * ifile = fopen("/home/fran/.voikko/4/se-x-standard/analyser-gt-desc.hfst", "rb");
-	try {
-		//HfstTransducer t(ifile, HFST_OL_TYPE, "@_EPSILON_SYMBOL_@");
-		fprintf(stderr, "HfstAnalysis::analyse_token (Loaded transducer.)\n");
-		//analyses = t.lookup_fd(swordBuffer);
-	} catch (NotValidAttFormatException e) {
-    		fprintf(stderr, "Error reading transducer: not valid AT&T format.\n"); 
-		fprintf(stderr, "HfstAnalysis::analyse_token (Transducer load failed)\n");
-		fclose(ifile);
-	}
-*/
+
+	std::list<libvoikko::morphology::Analysis*> *analysesx = analyser->analyze(wordBuffer);
+
+
 	int num_analyses = 0;
 /*
 	list<morphology::Analysis *>::const_iterator it = analyses->begin();
@@ -93,7 +89,7 @@ void HfstAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token
 		num_analyses++;
 		++it;
 	}*/
-//	num_analyses = analyses.size();	
+	num_analyses = analysesx->size();	
 	fprintf(stderr, "HfstAnalysis::analyse_token (num: %d)\n", num_analyses);
 }
 

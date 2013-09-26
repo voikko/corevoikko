@@ -51,10 +51,10 @@ class FinnishAnalysis : public Analysis {
 
 		/** Analyse given text token. Token type, length and text must have already
 		 *  been set. */
-		static void analyse_token(voikko_options_t * voikkoOptions, Token * token);
+		void analyse_token(voikko_options_t * voikkoOptions, Token * token);
 
 		/** Analyse sentence text. Sentence type must be set by the caller. */
-		static Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
+		Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
 						const wchar_t * text, size_t textlen, size_t sentencepos);
 
 

@@ -29,6 +29,7 @@
 #ifndef VOIKKO_GRAMMAR_HFSTANALYSIS
 #define VOIKKO_GRAMMAR_HFSTANALYSIS
 
+#include "morphology/Analyzer.hpp"
 #include "grammar/Analysis.hpp"
 #include "grammar/Paragraph.hpp"
 
@@ -37,12 +38,15 @@ namespace libvoikko { namespace grammar {
 class HfstAnalysis : public Analysis {
 	public:
 		HfstAnalysis();
+		HfstAnalysis(morphology::Analyzer * a);
 		
 		~HfstAnalysis();
 		
 		void init();
 
 		Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+
+		morphology::Analyzer  * analyser ; 
 
 	
 	private:
@@ -51,10 +55,10 @@ class HfstAnalysis : public Analysis {
 
 		/** Analyse given text token. Token type, length and text must have already
 		 *  been set. */
-		static void analyse_token(voikko_options_t * voikkoOptions, Token * token);
+		void analyse_token(voikko_options_t * voikkoOptions, Token * token);
 
 		/** Analyse sentence text. Sentence type must be set by the caller. */
-		static Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
+		Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
 						const wchar_t * text, size_t textlen, size_t sentencepos);
 
 

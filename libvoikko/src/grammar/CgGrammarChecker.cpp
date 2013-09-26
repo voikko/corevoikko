@@ -40,14 +40,16 @@ CgGrammarChecker::CgGrammarChecker()  {
 	
 }
 
-CgGrammarChecker::CgGrammarChecker(const string & analyser, const string & rules)  {
+CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules)  {
 
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 
 	ruleEngine = new CgRuleEngine();
 	ruleEngine->load(rules);
 
-	analyser = new morphology::HfstAnalyzer(analyser);
+	analyser = new morphology::HfstAnalyzer(f_analyser);
+
+//	tokeniser = new tokenizer::Tokenizer();
 
 }
 

@@ -41,6 +41,7 @@ class GrammarChecker {
 		RuleEngine * ruleEngine;
 		GcCache gc_cache;
 		morphology::Analyzer * analyser ; 
+//		tokenizer::Tokenizer * tokeniser ; 
 	
 };
 

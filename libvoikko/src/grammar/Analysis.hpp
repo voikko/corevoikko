@@ -31,31 +31,25 @@
 
 #include "setup/setup.hpp"
 
+#include "morphology/Analyzer.hpp"
 #include "grammar/Paragraph.hpp"
 
 namespace libvoikko { namespace grammar {
 
 class Analysis {
 	public:
-		Analysis();
-		
-		~Analysis();
-		
-		void init();
 
-		Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+		virtual Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) = 0 ;
 	
 	private:
-		Analysis(Analysis const & other);
-		Analysis & operator = (const Analysis & other);
 
 		/** Analyse given text token. Token type, length and text must have already
 		 *  been set. */
-		static void analyse_token(voikko_options_t * voikkoOptions, Token * token);
+		virtual void analyse_token(voikko_options_t * voikkoOptions, Token * token) = 0 ; 
 
 		/** Analyse sentence text. Sentence type must be set by the caller. */
-		static Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
-						const wchar_t * text, size_t textlen, size_t sentencepos);
+		virtual Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
+						const wchar_t * text, size_t textlen, size_t sentencepos) = 0;
 
 
 };
