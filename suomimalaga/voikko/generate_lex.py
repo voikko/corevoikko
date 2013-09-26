@@ -82,6 +82,8 @@ def get_adverb_jatko(word):
 	for flag in flags:
 		if flag in [u"liitesana", u"omistusliite"]:
 			prefixJatko = prefixJatko + u", " + flag
+		elif flag == u"ulkopaikallissijat_yks":
+			prefixJatko = prefixJatko + u", ulkopaikallissija_llA"
 		elif flag == u"required":
 			loppu = False;
 	if loppu:

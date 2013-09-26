@@ -3847,6 +3847,11 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
 
+LEXICON Ulkopaikallissijat_Yks
+[Sade][Ny]ll<A>:ll<A>	LoppuLiitesanaOlV_<A>	;
+[Sabl][Ny]lt<A>:lt<A>	LoppuLiitesanaOlV_<A>	;
+[Sall][Ny]lle:lle	LoppuLiitesanaOlV_<A>	;
+
 LEXICON LoppuLiitesanaOmistusliite
 LoppuLiitesana_<A>	;
 Omistusliite_<A>	;

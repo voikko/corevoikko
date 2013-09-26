@@ -225,7 +225,7 @@ def get_adverb_jatko(word, altform):
 	loppu = True
 	adverbJatko = u""
 	for flag in sorted(flags):
-		if flag == u"liitesana":
+		if flag in [u"liitesana", u"ulkopaikallissijat_yks"]:
 			adverbJatko = adverbJatko + flag.title()
 		elif flag == u"omistusliite":
 			if altform[-1] in u"aäe" and altform[-1] != altform[-2]:

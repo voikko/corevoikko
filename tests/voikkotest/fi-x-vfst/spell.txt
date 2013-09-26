@@ -2113,3 +2113,4 @@ ei-kaunis
 !ei--kaunis
 !ei--
 !eikaunis
+kotosalle
