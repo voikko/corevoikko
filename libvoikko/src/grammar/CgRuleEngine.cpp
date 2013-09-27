@@ -66,13 +66,14 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 
 		for(size_t j = 0; j < paragraph->sentences[i]->tokenCount; j++) {
-			fprintf(stderr, "CgRuleEngine::check %ls (%d)\n", paragraph->sentences[i]->tokens[j].str, paragraph->sentences[i]->tokens[j].isValidWord);
-			list<morphology::Analysis *>::const_iterator it = paragraph->sentences[i]->tokens[j].analyses->begin();
+			Token t =  paragraph->sentences[i]->tokens[j];
+			fprintf(stderr, "CgRuleEngine::check %ls (%d) %ld\n", paragraph->sentences[i]->tokens[j].str, t.isValidWord, t.analyses->size());
+			list<morphology::Analysis *>::iterator it = t.analyses->begin();
 			unsigned int num_analyses = 0;
-		/*	while (it !=  paragraph->sentences[i]->tokens[j].analyses->end()) {
+			while (it != t.analyses->end()) {
 				num_analyses++;
 				++it;
-			}*/
+			}
 			fprintf(stderr, "CgRuleEngine::check %d analyses\n", num_analyses);
 			
 		}

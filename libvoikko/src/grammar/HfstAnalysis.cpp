@@ -78,18 +78,10 @@ void HfstAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token
 	const std::string swordBuffer(utils::StringUtils::utf8FromUcs4(wordBuffer));
 	fprintf(stderr, "HfstAnalysis::analyse_token (%ls)\n", wordBuffer);
 
-	std::list<libvoikko::morphology::Analysis*> *analysesx = analyser->analyze(wordBuffer);
-
+	token->analyses = analyser->analyze(wordBuffer);
 
 	int num_analyses = 0;
-/*
-	list<morphology::Analysis *>::const_iterator it = analyses->begin();
-	while (it != analyses->end()) {
-		token->isValidWord = true;
-		num_analyses++;
-		++it;
-	}*/
-	num_analyses = analysesx->size();	
+	num_analyses = token->analyses->size();	
 	fprintf(stderr, "HfstAnalysis::analyse_token (num: %d)\n", num_analyses);
 }
 

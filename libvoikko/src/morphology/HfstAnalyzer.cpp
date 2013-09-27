@@ -21,6 +21,7 @@
 #include "utils/StringUtils.hpp"
 #include "voikko_defines.h"
 #include <fstream>
+#include <ospell.h>
 
 using namespace std;
 using namespace libvoikko::utils;
@@ -59,9 +60,28 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	vector<string> res = t->lookup(word);
-	for(vector<string>::iterator it = res.begin(); it != res.end(); it++) {
-		cerr << "  analysis: " << *it << endl; 
+
+	/* I know this is the wrong thing, but going to do it anyway */
+	std::string str(word);
+	char * writable = new char[str.size() + 1];
+	std::copy(str.begin(), str.end(), writable);
+	writable[str.size()] = '\0';
+
+	hfst_ol::AnalysisQueue q = t->lookup(writable);
+
+	while(q.size() > 0) {
+		hfst_ol::StringWeightPair pair = q.top();
+		string analysis = pair.first;
+		string lemma = "";
+		string tags = "";
+		lemma = analysis.substr(0,analysis.find("+"));
+		tags = analysis.substr(analysis.find("+"),analysis.length()-1);
+		cerr << "  analysis  " << lemma << "/" << tags << endl; 
+		Analysis * a = new Analysis();
+		a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
+		a->addAttribute("tags",  StringUtils::ucs4FromUtf8(tags.c_str()));
+		analysisList->push_back(a);
+		q.pop();
 	}
 
 	return analysisList;
