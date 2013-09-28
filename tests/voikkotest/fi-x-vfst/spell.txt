@@ -2115,3 +2115,4 @@ ei-kaunis
 !eikaunis
 kotosalle
 kaksitahtimoottori
+evankelis-luterilaiselle

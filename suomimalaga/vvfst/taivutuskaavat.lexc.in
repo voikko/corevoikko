@@ -1443,7 +1443,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Nainen
 <WC>NainenYhteiset_<A>	;
-s:s	<WC>YsJatko	;
+s:s	<WC>NainenYsJatko_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
 
@@ -1475,6 +1475,10 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Ses][Ny]sn<A>:sn<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]sehe:sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
+
+LEXICON NOUN NainenYsJatko
+<WC>YsJatko	;
+?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_nl;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;

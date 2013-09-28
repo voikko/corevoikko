@@ -157,7 +157,7 @@ def get_diacritics(word, altforms, vfst_word_class):
 				diacritics.append(u"@P.YS_EI_JATKOA.ON@")
 			if flagName in [u"ei_ys", u"ei_ysj"]:
 				diacritics.append(u"@D.YS_ALKANUT@")
-	if vfst_word_class == u"[Ll]" and altforms[0].endswith(u"inen"):
+	if vfst_word_class in [u"[Ll]", u"[Lnl]"] and altforms[0].endswith(u"inen"):
 		diacritics.append(u"@C.INEN_VAADITTU@")
 	if vfst_word_class == u"[Ln]" and (altforms[0].endswith(u"lainen") or altforms[0].endswith(u"läinen")):
 		diacritics.append(u"@P.LAINEN.ON@")

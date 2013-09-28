@@ -806,7 +806,7 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if $edellinen.luokka = paikannimi then
-      result $res, rules paikannimen_lainen_johdos;
+      result $res, rules paikannimen_lainen_johdos, inen_päätteinen_laatusana;
     end;
     result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi;
   else
@@ -2006,7 +2006,8 @@ subrule tulostus_rakenne ($tietue):
       if ($t.luokka = paikannimi and
           (
             ($tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) or
-            ($tlen greater $tind + 2 and $tietue.($tind+3).luokka = johdin_lAinen)
+            ($tlen greater $tind + 2 and $tietue.($tind+3).luokka = johdin_lAinen) or
+            ($tlen greater $tind + 1 and $tietue.($tind+1).luokka = sijapääte and $tietue.($tind+2).inen_loppu = yes)
           )
          ) or $t.erisnimen_pääte = yes then
         foreach $i in length($t.alku):

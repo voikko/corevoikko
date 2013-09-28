@@ -303,6 +303,7 @@ ammattilaisuuteen
 italialaisamerikkalainen
 hartolalaisesti
 eritasoiset # laatusanan etuliite + inen-johdos
+inarinsaamelaiset
 
 # = voitto- ja yliasteet =
 []
