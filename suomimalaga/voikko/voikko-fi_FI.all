@@ -3686,19 +3686,6 @@ end;
 # Operaatioita, jotka tehdään taivutuskaavan muodostamisen yhteydessä
 # kaikille tietueille.
 subrule muokkaa_tietuetta($tietue, $taivutus):
-  # Paikannimien jälkiliitteet
-  if ($tietue.perusmuoto in <
-      "kivi",
-      "koulu", "kulma",
-      "laidun", "letto",
-      "nokka", "notko",
-      "pää", "ryteikkö",
-      "silta",
-      "tie",
-      "väylä"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
-    $tietue :=+ [paikannimen_jälkiliite: yes];
-  end;
-  
   # Yleisnimestä mahdollisesti erisnimen muodostava jälkiliite
   if $tietue.perusmuoto in <"arkisto", "hallitus", "kassa", "keskus", "koulu",
                              "laitos", "opisto", "rahasto"> then
