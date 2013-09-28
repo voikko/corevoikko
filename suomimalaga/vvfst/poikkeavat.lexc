@@ -26,6 +26,7 @@ LEXICON Yö
 yö:yö	NimisanaYhteisetYksikönPaikallissijat_ä	;
 ö:ö	NimisanaYhteisetMonikonPaikallissijat_ä	;
 yö:yö	Johdin_mAinen_ä	;
+yö:yö	Johdin_tOn_ä	;
 
 LEXICON Paras
 ha:ha	Yliaste_a	;

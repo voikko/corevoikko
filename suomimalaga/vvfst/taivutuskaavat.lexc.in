@@ -231,6 +231,8 @@ LEXICON NOUN Arvelu_w
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Laatusana	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1479,6 +1481,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 LEXICON NOUN NainenYsJatko
 <WC>YsJatko	;
 ?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_nl;
+?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_l;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
@@ -2049,6 +2052,7 @@ LEXICON NOUN Kauris_s
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]isee:isee	<WC>LiOlN_<A>	;
 [Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
