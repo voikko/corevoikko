@@ -856,6 +856,7 @@ LEXICON NOUN Apila
 LEXICON NOUN Video
 <WC>Apila_y_<A>	;
 <WC>Apila_m_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
 
 LEXICON NOUN Apila_y
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1326,6 +1327,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
@@ -2114,6 +2116,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]@P.INEN_VAADITTU.ON@:	Sanasto_ep	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
@@ -2772,6 +2775,7 @@ EhtotapaTa_<A>	;
 Käskytapa_<A>	;
 Käskytapa_tA_<A>	;
 n:n	Mahtotapa_<A>	;
+Mahtotapa_tA_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
 Johdin_mA_<A>	;
@@ -3311,6 +3315,7 @@ s:s	KertomanTekijäpääteVahva_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Käskytapa_y2_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 
@@ -3493,6 +3498,10 @@ LEXICON Mahtotapa
 @D.VAIN_YM3@[Tm][Ap][P1][Nm]emme:@D.VAIN_YM3@emme	Liitesana_<A>	;
 @D.VAIN_YM3@[Tm][Ap][P2][Nm]ette:@D.VAIN_YM3@ette	Liitesana_<A>	;
 [Tm][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+
+LEXICON Mahtotapa_tA
+@D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>ne:@D.VAIN_YM3@t<A>ne	Liitesana_<A>	;
+@D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>neen:@D.VAIN_YM3@t<A>neen	Liitesana_<A>	;
 
 LEXICON Käskytapa_0
 Käskytapa_<A>	;
