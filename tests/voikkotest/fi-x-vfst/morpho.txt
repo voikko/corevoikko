@@ -445,3 +445,8 @@ word:parhaassa
   analysis
     CLASS=laatusana
     COMPARISON=superlative
+word:ja
+  expected:1
+  analysis
+    CLASS=sidesana
+    STRUCTURE==pp

@@ -38,7 +38,7 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h", u"p", u"a", u"s"]
+vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h", u"p", u"a", u"s", u"c"]
 vocabularyFiles = {}
 for fileSuffix in vocabularyFileSuffixes:
 	vocFile = codecs.open(OPTIONS["destdir"] + u"/joukahainen-" + fileSuffix + u".lexc", 'w', 'UTF-8')
@@ -93,6 +93,7 @@ def get_vfst_word_class(j_wordclasses):
 	if "prefix" in j_wordclasses: return u"[Lp]"
 	if "abbreviation" in j_wordclasses: return u"[La]"
 	if "adverb" in j_wordclasses: return u"[Ls]"
+	if "conjunction" in j_wordclasses: return u"[Lc]"
 	return None
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
@@ -259,7 +260,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"adverb"] and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"conjunction", u"adverb"] and voikko_infclass == None:
 		return
 	vfst_word_class = get_vfst_word_class(wordclasses)
 	if vfst_word_class == None: return

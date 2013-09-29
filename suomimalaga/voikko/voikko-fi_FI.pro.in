@@ -36,7 +36,6 @@ lex: erikoiset.lex
 lex: poikkeavat.lex
 lex: lainen.lex
 lex: taivutustaydennykset.lex
-lex: sidesanat.lex
 mor: voikko-fi_FI.mor suomi.inc mor.inc subrule.inc config.inc
 malaga: set display-line "malshow"
 mallex: set display-line "malshow"

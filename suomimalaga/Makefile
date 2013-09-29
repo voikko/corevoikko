@@ -52,14 +52,14 @@ VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_
 
 VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
 
-VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a s
+VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a s c
 VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))
 
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
-	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex
+	poikkeavat.lex lainen.lex taivutustaydennykset.lex
 VOIKKO_COPY_FROM_VOIKKO=voikko-fi_FI.all voikko-fi_FI.sym voikko-fi_FI.mor \
 	olla-ei.lex suomi.lex suomi.inc voikko-fi_FI.lex
 
@@ -183,7 +183,6 @@ lainen.lex \
 lukusanat.lex \
 poikkeavat.lex \
 seikkasanat.lex \
-sidesanat.lex \
 suhdesanat.lex \
 taivutustaydennykset.lex \
 yhdyssanat.lex

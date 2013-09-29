@@ -122,7 +122,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"adverb"] and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"conjunction", u"adverb"] and voikko_infclass == None:
 		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return

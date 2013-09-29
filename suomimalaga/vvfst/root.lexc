@@ -13,6 +13,7 @@ Multichar_Symbols
 [Lp]  ! etuliite
 [La]  ! lyhenne
 [Ls]  ! seikkasana
+[Lc]  ! sidesana
 [Lu]  ! lukusana
 [Lr]  ! asemosana
 
@@ -178,6 +179,7 @@ Sanasto_t	;
 Sanasto_p	;
 Sanasto_a	;
 Sanasto_s	;
+Sanasto_c	;
 
 LEXICON Sanasto_ee
 Joukahainen_ee	;
@@ -217,6 +219,9 @@ Joukahainen_a	;
 
 LEXICON Sanasto_s
 Joukahainen_s	;
+
+LEXICON Sanasto_c
+Joukahainen_c	;
 
 LEXICON Sanasto_nimisanat
 Sanasto_n	;
