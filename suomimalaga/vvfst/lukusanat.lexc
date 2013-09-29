@@ -3,9 +3,6 @@ Lukusana	;
 Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
-[Lu][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
-[Lu][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
-[Lu][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
 [Lu]:	LukusananAlkuKerroin	;
 
 LEXICON LukusananAlkuKerroin
@@ -39,6 +36,8 @@ LukusanaSkoNm29Kertoimet	;
 [Sn][Nm][Xp]tuhat[X]tuhannet:tuhannet	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]miljoona[X]miljoonat:miljoonat	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]miljardi[X]miljardi:miljardi	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]miljardi[X]miljardit:miljardit	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
