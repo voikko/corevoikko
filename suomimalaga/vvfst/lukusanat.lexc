@@ -3,7 +3,6 @@ Lukusana	;
 Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
-[Lu]:	LukusananAlkuKerroin	;
 
 LEXICON LukusananAlkuKerroin
 LukusanaSgNy29Kertoimet	;
@@ -30,8 +29,8 @@ LukusanaSallNm29Kertoimet	;
 LukusanaSabNm29Kertoimet	;
 LukusanaSinNm29Kertoimet	;
 LukusanaSkoNm29Kertoimet	;
-[Sn][Ny][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
-[Sn][Nm][Xp]sata[X]sadat:sadat	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sata[X]sata@U.LS.SNNY@:sata@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]sata[X]sadat@U.LS.SNNM@:sadat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]tuhat[X]tuhannet:tuhannet	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
@@ -49,6 +48,7 @@ LEXICON Lukusana
 [Lu][Xp]seitsemän[X]seitsem:seitsem	LukusanaSeitsemän_ä	;
 [Lu][Xp]kahdeksan[X]kahdeks:kahdeks	LukusanaSeitsemän_a	;
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
+[Lu]:	LukusananAlkuKerroin	;
 
 LEXICON Järjestysluku
 [Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;

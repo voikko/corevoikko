@@ -174,15 +174,15 @@ MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a"]
 for sija in MULTI.keys():
 	diacritic = u"@U.LS." + sija.upper() + u"@"
 	lexiconName = u"Lukusana" + sija + u"29"
+	tagName = u"[" + sija.replace(u"N", u"][N") + u"]"
 	
 	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
 	for i in range(len(MULTI_VOWELS)):
-		lexcFile.write(u"[Bc]" + diacritic + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+		lexcFile.write(diacritic + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
-	numeralLines.append(lexiconName + u"Kertoimet\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
 	
 	numeralLines = []

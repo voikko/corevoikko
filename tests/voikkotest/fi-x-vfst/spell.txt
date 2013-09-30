@@ -2132,3 +2132,8 @@ poikkea
 musiikkivideota
 pienimmän
 voitaneen
+bahamalainen
+seinäjokelainen
+rovaniemeläinen
+sadattuhannet
+!sadattuhatta
