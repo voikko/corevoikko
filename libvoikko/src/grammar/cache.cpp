@@ -46,6 +46,8 @@ static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
+
+	fprintf(stderr, "cache.cpp: gc_error_from_cache\n");
 	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
 		return 0;
 	}
@@ -66,6 +68,8 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 }
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
+
+	fprintf(stderr, "cache.cpp: gc_paragraph_to_cache\n");
 	gc_clear_cache(voikkoOptions);
 	voikkoOptions->grammarChecker->gc_cache.paragraph = new wchar_t[textlen + 1];
 	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
@@ -104,7 +108,6 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	
 	RuleEngine * checks = voikkoOptions->grammarChecker->ruleEngine;
-
 //	FinnishRuleEngine checks;
 //	CgRuleEngine cgchecks;
 //	cgchecks.load(std::string("/home/fran/.voikko/4/se-x-standard/sme-gramchk.bin"));
@@ -128,12 +131,42 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	//gc_end_punctuation(voikkoOptions, para);
 */
 	//checks.check(voikkoOptions, para);
+	fprintf(stderr, "cache.cpp: Running checks...\n");
 	checks->check(voikkoOptions->grammarChecker->gc_cache, para);
 
 	delete para;
 }
 
+void gc_cache_append_error(GcCache & gc_cache, CacheEntry * new_entry) {
+	fprintf(stderr, "cache.cpp: gc_cache_append_error 2\n");
+	CacheEntry * entry = gc_cache.firstError;
+	if (!entry) {
+		gc_cache.firstError = new_entry;
+		return;
+	}
+	if (entry->error.startpos > new_entry->error.startpos) {
+		new_entry->nextError = gc_cache.firstError;
+		gc_cache.firstError = new_entry;
+		return;
+	}
+	while (1) {
+		if (!entry->nextError) {
+			entry->nextError = new_entry;
+			return;
+		}
+		if (entry->error.startpos <= new_entry->error.startpos &&
+		    entry->nextError->error.startpos > new_entry->error.startpos) {
+			new_entry->nextError = entry->nextError;
+			entry->nextError = new_entry;
+			return;
+		}
+		entry = entry->nextError;
+	}
+}
+
+
 void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
+	fprintf(stderr, "cache.cpp: gc_cache_append_error 1\n");
 	CacheEntry * entry = voikkoOptions->grammarChecker->gc_cache.firstError;
 	if (!entry) {
 		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;

@@ -51,6 +51,8 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
  */
 void gc_cache_append_error(voikko_options_t * voikkoOptions, grammar::CacheEntry * new_entry);
 
+void gc_cache_append_error(grammar::GcCache & gc_cache , grammar::CacheEntry * new_entry);
+
 
 }
 

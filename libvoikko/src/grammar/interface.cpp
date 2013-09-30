@@ -32,6 +32,7 @@
 #include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
+#include <stdio.h>
 
 typedef voikko_grammar_error VoikkoGrammarError; // for now
 
@@ -42,7 +43,7 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	if (text_ucs4 == 0 || wtextlen == 0) {
 		return 0;
 	}
-	
+	fprintf(stderr, "interface.cpp: voikkoNextGrammarErrorUcs4\n");	
 	const voikko_grammar_error * c_error =
 	    gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
 	if (!c_error) {

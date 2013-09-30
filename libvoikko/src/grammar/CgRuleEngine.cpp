@@ -29,6 +29,7 @@
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
 #include "grammar/CgRuleEngine.hpp"
+#include "grammar/cache.hpp"
 
 namespace libvoikko { namespace grammar {
 
@@ -75,10 +76,10 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 			}
 			cg3_cohort *cohort = 0;
 			cohort = cg3_cohort_create(sentence);
-			fprintf(stderr, "CgRuleEngine::check %ls (%d) %ld\n", paragraph->sentences[i]->tokens[j].str, t.isValidWord, t.analyses->size());
+			//fprintf(stderr, "CgRuleEngine::check %ls (%d) %ld\n", paragraph->sentences[i]->tokens[j].str, t.isValidWord, t.analyses->size());
 			cg3_tag *tag = 0;	
 			string wordform = string("\"<") + utils::StringUtils::StringUtils::utf8FromUcs4(paragraph->sentences[i]->tokens[j].str) + string(">\""); 
-			fprintf(stderr, "wordform is: %s\n", wordform.c_str());
+			//fprintf(stderr, "wordform is: %s\n", wordform.c_str());
 			tag = cg3_tag_create_u8(applicator, wordform.c_str());
 			cg3_cohort_setwordform(cohort, tag);
 
@@ -94,6 +95,7 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 				string taglist = string(utils::StringUtils::StringUtils::utf8FromUcs4((a->getValue("tags"))));
 				string buf = "";
 				for(string::iterator it2 = taglist.begin(); it2 != taglist.end(); it2++) {
+					// This assumes + separated tags.
 					if(*it2 == '+' && buf.length() > 0) {
 						tag = cg3_tag_create_u8(applicator, buf.c_str());
 						cg3_reading_addtag(reading, tag);
@@ -109,13 +111,18 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 				++it;
 			}
 			cg3_sentence_addcohort(sentence, cohort);
-			fprintf(stderr, "CgRuleEngine::check %d analyses\n", num_analyses);
+			//fprintf(stderr, "CgRuleEngine::check %d analyses\n", num_analyses);
 			
 		}
 		int num_cohorts = cg3_sentence_numcohorts(sentence);
 		fprintf(stderr, "CgRuleEngine::num_cohorts %d \n", num_cohorts);
 		cg3_sentence_runrules(applicator, sentence);
 
+		// We've run the grammar on the sentence, now we need to go through and look
+		// for error tags which by convention begin with &, e.g.
+		//
+		//   "<beassát>"
+		//	"beassi" G3 N Sg Acc PxSg2 @OBJ> &real-beassat #8->8 ADD:3178:beassat 
 
 		cg3_tag *tag = 0;	
 		cg3_cohort *cohort = 0;
@@ -131,17 +138,25 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 	
 			for (ri = 0, re = cg3_cohort_numreadings(cohort) ; ri != re ; ++ri) {
 				reading = cg3_cohort_getreading(cohort, ri);
-				fprintf(stderr, "\t");
+				fprintf(stderr, "CG: \t");
 				for (ti = 0, te = cg3_reading_numtags(reading) ; ti != te ; ++ti) {
 					tag = cg3_reading_gettag(reading, ti);
 					tmp = cg3_tag_gettext_u8(tag);
 					fprintf(stderr, "%s ", tmp);
+					if(tmp[0] == '&') { 
+						// We've found an error tag, mark the current cohort
+						fprintf(stderr, "\nnew CacheEntry\n");
+						CacheEntry * e = new CacheEntry(0);
+						e->error.startpos = ci;
+						e->error.errorlen = 1;
+						gc_cache_append_error(cache, e);
+					}
 				}
 				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {
 					uint32_t rule_line = cg3_reading_gettrace(reading, ti);
-					fprintf(stderr, "CG: TRACE:%u ", rule_line);
+					fprintf(stderr, "TRACE:%u ", rule_line);
 				}
-				fprintf(stderr, "CG: \n");
+				fprintf(stderr, "\n");
 			}
 		}
 
