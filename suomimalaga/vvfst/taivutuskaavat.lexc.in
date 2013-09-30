@@ -1599,7 +1599,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
-?Nimisana	Johdin_UUs_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
@@ -2559,6 +2559,7 @@ Kohdella_<A>	;
 
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
+<O>:<O>	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 e:e	Käskytapa_ttA_<A>	;
 e:e	Tositapa4Tt_<A>	;
@@ -3085,6 +3086,7 @@ LEXICON Aleta_w
 Tositapa4Tt_<A>	;
 Johdin_ttAx_<A>	;
 t:t	Käskytapa_<A>	;
+t:t	Johdin_nimitapa1A_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
 
@@ -3406,6 +3408,7 @@ kse:kse	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]ksee:ksee      Liitesana_<A>   ;
 [Tt][P3][Nm]ksev<A>t:ksev<A>t      Liitesana_<A>   ;
 s:s	TositavanKestämäTaan_<A>	;
+s:s	TositavanKertomaTiin_<A>	;
 ks:ks	KertomanTekijäpääteVahva_<A>	;
 s:s	Käskytapa_<A>	;
 kse:kse	Käskytapa_y2_<A>	;
@@ -3524,7 +3527,7 @@ LEXICON Käskytapa
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
-@D.VAIN_YM3@[Tk][Ap][P2][Ny][Eb]:@D.VAIN_YM3@	LiitesanaPaHan_<A>	;
+[Tk][Ap][P2][Ny][Eb]:	LiitesanaPaHan_<A>	;
 [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
 
 LEXICON Käskytapa_ttA
