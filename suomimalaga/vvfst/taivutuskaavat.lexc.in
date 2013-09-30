@@ -1307,6 +1307,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Paikannimi	e:e	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Niemi
@@ -3099,6 +3100,7 @@ ne:ne	Johdin_mA_<A>	;
 ne:ne	Johdin_vA_<A>	;
 n:n	Ehtotapa_<A>	;
 ne:ne	Käskytapa_y2_<A>	;
+ni:ni	Johdin_ja_kulkija_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -3165,6 +3167,7 @@ ki:ki	Haluta_s_<A>	;
 LEXICON Haluta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
+Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
 Johdin_ttAx_<A>	;

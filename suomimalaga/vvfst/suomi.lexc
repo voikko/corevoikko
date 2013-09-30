@@ -22,9 +22,7 @@ LEXICON NimiYsJatko
 -[Bc]:-	Loppu	;
 
 LEXICON PaikannimiYsJatko
--[Bc]:-	Sanasto_ep	;
--[Bc]:-	Sanasto_es	;
--[Bc]:-	Sanasto_ee	;
+-[Bc]:-	Erisnimet	;
 -[Bc]:-	Sanasto_nimisanat	;
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
