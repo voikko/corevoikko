@@ -1996,6 +1996,7 @@ i:i	<WC>Vieras_w_<A>	;
 i:i	<WC>Vieras_s_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
+?Laatusana	ihi:ihi	Voittoaste_<A>	;
 
 LEXICON NOUN Altis
 i:i	<WC>Vieras_w_<A>	;
@@ -2654,10 +2655,12 @@ eskel:eskel	Katsella_<A>	;
 LEXICON Lähteä
 hd:hd	Tuntea_w_<A>	;
 ht:ht	Tuntea_s_<A>	;
+hd:hd	KertomanTekijäpääteHeikko_<A>	;
 
 LEXICON Tuntea
 n:n	Tuntea_w_<A>	;
 t:t	Tuntea_s_<A>	;
+s:s	KertomanTekijäpääteHeikko_<A>	;
 
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -2827,6 +2830,7 @@ LEXICON Nousta
 LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTiin_<A>	;
+Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_AessA_<A>	;
 Tositapa4Tt_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
