@@ -8,6 +8,7 @@ sanat/etuliitteet.lex \
 sanat/lyhenteet.lex \
 sanat/omat.lex \
 sanat/seikkasanat.lex \
+sanat/sidesanat.lex \
 voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
 voikonsanat/erikoissanat.lex \

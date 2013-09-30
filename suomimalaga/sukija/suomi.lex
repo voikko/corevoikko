@@ -76,7 +76,7 @@ include "voikonsanat/lukusanat.lex";
 include "voikonsanat/matluonnontiede.lex";
 include "voikonsanat/poikkeavat.lex";
 #include "voikonsanat/seikkasanat.lex";
-include "voikonsanat/sidesanat.lex";
+#include "voikonsanat/sidesanat.lex";
 include "voikonsanat/suhdesanat.lex";
 include "voikonsanat/taivutustaydennykset.lex";
 include "voikonsanat/yhdyssanat.lex";
@@ -89,6 +89,7 @@ include "sanat/latex.lex";
 include "sanat/olla-ei.lex";
 include "sanat/omat.lex";
 include "sanat/seikkasanat.lex";
+include "sanat/sidesanat.lex";
 include "voikonsanat/erikoisalat/linux-distributions.lex";
 
 

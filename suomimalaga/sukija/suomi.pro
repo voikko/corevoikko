@@ -57,6 +57,7 @@ lex: sanat/lyhenteet.lex
 lex: sanat/olla-ei.lex
 lex: sanat/omat.lex
 lex: sanat/seikkasanat.lex
+lex: sanat/sidesanat.lex
 lex: voikonsanat/atk.lex
 lex: voikonsanat/erikoiset.lex
 lex: voikonsanat/erikoissanat.lex
@@ -68,7 +69,7 @@ lex: voikonsanat/lukusanat.lex
 lex: voikonsanat/matluonnontiede.lex
 lex: voikonsanat/poikkeavat.lex
 #lex: voikonsanat/seikkasanat.lex
-lex: voikonsanat/sidesanat.lex
+#lex: voikonsanat/sidesanat.lex
 lex: voikonsanat/taivutustaydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
