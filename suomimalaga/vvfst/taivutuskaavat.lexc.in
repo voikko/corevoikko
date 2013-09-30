@@ -1601,6 +1601,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
@@ -3434,6 +3435,7 @@ h:h	TositavanKertomaTiin_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 k:k	KertomanTekijäpääteVahva_<A>	;
 h:h	Käskytapa_<A>	;
+h:h	Käskytapa_tA_<A>	;
 h:h	EhtotapaTa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_nimitapa1dA_<A>	;
@@ -3631,10 +3633,10 @@ LEXICON Johdin_tAvA
 [Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaAsema_<A>	;
 
 LEXICON Johdin_sUt
-[Ll]s@C.JOHDETTAVA_LAATUSANAKSI@:s@C.JOHDETTAVA_LAATUSANAKSI@	NimiLaatusanaKuollut_<A>	;
+[Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Johdin_nUt
-[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	LaatusanaKuollut_<A>	;
 neis:neis	Johdin_UUs_<A>	;
 [Ll]nee:nee	Omistusliite_<A>	;
 

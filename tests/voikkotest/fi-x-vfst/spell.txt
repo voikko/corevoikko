@@ -2151,3 +2151,7 @@ pietarsaarelainen
 pakenijat
 Jordan-Peugeot
 hävitäkseen
+-kirjaiminen
+-avaruuslennon
+tehtäköön
+!juossutsydäminen
