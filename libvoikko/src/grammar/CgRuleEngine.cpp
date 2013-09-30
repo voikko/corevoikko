@@ -27,6 +27,7 @@
  *********************************************************************************/
 
 #include "setup/setup.hpp"
+#include "utils/StringUtils.hpp"
 #include "grammar/CgRuleEngine.hpp"
 
 namespace libvoikko { namespace grammar {
@@ -57,6 +58,7 @@ int CgRuleEngine::load(const std::string path) {
 	}
 
 	applicator = cg3_applicator_create(grammar);
+        cg3_applicator_setflags(applicator, CG3F_TRACE);
 	return 1;
 }
 
@@ -64,19 +66,87 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 	fprintf(stderr, "CgRuleEngine::check\n");
 
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
-
+		cg3_sentence *sentence = 0;
+		sentence = cg3_sentence_new(applicator);
 		for(size_t j = 0; j < paragraph->sentences[i]->tokenCount; j++) {
 			Token t =  paragraph->sentences[i]->tokens[j];
+			if(wcscmp(t.str, L" ") == 0) {
+				continue;
+			}
+			cg3_cohort *cohort = 0;
+			cohort = cg3_cohort_create(sentence);
 			fprintf(stderr, "CgRuleEngine::check %ls (%d) %ld\n", paragraph->sentences[i]->tokens[j].str, t.isValidWord, t.analyses->size());
+			cg3_tag *tag = 0;	
+			string wordform = string("\"<") + utils::StringUtils::StringUtils::utf8FromUcs4(paragraph->sentences[i]->tokens[j].str) + string(">\""); 
+			fprintf(stderr, "wordform is: %s\n", wordform.c_str());
+			tag = cg3_tag_create_u8(applicator, wordform.c_str());
+			cg3_cohort_setwordform(cohort, tag);
+
 			list<morphology::Analysis *>::iterator it = t.analyses->begin();
 			unsigned int num_analyses = 0;
 			while (it != t.analyses->end()) {
+				morphology::Analysis *a = *it;
+				cg3_reading *reading = 0;
+				reading = cg3_reading_create(cohort);
+				string baseform = string("\"") + utils::StringUtils::StringUtils::utf8FromUcs4((a->getValue("lemma"))) + string("\"");
+				tag = cg3_tag_create_u8(applicator, baseform.c_str());
+				cg3_reading_addtag(reading, tag);
+				string taglist = string(utils::StringUtils::StringUtils::utf8FromUcs4((a->getValue("tags"))));
+				string buf = "";
+				for(string::iterator it2 = taglist.begin(); it2 != taglist.end(); it2++) {
+					if(*it2 == '+' && buf.length() > 0) {
+						tag = cg3_tag_create_u8(applicator, buf.c_str());
+						cg3_reading_addtag(reading, tag);
+						buf = "";
+						continue;
+					} else if(*it2 == '+' && buf.length() == 0) {
+						continue;
+					}
+					buf = buf + *it2;
+				}
 				num_analyses++;
+				cg3_cohort_addreading(cohort, reading);
 				++it;
 			}
+			cg3_sentence_addcohort(sentence, cohort);
 			fprintf(stderr, "CgRuleEngine::check %d analyses\n", num_analyses);
 			
 		}
+		int num_cohorts = cg3_sentence_numcohorts(sentence);
+		fprintf(stderr, "CgRuleEngine::num_cohorts %d \n", num_cohorts);
+		cg3_sentence_runrules(applicator, sentence);
+
+
+		cg3_tag *tag = 0;	
+		cg3_cohort *cohort = 0;
+		cg3_reading *reading = 0;
+		size_t ci = 0, ce = 0, ri = 0, re = 0, ti = 0, te = 0;
+		const char *tmp;
+
+		for (ci = 0, ce = cg3_sentence_numcohorts(sentence) ; ci != ce ; ++ci) {
+			cohort = cg3_sentence_getcohort(sentence, ci);
+			tag = cg3_cohort_getwordform(cohort);
+			tmp = cg3_tag_gettext_u8(tag);
+			fprintf(stderr, "CG: %s\n", tmp);
+	
+			for (ri = 0, re = cg3_cohort_numreadings(cohort) ; ri != re ; ++ri) {
+				reading = cg3_cohort_getreading(cohort, ri);
+				fprintf(stderr, "\t");
+				for (ti = 0, te = cg3_reading_numtags(reading) ; ti != te ; ++ti) {
+					tag = cg3_reading_gettag(reading, ti);
+					tmp = cg3_tag_gettext_u8(tag);
+					fprintf(stderr, "%s ", tmp);
+				}
+				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {
+					uint32_t rule_line = cg3_reading_gettrace(reading, ti);
+					fprintf(stderr, "CG: TRACE:%u ", rule_line);
+				}
+				fprintf(stderr, "CG: \n");
+			}
+		}
+
+
+
 	}
 	
 	return;
