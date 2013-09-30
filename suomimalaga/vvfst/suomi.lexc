@@ -11,6 +11,8 @@ NimiLaatusanaYsJatko	;
 LEXICON LaatusanaYsJatko
 InenLoppuisenYsJatko	;
 [Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
+-[Bh][Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nl	;
+-[Bc]:-	Loppu	;
 
 LEXICON InenLoppuisenYsJatko
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;

@@ -1381,6 +1381,7 @@ LEXICON NOUN Kansi_t
 [Sg][Nm]si:si	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;
 s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
@@ -1391,7 +1392,6 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 LEXICON NOUN Kansi_l
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
-[Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
@@ -1718,6 +1718,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kevät
