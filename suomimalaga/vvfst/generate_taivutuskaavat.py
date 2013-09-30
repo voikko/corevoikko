@@ -202,7 +202,20 @@ MULTI_ORDINALS = {
 	u"SadeNy": [u"kymmenennellä", u"sadannella", u"tuhannennella"],
 	u"SablNy": [u"kymmenenneltä", u"sadannelta", u"tuhannennelta"],
 	u"SallNy": [u"kymmenennelle", u"sadannelle", u"tuhannennelle"],
-	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta"]
+	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta"],
+	u"SgNm": [u"kymmenensien", u"sadansien", u"tuhannensien"],
+	u"SpNm": [u"kymmenensiä", u"sadansia", u"tuhannensia"],
+	u"StrNm": [u"kymmenensiksi", u"sadansiksi", u"tuhannensiksi"],
+	u"SesNm": [u"kymmenensinä", u"sadansina", u"tuhannensina"],
+	u"SineNm": [u"kymmenensissä", u"sadansissa", u"tuhannensissa"],
+	u"SelaNm": [u"kymmenensistä", u"sadansista", u"tuhannensista"],
+	u"SillNm": [u"kymmenensiin", u"sadansiin", u"tuhannensiin"],
+	u"SadeNm": [u"kymmenensillä", u"sadansilla", u"tuhannensilla"],
+	u"SablNm": [u"kymmenensiltä", u"sadansilta", u"tuhannensilta"],
+	u"SallNm": [u"kymmenensille", u"sadansille", u"tuhannensille"],
+	u"SabNm": [u"kymmenensittä", u"sadansitta", u"tuhannensitta"],
+	u"SinNm": [u"kymmenensin", u"sadansin", u"tuhannensin"],
+	u"SkoNm": [u"kymmenensine", u"sadansine", u"tuhannensine"]
 }
 
 for sija in MULTI_ORDINALS.keys():

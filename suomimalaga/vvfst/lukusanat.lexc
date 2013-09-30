@@ -31,12 +31,12 @@ LukusanaSinNm29Kertoimet	;
 LukusanaSkoNm29Kertoimet	;
 [Sn][Ny][Xp]sata[X]sata@U.LS.SNNY@:sata@U.LS.SNNY@	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]sata[X]sadat@U.LS.SNNM@:sadat@U.LS.SNNM@	LukusanaLiitesana_a	;
-[Sn][Ny][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
-[Sn][Nm][Xp]tuhat[X]tuhannet:tuhannet	LukusanaLiitesana_a	;
-[Sn][Ny][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
-[Sn][Nm][Xp]miljoona[X]miljoonat:miljoonat	LukusanaLiitesana_a	;
-[Sn][Ny][Xp]miljardi[X]miljardi:miljardi	LukusanaLiitesana_a	;
-[Sn][Nm][Xp]miljardi[X]miljardit:miljardit	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]tuhat[X]tuhat@U.LS.SNNY@:tuhat@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]tuhat[X]tuhannet@U.LS.SNNM@:tuhannet@U.LS.SNNM@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]miljoona[X]miljoona@U.LS.SNNY@:miljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]miljoona[X]miljoonat@U.LS.SNNM@:miljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]miljardi[X]miljardi@U.LS.SNNY@:miljardi@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]miljardi[X]miljardit@U.LS.SNNM@:miljardit@U.LS.SNNM@	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
@@ -50,6 +50,32 @@ LEXICON Lukusana
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
 [Lu]:	LukusananAlkuKerroin	;
 
+LEXICON JärjestysluvunAlkuKerroin
+JärjestyslukuSgNy39Kertoimet	;
+JärjestyslukuSpNy39Kertoimet	;
+JärjestyslukuStrNy39Kertoimet	;
+JärjestyslukuSesNy39Kertoimet	;
+JärjestyslukuSineNy39Kertoimet	;
+JärjestyslukuSelaNy39Kertoimet	;
+JärjestyslukuSillNy39Kertoimet	;
+JärjestyslukuSadeNy39Kertoimet	;
+JärjestyslukuSablNy39Kertoimet	;
+JärjestyslukuSallNy39Kertoimet	;
+JärjestyslukuSabNy39Kertoimet	;
+JärjestyslukuSgNm39Kertoimet	;
+JärjestyslukuSpNm39Kertoimet	;
+JärjestyslukuStrNm39Kertoimet	;
+JärjestyslukuSesNm39Kertoimet	;
+JärjestyslukuSineNm39Kertoimet	;
+JärjestyslukuSelaNm39Kertoimet	;
+JärjestyslukuSillNm39Kertoimet	;
+JärjestyslukuSadeNm39Kertoimet	;
+JärjestyslukuSablNm39Kertoimet	;
+JärjestyslukuSallNm39Kertoimet	;
+JärjestyslukuSabNm39Kertoimet	;
+JärjestyslukuSinNm39Kertoimet	;
+JärjestyslukuSkoNm39Kertoimet	;
+
 LEXICON Järjestysluku
 [Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;
 [Lu][Xp]toinen[X]toi:toi	JärjestyslukuNainen_a	;
@@ -60,6 +86,7 @@ LEXICON Järjestysluku
 [Lu][Xp]seitsemäs[X]seitsemä:seitsemä	JärjestyslukuKahdeksas_ä	;
 [Lu][Xp]kahdeksas[X]kahdeksa:kahdeksa	JärjestyslukuKahdeksas_a	;
 [Lu][Xp]yhdeksäs[X]yhdeksä:yhdeksä	JärjestyslukuKahdeksas_ä	;
+[Lu]:	JärjestysluvunAlkuKerroin	;
 
 LEXICON Erikoisluku
 [Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;

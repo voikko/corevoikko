@@ -2137,3 +2137,5 @@ seinäjokelainen
 rovaniemeläinen
 sadattuhannet
 !sadattuhatta
+kymmenennen
+sadansina
