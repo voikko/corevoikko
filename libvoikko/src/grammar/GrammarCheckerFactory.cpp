@@ -56,7 +56,9 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionar
 		return new NullGrammarChecker();
 	}
 	if (dictionary.getGrammarBackend() == "finnish") {
-		return new FinnishGrammarChecker(dictionary.getGrammarPath());
+		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
+		cerr << "   " << dictionary.getMorPath() << endl;	
+		return new FinnishGrammarChecker(dictionary.getMorPath());
 	}
 	#ifdef HAVE_VISLCG3
 	if (dictionary.getGrammarBackend() == "vislcg3") {

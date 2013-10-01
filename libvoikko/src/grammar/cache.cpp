@@ -80,8 +80,8 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	memcpy(voikkoOptions->grammarChecker->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikkoOptions->grammarChecker->gc_cache.paragraph[textlen] = L'\0';
-	//FinnishAnalysis analyser;
-	HfstAnalysis analyser(voikkoOptions->grammarChecker->analyser);
+	//HfstAnalysis analyser(voikkoOptions->grammarChecker->analyser);
+	FinnishAnalysis analyser(voikkoOptions->grammarChecker->analyser);
 	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
 	if (!para) {
 		return;

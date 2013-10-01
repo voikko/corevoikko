@@ -31,6 +31,8 @@
 #include "grammar/FinnishRuleEngine.hpp"
 #include "grammar/FinnishRuleEngine/checks.hpp"
 
+#include <iostream>
+
 
 #ifdef HAVE_MALAGA
         #include "autocorrect/AutoCorrect.hpp"
@@ -38,20 +40,34 @@
 
 using namespace libvoikko::autocorrect;
 
+using namespace std;
 
 namespace libvoikko { namespace grammar {
 
 FinnishRuleEngine::FinnishRuleEngine()  {
 
-	
+	cerr << "FinnishRuleEngine::FinnishRuleEngine()" << endl ; 	
 }
 
 FinnishRuleEngine::~FinnishRuleEngine() {
 
 }
 
-void FinnishRuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
+int FinnishRuleEngine::load(const std::string path) {
+	return 0; 
+}
 
+void FinnishRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
+	cerr << "FinnishRuleEngine::check() GcCache" << endl ; 	
+
+	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
+		negativeVerbCheck.check(cache, paragraph->sentences[i]);
+	}
+}
+
+
+void FinnishRuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
+	cerr << "FinnishRuleEngine::check() voikko_options_t" << endl ; 	
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
 		// TODO: Autocorrect data should be moved to a separate data file (VFST) in

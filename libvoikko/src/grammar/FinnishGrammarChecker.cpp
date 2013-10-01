@@ -33,14 +33,18 @@
 
 namespace libvoikko { namespace grammar {
 
-FinnishGrammarChecker::FinnishGrammarChecker()  {
+FinnishGrammarChecker::FinnishGrammarChecker() { 
+
 
 	
 }
 
-FinnishGrammarChecker::FinnishGrammarChecker(const string & s)  {
+FinnishGrammarChecker::FinnishGrammarChecker(const string & dir)  {
 
-	cerr << "FinnishGrammarChecker::FinnishGrammarChecker()" << endl;	
+	cerr << "FinnishGrammarChecker::FinnishGrammarChecker()" << dir << endl;	
+	ruleEngine = new FinnishRuleEngine();
+
+	analyser = new morphology::MalagaAnalyzer(dir);
 }
 
 

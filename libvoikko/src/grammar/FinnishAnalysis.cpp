@@ -33,6 +33,7 @@
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cstring>
+#include <stdio.h>
 
 using namespace libvoikko::grammar;
 using namespace std;
@@ -43,6 +44,14 @@ FinnishAnalysis::FinnishAnalysis()  {
 
 	
 }
+
+FinnishAnalysis::FinnishAnalysis(morphology::Analyzer * a)  {
+
+	analyser = a;
+	
+}
+
+
 
 FinnishAnalysis::~FinnishAnalysis() {
 
@@ -74,6 +83,7 @@ void FinnishAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * to
 	wchar_t * wordBuffer =
 	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
 	                                                   token->tokenlen);
+	fprintf(stderr, "FinnishAnalysis::analyse_token (%ls)\n", wordBuffer);
 	morphology::Analyzer * analyzer = voikkoOptions->morAnalyzer;
 	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer);
 	token->analyses = analyses;

@@ -30,6 +30,7 @@
 #define VOIKKO_GRAMMAR_CHECK_NEGATIVE_VERB_CHECK
 
 #include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
+#include "grammar/GcCache.hpp"
 
 namespace libvoikko { namespace grammar { namespace check {
 /**
@@ -38,6 +39,7 @@ namespace libvoikko { namespace grammar { namespace check {
 class NegativeVerbCheck : public SentenceCheck {
 	public:
 		void check(voikko_options_t * options, const Sentence * sentence);
+		void check(GcCache & cache, const Sentence * sentence);
 };
 
 } } }

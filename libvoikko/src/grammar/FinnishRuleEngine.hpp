@@ -49,9 +49,11 @@ class FinnishRuleEngine : public RuleEngine {
 		
 		~FinnishRuleEngine();
 		
-		void init();
+		int load(const std::string path);
 
 		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
+
+		void check(GcCache & cache, const Paragraph * para);
 	
 	private:
 		check::CapitalizationCheck capitalizationCheck;

@@ -29,10 +29,31 @@
 #include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
 #include "grammar/error.hpp"
 #include "grammar/cache.hpp"
+#include "grammar/GcCache.hpp"
+#include <iostream>
 
 using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
+
+void NegativeVerbCheck::check(GcCache & cache, const Sentence * sentence) {
+	cerr << "NegativeVerbCheck::check GcCache" << endl;
+	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+		const Token * token = sentence->tokens + i;
+		if (token->type == TOKEN_WORD &&
+		    (sentence->tokens + i + 1)->type == TOKEN_WHITESPACE &&
+		    (sentence->tokens + i + 2)->type == TOKEN_WORD) {
+			const Token * word2 = sentence->tokens + i + 2;
+			if (token->isVerbNegative && word2->isPositiveVerb) {
+				CacheEntry * e = new CacheEntry(0);
+				e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
+				e->error.startpos = token->pos;
+				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
+				gc_cache_append_error(cache, e);
+			}
+		}
+	}
+}
 
 void NegativeVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
