@@ -56,14 +56,17 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 	}
 	CacheEntry * e = voikkoOptions->grammarChecker->gc_cache.firstError;
 	int preverrors = 0;
+	fprintf(stderr, "cache.cpp: gc_error_from_cache: %d\n", preverrors);
 	while (e) {
 		if (preverrors >= skiperrors &&
 		    e->error.startpos >= startpos) {
+			fprintf(stderr, "cache.cpp: gc_error_from_cache: returned error (%d)\n", preverrors);
 			return &e->error;
 		}
 		preverrors++;
 		e = e->nextError;
 	}
+	fprintf(stderr, "cache.cpp: gc_error_from_cache: no error!\n");
 	return &no_grammar_error;
 }
 

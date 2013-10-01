@@ -54,7 +54,7 @@ list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
 }
 
 list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
-	cerr << "HfstAnalyzer::analyze (" << string(word) << ")" << endl;
+	//cerr << "HfstAnalyzer::analyze (" << string(word) << ")" << endl;
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
@@ -76,7 +76,7 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
 		string tags = "";
 		lemma = analysis.substr(0,analysis.find("+"));
 		tags = analysis.substr(analysis.find("+"),analysis.length()-1);
-		cerr << "  analysis  " << lemma << "/" << tags << endl; 
+		//cerr << "  analysis  " << lemma << "/" << tags << endl; 
 		Analysis * a = new Analysis();
 		a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
 		a->addAttribute("tags",  StringUtils::ucs4FromUtf8(tags.c_str()));

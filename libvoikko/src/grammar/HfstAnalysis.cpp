@@ -80,9 +80,9 @@ void HfstAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token
 
 	token->analyses = analyser->analyze(wordBuffer);
 
-	int num_analyses = 0;
-	num_analyses = token->analyses->size();	
-	fprintf(stderr, "HfstAnalysis::analyse_token (num: %d)\n", num_analyses);
+	//int num_analyses = 0;
+	//num_analyses = token->analyses->size();	
+	//fprintf(stderr, "HfstAnalysis::analyse_token (num: %d)\n", num_analyses);
 }
 
 /** Analyse sentence text. Sentence type must be set by the caller. */

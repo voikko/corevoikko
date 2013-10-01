@@ -26,6 +26,7 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#include "grammar/error.hpp"
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
 #include "grammar/CgRuleEngine.hpp"
@@ -145,8 +146,9 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 					fprintf(stderr, "%s ", tmp);
 					if(tmp[0] == '&') { 
 						// We've found an error tag, mark the current cohort
-						fprintf(stderr, "\nnew CacheEntry\n");
+						fprintf(stderr, "\nnew CacheEntry (%ld, %d, %d)\n", ci, GCERR_NEGATIVE_VERB_MISMATCH, 1);
 						CacheEntry * e = new CacheEntry(0);
+						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 						e->error.startpos = ci;
 						e->error.errorlen = 1;
 						gc_cache_append_error(cache, e);
