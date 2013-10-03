@@ -32,6 +32,7 @@
 #include "grammar/GrammarChecker.hpp"
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace grammar {
 
@@ -45,7 +46,7 @@ class GrammarCheckerFactory {
 		 * The object must be terminated and deleted after use.
 		 * @throws DictionaryException if the checker cannot be initialised.
 		 */
-		static GrammarChecker * getGrammarChecker(const setup::Dictionary & dictionary)
+		static GrammarChecker * getGrammarChecker(voikko_options_t * voikkoOptions, const setup::Dictionary & dictionary)
 		                              throw(setup::DictionaryException);
 };
 
