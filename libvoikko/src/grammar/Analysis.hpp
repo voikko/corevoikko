@@ -40,7 +40,7 @@ class Analysis {
 	public:
 
 		virtual Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) = 0 ;
-	
+
 	private:
 
 		/** Analyse given text token. Token type, length and text must have already

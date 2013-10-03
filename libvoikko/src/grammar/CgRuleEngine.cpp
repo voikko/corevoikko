@@ -64,7 +64,7 @@ int CgRuleEngine::load(const std::string path) {
 	return 1;
 }
 
-void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) { 
+void CgRuleEngine::check(voikko_options_t *voikkoOptions, const Paragraph * paragraph) { 
 	fprintf(stderr, "CgRuleEngine::check\n");
 
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
@@ -151,7 +151,7 @@ void CgRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 						e->error.startpos = ci;
 						e->error.errorlen = 1;
-						gc_cache_append_error(cache, e);
+						gc_cache_append_error(voikkoOptions->grammarChecker->gc_cache, e);
 					}
 				}
 				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {

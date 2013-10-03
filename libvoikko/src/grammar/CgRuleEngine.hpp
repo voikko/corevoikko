@@ -46,7 +46,7 @@ class CgRuleEngine : public RuleEngine {
 		
 		int load(const std::string path);
 
-		void check(GcCache & cache, const Paragraph * para);
+		void check(voikko_options_t *voikkoOptions, const Paragraph * para);
 	
 	private:
 		// Using the C API until we get a C++ one

@@ -204,7 +204,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		options->dictionary = dict;
 		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 		options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
-		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(dict);
+		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(options, dict);
 		options->suggestionGenerator =
 			spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);

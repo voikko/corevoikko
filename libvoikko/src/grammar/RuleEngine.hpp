@@ -29,19 +29,23 @@
 #ifndef VOIKKO_GRAMMAR_RULEENGINE
 #define VOIKKO_GRAMMAR_RULEENGINE
 
+#include "setup/setup.hpp"
 #include "grammar/GcCache.hpp"
 #include "grammar/Paragraph.hpp"
 
-namespace libvoikko { namespace grammar {
+
+namespace libvoikko { 
+
+namespace grammar {
 
 class RuleEngine {
 	public:
 		
 		virtual	int load(const std::string path) = 0;
 
-		virtual void check(GcCache & cache, const Paragraph * para) = 0;
+		virtual void check(voikko_options_t *voikkoOptions, const Paragraph * para) = 0;
 	
-		virtual ~RuleEngine();		
+		virtual ~RuleEngine() = 0 ;		
 
 	
 };

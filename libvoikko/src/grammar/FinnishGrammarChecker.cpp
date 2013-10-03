@@ -39,12 +39,15 @@ FinnishGrammarChecker::FinnishGrammarChecker() {
 	
 }
 
-FinnishGrammarChecker::FinnishGrammarChecker(const string & dir)  {
+FinnishGrammarChecker::FinnishGrammarChecker(voikko_options_t * voikkoOptions, const string & dir)  {
 
 	cerr << "FinnishGrammarChecker::FinnishGrammarChecker()" << dir << endl;	
 	ruleEngine = new FinnishRuleEngine();
 
+	options = voikkoOptions ; 
 	analyser = new morphology::MalagaAnalyzer(dir);
+
+	//analysis = new FinnishAnalysis(analyser);
 }
 
 

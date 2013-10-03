@@ -54,7 +54,7 @@ class FinnishRuleEngine : public RuleEngine {
 		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
 
 		void check(GcCache & cache, const Paragraph * para);
-	
+
 	private:
 		check::CapitalizationCheck capitalizationCheck;
 		check::NegativeVerbCheck negativeVerbCheck;

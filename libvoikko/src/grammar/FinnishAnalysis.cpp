@@ -45,9 +45,10 @@ FinnishAnalysis::FinnishAnalysis()  {
 	
 }
 
-FinnishAnalysis::FinnishAnalysis(morphology::Analyzer * a)  {
+FinnishAnalysis::FinnishAnalysis(voikko_options_t * voikkoOptions, morphology::Analyzer * a)  {
 
 	analyser = a;
+	options = voikkoOptions;
 	
 }
 

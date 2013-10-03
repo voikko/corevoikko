@@ -37,6 +37,8 @@
 using namespace libvoikko::grammar;
 using namespace std;
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar {
+
+}
 
 }

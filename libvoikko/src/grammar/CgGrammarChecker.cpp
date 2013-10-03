@@ -49,6 +49,8 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 
 	analyser = new morphology::HfstAnalyzer(f_analyser);
 
+//	analysis = new HfstAnalysis(analyser);
+
 //	tokeniser = new tokenizer::Tokenizer();
 
 }

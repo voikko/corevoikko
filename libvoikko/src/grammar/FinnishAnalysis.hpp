@@ -32,13 +32,14 @@
 #include "grammar/Analysis.hpp"
 #include "grammar/Paragraph.hpp"
 #include "morphology/Analyzer.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace grammar {
 
 class FinnishAnalysis : public Analysis {
 	public:
 		FinnishAnalysis();
-		FinnishAnalysis(morphology::Analyzer * a);
+		FinnishAnalysis(voikko_options_t * voikkoOptions, morphology::Analyzer * a);
 
 		
 		~FinnishAnalysis();
@@ -48,6 +49,8 @@ class FinnishAnalysis : public Analysis {
 		Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
 
 		morphology::Analyzer * analyser; 
+
+		voikko_options_t * options;
 	
 	private:
 		FinnishAnalysis(FinnishAnalysis const & other);

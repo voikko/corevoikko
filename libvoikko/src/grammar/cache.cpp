@@ -30,6 +30,7 @@
 #include "grammar/cachesetup.hpp"
 #include "grammar/GrammarChecker.hpp"
 #include "grammar/cache.hpp"
+#include "grammar/Analysis.hpp"
 #include "grammar/FinnishAnalysis.hpp"
 #include "grammar/FinnishRuleEngine.hpp"
 #include "grammar/HfstAnalysis.hpp"
@@ -81,7 +82,8 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	memcpy(voikkoOptions->grammarChecker->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikkoOptions->grammarChecker->gc_cache.paragraph[textlen] = L'\0';
 	//HfstAnalysis analyser(voikkoOptions->grammarChecker->analyser);
-	FinnishAnalysis analyser(voikkoOptions->grammarChecker->analyser);
+	FinnishAnalysis analyser(voikkoOptions, voikkoOptions->grammarChecker->analyser);
+	//Analysis * analyser = voikkoOptions->grammarChecker->analysis;
 	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
 	if (!para) {
 		return;
@@ -135,7 +137,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 */
 	//checks.check(voikkoOptions, para);
 	fprintf(stderr, "cache.cpp: Running checks...\n");
-	checks->check(voikkoOptions->grammarChecker->gc_cache, para);
+	checks->check(voikkoOptions, para);
 
 	delete para;
 }

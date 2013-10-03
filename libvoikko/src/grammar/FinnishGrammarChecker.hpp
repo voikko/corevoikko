@@ -43,10 +43,13 @@ class FinnishGrammarChecker : public GrammarChecker {
 		FinnishGrammarChecker();
 
 		FinnishGrammarChecker(const string & s);
+		FinnishGrammarChecker(voikko_options_t * voikkoOptions, const string & s);
 		
 		~FinnishGrammarChecker();
 
 		void init();
+
+		voikko_options_t * options;
 		
 	private:
 
