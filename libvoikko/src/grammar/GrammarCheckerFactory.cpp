@@ -66,7 +66,7 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voi
 		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
 		cerr << "   " << dictionary.getGramMorPath() << endl;	
 		cerr << "   " << dictionary.getGrammarBackend() << endl;	
-		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath());
+		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath(), voikkoOptions);
 	}
 	#endif
 

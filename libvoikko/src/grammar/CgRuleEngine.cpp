@@ -34,9 +34,11 @@
 
 namespace libvoikko { namespace grammar {
 
-CgRuleEngine::CgRuleEngine()  {
+CgRuleEngine::CgRuleEngine(voikko_options_t * voikkoOptions)  {
 	grammar = 0;
 	applicator = 0;
+
+	options = voikkoOptions ; 
 	
 	fprintf(stderr, "CgRuleEngine::CgRuleEngine\n");
 	int res = cg3_init(stdin, stdout, stderr);
@@ -64,7 +66,7 @@ int CgRuleEngine::load(const std::string path) {
 	return 1;
 }
 
-void CgRuleEngine::check(voikko_options_t *voikkoOptions, const Paragraph * paragraph) { 
+void CgRuleEngine::check(const Paragraph * paragraph) { 
 	fprintf(stderr, "CgRuleEngine::check\n");
 
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
@@ -151,7 +153,7 @@ void CgRuleEngine::check(voikko_options_t *voikkoOptions, const Paragraph * para
 						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 						e->error.startpos = ci;
 						e->error.errorlen = 1;
-						gc_cache_append_error(voikkoOptions->grammarChecker->gc_cache, e);
+						gc_cache_append_error(options->grammarChecker->gc_cache, e);
 					}
 				}
 				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {

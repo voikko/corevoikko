@@ -40,13 +40,15 @@ namespace libvoikko { namespace grammar {
 class CgRuleEngine : public RuleEngine {
 
 	public:
-		CgRuleEngine();
+		CgRuleEngine(voikko_options_t * options);
 		
 		~CgRuleEngine();
 		
 		int load(const std::string path);
 
-		void check(voikko_options_t *voikkoOptions, const Paragraph * para);
+		void check(const Paragraph * para);
+
+		voikko_options_t * options;
 	
 	private:
 		// Using the C API until we get a C++ one

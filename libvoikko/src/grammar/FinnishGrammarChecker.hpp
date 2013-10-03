@@ -40,14 +40,7 @@ namespace libvoikko { namespace grammar {
 
 class FinnishGrammarChecker : public GrammarChecker {
 	public:
-<<<<<<< HEAD
-		FinnishGrammarChecker();
-
-		FinnishGrammarChecker(const string & s);
-		FinnishGrammarChecker(voikko_options_t * voikkoOptions, const string & s);
-=======
 		FinnishGrammarChecker(voikko_options_t * voikkoOptions);
->>>>>>> 3b40d2e5de5deda4441925f6ef971a2ec889f097
 		
 		~FinnishGrammarChecker();
 

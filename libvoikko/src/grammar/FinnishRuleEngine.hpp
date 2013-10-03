@@ -53,8 +53,6 @@ class FinnishRuleEngine : public RuleEngine {
 
 		void check(const Paragraph * paragraph);
 
-		void check(GcCache & cache, const Paragraph * para);
-
 	private:
 		check::CapitalizationCheck capitalizationCheck;
 		check::NegativeVerbCheck negativeVerbCheck;

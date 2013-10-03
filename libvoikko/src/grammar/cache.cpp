@@ -137,7 +137,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 */
 	//checks.check(voikkoOptions, para);
 	fprintf(stderr, "cache.cpp: Running checks...\n");
-	checks->check(voikkoOptions, para);
+	checks->check(para);
 
 	delete para;
 }

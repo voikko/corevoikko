@@ -57,15 +57,6 @@ int FinnishRuleEngine::load(const std::string path) {
 	return 0; 
 }
 
-void FinnishRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
-	cerr << "FinnishRuleEngine::check() GcCache" << endl ; 	
-
-	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
-		negativeVerbCheck.check(cache, paragraph->sentences[i]);
-	}
-}
-
-
 void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	cerr << "FinnishRuleEngine::check() voikko_options_t" << endl ; 	
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
