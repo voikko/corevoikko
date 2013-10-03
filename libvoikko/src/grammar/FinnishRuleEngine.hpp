@@ -45,13 +45,13 @@ namespace libvoikko { namespace grammar {
 class FinnishRuleEngine : public RuleEngine {
 
 	public:
-		FinnishRuleEngine();
+		FinnishRuleEngine(voikko_options_t * voikkoOptions);
 		
 		~FinnishRuleEngine();
 		
 		int load(const std::string path);
 
-		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
+		void check(const Paragraph * paragraph);
 
 		void check(GcCache & cache, const Paragraph * para);
 
@@ -61,6 +61,7 @@ class FinnishRuleEngine : public RuleEngine {
 		check::CompoundVerbCheck compoundVerbCheck;
 		check::SidesanaCheck sidesanaCheck;
 		check::MissingVerbCheck missingVerbCheck;
+		voikko_options_t * voikkoOptions;
 
 		FinnishRuleEngine(FinnishRuleEngine const & other);
 		FinnishRuleEngine & operator = (const FinnishRuleEngine & other);

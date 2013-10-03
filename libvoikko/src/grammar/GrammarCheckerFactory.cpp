@@ -42,7 +42,8 @@ using namespace std;
 
 namespace libvoikko { namespace grammar {
 
-GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions, const setup::Dictionary & dictionary)
+GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
+	                              const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
 
 	cerr << "morPath: " << dictionary.getMorPath() << endl; 
@@ -58,7 +59,7 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voi
 	if (dictionary.getGrammarBackend() == "finnish") {
 		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
 		cerr << "   " << dictionary.getMorPath() << endl;	
-		return new FinnishGrammarChecker(voikkoOptions, dictionary.getMorPath());
+		return new FinnishGrammarChecker(voikkoOptions);
 	}
 	#ifdef HAVE_VISLCG3
 	if (dictionary.getGrammarBackend() == "vislcg3") {

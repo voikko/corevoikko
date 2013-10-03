@@ -44,8 +44,8 @@ using namespace std;
 
 namespace libvoikko { namespace grammar {
 
-FinnishRuleEngine::FinnishRuleEngine()  {
-
+FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
+	 voikkoOptions(voikkoOptions) {
 	cerr << "FinnishRuleEngine::FinnishRuleEngine()" << endl ; 	
 }
 
@@ -66,7 +66,7 @@ void FinnishRuleEngine::check(GcCache & cache, const Paragraph * paragraph) {
 }
 
 
-void FinnishRuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
+void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	cerr << "FinnishRuleEngine::check() voikko_options_t" << endl ; 	
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
