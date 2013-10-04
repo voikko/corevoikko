@@ -874,6 +874,7 @@ LEXICON NOUN Apila_y
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Sukija [Sp][Ny]t<A>:t<A>	Liitesana_<A> ;
 
 LEXICON NOUN Apila_m
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
