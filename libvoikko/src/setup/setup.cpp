@@ -42,7 +42,6 @@
 #include <sys/stat.h>
 #include <cstdlib>
 #include <string>
-#include <iostream>
 
 #ifdef WIN32
 #include <windows.h>
@@ -200,7 +199,6 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		else {
 			dict = DictionaryFactory::load(string(langcode));
 		}
-		cerr << "setup::voikkoInit " << dict.getMorBackend() << " " <<  dict.getGrammarBackend()  << endl;
 		options->dictionary = dict;
 		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 		options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);

@@ -31,9 +31,6 @@
 #include "grammar/FinnishGrammarChecker.hpp"
 #include "porting.h"
 
-#include <iostream>
-
-
 #ifdef HAVE_VISLCG3
 #include "grammar/CgGrammarChecker.hpp"
 #endif
@@ -45,27 +42,14 @@ namespace libvoikko { namespace grammar {
 GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
 	                              const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
-
-	cerr << "morPath: " << dictionary.getMorPath() << endl; 
-	cerr << "gramMorPath: " << dictionary.getGramMorPath() << endl; 
-	cerr << "grammarPath: " << dictionary.getGrammarPath() << endl; 
-	cerr << "morBackend: " << dictionary.getMorBackend() << endl; 
-	cerr << "gramMorBackend: " << dictionary.getGramMorBackend() << endl; 
-	cerr << "grammarBackend: " << dictionary.getGrammarBackend() << endl; 
-
 	if (dictionary.getGrammarBackend() == "null") {
 		return new NullGrammarChecker();
 	}
 	if (dictionary.getGrammarBackend() == "finnish") {
-		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
-		cerr << "   " << dictionary.getMorPath() << endl;	
 		return new FinnishGrammarChecker(voikkoOptions);
 	}
 	#ifdef HAVE_VISLCG3
 	if (dictionary.getGrammarBackend() == "vislcg3") {
-		cerr << "GrammarCheckerFactory::getGrammarChecker: " <<endl; 
-		cerr << "   " << dictionary.getGramMorPath() << endl;	
-		cerr << "   " << dictionary.getGrammarBackend() << endl;	
 		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath(), voikkoOptions);
 	}
 	#endif

@@ -32,7 +32,6 @@
 #include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <stdio.h>
 
 typedef voikko_grammar_error VoikkoGrammarError; // for now
 
@@ -40,9 +39,7 @@ namespace libvoikko {
 
 VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * options, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
-	fprintf(stderr, "interface.cpp: voikkoNextGrammarErrorUcs4\n");	
 	if (text_ucs4 == 0 || wtextlen == 0) {
-		fprintf(stderr, "interface.cpp: %ld (%ls) returning\n", wtextlen, text_ucs4);	
 		return 0;
 	}
 	const voikko_grammar_error * c_error =
@@ -53,7 +50,6 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	}
 	
 	if (!c_error || c_error->error_code == 0) {
-		fprintf(stderr, "interface.cpp: not an error, or error code 0\n");	
 		return 0;
 	}
 	

@@ -29,12 +29,9 @@
 #include "setup/setup.hpp"
 #include "grammar/FinnishGrammarChecker.hpp"
 
-#include <iostream>
-
 namespace libvoikko { namespace grammar {
 
 FinnishGrammarChecker::FinnishGrammarChecker(voikko_options_t * voikkoOptions)  {
-	cerr << "FinnishGrammarChecker::FinnishGrammarChecker()" << endl;
 	ruleEngine = new FinnishRuleEngine(voikkoOptions);
 }
 

@@ -32,9 +32,6 @@
 #include "grammar/cache.hpp"
 #include "grammar/Analysis.hpp"
 #include "grammar/FinnishAnalysis.hpp"
-#include "grammar/FinnishRuleEngine.hpp"
-#include "grammar/HfstAnalysis.hpp"
-#include "grammar/CgRuleEngine.hpp"
 #include <cstring>
 #include <cstdlib>
 
@@ -48,7 +45,6 @@ static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
 
-	fprintf(stderr, "cache.cpp: gc_error_from_cache\n");
 	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
 		return 0;
 	}
@@ -57,23 +53,19 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 	}
 	CacheEntry * e = voikkoOptions->grammarChecker->gc_cache.firstError;
 	int preverrors = 0;
-	fprintf(stderr, "cache.cpp: gc_error_from_cache: %d\n", preverrors);
 	while (e) {
 		if (preverrors >= skiperrors &&
 		    e->error.startpos >= startpos) {
-			fprintf(stderr, "cache.cpp: gc_error_from_cache: returned error (%d)\n", preverrors);
 			return &e->error;
 		}
 		preverrors++;
 		e = e->nextError;
 	}
-	fprintf(stderr, "cache.cpp: gc_error_from_cache: no error!\n");
 	return &no_grammar_error;
 }
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
 
-	fprintf(stderr, "cache.cpp: gc_paragraph_to_cache\n");
 	gc_clear_cache(voikkoOptions);
 	voikkoOptions->grammarChecker->gc_cache.paragraph = new wchar_t[textlen + 1];
 	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
@@ -81,7 +73,6 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	memcpy(voikkoOptions->grammarChecker->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikkoOptions->grammarChecker->gc_cache.paragraph[textlen] = L'\0';
-	//HfstAnalysis analyser(voikkoOptions->grammarChecker->analyser);
 	FinnishAnalysis analyser(voikkoOptions, voikkoOptions->grammarChecker->analyser);
 	//Analysis * analyser = voikkoOptions->grammarChecker->analysis;
 	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
@@ -113,37 +104,11 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	
 	RuleEngine * checks = voikkoOptions->grammarChecker->ruleEngine;
-//	FinnishRuleEngine checks;
-//	CgRuleEngine cgchecks;
-//	cgchecks.load(std::string("/home/fran/.voikko/4/se-x-standard/sme-gramchk.bin"));
-/*	for (size_t i = 0; i < para->sentenceCount; i++) {
-#ifdef HAVE_MALAGA
-		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
-		// later format revisions. Old implementation is only available to support
-		// v2 dictionary format.
-		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
-#endif
-//		gc_local_punctuation(voikkoOptions, para->sentences[i]);
-//		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
-//		gc_repeating_words(voikkoOptions, para->sentences[i]);
-//		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
-//		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
-//		sidesanaCheck.check(voikkoOptions, para->sentences[i]);
-//		missingVerbCheck.check(voikkoOptions, para->sentences[i]);
-		checks.check(voikkoOptions, para->sentences[i]);
-	}
-	//capitalizationCheck.check(voikkoOptions, para);
-	//gc_end_punctuation(voikkoOptions, para);
-*/
-	//checks.check(voikkoOptions, para);
-	fprintf(stderr, "cache.cpp: Running checks...\n");
 	checks->check(para);
-
 	delete para;
 }
 
 void gc_cache_append_error(GcCache & gc_cache, CacheEntry * new_entry) {
-	fprintf(stderr, "cache.cpp: gc_cache_append_error 2\n");
 	CacheEntry * entry = gc_cache.firstError;
 	if (!entry) {
 		gc_cache.firstError = new_entry;
@@ -171,7 +136,6 @@ void gc_cache_append_error(GcCache & gc_cache, CacheEntry * new_entry) {
 
 
 void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
-	fprintf(stderr, "cache.cpp: gc_cache_append_error 1\n");
 	CacheEntry * entry = voikkoOptions->grammarChecker->gc_cache.firstError;
 	if (!entry) {
 		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;
