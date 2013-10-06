@@ -153,7 +153,7 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 						e->error.startpos = ci;
 						e->error.errorlen = 1;
-						gc_cache_append_error(options->grammarChecker->cache, e);
+						options->grammarChecker->cache.appendError(e);
 					}
 				}
 				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {

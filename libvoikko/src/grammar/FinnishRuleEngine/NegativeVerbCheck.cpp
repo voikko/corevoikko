@@ -49,7 +49,7 @@ void NegativeVerbCheck::check(GcCache & cache, const Sentence * sentence) {
 				e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 				e->error.startpos = token->pos;
 				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(cache, e);
+				cache.appendError(e);
 			}
 		}
 	}
@@ -67,7 +67,7 @@ void NegativeVerbCheck::check(voikko_options_t * options, const Sentence * sente
 				e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
 				e->error.startpos = token->pos;
 				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			}
 		}
 	}

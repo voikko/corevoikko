@@ -49,4 +49,30 @@ void GcCache::clear() {
 	firstError = 0;
 }
 
+void GcCache::appendError(grammar::CacheEntry * newEntry) {
+	CacheEntry * entry = firstError;
+	if (!entry) {
+		firstError = newEntry;
+		return;
+	}
+	if (entry->error.startpos > newEntry->error.startpos) {
+		newEntry->nextError = firstError;
+		firstError = newEntry;
+		return;
+	}
+	while (1) {
+		if (!entry->nextError) {
+			entry->nextError = newEntry;
+			return;
+		}
+		if (entry->error.startpos <= newEntry->error.startpos &&
+		    entry->nextError->error.startpos > newEntry->error.startpos) {
+			newEntry->nextError = entry->nextError;
+			entry->nextError = newEntry;
+			return;
+		}
+		entry = entry->nextError;
+	}
+}
+
 } }

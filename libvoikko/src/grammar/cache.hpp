@@ -46,13 +46,6 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
  */
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
 
-/**
- * Appends an entry to the grammar checker error cache.
- */
-void gc_cache_append_error(voikko_options_t * voikkoOptions, grammar::CacheEntry * new_entry);
-
-void gc_cache_append_error(grammar::GcCache & gc_cache , grammar::CacheEntry * new_entry);
-
 
 }
 

@@ -182,7 +182,7 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 					e->error.error_code = GCERR_MISPLACED_CLOSING_PARENTHESIS;
 					e->error.startpos = (*it)->pos;
 					e->error.errorlen = 1;
-					gc_cache_append_error(context.options, e);
+					context.options->grammarChecker->cache.appendError(e);
 				} else if (context.quotes.top() == L'(' ||
 				           context.quotes.top() == L'[') {
 					// TODO: not checking for matching quote type
@@ -244,7 +244,7 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
 		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
 		delete[] suggestion;
-		gc_cache_append_error(context.options, e);
+		context.options->grammarChecker->cache.appendError(e);
 	}
 	pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
@@ -282,7 +282,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
 		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
 		delete[] suggestion;
-		gc_cache_append_error(context.options, e);
+		context.options->grammarChecker->cache.appendError(e);
 	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	if (isListItemAndClosingParenthesis(word, separators)) {

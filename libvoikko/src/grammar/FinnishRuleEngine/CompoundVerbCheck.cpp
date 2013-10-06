@@ -47,14 +47,14 @@ void CompoundVerbCheck::check(voikko_options_t * options, const Sentence * sente
 				e->error.error_code = GCERR_A_INFINITIVE_REQUIRED;
 				e->error.startpos = token->pos;
 				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			} else if (token->requireFollowingVerb == FOLLOWING_VERB_MA_INFINITIVE &&
 			           word2->verbFollowerType == FOLLOWING_VERB_A_INFINITIVE) {
 				CacheEntry * e = new CacheEntry(0);
 				e->error.error_code = GCERR_MA_INFINITIVE_REQUIRED;
 				e->error.startpos = token->pos;
 				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			}
 		}
 	}

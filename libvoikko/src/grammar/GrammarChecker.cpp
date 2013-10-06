@@ -32,6 +32,7 @@
 namespace libvoikko { namespace grammar {
 
 	GrammarChecker::~GrammarChecker() {
+		cache.clear();
 	}
 
 } }

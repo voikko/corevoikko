@@ -44,6 +44,9 @@ class GcCache {
 	/** Clears the cache */
 	void clear();
 	
+	/** Add a new error for currently cached paragraph */
+	void appendError(grammar::CacheEntry * newEntry);
+	
 	/** Null terminated string containing the paragraph text. */
 	wchar_t * paragraph;
 	

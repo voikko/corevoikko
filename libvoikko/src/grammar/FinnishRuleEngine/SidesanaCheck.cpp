@@ -48,7 +48,7 @@ void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence)
 		e->error.error_code = GCERR_MISPLACED_SIDESANA;
 		e->error.startpos = (sentence->tokens + (tokenCount - 2))->pos;
 		e->error.errorlen = (sentence->tokens + (tokenCount - 2))->tokenlen;
-		gc_cache_append_error(options, e);
+		options->grammarChecker->cache.appendError(e);
 	}
 }
 

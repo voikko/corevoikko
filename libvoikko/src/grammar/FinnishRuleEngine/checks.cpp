@@ -56,7 +56,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				e->error.errorlen = sentence->tokens[i].tokenlen;
 				e->error.suggestions[0] = new char[2];
 				strcpy(e->error.suggestions[0], " ");
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			}
 			else if (i + 1 < sentence->tokenCount) {
 				Token t2 = sentence->tokens[i+1];
@@ -69,7 +69,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				e->error.suggestions[0] = new char[2];
 				e->error.suggestions[0][0] = ',';
 				e->error.suggestions[0][1] = L'\0';
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			}
 			break;
 		case TOKEN_PUNCTUATION:
@@ -94,7 +94,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 					e->error.startpos = sentence->tokens[i].pos - 1;
 					e->error.errorlen = 2;
 				}
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 				continue;
 			}
 			if (t.str[0] == L',' && i + 1 < sentence->tokenCount) {
@@ -107,7 +107,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				e->error.errorlen = 2;
 				e->error.suggestions[0] = new char[2];
 				strcpy(e->error.suggestions[0], ",");
-				gc_cache_append_error(options, e);
+				options->grammarChecker->cache.appendError(e);
 			}
 			break;
 		case TOKEN_NONE:
@@ -131,7 +131,7 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = 1;
 			e->error.suggestions[0] = StringUtils::utf8FromUcs4(L"\u201D", 1);
-			gc_cache_append_error(options, e);
+			options->grammarChecker->cache.appendError(e);
 			return;
 		}
 		if (sentence->tokens[i + 1].type != TOKEN_PUNCTUATION) {
@@ -163,7 +163,7 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggDot, e->error.errorlen);
 				delete[] suggDot;
 			}
-			gc_cache_append_error(options, e);
+			options->grammarChecker->cache.appendError(e);
 			break;
 		case L'!':
 		case L'?':
@@ -179,7 +179,7 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggOther, e->error.errorlen);
 				delete[] suggOther;
 			}
-			gc_cache_append_error(options, e);
+			options->grammarChecker->cache.appendError(e);
 			break;
 		}
 	}
@@ -213,7 +213,7 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 		                    sentence->tokens[i + 2].tokenlen;
 		e->error.suggestions[0] = StringUtils::utf8FromUcs4(sentence->tokens[i].str,
 		                          sentence->tokens[i].tokenlen);
-		gc_cache_append_error(options, e);
+		options->grammarChecker->cache.appendError(e);
 	}
 }
 
@@ -229,7 +229,7 @@ void gc_end_punctuation(voikko_options_t * options, const Paragraph * paragraph)
 	e->error.error_code = GCERR_TERMINATING_PUNCTUATION_MISSING;
 	e->error.startpos = token->pos;
 	e->error.errorlen = token->tokenlen;
-	gc_cache_append_error(options, e);
+	options->grammarChecker->cache.appendError(e);
 }
 
 }
