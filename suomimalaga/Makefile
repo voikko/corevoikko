@@ -3,8 +3,7 @@
 PYTHON=python
 VOIKKO_BUILDDIR=voikko
 VVFST_BUILDDIR=vvfst
-#DESTDIR=/usr/lib/voikko
-DESTDIR=/home/fran/.voikko/
+DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=
 EXTRA_LEX=
 VOIKKO_VARIANT=standard

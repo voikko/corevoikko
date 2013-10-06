@@ -60,7 +60,6 @@ typedef struct {
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	//grammar::GcCache gc_cache;
 	grammar::GrammarChecker * grammarChecker;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;

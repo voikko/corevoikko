@@ -202,11 +202,11 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		options->dictionary = dict;
 		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 		options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
-		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(options, dict);
 		options->suggestionGenerator =
 			spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);
 		options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
+		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(options, dict);
 	}
 	catch (DictionaryException & e) {
 		if (options->hyphenator) {
@@ -237,6 +237,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 }
 
 VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
+	delete handle->grammarChecker;
 	handle->hyphenator->terminate();
 	delete handle->hyphenator;
 	delete handle->suggestionGenerator;
@@ -245,7 +246,6 @@ VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	handle->morAnalyzer->terminate();
 	delete handle->morAnalyzer;
 	delete handle->spellerCache;
-	gc_clear_cache(handle);
 	delete handle;
 }
 

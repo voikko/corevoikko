@@ -32,7 +32,6 @@
 #include "grammar/RuleEngine.hpp"
 #include "grammar/GcCache.hpp"
 #include "morphology/Analyzer.hpp"
-//#include "grammar/Analysis.hpp"
 
 namespace libvoikko { namespace grammar {
 
@@ -42,8 +41,8 @@ class GrammarChecker {
 		RuleEngine * ruleEngine;
 		GcCache gc_cache;
 		morphology::Analyzer * analyser ; 
-//		Analysis * analysis ; 
-//		tokenizer::Tokenizer * tokeniser ; 
+		
+		virtual ~GrammarChecker();
 	
 };
 

@@ -41,8 +41,6 @@ FinnishGrammarChecker::~FinnishGrammarChecker() {
 }
 
 void FinnishGrammarChecker::init() { 
-
-	return;
 }
 
 
