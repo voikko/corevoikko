@@ -56,7 +56,7 @@ libvoikko_la_SOURCES = \
     sentence/Sentence.cpp \
     grammar/interface.cpp \
     grammar/cache.cpp grammar/FinnishRuleEngine/checks.cpp \
-    grammar/cachesetup.cpp grammar/error.cpp grammar/Analysis.cpp \
+    grammar/error.cpp grammar/Analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
     grammar/NullGrammarChecker.cpp \
@@ -155,7 +155,7 @@ noinst_HEADERS = \
     sentence/Sentence.hpp \
     tokenizer/Tokenizer.hpp \
     grammar/cache.hpp grammar/FinnishRuleEngine/checks.hpp grammar/error.hpp \
-    grammar/cachesetup.hpp grammar/Analysis.hpp \
+    grammar/Analysis.hpp \
     grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
     grammar/CacheEntry.hpp \
     grammar/GcCache.hpp \

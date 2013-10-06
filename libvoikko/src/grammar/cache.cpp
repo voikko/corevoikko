@@ -27,7 +27,6 @@
  *********************************************************************************/
 
 #include "utils/utils.hpp"
-#include "grammar/cachesetup.hpp"
 #include "grammar/GrammarChecker.hpp"
 #include "grammar/cache.hpp"
 #include "grammar/Analysis.hpp"
@@ -45,13 +44,13 @@ static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
 
-	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
+	if (!voikkoOptions->grammarChecker->cache.paragraph) {
 		return 0;
 	}
-	if (wcscmp(voikkoOptions->grammarChecker->gc_cache.paragraph, text) != 0) {
+	if (wcscmp(voikkoOptions->grammarChecker->cache.paragraph, text) != 0) {
 		return 0;
 	}
-	CacheEntry * e = voikkoOptions->grammarChecker->gc_cache.firstError;
+	CacheEntry * e = voikkoOptions->grammarChecker->cache.firstError;
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
@@ -66,13 +65,13 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
 
-	gc_clear_cache(voikkoOptions);
-	voikkoOptions->grammarChecker->gc_cache.paragraph = new wchar_t[textlen + 1];
-	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
+	voikkoOptions->grammarChecker->cache.clear();
+	voikkoOptions->grammarChecker->cache.paragraph = new wchar_t[textlen + 1];
+	if (!voikkoOptions->grammarChecker->cache.paragraph) {
 		return;
 	}
-	memcpy(voikkoOptions->grammarChecker->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
-	voikkoOptions->grammarChecker->gc_cache.paragraph[textlen] = L'\0';
+	memcpy(voikkoOptions->grammarChecker->cache.paragraph, text, textlen * sizeof(wchar_t));
+	voikkoOptions->grammarChecker->cache.paragraph[textlen] = L'\0';
 	FinnishAnalysis analyser(voikkoOptions, voikkoOptions->grammarChecker->analyser);
 	//Analysis * analyser = voikkoOptions->grammarChecker->analysis;
 	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
@@ -136,14 +135,14 @@ void gc_cache_append_error(GcCache & gc_cache, CacheEntry * new_entry) {
 
 
 void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
-	CacheEntry * entry = voikkoOptions->grammarChecker->gc_cache.firstError;
+	CacheEntry * entry = voikkoOptions->grammarChecker->cache.firstError;
 	if (!entry) {
-		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;
+		voikkoOptions->grammarChecker->cache.firstError = new_entry;
 		return;
 	}
 	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->nextError = voikkoOptions->grammarChecker->gc_cache.firstError;
-		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;
+		new_entry->nextError = voikkoOptions->grammarChecker->cache.firstError;
+		voikkoOptions->grammarChecker->cache.firstError = new_entry;
 		return;
 	}
 	while (1) {

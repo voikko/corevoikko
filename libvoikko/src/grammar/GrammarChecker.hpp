@@ -39,7 +39,7 @@ class GrammarChecker {
 	public:
 
 		RuleEngine * ruleEngine;
-		GcCache gc_cache;
+		GcCache cache;
 		morphology::Analyzer * analyser ; 
 		
 		virtual ~GrammarChecker();

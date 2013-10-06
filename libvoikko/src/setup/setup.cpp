@@ -37,7 +37,6 @@
 #include "grammar/GrammarCheckerFactory.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "hyphenator/HyphenatorFactory.hpp"
-#include "grammar/cachesetup.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -58,11 +57,11 @@ using namespace setup;
 static int setGrammarOption(voikko_options_t * handle, int value, int * option) {
 		if (value && !(*option)) {
 			*option = 1;
-			gc_clear_cache(handle);
+			handle->grammarChecker->cache.clear();
 		}
 		else if (!value && (*option)) {
 			*option = 0;
-			gc_clear_cache(handle);
+			handle->grammarChecker->cache.clear();
 		}
 		return 1;
 }
