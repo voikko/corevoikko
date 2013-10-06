@@ -39,6 +39,8 @@ using namespace std;
 
 namespace libvoikko { namespace grammar {
 
+	Analysis::~Analysis() {
+	}
 }
 
 }

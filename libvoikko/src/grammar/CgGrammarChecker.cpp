@@ -31,6 +31,7 @@
 #include "setup/setup.hpp"
 #include "grammar/CgGrammarChecker.hpp"
 #include "grammar/CgRuleEngine.hpp"
+#include "grammar/HfstAnalysis.hpp"
 #include "morphology/HfstAnalyzer.hpp"
 
 namespace libvoikko { namespace grammar {
@@ -40,7 +41,7 @@ CgGrammarChecker::CgGrammarChecker()  {
 	
 }
 
-CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules, voikko_options_t * voikkoOptions)  {
+CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules, voikko_options_t * voikkoOptions) {
 
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 
@@ -49,7 +50,7 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 
 	analyser = new morphology::HfstAnalyzer(f_analyser);
 
-//	analysis = new HfstAnalysis(analyser);
+	paragraphAnalyser = new HfstAnalysis(analyser, voikkoOptions);
 
 //	tokeniser = new tokenizer::Tokenizer();
 
@@ -57,7 +58,8 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 
 
 CgGrammarChecker::~CgGrammarChecker() {
-
+	delete paragraphAnalyser;
+	delete ruleEngine;
 }
 
 void CgGrammarChecker::init() { 

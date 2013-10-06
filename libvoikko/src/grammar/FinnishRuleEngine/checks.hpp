@@ -30,6 +30,7 @@
 #define VOIKKO_GRAMMAR_CHECKS_H
 
 #include "grammar/Analysis.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko {
 

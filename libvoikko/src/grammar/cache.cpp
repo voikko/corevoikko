@@ -30,7 +30,6 @@
 #include "grammar/GrammarChecker.hpp"
 #include "grammar/cache.hpp"
 #include "grammar/Analysis.hpp"
-#include "grammar/FinnishAnalysis.hpp"
 #include <cstring>
 #include <cstdlib>
 
@@ -64,17 +63,15 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 }
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
-
-	voikkoOptions->grammarChecker->cache.clear();
-	voikkoOptions->grammarChecker->cache.paragraph = new wchar_t[textlen + 1];
-	if (!voikkoOptions->grammarChecker->cache.paragraph) {
+	GrammarChecker * grammarChecker = voikkoOptions->grammarChecker;
+	grammarChecker->cache.clear();
+	grammarChecker->cache.paragraph = new wchar_t[textlen + 1];
+	if (!grammarChecker->cache.paragraph) {
 		return;
 	}
-	memcpy(voikkoOptions->grammarChecker->cache.paragraph, text, textlen * sizeof(wchar_t));
-	voikkoOptions->grammarChecker->cache.paragraph[textlen] = L'\0';
-	FinnishAnalysis analyser(voikkoOptions, voikkoOptions->grammarChecker->analyser);
-	//Analysis * analyser = voikkoOptions->grammarChecker->analysis;
-	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
+	memcpy(grammarChecker->cache.paragraph, text, textlen * sizeof(wchar_t));
+	grammarChecker->cache.paragraph[textlen] = L'\0';
+	Paragraph * para = grammarChecker->paragraphAnalyser->analyseParagraph(text, textlen);
 	if (!para) {
 		return;
 	}
@@ -102,7 +99,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		}
 	}
 	
-	RuleEngine * checks = voikkoOptions->grammarChecker->ruleEngine;
+	RuleEngine * checks = grammarChecker->ruleEngine;
 	checks->check(para);
 	delete para;
 }

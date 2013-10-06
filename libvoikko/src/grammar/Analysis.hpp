@@ -29,8 +29,6 @@
 #ifndef VOIKKO_GRAMMAR_ANALYSIS
 #define VOIKKO_GRAMMAR_ANALYSIS
 
-#include "setup/setup.hpp"
-
 #include "morphology/Analyzer.hpp"
 #include "grammar/Paragraph.hpp"
 
@@ -39,17 +37,17 @@ namespace libvoikko { namespace grammar {
 class Analysis {
 	public:
 
-		virtual Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) = 0 ;
+		virtual Paragraph * analyseParagraph(const wchar_t * text, size_t textlen) = 0 ;
 
+		virtual ~Analysis();
 	private:
 
 		/** Analyse given text token. Token type, length and text must have already
 		 *  been set. */
-		virtual void analyse_token(voikko_options_t * voikkoOptions, Token * token) = 0 ; 
+		virtual void analyseToken(Token * token) = 0 ; 
 
 		/** Analyse sentence text. Sentence type must be set by the caller. */
-		virtual Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
-						const wchar_t * text, size_t textlen, size_t sentencepos) = 0;
+		virtual Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) = 0;
 
 
 };

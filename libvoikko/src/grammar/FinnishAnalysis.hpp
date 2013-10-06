@@ -38,19 +38,15 @@ namespace libvoikko { namespace grammar {
 
 class FinnishAnalysis : public Analysis {
 	public:
-		FinnishAnalysis();
-		FinnishAnalysis(voikko_options_t * voikkoOptions, morphology::Analyzer * a);
+		FinnishAnalysis(voikko_options_t * voikkoOptions);
 
-		
 		~FinnishAnalysis();
 		
 		void init();
 
-		Paragraph * analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+		Paragraph * analyseParagraph(const wchar_t * text, size_t textlen);
 
-		morphology::Analyzer * analyser; 
-
-		voikko_options_t * options;
+		voikko_options_t * voikkoOptions;
 	
 	private:
 		FinnishAnalysis(FinnishAnalysis const & other);
@@ -58,11 +54,10 @@ class FinnishAnalysis : public Analysis {
 
 		/** Analyse given text token. Token type, length and text must have already
 		 *  been set. */
-		void analyse_token(voikko_options_t * voikkoOptions, Token * token);
+		void analyseToken(Token * token);
 
 		/** Analyse sentence text. Sentence type must be set by the caller. */
-		Sentence * analyse_sentence(voikko_options_t * voikkoOptions,
-						const wchar_t * text, size_t textlen, size_t sentencepos);
+		Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos);
 
 
 };

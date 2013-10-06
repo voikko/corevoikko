@@ -39,18 +39,8 @@ using namespace std;
 
 namespace libvoikko {
 
-FinnishAnalysis::FinnishAnalysis()  {
-
-	
+FinnishAnalysis::FinnishAnalysis(voikko_options_t * voikkoOptions) : voikkoOptions(voikkoOptions) {
 }
-
-FinnishAnalysis::FinnishAnalysis(voikko_options_t * voikkoOptions, morphology::Analyzer * a)  {
-
-	analyser = a;
-	options = voikkoOptions;
-	
-}
-
 
 
 FinnishAnalysis::~FinnishAnalysis() {
@@ -60,7 +50,7 @@ FinnishAnalysis::~FinnishAnalysis() {
 
 /** Analyse given text token. Token type, length and text must have already
  *  been set. */
-void FinnishAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token) {
+void FinnishAnalysis::analyseToken(Token * token) {
 	token->isValidWord = false;
 	token->possibleSentenceStart = false;
 	token->isGeographicalNameInGenitive = false;
@@ -196,8 +186,7 @@ void FinnishAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * to
 }
 
 /** Analyse sentence text. Sentence type must be set by the caller. */
-Sentence * FinnishAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
-	          const wchar_t * text, size_t textlen, size_t sentencepos) {
+Sentence * FinnishAnalysis::analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) {
 	Sentence * s = new Sentence;
 	s->pos = sentencepos;
 	size_t tokenlen;
@@ -220,7 +209,7 @@ Sentence * FinnishAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
 		s->tokens[i].pos = sentencepos + (pos - text);
-		analyse_token(voikkoOptions, s->tokens + i);
+		analyseToken(s->tokens + i);
 		
 		if (next_word_is_possible_sentence_start && tt == TOKEN_WORD) {
 			s->tokens[i].possibleSentenceStart = true;
@@ -243,7 +232,7 @@ Sentence * FinnishAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
 }
 
 
-Paragraph * FinnishAnalysis::analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
+Paragraph * FinnishAnalysis::analyseParagraph(const wchar_t * text, size_t textlen) {
 	Paragraph * p = new Paragraph;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -260,8 +249,7 @@ Paragraph * FinnishAnalysis::analyse_paragraph(voikko_options_t * voikkoOptions,
 			remaining -= sentencelen2;
 		} while (st == SENTENCE_POSSIBLE);
 		
-		Sentence * s = analyse_sentence(voikkoOptions, pos, sentencelen,
-		                                   pos - text);
+		Sentence * s = analyseSentence(pos, sentencelen, pos - text);
 		if (!s) {
 			delete p;
 			return 0;

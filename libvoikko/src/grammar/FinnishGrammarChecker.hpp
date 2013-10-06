@@ -33,8 +33,6 @@
 #include "voikko_structs.h"
 
 #include "grammar/GrammarChecker.hpp"
-#include "morphology/MalagaAnalyzer.hpp"
-#include "grammar/FinnishRuleEngine.hpp"
 
 namespace libvoikko { namespace grammar {
 

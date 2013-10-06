@@ -29,14 +29,19 @@
 #include "setup/setup.hpp"
 #include "grammar/FinnishGrammarChecker.hpp"
 
+#include "grammar/FinnishRuleEngine.hpp"
+#include "grammar/FinnishAnalysis.hpp"
+
 namespace libvoikko { namespace grammar {
 
 FinnishGrammarChecker::FinnishGrammarChecker(voikko_options_t * voikkoOptions)  {
 	ruleEngine = new FinnishRuleEngine(voikkoOptions);
+	paragraphAnalyser = new FinnishAnalysis(voikkoOptions);
 }
 
 
 FinnishGrammarChecker::~FinnishGrammarChecker() {
+	delete paragraphAnalyser;
 	delete ruleEngine;
 }
 

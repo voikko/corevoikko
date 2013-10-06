@@ -50,15 +50,7 @@ using namespace hfst_ol;
 
 namespace libvoikko {
 
-HfstAnalysis::HfstAnalysis()  {
-
-	
-}
-
-HfstAnalysis::HfstAnalysis(morphology::Analyzer * a)  {
-
-	analyser = a;
-	
+HfstAnalysis::HfstAnalysis(morphology::Analyzer * a, voikko_options_t * options) : analyser(a), voikkoOptions(options) {
 }
 
 
@@ -69,25 +61,24 @@ HfstAnalysis::~HfstAnalysis() {
 
 /** Analyse given text token. Token type, length and text must have already
  *  been set. */
-void HfstAnalysis::analyse_token(voikko_options_t * voikkoOptions, Token * token) {
+void HfstAnalysis::analyseToken(Token * token) {
 	token->isValidWord = false;
 	
 	wchar_t * wordBuffer =
 	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
 	                                                   token->tokenlen);
 	const std::string swordBuffer(utils::StringUtils::utf8FromUcs4(wordBuffer));
-	fprintf(stderr, "HfstAnalysis::analyse_token (%ls)\n", wordBuffer);
+	fprintf(stderr, "HfstAnalysis::analyseToken (%ls)\n", wordBuffer);
 
 	token->analyses = analyser->analyze(wordBuffer);
 
 	//int num_analyses = 0;
 	//num_analyses = token->analyses->size();	
-	//fprintf(stderr, "HfstAnalysis::analyse_token (num: %d)\n", num_analyses);
+	//fprintf(stderr, "HfstAnalysis::analyseToken (num: %d)\n", num_analyses);
 }
 
 /** Analyse sentence text. Sentence type must be set by the caller. */
-Sentence * HfstAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
-	          const wchar_t * text, size_t textlen, size_t sentencepos) {
+Sentence * HfstAnalysis::analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) {
 	Sentence * s = new Sentence;
 	s->pos = sentencepos;
 	size_t tokenlen;
@@ -110,7 +101,7 @@ Sentence * HfstAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
 		s->tokens[i].pos = sentencepos + (pos - text);
-		analyse_token(voikkoOptions, s->tokens + i);
+		analyseToken(s->tokens + i);
 		
 		if (next_word_is_possible_sentence_start && tt == TOKEN_WORD) {
 			s->tokens[i].possibleSentenceStart = true;
@@ -133,7 +124,7 @@ Sentence * HfstAnalysis::analyse_sentence(voikko_options_t * voikkoOptions,
 }
 
 
-Paragraph * HfstAnalysis::analyse_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
+Paragraph * HfstAnalysis::analyseParagraph(const wchar_t * text, size_t textlen) {
 	Paragraph * p = new Paragraph;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -150,8 +141,7 @@ Paragraph * HfstAnalysis::analyse_paragraph(voikko_options_t * voikkoOptions, co
 			remaining -= sentencelen2;
 		} while (st == SENTENCE_POSSIBLE);
 		
-		Sentence * s = analyse_sentence(voikkoOptions, pos, sentencelen,
-		                                   pos - text);
+		Sentence * s = analyseSentence(pos, sentencelen, pos - text);
 		if (!s) {
 			delete p;
 			return 0;
