@@ -28,8 +28,6 @@
 
 #include "setup/Dictionary.hpp"
 
-#include <iostream>
-
 using namespace std;
 
 namespace libvoikko { namespace setup {

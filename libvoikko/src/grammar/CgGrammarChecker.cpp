@@ -34,6 +34,8 @@
 #include "grammar/HfstAnalysis.hpp"
 #include "morphology/HfstAnalyzer.hpp"
 
+using namespace std;
+
 namespace libvoikko { namespace grammar {
 
 CgGrammarChecker::CgGrammarChecker()  {

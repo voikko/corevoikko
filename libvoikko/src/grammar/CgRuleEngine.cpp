@@ -32,6 +32,8 @@
 #include "grammar/CgRuleEngine.hpp"
 #include "grammar/cache.hpp"
 
+using namespace std;
+
 namespace libvoikko { namespace grammar {
 
 CgRuleEngine::CgRuleEngine(voikko_options_t * voikkoOptions)  {

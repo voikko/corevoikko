@@ -78,11 +78,7 @@ void V3DictionaryLoader::findDictionaries(const string & path) {
 			string gramMorBackend = "null";
 			string grammarBackend = "null";
 			Dictionary dict = Dictionary(fullPath, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
-	                  hyphenatorBackend, language, description);
-
-/*			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
-			                        hyphenatorBackend, language, description);
-*/
+			                  hyphenatorBackend, language, description);
 			addDictionary(dict);
 		}
 	}

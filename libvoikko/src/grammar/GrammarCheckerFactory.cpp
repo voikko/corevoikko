@@ -54,8 +54,7 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voi
 	}
 	#endif
 
-	string err = "Failed to create checker because of unknown grammar backend: " + dictionary.getGrammarBackend();
-	throw setup::DictionaryException(err.c_str());
+	throw setup::DictionaryException("Failed to create checker because of unknown grammar backend");
 }
 
 } }

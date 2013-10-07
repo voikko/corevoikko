@@ -30,7 +30,6 @@
 #define VOIKKO_GRAMMAR_FINNISHGRAMMARCHECKER
 
 #include "setup/setup.hpp"
-#include "voikko_structs.h"
 
 #include "grammar/GrammarChecker.hpp"
 

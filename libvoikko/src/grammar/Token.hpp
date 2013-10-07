@@ -36,8 +36,6 @@
 #include "morphology/Analysis.hpp"
 #include "voikko_enums.h"
 
-using namespace std;
-
 namespace libvoikko { namespace grammar {
 
 /** Possible types for trailing parts of compound verbs */
@@ -111,7 +109,7 @@ class Token {
 		size_t pos;
 
 		/** List of analyses */
-		list<morphology::Analysis *> * analyses;
+		std::list<morphology::Analysis *> * analyses;
 };
 
 } }

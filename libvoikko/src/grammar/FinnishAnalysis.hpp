@@ -31,7 +31,6 @@
 
 #include "grammar/Analysis.hpp"
 #include "grammar/Paragraph.hpp"
-#include "morphology/Analyzer.hpp"
 #include "setup/setup.hpp"
 
 namespace libvoikko { namespace grammar {
