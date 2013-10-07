@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2011
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,20 +26,32 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
-#define VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
+#ifndef VOIKKO_GRAMMAR_CGGRAMMARCHECKER
+#define VOIKKO_GRAMMAR_CGGRAMMARCHECKER
 
-#include "grammar/check/SentenceCheck.hpp"
+#include "setup/setup.hpp"
+#include "voikko_structs.h"
 
-namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for wrong uses of words such as "kunhan". 
- */
-class SidesanaCheck : public SentenceCheck {
+#include "grammar/GrammarChecker.hpp"
+#include "morphology/Analyzer.hpp"
+
+namespace libvoikko { namespace grammar {
+
+class CgGrammarChecker : public GrammarChecker {
 	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
+		CgGrammarChecker();
+		CgGrammarChecker(const std::string & analyser, const std::string & rules, voikko_options_t * options);
+		
+		~CgGrammarChecker();
+
+		void init(); 
+		
+	private:
+
+		CgGrammarChecker(CgGrammarChecker const & other);
+		CgGrammarChecker & operator = (const CgGrammarChecker & other);
 };
 
-} } }
+} }
 
 #endif

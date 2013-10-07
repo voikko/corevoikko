@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,38 +26,30 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/check/CompoundVerbCheck.hpp"
-#include "grammar/error.hpp"
-#include "grammar/cache.hpp"
+#ifndef VOIKKO_GRAMMAR_GRAMMARCHECKER_FACTORY
+#define VOIKKO_GRAMMAR_GRAMMARCHECKER_FACTORY
 
-using namespace std;
+#include "grammar/GrammarChecker.hpp"
+#include "setup/Dictionary.hpp"
+#include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 
-namespace libvoikko { namespace grammar { namespace check {
+namespace libvoikko { namespace grammar {
 
-void CompoundVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
-	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
-		const Token * token = sentence->tokens + i;
-		if (token->type == TOKEN_WORD &&
-		    (sentence->tokens + i + 1)->type == TOKEN_WHITESPACE &&
-		    (sentence->tokens + i + 2)->type == TOKEN_WORD) {
-			const Token * word2 = sentence->tokens + i + 2;
-			if (token->requireFollowingVerb == FOLLOWING_VERB_A_INFINITIVE &&
-			    word2->verbFollowerType == FOLLOWING_VERB_MA_INFINITIVE) {
-				CacheEntry * e = new CacheEntry(0);
-				e->error.error_code = GCERR_A_INFINITIVE_REQUIRED;
-				e->error.startpos = token->pos;
-				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(options, e);
-			} else if (token->requireFollowingVerb == FOLLOWING_VERB_MA_INFINITIVE &&
-			           word2->verbFollowerType == FOLLOWING_VERB_A_INFINITIVE) {
-				CacheEntry * e = new CacheEntry(0);
-				e->error.error_code = GCERR_MA_INFINITIVE_REQUIRED;
-				e->error.startpos = token->pos;
-				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
-				gc_cache_append_error(options, e);
-			}
-		}
-	}
-}
+/**
+ * Factory for obtaining suitable grammar checker
+ */
+class GrammarCheckerFactory {
+	public:
+		/**
+		 * Creates and initialises a new GrammarChecker that matches given dictionary.
+		 * The object must be terminated and deleted after use.
+		 * @throws DictionaryException if the checker cannot be initialised.
+		 */
+		static GrammarChecker * getGrammarChecker(voikko_options_t * voikkoOptions, const setup::Dictionary & dictionary)
+		                              throw(setup::DictionaryException);
+};
 
-} } }
+} }
+
+#endif

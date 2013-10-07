@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,45 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_GRAMMAR_HFSTANALYSIS
+#define VOIKKO_GRAMMAR_HFSTANALYSIS
 
+#include "morphology/Analyzer.hpp"
+#include "grammar/Analysis.hpp"
+#include "grammar/Paragraph.hpp"
 #include "setup/setup.hpp"
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar {
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+class HfstAnalysis : public Analysis {
+	public:
+		HfstAnalysis(morphology::Analyzer * a, voikko_options_t * options);
+		
+		~HfstAnalysis();
+		
+		void init();
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+		Paragraph * analyseParagraph(const wchar_t * text, size_t textlen);
+
+		morphology::Analyzer  * analyser ; 
+
+	
+	private:
+		HfstAnalysis(HfstAnalysis const & other);
+		HfstAnalysis & operator = (const HfstAnalysis & other);
+
+		/** Analyse given text token. Token type, length and text must have already
+		 *  been set. */
+		void analyseToken(Token * token);
+
+		/** Analyse sentence text. Sentence type must be set by the caller. */
+		Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos);
+		
+		voikko_options_t * voikkoOptions;
 
 
-}
+};
+
+} }
 
 #endif

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2011
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,20 +26,37 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_MISSING_VERB_CHECK
-#define VOIKKO_GRAMMAR_CHECK_MISSING_VERB_CHECK
+#ifndef VOIKKO_GRAMMAR_CGRULEENGINE
+#define VOIKKO_GRAMMAR_CGRULEENGINE
 
-#include "grammar/check/SentenceCheck.hpp"
+#include "setup/setup.hpp"
 
-namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for missing verb in sentence.
- */
-class MissingVerbCheck : public SentenceCheck {
+#include "grammar/RuleEngine.hpp"
+
+#include <cg3.h>
+
+namespace libvoikko { namespace grammar {
+
+class CgRuleEngine : public RuleEngine {
+
 	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
+		CgRuleEngine(voikko_options_t * options);
+		
+		~CgRuleEngine();
+		
+		int load(const std::string path);
+
+		void check(const Paragraph * para);
+
+		voikko_options_t * options;
+	
+	private:
+		// Using the C API until we get a C++ one
+		cg3_grammar *grammar;
+		cg3_applicator *applicator;
+		
 };
 
-} } }
+} }
 
 #endif

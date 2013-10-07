@@ -26,11 +26,20 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/check/SentenceCheck.hpp"
+#ifndef VOIKKO_GRAMMAR_CHECK_COMPOUND_VERB_CHECK
+#define VOIKKO_GRAMMAR_CHECK_COMPOUND_VERB_CHECK
+
+#include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
 
 namespace libvoikko { namespace grammar { namespace check {
-
-SentenceCheck::~SentenceCheck() {
-}
+/**
+ * Check for errors in compound verbs. Example "alkaa tekemään"
+ */
+class CompoundVerbCheck : public SentenceCheck {
+	public:
+		void check(voikko_options_t * options, const Sentence * sentence);
+};
 
 } } }
+
+#endif

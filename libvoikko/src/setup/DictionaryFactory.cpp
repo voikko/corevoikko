@@ -45,6 +45,7 @@
 
 #include "setup/V2DictionaryLoader.hpp"
 #include "setup/V3DictionaryLoader.hpp"
+#include "setup/V4DictionaryLoader.hpp"
 
 using namespace std;
 
@@ -78,7 +79,7 @@ list<Dictionary> DictionaryFactory::findAllAvailable(const std::string & path) {
 	for (list<string>::iterator i = locations.begin(); i != locations.end(); ++i) {
 		addAllVersionVariantsFromPath(*i, dictMap);
 	}
-	
+
 	list<Dictionary> dicts;
 	for (map< string, Dictionary >::iterator i = dictMap.begin(); i != dictMap.end(); ++i) {
 		if (i->second.isDefault()) {
@@ -163,6 +164,9 @@ LanguageTag DictionaryFactory::parseFromBCP47(const string & language) {
 
 void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
 	list<DictionaryLoader*> loaders;
+        #ifdef HAVE_VISLCG3
+                loaders.push_back(new V4DictionaryLoader());
+        #endif
 	#ifdef HAVE_HFST
 		loaders.push_back(new V3DictionaryLoader());
 	#endif

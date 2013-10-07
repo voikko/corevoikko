@@ -26,7 +26,7 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/check/MissingVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
 #include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
 #include "grammar/cache.hpp"
@@ -80,7 +80,7 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 						e->error.error_code = GCERR_EXTRA_MAIN_VERB;
 						e->error.startpos = sentence->tokens[lastVerbStartToken].pos;
 						e->error.errorlen = token->pos + token->tokenlen - sentence->tokens[lastVerbStartToken].pos;
-						gc_cache_append_error(options, e);
+						options->grammarChecker->cache.appendError(e);
 					}
 					foundVerbInCurrentClause = false;
 				}
@@ -104,7 +104,7 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 	e->error.error_code = GCERR_MISSING_MAIN_VERB;
 	e->error.startpos = sentence->pos;
 	e->error.errorlen = lastNonWhitespace->pos + lastNonWhitespace->tokenlen - sentence->pos;
-	gc_cache_append_error(options, e);
+	options->grammarChecker->cache.appendError(e);
 }
 
 } } }

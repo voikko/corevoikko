@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,34 +26,16 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECKS_H
-#define VOIKKO_GRAMMAR_CHECKS_H
+#include <iostream>
 
-#include "grammar/analysis.hpp"
+#include "grammar/RuleEngine.hpp"
+#include "grammar/GcCache.hpp"
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar {
 
-/**
- * GC errors due to wrong context independent use of punctuation or whitespace
- * within a sentence.
- */
-void gc_local_punctuation(voikko_options_t * options, const grammar::Sentence * sentence);
-
-/**
- * GC errors due to wrong punctuation in quotations.
- */
-void gc_punctuation_of_quotations(voikko_options_t * options, const grammar::Sentence * sentence);
-
-/**
- * GC errors due to word repetition
- */
-void gc_repeating_words(voikko_options_t * options, const grammar::Sentence * sentence);
-
-/**
- * GC errors due to missing punctuation at the end of paragraph
- */
-void gc_end_punctuation(voikko_options_t * options, const grammar::Paragraph * paragraph);
+RuleEngine::~RuleEngine() {
 
 }
 
-#endif
+
+} }

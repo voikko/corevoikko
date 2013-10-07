@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,41 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/cachesetup.hpp"
-#include "grammar/error.hpp"
+#ifndef VOIKKO_GRAMMAR_FINNISHANALYSIS
+#define VOIKKO_GRAMMAR_FINNISHANALYSIS
+
+#include "grammar/Analysis.hpp"
+#include "grammar/Paragraph.hpp"
 #include "setup/setup.hpp"
-#include "utils/StringUtils.hpp"
-#include <cstring>
-#include <cstdlib>
 
-using namespace libvoikko::grammar;
+namespace libvoikko { namespace grammar {
 
-namespace libvoikko {
+class FinnishAnalysis : public Analysis {
+	public:
+		FinnishAnalysis(voikko_options_t * voikkoOptions);
 
-void gc_clear_cache(voikko_options_t * options) {
-	delete[] options->gc_cache.paragraph;
-	CacheEntry * entry = options->gc_cache.firstError;
-	while (entry) {
-		CacheEntry * next = entry->nextError;
-		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
-		delete entry;
-		entry = next;
-	}
-	options->gc_cache.clear();
-}
+		~FinnishAnalysis();
+		
+		void init();
 
-}
+		Paragraph * analyseParagraph(const wchar_t * text, size_t textlen);
+
+		voikko_options_t * voikkoOptions;
+	
+	private:
+		FinnishAnalysis(FinnishAnalysis const & other);
+		FinnishAnalysis & operator = (const FinnishAnalysis & other);
+
+		/** Analyse given text token. Token type, length and text must have already
+		 *  been set. */
+		void analyseToken(Token * token);
+
+		/** Analyse sentence text. Sentence type must be set by the caller. */
+		Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos);
+
+
+};
+
+} }
+
+#endif

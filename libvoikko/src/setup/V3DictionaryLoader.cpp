@@ -73,8 +73,12 @@ void V3DictionaryLoader::findDictionaries(const string & path) {
 			map<string, string> languageVersions = spellerMetadata.info_.title_;
 			string description = languageVersions[spellerMetadata.info_.locale_];
 			delete speller;
-			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
-			                        hyphenatorBackend, language, description);
+			string gramMorPath = "";
+			string grammarPath = "";
+			string gramMorBackend = "null";
+			string grammarBackend = "null";
+			Dictionary dict = Dictionary(fullPath, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
+			                  hyphenatorBackend, language, description);
 			addDictionary(dict);
 		}
 	}

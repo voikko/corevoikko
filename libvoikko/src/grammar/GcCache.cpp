@@ -27,6 +27,7 @@
  *********************************************************************************/
 
 #include "grammar/GcCache.hpp"
+#include "utils/StringUtils.hpp"
 
 namespace libvoikko { namespace grammar {
 
@@ -36,8 +37,42 @@ GcCache::GcCache() :
 }
 
 void GcCache::clear() {
+	delete[] paragraph;
 	paragraph = 0;
+	CacheEntry * entry = firstError;
+	while (entry) {
+		CacheEntry * next = entry->nextError;
+		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
+		delete entry;
+		entry = next;
+	}
 	firstError = 0;
+}
+
+void GcCache::appendError(grammar::CacheEntry * newEntry) {
+	CacheEntry * entry = firstError;
+	if (!entry) {
+		firstError = newEntry;
+		return;
+	}
+	if (entry->error.startpos > newEntry->error.startpos) {
+		newEntry->nextError = firstError;
+		firstError = newEntry;
+		return;
+	}
+	while (1) {
+		if (!entry->nextError) {
+			entry->nextError = newEntry;
+			return;
+		}
+		if (entry->error.startpos <= newEntry->error.startpos &&
+		    entry->nextError->error.startpos > newEntry->error.startpos) {
+			newEntry->nextError = entry->nextError;
+			entry->nextError = newEntry;
+			return;
+		}
+		entry = entry->nextError;
+	}
 }
 
 } }

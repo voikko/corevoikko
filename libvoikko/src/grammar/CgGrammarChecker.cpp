@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,17 +26,48 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_ANALYSIS_H
-#define VOIKKO_GRAMMAR_ANALYSIS_H
+#include <iostream>
 
 #include "setup/setup.hpp"
-#include "grammar/Paragraph.hpp"
+#include "grammar/CgGrammarChecker.hpp"
+#include "grammar/CgRuleEngine.hpp"
+#include "grammar/HfstAnalysis.hpp"
+#include "morphology/HfstAnalyzer.hpp"
 
-namespace libvoikko {
+using namespace std;
 
-/** Analyze paragraph text */
-grammar::Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+namespace libvoikko { namespace grammar {
+
+CgGrammarChecker::CgGrammarChecker()  {
+
+	
+}
+
+CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules, voikko_options_t * voikkoOptions) {
+
+	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
+
+	ruleEngine = new CgRuleEngine(voikkoOptions);
+	ruleEngine->load(rules);
+
+	analyser = new morphology::HfstAnalyzer(f_analyser);
+
+	paragraphAnalyser = new HfstAnalysis(analyser, voikkoOptions);
+
+//	tokeniser = new tokenizer::Tokenizer();
 
 }
 
-#endif
+
+CgGrammarChecker::~CgGrammarChecker() {
+	delete paragraphAnalyser;
+	delete ruleEngine;
+}
+
+void CgGrammarChecker::init() { 
+
+	return;
+}
+
+
+} }

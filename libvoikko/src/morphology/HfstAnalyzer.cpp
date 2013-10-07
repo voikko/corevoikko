@@ -21,13 +21,20 @@
 #include "utils/StringUtils.hpp"
 #include "voikko_defines.h"
 #include <fstream>
+#include <ospell.h>
 
 using namespace std;
 using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-HfstAnalyzer::HfstAnalyzer(const string& ) throw(setup::DictionaryException) {
+HfstAnalyzer::HfstAnalyzer(const string& s) throw(setup::DictionaryException) {
+	cerr << "HfstAnalyzer::HfstAnalyzer: " << s << endl;
+	if(s.find(".zhfst") != std::string::npos) {
+		return;
+	}
+	FILE *fd = fopen(s.c_str(), "rb");
+	t = new hfst_ol::Transducer(fd);
 
 }
 
@@ -47,11 +54,36 @@ list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
 }
 
 list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
+	//cerr << "HfstAnalyzer::analyze (" << string(word) << ")" << endl;
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
+
+	/* I know this is the wrong thing, but going to do it anyway */
+	std::string str(word);
+	char * writable = new char[str.size() + 1];
+	std::copy(str.begin(), str.end(), writable);
+	writable[str.size()] = '\0';
+
+	hfst_ol::AnalysisQueue q = t->lookup(writable);
+
+	while(q.size() > 0) {
+		hfst_ol::StringWeightPair pair = q.top();
+		string analysis = pair.first;
+		string lemma = "";
+		string tags = "";
+		lemma = analysis.substr(0,analysis.find("+"));
+		tags = analysis.substr(analysis.find("+"),analysis.length()-1);
+		//cerr << "  analysis  " << lemma << "/" << tags << endl; 
+		Analysis * a = new Analysis();
+		a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
+		a->addAttribute("tags",  StringUtils::ucs4FromUtf8(tags.c_str()));
+		analysisList->push_back(a);
+		q.pop();
+	}
+
 	return analysisList;
 }
 

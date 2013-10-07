@@ -26,30 +26,20 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/check/SidesanaCheck.hpp"
-#include "grammar/error.hpp"
-#include "grammar/cache.hpp"
+#ifndef VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
+#define VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
 
-using namespace std;
+#include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
 
 namespace libvoikko { namespace grammar { namespace check {
-
-void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence) {
-	size_t tokenCount = sentence->tokenCount;
-	if ((sentence->tokens + (tokenCount - 1))->type == TOKEN_WHITESPACE) {
-		--tokenCount;
-	}
-	if (tokenCount >= 2 &&
-	    ((sentence->tokens + (tokenCount - 2))->isConjunction) &&
-	    (wcscmp((sentence->tokens + (tokenCount - 2))->str, L"vaan") != 0) && // "mitä vaan" ~ "mitä vain"
-	    ((sentence->tokens + (tokenCount - 1))->type == TOKEN_PUNCTUATION) &&
-	    ((sentence->tokens + (tokenCount - 1))->str[0] == L'.')) {
-		CacheEntry * e = new CacheEntry(0);
-		e->error.error_code = GCERR_MISPLACED_SIDESANA;
-		e->error.startpos = (sentence->tokens + (tokenCount - 2))->pos;
-		e->error.errorlen = (sentence->tokens + (tokenCount - 2))->tokenlen;
-		gc_cache_append_error(options, e);
-	}
-}
+/**
+ * Check for wrong uses of words such as "kunhan". 
+ */
+class SidesanaCheck : public SentenceCheck {
+	public:
+		void check(voikko_options_t * options, const Sentence * sentence);
+};
 
 } } }
+
+#endif

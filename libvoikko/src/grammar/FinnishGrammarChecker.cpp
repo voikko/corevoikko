@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,20 +26,27 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_COMPOUND_VERB_CHECK
-#define VOIKKO_GRAMMAR_CHECK_COMPOUND_VERB_CHECK
+#include "setup/setup.hpp"
+#include "grammar/FinnishGrammarChecker.hpp"
 
-#include "grammar/check/SentenceCheck.hpp"
+#include "grammar/FinnishRuleEngine.hpp"
+#include "grammar/FinnishAnalysis.hpp"
 
-namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for errors in compound verbs. Example "alkaa tekemään"
- */
-class CompoundVerbCheck : public SentenceCheck {
-	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
-};
+namespace libvoikko { namespace grammar {
 
-} } }
+FinnishGrammarChecker::FinnishGrammarChecker(voikko_options_t * voikkoOptions)  {
+	ruleEngine = new FinnishRuleEngine(voikkoOptions);
+	paragraphAnalyser = new FinnishAnalysis(voikkoOptions);
+}
 
-#endif
+
+FinnishGrammarChecker::~FinnishGrammarChecker() {
+	delete paragraphAnalyser;
+	delete ruleEngine;
+}
+
+void FinnishGrammarChecker::init() { 
+}
+
+
+} }

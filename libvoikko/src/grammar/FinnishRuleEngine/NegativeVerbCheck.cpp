@@ -26,20 +26,30 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_NEGATIVE_VERB_CHECK
-#define VOIKKO_GRAMMAR_CHECK_NEGATIVE_VERB_CHECK
+#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
+#include "grammar/error.hpp"
+#include "grammar/cache.hpp"
 
-#include "grammar/check/SentenceCheck.hpp"
+using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for errors in negative verbs. Example "En juoksen."
- */
-class NegativeVerbCheck : public SentenceCheck {
-	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
-};
+
+void NegativeVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
+	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+		const Token * token = sentence->tokens + i;
+		if (token->type == TOKEN_WORD &&
+		    (sentence->tokens + i + 1)->type == TOKEN_WHITESPACE &&
+		    (sentence->tokens + i + 2)->type == TOKEN_WORD) {
+			const Token * word2 = sentence->tokens + i + 2;
+			if (token->isVerbNegative && word2->isPositiveVerb) {
+				CacheEntry * e = new CacheEntry(0);
+				e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
+				e->error.startpos = token->pos;
+				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
+				options->grammarChecker->cache.appendError(e);
+			}
+		}
+	}
+}
 
 } } }
-
-#endif

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2011
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,30 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
+#include "grammar/error.hpp"
+#include "grammar/cache.hpp"
 
-#include "setup/setup.hpp"
+using namespace std;
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar { namespace check {
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
-
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
-
-
+void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence) {
+	size_t tokenCount = sentence->tokenCount;
+	if ((sentence->tokens + (tokenCount - 1))->type == TOKEN_WHITESPACE) {
+		--tokenCount;
+	}
+	if (tokenCount >= 2 &&
+	    ((sentence->tokens + (tokenCount - 2))->isConjunction) &&
+	    (wcscmp((sentence->tokens + (tokenCount - 2))->str, L"vaan") != 0) && // "mitä vaan" ~ "mitä vain"
+	    ((sentence->tokens + (tokenCount - 1))->type == TOKEN_PUNCTUATION) &&
+	    ((sentence->tokens + (tokenCount - 1))->str[0] == L'.')) {
+		CacheEntry * e = new CacheEntry(0);
+		e->error.error_code = GCERR_MISPLACED_SIDESANA;
+		e->error.startpos = (sentence->tokens + (tokenCount - 2))->pos;
+		e->error.errorlen = (sentence->tokens + (tokenCount - 2))->tokenlen;
+		options->grammarChecker->cache.appendError(e);
+	}
 }
 
-#endif
+} } }

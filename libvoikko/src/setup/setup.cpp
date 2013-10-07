@@ -34,9 +34,9 @@
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellerFactory.hpp"
+#include "grammar/GrammarCheckerFactory.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "hyphenator/HyphenatorFactory.hpp"
-#include "grammar/cachesetup.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -57,11 +57,11 @@ using namespace setup;
 static int setGrammarOption(voikko_options_t * handle, int value, int * option) {
 		if (value && !(*option)) {
 			*option = 1;
-			gc_clear_cache(handle);
+			handle->grammarChecker->cache.clear();
 		}
 		else if (!value && (*option)) {
 			*option = 0;
-			gc_clear_cache(handle);
+			handle->grammarChecker->cache.clear();
 		}
 		return 1;
 }
@@ -182,6 +182,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->accept_unfinished_paragraphs_in_gc = 0;
 	options->accept_bulleted_lists_in_gc = 0;
 	options->morAnalyzer = 0;
+	options->grammarChecker = 0;
 	options->speller = 0;
 	options->suggestionGenerator = 0;
 	options->hyphenator = 0;
@@ -204,6 +205,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 			spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);
 		options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
+		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(options, dict);
 	}
 	catch (DictionaryException & e) {
 		if (options->hyphenator) {
@@ -234,6 +236,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 }
 
 VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
+	delete handle->grammarChecker;
 	handle->hyphenator->terminate();
 	delete handle->hyphenator;
 	delete handle->suggestionGenerator;
@@ -242,7 +245,6 @@ VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	handle->morAnalyzer->terminate();
 	delete handle->morAnalyzer;
 	delete handle->spellerCache;
-	gc_clear_cache(handle);
 	delete handle;
 }
 

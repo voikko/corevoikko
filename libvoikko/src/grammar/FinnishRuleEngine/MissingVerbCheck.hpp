@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2011
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,20 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_GRAMMAR_CHECK_MISSING_VERB_CHECK
+#define VOIKKO_GRAMMAR_CHECK_MISSING_VERB_CHECK
 
-#include "setup/setup.hpp"
+#include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
 
-namespace libvoikko {
-
+namespace libvoikko { namespace grammar { namespace check {
 /**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
+ * Check for missing verb in sentence.
  */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+class MissingVerbCheck : public SentenceCheck {
+	public:
+		void check(voikko_options_t * options, const Sentence * sentence);
+};
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
-
-
-}
+} } }
 
 #endif

@@ -55,17 +55,25 @@ libvoikko_la_SOURCES = \
     sentence/interface.cpp \
     sentence/Sentence.cpp \
     grammar/interface.cpp \
-    grammar/cache.cpp grammar/checks.cpp \
-    grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
+    grammar/cache.cpp grammar/FinnishRuleEngine/checks.cpp \
+    grammar/error.cpp grammar/Analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
-    grammar/check/CapitalizationCheck.cpp \
-    grammar/check/CompoundVerbCheck.cpp \
-    grammar/check/MissingVerbCheck.cpp \
-    grammar/check/NegativeVerbCheck.cpp \
-    grammar/check/ParagraphCheck.cpp \
-    grammar/check/SentenceCheck.cpp \
-    grammar/check/SidesanaCheck.cpp \
+    grammar/NullGrammarChecker.cpp \
+    grammar/FinnishGrammarChecker.cpp \
+    grammar/GrammarChecker.cpp \
+    grammar/GrammarCheckerFactory.cpp \
+    grammar/FinnishAnalysis.cpp \
+    grammar/HfstAnalysis.cpp \
+    grammar/FinnishRuleEngine.cpp \
+    grammar/RuleEngine.cpp \
+    grammar/FinnishRuleEngine/CapitalizationCheck.cpp \
+    grammar/FinnishRuleEngine/CompoundVerbCheck.cpp \
+    grammar/FinnishRuleEngine/MissingVerbCheck.cpp \
+    grammar/FinnishRuleEngine/NegativeVerbCheck.cpp \
+    grammar/FinnishRuleEngine/ParagraphCheck.cpp \
+    grammar/FinnishRuleEngine/SentenceCheck.cpp \
+    grammar/FinnishRuleEngine/SidesanaCheck.cpp \
     compatibility/interface.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 13:8:12 @LIBLDFLAGSWIN@
 
@@ -146,18 +154,27 @@ noinst_HEADERS = \
     spellchecker/suggestion/SuggestionStatus.hpp \
     sentence/Sentence.hpp \
     tokenizer/Tokenizer.hpp \
-    grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
-    grammar/cachesetup.hpp grammar/analysis.hpp \
+    grammar/cache.hpp grammar/FinnishRuleEngine/checks.hpp grammar/error.hpp \
+    grammar/Analysis.hpp \
     grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
     grammar/CacheEntry.hpp \
     grammar/GcCache.hpp \
-    grammar/check/CapitalizationCheck.hpp \
-    grammar/check/CompoundVerbCheck.hpp \
-    grammar/check/MissingVerbCheck.hpp \
-    grammar/check/NegativeVerbCheck.hpp \
-    grammar/check/ParagraphCheck.hpp \
-    grammar/check/SentenceCheck.hpp \
-    grammar/check/SidesanaCheck.hpp \
+    grammar/RuleEngine.hpp \
+    grammar/NullGrammarChecker.hpp \
+    grammar/FinnishGrammarChecker.hpp \
+    grammar/GrammarChecker.hpp \
+    grammar/GrammarCheckerFactory.hpp \
+    grammar/FinnishRuleEngine.hpp \
+    grammar/FinnishAnalysis.hpp \
+    grammar/HfstAnalysis.hpp \
+    grammar/RuleEngine.hpp \
+    grammar/FinnishRuleEngine/CapitalizationCheck.hpp \
+    grammar/FinnishRuleEngine/CompoundVerbCheck.hpp \
+    grammar/FinnishRuleEngine/MissingVerbCheck.hpp \
+    grammar/FinnishRuleEngine/NegativeVerbCheck.hpp \
+    grammar/FinnishRuleEngine/ParagraphCheck.hpp \
+    grammar/FinnishRuleEngine/SentenceCheck.hpp \
+    grammar/FinnishRuleEngine/SidesanaCheck.hpp \
     autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \
@@ -193,6 +210,10 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
     hyphenator/HfstHyphenator.cpp \
     setup/V3DictionaryLoader.cpp
 
+VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
+    setup/V4DictionaryLoader.cpp \
+    grammar/CgGrammarChecker.cpp
+
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
 VFST_CPP_FILES=morphology/VfstAnalyzer.cpp spellchecker/VfstSpeller.cpp
@@ -222,6 +243,14 @@ if HAVE_LTTOOLBOX
 else
     EXTRA_DIST += $(LTTOOLBOX_CPP_FILES)
 endif
+
+if HAVE_VISLCG3
+    libvoikko_la_SOURCES += $(VISLCG3_CPP_FILES)
+    libvoikko_la_LDFLAGS += $(VISLCG3_LIBS)
+else
+    EXTRA_DIST += $(VISLCG3_CPP_FILES)
+endif
+
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc

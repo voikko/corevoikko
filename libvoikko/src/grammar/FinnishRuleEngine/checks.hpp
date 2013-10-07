@@ -26,26 +26,34 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_GRAMMAR_CHECKS_H
+#define VOIKKO_GRAMMAR_CHECKS_H
 
+#include "grammar/Analysis.hpp"
 #include "setup/setup.hpp"
 
 namespace libvoikko {
 
 /**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
+ * GC errors due to wrong context independent use of punctuation or whitespace
+ * within a sentence.
  */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+void gc_local_punctuation(voikko_options_t * options, const grammar::Sentence * sentence);
 
 /**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
+ * GC errors due to wrong punctuation in quotations.
  */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+void gc_punctuation_of_quotations(voikko_options_t * options, const grammar::Sentence * sentence);
 
+/**
+ * GC errors due to word repetition
+ */
+void gc_repeating_words(voikko_options_t * options, const grammar::Sentence * sentence);
+
+/**
+ * GC errors due to missing punctuation at the end of paragraph
+ */
+void gc_end_punctuation(voikko_options_t * options, const grammar::Paragraph * paragraph);
 
 }
 

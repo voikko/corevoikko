@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,20 +26,20 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
-#define VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
+#ifndef VOIKKO_SETUP_V4DICTIONARYLOADER
+#define VOIKKO_SETUP_V4DICTIONARYLOADER
 
-#include "grammar/check/ParagraphCheck.hpp"
+#include "setup/DictionaryLoader.hpp"
 
-namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for errors in capitalization.
- */
-class CapitalizationCheck : public ParagraphCheck {
+namespace libvoikko { namespace setup {
+
+class V4DictionaryLoader : public DictionaryLoader {
+
 	public:
-		void check(voikko_options_t * options, const Paragraph * paragraph);
+	void findDictionaries(const std::string & path);
+
 };
 
-} } }
+} }
 
 #endif

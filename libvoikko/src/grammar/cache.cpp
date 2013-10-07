@@ -27,25 +27,13 @@
  *********************************************************************************/
 
 #include "utils/utils.hpp"
-#include "grammar/cachesetup.hpp"
+#include "grammar/GrammarChecker.hpp"
 #include "grammar/cache.hpp"
-#include "grammar/checks.hpp"
-#include "grammar/analysis.hpp"
-#include "grammar/check/CapitalizationCheck.hpp"
-#include "grammar/check/MissingVerbCheck.hpp"
-#include "grammar/check/NegativeVerbCheck.hpp"
-#include "grammar/check/CompoundVerbCheck.hpp"
-#include "grammar/check/SidesanaCheck.hpp"
+#include "grammar/Analysis.hpp"
 #include <cstring>
 #include <cstdlib>
 
-#ifdef HAVE_MALAGA
-	#include "autocorrect/AutoCorrect.hpp"
-#endif
-
-
 using namespace libvoikko::grammar;
-using namespace libvoikko::autocorrect;
 
 namespace libvoikko {
 
@@ -54,13 +42,14 @@ static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
-	if (!voikkoOptions->gc_cache.paragraph) {
+
+	if (!voikkoOptions->grammarChecker->cache.paragraph) {
 		return 0;
 	}
-	if (wcscmp(voikkoOptions->gc_cache.paragraph, text) != 0) {
+	if (wcscmp(voikkoOptions->grammarChecker->cache.paragraph, text) != 0) {
 		return 0;
 	}
-	CacheEntry * e = voikkoOptions->gc_cache.firstError;
+	CacheEntry * e = voikkoOptions->grammarChecker->cache.firstError;
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
@@ -74,14 +63,15 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 }
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
-	gc_clear_cache(voikkoOptions);
-	voikkoOptions->gc_cache.paragraph = new wchar_t[textlen + 1];
-	if (!voikkoOptions->gc_cache.paragraph) {
+	GrammarChecker * grammarChecker = voikkoOptions->grammarChecker;
+	grammarChecker->cache.clear();
+	grammarChecker->cache.paragraph = new wchar_t[textlen + 1];
+	if (!grammarChecker->cache.paragraph) {
 		return;
 	}
-	memcpy(voikkoOptions->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
-	voikkoOptions->gc_cache.paragraph[textlen] = L'\0';
-	Paragraph * para = gc_analyze_paragraph(voikkoOptions, text, textlen);
+	memcpy(grammarChecker->cache.paragraph, text, textlen * sizeof(wchar_t));
+	grammarChecker->cache.paragraph[textlen] = L'\0';
+	Paragraph * para = grammarChecker->paragraphAnalyser->analyseParagraph(text, textlen);
 	if (!para) {
 		return;
 	}
@@ -109,55 +99,9 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		}
 	}
 	
-	check::CapitalizationCheck capitalizationCheck;
-	check::NegativeVerbCheck negativeVerbCheck;
-	check::CompoundVerbCheck compoundVerbCheck;
-	check::SidesanaCheck sidesanaCheck;
-	check::MissingVerbCheck missingVerbCheck;
-	for (size_t i = 0; i < para->sentenceCount; i++) {
-#ifdef HAVE_MALAGA
-		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
-		// later format revisions. Old implementation is only available to support
-		// v2 dictionary format.
-		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
-#endif
-		gc_local_punctuation(voikkoOptions, para->sentences[i]);
-		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
-		gc_repeating_words(voikkoOptions, para->sentences[i]);
-		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
-		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
-		sidesanaCheck.check(voikkoOptions, para->sentences[i]);
-		missingVerbCheck.check(voikkoOptions, para->sentences[i]);
-	}
-	capitalizationCheck.check(voikkoOptions, para);
-	gc_end_punctuation(voikkoOptions, para);
+	RuleEngine * checks = grammarChecker->ruleEngine;
+	checks->check(para);
 	delete para;
-}
-
-void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
-	CacheEntry * entry = voikkoOptions->gc_cache.firstError;
-	if (!entry) {
-		voikkoOptions->gc_cache.firstError = new_entry;
-		return;
-	}
-	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->nextError = voikkoOptions->gc_cache.firstError;
-		voikkoOptions->gc_cache.firstError = new_entry;
-		return;
-	}
-	while (1) {
-		if (!entry->nextError) {
-			entry->nextError = new_entry;
-			return;
-		}
-		if (entry->error.startpos <= new_entry->error.startpos &&
-		    entry->nextError->error.startpos > new_entry->error.startpos) {
-			new_entry->nextError = entry->nextError;
-			entry->nextError = new_entry;
-			return;
-		}
-		entry = entry->nextError;
-	}
 }
 
 }

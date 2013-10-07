@@ -26,7 +26,7 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/analysis.hpp"
+#include "grammar/FinnishAnalysis.hpp"
 #include "tokenizer/Tokenizer.hpp"
 #include "sentence/Sentence.hpp"
 #include "utils/StringUtils.hpp"
@@ -39,9 +39,18 @@ using namespace std;
 
 namespace libvoikko {
 
-/** Analyze given text token. Token type, length and text must have already
+FinnishAnalysis::FinnishAnalysis(voikko_options_t * voikkoOptions) : voikkoOptions(voikkoOptions) {
+}
+
+
+FinnishAnalysis::~FinnishAnalysis() {
+
+}
+
+
+/** Analyse given text token. Token type, length and text must have already
  *  been set. */
-static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
+void FinnishAnalysis::analyseToken(Token * token) {
 	token->isValidWord = false;
 	token->possibleSentenceStart = false;
 	token->isGeographicalNameInGenitive = false;
@@ -176,9 +185,8 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	}
 }
 
-/** Analyze sentence text. Sentence type must be set by the caller. */
-static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
-	          const wchar_t * text, size_t textlen, size_t sentencepos) {
+/** Analyse sentence text. Sentence type must be set by the caller. */
+Sentence * FinnishAnalysis::analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) {
 	Sentence * s = new Sentence;
 	s->pos = sentencepos;
 	size_t tokenlen;
@@ -201,7 +209,7 @@ static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
 		s->tokens[i].pos = sentencepos + (pos - text);
-		gc_analyze_token(voikkoOptions, s->tokens + i);
+		analyseToken(s->tokens + i);
 		
 		if (next_word_is_possible_sentence_start && tt == TOKEN_WORD) {
 			s->tokens[i].possibleSentenceStart = true;
@@ -224,7 +232,7 @@ static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
 }
 
 
-Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
+Paragraph * FinnishAnalysis::analyseParagraph(const wchar_t * text, size_t textlen) {
 	Paragraph * p = new Paragraph;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -241,8 +249,7 @@ Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t
 			remaining -= sentencelen2;
 		} while (st == SENTENCE_POSSIBLE);
 		
-		Sentence * s = gc_analyze_sentence(voikkoOptions, pos, sentencelen,
-		                                   pos - text);
+		Sentence * s = analyseSentence(pos, sentencelen, pos - text);
 		if (!s) {
 			delete p;
 			return 0;

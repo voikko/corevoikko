@@ -29,7 +29,6 @@
 #include "autocorrect/AutoCorrect.hpp"
 #include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
 #include "utils/StringUtils.hpp"
 #include "TrieNode.hpp"
@@ -88,7 +87,7 @@ static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorTok
 		} else {
 			e->error.suggestions[0] = StringUtils::utf8FromUcs4(replacement);
 		}
-		gc_cache_append_error(options, e);
+		options->grammarChecker->cache.appendError(e);
 	}
 }
 

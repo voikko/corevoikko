@@ -37,6 +37,13 @@ class HfstAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
+
+		HfstAnalyzer & operator = (const HfstAnalyzer & other);
+	private:
+		hfst_ol::Transducer *t;
+
+		HfstAnalyzer(HfstAnalyzer const & other);
+
 };
 
 } }

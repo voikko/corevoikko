@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,45 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_GRAMMAR_FINNISHRULEENGINE
+#define VOIKKO_GRAMMAR_FINNISHRULEENGINE
 
 #include "setup/setup.hpp"
 
-namespace libvoikko {
+#include "grammar/RuleEngine.hpp"
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+#include "grammar/FinnishRuleEngine/checks.hpp"
+#include "grammar/FinnishRuleEngine/CapitalizationCheck.hpp"
+#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+namespace libvoikko { namespace grammar {
 
+class FinnishRuleEngine : public RuleEngine {
 
-}
+	public:
+		FinnishRuleEngine(voikko_options_t * voikkoOptions);
+		
+		~FinnishRuleEngine();
+		
+		int load(const std::string path);
+
+		void check(const Paragraph * paragraph);
+
+	private:
+		check::CapitalizationCheck capitalizationCheck;
+		check::NegativeVerbCheck negativeVerbCheck;
+		check::CompoundVerbCheck compoundVerbCheck;
+		check::SidesanaCheck sidesanaCheck;
+		check::MissingVerbCheck missingVerbCheck;
+		voikko_options_t * voikkoOptions;
+
+		FinnishRuleEngine(FinnishRuleEngine const & other);
+		FinnishRuleEngine & operator = (const FinnishRuleEngine & other);
+};
+
+} }
 
 #endif

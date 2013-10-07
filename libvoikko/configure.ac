@@ -133,6 +133,21 @@ AS_IF([test x$hfst = xyes], [
 	])
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
+dnl VISLCG3 support
+AH_TEMPLATE(HAVE_VISLCG3, [Have VISLCG3])
+AC_ARG_ENABLE(vislcg3, AC_HELP_STRING([--enable-vislcg3],
+	[enable vislcg3 grammar checking backend (EXPERIMENTAL!)]),
+	[cg3=${enableval}], [cg3=no])
+dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
+dnl AC_PROVIDE_IFELSE doesn't work on mac?
+AS_IF([test x$cg3 = xyes], [
+      PKG_CHECK_MODULES([VISLCG3], [cg3-0.9 >= 0.9])
+	  AC_DEFINE(HAVE_VISLCG3, 1)
+	  CXXFLAGS="$CXXFLAGS $VISLCG3_CFLAGS"
+	])
+AM_CONDITIONAL([HAVE_VISLCG3], [test x$cg3 = xyes])
+
+
 dnl VFST support
 AH_TEMPLATE(HAVE_VFST, [Have VFST])
 AC_ARG_ENABLE(vfst, AC_HELP_STRING([--enable-vfst],

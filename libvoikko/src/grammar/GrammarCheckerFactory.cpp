@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2009 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,11 +26,35 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/check/ParagraphCheck.hpp"
+#include "grammar/GrammarCheckerFactory.hpp"
+#include "grammar/NullGrammarChecker.hpp"
+#include "grammar/FinnishGrammarChecker.hpp"
+#include "porting.h"
 
-namespace libvoikko { namespace grammar { namespace check {
+#ifdef HAVE_VISLCG3
+#include "grammar/CgGrammarChecker.hpp"
+#endif
 
-ParagraphCheck::~ParagraphCheck() {
+using namespace std;
+
+namespace libvoikko { namespace grammar {
+
+GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
+	                              const setup::Dictionary & dictionary)
+	                              throw(setup::DictionaryException) {
+	if (dictionary.getGrammarBackend() == "null") {
+		return new NullGrammarChecker();
+	}
+	if (dictionary.getGrammarBackend() == "finnish") {
+		return new FinnishGrammarChecker(voikkoOptions);
+	}
+	#ifdef HAVE_VISLCG3
+	if (dictionary.getGrammarBackend() == "vislcg3") {
+		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath(), voikkoOptions);
+	}
+	#endif
+
+	throw setup::DictionaryException("Failed to create checker because of unknown grammar backend");
 }
 
-} } }
+} }

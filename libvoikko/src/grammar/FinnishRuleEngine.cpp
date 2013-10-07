@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,55 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
-
 #include "setup/setup.hpp"
 
-namespace libvoikko {
+#include "grammar/FinnishRuleEngine.hpp"
+#include "grammar/FinnishRuleEngine/checks.hpp"
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+#ifdef HAVE_MALAGA
+        #include "autocorrect/AutoCorrect.hpp"
+#endif
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+using namespace libvoikko::autocorrect;
 
+using namespace std;
+
+namespace libvoikko { namespace grammar {
+
+FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
+	 voikkoOptions(voikkoOptions) {
+}
+
+FinnishRuleEngine::~FinnishRuleEngine() {
 
 }
 
+int FinnishRuleEngine::load(const std::string path) {
+	return 0; 
+}
+
+void FinnishRuleEngine::check(const Paragraph * paragraph) {
+	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
+#ifdef HAVE_MALAGA
+		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
+		// later format revisions. Old implementation is only available to support
+		// v2 dictionary format.
+		AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
 #endif
+		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
+		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);
+		gc_repeating_words(voikkoOptions, paragraph->sentences[i]);
+		negativeVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
+		compoundVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
+		sidesanaCheck.check(voikkoOptions, paragraph->sentences[i]);
+		missingVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
+	}
+
+
+	capitalizationCheck.check(voikkoOptions, paragraph);
+	gc_end_punctuation(voikkoOptions, paragraph);
+
+}
+
+
+} }
