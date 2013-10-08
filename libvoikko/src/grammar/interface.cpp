@@ -45,7 +45,7 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	const voikko_grammar_error * c_error =
 	    gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
 	if (!c_error) {
-		gc_paragraph_to_cache(options, text_ucs4, wtextlen);
+		options->grammarChecker->paragraphToCache(text_ucs4, wtextlen);
 		c_error = gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
 	}
 	

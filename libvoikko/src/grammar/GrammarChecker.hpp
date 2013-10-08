@@ -44,6 +44,12 @@ class GrammarChecker {
 		grammar::Analysis * paragraphAnalyser;
 		morphology::Analyzer * analyser;
 		
+		/**
+		 * Performs grammar checking on the entire paragraph and stores the results
+		 * to cache.
+		 */
+		void paragraphToCache(const wchar_t * text, size_t textlen) ;
+		
 		virtual ~GrammarChecker();
 	
 };

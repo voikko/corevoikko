@@ -40,12 +40,6 @@ namespace libvoikko {
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors);
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
-
 
 }
 

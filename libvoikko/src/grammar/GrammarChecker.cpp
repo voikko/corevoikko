@@ -31,8 +31,48 @@
 
 namespace libvoikko { namespace grammar {
 
-	GrammarChecker::~GrammarChecker() {
-		cache.clear();
+GrammarChecker::~GrammarChecker() {
+	cache.clear();
+}
+	
+void GrammarChecker::paragraphToCache(const wchar_t * text, size_t textlen) {
+	cache.clear();
+	cache.paragraph = new wchar_t[textlen + 1];
+	if (!cache.paragraph) {
+		return;
 	}
+	memcpy(cache.paragraph, text, textlen * sizeof(wchar_t));
+	cache.paragraph[textlen] = L'\0';
+	Paragraph * para = paragraphAnalyser->analyseParagraph(text, textlen);
+	if (!para) {
+		return;
+	}
+	
+	// If paragraph is a single sentence without any whitespace, do not try to
+	// do grammar checking on it. This could be an URL or something equally
+	// strange.
+	if (para->sentenceCount == 1) {
+		Sentence * sentence = para->sentences[0];
+		bool hasWhitespace = false;
+		for (size_t i = 0; i < sentence->tokenCount; i++) {
+			if (sentence->tokens[i].type == TOKEN_WHITESPACE) {
+				hasWhitespace = true;
+				break;
+			}
+		}
+		if (!hasWhitespace) {
+			// If this is a single word sentence, we should check it, otherwise
+			// it makes no sense to try.
+			if (sentence->tokenCount > 2 || sentence->tokenCount == 0 ||
+			    sentence->tokens[0].type != TOKEN_WORD) {
+				delete para;
+				return;
+			}
+		}
+	}
+	
+	ruleEngine->check(para);
+	delete para;
+}
 
 } }
