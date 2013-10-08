@@ -1,3 +1,6 @@
+2013-10-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Add "voikkospell -L" for listing dictionary capabilities.
+
 2013-09-03 Harri Pitkänen <hatapitk@iki.fi>
 	* Internally standard and unspecified variant are not the same.
 

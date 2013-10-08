@@ -278,6 +278,28 @@ static int list_dicts(const char * path) {
 	return 0;
 }
 
+/**
+ * Print a list of available dictionary capabilities to stdout.
+ * @return status code to be returned when the program exits.
+ */
+static int list_capabilities(const char * path) {
+	const char * capability = "spell";
+	char ** languageCodes = voikkoListSupportedSpellingLanguages(path);
+	if (!languageCodes) {
+		cerr << "E: Failed to list dictionary capabilities." << endl;
+		return 1;
+	}
+	for (char ** i = languageCodes; *i; i++) {
+		cout << capability;
+		cout << ":";
+		cout << *i;
+		cout << endl;
+	}
+	voikkoFreeCstrArray(languageCodes);
+	return 0;
+}
+
+
 static void printHelp() {
 	cout << "Usage: voikkospell [OPTION]..." << endl;
 	cout << "Check spelling of words read from stdin." << endl;
@@ -302,6 +324,7 @@ int main(int argc, char ** argv) {
 	
 	cache_size = 0;
 	bool list_dicts_requested = false;
+	bool list_capabilities_requested = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args.find("-c") == 0) {
@@ -324,6 +347,9 @@ int main(int argc, char ** argv) {
 		else if (args == "-l") {
 			list_dicts_requested = true;
 		}
+		else if (args == "-L") {
+			list_capabilities_requested = true;
+		}
 		else if (args == "-j") {
 			#ifdef HAVE_PTHREAD
 				if (i + 1 == argc) {
@@ -344,6 +370,10 @@ int main(int argc, char ** argv) {
 	
 	if (list_dicts_requested) {
 		return list_dicts(path);
+	}
+	
+	if (list_capabilities_requested) {
+		return list_capabilities(path);
 	}
 	
 	spellers = new speller_t[threadCount];
