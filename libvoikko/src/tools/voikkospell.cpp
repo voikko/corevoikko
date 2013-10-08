@@ -278,17 +278,7 @@ static int list_dicts(const char * path) {
 	return 0;
 }
 
-/**
- * Print a list of available dictionary capabilities to stdout.
- * @return status code to be returned when the program exits.
- */
-static int list_capabilities(const char * path) {
-	const char * capability = "spell";
-	char ** languageCodes = voikkoListSupportedSpellingLanguages(path);
-	if (!languageCodes) {
-		cerr << "E: Failed to list dictionary capabilities." << endl;
-		return 1;
-	}
+static void printAndDeleteCapabilityList(const char * capability, char ** languageCodes) {
 	for (char ** i = languageCodes; *i; i++) {
 		cout << capability;
 		cout << ":";
@@ -296,6 +286,34 @@ static int list_capabilities(const char * path) {
 		cout << endl;
 	}
 	voikkoFreeCstrArray(languageCodes);
+}
+
+/**
+ * Print a list of available dictionary capabilities to stdout.
+ * @return status code to be returned when the program exits.
+ */
+static int list_capabilities(const char * path) {
+	char ** languageCodes = voikkoListSupportedSpellingLanguages(path);
+	if (!languageCodes) {
+		cerr << "E: Failed to list dictionaries with spell checking capability" << endl;
+		return 1;
+	}
+	printAndDeleteCapabilityList("spell", languageCodes);
+	
+	languageCodes = voikkoListSupportedHyphenationLanguages(path);
+	if (!languageCodes) {
+		cerr << "E: Failed to list dictionaries with hyphenation capability" << endl;
+		return 1;
+	}
+	printAndDeleteCapabilityList("hyphen", languageCodes);
+	
+	languageCodes = voikkoListSupportedGrammarCheckingLanguages(path);
+	if (!languageCodes) {
+		cerr << "E: Failed to list dictionaries with grammar checking capability" << endl;
+		return 1;
+	}
+	printAndDeleteCapabilityList("grammar", languageCodes);
+	
 	return 0;
 }
 

@@ -75,7 +75,8 @@ VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 	return dict->getDescription().c_str();
 }
 
-VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
+// TODO: implement filtering by capability
+static char ** listSupportedLanguagesForCapability(const char * path) {
 	list<Dictionary> dictList = path ?
 	                            DictionaryFactory::findAllAvailable(path) :
 	                            DictionaryFactory::findAllAvailable();
@@ -94,6 +95,18 @@ VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
 	}
 	languages[n] = 0;
 	return languages;
+}
+
+VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
+	return listSupportedLanguagesForCapability(path);
+}
+
+VOIKKOEXPORT char ** voikkoListSupportedHyphenationLanguages(const char * path) {
+	return listSupportedLanguagesForCapability(path);
+}
+
+VOIKKOEXPORT char ** voikkoListSupportedGrammarCheckingLanguages(const char * path) {
+	return listSupportedLanguagesForCapability(path);
 }
 
 VOIKKOEXPORT const char * voikkoGetVersion() {

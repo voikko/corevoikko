@@ -356,6 +356,24 @@ const char * voikko_dict_description(const struct voikko_dict * dict);
 char ** voikkoListSupportedSpellingLanguages(const char * path);
 
 /**
+ * Same as voikkoListSupportedSpellingLanguages but for hyphenation.
+ * @param path path to a directory from which dictionary files should be searched
+ *        first before looking into the standard dictionary locations.
+ * @return A pointer to a null terminated array of language codes. The array
+ *         should be freed using voikkoFreeCstrArray.
+ */
+char ** voikkoListSupportedHyphenationLanguages(const char * path);
+
+/**
+ * Same as voikkoListSupportedSpellingLanguages but for grammar checking.
+ * @param path path to a directory from which dictionary files should be searched
+ *        first before looking into the standard dictionary locations.
+ * @return A pointer to a null terminated array of language codes. The array
+ *         should be freed using voikkoFreeCstrArray.
+ */
+char ** voikkoListSupportedGrammarCheckingLanguages(const char * path);
+
+/**
  * Return the version number of libvoikko.
  * @return The version number
  */
