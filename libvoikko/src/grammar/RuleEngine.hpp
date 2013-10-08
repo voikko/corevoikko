@@ -40,8 +40,6 @@ namespace grammar {
 class RuleEngine {
 	public:
 		
-		virtual	int load(const std::string path) = 0;
-
 		virtual void check(const Paragraph * para) = 0;
 	
 		virtual ~RuleEngine() = 0 ;		

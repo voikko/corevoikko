@@ -49,8 +49,6 @@ class FinnishRuleEngine : public RuleEngine {
 		
 		~FinnishRuleEngine();
 		
-		int load(const std::string path);
-
 		void check(const Paragraph * paragraph);
 
 	private:

@@ -38,11 +38,7 @@ namespace libvoikko { namespace grammar {
 
 class GrammarChecker {
 	public:
-
-		grammar::RuleEngine * ruleEngine;
 		grammar::GcCache cache;
-		grammar::Analysis * paragraphAnalyser;
-		morphology::Analyzer * analyser;
 		
 		/**
 		 * Returns a pointer to a cached grammar error or null, if there are no cached
@@ -57,6 +53,11 @@ class GrammarChecker {
 		void paragraphToCache(const wchar_t * text, size_t textlen) ;
 		
 		virtual ~GrammarChecker();
+	
+	protected:
+		grammar::RuleEngine * ruleEngine;
+		morphology::Analyzer * analyser;
+		grammar::Analysis * paragraphAnalyser;
 	
 };
 

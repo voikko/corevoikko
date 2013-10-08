@@ -49,10 +49,6 @@ FinnishRuleEngine::~FinnishRuleEngine() {
 
 }
 
-int FinnishRuleEngine::load(const std::string path) {
-	return 0; 
-}
-
 void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA

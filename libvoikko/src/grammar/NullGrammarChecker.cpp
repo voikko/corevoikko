@@ -31,18 +31,37 @@
 
 namespace libvoikko { namespace grammar {
 
-NullGrammarChecker::NullGrammarChecker()  {
-
+class NullParagraphAnalyzer : public Analysis {
 	
+	void analyseToken(Token * token) {
+	}
+	
+	Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) {
+		return 0;
+	}
+	
+	Paragraph * analyseParagraph(const wchar_t * text, size_t textlen) {
+		return new Paragraph;
+	}
+};
+
+class NullRuleEngine : public RuleEngine {
+	
+	void check(const Paragraph * para) {
+	}
+};
+
+NullGrammarChecker::NullGrammarChecker()  {
+	ruleEngine = new NullRuleEngine();
+	paragraphAnalyser = new NullParagraphAnalyzer();
 }
 
 NullGrammarChecker::~NullGrammarChecker() {
-
+	delete paragraphAnalyser;
+	delete ruleEngine;
 }
 
 void NullGrammarChecker::init() { 
-
-	return;
 }
 
 
