@@ -31,10 +31,34 @@
 
 namespace libvoikko { namespace grammar {
 
+// This will be initialized to zero meaning "no errors"
+static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
+
+
 GrammarChecker::~GrammarChecker() {
 	cache.clear();
 }
-	
+
+const voikko_grammar_error * GrammarChecker::errorFromCache(const wchar_t * text, size_t startpos, int skiperrors) {
+	if (!cache.paragraph) {
+		return 0;
+	}
+	if (wcscmp(cache.paragraph, text) != 0) {
+		return 0;
+	}
+	CacheEntry * e = cache.firstError;
+	int preverrors = 0;
+	while (e) {
+		if (preverrors >= skiperrors &&
+		    e->error.startpos >= startpos) {
+			return &e->error;
+		}
+		preverrors++;
+		e = e->nextError;
+	}
+	return &no_grammar_error;
+}
+
 void GrammarChecker::paragraphToCache(const wchar_t * text, size_t textlen) {
 	cache.clear();
 	cache.paragraph = new wchar_t[textlen + 1];

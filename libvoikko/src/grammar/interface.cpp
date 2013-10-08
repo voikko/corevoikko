@@ -29,7 +29,6 @@
 #include "porting.h"
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
-#include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
 
@@ -43,10 +42,10 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 		return 0;
 	}
 	const voikko_grammar_error * c_error =
-	    gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
+	    options->grammarChecker->errorFromCache(text_ucs4, startpos, skiperrors);
 	if (!c_error) {
 		options->grammarChecker->paragraphToCache(text_ucs4, wtextlen);
-		c_error = gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
+		c_error = options->grammarChecker->errorFromCache(text_ucs4, startpos, skiperrors);
 	}
 	
 	if (!c_error || c_error->error_code == 0) {

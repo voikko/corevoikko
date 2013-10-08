@@ -29,7 +29,6 @@
 #include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
 #include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cache.hpp"
 
 using namespace std;
 

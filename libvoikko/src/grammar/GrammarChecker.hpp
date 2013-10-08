@@ -45,6 +45,12 @@ class GrammarChecker {
 		morphology::Analyzer * analyser;
 		
 		/**
+		 * Returns a pointer to a cached grammar error or null, if there are no cached
+		 * results for given paragraph.
+		 */
+		const voikko_grammar_error * errorFromCache(const wchar_t * text, size_t startpos, int skiperrors);
+		
+		/**
 		 * Performs grammar checking on the entire paragraph and stores the results
 		 * to cache.
 		 */

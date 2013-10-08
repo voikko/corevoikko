@@ -29,7 +29,6 @@
 #include "autocorrect/AutoCorrect.hpp"
 #include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cache.hpp"
 #include "utils/StringUtils.hpp"
 #include "TrieNode.hpp"
 #include <cstring>

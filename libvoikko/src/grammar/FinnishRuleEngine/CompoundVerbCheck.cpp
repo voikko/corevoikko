@@ -28,7 +28,6 @@
 
 #include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cache.hpp"
 
 using namespace std;
 

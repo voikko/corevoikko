@@ -28,7 +28,6 @@
 
 #include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cache.hpp"
 
 using namespace std;
 

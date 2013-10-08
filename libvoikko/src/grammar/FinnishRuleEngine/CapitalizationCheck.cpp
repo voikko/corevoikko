@@ -28,7 +28,6 @@
 
 #include "grammar/FinnishRuleEngine/CapitalizationCheck.hpp"
 #include "grammar/error.hpp"
-#include "grammar/cache.hpp"
 #include "character/SimpleChar.hpp"
 #include "character/charset.hpp"
 #include "utils/StringUtils.hpp"
