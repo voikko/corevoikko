@@ -39,6 +39,7 @@ libvoikko_la_SOURCES = \
     morphology/AnalyzerFactory.cpp \
     morphology/NullAnalyzer.cpp \
     setup/setup.cpp setup/Dictionary.cpp \
+    setup/BackendProperties.cpp \
     setup/DictionaryFactory.cpp \
     setup/DictionaryLoader.cpp \
     setup/V2DictionaryLoader.cpp \
@@ -112,6 +113,7 @@ noinst_HEADERS = \
     morphology/malaga/values.hpp \
     morphology/malaga/MalagaState.hpp \
     setup/setup.hpp setup/Dictionary.hpp \
+    setup/BackendProperties.hpp \
     setup/DictionaryFactory.hpp \
     setup/DictionaryLoader.hpp \
     setup/V2DictionaryLoader.hpp \
