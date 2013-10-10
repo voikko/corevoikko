@@ -38,6 +38,10 @@ namespace libvoikko { namespace setup {
 
 typedef Dictionary voikko_dict;
 
+static const int CAPABILITY_SPELL = 1;
+static const int CAPABILITY_GC = 2;
+static const int CAPABILITY_HYPHENATION = 4;
+
 VOIKKOEXPORT voikko_dict ** voikko_list_dicts(const char * path) {
 	list<Dictionary> dictList = path ?
 	                            DictionaryFactory::findAllAvailable(path) :
@@ -76,13 +80,18 @@ VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 }
 
 // TODO: implement filtering by capability
-static char ** listSupportedLanguagesForCapability(const char * path) {
+static char ** listSupportedLanguagesForCapability(const char * path, int capability) {
 	list<Dictionary> dictList = path ?
 	                            DictionaryFactory::findAllAvailable(path) :
 	                            DictionaryFactory::findAllAvailable();
 	set<string> allLanguages;
 	for (list<Dictionary>::iterator i = dictList.begin(); i != dictList.end(); ++i) {
-		allLanguages.insert((*i).getLanguage().getLanguage());
+		Dictionary d = *i;
+		if ((capability == CAPABILITY_SPELL && d.getSpellBackend().isAdvertised()) ||
+		    (capability == CAPABILITY_HYPHENATION && d.getHyphenatorBackend().isAdvertised()) ||
+		    (capability == CAPABILITY_GC && d.getGrammarBackend().isAdvertised())) {
+			allLanguages.insert(d.getLanguage().getLanguage());
+		}
 	}
 	
 	char ** languages = new char*[allLanguages.size() + 1];
@@ -98,15 +107,15 @@ static char ** listSupportedLanguagesForCapability(const char * path) {
 }
 
 VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
-	return listSupportedLanguagesForCapability(path);
+	return listSupportedLanguagesForCapability(path, CAPABILITY_SPELL);
 }
 
 VOIKKOEXPORT char ** voikkoListSupportedHyphenationLanguages(const char * path) {
-	return listSupportedLanguagesForCapability(path);
+	return listSupportedLanguagesForCapability(path, CAPABILITY_HYPHENATION);
 }
 
 VOIKKOEXPORT char ** voikkoListSupportedGrammarCheckingLanguages(const char * path) {
-	return listSupportedLanguagesForCapability(path);
+	return listSupportedLanguagesForCapability(path, CAPABILITY_GC);
 }
 
 VOIKKOEXPORT const char * voikkoGetVersion() {
