@@ -32,7 +32,19 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
-BackendProperties::BackendProperties(const string & path, const string & backend, bool advertised) :
+BackendProperties::BackendProperties() :
+	path(),
+	backend(),
+	advertised(false) {
+}
+
+BackendProperties::BackendProperties(const string & backend, bool advertised) :
+	path(),
+	backend(backend),
+	advertised(advertised) {
+}
+
+BackendProperties::BackendProperties(const string & backend, const string & path, bool advertised) :
 	path(path),
 	backend(backend),
 	advertised(advertised) {

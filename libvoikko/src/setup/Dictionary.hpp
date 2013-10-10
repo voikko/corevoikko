@@ -31,6 +31,7 @@
 
 #include <string>
 #include "setup/LanguageTag.hpp"
+#include "setup/BackendProperties.hpp"
 
 namespace libvoikko { namespace setup {
 
@@ -39,15 +40,12 @@ class Dictionary {
 	friend bool operator<(const Dictionary & d1, const Dictionary & d2);
 
 	private:
-	std::string morPath;
-	std::string gramMorPath;
-	std::string grammarPath;
-	std::string morBackend;
-	std::string gramMorBackend;
-	std::string grammarBackend;
-	std::string spellBackend;
-	std::string suggestionBackend;
-	std::string hyphenatorBackend;
+	BackendProperties morBackend;
+	BackendProperties gramMorBackend;
+	BackendProperties grammarBackend;
+	BackendProperties spellBackend;
+	BackendProperties suggestionBackend;
+	BackendProperties hyphenatorBackend;
 	LanguageTag language;
 	std::string description;
 	bool isDefaultDict;
@@ -55,29 +53,23 @@ class Dictionary {
 	public:
 	Dictionary();
 
-	Dictionary(const std::string & morPath,
-	           const std::string & gramMorPath,
-	           const std::string & grammarPath,
-	           const std::string & morBackend,
-	           const std::string & gramMorBackend,
-	           const std::string & grammarBackend,
-	           const std::string & spellBackend,
-	           const std::string & suggestionBackend,
-	           const std::string & hyphenatorBackend,
+	Dictionary(const BackendProperties & morBackend,
+	           const BackendProperties & gramMorBackend,
+	           const BackendProperties & grammarBackend,
+	           const BackendProperties & spellBackend,
+	           const BackendProperties & suggestionBackend,
+	           const BackendProperties & hyphenatorBackend,
 	           const LanguageTag & language,
 	           const std::string & description);
 
 	Dictionary(const Dictionary & dictionary);
 
-	const std::string & getMorPath() const;
-	const std::string & getGramMorPath() const;
-	const std::string & getGrammarPath() const;
-	const std::string & getMorBackend() const;
-	const std::string & getGramMorBackend() const;
-	const std::string & getGrammarBackend() const;
-	const std::string & getSpellBackend() const;
-	const std::string & getSuggestionBackend() const;
-	const std::string & getHyphenatorBackend() const;
+	const BackendProperties & getMorBackend() const;
+	const BackendProperties & getGramMorBackend() const;
+	const BackendProperties & getGrammarBackend() const;
+	const BackendProperties & getSpellBackend() const;
+	const BackendProperties & getSuggestionBackend() const;
+	const BackendProperties & getHyphenatorBackend() const;
 	const LanguageTag & getLanguage() const;
 	const std::string & getDescription() const;
 	bool isValid() const;

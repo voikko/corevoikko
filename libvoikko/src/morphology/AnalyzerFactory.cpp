@@ -52,27 +52,29 @@ namespace libvoikko { namespace morphology {
 
 Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
-	if (dictionary.getMorBackend() == "null") {
+	string morBackend = dictionary.getMorBackend().getBackend();
+	string morPath = dictionary.getMorBackend().getPath();
+	if (morBackend == "null") {
 		return new NullAnalyzer();
 	}
 	#ifdef HAVE_MALAGA
-	if (dictionary.getMorBackend() == "malaga") {
-		return new MalagaAnalyzer(dictionary.getMorPath());
+	if (morBackend == "malaga") {
+		return new MalagaAnalyzer(morPath);
 	}
 	#endif
 	#ifdef HAVE_VFST
-	if (dictionary.getMorBackend() == "vfst") {
-		return new VfstAnalyzer(dictionary.getMorPath());
+	if (morBackend == "vfst") {
+		return new VfstAnalyzer(morPath);
 	}
 	#endif
 	#ifdef HAVE_HFST
-	if (dictionary.getMorBackend() == "hfst") {
-		return new HfstAnalyzer(dictionary.getMorPath());
+	if (morBackend == "hfst") {
+		return new HfstAnalyzer(morPath);
 	}
 	#endif
 	#ifdef HAVE_LTTOOLBOX
-	if (dictionary.getMorBackend() == "lttoolbox") {
-		return new LttoolboxAnalyzer(dictionary.getMorPath());
+	if (morBackend == "lttoolbox") {
+		return new LttoolboxAnalyzer(morPath);
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");

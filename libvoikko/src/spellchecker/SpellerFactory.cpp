@@ -50,23 +50,24 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	morphology::Analyzer * currentAnalyzer = voikkoOptions->morAnalyzer;
 	// FIXME: add proper parsing and possibility to combine components freely
 	// Take care of proper memory management (who has to delete what).
-	if (dictionary.getSpellBackend() == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
+	string spellBackend = dictionary.getSpellBackend().getBackend();
+	if (spellBackend == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
 		return new AnalyzerToSpellerAdapter(currentAnalyzer);
-	} else if (dictionary.getSpellBackend() == "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)") {
+	} else if (spellBackend == "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)") {
 		return new FinnishSpellerTweaksWrapper(new AnalyzerToSpellerAdapter(currentAnalyzer), currentAnalyzer, voikkoOptions);
-	} else if (dictionary.getSpellBackend() == "AllOk") {
+	} else if (spellBackend == "AllOk") {
 		return new FixedResultSpeller(SPELL_OK);
-	} else if (dictionary.getSpellBackend() == "AllError") {
+	} else if (spellBackend == "AllError") {
 		return new FixedResultSpeller(SPELL_FAILED);
 	}
 	#ifdef HAVE_HFST
-	if (dictionary.getSpellBackend() == "hfst") {
-		return new HfstSpeller(dictionary.getMorPath());
+	if (spellBackend == "hfst") {
+		return new HfstSpeller(dictionary.getMorBackend().getPath());
 	}
 	#endif
 	#ifdef HAVE_VFST
-	if (dictionary.getSpellBackend() == "vfst") {
-		return new VfstSpeller(dictionary.getMorPath());
+	if (spellBackend == "vfst") {
+		return new VfstSpeller(dictionary.getMorBackend().getPath());
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create speller because backend configuration could not be parsed");

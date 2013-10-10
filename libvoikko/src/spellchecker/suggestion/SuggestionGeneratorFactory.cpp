@@ -46,7 +46,7 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	                             voikko_options_t * voikkoOptions,
 	                             SuggestionType suggestionType)
 	                              throw(setup::DictionaryException) {
-	string backend = voikkoOptions->dictionary.getSuggestionBackend();
+	string backend = voikkoOptions->dictionary.getSuggestionBackend().getBackend();
 	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {
 		if (suggestionType == SUGGESTION_TYPE_OCR) {
 			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer, 1500);

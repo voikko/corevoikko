@@ -47,8 +47,9 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 
-	ruleEngine = new CgRuleEngine(voikkoOptions);
-	ruleEngine->load(rules);
+	CgRuleEngine * cgRuleEngine = new CgRuleEngine(voikkoOptions);
+	ruleEngine = cgRuleEngine;
+	cgRuleEngine->load(rules);
 
 	analyser = new morphology::HfstAnalyzer(f_analyser);
 

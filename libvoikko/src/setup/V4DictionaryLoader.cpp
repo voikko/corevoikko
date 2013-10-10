@@ -50,11 +50,9 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 	mainPath.append(HFST_DICTIONARY_VERSION);
 	//cerr << "V4DictionaryLoader::findDictionaries: " << mainPath << endl ; 
 	list<string> subDirectories = getListOfSubentries(mainPath);
-	string grammarBackend = "null";
-	string gramMorPath = ""; 
-	string grammarPath = "";
-	string gramMorBackend = "null";
-	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
+	BackendProperties grammarBackend("null", false);
+	BackendProperties gramMorBackend("null", false);
+	BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", false);
 
 	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
 		string dirName = *i;
@@ -67,18 +65,16 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 			string fileName = *j;
 			//cerr << "   findDictionaries: " << fileName << endl;
 			if (fileName.find("gramchk.bin") != std::string::npos) {
-				grammarPath = mainPath + "/" + dirName + "/" + fileName;
-				grammarBackend = "vislcg3";
+				grammarBackend = BackendProperties("vislcg3", mainPath + "/" + dirName + "/" + fileName, true);
 			}
 			if (fileName.find("-desc.hfst") != std::string::npos) {
-				gramMorPath = mainPath + "/" + dirName + "/" + fileName;
-				gramMorBackend = "hfst";
+				gramMorBackend = BackendProperties("hfst", mainPath + "/" + dirName + "/" + fileName, false);
 			}
 			if (fileName.find(".zhfst") != std::string::npos) {
-				string morBackend = "hfst";
-				string spellBackend = "hfst";
-				string suggestionBackend = "hfst";
 				string fullPath = mainPath + "/" + dirName + "/" + fileName;
+				BackendProperties morBackend("hfst", fullPath, true);
+				BackendProperties spellBackend("hfst", true);
+				BackendProperties suggestionBackend("hfst", true);
 				// TODO implement null hyphenator
 				//cerr << "   +found: " << fileName << endl;
 			
@@ -110,7 +106,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				cerr << "  " << hyphenatorBackend  << endl;
 				cerr << "  " << description << endl;
 */
-				Dictionary dict = Dictionary(fullPath, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, 
+				Dictionary dict = Dictionary(morBackend, gramMorBackend, grammarBackend, 
 								spellBackend, suggestionBackend,
 								hyphenatorBackend, language, description);
 				addDictionary(dict);

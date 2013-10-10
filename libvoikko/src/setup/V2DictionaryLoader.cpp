@@ -82,14 +82,12 @@ Dictionary V2DictionaryLoader::dictionaryFromPath(const string & path) {
 	LanguageTag language;
 	language.setLanguage("fi");
 	string description;
-	string morBackend = "malaga";
-	string gramMorBackend = "finnish";
-	string grammarBackend = "finnish";
-	string grammarPath = "";
-	string gramMorPath = "";
-	string spellBackend = "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)";
-	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
-	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
+	BackendProperties morBackend("malaga", path, true);
+	BackendProperties gramMorBackend;
+	BackendProperties grammarBackend("finnish", true);
+	BackendProperties spellBackend("FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)", true);
+	BackendProperties suggestionBackend("FinnishSuggestionStrategy(currentAnalyzer)", true);
+	BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", true);
 	while (file.good()) {
 		getline(file, line);
 		if (line.find("info: Language-Code: ") == 0) {
@@ -104,20 +102,20 @@ Dictionary V2DictionaryLoader::dictionaryFromPath(const string & path) {
 			description = line.substr(19);
 		}
 		else if (line.find("info: Morphology-Backend: ") == 0) {
-			morBackend = line.substr(26);
+			morBackend = BackendProperties(line.substr(26), path, true);
 		}
 		else if (line.find("info: Speller-Backend: ") == 0) {
-			spellBackend = line.substr(23);
+			spellBackend = BackendProperties(line.substr(23), true);
 		}
 		else if (line.find("info: Suggestion-Backend: ") == 0) {
-			suggestionBackend = line.substr(26);
+			suggestionBackend = BackendProperties(line.substr(26), true);
 		}
 		else if (line.find("info: Hyphenator-Backend: ") == 0) {
-			hyphenatorBackend = line.substr(26);
+			hyphenatorBackend = BackendProperties(line.substr(26), true);
 		}
 	}
 	file.close();
-	return Dictionary(path, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
+	return Dictionary(morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
 	                  hyphenatorBackend, language, description);
 }
 

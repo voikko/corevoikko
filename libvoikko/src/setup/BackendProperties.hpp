@@ -41,8 +41,12 @@ class BackendProperties {
 	bool advertised;
 
 	public:
-	BackendProperties(const std::string & path,
-	           const std::string & backend,
+	BackendProperties();
+	
+	BackendProperties(const std::string & backend, bool advertised);
+	
+	BackendProperties(const std::string & backend,
+	           const std::string & path,
 	           bool advertised);
 
 	BackendProperties(const BackendProperties & props);

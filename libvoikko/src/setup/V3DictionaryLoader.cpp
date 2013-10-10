@@ -52,11 +52,11 @@ void V3DictionaryLoader::findDictionaries(const string & path) {
 		string dirName = *i;
 		if (dirName.find(".zhfst") + 6 == dirName.length()) {
 			string fullPath = mainPath + "/" + dirName;
-			string morBackend = "null";
-			string spellBackend = "hfst";
-			string suggestionBackend = "hfst";
+			BackendProperties morBackend("null", fullPath, false);
+			BackendProperties spellBackend("hfst", true);
+			BackendProperties suggestionBackend("hfst", true);
 			// TODO implement null hyphenator
-			string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
+			BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", false);
 			
 			hfst_ol::ZHfstOspeller * speller = new hfst_ol::ZHfstOspeller();
 			try {
@@ -73,11 +73,9 @@ void V3DictionaryLoader::findDictionaries(const string & path) {
 			map<string, string> languageVersions = spellerMetadata.info_.title_;
 			string description = languageVersions[spellerMetadata.info_.locale_];
 			delete speller;
-			string gramMorPath = "";
-			string grammarPath = "";
-			string gramMorBackend = "null";
-			string grammarBackend = "null";
-			Dictionary dict = Dictionary(fullPath, gramMorPath, grammarPath, morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
+			BackendProperties gramMorBackend("null", false);
+			BackendProperties grammarBackend("null", false);
+			Dictionary dict = Dictionary(morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,
 			                  hyphenatorBackend, language, description);
 			addDictionary(dict);
 		}

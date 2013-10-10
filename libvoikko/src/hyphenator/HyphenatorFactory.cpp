@@ -41,13 +41,13 @@ namespace libvoikko { namespace hyphenator {
 Hyphenator * HyphenatorFactory::getHyphenator(const voikko_options_t * options,
                                 const Dictionary & dictionary)
                                 throw(DictionaryException) {
-	string backend = dictionary.getHyphenatorBackend();
+	string backend = dictionary.getHyphenatorBackend().getBackend();
 	if (backend == "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)") {
 		return new AnalyzerToFinnishHyphenatorAdapter(options->morAnalyzer);
 	}
 	#ifdef HAVE_HFST
 	if (backend == "hfst") {
-		return new HfstHyphenator(dictionary.getMorPath());
+		return new HfstHyphenator(dictionary.getMorBackend().getPath());
 	}
 	#endif
 	throw DictionaryException("Could not create hyphenator due to unknown hyphenator backend");

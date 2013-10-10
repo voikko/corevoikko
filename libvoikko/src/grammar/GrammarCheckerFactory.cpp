@@ -42,15 +42,16 @@ namespace libvoikko { namespace grammar {
 GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
 	                              const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
-	if (dictionary.getGrammarBackend() == "null") {
+	string grammarBackend = dictionary.getGrammarBackend().getBackend();
+	if (grammarBackend == "null") {
 		return new NullGrammarChecker();
 	}
-	if (dictionary.getGrammarBackend() == "finnish") {
+	if (grammarBackend == "finnish") {
 		return new FinnishGrammarChecker(voikkoOptions);
 	}
 	#ifdef HAVE_VISLCG3
-	if (dictionary.getGrammarBackend() == "vislcg3") {
-		return new CgGrammarChecker(dictionary.getGramMorPath(), dictionary.getGrammarPath(), voikkoOptions);
+	if (grammarBackend == "vislcg3") {
+		return new CgGrammarChecker(dictionary.getGramMorBackend().getPath(), dictionary.getGrammarBackend().getPath(), voikkoOptions);
 	}
 	#endif
 
