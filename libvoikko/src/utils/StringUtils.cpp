@@ -93,6 +93,13 @@ wchar_t * StringUtils::copy(const wchar_t * const original) {
 	return copied;
 }
 
+char * StringUtils::copy(const char * const original) {
+	size_t len = strlen(original);
+	char * copied = new char[len + 1];
+	strcpy(copied, original);
+	return copied;
+}
+
 void StringUtils::deleteCStringArray(char ** stringArray) {
 	if (stringArray) {
 		for (char ** p = stringArray; *p; p++) {

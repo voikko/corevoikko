@@ -217,3 +217,8 @@ struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
  */
 struct voikko_mor_analysis ** voikko_analyze_word_cstr(
                               int handle, const char * word);
+
+/**
+ * See voikkoGetGrammarErrorShortDescription
+ */
+const char * voikko_error_message_cstr(int error_code, const char * language);

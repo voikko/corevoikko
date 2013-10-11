@@ -28,7 +28,10 @@
 
 #include "grammar/error.hpp"
 #include "porting.h"
+#include "utils/StringUtils.hpp"
 #include <cstring>
+
+typedef voikko_grammar_error VoikkoGrammarError; // for now
 
 namespace libvoikko {
 
@@ -116,6 +119,10 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 		}
 		return "Unknown error";
 	}
+}
+
+VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const VoikkoGrammarError * error, const char * language) {
+	return utils::StringUtils::copy(voikko_error_message_cstr(error->error_code, language));
 }
 
 void init_grammar_error(voikko_grammar_error * error) {

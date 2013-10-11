@@ -59,6 +59,11 @@ class StringUtils {
 	static wchar_t * copy(const wchar_t * const original);
 
 	/**
+	 * Makes a copy of a string.
+	 */
+	static char * copy(const char * const original);
+
+	/**
 	 * Delete a C++ allocated char string array.
 	 */
 	static void deleteCStringArray(char ** stringArray);

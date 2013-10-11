@@ -296,13 +296,19 @@ const char ** voikkoGetGrammarErrorSuggestions(const struct VoikkoGrammarError *
 void voikkoFreeGrammarError(struct VoikkoGrammarError * error);
 
 /**
- * Localized error message.
- * @param error_code Error code (from voikko_grammar_error)
- * @param language ISO language code or null, if the language from current locale
- *        should be used.
- * @return The UTF-8 encoded localized error message for the error code.
+ * Get the localized short description of the grammar error.
+ * @param error The grammar error
+ * @param language ISO language code for the lanugage of error description
+ * @return The UTF-8 encoded localized error description. Use voikkoFreeErrorMessageCstr
+ *         to delete the message after use.
  */
-const char * voikko_error_message_cstr(int error_code, const char * language);
+char * voikkoGetGrammarErrorShortDescription(struct VoikkoGrammarError * error);
+
+/**
+ * Frees the memory allocated for error message.
+ * @param message the error message.
+ */
+void voikkoFreeErrorMessageCstr(char * message);
 
 /**
  * A type representing a dictionary

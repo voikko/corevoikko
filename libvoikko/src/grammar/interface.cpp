@@ -109,6 +109,10 @@ VOIKKOEXPORT const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarE
 	return const_cast<const char **>(error->suggestions);
 }
 
+VOIKKOEXPORT void voikkoFreeErrorMessageCstr(char * message) {
+	delete[] message;
+}
+
 VOIKKOEXPORT void voikkoFreeGrammarError(VoikkoGrammarError * error) {
 	if (error) {
 		if (error->suggestions) {
