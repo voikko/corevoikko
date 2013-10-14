@@ -302,7 +302,7 @@ void voikkoFreeGrammarError(struct VoikkoGrammarError * error);
  * @return The UTF-8 encoded localized error description. Use voikkoFreeErrorMessageCstr
  *         to delete the message after use.
  */
-char * voikkoGetGrammarErrorShortDescription(struct VoikkoGrammarError * error);
+char * voikkoGetGrammarErrorShortDescription(struct VoikkoGrammarError * error, const char * language);
 
 /**
  * Frees the memory allocated for error message.
