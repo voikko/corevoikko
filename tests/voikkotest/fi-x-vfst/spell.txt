@@ -2162,3 +2162,6 @@ julkaistakseen
 kaunihimpi
 tunsin
 lähdin
+vietäessä
+tultaessa
+vanhempansa

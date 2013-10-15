@@ -1021,7 +1021,7 @@ LEXICON NOUN Ainoa
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suurempi
-?Laatusana	Voittoaste_<A>	;
+Voittoaste_<A>	;
 
 LEXICON NOUN Vapaa
 <WC>Vapaa_s_<A>	;
@@ -2790,6 +2790,7 @@ n:n	Mahtotapa_<A>	;
 Mahtotapa_tA_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
+Johdin_nimitapa2_tAessA_<A>	;
 Johdin_mA_<A>	;
 Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
@@ -2878,6 +2879,7 @@ KertomanTekijäpääteHeikko_<A>	;
 Käskytapa_e_<A>	;
 EhtotapaTa_<A>	;
 Ehtotapa_<A>	;
+Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
@@ -3799,6 +3801,7 @@ LEXICON Johdin_nti
 
 LEXICON Voittoaste
 [Sn][Ny][Cc]mpi@D.EI_VERTM@:mpi@D.EI_VERTM@	Liitesana_<A>	;
+[Sn][Ny][Cc]mp<A>:mp<A>	Omistusliite_<A>	;
 [Sn][Nm][Cc]mm<A>t@D.EI_VERTM@:mm<A>t@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Nm][Cc]mpien@D.EI_VERTM@:mpien@D.EI_VERTM@	Liitesana_<A>	;
