@@ -2595,6 +2595,9 @@ t:t	KertomanTekijäpääteVahva_<A>	;
 LEXICON Saartaa
 [Tn1]t<A><A>:t<A><A>	Liitesana_<A>	;
 r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
+t<O>:t<O>	KertomanTekijäpääteVahva_<A>	;
+re:re	TositavanKertomaTtiin_<A>	;
+r<O>:r<O>	KertomanTekijäpääteHeikko_<A>	;
 re:re	Johdin_ttAx_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Johdin_ja_kulkija_<A>	;
@@ -2675,6 +2678,7 @@ LEXICON Tuntea_s
 [Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	Käskytapa_<A>	;
 en:en	Mahtotapa_<A>	;
+Ehtotapa_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_nUt_<A>	;

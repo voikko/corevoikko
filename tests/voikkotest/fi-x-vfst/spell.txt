@@ -2168,3 +2168,7 @@ vanhempansa
 tultaneen
 julkaistaneen
 tunnettaneen
+lähtisin
+kaartoi
+kaarrettiin
+kaarroimme
