@@ -3395,10 +3395,11 @@ LEXICON Kohota_s
 Katketa_s_<A>	;
 
 LEXICON Kihistä
-Kitistä_<A>	;
-<A><U>t:<A><U>t	MuistaaMuistella_w_<A>	;
-<A><U>tt:<A><U>tt	MuistaaMuistella_s_<A>  ;
-<A>h:<A>h	Astahtaa_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
+<A><U>t@C.V_SALLITTU@:<A><U>t@C.V_SALLITTU@	MuistaaMuistella_w_<A>	;
+<A><U>tt@C.V_SALLITTU@:<A><U>tt@C.V_SALLITTU@	MuistaaMuistella_s_<A>  ;
+@R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
 
 LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
