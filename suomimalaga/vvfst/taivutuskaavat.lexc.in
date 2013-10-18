@@ -3184,6 +3184,7 @@ ki:ki	Haluta_s_<A>	;
 LEXICON Haluta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
+nn:nn	Mahtotapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
@@ -3439,6 +3440,7 @@ s:s	Johdin_tU_tA_<A>	;
 s:s	Johdin_sUt_<A>	;
 s:s	Johdin_nimitapa1tA_<A>	;
 st:st	Johdin_nimitapa2_<A>	;
+s:s	Johdin_tAvA_<A>	;
 kse:kse	Johdin_mA_<A>	;
 kse:kse	Johdin_vA_<A>	;
 ksi:ksi	Johdin_ja_kulkija_<A>	;

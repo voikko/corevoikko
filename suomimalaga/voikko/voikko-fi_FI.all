@@ -6000,7 +6000,7 @@ subrule yksikkö_autio ($tietue, $lisä, $osannot):
       $johdin := johdin_Us;
     end;
     return yksikkö8 ($lisä, $lisä, $lisä, $lisä,
-                     [osanto_A: $lisä, osanto_tA: $lisä],
+                     $osannot,
                      sisätulento_Vn,
                      $lisä, $lisä) +
            [johdin_tOn:    $lisä,

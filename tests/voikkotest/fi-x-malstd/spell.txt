@@ -735,6 +735,7 @@ luo'on # Kotus 1
 !luoon # Kotus 1
 tappiota # Kotus 3
 !tappioa # Kotus 3
+!autioa # Kotus 3
 glamouriton # Kotus 5
 !glamoureton # Kotus 5
 !nailonnen # Kotus 6

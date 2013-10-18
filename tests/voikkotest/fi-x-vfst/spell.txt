@@ -2178,3 +2178,6 @@ iske
 polje
 vilahti
 !vilähti
+juostava
+oltava
+selvinnee
