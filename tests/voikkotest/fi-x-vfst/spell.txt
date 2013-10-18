@@ -2165,3 +2165,6 @@ lähdin
 vietäessä
 tultaessa
 vanhempansa
+tultaneen
+julkaistaneen
+tunnettaneen

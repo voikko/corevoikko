@@ -2666,6 +2666,7 @@ s:s	KertomanTekijäpääteHeikko_<A>	;
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
+e:e	Mahtotapa_ttA_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
@@ -2839,6 +2840,7 @@ t<A>:t<A>	Käskytapa_<A>	;
 Käskytapa_e_<A>	;
 EhtotapaTa_<A>	;
 s:s	Mahtotapa_<A>	;
+Mahtotapa_tA_<A>	;
 Johdin_tU_tA_<A>	;
 Johdin_sUt_<A>	;
 Johdin_tAvA_<A>	;
@@ -2879,6 +2881,7 @@ KertomanTekijäpääteHeikko_<A>	;
 Käskytapa_e_<A>	;
 EhtotapaTa_<A>	;
 Ehtotapa_<A>	;
+Mahtotapa_tA_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
