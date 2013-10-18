@@ -21,6 +21,7 @@ LEXICON NimiYsJatko
 -[Bc]:-	Sanasto_em	;
 -[Bc]:-	Sanasto_nimisanat	;
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_l	;
 -[Bc]:-	Loppu	;
 
 LEXICON PaikannimiYsJatko

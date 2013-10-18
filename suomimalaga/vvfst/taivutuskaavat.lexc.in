@@ -2652,6 +2652,7 @@ LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
+e:e	Käskytapa_y2_<A>	;
 e:e	Johdin_ttAx_<A>	;
 e:e	Johdin_ntA_<A>	;
 eskel:eskel	Katsella_<A>	;
@@ -3715,6 +3716,7 @@ LEXICON Johdin_ittAin
 LEXICON Johdin_lAinen
 [Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_ep	;
+[Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_n	;
 
 LEXICON Johdin_ttU
 [Ll]t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
