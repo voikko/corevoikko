@@ -1,3 +1,10 @@
 LEXICON Poikkeavat_s
 [Ls][Xp]ainut[X]ainut:ainut	LoppuLiitesanaOsantoTa_a	;
 [Ls][Xp]edessä[X]ede:ede	HeikkoasteisetPaikallissijat_ä	;
+[Ls][Xp]eksyksissä[X]eksyksi:eksyksi	SisäpaikallissijatVn_ä	;
+[Ls][Xp]juovuksissa[X]juovuksi:juovuksi	SisäpaikallissijatVn_a	;
+[Ls][Xp]keskessä[X]keske:keske	SisäpaikallissijatVn_ä	;
+[Ls][Xp]painuksissa[X]painuksi:painuksi	SisäpaikallissijatVn_a	;
+[Ls][Xp]parissa[X]pari:pari	SisäpaikallissijatVn_a	;
+[Ls][Xp]pökerryksissä[X]pökerryksi:pökerryksi	SisäpaikallissijatVn_ä	;
+[Ls][Xp]väijyksissä[X]väijyksi:väijyksi	SisäpaikallissijatVn_ä	;
