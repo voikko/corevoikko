@@ -3912,6 +3912,11 @@ LEXICON Ulkopaikallissijat_Yks
 [Sabl][Ny]lt<A>:lt<A>	LoppuLiitesanaOlV_<A>	;
 [Sall][Ny]lle:lle	LoppuLiitesanaOlV_<A>	;
 
+LEXICON Ulkopaikallissijat_Mon
+[Sade][Nm]ill<A>:ill<A>	LoppuLiitesanaOlV_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	LoppuLiitesanaOlV_<A>	;
+[Sall][Nm]ille:ille	LoppuLiitesanaOlV_<A>	;
+
 LEXICON SisäpaikallissijatSsaSta
 [Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
 [Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
