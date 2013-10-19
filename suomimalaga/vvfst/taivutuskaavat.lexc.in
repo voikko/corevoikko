@@ -3912,14 +3912,21 @@ LEXICON Ulkopaikallissijat_Yks
 [Sabl][Ny]lt<A>:lt<A>	LoppuLiitesanaOlV_<A>	;
 [Sall][Ny]lle:lle	LoppuLiitesanaOlV_<A>	;
 
-LEXICON SisäpaikallissijatVn
+LEXICON SisäpaikallissijatSsaSta
 [Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
 [Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+
+LEXICON SisäpaikallissijatVn
+SisäpaikallissijatSsaSta_<A>	;
 [Sill][Ny][[L]]n:[[L]]n	Liitesana_<A>	;
 
 LEXICON LoppuLiitesanaOsantoTa
 LoppuLiitesana_<A>	;
 [Sp][Ny]t<A>:t<A>	LoppuLiitesana_<A>	;
+
+LEXICON LoppuLiitesanaOlentoNa
+LoppuLiitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	LoppuLiitesana_<A>	;
 
 LEXICON HeikkoasteisetPaikallissijat
 Ulkopaikallissijat_Yks_<A>	;
