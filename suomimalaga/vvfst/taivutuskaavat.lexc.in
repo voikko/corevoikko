@@ -3907,6 +3907,15 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
 
+LEXICON Sivumpana
+[Sp][Ny]p<A><A>:p<A><A>	Liitesana_<A>	;
+[Str][Ny]m<A>ksi:m<A>ksi	Liitesana_<A>	;
+[Str][Ny]m<A>s:m<A>s	Liitesana_<A>	;
+[Ses][Ny]p<A>n<A>:p<A>n<A>	Liitesana_<A>	;
+m<A>:m<A>	SisäpaikallissijatSsaSta_<A>	;
+[Sill][Ny]p<A><A>n:p<A><A>n	Liitesana_<A>	;
+m<A>:m<A>	Ulkopaikallissijat_Yks_<A>	;
+
 LEXICON Ulkopaikallissijat_Yks
 [Sade][Ny]ll<A>:ll<A>	LoppuLiitesanaOlV_<A>	;
 [Sabl][Ny]lt<A>:lt<A>	LoppuLiitesanaOlV_<A>	;
