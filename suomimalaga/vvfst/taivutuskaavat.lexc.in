@@ -2118,6 +2118,9 @@ tse:tse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	tse:tse	Johdin_tOn_<A>	;
 
+LEXICON NOUN Loppu
+[Sn][Ny]:	Loppu	;
+
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
 ?Nimisana	[Bc]:	Sanasto_l	;

@@ -42,44 +42,28 @@
 [perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
-[perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "alkeet", alku: "alke", luokka: nimisana, jatko: <alkeet>, äs: a, tiedot: <inen>];
-[perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
-[perusmuoto: "business", alku: "business", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "censeo", alku: "censeo", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "ceterum", alku: "ceterum", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "El", alku: "El", luokka: nimi, jatko: <loppu>, äs: a]; # El Salvador
 [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "erata", alku: "er", luokka: teonsana, jatko: <erata>, äs: a]; # Erkanee-sanan perusmuoto.
-[perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
-[perusmuoto: "heureka", alku: "heureka", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hurraa", alku: "hurraa", luokka: nimisana, jatko: <liitesana, osanto_tA, loppu>, äs: a];
-[perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
-[perusmuoto: "jöötä", alku: "jöötä", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a, tiedot: <yt>];
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
-[perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
-[perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "ojentaa", alku: "oje", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
@@ -90,25 +74,15 @@
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
-[perusmuoto: "Sakar", alku: "Sakar", luokka: etunimi, jatko: <loppu>, äs: a];
-[perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
-[perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "Sokrates", alku: "Sokratee", luokka: etunimi, jatko: <sisätulento_hVn>, äs: a];
-[perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
-[perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj, ei_voikko>];
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: <osanto_tA, liitesana, loppu>, äs: a];
-[perusmuoto: "tenkkapoo", alku: "tenkkapoo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "utujälki", alku: "utujäl", luokka: nimisana, jatko: <jälki>, äs: ä, rakenne: "=ppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "vaka", alku: "vaka", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>]; # Epäilen, että nalle-taivutus ei ole oikein.
-[perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta.

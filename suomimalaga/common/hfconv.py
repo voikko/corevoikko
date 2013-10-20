@@ -286,6 +286,7 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'tie', u'-', [(None,u'(.*t)ie',u'tie')]),
 	(u'lapsi', u'-', [(None,u'(.*)psi',u'lapsi')]),
 	(u'hapsi', u'-', [(None,u'(.*)psi',u'hapsi')]),
+	(u'loppu', u'-', [(None,u'(.*)',u'loppu')]),
 	(u'veitsi', u'-', [(None,u'(.*)tsi',u'veitsi')]),
 	# Verbs
 	(u'punoa', u'sw', [(None,u'(.*)A',u'punoa'),
