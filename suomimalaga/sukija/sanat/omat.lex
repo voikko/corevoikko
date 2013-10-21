@@ -1498,6 +1498,7 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1, äs: a];
 [perusmuoto: "Punkeri", alku: "Punker", luokka: sukunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "faneri", alku: "faner", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
+[perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
