@@ -183,8 +183,12 @@ def get_structure(wordform, malaga_word_class):
 			needstructure = True
 		elif c.isupper():
 			structstr = structstr + i
-			if not (ispropernoun and idx == 0): needstructure = True
-		else: structstr = structstr + p
+			if not (ispropernoun and idx == 0):
+				needstructure = True
+		else:
+			structstr = structstr + p
+			if ispropernoun and idx == 0:
+				needstructure = True
 	if needstructure: return structstr + u'"'
 	else: return u""
 

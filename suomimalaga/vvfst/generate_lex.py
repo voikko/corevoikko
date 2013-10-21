@@ -122,8 +122,12 @@ def get_structure(wordform, vfst_word_class):
 			needstructure = True
 		elif c.isupper():
 			structstr = structstr + i
-			if not (ispropernoun and idx == 0): needstructure = True
-		else: structstr = structstr + p
+			if not (ispropernoun and idx == 0):
+				needstructure = True
+		else:
+			structstr = structstr + p
+			if ispropernoun and idx == 0:
+				needstructure = True
 	if needstructure:
 		returnedLength = len(structstr)
 		while structstr[returnedLength - 1] == p:

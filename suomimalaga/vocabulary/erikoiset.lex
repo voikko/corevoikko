@@ -17,9 +17,6 @@
 
 # Sanatietueita, joita ei käsitellä Joukahaisessa.
 
-[perusmuoto: "af", alku: "af", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=pp"];
-[perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
-[perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
  [perusmuoto: "eräs", alku: "erä", luokka: asemosana, jatko: <vieras>, äs: ä];
 [perusmuoto: "halleluja", alku: "halleluj", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_voikko>]; # Taipuu Nykysuomen sanakirjassa.
  [perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
@@ -42,7 +39,6 @@
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
  [perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
-[perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];  # Mikä.
 [perusmuoto: "mi", alku: "min", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Minkä.
  [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
@@ -56,7 +52,6 @@
 [perusmuoto: "muuan", alku: "muudan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muuan", alku: "muudatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "pikku", alku: "pikku", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "plus", alku: "plus-", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
@@ -68,12 +63,8 @@
 [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];
-[perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # "ulko" on myös etuliite.
-[perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "veli", alku: "veliseni", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ysa>];
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "öky", alku: "öky", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ökö", alku: "ökö", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 
 # Aluetta tarkentavia etuliitteitä ei hyväksytä normaalisti pienellä alkukirjaimella. Muutamat voivat esiintyä kuitenkin

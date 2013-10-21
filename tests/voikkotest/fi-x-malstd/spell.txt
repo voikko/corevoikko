@@ -231,6 +231,7 @@ Coca-Cola
 Venäjä-myönteinen
 !Penttinä-talli
 eckeröläinen
+von
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
