@@ -183,29 +183,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "ym.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ynnä muuta
 [alku: "yms.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ynnä muuta sellaista
 
-[alku: "â", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ã", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ç", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ð", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ê", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ë", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "í", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ì", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "î", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ï", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ñ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ò", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ß", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "þ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ú", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ù", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "û", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ý", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ÿ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "æ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "õ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "ø", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-
 [alku: "°C", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
 [alku: "°F", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
 [alku: "°K", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
