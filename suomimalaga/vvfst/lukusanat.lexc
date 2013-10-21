@@ -3,6 +3,7 @@ Lukusana	;
 Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
+RoomalainenNumero	;
 
 LEXICON LukusananAlkuKerroin
 LukusanaSgNy29Kertoimet	;
@@ -164,3 +165,23 @@ LEXICON LukusananJälkiliite
 LEXICON LukusananJälkiliiteJl
 [Bc][Ll][Xp]luokkalainen[X]luokkalai:luokkalai	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]osa[X]os:os	LukusananJälkiliiteKoira_a	;
+
+LEXICON RoomalainenNumero
+[Lu][Xr]qq[X]ii:ii	Loppu;
+[Lu][Xr]qqq[X]iii:iii	Loppu;
+[Lu][Xr]qqqq[X]iiii:iiii	Loppu;
+[Lu][Xr]qq[X]iv:iv	Loppu;
+[Lu][Xr]qq[X]vi:vi	Loppu;
+[Lu][Xr]qqq[X]vii:vii	Loppu;
+[Lu][Xr]qqqq[X]viii:viii	Loppu;
+[Lu][Xr]qqqqq[X]viiii:viiii	Loppu;
+[Lu][Xr]qq[X]ix:ix	Loppu;
+[Lu][Xr]jj[X]ii:ii	RoomalaisenNumeronJatko_a;
+[Lu][Xr]jjj[X]iii:iii	RoomalaisenNumeronJatko_a;
+[Lu][Xr]jjjj[X]iiii:iiii	RoomalaisenNumeronJatko_ä;
+[Lu][Xr]jj[X]iv:iv	RoomalaisenNumeronJatko_ä;
+[Lu][Xr]jj[X]vi:vi	RoomalaisenNumeronJatko_a;
+[Lu][Xr]jjj[X]vii:vii	RoomalaisenNumeronJatko_ä;
+[Lu][Xr]jjjj[X]viii:viii	RoomalaisenNumeronJatko_a;
+[Lu][Xr]jjjjj[X]viiii:viiii	RoomalaisenNumeronJatko_ä;
+[Lu][Xr]jj[X]ix:ix	RoomalaisenNumeronJatko_ä;

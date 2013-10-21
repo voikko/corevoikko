@@ -4013,6 +4013,10 @@ LEXICON LyhenteenTaivutuspääte
 [Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
 
+LEXICON RoomalaisenNumeronJatko
+Loppu	;
+LyhenteenTaivutuspääte_<A>	;
+
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
 [Sg][Ny]hden:hden	LukusanaSgNy1_<A>	;

@@ -450,3 +450,7 @@ word:ja
   analysis
     CLASS=sidesana
     STRUCTURE==pp
+word:iiii
+  analysis
+    CLASS=lukusana
+    STRUCTURE==qqqq
