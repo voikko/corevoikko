@@ -1739,6 +1739,7 @@ LEXICON NOUN Kevät
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija ?NotLaatusana	[Sn][Ny]h<A>:h<A>	Omistusliite_<A>	;
 ?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
 ?Sukija [Sg][Ny]h<A>n:h<A>n	<WC>YksikönGenetiivinJatko_<A>	;
@@ -3715,6 +3716,7 @@ tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
 llis:llis	NimisanaYsJatko	;
+llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Sanasto_nimisanat	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Liitesana_<A>	;

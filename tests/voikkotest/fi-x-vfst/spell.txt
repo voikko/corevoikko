@@ -2196,3 +2196,5 @@ III:ssa
 !III:ssä
 !iii:ssa
 III-divisioona
+keväisen
+historiallis-kielitieteelliseen
