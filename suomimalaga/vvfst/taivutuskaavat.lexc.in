@@ -3998,6 +3998,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sela][Ny]%:st<A>:%:st<A>	Liitesana_<A>	;
 [Sela][Nm]%:ist<A>:%:st<A>	Liitesana_<A>	;
 [Sill][Ny]%:seen:%:seen	Liitesana_<A>	;
+[Sill][Ny]%:een:%:een	Liitesana_<A>	;
 [Sill][Ny]%:iin:%:iin	Liitesana_<A>	;
 [Sill][Ny]%:<A><A>n:%:<A><A>n	Liitesana_<A>	;
 [Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>   ;
@@ -4016,6 +4017,7 @@ LEXICON LyhenteenTaivutuspääte
 LEXICON RoomalaisenNumeronJatko
 Loppu	;
 LyhenteenTaivutuspääte_<A>	;
+-[Bc]:-	Sanasto_n	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
