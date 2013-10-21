@@ -2121,6 +2121,7 @@ ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Loppu
 [Sn][Ny]:	Loppu	;
+?Nimi	NimiYsJatko	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
@@ -3990,6 +3991,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
 [Sp][Ny]%:<A><A>:%:<A><A>	Liitesana_<A>	;
 [Sp][Ny]%:t<A>:%:t<A>	Liitesana_<A>	;
+[Sp][Ny]%:<A>:%:<A>	Liitesana_<A>	;
 [Sp][Nm]%:i<A>:%:i<A>	Liitesana_<A>	;
 [Str][Ny]%:ksi:%:ksi	Liitesana_<A>	;
 [Str][Nm]%:iksi:%:iksi	Liitesana_<A>	;

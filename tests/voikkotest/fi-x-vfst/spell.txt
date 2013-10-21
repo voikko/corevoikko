@@ -2198,3 +2198,5 @@ III:ssa
 III-divisioona
 keväisen
 historiallis-kielitieteelliseen
+Saint-Jacques
+III:a
