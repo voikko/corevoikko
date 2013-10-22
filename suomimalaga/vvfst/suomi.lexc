@@ -4,6 +4,7 @@ LEXICON NimisanaYsJatko
 
 LEXICON NimiLaatusanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuu	;
+-[Bc]@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@:-@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@	Sanasto_a	;
 
 LEXICON LukusananJälkiliiteYsJatko
 NimiLaatusanaYsJatko	;

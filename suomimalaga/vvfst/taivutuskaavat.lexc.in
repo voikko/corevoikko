@@ -626,7 +626,13 @@ k:k	<WC>Kala_s_<A>	;
 
 LEXICON NOUN Raaka
 k:k	<WC>Kala_s_<A>	;
-':'	<WC>Kala_w_<A>	;
+[Sn][Nm]'<A>t:'<A>t	Liitesana_<A>	;
+[Sg][Ny]'<A>n:'<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+'<A>:'<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	'<A>:'<A>	Johdin_tOn_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Aika
 ik:ik	<WC>Kala_s_<A>	;

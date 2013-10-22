@@ -2216,3 +2216,7 @@ alkeita
 alkeellinen
 -vuotiaana
 !34,35--
+tupla-CD:nä
+yösi
+raaempi
+!raa'empi

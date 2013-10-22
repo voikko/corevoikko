@@ -21,7 +21,7 @@ LEXICON Poikkeavat_l
 @P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
 
 LEXICON Yö
-[Sn][Ny]yö:yö	NimisanaNormaaliYsJatko_ä	;
+[Sn][Ny]yö:yö	NimisanaNormaaliYsJatkoOl_ä	;
 [Sn][Nm]yöt:yöt	Liitesana_ä	;
 [Sg][Ny]yön:yön	NimisanaYksikönGenetiivinJatko_ä	;
 [Sg][Nm]öid:öid	NimisanaMonikonGenetiiviEnJatko_ä	;
