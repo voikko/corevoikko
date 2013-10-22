@@ -576,6 +576,7 @@ LEXICON NOUN Nalle_w
 LEXICON NOUN Nalle_s
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]j:j	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A>:<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
