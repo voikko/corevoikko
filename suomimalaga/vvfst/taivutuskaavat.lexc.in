@@ -461,6 +461,10 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 
+LEXICON NOUN Suksi
+ks:ks	<WC>Lovi_s_<A>	;
+ks:ks	<WC>Lovi_w_<A>	;
+
 LEXICON NOUN Lovi
 <WC>Lovi_s_<A>	;
 <WC>Lovi_w_<A>	;
@@ -1801,6 +1805,16 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Alkeet
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Hame
 <WC>Hame_w_<A>	;

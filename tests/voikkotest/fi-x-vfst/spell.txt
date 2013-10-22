@@ -2211,3 +2211,6 @@ nukkein
 Kangasalla
 Sokrateehen
 agaaveitten
+sukset
+alkeita
+alkeellinen

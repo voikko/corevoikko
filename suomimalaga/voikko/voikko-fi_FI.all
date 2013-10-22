@@ -1242,10 +1242,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (suksi in $tietue.jatko) then
-    choose $i in lovi ($tietue, "ks", "ks")
-                 + taivutuskaava ($tietue,
-                                  [osanto_tA: "s",     # Sus+ta.
-                                   omanto_ten: "s"]);  # Sus+ten.
+    choose $i in lovi ($tietue, "ks", "ks");
     result $i.alku, $i - alku;
 
 
