@@ -2214,3 +2214,5 @@ agaaveitten
 sukset
 alkeita
 alkeellinen
+-vuotiaana
+!34,35--

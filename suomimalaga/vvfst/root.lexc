@@ -165,6 +165,7 @@ Sanasto	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 LukusananAlku	;
 -[Bc]:-	LukusananAlku	;
+YhdysmerkkiJaLukusananJälkiliite	;
 Asemosana	;
 
 LEXICON Sanasto
