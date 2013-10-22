@@ -1,10 +1,14 @@
 LEXICON Poikkeavat_n
+[Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;
 [Ln][Xp]nukke[X]nukk[Sg][Nm]i:nukki	NimisanaMonikonGenetiiviEnJatko_a	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
+
+LEXICON Poikkeavat_es
+[Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t
 [Lt][Xp]ei[X]e:e         Ei ;
