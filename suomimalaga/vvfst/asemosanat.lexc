@@ -112,11 +112,13 @@ kä:kä	LiitesanaKinKoPaHan_ä	;
 
 LEXICON AsemosanaKuka
 AsemosanaJokaKuka	;
+[Sn][Ny]ka:ka	LiitesanaKoPaHan_a	;
 [Sill][Ny]hun:hun	Liitesana_a	;
 [Sill][Ny]hunka:hunka	Loppu	;
 
 LEXICON AsemosanaJoka
 AsemosanaJokaKuka	;
+[Sn][Ny]ka:ka	Loppu	;
 [Str][Ny]ksika:ksika	Loppu	;
 [Sill][Ny]hon:hon	Liitesana_a	;
 [Sill][Ny]honka:honka	Loppu	;
@@ -127,7 +129,6 @@ AsemosanaJokaKuka	;
 [Sg][Nm]ittenka:ittenka	Loppu	;
 
 LEXICON AsemosanaJokaKuka
-[Sn][Ny]ka:ka	Loppu	;
 [Sn][Ny][Fkin]kin:kin	Loppu	;
 [Sg][Ny]nka:nka	Loppu	;
 [Sg][Ny][Fkin]nkin:nkin	Loppu	;

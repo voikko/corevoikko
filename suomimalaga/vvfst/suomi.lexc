@@ -12,6 +12,7 @@ LEXICON LaatusanaYsJatko
 InenLoppuisenYsJatko	;
 [Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
 -[Bh][Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nl	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
 -[Bc]:-	Loppu	;
 
 LEXICON InenLoppuisenYsJatko
