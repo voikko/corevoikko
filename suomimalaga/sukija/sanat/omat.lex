@@ -1499,8 +1499,7 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "Punkeri", alku: "Punker", luokka: sukunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "faneri", alku: "faner", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
-[alku: "xiiii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqqq"];
+[perusmuoto: "kasiviis", alku: "kasiviis", luokka: nimisana, jatko: <loppu>, äs: a];
 
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
