@@ -2220,3 +2220,5 @@ tupla-CD:nä
 yösi
 raaempi
 !raa'empi
+aika-avaruutta
+kolmesti

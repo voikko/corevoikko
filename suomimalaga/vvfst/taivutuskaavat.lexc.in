@@ -4071,6 +4071,7 @@ LEXICON LukusanaYksi
 [Sab][Nm]ksitt<A>:ksitt<A>	LukusanaSabNm1_<A>	;
 [Sin][Nm]ksin:ksin	LukusanaSinNm1_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm1_<A>	;
+hde:hde	Kerronto_sti_<A>	;
 
 LEXICON LukusanaKaksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
@@ -4099,6 +4100,7 @@ LEXICON LukusanaKaksi
 [Sab][Nm]ksitt<A>:ksitt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]ksin:ksin	LukusanaSinNm29_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm29_<A>	;
+hde:hde	Kerronto_sti_<A>	;
 
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>	;
@@ -4127,6 +4129,7 @@ LEXICON LukusanaKolme
 [Sab][Nm]itt<A>:itt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
+e:e	Kerronto_sti_<A>	;
 
 LEXICON LukusanaNeljä
 [Sn][Ny]<A>:<A>	LukusanaSnNy29_<A>	;
@@ -4155,6 +4158,7 @@ LEXICON LukusanaNeljä
 [Sab][Nm]itt<A>:itt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
+<A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON LukusanaViisi
 [Sn][Ny]si:si	LukusanaSnNy29_<A>	;
@@ -4184,6 +4188,7 @@ LEXICON LukusanaViisi
 [Sab][Nm]sitt<A>:sitt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]sin:sin	LukusanaSinNm29_<A>	;
 [Sko][Nm]sine:sine	LukusanaSkoNm29_<A>	;
+de:de	Kerronto_sti_<A>	;
 
 LEXICON LukusanaSeitsemän
 [Sn][Ny]<A>n:<A>n	LukusanaSnNy29_<A>	;
@@ -4212,6 +4217,7 @@ LEXICON LukusanaSeitsemän
 [Sab][Nm]itt<A>:itt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
+<A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON LukusanaSnNy
 @U.LS.SNNY@	LukusanaToista	;
