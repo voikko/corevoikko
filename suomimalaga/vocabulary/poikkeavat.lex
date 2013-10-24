@@ -80,7 +80,7 @@
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "utujälki", alku: "utujäl", luokka: nimisana, jatko: <jälki>, äs: ä, rakenne: "=ppp=ppppp", tiedot: <ei_voikko>];
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>]; # Epäilen, että nalle-taivutus ei ole oikein.
-[perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
+ [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta.
 [perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a, rakenne: "=ppppp=ppppp"];

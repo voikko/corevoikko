@@ -3,6 +3,7 @@ LEXICON Poikkeavat_n
 [Ln][Xp]enkeli[X]enkel[Sg][N]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
 [Ln][Xp]isämeidän[X][Xr]ppp=[X][Sn][Ny]isämeidän:isämeidän	Liitesana_ä	;
 [Ln][Xp]nukke[X]nukk[Sg][Nm]i:nukki	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]viive[X]vii:vii	Viive	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
 
@@ -68,3 +69,8 @@ LEXICON Potea
 d:d	Tuntea_w_a	;
 t:t	Tuntea_s_a	;
 t:t	KertomanTekijäpääteVahva_a	;
+
+LEXICON Viive
+ve:ve	NimisanaHame_w_ä	;
+ve:ve	NimisanaHame_s_ä	;
+pe:pe	NimisanaHame_s_ä	;
