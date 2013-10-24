@@ -3463,6 +3463,8 @@ ks:ks	Ehtotapa_<A>	;
 
 LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]kee:kee	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]kev<A>t:kev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
 h:h	TositavanKertomaTiin_<A>	;
@@ -3570,6 +3572,7 @@ LEXICON Käskytapa
 @D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	LiitesanaPaHan_<A>	;
+[Tk][Ap][Et]k<O>:k<O>	Loppu	;
 ?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
 

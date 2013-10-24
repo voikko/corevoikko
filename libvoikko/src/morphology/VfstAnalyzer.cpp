@@ -258,6 +258,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				return false;
 			}
 			if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Isf", 3) == 0) {
+				boundaryPassed = false;
 				hyphenUnconditionallyAllowed = true;
 			}
 			if (fstOutput[i + 1] == L'X') {
