@@ -43,7 +43,7 @@
 
  [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
-[perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
  [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
@@ -52,14 +52,14 @@
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
 [perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hurraa", alku: "hurraa", luokka: nimisana, jatko: <liitesana, osanto_tA, loppu>, äs: a];
-[perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
+ [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a, tiedot: <yt>];
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
-[perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
+ [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
