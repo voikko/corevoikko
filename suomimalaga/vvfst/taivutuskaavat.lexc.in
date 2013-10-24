@@ -2684,11 +2684,13 @@ LEXICON Lähteä
 hd:hd	Tuntea_w_<A>	;
 ht:ht	Tuntea_s_<A>	;
 hd:hd	KertomanTekijäpääteHeikko_<A>	;
+ht:ht	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Tuntea
 n:n	Tuntea_w_<A>	;
 t:t	Tuntea_s_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
+s:s	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;

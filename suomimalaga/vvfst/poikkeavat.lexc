@@ -15,6 +15,7 @@ LEXICON Poikkeavat_t
 [Lt][Xp]ei[X]e:e         Ei ;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]olla[X]o:o       Olla ;
+[Lt][Xp]potea[X]po:po       Potea ;
 [Lt][Xp]seistä[X]seis:seis	Seistä	;
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 [Lt][Xp]älkää[X]äl:äl    Älkää ;
@@ -59,3 +60,8 @@ LEXICON Seistä
 TositavanKestämäTaan_ä	;
 Johdin_sUt_ä	;
 EhtoMahtoKäskytapa_tA_ä	;
+
+LEXICON Potea
+d:d	Tuntea_w_a	;
+t:t	Tuntea_s_a	;
+t:t	KertomanTekijäpääteVahva_a	;

@@ -2233,3 +2233,6 @@ seistävä
 erata
 erkanen
 enkelten
+potea
+poden
+poti
