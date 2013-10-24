@@ -2811,11 +2811,9 @@ KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
-EhtotapaTa_<A>	;
 Käskytapa_<A>	;
-Käskytapa_tA_<A>	;
 n:n	Mahtotapa_<A>	;
-Mahtotapa_tA_<A>	;
+EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
@@ -2865,9 +2863,8 @@ t:t	Johdin_nimitapa2_AessA_<A>	;
 Tositapa4Tt_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
 Käskytapa_e_<A>	;
-EhtotapaTa_<A>	;
 s:s	Mahtotapa_<A>	;
-Mahtotapa_tA_<A>	;
+EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_tU_tA_<A>	;
 Johdin_sUt_<A>	;
 Johdin_tAvA_<A>	;
@@ -2906,9 +2903,8 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 Käskytapa_e_<A>	;
-EhtotapaTa_<A>	;
 Ehtotapa_<A>	;
-Mahtotapa_tA_<A>	;
+EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
@@ -2969,7 +2965,7 @@ Johdin_nimitapa2_tAessA_<A>	;
 TositavanKertomaTiin_<A>	;
 TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
-EhtotapaTa_<A>	;
+EhtoMahtoKäskytapa_tA_<A>	;
 l:l	Mahtotapa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
@@ -3027,7 +3023,7 @@ KertomanTekijäpääteVahva_<A>	;
 i:i	TositavanKestämäDaan_<A>	;
 i:i	TositavanKertomaTiin_<A>	;
 Ehtotapa_<A>	;
-i:i	EhtotapaTa_<A>	;
+i:i	EhtoMahtoKäskytapa_tA_<A>	;
 i:i	Käskytapa_0_<A>	;
 in:in	Mahtotapa_<A>	;
 i:i	Johdin_mA_<A>	;
@@ -3473,8 +3469,7 @@ h:h	TositavanKertomaTiin_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 k:k	KertomanTekijäpääteVahva_<A>	;
 h:h	Käskytapa_<A>	;
-h:h	Käskytapa_tA_<A>	;
-h:h	EhtotapaTa_<A>	;
+h:h	EhtoMahtoKäskytapa_tA_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_nimitapa1dA_<A>	;
 hd:hd	Johdin_nimitapa2_<A>	;
@@ -3534,9 +3529,14 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
-t:t	EhtotapaTa_<A>	;
+t:t	Ehtotapa_tA_<A>	;
 
-LEXICON EhtotapaTa
+LEXICON EhtoMahtoKäskytapa_tA
+Ehtotapa_tA_<A>	;
+Mahtotapa_tA_<A>	;
+Käskytapa_tA_<A>	;
+
+LEXICON Ehtotapa_tA
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@t<A>isi	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@t<A>isiin	Liitesana_<A>	;
 
