@@ -2299,7 +2299,7 @@ Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
 Tositapa4Tt_<A>	;
 Käskytapa_y2_<A>	;
-MahtoKäskytapa_ttA_<A>	;
+Johdin_ttAx_<A>	;
 
 LEXICON Punoa_s
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -2419,7 +2419,6 @@ LEXICON Muistaa_w
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	MahtoKäskytapa_ttA_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Muistaa_s
@@ -2541,7 +2540,6 @@ LEXICON Huutaa_w
 e:e	Johdin_ttAx_<A>	;
 e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	MahtoKäskytapa_ttA_<A>	;
 
 LEXICON Huutaa_s
 [Tn1]t<A><A>:t<A><A>	Liitesana_<A>	;
@@ -2593,7 +2591,6 @@ LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 <O>:<O>	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	MahtoKäskytapa_ttA_<A>	;
 e:e	Tositapa4Tt_<A>	;
 e:e	Johdin_ttAx_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
@@ -2763,7 +2760,6 @@ i:i	Tositapa4Tt_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
-i:i	MahtoKäskytapa_ttA_<A>	;
 
 LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
@@ -3055,7 +3051,6 @@ Tositapa4Tt_<A>	;
 ts:ts	Ehtotapa_<A>	;
 t:t	Käskytapa_<A>	;
 tse:tse	Käskytapa_y2_<A>	;
-MahtoKäskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 tse:tse	Johdin_mA_<A>	;
 tse:tse	Johdin_vA_<A>	;
@@ -3305,7 +3300,6 @@ LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
-MahtoKäskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
@@ -3352,7 +3346,6 @@ LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
-MahtoKäskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
@@ -3540,16 +3533,12 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
 
-LEXICON EhtotapaTta
+LEXICON Ehtotapa_ttA
 t:t	EhtotapaTa_<A>	;
 
 LEXICON EhtotapaTa
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@t<A>isi	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@t<A>isiin	Liitesana_<A>	;
-
-LEXICON MahtoKäskytapa_ttA
-Mahtotapa_ttA_<A>	;
-Käskytapa_ttA_<A>	;
 
 LEXICON Mahtotapa
 @D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
@@ -3589,13 +3578,13 @@ LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
 
 LEXICON Käskytapa_ttA
-tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
-tt<A>k<O>:tt<A>k<O>	Loppu	;
+[Tk][Ap][P4]tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
+[Tk][Ap][P4]tt<A>k<O>:tt<A>k<O>	Loppu	;
 ?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
 
 LEXICON Käskytapa_tA
-t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
-t<A>k<O>:t<A>k<O>	Loppu	;
+[Tk][Ap][P4]t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
+[Tk][Ap][P4]t<A>k<O>:t<A>k<O>	Loppu	;
 ?Sukija t<A>k<O>h<O>n:t<A>k<O>h<O>n	Loppu	;
 
 LEXICON Johdin_nimitapa1dA
@@ -3659,7 +3648,9 @@ LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttAx
-EhtotapaTta_<A>	;
+Ehtotapa_ttA_<A>	;
+Mahtotapa_ttA_<A>	;
+Käskytapa_ttA_<A>	;
 Johdin_ttAvA_<A>	;
 Johdin_ttU_<A>	;
 Johdin_nimitapa2_ttA_<A>	;
