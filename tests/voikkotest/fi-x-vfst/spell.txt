@@ -2230,3 +2230,6 @@ seistään
 seissyt
 seistäisi
 seistävä
+erata
+erkanen
+enkelten

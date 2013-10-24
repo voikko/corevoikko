@@ -3070,6 +3070,10 @@ LEXICON Loitota
 <O>:<O>	Aleta_w_<A>	;
 t<O>:t<O>	Aleta_s_<A>	;
 
+LEXICON Erata
+<A>:<A>	Aleta_w_<A>	;
+k<A>:k<A>	Aleta_s_<A>	;
+
 LEXICON Hapata
 <A>:<A>	Aleta_w_<A>	;
 p<A>:p<A>	Aleta_s_<A>	;
