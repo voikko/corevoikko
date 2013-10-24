@@ -2226,3 +2226,7 @@ hautajaisensa
 antako
 näkeekö
 maailmancup-kisansa
+seistään
+seissyt
+seistäisi
+seistävä

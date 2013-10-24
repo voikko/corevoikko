@@ -14,6 +14,7 @@ LEXICON Poikkeavat_t
 [Lt][Xp]ei[X]e:e         Ei ;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]olla[X]o:o       Olla ;
+[Lt][Xp]seistä[X]seis:seis	Seistä	;
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 [Lt][Xp]älkää[X]äl:äl    Älkää ;
 
@@ -52,3 +53,9 @@ ha[Cs]:ha	NimisanaYhteisetMonikonSijat2_a	;
 [Sill][Nm][Cs]haisii:haisii	NimisanaLiOlN_a	;
 haa[Cs]:haa	NimisanaYhteisetYksikönPaikallissijat_a	;
 ha[Cs]:ha	NimisanaYhteisetMonikonPaikallissijat_a	;
+
+LEXICON Seistä
+TositavanKestämäTaan_ä	;
+Johdin_sUt_ä	;
+Johdin_tAvA_ä	;
+EhtoMahtoKäskytapa_tA_ä	;
