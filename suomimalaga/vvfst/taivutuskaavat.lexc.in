@@ -633,6 +633,9 @@ k:k	<WC>Kala_s_<A>	;
 ?Nimisana	'<A>:'<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Sukija '<O>:'<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija ?Laatusana	'e:'e	Voittoaste_<A>	;
+?Sukija ?Laatusana	':' Yliaste_<A>	;
 
 LEXICON NOUN Aika
 ik:ik	<WC>Kala_s_<A>	;
@@ -1732,6 +1735,21 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Sukija [Sg][Nm]eid:eid		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]tt:tt		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
+?Sukija e:e <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
+?Sukija e:e <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Kevät
 [Sn][Ny]t:t	<WC>NormaaliYsJatko_<A>	;

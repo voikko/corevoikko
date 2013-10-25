@@ -46,10 +46,6 @@
 # grep -A1 '<style>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
 # grep -A1 '<usage>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
 
-# Tiedostossa taivutuskaavat.lexc.in vanhat taivutukset on lisätty näihin taivutuksiin:
-# Hame, Kalleus, Kansi, Koira, Lohi, Lovi, Lumi, Meri, Nainen, Onneton, Paperi,
-# Pieni, Risti, Sisar, Tosi, Uistin, Veli.
-# 17.6.2013: Kalleus, Kansi, Lohi, Lumi, Meri, Pieni, Tosi.
 
 import codecs
 import getopt
@@ -301,6 +297,7 @@ word_list = [
     (u"aikainen",         (u"aikai",         u"aikahi")),
     (u"ainainen",         (u"ainai",         u"ainahi")),
     (u"aineisto",         (u"aineisto",      u"ainehisto")),
+    (u"aksiomi",          (u"aksiom",        u"aksioom")),
     (u"alkovi",           (u"alkov",         u"alkoov")),
     (u"ameba",            (u"ameb",          u"ameeb")),
     (u"arsenikki",        (u"arsenik",       u"arseniik")),
@@ -311,6 +308,7 @@ word_list = [
     (u"emali",            (u"emal",          u"emalj")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
+    (u"haupitsi",         (u"haupits",       u"haubits")),
     (u"hevonen",          (u"hevo",          u"hevoi")),
     (u"humaaninen",       (u"humaani",       u"humani")),
     (u"husaari",          (u"husaar",        u"husar")),
@@ -368,6 +366,7 @@ word_list = [
     (u"pyramidi",       (u"pyramid",     u"pyramiid")),
     (u"reettori",       (u"reettor",     u"reetor")),
     (u"sampanja",       (u"sampanj",     u"samppanj")),
+    (u"sapatti",        (u"sapat",       u"sabat")),
     (u"sapeli",         (u"sapel",       u"sapeel")),
     (u"senaatti",       ((u"senaat",     u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a"),
                          (u"senaat",     u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a"))),
