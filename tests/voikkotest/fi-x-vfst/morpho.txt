@@ -454,3 +454,11 @@ word:iiii
   analysis
     CLASS=lukusana
     STRUCTURE==qqqq
+word:Gallen-Kallela-Sirén
+  analysis
+    CLASS=sukunimi
+    STRUCTURE==ippppp-=ipppppp-=ipppp
+word:-sävellys-
+  analysis
+    CLASS=nimisana
+    STRUCTURE=-=pppppppp-
