@@ -252,6 +252,7 @@ HTML-kieli
 USA:ssakin
 !ivkaihosta
 Ab:ltä
+!esim.:ssä
 
 # = sijamuodot =
 []

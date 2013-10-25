@@ -168,7 +168,10 @@ def handle_word(word):
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
 		if malaga_word_class == u"lyhenne":
-			jatko = u"tavuviiva, kaksoispiste, loppu"
+			if wordform.endswith(u"."):
+				jatko = u"loppu"
+			else:
+				jatko = u"tavuviiva, kaksoispiste, loppu"
 		elif malaga_word_class == u"seikkasana":
 			jatko = get_adverb_jatko(word)
 		if malaga_word_class == u"etuliite":
