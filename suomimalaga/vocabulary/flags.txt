@@ -11,6 +11,7 @@
 56      inflection/omistusliite                  -               Jatko: omistusliite
 57      inflection/required                      -               Jatko: liite pakollinen
 58      inflection/ulkopaikallissijat_yks        -               Jatko: yks. ulkopaikallissijat
+53      inflection/none                          -               Lyhenne: ei taivuteta kaksoispisteen avulla
 15      usage/it                                 -               Ala: atk
 33      usage/medicine                           -               Ala: lääketiede
 36      usage/science                            -               Ala: matematiikka, fysiikka ja kemia
