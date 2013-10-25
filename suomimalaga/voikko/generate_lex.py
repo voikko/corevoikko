@@ -92,6 +92,13 @@ def get_adverb_jatko(word):
 		prefixJatko = prefixJatko[2:]
 	return prefixJatko
 
+def get_abbreviation_jatko(word, wordform):
+	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
+	if wordform.endswith(u".") or u"none" in flags:
+		return u"loppu"
+	else:
+		return u"tavuviiva, kaksoispiste, loppu"
+
 def get_additional_attributes(word):
 	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
 	result = u""
@@ -168,10 +175,7 @@ def handle_word(word):
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
 		if malaga_word_class == u"lyhenne":
-			if wordform.endswith(u"."):
-				jatko = u"loppu"
-			else:
-				jatko = u"tavuviiva, kaksoispiste, loppu"
+			jatko = get_abbreviation_jatko(word, altform)
 		elif malaga_word_class == u"seikkasana":
 			jatko = get_adverb_jatko(word)
 		if malaga_word_class == u"etuliite":

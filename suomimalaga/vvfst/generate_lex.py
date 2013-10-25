@@ -243,6 +243,13 @@ def get_adverb_jatko(word, altform):
 		adverbJatko = "Loppu" + adverbJatko
 	return adverbJatko
 
+def get_abbreviation_jatko(word, wordform):
+	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
+	if wordform.endswith(u".") or u"none" in flags:
+		return u"Loppu"
+	else:
+		return u"Lyhenne"
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -301,10 +308,7 @@ def handle_word(word):
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if vfst_word_class == u"[La]":
-			if wordform.endswith(u"."):
-				jatko = u"Loppu"
-			else:
-				jatko = u"Lyhenne"
+			jatko = get_abbreviation_jatko(word, altform)
 		elif vfst_word_class == u"[Ls]":
 			jatko = get_adverb_jatko(word, altform)
 		else:
