@@ -153,14 +153,19 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	bool isAbbr = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
-			i += 3;
+			if (i == 1) {
+				structure[structurePos++] = L'=';
+			}
 			if (charsSeen > charsFromDefault) {
 				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
 				charsMissing -= (charsSeen - charsFromDefault);
 			}
+			if (i != 1) {
+				structure[structurePos++] = L'=';
+			}
+			i += 3;
 			charsSeen = 0;
 			charsFromDefault = 0;
-			structure[structurePos++] = L'=';
 		}
 		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 			defaultTitleCase = false;
@@ -169,7 +174,9 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				structure[structurePos++] = fstOutput[i];
 				if (fstOutput[i] != L'=') {
 					charsFromDefault++;
-					charsMissing--;
+					if (fstOutput[i] != L'-') {
+						charsMissing--;
+					}
 				}
 				i++;
 			}
@@ -211,9 +218,11 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				structure[structurePos++] = L'-';
 				charsSeen = 0;
 				charsFromDefault = 0;
-				charsMissing--;
 			}
-			else if (i == 0) {
+			else if (i != 0) {
+				charsSeen++;
+			}
+			if (charsMissing) {
 				charsMissing--;
 			}
 			if (structurePos == 1) {

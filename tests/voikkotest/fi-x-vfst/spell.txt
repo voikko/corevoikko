@@ -79,6 +79,15 @@ susimainen
 ranskanturkkilainen
 baltianturkkilainen
 
+# = lyhenteet =
+[]
+USA:ssa
+HTML-kieli
+USA:ssakin
+!ivkaihosta
+Ab:ltä
+!esim.:ssä
+
 hevonen
 !hevvonen
 Hevonen

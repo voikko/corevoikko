@@ -301,7 +301,10 @@ def handle_word(word):
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if vfst_word_class == u"[La]":
-			jatko = u"Lyhenne"
+			if wordform.endswith(u"."):
+				jatko = u"Loppu"
+			else:
+				jatko = u"Lyhenne"
 		elif vfst_word_class == u"[Ls]":
 			jatko = get_adverb_jatko(word, altform)
 		else:
