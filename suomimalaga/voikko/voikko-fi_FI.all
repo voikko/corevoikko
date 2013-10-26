@@ -1249,15 +1249,14 @@ allo_rule generate_allos ($tietue):
   elseif (uksi in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
                                 yksikkö8 ("kse", "ksi", "kse", "kse",
-                                          [osanto_tA: "s",
-                                           osanto_A:  "kse"],
+                                          [osanto_A:  "kse"],
                                           sisätulento_Vn,
                                           "kse", "ksi") +
                                 [johdin_tOn:      "kse",
                                  johdin_mAinen:   "ksi",
                                  johdin_inen:     "ks"] +
                                 monikko7 ("kse", "ks", "ks",
-                                          [omanto_en: "ksi", omanto_ten: "s"],
+                                          [omanto_en: "ksi"],
                                           [osanto_iA: "ks"],
                                           [sisätulento_iin: "ks"], "ks"));
     result $i.alku, $i - alku;

@@ -797,6 +797,8 @@ unten # Kotus 24
 lapsena # Kotus 25
 !lasna # Kotus 25
 !hasta # Kotus 29
+!usta # Kotus 29
+!usten # Kotus 29
 !ikennä # Kotus 32
 hervottomimman # Kotus 34
 hervottomimpaa # Kotus 34
