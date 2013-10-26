@@ -2,10 +2,12 @@ LEXICON Olla
 [Tn1]lla:lla        Liitesana_a ;     # Olla.
 [Tn1p]llakse:llakse Omistusliite_a ;  # Ollakseni, ollaksesi, jne.
 [Tn2]ll:ll          Johdin_nimitapa2_a ;
+l:l                 Johdin_nimitapa2_tAessA_a	;
 l:l                 Johdin_lUt_a ;
-l:l                 Johdin_tAvA_a ;
+l:l                 EhtoMahtoKäskytapa_tA_a ;
 le:le               Johdin_mA_a ;
 le:le               Johdin_vA_a ;
+l:l                 Johdin_tU_lA_a	;
 [Tt][Ap][P1][Ny]len:len     Liitesana_a ;  # Minä olen.
 [Tt][Ap][P2][Ny]let:let     Liitesana_a ;  # Sinä olet.
 [Tt][Ap][P3][Ny]n:n         Liitesana_a ;  # Hän on. 
@@ -21,6 +23,7 @@ le:le               Johdin_vA_a ;
 l:l                     Ehtotapa_a ;   # Minä olisin, sinä olisit, jne.
 [Tk][Ap][P1][Ny]le:le   Liitesana_a ;  # Ole.
 l:l                     Käskytapa_a ;
+l[Tk][Ap][P3][Ny]koon[Fkin]kin:lkoonkin	Loppu	;
 lko:lko                 Loppu ;        # Kielteinen käsky: (älkää) olko.
 [Tt][Ap][P4]llaan:llaan Liitesana_a ;  # Ollaan.
 [Tt][Ai][P4]ltiin:ltiin Liitesana_a ;  # Oltiin.
