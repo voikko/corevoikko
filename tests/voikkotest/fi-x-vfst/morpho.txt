@@ -462,3 +462,6 @@ word:-sävellys-
   analysis
     CLASS=nimisana
     STRUCTURE=-=pppppppp-
+word:ilman
+  analysis
+    CLASS=suhdesana

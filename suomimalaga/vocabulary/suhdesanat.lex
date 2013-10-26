@@ -18,27 +18,27 @@
 # Seikkasanat
 # Jatko-kentässä sallittuja ovat ainoastaan loppu, liitesana, omistusliite ja sijapäätteet.
 
-[perusmuoto: "ali", alku: "ali", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "ali", alku: "ali", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alaitse", alku: "alaitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "ammolla", alku: "ammollaan", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "ammolla", alku: "ammolleen", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "ammolla", alku: "ammollaan", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "ammolla", alku: "ammolleen", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ammolla", alku: "ammolla", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ammolla", alku: "ammolle", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "de", alku: "de", luokka: suhdesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huolimatta", alku: "huolimatta", luokka: suhdesana, jatko: <loppu>, äs: a];
-[perusmuoto: "ilman", alku: "ilman", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "ilman", alku: "ilman", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kanssa", alku: "kanssa", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kautta", alku: "kautta", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kera", alku: "kera", luokka: suhdesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kera", alku: "keralla", luokka: suhdesana, jatko: <omistusliite, loppu>, äs: a];
-[perusmuoto: "kera", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "kera", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keskuudessa", alku: "keskuude", luokka: suhdesana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "keskuudessa", alku: "keskuute", luokka: suhdesana, jatko: <sisätulento_Vn>, äs: a];
-[perusmuoto: "kohden", alku: "kohden", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "kohden", alku: "kohden", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohti", alku: "kohti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "luota", alku: "luota", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ohi", alku: "ohe", luokka: suhdesana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: a];

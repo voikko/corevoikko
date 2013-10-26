@@ -16,6 +16,7 @@ Multichar_Symbols
 [Lc]  ! sidesana
 [Lu]  ! lukusana
 [Lr]  ! asemosana
+[Ld]  ! suhdesana
 
 ! Vokaalisointu
 [Va]
@@ -167,6 +168,7 @@ LukusananAlku	;
 -[Bc]:-	LukusananAlku	;
 YhdysmerkkiJaLukusananJälkiliite	;
 Asemosana	;
+Suhdesana	;
 
 LEXICON Sanasto
 Sanasto_ee	;
