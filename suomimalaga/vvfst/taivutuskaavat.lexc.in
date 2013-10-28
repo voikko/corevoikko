@@ -1505,6 +1505,7 @@ LEXICON NOUN NainenYsJatko
 <WC>YsJatko	;
 ?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_nl;
 ?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_l;
+?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@@R.LAINEN@:-@P.INEN_VAADITTU.ON@@R.LAINEN@	Sanasto_ep;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;

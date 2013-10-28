@@ -465,3 +465,6 @@ word:-sävellys-
 word:ilman
   analysis
     CLASS=suhdesana
+word:suomalais-neuvostoliittolainen
+  analysis
+    STRUCTURE==ppppppppp-=pppppppp=pppppppppppp

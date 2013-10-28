@@ -129,7 +129,7 @@ LEXICON EtuliitteenJatko_eltj2
 LEXICON EtuliitteenJatko_elleln
 EtuliitteenJatko_elleln2	;
 -:-	EtuliitteenJatko_elleln2	;
--[Bc]:-	Sanasto_ep	;
+-[Bc]:@P.INEN_KIELLETTY.ON@-@P.INEN_KIELLETTY.ON@	Sanasto_ep	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_elleln2

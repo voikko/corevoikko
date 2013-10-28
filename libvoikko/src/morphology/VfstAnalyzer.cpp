@@ -389,7 +389,6 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 					j++;
 				}
 			}
-			return;
 		}
 	}
 }
