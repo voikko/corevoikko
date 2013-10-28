@@ -2260,3 +2260,6 @@ olkoonkin
 oltua
 kahdennenkymmenennen
 sadasosasekunnilla
+toiseksi
+kymmenennet
+yhdennessätoista

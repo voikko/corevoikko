@@ -4280,6 +4280,8 @@ LEXICON JärjestyslukuNainen
 [Sg][Nm]sien:sien Liitesana_<A> ;
 @U.LS.SPNY@[Sp][Ny]st<A>:@U.LS.SPNY@st<A> Liitesana_<A> ;
 [Sp][Nm]si<A>:si<A> Liitesana_<A> ;
+[Str][Ny]seksi:seksi	Liitesana_<A>	;
+[Str][Nm]siksi:siksi	Liitesana_<A>	;
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> Liitesana_<A> ;
 [Sine][Ny]sess<A>:sess<A> Liitesana_<A> ;
