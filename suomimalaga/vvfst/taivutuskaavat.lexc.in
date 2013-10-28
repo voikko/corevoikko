@@ -3969,8 +3969,8 @@ LEXICON Ulkopaikallissijat_Mon
 [Sall][Nm]ille:ille	LoppuLiitesanaOlV_<A>	;
 
 LEXICON SisäpaikallissijatSsaSta
-[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
-[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sine][Ny]ss<A>:ss<A>	LoppuLiitesanaOlV_<A>	;
+[Sela][Ny]st<A>:st<A>	LoppuLiitesanaOlV_<A>	;
 
 LEXICON SisäpaikallissijatVn
 SisäpaikallissijatSsaSta_<A>	;
@@ -3978,16 +3978,16 @@ SisäpaikallissijatSsaSta_<A>	;
 
 LEXICON LoppuLiitesanaOsantoTa
 LoppuLiitesana_<A>	;
-[Sp][Ny]t<A>:t<A>	LoppuLiitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	LoppuLiitesanaOlV_<A>	;
 
 LEXICON LoppuLiitesanaOlentoNa
 LoppuLiitesana_<A>	;
-[Ses][Ny]n<A>:n<A>	LoppuLiitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	LoppuLiitesanaOlV_<A>	;
 
 LEXICON HeikkoasteisetPaikallissijat
 Ulkopaikallissijat_Yks_<A>	;
-[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
-[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sine][Ny]ss<A>:ss<A>	LoppuLiitesanaOlV_<A>	;
+[Sela][Ny]st<A>:st<A>	LoppuLiitesanaOlV_<A>	;
 
 LEXICON LoppuLiitesanaOmistusliite
 LoppuLiitesana_<A>	;
@@ -4269,6 +4269,7 @@ LukusananJälkiliite	;
 
 LEXICON JärjestyslukuLiitesana
 Liitesana_<A>	;
+Omistusliite_<A>	;
 LukusananJälkiliiteJl	;
 [Bc]:	Järjestysluku	;
 
@@ -4295,7 +4296,7 @@ LEXICON JärjestyslukuNainen
 [Sabl][Ny]selt<A>:selt<A> Liitesana_<A> ;
 [Sabl][Nm]silt<A>:silt<A> Liitesana_<A> ;
 [Sall][Ny]selle:selle Liitesana_<A> ;
-[Sall][Nm]sille:sille Liitesana_<A> ;
+[Sall][Nm]sille:sille JärjestyslukuSallNm39_<A> ;
 [Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> Liitesana_<A> ;
 [Sin][Nm]sin:sin Liitesana_<A> ;
