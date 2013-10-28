@@ -2266,3 +2266,4 @@ yhdennessätoista
 edessään
 hallustaan
 toisillensa
+vanhemmaltaan
