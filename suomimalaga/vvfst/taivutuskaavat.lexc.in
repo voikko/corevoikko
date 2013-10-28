@@ -4269,6 +4269,7 @@ LukusananJälkiliite	;
 
 LEXICON JärjestyslukuLiitesana
 Liitesana_<A>	;
+LukusananJälkiliiteJl	;
 [Bc]:	Järjestysluku	;
 
 LEXICON JärjestyslukuNainen
@@ -4327,7 +4328,7 @@ LEXICON JärjestyslukuKahdeksas
 LEXICON JärjestyslukuSnNy
 @U.LS.SNNY@	JärjestyslukuToista	;
 @U.LS.SNNY@	Liitesana_<A>	;
-@U.LS.SNNY@	LukusananJälkiliite	;
+@U.LS.SNNY@	LukusananJälkiliiteJl	;
 
 LEXICON JärjestyslukuSnNy29
 JärjestyslukuSnNy_<A>	;

@@ -76,10 +76,12 @@ JärjestyslukuSallNm39Kertoimet	;
 JärjestyslukuSabNm39Kertoimet	;
 JärjestyslukuSinNm39Kertoimet	;
 JärjestyslukuSkoNm39Kertoimet	;
+[Sn][Ny][Xp]sadas[X]sadas@U.LS.SNNY@:sadas@U.LS.SNNY@	JärjestyslukuLiitesana_a	;
 
 LEXICON Järjestysluku
 [Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;
 [Lu][Xp]toinen[X]toi:toi	JärjestyslukuNainen_a	;
+[Lu][Xp]kahdes[X]kahde:kahde	JärjestyslukuKahdeksas_a	;
 [Lu][Xp]kolmas[X]kolma:kolma	JärjestyslukuKahdeksas_a	;
 [Lu][Xp]neljäs[X]neljä:neljä	JärjestyslukuKahdeksas_ä	;
 [Lu][Xp]viides[X]viide:viide	JärjestyslukuKahdeksas_ä	;
@@ -149,7 +151,7 @@ LEXICON LukusanaToista
 
 LEXICON JärjestyslukuToista
 [Bc]toista:toista	Liitesana_a	;
-[Bc]toista:toista	LukusananJälkiliite	;
+[Bc]toista:toista	LukusananJälkiliiteJl	;
 
 LEXICON YhdysmerkkiJaLukusananJälkiliite
 -:-	LukusananJälkiliiteEiYhdysmerkkiä	;
@@ -172,6 +174,7 @@ LEXICON LukusananJälkiliiteEiYhdysmerkkiä
 LEXICON LukusananJälkiliiteJl
 [Bc][Ll][Xp]luokkalainen[X]luokkalai:luokkalai	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]osa[X]os:os	LukusananJälkiliiteKoira_a	;
+LukusananJälkiliite	;
 
 LEXICON RoomalainenNumero
 [Lu][Xr]qq[X]ii:ii	Loppu;
