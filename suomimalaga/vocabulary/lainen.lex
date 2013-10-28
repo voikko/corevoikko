@@ -53,16 +53,7 @@
 # vaikka myöhemmin sitä on tarkoitus käyttää vain sanojen ja etuliitteiden
 # rajalla.
 
-[perusmuoto: "mongolilainen", alku: "mongolilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "naurulainen", alku: "naurulai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "norsunluurannikkolainen", alku: "norsunluurannikkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppp=pppppppppppppp"];
-[perusmuoto: "nuorturkkilainen", alku: "nuorturkkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
-[perusmuoto: "papuauusiguinealainen", alku: "papuauusiguinealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppp=pppppppppppp"];
-[perusmuoto: "samoalainen", alku: "samoalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "setiläinen", alku: "setiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "suomalais-permiläinen", alku: "suomalais-permiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=ppppppppppp"];
-[perusmuoto: "trinidadtobagolainen", alku: "trinidadtobagolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "wittgensteinilainen", alku: "wittgensteinilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
 
 # Special abbreviations. There are some more of these, but they should preferably be
 # included only in special scientific word lists.
