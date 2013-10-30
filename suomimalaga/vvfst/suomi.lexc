@@ -82,6 +82,9 @@ LEXICON Omistusliite_aä
 [O3]nsa:nsa	Liitesana_a	;
 [O3]nsä:nsä	Liitesana_ä	;
 
+LEXICON LaatusananErisnimijatko
+-[Bc]:-	Sanasto_ep	;
+
 LEXICON EtuliitteenJatko_eln
 EtuliitteenJatko_eln2	;
 -:-	EtuliitteenJatko_eln2	;

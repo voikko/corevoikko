@@ -2216,10 +2216,12 @@ LEXICON NOUN YhteisetMonikonSijat2
 LEXICON NOUN LiOlN
 n:n	Liitesana_<A>	;
 ?NotLaatusana	Omistusliite_<A>	;
+?Laatusana	n:n	LaatusananErisnimijatko	;
 
 LEXICON NOUN LiOlV
 Liitesana_<A>	;
 ?NotLaatusana	OlV_<A>	;
+?Laatusana	LaatusananErisnimijatko	;
 
 LEXICON OlV
 Omistusliite_<A>	;
@@ -2229,6 +2231,7 @@ LEXICON NOUN LiOlI
 Liitesana_<A>	;
 ?NotLaatusana	[[IE]]:[[IE]]	Omistusliite_<A>	;
 ?NotLaatusana	[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
+?Laatusana	LaatusananErisnimijatko	;
 
 LEXICON Punoa
 <WC>Punoa_w_<A>	;

@@ -468,3 +468,8 @@ word:ilman
 word:suomalais-neuvostoliittolainen
   analysis
     STRUCTURE==ppppppppp-=pppppppp=pppppppppppp
+word:Isossa-Britanniassa
+ expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ippppp-=ippppppppppp
