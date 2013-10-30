@@ -167,10 +167,10 @@ spelling_pattern_list = [
   (re_loginen,  u"logi",   u"loogi"),
 
   (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
-  (re_aatio, u"aatio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
-  (re_uutio, u"uutio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
-  (re_uusio, u"uusio", u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x),
-  (re_tio,   u"tio",   u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x),
+  (re_aatio, u"aatio", u"atsio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
+  (re_uutio, u"uutio", u"utsio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
+  (re_uusio, u"uusio", u"usio",  u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x),
+  (re_tio,   u"tio",   u"tsio",  u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x),
   (re_oittaa1, u"o",   u"ot",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa2, u"ö",   u"öt",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa1, u"oit", u"ot",  u"Alittaa",    u"Alittaa"),
@@ -179,6 +179,7 @@ spelling_pattern_list = [
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
+
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
 ]
@@ -280,11 +281,11 @@ def generate_from_pattern (line, pattern_list):
                 replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
                 replace_and_write (line.replace(x[3], x[4]), x[1], x[2])
-            elif (len(x) == 6) or (len(x) == 7 and not x[6].match(line)):
-                s = line.replace (x[4], x[5])
-                outfile.write (replace (s, x[1], x[2]))
+            elif (len(x) == 7) or (len(x) == 8 and not x[7].match(line)):
+                s = line.replace (x[5], x[6])
                 outfile.write (replace (s, x[1], x[3]))
-
+                outfile.write (replace (s, x[1], x[4]))
+                outfile.write (replace (line, x[1], x[2]))
 
 # Old spellings and common spelling errors of words
 # that do not conform to any pattern.
@@ -313,6 +314,8 @@ word_list = [
     (u"humaaninen",       (u"humaani",       u"humani")),
     (u"husaari",          (u"husaar",        u"husar")),
     (u"huumori",          (u"huumor",        u"humor")),
+    (u"inkvisiittori",    (u"inkvisiittor",  u"inkvisitor", u"inkvisiitor")),
+    (u"inkvisitio",       (u"inkvisitio",    u"inkvisiitio")),
     (u"invalidi",         (u"invalid",       u"invaliid")),
     (u"juridinen",        (u"juridi",        u"juriidi")),
     (u"kahdeksainen",        (u"kahdeksai",         u"kaheksai")),
@@ -333,7 +336,7 @@ word_list = [
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
-    (u"kortteeri",      (u"kortteer",    u"kortier")),
+    (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraatteri",      (u"kraatter",    u"kraater")),
     (u"kulttuuri",      (u"kulttuur",    u"kultuur", "kulttur")),
     (u"kuriiri",        (u"kuriir",      u"kurier")),
@@ -373,10 +376,10 @@ word_list = [
     (u"senaattori",     (u"senaattor",   u"senaator")),
     (u"serafi",         (u"seraf",       u"seraaf")),
     (u"shampanja",      (u"shampanj",    u"shamppanj")),
-    (u"sihteeri",       (u"sihteer",     u"sihtier")),
+    (u"sihteeri",       (u"sihteer",     u"sihter", u"sihtier")),
     (u"sitruuna",       (u"sitruun",     u"sitrun", u"sitroon", u"sitron")),
     (u"soolo",          (u"soolo",       u"solo")),
-    (u"soopeli",        (u"soopel",      u"sopel")),
+    (u"soopeli",        (u"soopel",      u"sopel", u"soobel")),
     (u"synagoga",       (u"synagog",     u"synagoog")),
     (u"teatteri",       (u"teatter",     u"teaater", u"teaatter", u"teater")),
     (u"temperamentti",  (u"temperament", u"tempperament")),
@@ -403,6 +406,8 @@ word_list = [
     (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
     (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
     (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
+
+    (u"lainen",  lambda line: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
 
     # 39 nuori (3, 3). Tuomi, s. 182, 184.
     #
@@ -538,28 +543,25 @@ def write_tuple (line, key, g):
 #
 base_form_re = re.compile (u"\\[Xp\\]([^[]+)\\[X\\]", re.UNICODE)
 
-def generate_word (line, sukija_dictionary):
-    r = base_form_re.search (line)
-    if r:
-        try:
-            g = sukija_dictionary[r.group(1)]
-	    if type(g) == ListType:
-                write_list (line, r.group(1), g)
-	    elif type(g) == TupleType:
-                write_tuple (line, r.group(1), g)
-	    else:
-		error (line)
-        except KeyError:  # It is not an error if a word is not in sukija_dictionary.
-            pass
+def generate_word (r, line, sukija_dictionary):
+    try:
+        g = sukija_dictionary[r.group(1)]
+        if type(g) == ListType:
+            write_list (line, r.group(1), g)
+	elif type(g) == TupleType:
+            write_tuple (line, r.group(1), g)
+	elif type(g) == LambdaType:
+            g (line)
+	else:
+            error (line)
+    except KeyError:  # It is not an error if a word is not in sukija_dictionary.
+        pass
 
 
-def generate_from_function (line, function_list):
-    r = base_form_re.search (line)
-    if r:
-        for x in function_list:
-            if r.group(1) in x[1]:
-                x[0] (line, r.group(1))
-
+def generate_from_function (r, line, function_list):
+    for x in function_list:
+        if r.group(1) in x[1]:
+            x[0] (line, r.group(1))
 
 
 # Copy Voikko vocabulary and insert forms that Sukija needs.
@@ -572,8 +574,11 @@ while True:
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
     generate_from_pattern (line, spelling_pattern_list)
-    generate_word (line, sukija_dictionary)
-    generate_from_function (line, function_list)
+
+    r = r = base_form_re.search (line)
+    if r:
+        generate_word (r, line, sukija_dictionary)
+        generate_from_function (r, line, function_list)
 infile.close()
 
 
