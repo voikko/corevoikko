@@ -396,6 +396,11 @@ include "voikonsanat/erikoisalat/linux-distributions.lex";
 [alku: "isii",  luokka: sijapääte, sija: sisätulento_isiin,
                 luku: monikko, äs: aä, jatko: <omistusliite>];
 
+[alku: "eseen", luokka: sijapääte, sija: sisätulento_eseen,
+                luku: monikko, äs: aä, jatko: @sijan_jatko];
+[alku: "esee",  luokka: sijapääte, sija: sisätulento_eseen,
+                luku: monikko, äs: aä, jatko: <omistusliite>];
+
 [alku: "sen",   luokka: sijapääte, sija: sisätulento_sen,
                 luku: yksikkö, äs: aä, jatko: @sijan_jatko];
 [alku: "se",    luokka: sijapääte, sija: sisätulento_sen,

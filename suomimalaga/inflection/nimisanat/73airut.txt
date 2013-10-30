@@ -137,6 +137,9 @@ sisätulento_isiin
           airu++isiin
           airu+e+isiin  ei_voikko
 
+sisätulento_eseen
+          airu+e+eseen ei_voikko
+
 sisätulento_isin
           airu+h+isin  ei_voikko
 

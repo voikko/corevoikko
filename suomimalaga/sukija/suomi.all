@@ -10006,6 +10006,7 @@ subrule airut ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          sisäeronto_istA: <<$param03, <>>, <$param02, <ei_voikko>>, <$param05, <ei_voikko>>>,
                          sisätulento_ihin: <<$param03, <>>>,
                          sisätulento_isiin: <<$param03, <>>, <$param02, <ei_voikko>>>,
+                         sisätulento_eseen: <<$param02, <ei_voikko>>>,
                          sisätulento_isin: <<$param05, <ei_voikko>>>,
                          ulko_olento_illA: <<$param03, <>>, <$param02, <ei_voikko>>, <$param05, <ei_voikko>>>,
                          ulkoeronto_iltA: <<$param03, <>>, <$param02, <ei_voikko>>, <$param05, <ei_voikko>>>,

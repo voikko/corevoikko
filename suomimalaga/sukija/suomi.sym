@@ -97,6 +97,7 @@ sija;
   sisätulento_ihin;  # Monikko.
   sisätulento_seen;  # Hamee+seen.
   sisätulento_isiin; # Hame+isiin.
+  sisätulento_eseen; # Airue+eseen.
   sisätulento_sen;   # Kaunihi+sen (kaunii+seen).
   sisätulento_isin;  # Kaunih+isin (kauni+isiin).
   sisätulento_nne;   # Sinne, tänne, tuonne, jonne (<=joka).
