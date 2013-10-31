@@ -123,6 +123,8 @@ re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 
+re_toninen = makeRe (u"Ll", u".toninen")
+
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_");
 
@@ -180,6 +182,8 @@ spelling_pattern_list = [
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
 
+  (re_toninen, u"toni", u"tooni"),
+
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
 ]
@@ -233,12 +237,6 @@ def generate (lexicon, word_class, a):
     return p
 
 
-def write_word (p):
-    prefix = p[1][0:p[1].find (u"[X]")+3]
-    outfile.write (u"%s%s:%s Sukija%s ;\n" % (prefix, p[0][0:len(p[0])-1], p[0][0:len(p[0])-1], p[2]))
-
-
-
 def word_class (line):
     L = dict ([(u"[Ll]",  u"Laatusana"),
                (u"[Ln]",  u"Nimisana"),
@@ -286,6 +284,7 @@ def generate_from_pattern (line, pattern_list):
                 outfile.write (replace (s, x[1], x[3]))
                 outfile.write (replace (s, x[1], x[4]))
                 outfile.write (replace (line, x[1], x[2]))
+
 
 # Old spellings and common spelling errors of words
 # that do not conform to any pattern.
@@ -398,6 +397,8 @@ word_list = [
     (u"yhdeksäs",           (u"yhdeksä",          u"yheksä")),
 
     (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;"]),
+##                  u"[Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;"
+
     (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
     (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
     (u"mies",    [u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä NimisanaLiOlV_ä ;",
@@ -407,7 +408,7 @@ word_list = [
     (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
     (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
 
-    (u"lainen",  lambda line: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
+    (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
 
     # 39 nuori (3, 3). Tuomi, s. 182, 184.
     #
@@ -513,6 +514,21 @@ def convert_to_dictionary (word_list):
 sukija_dictionary = convert_to_dictionary (word_list)
 
 
+def convert_function_list_to_dictionary (function_list):
+    l0 = map (lambda x : x[1], function_list)
+    l1 = map (lambda x : [x[0] for i in range (len(x[1]))], function_list)
+    d1 = dict (zip (l0, l1))
+    d2 = dict()
+    for key, value in d1.iteritems():
+        d2.update (zip (key, value))
+    return d2
+
+
+#function_dictionary = convert_function_list_to_dictionary (function_list)
+#print (function_dictionary)
+#sukija_dictionary.update (function_dictionary)
+
+
 def error (line):
     sys.stderr.write (line)
     sys.stderr.write ("Wrong format in sukija_dictionary.\n")
@@ -551,7 +567,7 @@ def generate_word (r, line, sukija_dictionary):
 	elif type(g) == TupleType:
             write_tuple (line, r.group(1), g)
 	elif type(g) == LambdaType:
-            g (line)
+            g (line, r.group(1))
 	else:
             error (line)
     except KeyError:  # It is not an error if a word is not in sukija_dictionary.
