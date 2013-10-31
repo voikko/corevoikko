@@ -34,8 +34,23 @@ n:n Mahtotapa_ä ;
 Loppu ;
 
 LEXICON Kieltosana
-[Lk][Xp]ei[X]e:e         Ei ;
 [Lk][Xp]älkää[X]äl:äl    Älkää ;
+EtuliitteellinenKieltosana	;
+KieltosananEtuliite	;
+
+LEXICON KieltosananEtuliite
+[Xp]ehk[X]ehk:ehk	Kieltosana	;
+[Xp]ell[X]ell:ell	Kieltosana	;
+[Xp]ett[X]ett:ett	Kieltosana	;
+[Xp]joll[X]joll:joll	Kieltosana	;
+[Xp]jott[X]jott:jott	Kieltosana	;
+[Xp]miks[X]miks:miks	Kieltosana	;
+[Xp]vaikk[X]vaikk:vaikk	Kieltosana	;
+[Xp]kosk[X]kosk:kosk	Kieltosana	;
+[Xp]mutt[X]mutt:mutt	Kieltosana	;
+
+LEXICON EtuliitteellinenKieltosana
+[Lk][Xp]ei[X]e:e         Ei ;
 
 LEXICON Ei
 [P1][Ny]n:n        KieltosananLiitesana_ä ;
