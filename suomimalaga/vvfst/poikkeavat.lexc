@@ -14,14 +14,12 @@ LEXICON Poikkeavat_es
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t
-[Lt][Xp]ei[X]e:e         Ei ;
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]olla[X]o:o       Olla ;
 [Lt][Xp]potea[X]po:po       Potea ;
 [Lt][Xp]seistä[X]seis:seis	Seistä	;
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
-[Lt][Xp]älkää[X]äl:äl    Älkää ;
 
 LEXICON Poikkeavat_l
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;

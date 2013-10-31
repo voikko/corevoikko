@@ -17,6 +17,7 @@ Multichar_Symbols
 [Lu]  ! lukusana
 [Lr]  ! asemosana
 [Ld]  ! suhdesana
+[Lk]  ! kieltosana
 
 ! Vokaalisointu
 [Va]
@@ -169,6 +170,7 @@ LukusananAlku	;
 YhdysmerkkiJaLukusananJälkiliite	;
 Asemosana	;
 Suhdesana	;
+Kieltosana	;
 
 LEXICON Sanasto
 Sanasto_ee	;

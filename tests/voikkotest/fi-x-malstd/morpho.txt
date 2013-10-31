@@ -122,6 +122,7 @@ word:Neptunus
 word:ei
  analysis
   CLASS=kieltosana
+  STRUCTURE==pp
 word:EU
  analysis
   CLASS=lyhenne
