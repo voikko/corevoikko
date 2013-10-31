@@ -2055,9 +2055,15 @@ subrule tulostus_luokka($tietue):
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,
-                             paikannimi, nimi, kieltosana, lyhenne,
+                             paikannimi, nimi, kieltosana,
                              lukusana> then
       return $allomorfi.luokka;
+    end;
+    if $allomorfi.luokka = lyhenne then
+      if $allomorfi.alaluokka = roomalainen then
+        return lukusana;
+      end;
+      return lyhenne;
     end;
     if $allomorfi.luokka in @johtimet_nimisana_laatusanasta then
       return nimisana;

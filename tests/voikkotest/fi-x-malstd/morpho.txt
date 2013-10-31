@@ -434,3 +434,7 @@ word:montenegrolainen
  CLASS=laatusana
  SIJAMUOTO=nimento
  STRUCTURE==pppppppppppppppp
+word:iiii
+ analysis
+  CLASS=lukusana
+  STRUCTURE==qqqq
