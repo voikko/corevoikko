@@ -1739,18 +1739,14 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sg][Nm]eid:eid		<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sg][Nm]tt:tt		<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija <WC>SukijaYhteisetHMuodot_<A> ;
 ?Sukija [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 ?Sukija e:e <WC>YhteisetMonikonSijat2_<A>	;
-?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 ?Sukija e:e <WC>YhteisetMonikonPaikallissijat_<A>	;
-?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Kevät
 [Sn][Ny]t:t	<WC>NormaaliYsJatko_<A>	;
@@ -1774,15 +1770,11 @@ LEXICON NOUN Kevät
 ?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
 ?Sukija [Sg][Ny]h<A>n:h<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 ?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sg][Nm]hi:hi	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija <WC>SukijaYhteisetHMuodot_<A> ;
 ?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
-?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 ?Sukija h<A>:h<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
-?Sukija h:h		<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Mies
 s:s   <WC>Mies_s_<A>  ;
@@ -1914,18 +1906,14 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija ?NotLaatusana	[Sn][Ny]he:he	Omistusliite_<A>	;
 ?Sukija [Sn][Nm]het:het	Liitesana_<A>	;
 ?Sukija [Sg][Ny]hen:hen	<WC>YksikönGenetiivinJatko_<A>	;
-?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija <WC>SukijaYhteisetHMuodot_<A> ;
 ?Sukija [Sp][Nm]hit<A>:hit<A>	<WC>LiOlV_<A>	;
 ?Sukija [Ses][Ny]hen<A>:hen<A>	<WC>LiOlV_<A>	;
-?Sukija h:h	<WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija [Sill][Ny]ese:ese	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]hese:hese	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisii:hisii	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 ?Sukija he:he	<WC>YhteisetYksikönPaikallissijat_<A>	;
-?Sukija h:h	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija ?Laatusana	he:he	Voittoaste_<A>	;
 ?Sukija ?Laatusana	h:h	Yliaste_<A>	;
 ?Sukija ?Nimisana	he:he	Johdin_tOn_<A>	;
@@ -2074,9 +2062,10 @@ LEXICON NOUN Vieras_s
 ?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
 ?Sukija [Sg][Ny]h<A>n:h<A>n <WC>YksikönGenetiivinJatko_<A>	;
 ?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
-?Sukija [Sp][Nm]hi<A>:hi<A> <WC>LiOlV_<A>	;
+?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A> 	<WC>LiOlV_<A>	;
+?Sukija h:h 			<WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
-?Sukija h:h <WC>YhteisetMonikonSijat2_<A> ;
 ?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
@@ -4345,3 +4334,10 @@ LEXICON JärjestyslukuKymmentäSnNy
 [Bc]kymmenes:kymmenes	JärjestyslukuLiitesana_ä	;
 [Bc]sadas:sadas	JärjestyslukuLiitesana_a	;
 [Bc]tuhannes:tuhannes	JärjestyslukuLiitesana_a	;
+
+?Sukija LEXICON NOUN SukijaYhteisetHMuodot
+?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A> 	<WC>LiOlV_<A>	;
+?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
