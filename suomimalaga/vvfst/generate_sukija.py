@@ -401,8 +401,6 @@ word_list = [
 
     (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
     (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
-    (u"mies",    [u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä NimisanaLiOlV_ä ;",
-                  u"[Ln][Xp]mies[X]mies[Ses][Ny]sä:miessä NimisanaLiOlV_ä ;"]),
     (u"pieni",   [u"[Ll][Xp]pieni[X]pien[Ses][Ny]nä:piennä NimisanaLiOlV_ä ;"]),
     (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
     (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),

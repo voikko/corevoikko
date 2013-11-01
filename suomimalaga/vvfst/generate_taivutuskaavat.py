@@ -105,6 +105,9 @@ def appendLexicon(lexiconName, lines, lexcFile):
 		                u"Koira_w_monikko", u"Koira_w_yksikkö", u"Puu", u"Maa_l", u"Maa_s"]:
 			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
 			appendLines(u"Asemosana", realName, lines, lexcFile)
+		if OPTIONS["sukija"] and realName in [u"SukijaYhteisetHMuodot"]:
+			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
+			appendLines(u"Asemosana", realName, lines, lexcFile)
 	else:
 		appendLines(u"", lexiconName, lines, lexcFile)
 
