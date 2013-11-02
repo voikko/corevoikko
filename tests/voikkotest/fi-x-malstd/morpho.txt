@@ -438,3 +438,8 @@ word:iiii
  analysis
   CLASS=lukusana
   STRUCTURE==qqqq
+word:jottei
+ expected:1
+ analysis
+ CLASS=kieltosana
+ STRUCTURE==pppp=pp

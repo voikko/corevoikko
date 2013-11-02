@@ -1986,7 +1986,7 @@ subrule tulostus_rakenne ($tietue):
       else
         $tuloste :=+ rakenne($t, no);
       end;
-    elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, huudahdussana, sidesana,
+    elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, huudahdussana, sidesana, kieltosanan_etuliite,
                          nimi_laatusana, asemosana, suhdesana, lukusanan_jälkiliite, etuliite, kieltosana> or
                          ($t.luokka = lukusana and not $t.alaluokka in <numeromerkki, pilkku>) then
       $tuloste :=+ "=";
