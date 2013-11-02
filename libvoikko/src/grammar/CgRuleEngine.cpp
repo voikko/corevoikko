@@ -110,6 +110,9 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 					}
 					buf = buf + *it2;
 				}
+				tag = cg3_tag_create_u8(applicator, buf.c_str());
+				cg3_reading_addtag(reading, tag);
+				buf = "";
 				num_analyses++;
 				cg3_cohort_addreading(cohort, reading);
 				++it;
