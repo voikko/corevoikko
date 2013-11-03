@@ -2,6 +2,10 @@
 *.pyc
 libvoikko/java/target
 libvoikko/test-driver
+libvoikko/cs/libvoikko.tests/bin
+libvoikko/cs/libvoikko.tests/test-results
+libvoikko/cs/libvoikko/bin
+libvoikko/cs/test-results
 suomimalaga/build
 suomimalaga/voikko/config.inc
 suomimalaga/voikko/erikoiset.lex

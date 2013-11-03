@@ -91,10 +91,13 @@ namespace libvoikko
 		public static extern IntPtr voikkoGetGrammarErrorSuggestions(IntPtr error);
 
 		[DllImport(DLL_LIB)]
-		public static extern IntPtr voikko_error_message_cstr(int errorCode, byte[] language);
+		public static extern IntPtr voikkoGetGrammarErrorShortDescription(IntPtr error, byte[] language);
 
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikkoAnalyzeWordCstr(IntPtr handle, byte[] word);
+
+		[DllImport(DLL_LIB)]
+		public static extern void voikkoFreeErrorMessageCstr(IntPtr message);
 
 		[DllImport(DLL_LIB)]
 		public static extern void voikko_free_mor_analysis(IntPtr analysis);
@@ -233,7 +236,7 @@ namespace libvoikko
 			}
 		}
 
-		public List<GrammarError> GrammarErrors(string text)
+		public List<GrammarError> GrammarErrors(string text, string language)
 		{
 			lock (lockObj)
 			{
@@ -246,14 +249,14 @@ namespace libvoikko
 				int offset = 0;
 				foreach (String paragraph in Regex.Split(text, "\\r?\\n"))
 				{
-					appendErrorsFromParagraph(errorList, paragraph, offset);
+					appendErrorsFromParagraph(errorList, paragraph, offset, language);
 					offset += paragraph.Length + 1;
 				}
 				return errorList;
 			}
 		}
 
-		private void appendErrorsFromParagraph(List<GrammarError> errorList, string paragraph, int offset)
+		private void appendErrorsFromParagraph(List<GrammarError> errorList, string paragraph, int offset, string language)
 		{
 			int paragraphLen = ByteArray.s2n(paragraph).Length - 1;
 			int skipErrors = 0;
@@ -264,13 +267,13 @@ namespace libvoikko
 				{
 					return;
 				}
-				errorList.Add(getGrammarError(cError, offset));
+				errorList.Add(getGrammarError(cError, offset, language));
 				Libvoikko.voikkoFreeGrammarError(cError);
 				skipErrors++;
 			}
 		}
 
-		private GrammarError getGrammarError(IntPtr cError, int offset)
+		private GrammarError getGrammarError(IntPtr cError, int offset, string language)
 		{
 			int errorCode = Libvoikko.voikkoGetGrammarErrorCode(cError);
 			IntPtr startPos = Libvoikko.voikkoGetGrammarErrorStartPos(cError);
@@ -287,12 +290,10 @@ namespace libvoikko
 					}
 				}
 			}
-			return new GrammarError(errorCode, offset + (int)startPos, (int)errorLength, suggestions);
-		}
-
-		public string GrammarErrorExplanation(int errorCode, string language)
-		{
-			return ByteArray.n2s(Libvoikko.voikko_error_message_cstr(errorCode, ByteArray.s2n(language)));
+			IntPtr cShortDescription = Libvoikko.voikkoGetGrammarErrorShortDescription(cError, ByteArray.s2n(language));
+			string shortDescription = ByteArray.n2s(cShortDescription);
+			Libvoikko.voikkoFreeErrorMessageCstr(cShortDescription);
+			return new GrammarError(errorCode, offset + (int)startPos, (int)errorLength, suggestions, shortDescription);
 		}
 
 		public List<Analysis> Analyze(string word)

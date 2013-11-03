@@ -36,13 +36,15 @@ namespace libvoikko
 		private readonly int startPos;
 		private readonly int errorLen;
 		private readonly List<string> suggestions;
+		private readonly string shortDescription;
 
-		public GrammarError(int errorCode, int startPos, int errorLen, List<string> suggestions)
+		public GrammarError(int errorCode, int startPos, int errorLen, List<string> suggestions, string shortDescription)
 		{
 			this.errorCode = errorCode;
 			this.startPos = startPos;
 			this.errorLen = errorLen;
 			this.suggestions = suggestions;
+			this.shortDescription = shortDescription;
 		}
 		
 		public int ErrorCode
@@ -74,6 +76,14 @@ namespace libvoikko
 			get
 			{
 				return suggestions;
+			}
+		}
+
+		public string ShortDescription
+		{
+			get
+			{
+				return shortDescription;
 			}
 		}
 	}

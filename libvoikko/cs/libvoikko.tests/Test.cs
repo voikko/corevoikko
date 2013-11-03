@@ -210,7 +210,7 @@ namespace libvoikko
 		[Test]
 		public void grammarErrorsAndExplanation()
 		{
-			List<GrammarError> errors = voikko.GrammarErrors("Minä olen joten kuten kaunis.");
+			List<GrammarError> errors = voikko.GrammarErrors("Minä olen joten kuten kaunis.", "fi");
 			Assert.AreEqual(1, errors.Count);
 			GrammarError error = errors[0];
 			Assert.AreEqual(10, error.StartPos);
@@ -218,21 +218,20 @@ namespace libvoikko
 			Assert.AreEqual(1, error.Suggestions.Count);
 			Assert.AreEqual("jotenkuten", error.Suggestions[0]);
 			int code = error.ErrorCode;
-			Assert.AreEqual("Virheellinen kirjoitusasu", voikko.GrammarErrorExplanation(code, "fi"));
-			Assert.AreEqual("Incorrect spelling of word(s)", voikko.GrammarErrorExplanation(code, "en"));
+			Assert.AreEqual("Virheellinen kirjoitusasu", error.ShortDescription);
 		}
 
 		[Test]
 		public void noGrammarErrorsInEmptyParagraph()
 		{
-			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen täi.");
+			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen täi.", "fi");
 			Assert.AreEqual(0, errors.Count);
 		}
 
 		[Test]
 		public void grammarErrorOffsetsInMultipleParagraphs()
 		{
-			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen joten kuten.");
+			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen joten kuten.", "fi");
 			Assert.AreEqual(1, errors.Count);
 			Assert.AreEqual(16, errors[0].StartPos);
 			Assert.AreEqual(11, errors[0].ErrorLen);
@@ -376,27 +375,27 @@ namespace libvoikko
 		public void setAcceptTitlesInGc()
 		{
 			voikko.AcceptTitlesInGc = false;
-			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on eläin").Count);
+			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on eläin", "fi").Count);
 			voikko.AcceptTitlesInGc = true;
-			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on eläin").Count);
+			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on eläin", "fi").Count);
 		}
 
 		[Test]
 		public void setAcceptUnfinishedParagraphsInGc()
 		{
 			voikko.AcceptUnfinishedParagraphsInGc = false;
-			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on ").Count);
+			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on ", "fi").Count);
 			voikko.AcceptUnfinishedParagraphsInGc = true;
-			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on ").Count);
+			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on ", "fi").Count);
 		}
 
 		[Test]
 		public void setAcceptBulletedListsInGc()
 		{
 			voikko.AcceptBulletedListsInGc = false;
-			Assert.Greater(voikko.GrammarErrors("kissa").Count, 0);
+			Assert.Greater(voikko.GrammarErrors("kissa", "fi").Count, 0);
 			voikko.AcceptBulletedListsInGc = true;
-			Assert.AreEqual(0, voikko.GrammarErrors("kissa").Count);
+			Assert.AreEqual(0, voikko.GrammarErrors("kissa", "fi").Count);
 		}
 
 		[Test]
@@ -458,7 +457,7 @@ namespace libvoikko
 			Assert.IsFalse(voikko.Spell("kissa\0asdasd"));
 			Assert.AreEqual(0, voikko.Suggest("kisssa\0koira").Count);
 			Assert.AreEqual("kissa\0koira", voikko.Hyphenate("kissa\0koira"));
-			Assert.AreEqual(0, voikko.GrammarErrors("kissa\0koira").Count);
+			Assert.AreEqual(0, voikko.GrammarErrors("kissa\0koira", "fi").Count);
 			Assert.AreEqual(0, voikko.Analyze("kissa\0koira").Count);
 		}
 
