@@ -43,12 +43,14 @@ public class GrammarError {
     private final int startPos;
     private final int errorLen;
     private final List<String> suggestions;
+    private final String shortDescription;
 
-    public GrammarError(int errorCode, int startPos, int errorLen, List<String> suggestions) {
+    public GrammarError(int errorCode, int startPos, int errorLen, List<String> suggestions, String shortDescription) {
         this.errorCode = errorCode;
         this.startPos = startPos;
         this.errorLen = errorLen;
         this.suggestions = suggestions;
+        this.shortDescription = shortDescription;
     }
 
     /**
@@ -79,6 +81,10 @@ public class GrammarError {
      */
     public List<String> getSuggestions() {
         return suggestions;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
     }
 
     @Override

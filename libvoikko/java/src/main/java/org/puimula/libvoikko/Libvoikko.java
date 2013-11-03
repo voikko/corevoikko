@@ -81,9 +81,11 @@ interface Libvoikko extends Library {
     
     public abstract Pointer voikkoGetGrammarErrorSuggestions(VoikkoGrammarError error);
     
-    public abstract ByteArray voikko_error_message_cstr(int errorCode, byte[] language);
+    public abstract Pointer voikkoGetGrammarErrorShortDescription(VoikkoGrammarError error, byte[] language);
     
     public abstract Pointer voikkoAnalyzeWordCstr(VoikkoHandle handle, byte[] word);
+    
+    public abstract void voikkoFreeErrorMessageCstr(Pointer message);
     
     public abstract void voikko_free_mor_analysis(Pointer analysis);
     

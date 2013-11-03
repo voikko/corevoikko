@@ -213,9 +213,10 @@ public class Voikko {
      * Unlike the C based API this method accepts multiple paragraphs
      * separated by newline characters.
      * @param text
+     * @param language language in which error descriptions should be returned
      * @return list of grammar errors
      */
-    public synchronized List<GrammarError> grammarErrors(String text) {
+    public synchronized List<GrammarError> grammarErrors(String text, String language) {
         requireValidHandle();
         List<GrammarError> errorList = new ArrayList<GrammarError>();
         if (!isValidInput(text)) {
@@ -223,13 +224,13 @@ public class Voikko {
         }
         int offset = 0;
         for (String paragraph : text.split("\\r?\\n")) {
-            appendErrorsFromParagraph(errorList, paragraph, offset);
+            appendErrorsFromParagraph(errorList, paragraph, offset, language);
             offset += paragraph.length() + 1;
         }
         return errorList;
     }
 
-    private void appendErrorsFromParagraph(List<GrammarError> errorList, String paragraph, int offset) {
+    private void appendErrorsFromParagraph(List<GrammarError> errorList, String paragraph, int offset, String language) {
         final int paragraphLen = s2n(paragraph).length - 1;
         final Libvoikko lib = getLib();
         int skipErrors = 0;
@@ -239,13 +240,13 @@ public class Voikko {
             if (cError == null) {
                 return;
             }
-            errorList.add(getGrammarError(cError, offset));
+            errorList.add(getGrammarError(cError, offset, language));
             lib.voikkoFreeGrammarError(cError);
             skipErrors++;
         }
     }
 
-    private GrammarError getGrammarError(VoikkoGrammarError cError, int offset) {
+    private GrammarError getGrammarError(VoikkoGrammarError cError, int offset, String language) {
         final Libvoikko lib = getLib();
         int errorCode = lib.voikkoGetGrammarErrorCode(cError);
         int startPos = lib.voikkoGetGrammarErrorStartPos(cError).intValue();
@@ -261,16 +262,10 @@ public class Voikko {
                 suggestions.add(stringFromPointer(cStr));
             }
         }
-        return new GrammarError(errorCode, offset + startPos, errorLength, suggestions);
-    }
-
-    /**
-     * @param errorCode grammar error code
-     * @param language language in which the explanation should be returned
-     * @return a human readable explanation for grammar error
-     */
-    public String grammarErrorExplanation(int errorCode, String language) {
-        return getLib().voikko_error_message_cstr(errorCode, s2n(language)).toString();
+        Pointer cShortDescription = lib.voikkoGetGrammarErrorShortDescription(cError, s2n(language));
+        String shortDescription = stringFromPointer(cShortDescription);
+        lib.voikkoFreeErrorMessageCstr(cShortDescription);
+        return new GrammarError(errorCode, offset + startPos, errorLength, suggestions, shortDescription);
     }
 
     /**

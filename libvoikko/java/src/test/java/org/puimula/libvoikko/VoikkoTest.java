@@ -28,10 +28,10 @@
 
 package org.puimula.libvoikko;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -199,26 +199,25 @@ public class VoikkoTest {
     
     @Test
     public void grammarErrorsAndExplanation() {
-        List<GrammarError> errors = voikko.grammarErrors("Minä olen joten kuten kaunis.");
+        List<GrammarError> errors = voikko.grammarErrors("Minä olen joten kuten kaunis.", "fi");
         assertEquals(1, errors.size());
         GrammarError error = errors.get(0);
         assertEquals(10, error.getStartPos());
         assertEquals(11, error.getErrorLen());
         assertEquals(Arrays.asList("jotenkuten"), error.getSuggestions());
         int code = error.getErrorCode();
-        assertEquals("Virheellinen kirjoitusasu", voikko.grammarErrorExplanation(code, "fi"));
-        assertEquals("Incorrect spelling of word(s)", voikko.grammarErrorExplanation(code, "en"));
+        assertEquals("Virheellinen kirjoitusasu", error.getShortDescription());
     }
     
     @Test
     public void noGrammarErrorsInEmptyParagraph() {
-        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen täi.");
+        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen täi.", "fi");
         assertTrue(errors.isEmpty());
     }
     
     @Test
     public void grammarErrorOffsetsInMultipleParagraphs() {
-        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen joten kuten.");
+        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen joten kuten.", "fi");
         assertEquals(1, errors.size());
         assertEquals(16, errors.get(0).getStartPos());
         assertEquals(11, errors.get(0).getErrorLen());
@@ -347,25 +346,25 @@ public class VoikkoTest {
     @Test
     public void setAcceptTitlesInGc() {
         voikko.setAcceptTitlesInGc(false);
-        assertEquals(1, voikko.grammarErrors("Kissa on eläin").size());
+        assertEquals(1, voikko.grammarErrors("Kissa on eläin", "fi").size());
         voikko.setAcceptTitlesInGc(true);
-        assertEquals(0, voikko.grammarErrors("Kissa on eläin").size());
+        assertEquals(0, voikko.grammarErrors("Kissa on eläin", "fi").size());
     }
     
     @Test
     public void setAcceptUnfinishedParagraphsInGc() {
         voikko.setAcceptUnfinishedParagraphsInGc(false);
-        assertEquals(1, voikko.grammarErrors("Kissa on ").size());
+        assertEquals(1, voikko.grammarErrors("Kissa on ", "fi").size());
         voikko.setAcceptUnfinishedParagraphsInGc(true);
-        assertEquals(0, voikko.grammarErrors("Kissa on ").size());
+        assertEquals(0, voikko.grammarErrors("Kissa on ", "fi").size());
     }
     
     @Test
     public void setAcceptBulletedListsInGc() {
         voikko.setAcceptBulletedListsInGc(false);
-        assertFalse(voikko.grammarErrors("kissa").isEmpty());
+        assertFalse(voikko.grammarErrors("kissa", "fi").isEmpty());
         voikko.setAcceptBulletedListsInGc(true);
-        assertTrue(voikko.grammarErrors("kissa").isEmpty());
+        assertTrue(voikko.grammarErrors("kissa", "fi").isEmpty());
     }
     
     @Test
@@ -468,7 +467,7 @@ public class VoikkoTest {
         assertFalse(voikko.spell("kissa\0asdasd"));
         assertTrue(voikko.suggest("kisssa\0koira").isEmpty());
         assertEquals("kissa\0koira", voikko.hyphenate("kissa\0koira"));
-        assertEquals(0, voikko.grammarErrors("kissa\0koira").size());
+        assertEquals(0, voikko.grammarErrors("kissa\0koira", "fi").size());
         assertEquals(0, voikko.analyze("kissa\0koira").size());
     }
 
