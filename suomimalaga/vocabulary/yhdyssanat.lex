@@ -272,7 +272,7 @@
 
 # {{{2 Uusimaa
 
-[perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ippp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uudenmaa",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uuttamaa",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppp=ppp"];

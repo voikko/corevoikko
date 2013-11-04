@@ -9,6 +9,7 @@ LEXICON Poikkeavat_n
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
+[Lep][Xp]Uusimaa[X][Xr]ippp=[X][Sn][Ny]uusimaa:uusimaa	PaikannimiNormaaliYsJatkoOl_a	;
 
 LEXICON Poikkeavat_es
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;

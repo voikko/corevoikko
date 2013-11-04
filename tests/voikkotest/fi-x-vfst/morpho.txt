@@ -468,3 +468,8 @@ word:ei
     CLASS=kieltosana
     NUMBER=singular
     STRUCTURE==pp
+word:Keski-Uusimaa
+ expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ipppp-=ippp=ppp
