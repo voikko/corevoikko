@@ -443,3 +443,9 @@ word:jottei
  analysis
  CLASS=kieltosana
  STRUCTURE==pppp=pp
+word:Uudenmaansa
+ expected:1
+ analysis
+ CLASS=paikannimi
+ SIJAMUOTO=omanto
+ STRUCTURE==ipppp=pppppp

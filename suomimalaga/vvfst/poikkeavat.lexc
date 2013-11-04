@@ -10,6 +10,18 @@ LEXICON Poikkeavat_n
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
 [Lep][Xp]Uusimaa[X][Xr]ippp=[X][Sn][Ny]uusimaa:uusimaa	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppp=[X][Sg][Ny]uudenmaa:uudenmaa	Omistusliite_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppp=[X][Sg][Ny]uudenmaan:uudenmaan	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppp=[X][Sp][Ny]uuttamaata:uuttamaata	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ippppp=[X][Ses][Ny]uutenamaana:uutenamaana	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sp][Ny]uudeksimaaksi:uudeksimaaksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sine][Ny]uudessamaassa:uudessamaassa	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sela][Ny]uudestamaasta:uudestamaasta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ippppp=[X][Sill][Ny]uuteenmaaha:uuteenmaaha	PaikannimiLiOlN_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sade][Ny]uudellamaalla:uudellamaalla	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sabl][Ny]uudeltamaalta:uudeltamaalta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sall][Ny]uudellemaalle:uudellemaalle	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sab][Ny]uudettamaatta:uudettamaatta	PaikannimiLiOlV_a	;
 
 LEXICON Poikkeavat_es
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;

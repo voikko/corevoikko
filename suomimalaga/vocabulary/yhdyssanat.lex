@@ -273,18 +273,18 @@
 # {{{2 Uusimaa
 
  [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ippp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uudenmaa",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uuttamaa",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uutenamaa",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uudeksimaa", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uudessamaassa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusimaa", alku: "Uudestamaasta", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusimaa", alku: "Uuteenmaa",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ippppp=ppp"];
-[perusmuoto: "Uusimaa", alku: "Uudellamaalla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusimaa", alku: "Uudeltamaalta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusimaa", alku: "Uudellemaalle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusimaa", alku: "Uudettamaa", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudenmaa",    luokka: paikannimi, luku: yksikkö, sijamuoto: omanto, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudenmaa",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uuttamaa",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uutenamaa",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudeksimaa", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudessamaassa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudestamaasta", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusimaa", alku: "Uuteenmaa",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ippppp=ppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudellamaalla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudeltamaalta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudellemaalle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusimaa", alku: "Uudettamaa", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=ppp"];
 
 [perusmuoto: "uusimaalainen", alku: "uusimaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "uudenmaalainen", alku: "uudenmaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
