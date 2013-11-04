@@ -35,7 +35,6 @@
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
  [perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
@@ -55,11 +54,9 @@
 [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "plus", alku: "plus-", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
-[perusmuoto: "päikkäin", alku: "päikkäin", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
-[perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
  [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
+ [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
 [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];

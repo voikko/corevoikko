@@ -3,6 +3,8 @@ LEXICON Poikkeavat_n
 [Ln][Xp]enkeli[X]enkel[Sg][N]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
 [Ln][Xp]isämeidän[X][Xr]ppp=[X][Sn][Ny]isämeidän:isämeidän	Liitesana_ä	;
 [Ln][Xp]nukke[X]nukk[Sg][Nm]i:nukki	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]sisä[X]sisä:sisä	SisäpaikallissijatVn_ä	;
+[Ln][Xp]sisä[X]sisä:sisä	Ulkopaikallissijat_Yks_ä	;
 [Ln][Xp]viive[X]vii:vii	Viive	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
