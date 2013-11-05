@@ -45,6 +45,9 @@ class CgGrammarChecker : public GrammarChecker {
 		~CgGrammarChecker();
 
 		void init(); 
+
+		// pair<code, lang>, pair<title, description>
+		std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > errorlist;
 		
 	private:
 

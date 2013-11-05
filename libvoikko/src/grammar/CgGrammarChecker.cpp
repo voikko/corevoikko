@@ -34,6 +34,8 @@
 #include "grammar/HfstAnalysis.hpp"
 #include "morphology/HfstAnalyzer.hpp"
 
+#include <tinyxml2.h>
+
 using namespace std;
 
 namespace libvoikko { namespace grammar {
@@ -47,9 +49,58 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 
+	// FIXME: This is not platform independent.
+	unsigned int found = rules.rfind("/");
+	string errorlistpath = "errors.xml";
+	if(found != string::npos) {
+		errorlistpath = rules.substr(0, found) + "/errors.xml";
+	}
+
+
+	// Should probably separate this into a separate method.
+	cerr << "  -- errorlistpath: " << errorlistpath << endl;
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(errorlistpath.c_str());
+	tinyxml2::XMLNode *docp;
+	docp = doc.FirstChildElement("errors")->FirstChildElement("error");
+//	pair<code, lang>, pair<title, description>
+	map< pair<string , string >, string > titles;
+	map< pair<string , string >, string > descriptions;
+	while(docp != NULL) {
+		const char *id = docp->ToElement()->Attribute("id");
+		const char *title = NULL;
+		const char *desc = NULL;
+		const char *lang = NULL;
+		cerr << "   -- &" << id << endl;
+		tinyxml2::XMLNode *docp2;
+		docp2 = docp->FirstChildElement("header")->FirstChildElement("title");
+		while(docp2 != NULL) {
+			lang = docp2->ToElement()->Attribute("xml:lang");			
+			title = docp2->ToElement()->GetText();	
+			cerr << "   " << lang << ": " << title << endl;
+			titles[make_pair("&" +string(id), string(lang))] = string(title);
+			docp2 = docp2->NextSibling();
+		}
+		docp2 = docp->FirstChildElement("body")->FirstChildElement("description");
+		while(docp2 != NULL) {
+			lang = docp2->ToElement()->Attribute("xml:lang");			
+			desc = docp2->ToElement()->GetText();	
+			cerr << "   " << lang << ": " << desc << endl;
+			descriptions[make_pair("&" + string(id), string(lang))] = string(desc);
+			docp2 = docp2->NextSibling();
+		}
+
+		docp = docp->NextSibling();	
+	}
+	map< pair<string, string>, string >::iterator it;
+	for(it = titles.begin(); it != titles.end(); it++) {
+		errorlist[it->first] = make_pair(titles[it->first], descriptions[it->first]);
+	}
+
 	CgRuleEngine * cgRuleEngine = new CgRuleEngine(voikkoOptions);
 	ruleEngine = cgRuleEngine;
 	cgRuleEngine->load(rules);
+	cgRuleEngine->setErrorList(&errorlist);
 
 	analyser = new morphology::HfstAnalyzer(f_analyser);
 

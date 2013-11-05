@@ -57,6 +57,11 @@ CgRuleEngine::~CgRuleEngine() {
 
 }
 
+void CgRuleEngine::setErrorList(std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * _errorlist)
+{
+	errorlist = _errorlist;
+}
+
 int CgRuleEngine::load(const std::string path) {
 	fprintf(stderr, "CgRuleEngine::load\n");
 	grammar = cg3_grammar_load(path.c_str());
