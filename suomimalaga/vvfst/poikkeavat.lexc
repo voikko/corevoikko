@@ -4,9 +4,14 @@ LEXICON Poikkeavat_n
 [Ln][Xp]hunningolla[X]hunningo:hunningo	Ulkopaikallissijat_Yks_a	;
 [Ln][Xp]huomassa[X]huoma:huoma	SisäpaikallissijatVn_a	;
 [Ln][Xp]isämeidän[X][Xr]ppp=[X][Sn][Ny]isämeidän:isämeidän	Liitesana_ä	;
+[Ln][Xp]meikä[X]meikä[Sn][Ny]meikä:meikä	NimisanaNormaaliYsJatko_ä	;
 [Ln][Xp]nukke[X]nukk[Sg][Nm]i:nukki	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]plus[X][Sn][Ny]plus:plus	Liitesana_a	;
+[Ln][Xp]plus[X][Sn][Ny]plus-:plus-	Loppu	;
 [Ln][Xp]sisä[X]sisä:sisä	SisäpaikallissijatVn_ä	;
 [Ln][Xp]sisä[X]sisä:sisä	Ulkopaikallissijat_Yks_ä	;
+[Ln][Xp]tanhuvilla[X]tanhuv:tanhuv	Ulkopaikallissijat_Mon_a	;
+[Ln][Xp]veli[X]@D.YS_ALKANUT@[Sn][Ny]veliseni:@D.YS_ALKANUT@veliseni	Liitesana_ä	;
 [Ln][Xp]viive[X]vii:vii	Viive	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
@@ -41,6 +46,7 @@ LEXICON Poikkeavat_t
 LEXICON Poikkeavat_l
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;
 @P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
+[Ll][Xp]viime[X][Sn][Ny]viime:viime	Liitesana_ä	;
 
 LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
