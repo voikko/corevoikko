@@ -2213,6 +2213,9 @@ Liitesana_<A>	;
 
 LEXICON OlV
 Omistusliite_<A>	;
+OlVL_<A>	;
+
+LEXICON OlVL
 [[L]]n:[[L]]n	Liitesana_<A>	;
 
 LEXICON NOUN LiOlI
@@ -3967,6 +3970,7 @@ LEXICON SisäpaikallissijatSsaSta
 LEXICON SisäpaikallissijatVn
 SisäpaikallissijatSsaSta_<A>	;
 [Sill][Ny][[L]]n:[[L]]n	Liitesana_<A>	;
+[Sill][Ny][[L]]:[[L]]	Omistusliite_<A>	;
 
 LEXICON LoppuLiitesanaOsantoTa
 LoppuLiitesana_<A>	;
@@ -4273,22 +4277,29 @@ LEXICON JärjestyslukuNainen
 [Sg][Nm]sien:sien JärjestyslukuSgNm39_<A> ;
 @U.LS.SPNY@[Sp][Ny]st<A>:@U.LS.SPNY@st<A> Liitesana_<A> ;
 [Sp][Nm]si<A>:si<A> JärjestyslukuSpNm39_<A> ;
+[Sp][Nm]si<A>:si<A> OlVL_<A> ;
 [Str][Ny]seksi:seksi	Liitesana_<A>	;
 [Str][Nm]siksi:siksi	JärjestyslukuStrNm39_<A>	;
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> JärjestyslukuSesNm39_<A> ;
+[Ses][Nm]sin<A>:sin<A> OlVL_<A> ;
 [Sine][Ny]sess<A>:sess<A> Liitesana_<A> ;
 [Sine][Nm]siss<A>:siss<A> JärjestyslukuSineNm39_<A> ;
+[Sine][Nm]siss<A>:siss<A> OlVL_<A> ;
 [Sela][Ny]sest<A>:sest<A> Liitesana_<A> ;
 [Sela][Nm]sist<A>:sist<A> JärjestyslukuSelaNm39_<A> ;
+[Sela][Nm]sist<A>:sist<A> OlVL_<A> ;
 [Sill][Ny]seen:seen Liitesana_<A> ;
 [Sill][Nm]siin:siin JärjestyslukuSillNm39_<A> ;
 [Sade][Ny]sell<A>:sell<A> Liitesana_<A> ;
 [Sade][Nm]sill<A>:sill<A> JärjestyslukuSadeNm39_<A> ;
+[Sade][Nm]sill<A>:sill<A> OlVL_<A> ;
 [Sabl][Ny]selt<A>:selt<A> Liitesana_<A> ;
 [Sabl][Nm]silt<A>:silt<A> JärjestyslukuSablNm39_<A> ;
+[Sabl][Nm]silt<A>:silt<A> OlVL_<A> ;
 [Sall][Ny]selle:selle Liitesana_<A> ;
 [Sall][Nm]sille:sille JärjestyslukuSallNm39_<A> ;
+[Sall][Nm]sille:sille OlVL_<A>	;
 [Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
