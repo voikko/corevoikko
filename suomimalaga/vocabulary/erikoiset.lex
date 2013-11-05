@@ -20,13 +20,13 @@
  [perusmuoto: "eräs", alku: "erä", luokka: asemosana, jatko: <vieras>, äs: ä];
 [perusmuoto: "halleluja", alku: "halleluj", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_voikko>]; # Taipuu Nykysuomen sanakirjassa.
  [perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
-[perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
+ [perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
+ [perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
  [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
  [perusmuoto: "hän", alku: "hän", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_sukija>];
  [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_voikko>]; # Myös hällä, hälle, hältä.
 [perusmuoto: "ilki", alku: "ilki", luokka: nimisana, jatko: @sana1, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ilmi", alku: "ilmi", luokka: nimi_laatusana, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "ilmi", alku: "ilmi", luokka: nimi_laatusana, jatko: <liitesana, loppu>, äs: ä];
  [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "jompi", alku: "jo", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "kuka", alku: "ku", luokka: asemosana, jatko: <joka>, äs: a];
@@ -35,14 +35,13 @@
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
  [perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];  # Mikä.
 [perusmuoto: "mi", alku: "min", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Minkä.
  [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
+ [perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
  [perusmuoto: "moni", alku: "montaa", luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: a];
  [perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
  [perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];

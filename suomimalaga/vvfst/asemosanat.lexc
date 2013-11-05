@@ -15,6 +15,7 @@ LEXICON Asemosana
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
 [Lr][Xp]mikä[X]mi:mi	AsemosanaMikä	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
+[Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksas_a	;
 [Lr][Xp]moni[X][Sp][Ny]montaa:montaa	Liitesana_a	;
 [Lr][Xp]muu[X]mu:mu	AsemosanaPuu_a	;
 [Lr][Xp]muuan[X]muu:muu	AsemosanaMuuan	;

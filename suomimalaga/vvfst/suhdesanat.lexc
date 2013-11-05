@@ -19,7 +19,7 @@ LEXICON Suhdesana
 [Ld][Xp]kohti[X]kohti:kohti	Liitesana_a	;
 [Ld][Xp]luota[X]luota:luota	LoppuLiitesanaOlV_a	;
 [Ld][Xp]ohi[X]ohe:ohe	Ulkopaikallissijat_Yks_a	;
-[Ld][Xp]ohi[X]ohe[Sill][Ny]en:oheen	Liitesana_a	;
+[Ld][Xp]ohi[X]ohe:ohe	SisäpaikallissijatVn_a	;
 [Ld][Xp]ohi[X]ohi:ohi	Liitesana_a	;
 [Ld][Xp]varten[X]varten:varten	Liitesana_a	;
 [Ld][Xp]yli[X]yli:yli	Liitesana_ä	;
