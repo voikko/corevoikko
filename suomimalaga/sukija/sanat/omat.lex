@@ -764,8 +764,6 @@
 [perusmuoto: "Dragsvik", alku: "Dragsvik", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Gutenberg", alku: "Gutenberg", luokka: sukunimi, jatko: <kalsium>, äs: aä];
 [perusmuoto: "Abba", alku: "Abb", luokka: nimi, jatko: <kala>, äs: a];
-[perusmuoto: "abolitionismi", alku: "abolitionism", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "abolitionisti", alku: "abolitionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 [perusmuoto: "oh", alku: "oh", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -1110,7 +1108,6 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 
 [perusmuoto: "testeri", alku: "tester", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "Jerri", alku: "Jerr", luokka: etunimi, jatko: <risti>, äs: ä];
-[perusmuoto: "akkusatorinen", alku: "akkusatori", luokka: laatusana, jatko: <nainen>, äs: a];
 [alku: "abc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "2g", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "3g", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];

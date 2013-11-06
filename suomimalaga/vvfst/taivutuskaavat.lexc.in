@@ -1794,7 +1794,7 @@ LEXICON NOUN Mies_he
 [Sn][Ny]:            Omistusliite_<A> ;
 [Sn][Nm]t:t          Liitesana_<A> ;
 [Sg][Ny]n:n          <WC>YksikönGenetiivinJatko_<A> ;
-[Se][Ny]n<A>:n<A>    <WC>LiOlV_<A> ;
+[Ses][Ny]n<A>:n<A>   <WC>LiOlV_<A> ;
 <WC>YhteisetYksikönPaikallissijat_<A> ;
 ?Nimisana Johdin_tOn_<A> ;
 
@@ -1805,6 +1805,8 @@ LEXICON NOUN Mies_h
 [Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
 <WC>YhteisetMonikonSijat2_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A> ;
+?Sukija [Sill][Ny]ehe:ehe     <WC>LiOlN_<A> ;
+?Sukija [Sill][Nm]ihi:ihi     <WC>LiOlN_<A> ;
 
 LEXICON NOUN Kuollut
 [Sn][Ny]<U>t:<U>t	<WC>NormaaliYsJatko_<A>	;

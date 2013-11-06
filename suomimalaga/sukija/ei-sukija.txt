@@ -443,6 +443,7 @@ kuolema
 kuolleisuus
 kuolleenkoura
 kuolleenmiehenkytkin
+kuollut
 kuormittua
 kuormitus
 kuorolainen
