@@ -25,6 +25,7 @@ suvialainen
 abitalo # "abi" ei sallittu yhdyssanan loppuosana
 !taloabikissa # "abi" ei sallittu yhdyssanan loppuosana
 !taloabi # "abi" ei sallittu yhdyssanan loppuosana
+nuoriinmiehiinkö
 
 # = johtimet =
 []
