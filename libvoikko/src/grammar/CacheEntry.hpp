@@ -29,6 +29,8 @@
 #ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
 #define VOIKKO_GRAMMAR_CACHE_ENTRY
 
+#include "grammar/VoikkoGrammarError.hpp"
+#include "grammar/error.hpp"
 #include "grammar/Sentence.hpp"
 #include "voikko_structs.h"
 
@@ -41,7 +43,9 @@ class CacheEntry {
 		explicit CacheEntry(size_t suggestionCount);
 	
 		/** Grammar error */
-		voikko_grammar_error error;
+
+		//voikko_grammar_error error;
+		VoikkoGrammarError error;
 	
 		/** Next error in linked list */
 		CacheEntry * nextError;

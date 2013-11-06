@@ -60,6 +60,7 @@ libvoikko_la_SOURCES = \
     grammar/error.cpp grammar/Analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
+    grammar/VoikkoGrammarError.cpp \
     grammar/NullGrammarChecker.cpp \
     grammar/FinnishGrammarChecker.cpp \
     grammar/GrammarChecker.cpp \
@@ -166,6 +167,7 @@ noinst_HEADERS = \
     grammar/FinnishGrammarChecker.hpp \
     grammar/GrammarChecker.hpp \
     grammar/GrammarCheckerFactory.hpp \
+    grammar/VoikkoGrammarError.hpp \
     grammar/FinnishRuleEngine.hpp \
     grammar/FinnishAnalysis.hpp \
     grammar/HfstAnalysis.hpp \

@@ -163,7 +163,9 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 						// We've found an error tag, mark the current cohort
 						fprintf(stderr, "\nnew CacheEntry (%ld, %d, %d)\n", ci, GCERR_NEGATIVE_VERB_MISMATCH, 1);
 						CacheEntry * e = new CacheEntry(0);
-						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
+						e->error.legacyError.error_code = -1;
+						e->error.error_id = tmp;
+						e->error.checker = options->grammarChecker;
 						cg3_tag *lwt = cg3_cohort_getwordform(cohort);
 //						const char *lwf = cg3_tag_gettext_u8(lwt);
 						e->error.startpos = cur_pos;
