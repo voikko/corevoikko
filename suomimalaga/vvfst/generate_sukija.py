@@ -343,6 +343,7 @@ word_list = [
     (u"legioona",       (u"legioon",     u"legion")),
     (u"legioonalainen", (u"legioonalai", u"legionalai")),
     (u"liipaisin",      (u"liipaisi",    u"liipasi")),
+    (u"likimmäinen",    (u"likimmäi",    u"likimäi")),
     (u"lordi",          (u"lord",        u"loord")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),

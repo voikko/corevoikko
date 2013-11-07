@@ -1497,7 +1497,11 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "faneri", alku: "faner", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "kasiviis", alku: "kasiviis", luokka: nimisana, jatko: <loppu>, äs: a];
-
+[perusmuoto: "liki", alku: "liki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "silti", alku: "silti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "päikkäin", alku: "päikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "mustaliki", alku: "mustalik", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "punaliki", alku: "punalik", luokka: nimisana, jatko: <risti>, äs: ä];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

@@ -1718,38 +1718,38 @@
 
 # {{{2 nuorimies (51)
 
-[perusmuoto: "nuorimies", alku: "nuorimies",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuortamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorenamiehe",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoreksimiehe", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoressamiehessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuorimies", alku: "nuorestamiehestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuorimies", alku: "nuoreenmiehe",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorellamiehellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuorimies", alku: "nuoreltamieheltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuorimies", alku: "nuorellemiehelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuorimies", alku: "nuorettamiehe", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorimies",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuortamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorenamiehe",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoreksimiehe", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoressamiehessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuorestamiehestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuoreenmiehe",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorellamiehellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuoreltamieheltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuorellemiehelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuorettamiehe", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorienmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuortenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorienmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuortenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoriamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorinamieh",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoriksimiehiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorissamiehissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoristamiehistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoriinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorillamiehillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuoriltamiehiltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorillemiehille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorittamiehittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorimies", alku: "nuorinemieh",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuorimies", alku: "nuorinmiehin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorienmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuortenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorienmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuortenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoriamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorinamieh",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoriksimiehiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorissamiehissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoristamiehistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoriinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorillamiehillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuoriltamiehiltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorillemiehille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorittamiehittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorimies", alku: "nuorinemieh",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuorimies", alku: "nuorinmiehin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppp"];
 
 # {{{2 nuoripari (51)
 

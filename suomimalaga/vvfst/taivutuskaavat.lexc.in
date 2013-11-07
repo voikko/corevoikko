@@ -1325,6 +1325,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Paikannimi	e:e	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Niemi
 <WC>Lumi_<A>	;
