@@ -145,7 +145,7 @@ AS_IF([test x$cg3 = xyes], [
 	  AC_DEFINE(HAVE_VISLCG3, 1)
 	  CXXFLAGS="$CXXFLAGS $VISLCG3_CFLAGS"
 	])
-AC_CHECK_HEADER([tinyxml2.h], AC_DEFINE(HAVE_VISLCG3, 1), AC_DEFINE(HAVE_VISLCG3, 0))
+dnl this does not work as it should AC_CHECK_HEADER([tinyxml2.h], AC_DEFINE(HAVE_VISLCG3, 1), AC_DEFINE(HAVE_VISLCG3, 0))
 AM_CONDITIONAL([HAVE_VISLCG3], [test x$cg3 = xyes])
 
 

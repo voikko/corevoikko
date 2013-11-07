@@ -31,17 +31,62 @@
 
 namespace libvoikko { namespace grammar {
 
-/*
-VoikkoGrammarError::VoikkoGrammarError()  {
 
+VoikkoGrammarError::VoikkoGrammarError() {
+	legacyError.error_code = 0;
+	legacyError.error_level = 0;
+	legacyError.error_description = 0;
+	legacyError.startpos = 0;
+	legacyError.errorlen = 0;
+	legacyError.suggestions = 0;
+}
+
+VoikkoGrammarError::VoikkoGrammarError(const VoikkoGrammarError & error) {
+	this->legacyError = error.legacyError;
+	this->error_id = error.error_id;
+	this->title = error.title;
+	this->checker = error.checker;
 }
 
 VoikkoGrammarError::~VoikkoGrammarError() {
-
-}*/
-
-void VoikkoGrammarError::init() { 
+	if (getSuggestions()) {
+		for (char ** suggestion = getSuggestions(); *suggestion; ++suggestion) {
+			delete[] *suggestion;
+		}
+		delete[] getSuggestions();
+	}
 }
 
+int VoikkoGrammarError::getErrorCode() const {
+	return this->legacyError.error_code;
+}
+
+void VoikkoGrammarError::setErrorCode(int errorCode) {
+	this->legacyError.error_code = errorCode;
+}
+
+size_t VoikkoGrammarError::getStartPos() const {
+	return this->legacyError.startpos;
+}
+
+void VoikkoGrammarError::setStartPos(size_t startPos) {
+	this->legacyError.startpos = startPos;
+}
+
+size_t VoikkoGrammarError::getErrorLen() const {
+	return this->legacyError.errorlen;
+}
+
+void VoikkoGrammarError::setErrorLen(size_t errorLen) {
+	this->legacyError.errorlen = errorLen;
+}
+
+char ** VoikkoGrammarError::getSuggestions() const {
+	return this->legacyError.suggestions;
+}
+
+void VoikkoGrammarError::setSuggestions(char ** suggestions) {
+	this->legacyError.suggestions = suggestions;
+}
 
 } }

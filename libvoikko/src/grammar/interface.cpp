@@ -29,10 +29,11 @@
 #include "porting.h"
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
+#include "grammar/VoikkoGrammarError.hpp"
 #include <cstdlib>
 #include <cstring>
 
-typedef voikko_grammar_error VoikkoGrammarError; // for now
+using namespace libvoikko::grammar;
 
 namespace libvoikko {
 
@@ -41,34 +42,33 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	if (text_ucs4 == 0 || wtextlen == 0) {
 		return 0;
 	}
-	const voikko_grammar_error * c_error =
+	const VoikkoGrammarError * c_error =
 	    options->grammarChecker->errorFromCache(text_ucs4, startpos, skiperrors);
 	if (!c_error) {
 		options->grammarChecker->paragraphToCache(text_ucs4, wtextlen);
 		c_error = options->grammarChecker->errorFromCache(text_ucs4, startpos, skiperrors);
 	}
 	
-	if (!c_error || c_error->error_code == 0) {
+	if (!c_error || c_error->getErrorCode() == 0) {
 		return 0;
 	}
 	
 	// Return a deep copy of cached error
-	voikko_grammar_error * e = new voikko_grammar_error();
-	memcpy(e, c_error, sizeof(voikko_grammar_error));
-	if (!c_error->suggestions) {
+	VoikkoGrammarError * e = new VoikkoGrammarError(*c_error);
+	if (!c_error->getSuggestions()) {
 		return e;
 	}
 	
 	int sugg_count = 0;
-	for (char ** s = c_error->suggestions; *s; s++) {
+	for (char ** s = c_error->getSuggestions(); *s; s++) {
 		sugg_count++;
 	}
-	e->suggestions = new char*[sugg_count + 1];
+	e->setSuggestions(new char*[sugg_count + 1]);
 	for (int i = 0; i < sugg_count; i++) {
-		e->suggestions[i] = new char[strlen(c_error->suggestions[i]) + 1];
-		strcpy(e->suggestions[i], c_error->suggestions[i]);
+		e->getSuggestions()[i] = new char[strlen(c_error->getSuggestions()[i]) + 1];
+		strcpy(e->getSuggestions()[i], c_error->getSuggestions()[i]);
 	}
-	e->suggestions[sugg_count] = 0;
+	e->getSuggestions()[sugg_count] = 0;
 	
 	return e;
 }
@@ -93,20 +93,20 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorCstr(voikko_options_t * 
 }
 
 VOIKKOEXPORT int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error) {
-	return error->error_code;
+	return error->getErrorCode();
 }
 
 VOIKKOEXPORT size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error) {
-	return error->startpos;
+	return error->getStartPos();
 }
 
 VOIKKOEXPORT size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error) {
-	return error->errorlen;
+	return error->getErrorLen();
 }
 
 VOIKKOEXPORT const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarError * error) {
 	// Adding const since the caller should not modify the suggestions directly.
-	return const_cast<const char **>(error->suggestions);
+	return const_cast<const char **>(error->getSuggestions());
 }
 
 VOIKKOEXPORT void voikkoFreeErrorMessageCstr(char * message) {
@@ -114,15 +114,7 @@ VOIKKOEXPORT void voikkoFreeErrorMessageCstr(char * message) {
 }
 
 VOIKKOEXPORT void voikkoFreeGrammarError(VoikkoGrammarError * error) {
-	if (error) {
-		if (error->suggestions) {
-			for (char ** suggestion = error->suggestions; *suggestion; ++suggestion) {
-				delete[] *suggestion;
-			}
-			delete[] error->suggestions;
-		}
-		delete error;
-	}
+	delete error;
 }
 
 }

@@ -44,7 +44,6 @@ class CacheEntry {
 	
 		/** Grammar error */
 
-		//voikko_grammar_error error;
 		VoikkoGrammarError error;
 	
 		/** Next error in linked list */

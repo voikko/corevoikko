@@ -26,7 +26,7 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/error.hpp"
+#include "grammar/VoikkoGrammarError.hpp"
 #include "porting.h"
 #include "utils/StringUtils.hpp"
 #include <cstring>
@@ -120,20 +120,12 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 	}
 }
 
-VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const VoikkoGrammarError * error, const char * language) {
+VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const grammar::VoikkoGrammarError * error, const char * language) {
 	//return utils::StringUtils::copy(voikko_error_message_cstr(error->error_code, language));
 
 
 	return "Unknown error";
 }
 
-void init_grammar_error(voikko_grammar_error * error) {
-	error->error_code = 0;
-	error->error_level = 0;
-	error->error_description = 0;
-	error->startpos = 0;
-	error->errorlen = 0;
-	error->suggestions = 0;
-}
 
 }

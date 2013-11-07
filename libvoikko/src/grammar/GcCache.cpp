@@ -42,7 +42,6 @@ void GcCache::clear() {
 	CacheEntry * entry = firstError;
 	while (entry) {
 		CacheEntry * next = entry->nextError;
-		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
 		delete entry;
 		entry = next;
 	}
@@ -55,7 +54,7 @@ void GcCache::appendError(grammar::CacheEntry * newEntry) {
 		firstError = newEntry;
 		return;
 	}
-	if (entry->error.startpos > newEntry->error.startpos) {
+	if (entry->error.getStartPos() > newEntry->error.getStartPos()) {
 		newEntry->nextError = firstError;
 		firstError = newEntry;
 		return;
@@ -65,8 +64,8 @@ void GcCache::appendError(grammar::CacheEntry * newEntry) {
 			entry->nextError = newEntry;
 			return;
 		}
-		if (entry->error.startpos <= newEntry->error.startpos &&
-		    entry->nextError->error.startpos > newEntry->error.startpos) {
+		if (entry->error.getStartPos() <= newEntry->error.getStartPos() &&
+		    entry->nextError->error.getStartPos() > newEntry->error.getStartPos()) {
 			newEntry->nextError = entry->nextError;
 			entry->nextError = newEntry;
 			return;

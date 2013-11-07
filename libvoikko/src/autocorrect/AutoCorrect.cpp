@@ -74,17 +74,17 @@ static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorTok
                               bool lowerFirst, voikko_options_t * options) {
 	if (node->replacementIndex) {
 		CacheEntry * e = new CacheEntry(1);
-		e->error.error_code = GCERR_INVALID_SPELLING;
-		e->error.startpos = firstErrorToken->pos;
-		e->error.errorlen = lastErrorToken->pos + lastErrorToken->tokenlen - firstErrorToken->pos;
+		e->error.setErrorCode(GCERR_INVALID_SPELLING);
+		e->error.setStartPos(firstErrorToken->pos);
+		e->error.setErrorLen(lastErrorToken->pos + lastErrorToken->tokenlen - firstErrorToken->pos);
 		const wchar_t * replacement = REPLACEMENTS[node->replacementIndex];
 		if (lowerFirst) {
 			wchar_t * replBuffer = StringUtils::copy(replacement);
 			replBuffer[0] = character::SimpleChar::upper(replBuffer[0]);
-			e->error.suggestions[0] = StringUtils::utf8FromUcs4(replBuffer);
+			e->error.getSuggestions()[0] = StringUtils::utf8FromUcs4(replBuffer);
 			delete[] replBuffer;
 		} else {
-			e->error.suggestions[0] = StringUtils::utf8FromUcs4(replacement);
+			e->error.getSuggestions()[0] = StringUtils::utf8FromUcs4(replacement);
 		}
 		options->grammarChecker->cache.appendError(e);
 	}

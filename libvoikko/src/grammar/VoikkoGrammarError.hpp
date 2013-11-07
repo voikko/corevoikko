@@ -29,12 +29,13 @@
 #ifndef VOIKKO_GRAMMAR_VOIKKO_GRAMMAR_ERROR
 #define VOIKKO_GRAMMAR_VOIKKO_GRAMMAR_ERROR
 
-#include "grammar/GrammarChecker.hpp"
 #include "grammar/error.hpp"
 #include "grammar/Sentence.hpp"
 #include "voikko_structs.h"
 
 namespace libvoikko { namespace grammar {
+
+struct GrammarChecker;
 
 class VoikkoGrammarError {
 
@@ -45,8 +46,21 @@ class VoikkoGrammarError {
 	char * title;
 	GrammarChecker * checker;
 
-	void init(); 
-	
+	VoikkoGrammarError();
+	VoikkoGrammarError(const VoikkoGrammarError & error);
+	~VoikkoGrammarError();
+
+	void setErrorCode(int errorCode);
+	int getErrorCode() const;
+
+	void setStartPos(size_t startPos);
+	size_t getStartPos() const;
+
+	void setErrorLen(size_t errorLen);
+	size_t getErrorLen() const;
+
+	void setSuggestions(char ** suggestions);
+	char ** getSuggestions() const;
 };
 
 } }

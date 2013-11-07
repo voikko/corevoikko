@@ -51,13 +51,4 @@
 #define GCERR_MISSING_MAIN_VERB 17
 #define GCERR_EXTRA_MAIN_VERB 18
 
-namespace libvoikko {
-
-/**
- * Initialize given grammar error to "no error"
- */
-void init_grammar_error(voikko_grammar_error * error);
-
-}
-
 #endif

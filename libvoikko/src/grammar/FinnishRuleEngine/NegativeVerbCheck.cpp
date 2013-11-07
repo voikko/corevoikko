@@ -42,9 +42,9 @@ void NegativeVerbCheck::check(voikko_options_t * options, const Sentence * sente
 			const Token * word2 = sentence->tokens + i + 2;
 			if (token->isVerbNegative && word2->isPositiveVerb) {
 				CacheEntry * e = new CacheEntry(0);
-				e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
-				e->error.startpos = token->pos;
-				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
+				e->error.setErrorCode(GCERR_NEGATIVE_VERB_MISMATCH);
+				e->error.setStartPos(token->pos);
+				e->error.setErrorLen(word2->pos + word2->tokenlen - token->pos);
 				options->grammarChecker->cache.appendError(e);
 			}
 		}

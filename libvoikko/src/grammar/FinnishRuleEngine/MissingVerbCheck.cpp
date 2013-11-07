@@ -76,9 +76,9 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 					    token->tokenlen != sentence->tokens[lastVerbStartToken].tokenlen ||
 					    wcsncmp(token->str, sentence->tokens[lastVerbStartToken].str, token->tokenlen) != 0) {
 						CacheEntry * e = new CacheEntry(0);
-						e->error.error_code = GCERR_EXTRA_MAIN_VERB;
-						e->error.startpos = sentence->tokens[lastVerbStartToken].pos;
-						e->error.errorlen = token->pos + token->tokenlen - sentence->tokens[lastVerbStartToken].pos;
+						e->error.setErrorCode(GCERR_EXTRA_MAIN_VERB);
+						e->error.setStartPos(sentence->tokens[lastVerbStartToken].pos);
+						e->error.setErrorLen(token->pos + token->tokenlen - sentence->tokens[lastVerbStartToken].pos);
 						options->grammarChecker->cache.appendError(e);
 					}
 					foundVerbInCurrentClause = false;
@@ -100,9 +100,9 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 		return;
 	}
 	CacheEntry * e = new CacheEntry(0);
-	e->error.error_code = GCERR_MISSING_MAIN_VERB;
-	e->error.startpos = sentence->pos;
-	e->error.errorlen = lastNonWhitespace->pos + lastNonWhitespace->tokenlen - sentence->pos;
+	e->error.setErrorCode(GCERR_MISSING_MAIN_VERB);
+	e->error.setStartPos(sentence->pos);
+	e->error.setErrorLen(lastNonWhitespace->pos + lastNonWhitespace->tokenlen - sentence->pos);
 	options->grammarChecker->cache.appendError(e);
 }
 
