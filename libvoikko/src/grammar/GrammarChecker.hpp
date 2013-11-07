@@ -53,6 +53,10 @@ class GrammarChecker {
 		void paragraphToCache(const wchar_t * text, size_t textlen) ;
 		
 		virtual ~GrammarChecker();
+
+
+                // pair<code, lang>, pair<title, description>
+                std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > errorlist;
 	
 	protected:
 		grammar::RuleEngine * ruleEngine;

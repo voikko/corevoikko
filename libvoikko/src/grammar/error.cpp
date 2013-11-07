@@ -26,15 +26,18 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#include "grammar/GrammarChecker.hpp"
 #include "grammar/VoikkoGrammarError.hpp"
 #include "porting.h"
 #include "utils/StringUtils.hpp"
 #include <cstring>
+#include <stdio.h>
 
 
 namespace libvoikko {
 
 VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char * language) {
+	fprintf(stderr, "voikko_error_message_cstr: %d %s\n", error_code, language);
 	if (strncmp(language, "fi", 2) == 0) {
 		// ä=\xc3\xa4, ö=\xc3\xb6, Ä=\xc3\x84, Ö=\xc3\x96
 		switch (error_code) {
@@ -123,6 +126,23 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const grammar::VoikkoGrammarError * error, const char * language) {
 	//return utils::StringUtils::copy(voikko_error_message_cstr(error->error_code, language));
 
+	libvoikko::grammar::GrammarChecker *g  = error->checker;
+
+	fprintf(stderr, "voikkoGetGrammarErrorShortDescription: [%s] %s\n", language, error->error_id);
+
+	std::pair<std::string, std::string> p = make_pair(std::string(error->error_id), std::string(language));
+
+	if(g->errorlist.count(p) == 0) {
+		p = make_pair(std::string(error->error_id), std::string("en"));
+		if(g->errorlist.count(p) == 0) {
+			return "Unknown error 2";
+		}
+		fprintf(stderr, "  %s en %s %s\n", error->error_id, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
+		return utils::StringUtils::copy(g->errorlist[p].first.c_str());
+	} else {
+		fprintf(stderr, "  %s %s %s %s\n", error->error_id, language, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
+		return utils::StringUtils::copy(g->errorlist[p].first.c_str());
+	}
 
 	return "Unknown error";
 }
