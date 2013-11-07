@@ -48,7 +48,11 @@ class CgRuleEngine : public RuleEngine {
 
 		void check(const Paragraph * para);
 
+		void setErrorList(std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * errorlist);
+
 		voikko_options_t * options;
+
+		std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * errorlist;
 	
 	private:
 		// Using the C API until we get a C++ one

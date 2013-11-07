@@ -31,6 +31,9 @@
 #include "utils/StringUtils.hpp"
 #include "grammar/CgRuleEngine.hpp"
 
+#include <wchar.h>
+
+
 using namespace std;
 
 namespace libvoikko { namespace grammar {
@@ -52,6 +55,11 @@ CgRuleEngine::CgRuleEngine(voikko_options_t * voikkoOptions)  {
 
 CgRuleEngine::~CgRuleEngine() {
 
+}
+
+void CgRuleEngine::setErrorList(std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * _errorlist)
+{
+	errorlist = _errorlist;
 }
 
 int CgRuleEngine::load(const std::string path) {
@@ -110,6 +118,9 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 					}
 					buf = buf + *it2;
 				}
+				tag = cg3_tag_create_u8(applicator, buf.c_str());
+				cg3_reading_addtag(reading, tag);
+				buf = "";
 				num_analyses++;
 				cg3_cohort_addreading(cohort, reading);
 				++it;
@@ -133,12 +144,13 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 		cg3_reading *reading = 0;
 		size_t ci = 0, ce = 0, ri = 0, re = 0, ti = 0, te = 0;
 		const char *tmp;
+		size_t cur_pos = 0;
 
 		for (ci = 0, ce = cg3_sentence_numcohorts(sentence) ; ci != ce ; ++ci) {
 			cohort = cg3_sentence_getcohort(sentence, ci);
-			tag = cg3_cohort_getwordform(cohort);
-			tmp = cg3_tag_gettext_u8(tag);
-			fprintf(stderr, "CG: %s\n", tmp);
+			cg3_tag *wftag = cg3_cohort_getwordform(cohort);
+			const char *wftmp = cg3_tag_gettext_u8(wftag);
+			fprintf(stderr, "CG[%ld, %ld]: %s\n", cur_pos, wcslen(cg3_tag_gettext_w(wftag)), wftmp);
 	
 			for (ri = 0, re = cg3_cohort_numreadings(cohort) ; ri != re ; ++ri) {
 				reading = cg3_cohort_getreading(cohort, ri);
@@ -151,10 +163,15 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 						// We've found an error tag, mark the current cohort
 						fprintf(stderr, "\nnew CacheEntry (%ld, %d, %d)\n", ci, GCERR_NEGATIVE_VERB_MISMATCH, 1);
 						CacheEntry * e = new CacheEntry(0);
-						e->error.error_code = GCERR_NEGATIVE_VERB_MISMATCH;
-						e->error.startpos = ci;
-						e->error.errorlen = 1;
+						e->error.legacyError.error_code = -1;
+						e->error.error_id = tmp;
+						e->error.checker = options->grammarChecker;
+						cg3_tag *lwt = cg3_cohort_getwordform(cohort);
+//						const char *lwf = cg3_tag_gettext_u8(lwt);
+						e->error.startpos = cur_pos;
+						e->error.errorlen = wcslen(cg3_tag_gettext_w(lwt)) - 4;
 						options->grammarChecker->cache.appendError(e);
+						fprintf(stderr, "  pos: %ld; len: %ld\n", cur_pos, wcslen(cg3_tag_gettext_w(lwt)) - 4);
 					}
 				}
 				for (ti = 0, te = cg3_reading_numtraces(reading) ; ti != te ; ++ti) {
@@ -162,6 +179,11 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 					fprintf(stderr, "TRACE:%u ", rule_line);
 				}
 				fprintf(stderr, "\n");
+			}
+			if(ci != 0) { // We don't count BOS >>>
+				fprintf(stderr, "%ld + %ld = ", cur_pos, (wcslen(cg3_tag_gettext_w(wftag)) - 4));
+				cur_pos = cur_pos + (wcslen(cg3_tag_gettext_w(wftag)) - 4) + 1;
+				fprintf(stderr, "%ld\n", cur_pos);
 			}
 		}
 

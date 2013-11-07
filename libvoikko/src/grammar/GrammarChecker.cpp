@@ -32,14 +32,14 @@
 namespace libvoikko { namespace grammar {
 
 // This will be initialized to zero meaning "no errors"
-static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
+static const VoikkoGrammarError no_grammar_error = VoikkoGrammarError();
 
 
 GrammarChecker::~GrammarChecker() {
 	cache.clear();
 }
 
-const voikko_grammar_error * GrammarChecker::errorFromCache(const wchar_t * text, size_t startpos, int skiperrors) {
+const VoikkoGrammarError * GrammarChecker::errorFromCache(const wchar_t * text, size_t startpos, int skiperrors) {
 	if (!cache.paragraph) {
 		return 0;
 	}
@@ -50,7 +50,7 @@ const voikko_grammar_error * GrammarChecker::errorFromCache(const wchar_t * text
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
-		    e->error.startpos >= startpos) {
+		    e->error.getStartPos() >= startpos) {
 			return &e->error;
 		}
 		preverrors++;

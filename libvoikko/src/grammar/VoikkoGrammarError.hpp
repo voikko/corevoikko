@@ -26,39 +26,41 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_GRAMMARCHECKER
-#define VOIKKO_GRAMMAR_GRAMMARCHECKER
+#ifndef VOIKKO_GRAMMAR_VOIKKO_GRAMMAR_ERROR
+#define VOIKKO_GRAMMAR_VOIKKO_GRAMMAR_ERROR
 
-#include "grammar/RuleEngine.hpp"
-#include "grammar/GcCache.hpp"
-#include "grammar/Analysis.hpp"
-#include "morphology/Analyzer.hpp"
+#include "grammar/error.hpp"
+#include "grammar/Sentence.hpp"
+#include "voikko_structs.h"
 
 namespace libvoikko { namespace grammar {
 
-class GrammarChecker {
+struct GrammarChecker;
+
+class VoikkoGrammarError {
+
 	public:
-		grammar::GcCache cache;
-		
-		/**
-		 * Returns a pointer to a cached grammar error or null, if there are no cached
-		 * results for given paragraph.
-		 */
-		const VoikkoGrammarError * errorFromCache(const wchar_t * text, size_t startpos, int skiperrors);
-		
-		/**
-		 * Performs grammar checking on the entire paragraph and stores the results
-		 * to cache.
-		 */
-		void paragraphToCache(const wchar_t * text, size_t textlen) ;
-		
-		virtual ~GrammarChecker();
-	
-	protected:
-		grammar::RuleEngine * ruleEngine;
-		morphology::Analyzer * analyser;
-		grammar::Analysis * paragraphAnalyser;
-	
+
+	voikko_grammar_error legacyError;
+	char * error_id;
+	char * title;
+	GrammarChecker * checker;
+
+	VoikkoGrammarError();
+	VoikkoGrammarError(const VoikkoGrammarError & error);
+	~VoikkoGrammarError();
+
+	void setErrorCode(int errorCode);
+	int getErrorCode() const;
+
+	void setStartPos(size_t startPos);
+	size_t getStartPos() const;
+
+	void setErrorLen(size_t errorLen);
+	size_t getErrorLen() const;
+
+	void setSuggestions(char ** suggestions);
+	char ** getSuggestions() const;
 };
 
 } }

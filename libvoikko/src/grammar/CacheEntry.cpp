@@ -31,13 +31,11 @@
 
 namespace libvoikko { namespace grammar {
 
-CacheEntry::CacheEntry(size_t suggestionCount) :
-	nextError(0) {
-	init_grammar_error(&(this->error));
+CacheEntry::CacheEntry(size_t suggestionCount) : nextError(0) {
 	if (suggestionCount > 0) {
-		error.suggestions = new char*[suggestionCount + 1];
+		error.legacyError.suggestions = new char*[suggestionCount + 1];
 		for (size_t i = 0; i < suggestionCount + 1; i++) {
-			error.suggestions[i] = 0;
+			error.legacyError.suggestions[i] = 0;
 		}
 	}
 }

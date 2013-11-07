@@ -43,16 +43,16 @@ void CompoundVerbCheck::check(voikko_options_t * options, const Sentence * sente
 			if (token->requireFollowingVerb == FOLLOWING_VERB_A_INFINITIVE &&
 			    word2->verbFollowerType == FOLLOWING_VERB_MA_INFINITIVE) {
 				CacheEntry * e = new CacheEntry(0);
-				e->error.error_code = GCERR_A_INFINITIVE_REQUIRED;
-				e->error.startpos = token->pos;
-				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
+				e->error.setErrorCode(GCERR_A_INFINITIVE_REQUIRED);
+				e->error.setStartPos(token->pos);
+				e->error.setErrorLen(word2->pos + word2->tokenlen - token->pos);
 				options->grammarChecker->cache.appendError(e);
 			} else if (token->requireFollowingVerb == FOLLOWING_VERB_MA_INFINITIVE &&
 			           word2->verbFollowerType == FOLLOWING_VERB_A_INFINITIVE) {
 				CacheEntry * e = new CacheEntry(0);
-				e->error.error_code = GCERR_MA_INFINITIVE_REQUIRED;
-				e->error.startpos = token->pos;
-				e->error.errorlen = word2->pos + word2->tokenlen - token->pos;
+				e->error.setErrorCode(GCERR_MA_INFINITIVE_REQUIRED);
+				e->error.setStartPos(token->pos);
+				e->error.setErrorLen(word2->pos + word2->tokenlen - token->pos);
 				options->grammarChecker->cache.appendError(e);
 			}
 		}

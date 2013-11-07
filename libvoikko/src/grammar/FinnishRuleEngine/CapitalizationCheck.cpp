@@ -178,9 +178,9 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 					// XXX: parenthesis errors are not really related to
 					// capitalization
 					CacheEntry * e = new CacheEntry(0);
-					e->error.error_code = GCERR_MISPLACED_CLOSING_PARENTHESIS;
-					e->error.startpos = (*it)->pos;
-					e->error.errorlen = 1;
+					e->error.setErrorCode(GCERR_MISPLACED_CLOSING_PARENTHESIS);
+					e->error.setStartPos((*it)->pos);
+					e->error.setErrorLen(1);
 					context.options->grammarChecker->cache.appendError(e);
 				} else if (context.quotes.top() == L'(' ||
 				           context.quotes.top() == L'[') {
@@ -235,13 +235,13 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	    !SimpleChar::isDigit(word->str[0]) &&
 	    !word->possibleSentenceStart) {
 		CacheEntry * e = new CacheEntry(1);
-		e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
-		e->error.startpos = word->pos;
-		e->error.errorlen = word->tokenlen;
+		e->error.setErrorCode(GCERR_WRITE_FIRST_UPPERCASE);
+		e->error.setStartPos(word->pos);
+		e->error.setErrorLen(word->tokenlen);
 		wchar_t * suggestion = new wchar_t[word->tokenlen];
 		suggestion[0] = SimpleChar::upper(word->str[0]);
 		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
-		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
+		e->error.getSuggestions()[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
 		delete[] suggestion;
 		context.options->grammarChecker->cache.appendError(e);
 	}
@@ -273,13 +273,13 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	    word->str[1] != L':' && // A:n
 	    !word->possibleGeographicalName) {
 		CacheEntry * e = new CacheEntry(1);
-		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
-		e->error.startpos = word->pos;
-		e->error.errorlen = word->tokenlen;
+		e->error.setErrorCode(GCERR_WRITE_FIRST_LOWERCASE);
+		e->error.setStartPos(word->pos);
+		e->error.setErrorLen(word->tokenlen);
 		wchar_t * suggestion = new wchar_t[word->tokenlen];
 		suggestion[0] = SimpleChar::lower(word->str[0]);
 		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
-		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
+		e->error.getSuggestions()[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
 		delete[] suggestion;
 		context.options->grammarChecker->cache.appendError(e);
 	}

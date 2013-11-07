@@ -60,6 +60,7 @@ libvoikko_la_SOURCES = \
     grammar/error.cpp grammar/Analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
+    grammar/VoikkoGrammarError.cpp \
     grammar/NullGrammarChecker.cpp \
     grammar/FinnishGrammarChecker.cpp \
     grammar/GrammarChecker.cpp \
@@ -166,6 +167,7 @@ noinst_HEADERS = \
     grammar/FinnishGrammarChecker.hpp \
     grammar/GrammarChecker.hpp \
     grammar/GrammarCheckerFactory.hpp \
+    grammar/VoikkoGrammarError.hpp \
     grammar/FinnishRuleEngine.hpp \
     grammar/FinnishAnalysis.hpp \
     grammar/HfstAnalysis.hpp \
@@ -248,7 +250,7 @@ endif
 
 if HAVE_VISLCG3
     libvoikko_la_SOURCES += $(VISLCG3_CPP_FILES)
-    libvoikko_la_LDFLAGS += $(VISLCG3_LIBS)
+    libvoikko_la_LDFLAGS += $(VISLCG3_LIBS) -ltinyxml2
 else
     EXTRA_DIST += $(VISLCG3_CPP_FILES)
 endif

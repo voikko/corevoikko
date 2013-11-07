@@ -44,9 +44,9 @@ void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence)
 	    ((sentence->tokens + (tokenCount - 1))->type == TOKEN_PUNCTUATION) &&
 	    ((sentence->tokens + (tokenCount - 1))->str[0] == L'.')) {
 		CacheEntry * e = new CacheEntry(0);
-		e->error.error_code = GCERR_MISPLACED_SIDESANA;
-		e->error.startpos = (sentence->tokens + (tokenCount - 2))->pos;
-		e->error.errorlen = (sentence->tokens + (tokenCount - 2))->tokenlen;
+		e->error.setErrorCode(GCERR_MISPLACED_SIDESANA);
+		e->error.setStartPos((sentence->tokens + (tokenCount - 2))->pos);
+		e->error.setErrorLen((sentence->tokens + (tokenCount - 2))->tokenlen);
 		options->grammarChecker->cache.appendError(e);
 	}
 }

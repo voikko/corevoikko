@@ -30,6 +30,7 @@
 #define VOIKKO_GRAMMAR_ERROR_H
 
 #include "voikko_structs.h"
+#include "grammar/VoikkoGrammarError.hpp"
 
 #define GCERR_INVALID_SPELLING 1
 #define GCERR_EXTRA_WHITESPACE 2
@@ -49,14 +50,5 @@
 #define GCERR_MISPLACED_SIDESANA 16
 #define GCERR_MISSING_MAIN_VERB 17
 #define GCERR_EXTRA_MAIN_VERB 18
-
-namespace libvoikko {
-
-/**
- * Initialize given grammar error to "no error"
- */
-void init_grammar_error(voikko_grammar_error * error);
-
-}
 
 #endif

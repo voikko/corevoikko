@@ -50,11 +50,11 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 		case TOKEN_WHITESPACE:
 			if (t.tokenlen > 1) {
 				e = new CacheEntry(1);
-				e->error.error_code = GCERR_EXTRA_WHITESPACE;
-				e->error.startpos = sentence->tokens[i].pos;
-				e->error.errorlen = sentence->tokens[i].tokenlen;
-				e->error.suggestions[0] = new char[2];
-				strcpy(e->error.suggestions[0], " ");
+				e->error.legacyError.error_code = GCERR_EXTRA_WHITESPACE;
+				e->error.legacyError.startpos = sentence->tokens[i].pos;
+				e->error.legacyError.errorlen = sentence->tokens[i].tokenlen;
+				e->error.legacyError.suggestions[0] = new char[2];
+				strcpy(e->error.legacyError.suggestions[0], " ");
 				options->grammarChecker->cache.appendError(e);
 			}
 			else if (i + 1 < sentence->tokenCount) {
@@ -62,12 +62,12 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = new CacheEntry(1);
-				e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
-				e->error.startpos = sentence->tokens[i].pos;
-				e->error.errorlen = 2;
-				e->error.suggestions[0] = new char[2];
-				e->error.suggestions[0][0] = ',';
-				e->error.suggestions[0][1] = L'\0';
+				e->error.legacyError.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
+				e->error.legacyError.startpos = sentence->tokens[i].pos;
+				e->error.legacyError.errorlen = 2;
+				e->error.legacyError.suggestions[0] = new char[2];
+				e->error.legacyError.suggestions[0][0] = ',';
+				e->error.legacyError.suggestions[0][1] = L'\0';
 				options->grammarChecker->cache.appendError(e);
 			}
 			break;
@@ -84,14 +84,14 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 					continue;
 				}
 				e = new CacheEntry(0);
-				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
+				e->error.legacyError.error_code = GCERR_INVALID_SENTENCE_STARTER;
 				if (sentence->tokens[i].pos == 0) {
-					e->error.startpos = 0;
-					e->error.errorlen = 1;
+					e->error.legacyError.startpos = 0;
+					e->error.legacyError.errorlen = 1;
 				}
 				else {
-					e->error.startpos = sentence->tokens[i].pos - 1;
-					e->error.errorlen = 2;
+					e->error.legacyError.startpos = sentence->tokens[i].pos - 1;
+					e->error.legacyError.errorlen = 2;
 				}
 				options->grammarChecker->cache.appendError(e);
 				continue;
@@ -101,11 +101,11 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = new CacheEntry(1);
-				e->error.error_code = GCERR_EXTRA_COMMA;
-				e->error.startpos = sentence->tokens[i].pos;
-				e->error.errorlen = 2;
-				e->error.suggestions[0] = new char[2];
-				strcpy(e->error.suggestions[0], ",");
+				e->error.legacyError.error_code = GCERR_EXTRA_COMMA;
+				e->error.legacyError.startpos = sentence->tokens[i].pos;
+				e->error.legacyError.errorlen = 2;
+				e->error.legacyError.suggestions[0] = new char[2];
+				strcpy(e->error.legacyError.suggestions[0], ",");
 				options->grammarChecker->cache.appendError(e);
 			}
 			break;
@@ -126,10 +126,10 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 			// There was a foreign quotation mark -> report an error
 			// and stop processing any further.
 			CacheEntry * e = new CacheEntry(1);
-			e->error.error_code = GCERR_FOREIGN_QUOTATION_MARK;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = 1;
-			e->error.suggestions[0] = StringUtils::utf8FromUcs4(L"\u201D", 1);
+			e->error.legacyError.error_code = GCERR_FOREIGN_QUOTATION_MARK;
+			e->error.legacyError.startpos = sentence->tokens[i].pos;
+			e->error.legacyError.errorlen = 1;
+			e->error.legacyError.suggestions[0] = StringUtils::utf8FromUcs4(L"\u201D", 1);
 			options->grammarChecker->cache.appendError(e);
 			return;
 		}
@@ -151,15 +151,15 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 		switch (sentence->tokens[i].str[0]) {
 		case L'.':
 			e = new CacheEntry(1);
-			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = 3;
+			e->error.legacyError.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
+			e->error.legacyError.startpos = sentence->tokens[i].pos;
+			e->error.legacyError.errorlen = 3;
 			{
-				wchar_t * suggDot = new wchar_t[e->error.errorlen];
+				wchar_t * suggDot = new wchar_t[e->error.legacyError.errorlen];
 				suggDot[0] = quoteChar;
 				suggDot[1] = L',';
 				suggDot[2] = L'\0';
-				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggDot, e->error.errorlen);
+				e->error.legacyError.suggestions[0] = StringUtils::utf8FromUcs4(suggDot, e->error.legacyError.errorlen);
 				delete[] suggDot;
 			}
 			options->grammarChecker->cache.appendError(e);
@@ -167,15 +167,15 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 		case L'!':
 		case L'?':
 			e = new CacheEntry(1);
-			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = 3;
+			e->error.legacyError.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
+			e->error.legacyError.startpos = sentence->tokens[i].pos;
+			e->error.legacyError.errorlen = 3;
 			{
-				wchar_t * suggOther = new wchar_t[e->error.errorlen];
+				wchar_t * suggOther = new wchar_t[e->error.legacyError.errorlen];
 				suggOther[0] = (sentence->tokens[i].str[0] == L'!' ? L'!' : L'?');
 				suggOther[1] = quoteChar;
 				suggOther[2] = L'\0';
-				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggOther, e->error.errorlen);
+				e->error.legacyError.suggestions[0] = StringUtils::utf8FromUcs4(suggOther, e->error.legacyError.errorlen);
 				delete[] suggOther;
 			}
 			options->grammarChecker->cache.appendError(e);
@@ -205,12 +205,12 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 			continue;
 		}
 		CacheEntry * e = new CacheEntry(1);
-		e->error.error_code = GCERR_REPEATING_WORD;
-		e->error.startpos = sentence->tokens[i].pos;
-		e->error.errorlen = sentence->tokens[i].tokenlen +
+		e->error.legacyError.error_code = GCERR_REPEATING_WORD;
+		e->error.legacyError.startpos = sentence->tokens[i].pos;
+		e->error.legacyError.errorlen = sentence->tokens[i].tokenlen +
 		                    sentence->tokens[i + 1].tokenlen +
 		                    sentence->tokens[i + 2].tokenlen;
-		e->error.suggestions[0] = StringUtils::utf8FromUcs4(sentence->tokens[i].str,
+		e->error.legacyError.suggestions[0] = StringUtils::utf8FromUcs4(sentence->tokens[i].str,
 		                          sentence->tokens[i].tokenlen);
 		options->grammarChecker->cache.appendError(e);
 	}
@@ -225,9 +225,9 @@ void gc_end_punctuation(voikko_options_t * options, const Paragraph * paragraph)
 	Token * token = sentence->tokens + (sentence->tokenCount - 1);
 	if (token->type == TOKEN_PUNCTUATION) return;
 	CacheEntry * e = new CacheEntry(0);
-	e->error.error_code = GCERR_TERMINATING_PUNCTUATION_MISSING;
-	e->error.startpos = token->pos;
-	e->error.errorlen = token->tokenlen;
+	e->error.legacyError.error_code = GCERR_TERMINATING_PUNCTUATION_MISSING;
+	e->error.legacyError.startpos = token->pos;
+	e->error.legacyError.errorlen = token->tokenlen;
 	options->grammarChecker->cache.appendError(e);
 }
 

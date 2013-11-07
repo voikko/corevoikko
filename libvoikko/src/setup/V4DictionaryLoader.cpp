@@ -52,6 +52,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 	list<string> subDirectories = getListOfSubentries(mainPath);
 	BackendProperties grammarBackend("null", false);
 	BackendProperties gramMorBackend("null", false);
+	BackendProperties gramErrMsgBackend("null", false);
 	BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", false);
 
 	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
@@ -69,6 +70,9 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 			}
 			if (fileName.find("-desc.hfst") != std::string::npos) {
 				gramMorBackend = BackendProperties("hfst", mainPath + "/" + dirName + "/" + fileName, false);
+			}
+			if (fileName.find("errors.xml") != std::string::npos) {
+				gramErrMsgBackend = BackendProperties("xml", mainPath + "/" + dirName + "/" + fileName, false);
 			}
 			if (fileName.find(".zhfst") != std::string::npos) {
 				string fullPath = mainPath + "/" + dirName + "/" + fileName;
@@ -95,17 +99,16 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 				string description = languageVersions[spellerMetadata.info_.locale_];
 				delete speller;
 
-/*
 				cerr << "V4DictionaryLoader::findDictionaries: " << mainPath << endl ; 
-				cerr << "  " << fullPath << endl;
-				cerr << "  " << grammarPath<< endl;
-				cerr << "  " << morBackend << endl;
-				cerr << "  " << grammarBackend << endl;
-				cerr << "  " << spellBackend << endl;
-				cerr << "  " << suggestionBackend << endl;
-				cerr << "  " << hyphenatorBackend  << endl;
-				cerr << "  " << description << endl;
-*/
+				cerr << "fullPath:  " << fullPath << endl;
+				cerr << "gramMorPath: " << gramMorBackend.getPath() << endl;
+				cerr << "morBackend:  " << morBackend.getPath() << endl;
+				cerr << "grammarBackend:  " << grammarBackend.getPath() << endl;
+				cerr << "spellBackend:  " << spellBackend.getPath() << endl;
+				cerr << "suggestionBackend:  " << suggestionBackend.getPath() << endl;
+				cerr << "hyphenatorBackend:  " << hyphenatorBackend.getPath()  << endl;
+				cerr << "Description:  " << description << endl;
+
 				Dictionary dict = Dictionary(morBackend, gramMorBackend, grammarBackend, 
 								spellBackend, suggestionBackend,
 								hyphenatorBackend, language, description);
