@@ -2283,3 +2283,6 @@ paremmuusjärjestykseen
 ohessa
 ilmi
 monennessa
+suurempikokoinen
+kylänvanhin
+eteenpäin

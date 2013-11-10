@@ -233,6 +233,10 @@ Poikkeavat_s	;
 LEXICON Sanasto_c
 Joukahainen_c	;
 
+LEXICON Sanasto_laatusanat
+Sanasto_l	;
+Sanasto_nl	;
+
 LEXICON Sanasto_nimisanat
 Sanasto_n	;
 @P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Sanasto_nl	;
