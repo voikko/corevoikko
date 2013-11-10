@@ -1763,7 +1763,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   end;
 
   if tavuviiva in $oikea.jatko then
-    result $res, rules nimisana, laatusana, nimisana_teonsanasta,
+    result $res, rules nimisana, nimisana_teonsanasta,
            etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
   if omistusliite in $oikea.jatko then
@@ -1778,7 +1778,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   if $oikea.luokka in @johtimet_nimisana_nimisanasta + <johdin_UUs> then
     result $res, rules nimisanan_sijapääte, nimisanan_johdos;
   elseif $oikea.luokka in @johtimet_laatusana_nimisanasta then
-    result $res, rules laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;
+    result $res, rules laatusana, laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;
   elseif $oikea.luokka in @johdin_jA then
     result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos;
   end;

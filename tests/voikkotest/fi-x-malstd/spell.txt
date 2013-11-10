@@ -129,6 +129,7 @@ Siiri-kauneusvoide
 NHL-painotteisella
 !selvännäkijä # selvänäkijä
 !kaunisjuoksija
+!juoksijakaunis
 
 # = vain yhdyssanan jälkiosana =
 []
