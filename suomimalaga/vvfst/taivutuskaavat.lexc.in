@@ -486,6 +486,16 @@ LEXICON NOUN Lampi
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;
 
+LEXICON NOUN Toholampi
+[Sn][Ny]pi:pi	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]pe:pe	Omistusliite_<A>	;
+[Sg][Ny]min:min	<WC>YksikönGenetiivinJatko_<A>	;
+[Sp][Ny]mi<A>:mi<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]min<A>:min<A>	<WC>LiOlV_<A>	;
+mi:mi	<WC>YhteisetYksikönPaikallissijat_<A>	;
+[Sill][Ny]mii:mii	<WC>LiOlN_<A>	;
+?Paikannimi	pi:pi	Johdin_lAinen_<A>	;
+
 LEXICON NOUN Siipi
 p:p	<WC>Lovi_s_<A>	;
 v:v	<WC>Lovi_w_<A>	;

@@ -463,6 +463,7 @@ lovi;
   kiiski; # Sukijan taivutus on kiiskin tai kiisken, Voikon taivutus vain kiisken.
   kylki;
   lampi;  # Taipuu kuten lovi tai risti.
+  toholampi;
   lehti;
   piki;   # Piestä, pi'istä.
   sampi;

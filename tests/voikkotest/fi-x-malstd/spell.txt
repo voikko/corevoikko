@@ -233,6 +233,8 @@ Venäjä-myönteinen
 !Penttinä-talli
 eckeröläinen
 von
+!Toholammella
+Toholammilla
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä

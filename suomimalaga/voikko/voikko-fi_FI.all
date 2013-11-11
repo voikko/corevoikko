@@ -498,6 +498,17 @@ allo_rule generate_allos ($tietue):
                                  johdin_ittAin:    "me"]);
     result $i.alku, $i - alku;
 
+  elseif (toholampi in $tietue.jatko) then
+    choose $i in taivutuskaava ($tietue,
+                                [nimentö:         "pi",
+                                 omanto_n:        "mi",
+                                 tulento_ksi:     "mi",
+                                 sisäolento_ssA:  "mi",
+                                 ulkopaikallissija_llA: "mi",
+                                 vajanto_ttA:     "mi",
+                                 kerronto_sti:    "mi",
+                                 johdin_lAinen:   "pi"]);
+    result $i.alku, $i - alku;
 
 ##############################################
 
