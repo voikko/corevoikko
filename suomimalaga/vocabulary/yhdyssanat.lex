@@ -1,7 +1,7 @@
 # {{{1 Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2007 Teemu Likonen <tlikonen@iki.fi>
-#                      Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#                      Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #          2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
@@ -1753,36 +1753,36 @@
 
 # {{{2 nuoripari (51)
 
-[perusmuoto: "nuoripari", alku: "nuoripari",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuortapari",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorenapari",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoreksipari", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoressaparissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuoripari", alku: "nuorestaparista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuoripari", alku: "nuoreenpari",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorellaparilla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuoripari", alku: "nuoreltaparilta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuoripari", alku: "nuorelleparille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "nuoripari", alku: "nuorettapari", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoripari",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuortapari",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorenapari",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoreksipari", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoressaparissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuorestaparista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuoreenpari",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorellaparilla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuoreltaparilta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuorelleparille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuorettapari", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorienpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuortenpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoriapare",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorinapare",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoriksipareiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorissapareissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoristapareista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoriinpare",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorillapareilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuoriltapareilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorillepareille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorittapareitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuoripari", alku: "nuorinepare",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "nuoripari", alku: "nuorinparein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorienpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuortenpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoriapare",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorinapare",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoriksipareiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorissapareissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoristapareista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoriinpare",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorillapareilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuoriltapareilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorillepareille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorittapareitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuoripari", alku: "nuorinepare",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "nuoripari", alku: "nuorinparein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppp"];
 
 # {{{2 omakuva (51, 50)
 
