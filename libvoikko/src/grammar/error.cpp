@@ -137,10 +137,10 @@ VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const grammar::V
 		if(g->errorlist.count(p) == 0) {
 			return "Unknown error 2";
 		}
-		fprintf(stderr, "  %s en %s %s\n", error->error_id, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
+		fprintf(stderr, "  %s (en) %s: %s\n", error->error_id, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
 		return utils::StringUtils::copy(g->errorlist[p].first.c_str());
 	} else {
-		fprintf(stderr, "  %s %s %s %s\n", error->error_id, language, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
+		fprintf(stderr, "  %s (%s) %s: %s\n", error->error_id, language, g->errorlist[p].first.c_str(), g->errorlist[p].second.c_str());
 		return utils::StringUtils::copy(g->errorlist[p].first.c_str());
 	}
 
