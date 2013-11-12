@@ -50,7 +50,7 @@ CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rul
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 
 	// FIXME: This is not platform independent.
-	unsigned int found = rules.rfind("/");
+	size_t found = rules.rfind("/");
 	string errorlistpath = "errors.xml";
 	if(found != string::npos) {
 		errorlistpath = rules.substr(0, found) + "/errors.xml";
