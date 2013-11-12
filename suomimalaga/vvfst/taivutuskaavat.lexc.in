@@ -495,6 +495,16 @@ LEXICON NOUN Toholampi
 mi:mi	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sill][Ny]mii:mii	<WC>LiOlN_<A>	;
 ?Paikannimi	pi:pi	Johdin_lAinen_<A>	;
+?Sukija [Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
+?Sukija ?NotLaatusana	[Sn][Ny]mi:mi	Omistusliite_<A>	;
+?Sukija [Sg][Ny]men:men	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sp][Ny]pe<A>:pe<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]pen<A>:pen<A>	<WC>LiOlV_<A>	;
+?Sukija me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Sukija [Sill][Ny]pee:pee	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]pii:pii	<WC>LiOlN_<A>	;
+?Sukija ?Paikannimi	mi:mi	Johdin_lAinen_<A>	;
+?Sukija ?Paikannimi	pe:pe	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Siipi
 p:p	<WC>Lovi_s_<A>	;
