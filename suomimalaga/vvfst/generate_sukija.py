@@ -545,7 +545,13 @@ while True:
     line = infile.readline()
     if line == u"":
         break;
-    outfile.write (line)
+    if line.startswith (u"[Ln][Xp]neiti[X]nei@P."):
+        outfile.write (line.replace (u"NimisanaVati", u"SukijaNeiti"))
+#        continue
+#    elif line.startswith (u"[Ln][Xp]neiti[X]nei:nei "):
+#        outfile.write (u"[Ln][Xp]neiti[X]nei:nei SukijaNeiti_ä ;")
+    else:
+        outfile.write (line)
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
     generate_from_pattern (line, spelling_pattern_list)
@@ -589,7 +595,22 @@ u"[O1y]in:in Liitesana_a ;",
 u"LEXICON SukijaTuta",
 u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;",
 u"[Tn2]ten:ten Liitesana_a ;",
-
+u"LEXICON SukijaNeiti_ä",
+u"NimisanaVati_ä ;",
+u"?NotLaatusana	[Sn][Ny]te:te	Omistusliite_ä	;",
+u"[Sg][Ny]den:den   NimisanaYksikönGenetiivinJatko_ä	;",
+u"[Sp][Ny]ttä:ttä   NimisanaLiOlV_ä ;",
+u"[Ses]Ny]tenä:tenä NimisanaLiOlV_ä ;",
+u"[Ses]Ny]nnä:nnä   NimisanaLiOlV_ä ;",
+u"de:de	NimisanaYhteisetYksikönPaikallissijat_ä	;",
+u"[Sill][Ny]tee:tee   NimisanaLiOlN_ä ;",
+u"[Sill][Ny]tehe:tehe NimisanaLiOlN_ä ;",
+u"[Sn][Nm]det:det     Liitesana_ä	;",
+u"[Sg][Nm]tt:tt       NimisanaMonikonGenetiiviEnJatko_ä ;",
+u"[Sill][Nm]tihi:tihi NimisanaLiOlN_ä ;",
+u"t:t                 NimisanaYhteisetMonikonSijat2_ä ;",
+u"?Nimisana d:d       Johdin_ittAin_ä	;",
+u"?Nimisana de:de     Johdin_tOn_ä ;",
 u"LEXICON Sukija",
 u"[Ln][Xp]aatelisneiti[X][Xr]ppppppp=[X]aatelisnei[Sg][Ny]den:aatelisneiden Loppu ;",
 u"[Ln][Xp]herrasneiti[X][Xr]pppppp=[X]herrasnei[Sg][Ny]den:herrasneiden Loppu ;",
