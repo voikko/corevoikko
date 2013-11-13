@@ -189,47 +189,6 @@ spelling_pattern_list = [
 ]
 
 
-
-lexicon_kaunis = [
-    u"LEXICON <WC>SukijaKaunis_<A>",
-    u"[Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]ehitt:ehitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]ehi:ehi   <WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;",
-    u"[Sp][Nm]ehi<A>:ehi<A>	<WC>LiOlV_<A>	;",
-    u"[Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;",
-    u"[Sill][Nm]ehisi:ehisi	<WC>LiOlN_<A>	;",
-    u"ehi:ehi   Kerronto_sti_<A> ;",
-    u"e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;",
-    u"e:e	<WC>YhteisetMonikonSijat2_<A>	      ;",
-    u"eh:eh	<WC>YhteisetMonikonPaikallissijat_<A>	;",
-    u"eh:eh	<WC>YhteisetMonikonSijat2_<A>	      ;",
-    u"?Laatusana	ehi:ehi	Voittoaste_<A>	;",
-    u"?Laatusana	eh:eh   Yliaste_<A>	;",
-]
-
-lexicon_altis = [
-    u"LEXICON <WC>SukijaAltis_<A>",
-    u"[Sg][Nm]teid:teid	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]teitt:teitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]tehitt:tehitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sg][Nm]tehi:tehi   <WC>MonikonGenetiiviEnJatko_<A>	;",
-    u"[Sp][Nm]teit<A>:teit<A>	<WC>LiOlV_<A>	;",
-    u"[Sp][Nm]tehi<A>:tehi<A>	<WC>LiOlV_<A>	;",
-    u"[Sill][Nm]teisii:teisii	<WC>LiOlN_<A>	;",
-    u"[Sill][Nm]tehisi:tehisi	<WC>LiOlN_<A>	;",
-    u"tehi:tehi   Kerronto_sti_<A> ;",
-    u"te:te	<WC>YhteisetMonikonPaikallissijat_<A>	;",
-    u"te:te	<WC>YhteisetMonikonSijat2_<A>	      ;",
-    u"teh:teh	<WC>YhteisetMonikonPaikallissijat_<A>	;",
-    u"teh:teh	<WC>YhteisetMonikonSijat2_<A>	      ;",
-    u"?Laatusana	tehi:tehi	Voittoaste_<A>	;",
-    u"?Laatusana	eh:eh   Yliaste_<A>	;",
-#    u"t:t <WC>SukijaKaunis_<A>",
-]
-
-
 def generate (lexicon, word_class, a):
     p = []
     for i in lexicon:
@@ -461,6 +420,7 @@ function_list = [
     (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
      (u"lohi",
+      u"tyynenmerenlohi",   # On Joukahaisessa.
       u"uuhi")),
 
     # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
@@ -637,11 +597,6 @@ u"[Ln][Xp]hovineiti[X][Xr]pppp=[X]hovinei[Sg][Ny]den:hovineiden Loppu ;",
 u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;",
 u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;",
 ]
-
-OUTPUT.extend (generate (lexicon_kaunis, u"Laatusana", u"a"))
-OUTPUT.extend (generate (lexicon_kaunis, u"Laatusana", u"ä"))
-OUTPUT.extend (generate (lexicon_kaunis, u"NimiLaatusana", u"a"))
-OUTPUT.extend (generate (lexicon_altis,  u"NimiLaatusana", u"a"))
 
 for x in OUTPUT:
     outfile.write (x + u"\n")

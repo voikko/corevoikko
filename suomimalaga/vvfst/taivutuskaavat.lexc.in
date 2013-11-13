@@ -4375,3 +4375,19 @@ LEXICON JärjestyslukuKymmentäSnNy
 ?Sukija [Sp][Nm]hi<A>:hi<A> 	<WC>LiOlV_<A>	;
 ?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
+
+?Sukija LEXICON NOUN SukijaKaunis
+?Sukija [Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
+?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ehisi:ehisi	<WC>LiOlN_<A>	;
+?Sukija ehi:ehi   Kerronto_sti_<A> ;
+?Sukija e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija e:e	<WC>YhteisetMonikonSijat2_<A>	      ;
+?Sukija ?Laatusana	ehi:ehi	Voittoaste_<A>	;
+?Sukija ?Laatusana	eh:eh   Yliaste_<A>	;
+?Sukija e:e		<WC>SukijaYhteisetHMuodot_<A> ;
+
+?Sukija LEXICON NOUN SukijaAltis
+?Sukija t:t <WC>SukijaKaunis_<A> ;
