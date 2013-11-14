@@ -62,6 +62,7 @@ void CgRuleEngine::setErrorList(std::map< std::pair<std::string, std::string>, s
 	errorlist = _errorlist;
 }
 
+
 int CgRuleEngine::load(const std::string path) {
 	fprintf(stderr, "CgRuleEngine::load\n");
 	grammar = cg3_grammar_load(path.c_str());
@@ -170,6 +171,7 @@ void CgRuleEngine::check(const Paragraph * paragraph) {
 //						const char *lwf = cg3_tag_gettext_u8(lwt);
 						e->error.legacyError.startpos = cur_pos;
 						e->error.legacyError.errorlen = wcslen(cg3_tag_gettext_w(lwt)) - 4;
+						e->error.legacyError.suggestions.push_back(string("beasssat"));
 						options->grammarChecker->cache.appendError(e);
 						fprintf(stderr, "  pos: %ld; len: %ld\n", cur_pos, wcslen(cg3_tag_gettext_w(lwt)) - 4);
 					}

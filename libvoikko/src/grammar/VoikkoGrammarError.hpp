@@ -33,6 +33,8 @@
 #include "grammar/Sentence.hpp"
 #include "voikko_structs.h"
 
+#include <vector>
+
 namespace libvoikko { namespace grammar {
 
 class GrammarChecker;
@@ -45,6 +47,7 @@ class VoikkoGrammarError {
 	char * error_id;
 	char * title;
 	GrammarChecker * checker;
+	std::vector<std::string> suggestions;
 
 	VoikkoGrammarError();
 	VoikkoGrammarError(const VoikkoGrammarError & error);

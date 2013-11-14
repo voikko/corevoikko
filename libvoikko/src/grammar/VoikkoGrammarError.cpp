@@ -82,6 +82,7 @@ void VoikkoGrammarError::setErrorLen(size_t errorLen) {
 }
 
 char ** VoikkoGrammarError::getSuggestions() const {
+	
 	return this->legacyError.suggestions;
 }
 
