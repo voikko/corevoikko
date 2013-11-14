@@ -57,7 +57,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 	spellresult result = speller->spell(word, wlen);
 	const wchar_t * hyphen_pos;
 	if (result != SPELL_OK && wlen > 3) {
-		hyphen_pos = wmemchr(word + 1, L'-', wlen - 2);
+		hyphen_pos = std::wmemchr(word + 1, L'-', wlen - 2);
 	}
 	else {
 		hyphen_pos = 0;
@@ -85,8 +85,8 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 		if (leading_len >= 2 && wlen - leading_len >= 3) {
 			wchar_t vctest1 = SimpleChar::lower(word[leading_len - 2]);
 			wchar_t vctest2 = SimpleChar::lower(word[leading_len - 1]);
-			if (wcschr(VOIKKO_VOWELS, vctest1) &&
-			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
+			if (std::wcschr(VOIKKO_VOWELS, vctest1) &&
+			    std::wcschr(VOIKKO_CONSONANTS, vctest2) &&
 			    SimpleChar::lower(word[leading_len + 1]) == vctest1 &&
 			    SimpleChar::lower(word[leading_len + 2]) == vctest2) {
 				spellresult spres = speller->spell(buffer, wlen - 1);
@@ -174,7 +174,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 }
 
 spellresult FinnishSpellerTweaksWrapper::spell(const wchar_t * word, size_t wlen) {
-	const wchar_t * softHyphen = wmemchr(word, L'\u00AD', wlen);
+	const wchar_t * softHyphen = std::wmemchr(word, L'\u00AD', wlen);
 	if (softHyphen) {
 		wchar_t * buffer = new wchar_t[wlen];
 		list<size_t> shyPositions;

@@ -200,7 +200,7 @@ bool StringUtils::isChapterNumber(const wchar_t * word) {
 bool StringUtils::isRomanNumeral(const wchar_t * word) {
 	// TODO: does not handle all possibilities, does not validate
 	for (size_t i = 0; word[i] != L'\0'; i++) {
-		if (!wcschr(L"iIvVxX", word[i])) {
+		if (!std::wcschr(L"iIvVxX", word[i])) {
 			return false;
 		}
 	}

@@ -216,7 +216,7 @@ Sentence * FinnishAnalysis::analyseSentence(const wchar_t * text, size_t textlen
 			next_word_is_possible_sentence_start = false;
 		}
 		else if (tt == TOKEN_PUNCTUATION &&
-		         ((tokenlen == 1 && wcschr(L".:\u2026\u2013\u2014", tstr[0]) != 0)
+		         ((tokenlen == 1 && std::wcschr(L".:\u2026\u2013\u2014", tstr[0]) != 0)
 		          || tokenlen == 3)) { // . : ... may separate sentences
 			next_word_is_possible_sentence_start = true;
 		}
