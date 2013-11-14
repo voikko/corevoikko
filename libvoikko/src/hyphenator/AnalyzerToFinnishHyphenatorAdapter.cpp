@@ -405,14 +405,14 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 	
 	/* at least one vowel is required before the first hyphen */
 	i = 0;
-	while (wordCopy[i] != L'\0' && wcschr(VOIKKO_CONSONANTS, wordCopy[i])) {
+	while (wordCopy[i] != L'\0' && std::wcschr(VOIKKO_CONSONANTS, wordCopy[i])) {
 		i++;
 	}
 	
 	/* -CV (not after special characters, hyphenating "vast'edes" as "vast'e-des" is ugly) */
 	for (; i <= nchars - 2; i++) {
-		if (wcschr(VOIKKO_CONSONANTS, wordCopy[i]) && wcschr(VOIKKO_VOWELS, wordCopy[i+1])
-		    && !wcschr(L"/.:&%\'", wordCopy[i-1])
+		if (std::wcschr(VOIKKO_CONSONANTS, wordCopy[i]) && std::wcschr(VOIKKO_VOWELS, wordCopy[i+1])
+		    && !std::wcschr(L"/.:&%\'", wordCopy[i-1])
 			&& (i <= 1 || uglyHyphenation || wordCopy[i-2] != L'\'')) {
 			hyphenationPoints[i] = '-';
 		}
@@ -420,15 +420,15 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 	
 	/* 'V */
 	for (i = 1; i < nchars - 1; i++) {
-		if (wordCopy[i] == L'\'' && wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
+		if (wordCopy[i] == L'\'' && std::wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
 			hyphenationPoints[i] = '=';
 		}
 	}
 	
 	/* Split before and after long vowels */
 	for (i = 1; i < nchars - 1; i++) {
-		if (wcschr(VOIKKO_VOWELS, wordCopy[i]) && wordCopy[i] == wordCopy[i+1]) {
-			if (wcschr(VOIKKO_VOWELS, wordCopy[i-1]) &&
+		if (std::wcschr(VOIKKO_VOWELS, wordCopy[i]) && wordCopy[i] == wordCopy[i+1]) {
+			if (std::wcschr(VOIKKO_VOWELS, wordCopy[i-1]) &&
 				isGoodHyphenPosition(wordCopy, hyphenationPoints, i, nchars)) {
 				hyphenationPoints[i] = '-';
 			}
@@ -443,10 +443,10 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 		if (hyphenationPoints[i+1] != ' ') {
 			continue;
 		}
-		if (!wcschr(VOIKKO_VOWELS, wordCopy[i])) {
+		if (!std::wcschr(VOIKKO_VOWELS, wordCopy[i])) {
 			continue;
 		}
-		if (!wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
+		if (!std::wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
 			continue;
 		}
 		for (size_t j = 0; j < 18; j++) {
@@ -476,7 +476,7 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 		hyphenationPoints[1] = ' ';
 		hyphenationPoints[nchars-1] = ' ';
 		for (i = 0; i <= nchars - 2; i++) {
-			if (wcschr(VOIKKO_VOWELS, wordCopy[i]) && wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
+			if (std::wcschr(VOIKKO_VOWELS, wordCopy[i]) && std::wcschr(VOIKKO_VOWELS, wordCopy[i+1])) {
 				hyphenationPoints[i+1] = ' ';
 			}
 		}
@@ -487,7 +487,7 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 			for (size_t j = 0; j < 2; j++) {
 				if (hyphenationPoints[i+1] != '-' &&
 				    wcsncmp(wordCopy + i, SPLIT_AFTER[j], 2) == 0 &&
-				    wcschr(VOIKKO_VOWELS, wordCopy[i+2]) &&
+				    std::wcschr(VOIKKO_VOWELS, wordCopy[i+2]) &&
 				    isGoodHyphenPosition(wordCopy, hyphenationPoints, i+2, nchars)) {
 					hyphenationPoints[i+2] = '-';
 				}
@@ -511,7 +511,7 @@ bool AnalyzerToFinnishHyphenatorAdapter::isGoodHyphenPosition(const wchar_t * wo
 		if (i == 0) {
 			break;
 		}
-		if (wcschr(VOIKKO_VOWELS, word[i])) {
+		if (std::wcschr(VOIKKO_VOWELS, word[i])) {
 			hasVowel = true;
 		}
 	}
@@ -526,7 +526,7 @@ bool AnalyzerToFinnishHyphenatorAdapter::isGoodHyphenPosition(const wchar_t * wo
 		if (word[i] == L'.') {
 			break;
 		}
-		if (wcschr(VOIKKO_VOWELS, word[i])) {
+		if (std::wcschr(VOIKKO_VOWELS, word[i])) {
 			hasVowel = true;
 		}
 	}

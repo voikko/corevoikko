@@ -42,7 +42,7 @@ SuggestionGeneratorSoftHyphens::SuggestionGeneratorSoftHyphens(Analyzer * morAna
 void SuggestionGeneratorSoftHyphens::generate(SuggestionStatus * s) const {
 	const size_t wlen = s->getWordLength();
 	const wchar_t * word = s->getWord();
-	const wchar_t * softHyphen = wmemchr(word, L'\u00AD', wlen);
+	const wchar_t * softHyphen = std::wmemchr(word, L'\u00AD', wlen);
 	if (softHyphen) {
 		wchar_t * buffer = new wchar_t[wlen];
 		size_t j = 0;

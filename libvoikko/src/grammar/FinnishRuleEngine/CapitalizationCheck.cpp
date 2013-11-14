@@ -140,7 +140,7 @@ static bool lastPunctuationEndsSentence(const list<const Token *> & tokens) {
 	list<const Token *>::const_reverse_iterator it = tokens.rbegin();
 	while (it != tokens.rend()) {
 		if ((*it)->type == TOKEN_PUNCTUATION && (*it)->str[0] != L',') {
-			return wcschr(L".?!", (*it)->str[0]) != 0;
+			return std::wcschr(L".?!", (*it)->str[0]) != 0;
 		}
 		++it;
 	}
@@ -187,7 +187,7 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 					// TODO: not checking for matching quote type
 					context.quotes.pop();
 				}
-			} else if (wcschr(L".!?", text[0])) {
+			} else if (std::wcschr(L".!?", text[0])) {
 				context.sentenceEnded = true;
 			}
 		}
