@@ -39,3 +39,13 @@ LEXICON Poikkeavat_s
 [Ls][Xp]tekeillä[X]teke:teke	Ulkopaikallissijat_Mon_ä	;
 [Ls][Xp]tännempänä[X]tännem:tännem	Sivumpana_ä	;
 [Ls][Xp]väijyksissä[X]väijyksi:väijyksi	SisäpaikallissijatVn_ä	;
+Ys_perusosa_seikkasanasta	;
+
+LEXICON Ys_perusosa_seikkasanasta
+[Ls][Xp]housusilla[X]housusilla:housusilla	OlV_a	;
+[Ls][Xp]housusilla[X]housusille:housusille	OlV_a	;
+[Ls][Xp]paitasilla[X]paitasilla:paitasilla	OlV_a	;
+[Ls][Xp]paitasilla[X]paitasille:paitasille	OlV_a	;
+[Ls][Xp]posti[X]postitse:postitse	Liitesana_a	;
+[Ls][Xp]puolitse[X]puolitse:puolitse	Liitesana_a	;
+[Ls][Xp]tie[X]teitse:teitse	Liitesana_ä	;

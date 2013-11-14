@@ -242,6 +242,10 @@ Sanasto_n	;
 @P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Sanasto_nl	;
 @P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
 
+LEXICON Sanasto_nimisana_yhdyssanana_perusosana
+Sanasto_nimisanat	;
+Ys_perusosa_seikkasanasta	;
+
 LEXICON Erisnimet
 Sanasto_ee	;
 Sanasto_em	;
