@@ -7,10 +7,14 @@ LEXICON Poikkeavat_s
 [Ls][Xp]hallussa[X]hallu:hallu	SisäpaikallissijatSsaSta_a	;
 [Ls][Xp]hallussa[X][Sill][Ny]haltuun:haltuun	Liitesana_a	;
 [Ls][Xp]hereillä[X]here:here	Ulkopaikallissijat_Mon_ä	;
+[Ls][Xp]hujakassa[X][Sine][Ny]hujakassa:hujakassa	Liitesana_a	;
 [Ls][Xp]hörö[X]hörö:hörö	Ulkopaikallissijat_Yks_ä	;
 [Ls][Xp]hörö[X]hörö:hörö	SisäpaikallissijatVn_ä	;
 [Ls][Xp]jalkeilla[X]jalke:jalke	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]juovuksissa[X]juovuksi:juovuksi	SisäpaikallissijatVn_a	;
+[Ls][Xp]karku[X][Sp][Ny]karkua:karkua	Liitesana_a	;
+[Ls][Xp]karku[X][Sine][Ny]karussa:karussa	Liitesana_a	;
+[Ls][Xp]karku[X][Sill][Ny]karkuun:karkuun	Liitesana_a	;
 [Ls][Xp]keskessä[X]keske:keske	SisäpaikallissijatVn_ä	;
 [Ls][Xp]kilpasilla[X]kilpas:kilpas	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]painuksissa[X]painuksi:painuksi	SisäpaikallissijatVn_a	;

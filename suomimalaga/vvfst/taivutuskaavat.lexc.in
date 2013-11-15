@@ -538,6 +538,7 @@ LEXICON NOUN Lovi_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]e:e	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
@@ -4078,6 +4079,7 @@ LEXICON RoomalaisenNumeronJatko
 Loppu	;
 LyhenteenTaivutuspääte_<A>	;
 -[Bc]:-	Sanasto_n	;
+-:-	Loppu	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
