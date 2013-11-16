@@ -235,6 +235,8 @@ eckeröläinen
 von
 !Toholammella
 Toholammilla
+!Pertein-
+Yhdysvaltain-mestaruuden
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
