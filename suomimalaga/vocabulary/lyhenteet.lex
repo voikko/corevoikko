@@ -66,18 +66,18 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "9:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 
 [alku: "esim", luokka: lyhenne, jatko: <kaksoispiste>, äs: ä, tiedot: <ei_voikko>];
-[alku: "khra", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kirkkoherra
+ [alku: "khra", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kirkkoherra
 [alku: "k:llo", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
-[alku: "klo", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kello (sisälyhenne, ei taivuteta kaksoispisteen avulla)
+ [alku: "klo", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kello (sisälyhenne, ei taivuteta kaksoispisteen avulla)
 [alku: "n:o.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Numero.
-[alku: "pj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä]; # puheenjohtaja
-[alku: "varapj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä, rakenne: "=qqqqqq"]; # varapuheenjohtaja
+ [alku: "pj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä]; # puheenjohtaja
+ [alku: "varapj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä, rakenne: "=qqqqqq"]; # varapuheenjohtaja
 [alku: "rn:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # (Maatilan) rekisterinumero.
 
-[alku: "°C", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
-[alku: "°F", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
-[alku: "°K", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
-[alku: "°", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
-[alku: "€", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+ [alku: "°C", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
+ [alku: "°F", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
+ [alku: "°K", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
+ [alku: "°", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+ [alku: "€", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];

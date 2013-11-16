@@ -4036,7 +4036,17 @@ Loppu	;
 
 LEXICON Lyhenne
 LyhenteenTaivutuspääte_<A>	;
+LyhenneIlmanTaivutusta_<A>	;
+
+LEXICON LyhenneIlmanTaivutusta
 Loppu	;
+LyhenneIlmanLoppuaTaiTaivutusta_<A>	;
+
+LEXICON LyhenneIlmanLoppua
+LyhenneIlmanLoppuaTaiTaivutusta_<A>	;
+LyhenteenTaivutuspääte_<A>	;
+
+LEXICON LyhenneIlmanLoppuaTaiTaivutusta
 -[Bc]:-	Loppu	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_l	;
