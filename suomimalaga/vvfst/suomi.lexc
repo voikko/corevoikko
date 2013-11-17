@@ -48,6 +48,7 @@ LEXICON EtunimiYsJatko
 -[Bc]:-	Loppu	;
 
 LEXICON AsemosanaYsJatko
+[Bc][Bh]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 
 LEXICON YhdyssanaJatkuu
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana	;
