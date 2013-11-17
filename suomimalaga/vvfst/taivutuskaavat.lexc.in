@@ -2635,12 +2635,11 @@ e:e	Johdin_ttAx_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
 
 LEXICON Kaivaa_s
-[Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_nimitapa1A_<A>	;
 <O>:<O>	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Käskytapa_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>n:<A>n	Mahtotapa_<A>	;
-<A>:<A>	Johdin_nimitapa1A_<A>	;
 <A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
@@ -2655,7 +2654,7 @@ tel:tel	Katsella_s_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Saartaa
-[Tn1]t<A><A>:t<A><A>	Liitesana_<A>	;
+t<A>:t<A>	Johdin_nimitapa1A_<A>	;
 r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
 t<O>:t<O>	KertomanTekijäpääteVahva_<A>	;
 re:re	TositavanKertomaTtiin_<A>	;
@@ -2941,6 +2940,7 @@ LEXICON Tulla_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
+TositavanKertomaTiin_<A>	;
 Käskytapa_e_<A>	;
 Ehtotapa_<A>	;
 EhtoMahtoKäskytapa_tA_<A>	;
@@ -3023,7 +3023,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
 
 LEXICON Arvailla
-[Tn1]l<A>:l<A>	Liitesana_<A>	;
+l:l	Johdin_nimitapa1A_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 e:e	Johdin_mA_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
@@ -3049,7 +3049,6 @@ i:i	Johdin_ja_kantaja_<A>	;
 itsi:itsi	Johdin_ja_kulkija_<A>	;
 
 LEXICON HaravoidaKanavoida
-[Tn1]id<A>:id<A>	Liitesana_<A>	;
 i:i	Johdin_nimitapa1dA_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
 i:i	Johdin_nimitapa2_tAessA_<A>	;

@@ -2299,3 +2299,6 @@ taiteilijoittain
 klo
 muunkielisiä
 !muukielisiä
+haltuunsa
+tultiin
+ollakseen
