@@ -78,11 +78,11 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self._assertSingleBaseform(u"kolmasmiljoonas", u"kolmannellamiljoonannella")
 	
 	def testBaseFormForWordHavingNoInflectins(self):
-		analysisList = self.voikko.analyze(u"koska")
+		analysisList = self.voikko.analyze(u"kohti")
 		analysis = self._assertSingletonAndGetItem(analysisList)
-		self.assertEqual(u"koska", analysis["BASEFORM"])
+		self.assertEqual(u"kohti", analysis["BASEFORM"])
 		self.assertFalse("WORDIDS" in analysis)
-		self.assertEqual(u"+koska(koska)", analysis["WORDBASES"])
+		self.assertEqual(u"+kohti(kohti)", analysis["WORDBASES"])
 	
 	def testBaseFormForCompondProperNoun(self):
 		self._assertSingleBaseform(u"Outi-Marjukka", u"Outi-Marjukka")
