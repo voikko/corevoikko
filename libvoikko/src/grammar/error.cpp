@@ -121,10 +121,7 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 }
 
 VOIKKOEXPORT const char * voikkoGetGrammarErrorShortDescription(const grammar::VoikkoGrammarError * error, const char * language) {
-	//return utils::StringUtils::copy(voikko_error_message_cstr(error->error_code, language));
-
-
-	return "Unknown error";
+	return utils::StringUtils::copy(voikko_error_message_cstr(error->getErrorCode(), language));
 }
 
 
