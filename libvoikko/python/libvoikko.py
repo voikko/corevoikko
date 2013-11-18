@@ -230,8 +230,8 @@ class Voikko(object):
 		self.__lib.voikkoFreeGrammarError.argtypes = [c_void_p]
 		self.__lib.voikkoFreeGrammarError.restype = None
 		
-		self.__lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
-		self.__lib.voikko_error_message_cstr.restype = c_char_p
+		self.__lib.voikkoGetGrammarErrorShortDescription.argtypes = [c_void_p, c_char_p]
+		self.__lib.voikkoGetGrammarErrorShortDescription.restype = POINTER(c_char)
 		
 		self.__lib.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
 		self.__lib.voikkoHyphenateUcs4.restype = POINTER(c_char)
@@ -241,6 +241,9 @@ class Voikko(object):
 		
 		self.__lib.voikkoAnalyzeWordUcs4.argtypes = [c_void_p, c_wchar_p]
 		self.__lib.voikkoAnalyzeWordUcs4.restype = POINTER(c_void_p)
+		
+		self.__lib.voikkoFreeErrorMessageCstr.argtypes = [POINTER(c_char)]
+		self.__lib.voikkoFreeErrorMessageCstr.restype = None
 		
 		self.__lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
 		self.__lib.voikko_free_mor_analysis.restype = None
@@ -397,7 +400,7 @@ class Voikko(object):
 		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
 	
-	def __getGrammarError(self, cGrammarError):
+	def __getGrammarError(self, cGrammarError, language):
 		gError = GrammarError()
 		gError.errorCode = self.__lib.voikkoGetGrammarErrorCode(cGrammarError)
 		gError.startPos = self.__lib.voikkoGetGrammarErrorStartPos(cGrammarError)
@@ -409,9 +412,12 @@ class Voikko(object):
 			while bool(cSuggestions[i]):
 				gError.suggestions.append(unicode(cSuggestions[i], "UTF-8"))
 				i = i + 1
+		cErrorShortDescription = self.__lib.voikkoGetGrammarErrorShortDescription(cGrammarError, _anyStringToUtf8(language))
+		gError.shortDescription = unicode(string_at(cErrorShortDescription), "UTF-8")
+		self.__lib.voikkoFreeErrorMessageCstr(cErrorShortDescription)
 		return gError
 	
-	def __grammarParagraph(self, paragraph, offset):
+	def __grammarParagraph(self, paragraph, offset, language):
 		paragraphLen = len(paragraph)
 		skipErrors = 0
 		errorList = []
@@ -420,13 +426,13 @@ class Voikko(object):
 			        paragraph, paragraphLen, 0, skipErrors)
 			if not bool(cError):
 				return errorList
-			gError = self.__getGrammarError(cError)
+			gError = self.__getGrammarError(cError, language)
 			gError.startPos = offset + gError.startPos
 			errorList.append(gError)
 			self.__lib.voikkoFreeGrammarError(cError)
 			skipErrors = skipErrors + 1
 	
-	def grammarErrors(self, text):
+	def grammarErrors(self, text, language):
 		"""Check the given text for grammar errors and return a
 		list of GrammarError objects representing the errors that were found.
 		Unlike the C based API this method accepts multiple paragraphs
@@ -439,7 +445,7 @@ class Voikko(object):
 		errorList = []
 		offset = 0
 		for paragraph in textUnicode.split(u"\n"):
-			errorList = errorList + self.__grammarParagraph(paragraph, offset)
+			errorList = errorList + self.__grammarParagraph(paragraph, offset, language)
 			offset = offset + len(paragraph) + 1
 		return errorList
 	

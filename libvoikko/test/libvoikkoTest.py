@@ -132,24 +132,20 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(u"koira", suggs[0])
 	
 	def testGrammarErrorsAndExplanation(self):
-		errors = self.voikko.grammarErrors(u"Minä olen joten kuten kaunis.")
+		errors = self.voikko.grammarErrors(u"Minä olen joten kuten kaunis.", "fi")
 		self.assertEqual(1, len(errors))
 		error = errors[0]
 		self.assertEqual(10, error.startPos)
 		self.assertEqual(11, error.errorLen)
 		self.assertEqual([u"jotenkuten"], error.suggestions)
-		code = error.errorCode
-		errorFi = self.voikko.grammarErrorExplanation(code, "fi")
-		self.assertEqual(u"Virheellinen kirjoitusasu", errorFi)
-		errorEn = self.voikko.grammarErrorExplanation(code, "en")
-		self.assertEqual(u"Incorrect spelling of word(s)", errorEn)
+		self.assertEqual(u"Virheellinen kirjoitusasu", error.shortDescription)
 	
 	def testNoGrammarErrorsInEmptyParagraph(self):
-		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen täi.")
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen täi.", "fi")
 		self.assertEqual(0, len(errors))
 	
 	def testGrammarErrorOffsetsInMultipleParagraphs(self):
-		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen joten kuten.")
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen joten kuten.", "fi")
 		self.assertEqual(1, len(errors))
 		error = errors[0]
 		self.assertEqual(16, error.startPos)
@@ -261,21 +257,21 @@ class LibvoikkoTest(unittest.TestCase):
 	
 	def testSetAcceptTitlesInGc(self):
 		self.voikko.setAcceptTitlesInGc(False)
-		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin")))
+		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin", "fi")))
 		self.voikko.setAcceptTitlesInGc(True)
-		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on eläin")))
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on eläin", "fi")))
 	
 	def testSetAcceptUnfinishedParagraphsInGc(self):
 		self.voikko.setAcceptUnfinishedParagraphsInGc(False)
-		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on ")))
+		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on ", "fi")))
 		self.voikko.setAcceptUnfinishedParagraphsInGc(True)
-		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on ")))
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on ", "fi")))
 	
 	def testSetAcceptBulletedListsInGc(self):
 		self.voikko.setAcceptBulletedListsInGc(False)
-		self.assertNotEqual(0, len(self.voikko.grammarErrors(u"kissa")))
+		self.assertNotEqual(0, len(self.voikko.grammarErrors(u"kissa", "fi")))
 		self.voikko.setAcceptBulletedListsInGc(True)
-		self.assertEqual(0, len(self.voikko.grammarErrors(u"kissa")))
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"kissa", "fi")))
 	
 	def testSetNoUglyHyphenation(self):
 		self.voikko.setNoUglyHyphenation(False)
@@ -353,7 +349,7 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failIf(self.voikko.spell(u"kissa\0asdasd"))
 		self.assertEqual(0, len(self.voikko.suggest(u"kisssa\0koira")))
 		self.assertEqual(u"kissa\0koira", self.voikko.hyphenate(u"kissa\0koira"))
-		self.assertEquals(0, len(self.voikko.grammarErrors(u"kissa\0koira")))
+		self.assertEquals(0, len(self.voikko.grammarErrors(u"kissa\0koira", "fi")))
 		self.assertEquals(0, len(self.voikko.analyze(u"kissa\0koira")))
 	
 	def testNullCharMeansSingleSentence(self):

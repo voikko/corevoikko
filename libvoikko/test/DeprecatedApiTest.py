@@ -66,6 +66,9 @@ voikko.lib.voikko_next_sentence_start_cstr.restype = c_int
 voikko.lib.voikko_next_grammar_error_cstr.argtypes = [c_int, c_char_p, c_size_t, c_size_t, c_int]
 voikko.lib.voikko_next_grammar_error_cstr.restype = CGrammarError
 
+voikko.lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
+voikko.lib.voikko_error_message_cstr.restype = c_char_p
+
 voikko.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
 voikko.lib.voikko_free_suggest_cstr.restype = None
 
@@ -150,6 +153,10 @@ class DeprecatedApiTest(unittest.TestCase):
 		self.assertEqual(6, error.startPos)
 		self.assertEqual(11, error.errorLen)
 		self.assertEqual(u"jotenkuten", error.suggestions[0])
+		errorFi = voikko.lib.voikko_error_message_cstr(error.errorCode, "fi")
+		self.assertEqual(u"Virheellinen kirjoitusasu", errorFi)
+		errorEn = voikko.lib.voikko_error_message_cstr(error.errorCode, "en")
+		self.assertEqual(u"Incorrect spelling of word(s)", errorEn)
 		voikko.lib.voikko_free_suggest_cstr(error.suggestions)
 	
 	def test_voikko_analyze_word_cstr_works(self):

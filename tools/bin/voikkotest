@@ -114,7 +114,7 @@ def _check_grammar(paragraphlist, params, voikko):
 	paragrapherrors = []
 	for paragraph in paragraphlist:
 		errorStrings = []
-		for error in voikko.grammarErrors(paragraph):
+		for error in voikko.grammarErrors(paragraph, "fi"):
 			errorStrings.append(error.toString())
 		paragrapherrors.append(errorStrings)
 	setDefaults(voikko)
