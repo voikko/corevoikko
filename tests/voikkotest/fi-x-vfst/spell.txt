@@ -2302,3 +2302,5 @@ muunkielisiä
 haltuunsa
 tultiin
 ollakseen
+!toisiinnsa
+toisiinsa

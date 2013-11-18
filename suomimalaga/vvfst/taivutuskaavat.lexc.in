@@ -2246,9 +2246,12 @@ LEXICON OlVL
 
 LEXICON NOUN LiOlI
 Liitesana_<A>	;
-?NotLaatusana	[[IE]]:[[IE]]	Omistusliite_<A>	;
-?NotLaatusana	[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
+?NotLaatusana	OlI_<A>	;
 ?Laatusana	LaatusananErisnimijatko	;
+
+LEXICON OlI
+[[IE]]:[[IE]]	Omistusliite_<A>	;
+[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
 
 LEXICON Punoa
 <WC>Punoa_w_<A>	;
@@ -4289,7 +4292,6 @@ LukusananJälkiliite	;
 
 LEXICON JärjestyslukuLiitesana
 Liitesana_<A>	;
-Omistusliite_<A>	;
 LukusananJälkiliiteJl	;
 [Bc]:	Järjestysluku	;
 
@@ -4298,32 +4300,39 @@ LEXICON JärjestyslukuNainen
 [Sn][Nm]set:set Liitesana_<A> ;
 [Sg][Ny]sen:sen Liitesana_<A> ;
 [Sg][Nm]sten:sten JärjestyslukuSgNm39_<A> ;
+[Sg][Nm]ste:ste Omistusliite_<A> ;
 [Sg][Nm]sien:sien JärjestyslukuSgNm39_<A> ;
-@U.LS.SPNY@[Sp][Ny]st<A>:@U.LS.SPNY@st<A> Liitesana_<A> ;
+[Sg][Nm]sie:sie Omistusliite_<A> ;
+[Sp][Ny]st<A>:st<A> JärjestyslukuSpNy39_<A> ;
+[Sp][Ny]st<A>:st<A> OlV_<A> ;
 [Sp][Nm]si<A>:si<A> JärjestyslukuSpNm39_<A> ;
-[Sp][Nm]si<A>:si<A> OlVL_<A> ;
-[Str][Ny]seksi:seksi	Liitesana_<A>	;
+[Sp][Nm]si<A>:si<A> OlV_<A> ;
+[Str][Ny]seksi:seksi	JärjestyslukuStrNy39_<A>	;
+[Str][Ny]seksi:seksi	OlI_<A>	;
 [Str][Nm]siksi:siksi	JärjestyslukuStrNm39_<A>	;
+[Str][Nm]siksi:siksi	OlI_<A>	;
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> JärjestyslukuSesNm39_<A> ;
-[Ses][Nm]sin<A>:sin<A> OlVL_<A> ;
+[Ses][Nm]sin<A>:sin<A> OlV_<A> ;
 [Sine][Ny]sess<A>:sess<A> Liitesana_<A> ;
 [Sine][Nm]siss<A>:siss<A> JärjestyslukuSineNm39_<A> ;
-[Sine][Nm]siss<A>:siss<A> OlVL_<A> ;
+[Sine][Nm]siss<A>:siss<A> OlV_<A> ;
 [Sela][Ny]sest<A>:sest<A> Liitesana_<A> ;
 [Sela][Nm]sist<A>:sist<A> JärjestyslukuSelaNm39_<A> ;
-[Sela][Nm]sist<A>:sist<A> OlVL_<A> ;
-[Sill][Ny]seen:seen Liitesana_<A> ;
+[Sela][Nm]sist<A>:sist<A> OlV_<A> ;
+[Sill][Ny]seen:seen JärjestyslukuSillNy39_<A> ;
+[Sill][Ny]see:see Omistusliite_<A> ;
 [Sill][Nm]siin:siin JärjestyslukuSillNm39_<A> ;
+[Sill][Nm]sii:sii	Omistusliite_<A>	;
 [Sade][Ny]sell<A>:sell<A> Liitesana_<A> ;
 [Sade][Nm]sill<A>:sill<A> JärjestyslukuSadeNm39_<A> ;
-[Sade][Nm]sill<A>:sill<A> OlVL_<A> ;
+[Sade][Nm]sill<A>:sill<A> OlV_<A> ;
 [Sabl][Ny]selt<A>:selt<A> Liitesana_<A> ;
 [Sabl][Nm]silt<A>:silt<A> JärjestyslukuSablNm39_<A> ;
-[Sabl][Nm]silt<A>:silt<A> OlVL_<A> ;
+[Sabl][Nm]silt<A>:silt<A> OlV_<A> ;
 [Sall][Ny]selle:selle Liitesana_<A> ;
 [Sall][Nm]sille:sille JärjestyslukuSallNm39_<A> ;
-[Sall][Nm]sille:sille OlVL_<A>	;
+[Sall][Nm]sille:sille OlV_<A>	;
 [Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
