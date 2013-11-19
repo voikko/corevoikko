@@ -3498,6 +3498,7 @@ h:h	TositavanKestämäDaan_<A>	;
 h:h	TositavanKertomaTiin_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 k:k	KertomanTekijäpääteVahva_<A>	;
+e:e	Käskytapa_y2_<A>	;
 h:h	Käskytapa_<A>	;
 h:h	EhtoMahtoKäskytapa_tA_<A>	;
 hn:hn	Mahtotapa_<A>	;
@@ -3772,7 +3773,7 @@ LEXICON Johdin_lAinen
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_n	;
 
 LEXICON Johdin_ttU
-[Ll]t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
+[Ll]t@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
 [Ll]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaHattu_<A>	;
 [Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
