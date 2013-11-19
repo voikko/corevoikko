@@ -141,11 +141,11 @@ AC_ARG_ENABLE(vislcg3, AC_HELP_STRING([--enable-vislcg3],
 dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
 dnl AC_PROVIDE_IFELSE doesn't work on mac?
 AS_IF([test x$cg3 = xyes], [
-      PKG_CHECK_MODULES([VISLCG3], [cg3 >= 0.9])
+      PKG_CHECK_MODULES([VISLCG3], [cg3-0.9 >= 0.9])
 	  AC_DEFINE(HAVE_VISLCG3, 1)
 	  CXXFLAGS="$CXXFLAGS $VISLCG3_CFLAGS"
 	])
-AC_CHECK_HEADER([tinyxml2.h], AC_DEFINE(HAVE_VISLCG3, 1), AC_DEFINE(HAVE_VISLCG3, 0))
+dnl AC_CHECK_HEADER([tinyxml2.h], AC_DEFINE(HAVE_VISLCG3, 1), AC_DEFINE(HAVE_VISLCG3, 0))
 AM_CONDITIONAL([HAVE_VISLCG3], [test x$cg3 = xyes])
 
 

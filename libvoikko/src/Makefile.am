@@ -216,7 +216,8 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
 
 VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
     setup/V4DictionaryLoader.cpp \
-    grammar/CgGrammarChecker.cpp
+    grammar/CgGrammarChecker.cpp \
+    grammar/tinyxml2.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 

@@ -34,7 +34,7 @@
 #include "grammar/HfstAnalysis.hpp"
 #include "morphology/HfstAnalyzer.hpp"
 
-#include <tinyxml2.h>
+#include "grammar/tinyxml2.hpp"
 
 using namespace std;
 
