@@ -87,6 +87,32 @@ LEXICON Poikkeavat_n
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ippp=[X][Sn][Ny]uusikaupunki:uusikaupunki	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppp=[X][Sg][Ny]uudenkaupunki:uudenkaupunki	Omistusliite_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppp=[X][Sg][Ny]uudenkaupungin:uudenkaupungin	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppp=[X][Sp][Ny]uuttakaupunkia:uuttakaupunkia	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ippppp=[X][Ses][Ny]uutenakaupunkina:uutenakaupunkina	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Str][Ny]uudeksikaupungiksi:uudeksikaupungiksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sine][Ny]uudessakaupungissa:uudessakaupungissa	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sela][Ny]uudestakaupungista:uudestakaupungista	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ippppp=[X][Sill][Ny]uuteenkaupunkii:uuteenkaupunkii	PaikannimiLiOlN_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sade][Ny]uudellakaupungilla:uudellakaupungilla	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sabl][Ny]uudeltakaupungilta:uudeltakaupungilta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sall][Ny]uudellekaupungille:uudellekaupungille	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikaupunki[X][Xr]ipppppp=[X][Sab][Ny]uudettakaupungitta:uudettakaupungitta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ippp=[X][Sn][Ny]uusikirkko:uusikirkko	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppp=[X][Sg][Ny]uudenkirkko:uudeknirkko	Omistusliite_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppp=[X][Sg][Ny]uudenkirkon:uudenkirkon	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppp=[X][Sp][Ny]uuttakirkkoa:uuttakirkkoa	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ippppp=[X][Ses][Ny]uutenakirkkona:uutenakirkkona	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Str][Ny]uudeksikirkoksi:uudeksikirkoksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sine][Ny]uudessakirkossa:uudessakirkossa	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sela][Ny]uudestakirkosta:uudestakirkosta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ippppp=[X][Sill][Ny]uuteenkirkkoo:uuteenkirkkoo	PaikannimiLiOlN_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sade][Ny]uudellakirkolla:uudellakirkolla	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sabl][Ny]uudeltakirkolta:uudeltakirkolta	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sall][Ny]uudellekirkolle:uudellekirkolle	PaikannimiLiOlV_a	;
+[Lep][Xp]Uusikirkko[X][Xr]ipppppp=[X][Sab][Ny]uudettakirkotta:uudettakirkotta	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Xr]ippp=[X][Sn][Ny]uusimaa:uusimaa	PaikannimiNormaaliYsJatkoOl_a	;
 [Lep][Xp]Uusimaa[X][Xr]ipppp=[X][Sg][Ny]uudenmaa:uudenmaa	Omistusliite_a	;
 [Lep][Xp]Uusimaa[X][Xr]ipppp=[X][Sg][Ny]uudenmaan:uudenmaan	PaikannimiYksikönGenetiivinJatko_a	;

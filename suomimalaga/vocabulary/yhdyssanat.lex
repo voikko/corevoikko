@@ -236,37 +236,37 @@
 
 # {{{2 Uusikaupunki
 
-[perusmuoto: "Uusikaupunki", alku: "Uusikaupunki",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudenkaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudenkaupungi",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uuttakaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uutenakaupunki",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudeksikaupungi", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudessakaupungissa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=ppppppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudestakaupungista", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uuteenkaupunki",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ippppp=pppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudellakaupungilla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a,     rakenne: "=ipppppp=ppppppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudeltakaupungilta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudellekaupungille", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
-[perusmuoto: "Uusikaupunki", alku: "Uudettakaupungi", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uusikaupunki",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudenkaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudenkaupungi",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uuttakaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uutenakaupunki",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudeksikaupungi", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudessakaupungissa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=ppppppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudestakaupungista", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uuteenkaupunki",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ippppp=pppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudellakaupungilla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a,     rakenne: "=ipppppp=ppppppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudeltakaupungilta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudellekaupungille", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppppp"];
+ [perusmuoto: "Uusikaupunki", alku: "Uudettakaupungi", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppppp"];
 
 [perusmuoto: "uusikaupunkilainen", alku: "uusikaupunkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
 
 # {{{2 Uusikirkko
 
-[perusmuoto: "Uusikirkko", alku: "Uusikirkko",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudenkirkko",  luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudenkirko",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uuttakirkko",  luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uutenakirkko", luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudeksikirko", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudessakirkossa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=ppppppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudestakirkosta", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uuteenkirkko", luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ippppp=pppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudellakirkolla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a,      rakenne: "=ipppppp=ppppppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudeltakirkolta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a,  rakenne: "=ipppppp=ppppppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudellekirkolle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppp"];
-[perusmuoto: "Uusikirkko", alku: "Uudettakirko", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uusikirkko",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudenkirkko",  luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudenkirko",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uuttakirkko",  luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uutenakirkko", luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudeksikirko", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudessakirkossa", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ipppppp=ppppppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudestakirkosta", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uuteenkirkko", luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ippppp=pppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudellakirkolla", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a,      rakenne: "=ipppppp=ppppppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudeltakirkolta", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a,  rakenne: "=ipppppp=ppppppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudellekirkolle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppp"];
+ [perusmuoto: "Uusikirkko", alku: "Uudettakirko", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppp"];
 
 [perusmuoto: "uusikirkkolainen", alku: "uusikirkkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
 
