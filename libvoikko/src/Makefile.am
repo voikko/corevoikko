@@ -77,7 +77,7 @@ libvoikko_la_SOURCES = \
     grammar/FinnishRuleEngine/SentenceCheck.cpp \
     grammar/FinnishRuleEngine/SidesanaCheck.cpp \
     compatibility/interface.cpp
-libvoikko_la_LDFLAGS = -no-undefined -version-info 13:8:12 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -no-undefined -version-info 14:0:13 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \
@@ -119,6 +119,7 @@ noinst_HEADERS = \
     setup/DictionaryLoader.hpp \
     setup/V2DictionaryLoader.hpp \
     setup/V3DictionaryLoader.hpp \
+    setup/V4DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     setup/LanguageTag.hpp \
     character/charset.hpp \
