@@ -2306,3 +2306,4 @@ ollakseen
 toisiinsa
 tietyntyyppisiin
 näe
+puolestatoista

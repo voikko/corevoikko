@@ -107,6 +107,19 @@ LEXICON Erikoisluku
 [Lu][Xp]seitsenkymmen[X]seitsenkymmen:seitsenkymmen	LukusananJälkiliite	;
 [Lu][Xp]kahdeksankymmen[X]kahdeksankymmen:kahdeksankymmen	LukusananJälkiliite	;
 [Lu][Xp]yhdeksänkymmen[X]yhdeksänkymmen:yhdeksänkymmen	LukusananJälkiliite	;
+[Lu][Xp]puolitoista[X][Xr]ppppp=[X]puolitoista:puolitoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppp=[X]puolentoista:puolentoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppp=[X]puoltatoista:puoltatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]ppppppp=[X]puolenatoista:puolenatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puoleksitoista:puoleksitoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolessatoista:puolessatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolestatoista:puolestatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]ppppppp=[X]puoleentoista:puoleentoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puoleltatoista:puoleltatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolellatoista:puolellatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolelletoista:puolelletoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolettatoista:puolettatoista	Liitesana_a	;
+[Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolisentoista:puolisentoista	Liitesana_a	;
 
 LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;
