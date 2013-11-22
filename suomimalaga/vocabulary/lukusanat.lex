@@ -126,15 +126,15 @@
 [perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
 
 
-[perusmuoto: "parisen", alku: "parisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a];
-[perusmuoto: "kolmisen", alku: "kolmisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "nelisen", alku: "nelisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "viitisen", alku: "viitisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kuutisen", alku: "kuutisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "seitsemisen", alku: "seitsemisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kahdeksisen", alku: "kahdeksisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "yhdeksisen", alku: "yhdeksisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kymmenisen", alku: "kymmenisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "parisen", alku: "parisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a];
+ [perusmuoto: "kolmisen", alku: "kolmisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "nelisen", alku: "nelisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "viitisen", alku: "viitisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "kuutisen", alku: "kuutisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "seitsemisen", alku: "seitsemisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "kahdeksisen", alku: "kahdeksisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "yhdeksisen", alku: "yhdeksisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "kymmenisen", alku: "kymmenisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "parisenkymmentä", alku: "parisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "kolmisenkymmentä", alku: "kolmisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
