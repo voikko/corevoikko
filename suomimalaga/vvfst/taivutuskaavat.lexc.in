@@ -3769,14 +3769,14 @@ tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli@C.YS_EI_JATKOA@:lli@C.YS_EI_JATKOA@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis:llis	NimisanaYsJatko	;
-llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Sanasto_nimisanat	;
+llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Yleisnimet	;
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Liitesana_<A>	;
 
 LEXICON Johdin_lAinen
-[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
+[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenInen_<A>	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_ep	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_n	;
 

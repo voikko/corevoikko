@@ -2315,3 +2315,5 @@ historiallis-vertaileva
 tasavaltalais-sosialisti
 matemaattis-luonnontieteellisen
 !pikkas-luonnontieteellinen
+norjalais-ruotsalaisen
+historiallis-kriittinen
