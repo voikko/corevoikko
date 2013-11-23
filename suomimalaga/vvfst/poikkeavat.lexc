@@ -144,9 +144,24 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sab][Ny]uudettamaatta:uudettamaatta	PaikannimiLiOlV_a	;
 
 LEXICON Poikkeavat_es
+[Les][Xp]Brontë[X][Sn][Ny]brontë:brontë	SukunimiNormaaliYsJatkoOl_a	;
+[Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_ä	;
+[Les][Xp]Brontë[X][Sg][Ny]brontën:brontën	SukunimiYksikönGenetiivinJatko_a	;
+[Les][Xp]Brontë[X][Sp][Ny]brontëa:brontëa	SukunimiLiOlV_a	;
+[Les][Xp]Brontë[X][Ses][Ny]brontëna:brontëna	SukunimiLiOlV_a	;
+[Les][Xp]Brontë[X]brontë:brontë	SukunimiYhteisetYksikönPaikallissijat_a	;
+[Les][Xp]Brontë[X][Sill][Ny]brontëe:brontëe	SukunimiLiOlN_ä	;
+[Les][Xp]Brontë[X][Sill][Ny]brontëë:brontëë	SukunimiLiOlN_ä	;
+[Les][Xp]Linné[X][Sn][Ny]linné:linné	SukunimiNormaaliYsJatkoOl_ä	;
+[Les][Xp]Linné[X][Sn][Nm]linnét:linnét	Liitesana_ä	;
+[Les][Xp]Linné[X][Sg][Ny]linnén:linnén	SukunimiYksikönGenetiivinJatko_ä	;
+[Les][Xp]Linné[X][Sp][Ny]linnétä:linnétä	SukunimiLiOlV_ä	;
+[Les][Xp]Linné[X][Ses][Ny]linnénä:linnénä	SukunimiLiOlV_ä	;
+[Les][Xp]Linné[X]linné:linné	SukunimiYhteisetYksikönPaikallissijat_ä	;
+[Les][Xp]Linné[X][Sill][Ny]linnéhe:linnéhe	SukunimiLiOlN_ä	;
+[Les][Xp]Linné[X][Sill][Ny]linnésee:linnésee	SukunimiLiOlN_ä	;
 [Les][Xp]Monroe[X][Sn][Ny]monroe:monroe	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Monroe[X][Sn][Nm]monroet:monroet	Liitesana_a	;
-[Les][Xp]Monroe[X][Sg][Ny]monroe:monroe	Omistusliite_a	;
 [Les][Xp]Monroe[X][Sg][Ny]monroen:monroen	SukunimiYksikönGenetiivinJatko_a	;
 [Les][Xp]Monroe[X][Sp][Ny]monroeta:monroeta	SukunimiLiOlV_a	;
 [Les][Xp]Monroe[X][Ses][Ny]monroena:monroena	SukunimiLiOlV_a	;
@@ -154,7 +169,6 @@ LEXICON Poikkeavat_es
 [Les][Xp]Monroe[X][Sill][Ny]monroehu:monroehu	SukunimiLiOlN_a	;
 [Les][Xp]Poe[X][Sn][Ny]poe:poe	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Poe[X][Sn][Nm]poet:poet	Liitesana_a	;
-[Les][Xp]Poe[X][Sg][Ny]poe:poe	Omistusliite_a	;
 [Les][Xp]Poe[X][Sg][Ny]poen:poen	SukunimiYksikönGenetiivinJatko_a	;
 [Les][Xp]Poe[X][Sp][Ny]poeta:poeta	SukunimiLiOlV_a	;
 [Les][Xp]Poe[X][Ses][Ny]poena:poena	SukunimiLiOlV_a	;

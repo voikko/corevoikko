@@ -644,19 +644,19 @@ define @loppu := <liitesana, loppu>;
 # (Illatiivin osalta nämä liittyvän bugiin #1829873)
 
 # Brontë [bronti] {{{2
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_n>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_A>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <olento_nA>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
-[perusmuoto: "Brontë", alku: "Brontëen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontëën", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_n>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_A>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <olento_nA>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontëen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontëën", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
+ [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_jen>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_in>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_iT>, äs: a];
@@ -757,21 +757,21 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
 # Linné [linnee] {{{2
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Linné", alku: "Linnée", luokka: sukunimi, jatko: <omanto_n>, äs: ä, tiedot: <ei_voikko>]; # "Linnéen luokittelujärjestelmä."
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_nA>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_ksi>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: ä];
-[perusmuoto: "Linné", alku: "Linnéhen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
-[perusmuoto: "Linné", alku: "Linnéhe", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_seen>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ttA>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_nA>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_ksi>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: ä];
+ [perusmuoto: "Linné", alku: "Linnéhen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linnéhe", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_seen>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ttA>, äs: ä];
 
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nimentö_t>, äs: ä];
+ [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nimentö_t>, äs: ä];
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_iT>, äs: ä];
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_itA>, äs: ä];
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_inA>, äs: ä];
