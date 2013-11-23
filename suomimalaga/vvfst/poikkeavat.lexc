@@ -144,6 +144,22 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusimaa[X][Xr]ipppppp=[X][Sab][Ny]uudettamaatta:uudettamaatta	PaikannimiLiOlV_a	;
 
 LEXICON Poikkeavat_es
+[Les][Xp]Monroe[X][Sn][Ny]monroe:monroe	SukunimiNormaaliYsJatkoOl_a	;
+[Les][Xp]Monroe[X][Sn][Nm]monroet:monroet	Liitesana_a	;
+[Les][Xp]Monroe[X][Sg][Ny]monroe:monroe	Omistusliite_a	;
+[Les][Xp]Monroe[X][Sg][Ny]monroen:monroen	SukunimiYksikönGenetiivinJatko_a	;
+[Les][Xp]Monroe[X][Sp][Ny]monroeta:monroeta	SukunimiLiOlV_a	;
+[Les][Xp]Monroe[X][Ses][Ny]monroena:monroena	SukunimiLiOlV_a	;
+[Les][Xp]Monroe[X]monroe:monroe	SukunimiYhteisetYksikönPaikallissijat_a	;
+[Les][Xp]Monroe[X][Sill][Ny]monroehu:monroehu	SukunimiLiOlN_a	;
+[Les][Xp]Poe[X][Sn][Ny]poe:poe	SukunimiNormaaliYsJatkoOl_a	;
+[Les][Xp]Poe[X][Sn][Nm]poet:poet	Liitesana_a	;
+[Les][Xp]Poe[X][Sg][Ny]poe:poe	Omistusliite_a	;
+[Les][Xp]Poe[X][Sg][Ny]poen:poen	SukunimiYksikönGenetiivinJatko_a	;
+[Les][Xp]Poe[X][Sp][Ny]poeta:poeta	SukunimiLiOlV_a	;
+[Les][Xp]Poe[X][Ses][Ny]poena:poena	SukunimiLiOlV_a	;
+[Les][Xp]Poe[X]poe:poe	SukunimiYhteisetYksikönPaikallissijat_a	;
+[Les][Xp]Poe[X][Sill][Ny]poehu:poehu	SukunimiLiOlN_a	;
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t

@@ -786,20 +786,20 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <seuranto_ine>, äs: ä];
 
 # Monroe [manrou] {{{2
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
-[perusmuoto: "Monroe", alku: "Monroehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Monroeen.
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Monroehen.
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
+ [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <omanto_iT>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <osanto_itA>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <olento_inA>, äs: a];
@@ -837,20 +837,20 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <seuranto_ine>, äs: a, rakenne: "=pppp=ppp"];
 
 # Poe [pou] {{{2
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];  # Poe-vaikutteinen.
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
-[perusmuoto: "Poe", alku: "Poehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: @sisä_ssA_stA, äs: a];
+ [perusmuoto: "Poe", alku: "Poehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Poeen.
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Poehen.
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
+ [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <omanto_iT>, äs: a];
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <omanto_jen>, äs: a];
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <osanto_itA>, äs: a];
