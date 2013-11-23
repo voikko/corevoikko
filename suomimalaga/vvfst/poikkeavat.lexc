@@ -87,6 +87,22 @@ LEXICON Poikkeavat_n
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
+[Lep][Xp]Sidney[X][Sn][Ny]sidney:sidney	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Sidney[X][Sg][Ny]sidney:sidney	Omistusliite_ä	;
+[Lep][Xp]Sidney[X][Sg][Ny]sidneyn:sidneyn	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Sidney[X][Sp][Ny]sidneyä:sidneyä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Sidney[X][Ses][Ny]sidneynä:sidneynä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Sidney[X]sidney:sidney	PaikannimiYhteisetYksikönPaikallissijat_ä	;
+[Lep][Xp]Sidney[X][Sill][Ny]sidneyy:sidneyy	PaikannimiLiOlN_ä	;
+[Lep][Xp]Sidney[X]sidney:sidney	Johdin_lAinen_ä	;
+[Lep][Xp]Sydney[X][Sn][Ny]sydney:sydney	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Sydney[X][Sg][Ny]sydney:sydney	Omistusliite_ä	;
+[Lep][Xp]Sydney[X][Sg][Ny]sydneyn:sydneyn	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Sydney[X][Sp][Ny]sydneyä:sydneyä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Sydney[X][Ses][Ny]sydneynä:sydneynä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Sydney[X]sydney:sydney	PaikannimiYhteisetYksikönPaikallissijat_ä	;
+[Lep][Xp]Sydney[X][Sill][Ny]sydneyy:sydneyy	PaikannimiLiOlN_ä	;
+[Lep][Xp]Sydney[X]sydney:sydney	Johdin_lAinen_ä	;
 [Lep][Xp]Uusikaupunki[X][Xr]ippp=[X][Sn][Ny]uusikaupunki:uusikaupunki	PaikannimiNormaaliYsJatkoOl_a	;
 [Lep][Xp]Uusikaupunki[X][Xr]ipppp=[X][Sg][Ny]uudenkaupunki:uudenkaupunki	Omistusliite_a	;
 [Lep][Xp]Uusikaupunki[X][Xr]ipppp=[X][Sg][Ny]uudenkaupungin:uudenkaupungin	PaikannimiYksikönGenetiivinJatko_a	;
