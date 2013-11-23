@@ -145,13 +145,22 @@ LEXICON Poikkeavat_ep
 
 LEXICON Poikkeavat_es
 [Les][Xp]Brontë[X][Sn][Ny]brontë:brontë	SukunimiNormaaliYsJatkoOl_a	;
-[Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_ä	;
+[Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_a	;
 [Les][Xp]Brontë[X][Sg][Ny]brontën:brontën	SukunimiYksikönGenetiivinJatko_a	;
 [Les][Xp]Brontë[X][Sp][Ny]brontëa:brontëa	SukunimiLiOlV_a	;
 [Les][Xp]Brontë[X][Ses][Ny]brontëna:brontëna	SukunimiLiOlV_a	;
 [Les][Xp]Brontë[X]brontë:brontë	SukunimiYhteisetYksikönPaikallissijat_a	;
 [Les][Xp]Brontë[X][Sill][Ny]brontëe:brontëe	SukunimiLiOlN_ä	;
 [Les][Xp]Brontë[X][Sill][Ny]brontëë:brontëë	SukunimiLiOlN_ä	;
+[Les][Xp]Dalí[X][Sn][Ny]dalí:dalí	SukunimiNormaaliYsJatkoOl_a	;
+[Les][Xp]Dalí[X][Sn][Nm]dalít:dalít	Liitesana_a	;
+[Les][Xp]Dalí[X][Sg][Ny]dalín:dalín	SukunimiYksikönGenetiivinJatko_a	;
+[Les][Xp]Dalí[X][Sg][Ny]dalí:dalí	SukunimiMonikonGenetiiviEnJatko_a	;
+[Les][Xp]Dalí[X][Sp][Ny]dalía:dalía	SukunimiLiOlV_a	;
+[Les][Xp]Dalí[X][Ses][Ny]dalína:dalína	SukunimiLiOlV_a	;
+[Les][Xp]Dalí[X]dalí:dalí	SukunimiYhteisetYksikönPaikallissijat_a	;
+[Les][Xp]Dalí[X][Sill][Ny]dalíi:dalíi	SukunimiLiOlN_ä	;
+[Les][Xp]Dalí[X][Sill][Ny]dalíí:dalíí	SukunimiLiOlN_ä	;
 [Les][Xp]Linné[X][Sn][Ny]linné:linné	SukunimiNormaaliYsJatkoOl_ä	;
 [Les][Xp]Linné[X][Sn][Nm]linnét:linnét	Liitesana_ä	;
 [Les][Xp]Linné[X][Sg][Ny]linnén:linnén	SukunimiYksikönGenetiivinJatko_ä	;

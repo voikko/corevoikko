@@ -3757,10 +3757,10 @@ LEXICON Johdin_inen
 [Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaYsJatko	;
 
 LEXICON Johdin_tOn
-[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisesti tarpeeton
+[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
-[Ll]lli:lli	LaatusanaNainen_<A>    ;
+[Ll]lli@C.YS_EI_JATKOA@:lli@C.YS_EI_JATKOA@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis:llis	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Sanasto_nimisanat	;
 
