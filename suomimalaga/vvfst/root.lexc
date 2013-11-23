@@ -247,6 +247,11 @@ LEXICON Sanasto_nimisana_yhdyssanana_perusosana
 Sanasto_nimisanat	;
 Ys_perusosa_seikkasanasta	;
 
+LEXICON Yleisnimet
+Sanasto_l	;
+Sanasto_nl	;
+Sanasto_n	;
+
 LEXICON Erisnimet
 Sanasto_ee	;
 Sanasto_em	;

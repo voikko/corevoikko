@@ -1527,9 +1527,16 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN NainenYsJatko
 <WC>YsJatko	;
-?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_nl;
-?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@:-@P.INEN_VAADITTU.ON@	Sanasto_l;
-?Laatusana	-[Bc]@P.INEN_VAADITTU.ON@@R.LAINEN@:-@P.INEN_VAADITTU.ON@@R.LAINEN@	Sanasto_ep;
+
+LEXICON LaatusanaNainenInen
+@C.INEN_VAADITTU@:@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
+s-@C.INEN_VAADITTU@[Bc]:s-@C.INEN_VAADITTU@	Yleisnimet	;
+s-@C.INEN_VAADITTU@@R.LAINEN@[Bc]:s-@C.INEN_VAADITTU@@R.LAINEN@	Sanasto_ep	;
+
+LEXICON NimiLaatusanaNainenInen
+@C.INEN_VAADITTU@:@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
+s-@C.INEN_VAADITTU@[Bc]:s-@C.INEN_VAADITTU@	Yleisnimet	;
+s-@C.INEN_VAADITTU@@R.LAINEN@[Bc]:s-@C.INEN_VAADITTU@@R.LAINEN@	Sanasto_ep	;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
@@ -3763,6 +3770,7 @@ tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli@C.YS_EI_JATKOA@:lli@C.YS_EI_JATKOA@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis:llis	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Sanasto_nimisanat	;
+llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Liitesana_<A>	;

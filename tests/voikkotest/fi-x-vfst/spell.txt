@@ -2311,3 +2311,7 @@ kolmisen
 nelisenkymmentä
 Sydneyssä
 sotasyyllisyysoikeudenkäynti
+historiallis-vertaileva
+tasavaltalais-sosialisti
+matemaattis-luonnontieteellisen
+!pikkas-luonnontieteellinen
