@@ -120,15 +120,30 @@ LEXICON Erikoisluku
 [Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolelletoista:puolelletoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolettatoista:puolettatoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X][Xr]pppppppp=[X]puolisentoista:puolisentoista	Liitesana_a	;
-[Lu][Xp]parisen[X]parisen:parisen	Loppu	;
-[Lu][Xp]kolmisen[X]kolmisen:kolmisen	Liitesana_a	;
-[Lu][Xp]nelisen[X]nelisen:nelisen	Liitesana_ä	;
-[Lu][Xp]viitisen[X]viitisen:viitisen	Liitesana_ä	;
-[Lu][Xp]kuutisen[X]kuutisen:kuutisen	Liitesana_a	;
-[Lu][Xp]seitsemisen[X]seitsemisen:seitsemisen	Liitesana_ä	;
-[Lu][Xp]kahdeksisen[X]kahdeksisen:kahdeksisen	Liitesana_a	;
-[Lu][Xp]yhdeksisen[X]yhdeksisen:yhdeksisen	Liitesana_ä	;
+[Lu][Xp]parisen[X]parisen:parisen	ParisenKymmentä	;
+[Lu][Xp]kolmisen[X]kolmisen:kolmisen	XKymmentä_a	;
+[Lu][Xp]nelisen[X]nelisen:nelisen	XKymmentä_ä	;
+[Lu][Xp]viitisen[X]viitisen:viitisen	XKymmentä_ä	;
+[Lu][Xp]kuutisen[X]kuutisen:kuutisen	XKymmentä_a	;
+[Lu][Xp]seitsemisen[X]seitsemisen:seitsemisen	XKymmentä_ä	;
+[Lu][Xp]kahdeksisen[X]kahdeksisen:kahdeksisen	XKymmentä_a	;
+[Lu][Xp]yhdeksisen[X]yhdeksisen:yhdeksisen	XKymmentä_ä	;
 [Lu][Xp]kymmenisen[X]kymmenisen:kymmenisen	Liitesana_ä	;
+
+LEXICON ParisenKymmentä
+Liitesana_a	;
+[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Loppu	;
+[Bc][Lu][Xp]sataa[X]sataa:sataa	Loppu	;
+
+LEXICON XKymmentä_a
+Liitesana_a	;
+[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
+! TODO myös sataa, tuhatta
+
+LEXICON XKymmentä_ä
+Liitesana_ä	;
+[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
+! TODO myös sataa, tuhatta
 
 LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;
