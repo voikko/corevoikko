@@ -1306,7 +1306,8 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Parfait
-[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sn][Ny]':'	Omistusliite_<A>	;
 [Sn][Nm]'t:'t	Liitesana_<A>	;
 [Sg][Ny]'n:'n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]'id:'id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -2669,6 +2670,7 @@ t:t	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Saartaa
 t<A>:t<A>	Johdin_nimitapa1A_<A>	;
+t<A>:t<A>	Johdin_nimitapa2_<A>	;
 r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
 t<O>:t<O>	KertomanTekijäpääteVahva_<A>	;
 re:re	TositavanKertomaTtiin_<A>	;
@@ -2858,7 +2860,7 @@ e:e	Voida_s_<A>	;
 
 LEXICON Voida_l
 KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]:	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]:	LiitesanaPi_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
@@ -3944,7 +3946,7 @@ LEXICON Yliaste
 
 LEXICON LiitesanaPi
 Liitesana_<A>	;
-pi:pi	Liitesana_<A>	;
+pi:pi	Loppu	;
 
 LEXICON Liitesana
 LiitesanaKinKoPaHan_<A>	;

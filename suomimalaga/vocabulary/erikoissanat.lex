@@ -592,26 +592,26 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
 # Oboe (Kotuksen taivutusluokka 3 "valtio") {{{1
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <omanto_n>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <olento_nA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <tulento_ksi>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sisä_ssA_stA, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_Vn>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <omanto_n>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <osanto_tA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <olento_nA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <tulento_ksi>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sisä_ssA_stA, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ttA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ttA>, äs: a];
 
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <nimentö_t>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <omanto_iT>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <osanto_itA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <olento_inA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sija_monikko_1, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_ihin>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ittA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <nimentö_t>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <omanto_iT>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <osanto_itA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <olento_inA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sija_monikko_1, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_ihin>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ittA>, äs: a];
+ [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
 
 # rokokoo (Kotuksen taivutusluokka 18 "maa") {{{1
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];

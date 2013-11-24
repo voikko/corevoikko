@@ -11,6 +11,7 @@ l:l                 Johdin_tU_lA_a	;
 [Tt][Ap][P1][Ny]len:len     Liitesana_a ;  # Minä olen.
 [Tt][Ap][P2][Ny]let:let     Liitesana_a ;  # Sinä olet.
 [Tt][Ap][P3][Ny]n:n         Liitesana_a ;  # Hän on. 
+[Tt][Ap][P3][Ny]mpi:mpi     Loppu       ;  # Hän ompi.
 [Tt][Ap][P1][Nm]lemme:lemme Liitesana_a ;  # Me olemme.
 [Tt][Ap][P2][Nm]lette:lette Liitesana_a ;  # Te olette.
 [Tt][Ap][P3][Nm]vat:vat     Liitesana_a ;  # He ovat.

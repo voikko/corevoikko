@@ -76,6 +76,7 @@ LEXICON Poikkeavat_n
 [Ln][Xp]nuoripari[X][Xr]pppppppp=[X][Sab][Nm]nuorittapareitta:nuorittapareitta	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Xr]ppppppp=[X][Sko][Nm]nuorinepareine:nuorinepareine	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Xr]pppppp=[X][Sin][Nm]nuorinparein:nuorinparein		Liitesana_a;
+[Ln][Xp]oboe[X]oboe:oboe	Oboe	;
 [Ln][Xp]play[X]play[Bc]:play	Boy	;
 [Ln][Xp]plus[X][Sn][Ny]plus:plus	Liitesana_a	;
 [Ln][Xp]plus[X][Sn][Ny]plus-:plus-	Loppu	;
@@ -100,6 +101,20 @@ LEXICON Boy
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonSijat2_a	;
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonPaikallissijat_a	;
 [Ln][Xp]boy[X][Sill][Nm]boyihi:boyihi	NimisanaLiOlN_a	;
+
+LEXICON Oboe
+[Sn][Ny]:	NimisanaNormaaliYsJatkoOl_a	;
+[Sg][Ny]n:n	NimisanaYksikönGenetiivinJatko_a	;
+[Sp][Ny]ta:ta	NimisanaLiOlV_a	;
+[Ses][Ny]na:na	NimisanaLiOlV_a	;
+NimisanaYhteisetYksikönPaikallissijat_a	;
+[Sill][Ny]e:e	NimisanaLiOlN_a	;
+[Sn][Nm]t:t	Liitesana_a	;
+[Sg][Nm]itt:itt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sp][Nm]ita:ita	NimisanaLiOlV_a	;
+NimisanaYhteisetMonikonSijat2_a	;
+NimisanaYhteisetMonikonPaikallissijat_a	;
+[Sill][Nm]ihi:ihi	NimisanaLiOlN_a	;
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
