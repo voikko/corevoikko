@@ -2961,6 +2961,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 Johdin_tU_lA_<A>	;
 
 LEXICON Tulla_l
+TositavanKestämäXaan_<A>	;
 Mahtotapa_<A>	;
 Johdin_nimitapa1A_<A>	;
 Johdin_nimitapa2_<A>	;
@@ -3246,6 +3247,7 @@ ki:ki	Haluta_s_<A>	;
 
 LEXICON Haluta_w
 Tositapa4Tt_<A>	;
+t:t	Käskytapa_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
@@ -3258,6 +3260,7 @@ LEXICON Haluta_s
 s:s	KertomanTekijäpääteVahva_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Käskytapa_y2_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;

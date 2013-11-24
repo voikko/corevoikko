@@ -2320,3 +2320,6 @@ historiallis-kriittinen
 taitaapi
 lämmintä
 !lämpimäään
+mennään
+häviä
+ryöpytkäämme
