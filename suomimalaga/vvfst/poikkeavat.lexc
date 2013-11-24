@@ -11,6 +11,7 @@ LEXICON Poikkeavat_a
 
 LEXICON Poikkeavat_n
 [Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]cow[X]cow[Bc]:cow	Boy	;
 [Ln][Xp]enkeli[X]enkel[Sg][N]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
 [Ln][Xp]hunningolla[X]hunningo:hunningo	Ulkopaikallissijat_Yks_a	;
 [Ln][Xp]huomassa[X]huoma:huoma	SisäpaikallissijatVn_a	;
@@ -75,6 +76,7 @@ LEXICON Poikkeavat_n
 [Ln][Xp]nuoripari[X][Xr]pppppppp=[X][Sab][Nm]nuorittapareitta:nuorittapareitta	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Xr]ppppppp=[X][Sko][Nm]nuorinepareine:nuorinepareine	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Xr]pppppp=[X][Sin][Nm]nuorinparein:nuorinparein		Liitesana_a;
+[Ln][Xp]play[X]play[Bc]:play	Boy	;
 [Ln][Xp]plus[X][Sn][Ny]plus:plus	Liitesana_a	;
 [Ln][Xp]plus[X][Sn][Ny]plus-:plus-	Loppu	;
 [Ln][Xp]sisä[X]sisä:sisä	SisäpaikallissijatVn_ä	;
@@ -84,6 +86,20 @@ LEXICON Poikkeavat_n
 [Ln][Xp]viive[X]vii:vii	Viive	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
+
+LEXICON Boy
+[Ln][Xp]boy[X][Sn][Ny]boy:boy	NimisanaNormaaliYsJatkoOl_a	;
+[Ln][Xp]boy[X][Sg][Ny]boyn:boyn	NimisanaYksikönGenetiivinJatko_a	;
+[Ln][Xp]boy[X][Sp][Ny]boyta:boyta	NimisanaLiOlV_a	;
+[Ln][Xp]boy[X][Ses][Ny]boyna:boyna	NimisanaLiOlV_a	;
+[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetYksikönPaikallissijat_a	;
+[Ln][Xp]boy[X][Sill][Ny]boyhi:boyhi	NimisanaLiOlN_a	;
+[Ln][Xp]boy[X][Sn][Nm]boyt:boyt	Liitesana_a	;
+[Ln][Xp]boy[X][Sg][Nm]boyitt:boyitt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]boy[X][Sp][Nm]boyita:boyita	NimisanaLiOlV_a	;
+[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonSijat2_a	;
+[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonPaikallissijat_a	;
+[Ln][Xp]boy[X][Sill][Nm]boyihi:boyihi	NimisanaLiOlN_a	;
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X][Xr]ippppp=[X]kangasa:kangasa	Ulkopaikallissijat_Yks_a	;
