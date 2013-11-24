@@ -2317,3 +2317,6 @@ matemaattis-luonnontieteellisen
 !pikkas-luonnontieteellinen
 norjalais-ruotsalaisen
 historiallis-kriittinen
+taitaapi
+lämmintä
+!lämpimäään

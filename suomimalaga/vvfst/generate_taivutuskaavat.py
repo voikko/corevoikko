@@ -104,7 +104,7 @@ def appendLexicon(lexiconName, lines, lexcFile):
 		appendLines(u"NimiLaatusana", realName, lines, lexcFile)
 		if realName in [u"Vieras", u"Vieras_s", u"Vieras_w", u"YhteisetMonikonPaikallissijat", \
 		                u"YhteisetYksikönPaikallissijat", u"LiOlN", u"YhteisetMonikonSijat2", \
-		                u"LiOlI", u"YksikönGenetiivinJatko", u"LiOlV", u"MonikonGenetiiviEnJatko", \
+		                u"LiOlI", u"YksikönGenetiivinJatko", u"LiOlV", u"LiOlAA", u"MonikonGenetiiviEnJatko", \
 		                u"NormaaliYsJatko", u"Nainen", u"NainenYhteiset", u"NainenYsJatko", u"Autio", \
 		                u"NormaaliYsJatkoOl", u"Luku", u"Valo_w", u"Valo_s", u"Valo_sl", \
 		                u"Koira", u"Koira_w", u"Koira_s", u"MonikonGenetiiviInJatko", \

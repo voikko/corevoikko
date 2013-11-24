@@ -678,7 +678,7 @@ LEXICON NOUN Kala_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]<O>j:<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	<WC>LiOlV_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
@@ -783,7 +783,7 @@ LEXICON NOUN Koira_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
@@ -803,7 +803,7 @@ LEXICON NOUN Pitkä
 tk<A>:tk<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sg][Nm]tki:tki	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]tk<A>:tk<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]tk<A><A>:tk<A><A>	Liitesana_<A>	;
+[Sp][Ny]tk<A><A>:tk<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]tki<A>:tki<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]tk<A>n<A>:tk<A>n<A>	<WC>LiOlV_<A>	;
 tk:tk	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -833,7 +833,7 @@ LEXICON NOUN Matala
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>j:<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
@@ -863,7 +863,7 @@ LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
@@ -929,7 +929,7 @@ LEXICON NOUN Karahka
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
@@ -973,7 +973,7 @@ LEXICON NOUN Solakka_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]<O>j:<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
@@ -992,7 +992,7 @@ LEXICON NOUN Apaja
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
@@ -1016,7 +1016,7 @@ LEXICON NOUN Peruna
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
@@ -1040,8 +1040,8 @@ LEXICON NOUN Ainoa
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
-[Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
+[Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
@@ -1711,7 +1711,8 @@ LEXICON NOUN Lämmin
 [Sn][Nm]pim<A>t:pim<A>t	Liitesana_<A>	;
 [Sg][Ny]pim<A>n:pim<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]pimi:pimi	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]pim<A><A>:pim<A><A>	<WC>LiOlV_<A>	;
+[Sp][Ny]pim<A><A>:pim<A><A>	<WC>LiOlAA_<A>	;
+[Sp][Ny]mint<A>:mint<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]pimi<A>:pimi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]pim<A>n<A>:pim<A>n<A>	<WC>LiOlV_<A>	;
 pim:pim	<WC>YhteisetMonikonSijat2_<A>	;
@@ -1728,7 +1729,7 @@ LEXICON NOUN Vasen
 [Sn][Nm]mm<A>t:mm<A>t	Liitesana_<A>	;
 [Sg][Ny]mm<A>n:mm<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]mpi:mpi	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]mp<A><A>:mp<A><A>	<WC>LiOlV_<A>	;
+[Sp][Ny]mp<A><A>:mp<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]mpi<A>:mpi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]mp<A>n<A>:mp<A>n<A>	<WC>LiOlV_<A>	;
@@ -2239,6 +2240,11 @@ n:n	Liitesana_<A>	;
 ?NotLaatusana	Omistusliite_<A>	;
 ?Laatusana	n:n	LaatusananErisnimijatko	;
 
+LEXICON NOUN LiOlAA
+Liitesana_<A>	;
+?NotLaatusana	Omistusliite_<A>	;
+?Laatusana	LaatusananErisnimijatko	;
+
 LEXICON NOUN LiOlV
 Liitesana_<A>	;
 ?NotLaatusana	OlV_<A>	;
@@ -2590,7 +2596,7 @@ e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 
 LEXICON Huutaa_s
-t<A>:t<A>	Johdin_nimitapa1A_<A>	;
+[Tn1]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Nm]siv<A>t:siv<A>t	Liitesana_<A>	;
@@ -3643,6 +3649,10 @@ LEXICON Nimitapa1Jatko
 Liitesana_<A>	;
 kse:kse	OlV_<A>	;
 
+LEXICON Nimitapa1JatkoPi
+LiitesanaPi_<A>	;
+kse:kse	OlV_<A>	;
+
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	NimisanaLiOlV_<A>	;
 [Tn2]en:en	Liitesana_<A>	;
@@ -3928,6 +3938,10 @@ LEXICON Yliaste
 [Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
+
+LEXICON LiitesanaPi
+Liitesana_<A>	;
+pi:pi	Liitesana_<A>	;
 
 LEXICON Liitesana
 LiitesanaKinKoPaHan_<A>	;
