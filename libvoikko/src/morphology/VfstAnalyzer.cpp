@@ -154,7 +154,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	bool defaultTitleCase = false;
 	bool isAbbr = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
-		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0 || wcsncmp(fstOutput + i, L"[Bm]", 4) == 0) {
 			if (i == 1) {
 				structure[structurePos++] = L'=';
 			}

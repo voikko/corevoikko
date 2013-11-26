@@ -473,3 +473,10 @@ word:Keski-Uusimaa
   analysis
     CLASS=paikannimi
     STRUCTURE==ipppp-=ippp=ppp
+word:Tyynessämeressä
+ expected:1
+  analysis
+    CLASS=paikannimi
+    NUMBER=singular
+    SIJAMUOTO=sisaolento
+    STRUCTURE==ippppppp=ppppppp

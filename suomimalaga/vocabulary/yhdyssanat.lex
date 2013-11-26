@@ -203,19 +203,19 @@
 
 # {{{2 Tyynimeri
 
-[perusmuoto: "Tyynimeri", alku: "Tyynimeri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyyntämer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynenämere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyyneksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynessämeressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynestämerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyyneenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppp=pppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynellämerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyyneltämereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Tyynimeri", alku: "Tyynettämere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynimeri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyyntämer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynenämere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyyneksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynessämeressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynestämerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyyneenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppp=pppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynellämerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyyneltämereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Tyynimeri", alku: "Tyynettämere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
                                                                                       
 # Monikko taitaa olla tarpeeton
 #[perusmuoto: "Tyynimeri", alku: "Tyynetmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppp=pppp"];

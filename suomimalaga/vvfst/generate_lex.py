@@ -98,10 +98,12 @@ def get_vfst_word_class(j_wordclasses):
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
 # or hyphenator
-def get_structure(wordform, vfst_word_class):
+def get_structure(wordform, vfst_word_class, alku):
 	needstructure = False
 	ispropernoun = vfst_word_class[0:3] == u'[Le'
 	structstr = u'[Xr]'
+	oldAlku = alku
+	newAlku = u""
 	if vfst_word_class == u'[La]':
 		i = u"j"
 		p = u"q"
@@ -113,27 +115,41 @@ def get_structure(wordform, vfst_word_class):
 		if c == u'-':
 			structstr = structstr + u"-="
 			needstructure = True
-		elif c == u'|': structstr = structstr
+			if (len(oldAlku) > 0):
+				newAlku = newAlku + u'-'
+				oldAlku = oldAlku[1:]
+		elif c == u'|':
+			structstr = structstr
 		elif c == u'=':
 			structstr = structstr + u"="
-			needstructure = True
+			newAlku = newAlku + u"[Bm]"
 		elif c == u':':
 			structstr = structstr + u":"
 			needstructure = True
+			if (len(oldAlku) > 0):
+				newAlku = newAlku + u':'
+				oldAlku = oldAlku[1:]
 		elif c.isupper():
 			structstr = structstr + i
 			if not (ispropernoun and idx == 0):
 				needstructure = True
+			if (len(oldAlku) > 0):
+				newAlku = newAlku + oldAlku[0]
+				oldAlku = oldAlku[1:]
 		else:
 			structstr = structstr + p
 			if ispropernoun and idx == 0:
 				needstructure = True
+			if (len(oldAlku) > 0):
+				newAlku = newAlku + oldAlku[0]
+				oldAlku = oldAlku[1:]
 	if needstructure:
 		returnedLength = len(structstr)
 		while structstr[returnedLength - 1] == p:
 			returnedLength = returnedLength - 1
-		return structstr[0:returnedLength] + u'[X]'
-	else: return u""
+		return (structstr[0:returnedLength] + u'[X]', alku)
+	else:
+		return (u"", newAlku)
 
 def get_diacritics(word, altforms, vfst_word_class):
 	diacritics = []
@@ -317,7 +333,6 @@ def handle_word(word):
 		if vtype == voikkoutils.VOWEL_FRONT: vfst_vtype = u'ä'
 		elif vtype == voikkoutils.VOWEL_BACK: vfst_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: vfst_vtype = u'aä'
-		rakenne = get_structure(altform, vfst_word_class)
 		vocabularyFile = vocabularyFiles[vfst_word_class.replace(u"[L", u"").replace(u"]", u"")]
 		if alku == None:
 			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
@@ -325,16 +340,14 @@ def handle_word(word):
 			generate_lex_common.write_entry(vocabularyFile, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
+		alku = alku.lower()
+		(rakenne, alkuWithTags) = get_structure(altform, vfst_word_class, alku)
+		
 		if vfst_word_class == u"[Lh]":
-			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), alku, alku)
+			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, rakenne, alkuWithTags, alku)
 			vocabularyFile.write(entry + u"\n")
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
-		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
-		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
-		#	   generate_lex_common.get_structure(altform, malaga_word_class),
-		#	   debug_info)
-		alku = alku.lower()
 		
 		# Vowel type in derived verbs
 		if jatko in [u"Heittää", u"Muistaa", u"Juontaa", u"Hohtaa", u"Murtaa", u"Nousta", u"Loistaa", u"Jättää", u"Kihistä"]:
@@ -348,8 +361,8 @@ def handle_word(word):
 			        % (wordform, infoFlags, wordform, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
-			        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,
-			        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
+			        % (vfst_word_class, wordform, rakenne, infoFlags,
+			        alkuWithTags, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms
