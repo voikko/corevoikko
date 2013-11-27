@@ -2335,39 +2335,39 @@
 
 # {{{2 raskassarja (51)
 
-[perusmuoto: "raskassarja", alku: "raskassarja",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskastasarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaanasarja",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaaksisarja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaassasarjassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskassarja", alku: "raskaastasarjasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskassarja", alku: "raskaaseensarja", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaallasarjalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskassarja", alku: "raskaaltasarjalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskassarja", alku: "raskaallesarjalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskassarja", alku: "raskaattasarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskassarja",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskastasarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaanasarja",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaaksisarja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaassasarjassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaastasarjasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaaseensarja", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaallasarjalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaaltasarjalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaallesarjalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaattasarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppp"];
 
-[perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaidensarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaittensarja", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaitasarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskainasarjo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaiksisarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaissasarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaistasarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaisiinsarjo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaihinsarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaillasarjoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskailtasarjoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaillesarjoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskaittasarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "raskassarja", alku: "raskainesarjo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "raskassarja", alku: "raskainsarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaidensarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaittensarja", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaitasarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskainasarjo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaiksisarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaissasarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaistasarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaisiinsarjo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaihinsarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaillasarjoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskailtasarjoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaillesarjoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskaittasarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "raskassarja", alku: "raskainesarjo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "raskassarja", alku: "raskainsarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppp"];
 
 # {{{2 raskasvesi (50, 51)
 

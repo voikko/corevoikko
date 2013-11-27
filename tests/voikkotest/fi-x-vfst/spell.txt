@@ -2330,3 +2330,5 @@ voipi
 ompi
 !saapiko
 korkeintaan
+pakanoita
+mikäkin

@@ -356,6 +356,7 @@ LEXICON AsemosanaNuo
 LEXICON AsemosanaMikä
 [Sn][Ny]kä:kä	LiitesanaKoPaHan_ä	;
 [Sn][Ny][Fkin]kin:kin	Loppu	;
+[Sn][Ny]kä[Fkin]kin:käkin	Loppu	;
 [Sn][Ny][Fkaan]kään:kään	LiitesanaKoPaHan_ä	;
 [Sg][Ny]nkä:nkä	LiitesanaKoPaHan_ä	;
 [Sg][Ny][Fkin]nkin:nkin	Loppu	;

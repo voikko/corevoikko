@@ -1018,6 +1018,7 @@ LEXICON NOUN Peruna
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
