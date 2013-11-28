@@ -137,19 +137,19 @@
 
 # {{{2 Mustameri
 
-[perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustaamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustanamere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustaksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustassameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Mustameri", alku: "Mustastamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Mustameri", alku: "Mustaanmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppp=pppp"];
-[perusmuoto: "Mustameri", alku: "Mustallamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Mustameri", alku: "Mustaltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Mustameri", alku: "Mustallemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
-[perusmuoto: "Mustameri", alku: "Mustattamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustaamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustanamere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustaksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustassameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Mustameri", alku: "Mustastamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Mustameri", alku: "Mustaanmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppp=pppp"];
+ [perusmuoto: "Mustameri", alku: "Mustallamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Mustameri", alku: "Mustaltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Mustameri", alku: "Mustallemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppp=ppppppp"];
+ [perusmuoto: "Mustameri", alku: "Mustattamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
 
 # Monikko taitaa olla tarpeeton
 #[perusmuoto: "Mustameri", alku: "Mustatmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppp=pppp"];
