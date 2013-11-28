@@ -114,9 +114,8 @@ def get_structure(wordform, vfst_word_class, alku):
 		c = wordform[idx]
 		if c == u'-':
 			structstr = structstr + u"-="
-			needstructure = True
 			if (len(oldAlku) > 0):
-				newAlku = newAlku + u'-'
+				newAlku = newAlku + u'-[Bm]'
 				oldAlku = oldAlku[1:]
 		elif c == u'|':
 			structstr = structstr

@@ -10,6 +10,7 @@ LEXICON Poikkeavat_a
 [La][Xp]€[X]€:€	Lyhenne_a	;
 
 LEXICON Poikkeavat_n
+Summayhdyssanat	;
 [Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;
 [Ln][Xp]cow[X]cow[Bc]:cow	Boy	;
 [Ln][Xp]enkeli[X]enkel[Sg][N]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
@@ -147,6 +148,19 @@ NimisanaYhteisetYksikönPaikallissijat_a	;
 NimisanaYhteisetMonikonSijat2_a	;
 NimisanaYhteisetMonikonPaikallissijat_a	;
 [Sill][Nm]ihi:ihi	NimisanaLiOlN_a	;
+
+LEXICON Summayhdyssanat
+[Ln][Xp]tammi-helmikuu[X]@P.INEN_SALLITTU.ON@tammi-[Bm]helmi[Bm]ku:@P.INEN_SALLITTU.ON@tammi-helmiku	NimisanaPuu_a	;
+[Ln][Xp]helmi-maaliskuu[X]@P.INEN_SALLITTU.ON@helmi-[Bm]maalis[Bm]ku:@P.INEN_SALLITTU.ON@helmi-maalisku	NimisanaPuu_a	;
+[Ln][Xp]huhti-toukokuu[X]@P.INEN_SALLITTU.ON@huhti-[Bm]touko[Bm]ku:@P.INEN_SALLITTU.ON@huhti-toukoku	NimisanaPuu_a	;
+[Ln][Xp]touko-kesäkuu[X]@P.INEN_SALLITTU.ON@touko-[Bm]kesä[Bm]ku:@P.INEN_SALLITTU.ON@touko-kesäku	NimisanaPuu_a	;
+[Ln][Xp]kesä-heinäkuu[X]@P.INEN_SALLITTU.ON@kesä-[Bm]heinä[Bm]ku:@P.INEN_SALLITTU.ON@kesä-heinäku	NimisanaPuu_a	;
+[Ln][Xp]heinä-elokuu[X]@P.INEN_SALLITTU.ON@heinä-[Bm]elo[Bm]ku:@P.INEN_SALLITTU.ON@heinä-eloku	NimisanaPuu_a	;
+[Ln][Xp]elo-syyskuu[X]@P.INEN_SALLITTU.ON@elo-[Bm]syys[Bm]ku:@P.INEN_SALLITTU.ON@elo-syysku	NimisanaPuu_a	;
+[Ln][Xp]syys-lokakuu[X]@P.INEN_SALLITTU.ON@syys-[Bm]loka[Bm]ku:@P.INEN_SALLITTU.ON@syys-lokaku	NimisanaPuu_a	;
+[Ln][Xp]loka-marraskuu[X]@P.INEN_SALLITTU.ON@loka-[Bm]marras[Bm]ku:@P.INEN_SALLITTU.ON@loka-marrasku	NimisanaPuu_a	;
+[Ln][Xp]marras-joulukuu[X]@P.INEN_SALLITTU.ON@marras-[Bm]joulu[Bm]ku:@P.INEN_SALLITTU.ON@marras-jouluku	NimisanaPuu_a	;
+[Ln][Xp]joulu-tammikuu[X]@P.INEN_SALLITTU.ON@joulu-[Bm]tammi[Bm]ku:@P.INEN_SALLITTU.ON@joulu-tammiku	NimisanaPuu_a	;
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X]kangas[Bm]a:kangasa	Ulkopaikallissijat_Yks_a	;

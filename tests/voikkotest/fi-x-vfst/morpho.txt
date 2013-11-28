@@ -484,3 +484,10 @@ word:Tyynessämeressä
     NUMBER=singular
     SIJAMUOTO=sisaolento
     STRUCTURE==ippppppp=ppppppp
+word:huhti-toukokuusta
+ expected:1
+  analysis
+    CLASS=nimisana
+    NUMBER=singular
+    SIJAMUOTO=sisaeronto
+    STRUCTURE==ppppp-=ppppp=pppppp

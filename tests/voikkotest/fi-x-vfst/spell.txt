@@ -2332,3 +2332,5 @@ ompi
 korkeintaan
 pakanoita
 mikäkin
+askelista
+askelien

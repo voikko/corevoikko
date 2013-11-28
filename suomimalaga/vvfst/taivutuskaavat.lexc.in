@@ -1257,6 +1257,7 @@ LEXICON NOUN Taival_s
 [Sg][Ny]een:een	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
@@ -1266,6 +1267,7 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
