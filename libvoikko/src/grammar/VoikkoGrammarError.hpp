@@ -35,7 +35,7 @@
 
 namespace libvoikko { namespace grammar {
 
-struct GrammarChecker;
+class GrammarChecker;
 
 class VoikkoGrammarError {
 
