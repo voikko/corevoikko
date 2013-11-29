@@ -1683,38 +1683,38 @@
 
 # {{{2 nuorikarja (51)
 
-[perusmuoto: "nuorikarja", alku: "nuorikarja",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuortakarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorenakarja",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoreksikarja", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoressakarjassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorestakarjasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoreenkarja",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorellakarjalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoreltakarjalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorellekarjalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorettakarja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorikarja",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuortakarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorenakarja",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoreksikarja", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoressakarjassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorestakarjasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoreenkarja",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorellakarjalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoreltakarjalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorellekarjalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorettakarja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorienkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuortenkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorienkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuortenkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoriakarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorinakarjo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoriksikarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorissakarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoristakarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoriinkarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorillakarjoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuoriltakarjoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorillekarjoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorittakarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorinekarjo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "nuorikarja", alku: "nuorinkarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorienkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuortenkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorienkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuortenkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoriakarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorinakarjo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoriksikarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorissakarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoristakarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoriinkarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorillakarjoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuoriltakarjoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorillekarjoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorittakarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorinekarjo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "nuorikarja", alku: "nuorinkarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 nuorimies (51)
 
