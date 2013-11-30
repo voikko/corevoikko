@@ -32,7 +32,6 @@
 #include <cwchar>
 
 using namespace libvoikko::morphology;
-using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 

@@ -35,7 +35,7 @@
 #include <cstring>
 
 using namespace libvoikko::grammar;
-using namespace std;
+using std::list;
 
 namespace libvoikko {
 

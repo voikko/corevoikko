@@ -30,8 +30,6 @@
 #include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
 
-using namespace std;
-
 namespace libvoikko { namespace grammar { namespace check {
 
 void MissingVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {

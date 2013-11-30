@@ -37,8 +37,6 @@
 
 using namespace libvoikko::autocorrect;
 
-using namespace std;
-
 namespace libvoikko { namespace grammar {
 
 FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
