@@ -2713,36 +2713,36 @@
 
 # {{{2 vanhakaupunki (51)
 
-[perusmuoto: "vanhakaupunki", alku: "vanhakaupunki",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhankaupunki",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhankaupungi",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhaakaupunki",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhanakaupunki",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhaksikaupungi",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhassakaupungissa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhastakaupungista",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhaankaupunki",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhallakaupungilla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhaltakaupungilta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhallekaupungille",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhattakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhakaupunki",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhankaupunki",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhankaupungi",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhaakaupunki",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhanakaupunki",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhaksikaupungi",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhassakaupungissa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhastakaupungista",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhaankaupunki",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhallakaupungilla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhaltakaupungilta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhallekaupungille",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhattakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "vanhakaupunki", alku: "vanhatkaupungi",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhatkaupunki",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhojenkaupunki",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhainkaupunki",   luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhojakaupunke",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoinakaupunke",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoiksikaupungeiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoissakaupungeissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoistakaupungeista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoihinkaupunke", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoillakaupungeilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoiltakaupungeilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoillekaupungeille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoittakaupungeitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoinekaupunke",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhakaupunki", alku: "vanhoinkaupungein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhatkaupungi",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhatkaupunki",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhojenkaupunki",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhainkaupunki",   luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhojakaupunke",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoinakaupunke",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoiksikaupungeiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoissakaupungeissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoistakaupungeista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoihinkaupunke", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoillakaupungeilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoiltakaupungeilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoillekaupungeille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoittakaupungeitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoinekaupunke",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhakaupunki", alku: "vanhoinkaupungein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppppp"];
 
 # {{{2 vanhapiika (51)
 

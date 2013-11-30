@@ -2336,3 +2336,7 @@ askelista
 askelien
 rokokoihin
 rokokoona
+vaaleanpunertava
+!vaaleapunertava
+!vaaleanjuoksija
+vakosamettihousuinen
