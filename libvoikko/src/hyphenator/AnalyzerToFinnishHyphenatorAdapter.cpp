@@ -34,7 +34,7 @@
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;
-using namespace std;
+using std::list;
 
 namespace libvoikko { namespace hyphenator {
 

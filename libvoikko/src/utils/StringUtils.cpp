@@ -32,8 +32,6 @@
 #include <cstdlib>
 #include <cwchar>
 
-using namespace std;
-
 namespace libvoikko { namespace utils {
 
 wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {

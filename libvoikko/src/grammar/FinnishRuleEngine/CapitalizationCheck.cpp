@@ -36,7 +36,8 @@
 
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
-using namespace std;
+using std::list;
+using std::stack;
 
 namespace libvoikko { namespace grammar { namespace check {
 

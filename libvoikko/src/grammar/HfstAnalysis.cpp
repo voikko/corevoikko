@@ -44,7 +44,6 @@
 #include <vector>
 
 using namespace libvoikko::grammar;
-using namespace std;
 using namespace hfst_ol;
 //using namespace hfst;
 

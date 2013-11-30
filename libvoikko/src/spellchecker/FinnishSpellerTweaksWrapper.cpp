@@ -32,7 +32,7 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 
-using namespace std;
+using std::list;
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;
 
