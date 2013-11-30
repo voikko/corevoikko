@@ -2340,3 +2340,4 @@ vaaleanpunertava
 !vaaleapunertava
 !vaaleanjuoksija
 vakosamettihousuinen
+tummanoranssi

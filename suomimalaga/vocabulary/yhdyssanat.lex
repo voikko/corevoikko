@@ -89,16 +89,16 @@
 
 # {{{2 Keltainenmeri
 
-[perusmuoto: "Keltainenmeri", alku: "Keltainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaistamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisessameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ipppppppppp=ppppppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisestamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppppppp=ppppppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaiseenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ippppppppp=pppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisellamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ipppppppppp=ppppppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaiseltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ipppppppppp=ppppppp"];
-[perusmuoto: "Keltainenmeri", alku: "Keltaisellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppppppp=ppppppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaistamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisessameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ipppppppppp=ppppppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisestamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppppppp=ppppppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaiseenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ippppppppp=pppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisellamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ipppppppppp=ppppppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaiseltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ipppppppppp=ppppppp"];
+ [perusmuoto: "Keltainenmeri", alku: "Keltaisellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppppppp=ppppppp"];
 
 # {{{2 Kuollutmeri
 
@@ -170,19 +170,19 @@
 
 # {{{2 Punainenmeri
 
-[perusmuoto: "Punainenmeri", alku: "Punainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaistamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisenamere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaiseksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisessameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppppp=ppppppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisestamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppppp=ppppppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaiseenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppppp=pppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisellamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ippppppppp=ppppppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaiseltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppppp=ppppppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppppp=ppppppp"];
-[perusmuoto: "Punainenmeri", alku: "Punaisettamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaistamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisenamere",  luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaiseksimere", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisessameressä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppppp=ppppppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisestamerestä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppppp=ppppppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaiseenmere",  luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppppp=pppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisellamerellä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ippppppppp=ppppppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaiseltamereltä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ippppppppp=ppppppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisellemerelle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ippppppppp=ppppppp"];
+ [perusmuoto: "Punainenmeri", alku: "Punaisettamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppppp=pppp"];
 
 # Monikko taitaa olla terpeeton
 #[perusmuoto: "Punainenmeri", alku: "Punaisetmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppppp=pppp"];

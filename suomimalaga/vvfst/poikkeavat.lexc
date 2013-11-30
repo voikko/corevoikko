@@ -224,6 +224,15 @@ LEXICON Summayhdyssanat
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X]kangas[Bm]a:kangasa	Ulkopaikallissijat_Yks_a	;
+[Lep][Xp]Keltainenmeri[X][Sn][Ny]keltainen[Bm]meri:keltainenmeri	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Keltainenmeri[X][Sg][Ny]keltaisen[Bm]meren:keltaisenmeren	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Keltainenmeri[X][Sp][Ny]keltaista[Bm]merta:keltaistamerta	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenmeri[X][Sine][Ny]keltaisessa[Bm]meressä:keltaisessameressä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Keltainenmeri[X][Sela][Ny]keltaisesta[Bm]merestä:keltaisestamerestä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Keltainenmeri[X][Sill][Ny]keltaiseen[Bm]meree:keltaiseenmeree	PaikannimiLiOlN_ä	;
+[Lep][Xp]Keltainenmeri[X][Sade][Ny]keltaisella[Bm]merellä:keltaisellamerellä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Keltainenmeri[X][Sabl][Ny]keltaiselta[Bm]mereltä:keltaiseltamereltä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Keltainenmeri[X][Sall][Ny]keltaiselle[Bm]merelle:keltaisellemerelle	PaikannimiLiOlV_ä	;
 [Lep][Xp]Mustameri[X][Sn][Ny]musta[Bm]meri:mustameri	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Mustameri[X][Sg][Ny]mustan[Bm]meren:mustanmeren	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Mustameri[X][Sp][Ny]mustaa[Bm]merta:mustaamerta	PaikannimiLiOlV_a	;
@@ -234,8 +243,20 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Mustameri[X][Sill][Ny]mustaan[Bm]meree:mustaanmeree	PaikannimiLiOlN_ä	;
 [Lep][Xp]Mustameri[X][Sade][Ny]mustalla[Bm]merellä:mustallamerellä	PaikannimiLiOlV_ä	;
 [Lep][Xp]Mustameri[X][Sabl][Ny]mustalta[Bm]mereltä:mustaltamereltä	PaikannimiLiOlV_ä	;
-[Lep][Xp]Mustameri[X][Sall][Ny]mustalla[Bm]merelle:mustallemerelle	PaikannimiLiOlV_ä	;
+[Lep][Xp]Mustameri[X][Sall][Ny]mustalle[Bm]merelle:mustallemerelle	PaikannimiLiOlV_ä	;
 [Lep][Xp]Mustameri[X][Sab][Ny]mustatta[Bm]merettä:mustattamerettä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sn][Ny]punainen[Bm]meri:punainenmeri	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Punainenmeri[X][Sg][Ny]punaisen[Bm]meren:punaisenmeren	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Punainenmeri[X][Sp][Ny]punaista[Bm]merta:punaistamerta	PaikannimiLiOlV_a	;
+[Lep][Xp]Punainenmeri[X][Ses][Ny]punaisena[Bm]merenä:punaisenamerenä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Str][Ny]punaiseksi[Bm]mereksi:punaiseksimereksi	PaikannimiLiOlI_ä	;
+[Lep][Xp]Punainenmeri[X][Sine][Ny]punaisessa[Bm]meressä:punaisessameressä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sela][Ny]punaisesta[Bm]merestä:punaisestamerestä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sill][Ny]punaiseen[Bm]meree:punaiseenmeree	PaikannimiLiOlN_ä	;
+[Lep][Xp]Punainenmeri[X][Sade][Ny]punaisella[Bm]merellä:punaisellamerellä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sabl][Ny]punaiselta[Bm]mereltä:punaiseltamereltä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sall][Ny]punaiselle[Bm]merelle:punaisellemerelle	PaikannimiLiOlV_ä	;
+[Lep][Xp]Punainenmeri[X][Sab][Ny]punaisetta[Bm]merettä:punaisettamerettä	PaikannimiLiOlV_ä	;
 [Lep][Xp]Sidney[X][Sn][Ny]sidney:sidney	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Sidney[X][Sg][Ny]sidney:sidney	Omistusliite_ä	;
 [Lep][Xp]Sidney[X][Sg][Ny]sidneyn:sidneyn	PaikannimiYksikönGenetiivinJatko_ä	;
