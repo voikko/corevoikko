@@ -2334,3 +2334,5 @@ pakanoita
 mikäkin
 askelista
 askelien
+rokokoihin
+rokokoona
