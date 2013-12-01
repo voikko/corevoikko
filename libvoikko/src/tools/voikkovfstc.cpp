@@ -107,6 +107,10 @@ static bool isLittleEndian() {
 
 static void ensureSymbolInMap(string & symStr, vector<Symbol> & symVector, map<string, Symbol> & symMap) {
 	if (symMap.find(symStr) == symMap.end()) {
+		if (symStr == "[") {
+			cerr << "ERROR: '[' is not a valid VFST symbol" << endl;
+			exit(1);
+		}
 		Symbol s;
 		s.code = symVector.size();
 		s.text = symStr;
