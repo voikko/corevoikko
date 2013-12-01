@@ -2576,36 +2576,36 @@
 
 # {{{2 uusikuu (51)
 
-[perusmuoto: "uusikuu", alku: "uusikuu",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uuttakuu",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uutenakuu",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudeksikuu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudessakuussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "uusikuu", alku: "uudestakuusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "uusikuu", alku: "uuteenkuu",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudellakuulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "uusikuu", alku: "uudeltakuulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "uusikuu", alku: "uudellekuulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "uusikuu", alku: "uudettakuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusikuu",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uuttakuu",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uutenakuu",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudeksikuu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudessakuussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "uusikuu", alku: "uudestakuusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "uusikuu", alku: "uuteenkuu",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudellakuulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "uusikuu", alku: "uudeltakuulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "uusikuu", alku: "uudellekuulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "uusikuu", alku: "uudettakuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppp"];
 
-[perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uuttenku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusiaku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusinaku",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusiksikuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusissakuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusistakuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusiinku",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusillakuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusiltakuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusillekuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusittakuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusikuu", alku: "uusineku",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "uusikuu", alku: "uusinkuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uuttenku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusiaku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusinaku",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusiksikuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusissakuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusistakuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusiinku",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusillakuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusiltakuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusillekuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusittakuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusikuu", alku: "uusineku",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "uusikuu", alku: "uusinkuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppp"];
 
 # {{{2 uusivuosi (51)
 
