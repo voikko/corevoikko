@@ -2691,6 +2691,8 @@ t<A>:t<A>	Johdin_nimitapa1A_<A>	;
 t<A>:t<A>	Johdin_nimitapa2_<A>	;
 r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
 t<O>:t<O>	KertomanTekijäpääteVahva_<A>	;
+t:t	KertomanTekijäpääteVahva_<A>	;
+s:s	KertomanTekijäpääteVahva_<A>	;
 re:re	TositavanKertomaTtiin_<A>	;
 r<O>:r<O>	KertomanTekijäpääteHeikko_<A>	;
 re:re	Johdin_ttAx_<A>	;

@@ -2341,3 +2341,6 @@ vaaleanpunertava
 !vaaleanjuoksija
 vakosamettihousuinen
 tummanoranssi
+saarsi
+saarti
+kukakin
