@@ -2609,37 +2609,37 @@
 
 # {{{2 uusivuosi (51)
 
-[perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudenvuote",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudenvuode",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uuttavuo",     luokka: nimisana, luku: yksikkö, jatko: <osanto_ttA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uutenavuote",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uutenavuon",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudeksivuode", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudessavuodessa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "uusivuosi", alku: "uudestavuodesta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "uusivuosi", alku: "uuteenvuote",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudellavuodella", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "uusivuosi", alku: "uudeltavuodelta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "uusivuosi", alku: "uudellevuodelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "uusivuosi", alku: "uudettavuode", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudenvuote",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudenvuode",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uuttavuo",     luokka: nimisana, luku: yksikkö, jatko: <osanto_ttA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uutenavuote",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uutenavuon",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudeksivuode", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudessavuodessa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudestavuodesta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uuteenvuote",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudellavuodella", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudeltavuodelta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudellevuodelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudettavuode", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppppp"];
 
-[perusmuoto: "uusivuosi", alku: "uudetvuode",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uudetvuote",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusienvuos",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uuttenvuot",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusiavuos",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusinavuos",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusiksivuosiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusissavuosissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusistavuosista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusiinvuos",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusillavuosilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusiltavuosilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusillevuosille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusittavuositta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "uusivuosi", alku: "uusinevuos",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "uusivuosi", alku: "uusinvuosin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudetvuode",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uudetvuote",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusienvuos",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uuttenvuot",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusiavuos",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusinavuos",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusiksivuosiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusissavuosissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusistavuosista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusiinvuos",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusillavuosilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusiltavuosilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusillevuosille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusittavuositta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusinevuos",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "uusivuosi", alku: "uusinvuosin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppppp"];
 
 # {{{2 vanhaemäntä (51)
 
