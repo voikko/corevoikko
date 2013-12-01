@@ -19,8 +19,8 @@
 # KAIKKI TÄHÄN TIEDOSTOON LISÄTTÄVÄT SANAT ON LISÄTTÄVÄ MYÖS JOUKAHAISEEN
 # TAIVUTUSLUOKALLA "poikkeava"!
 
-[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
 [perusmuoto: "aamuseitsemän", alku: "aamuseitse", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
@@ -30,8 +30,8 @@
 [perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <kahdeksan>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
 [perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
-[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
 [perusmuoto: "iltaseitsemän", alku: "iltaseitse", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
@@ -46,7 +46,7 @@
  [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
  [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
-[perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
+ [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")

@@ -1863,6 +1863,19 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
 
+LEXICON NimisanaKaksi
+[Sn][Ny]ksi:ksi	NimisanaNormaaliYsJatko_<A>	;
+[Sg][Ny]hden:hden	NimisanaYksikönGenetiivinJatko_<A>	;
+[Sp][Ny]ht<A>:ht<A>	NimisanaLiOlV_<A>	;
+[Ses][Ny]hten<A>:hten<A>	NimisanaLiOlV_<A>	;
+hde:hde	NimisanaYhteisetYksikönPaikallissijat_<A>	;
+[Sill][Ny]htee:htee	NimisanaLiOlN_<A>	;
+[Sn][Nm]hdet:hdet	Liitesana_<A>	;
+[Sg][Nm]ksi:ksi	NimisanaMonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]ksi<A>:ksi<A>	NimisanaLiOlV_<A>	;
+ks:ks	NimisanaYhteisetMonikonSijat2_<A>	;
+ks:ks	NimisanaYhteisetMonikonPaikallissijat_<A>	;
+
 LEXICON NOUN Alkeet
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;

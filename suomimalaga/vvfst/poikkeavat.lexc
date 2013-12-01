@@ -11,9 +11,14 @@ LEXICON Poikkeavat_a
 
 LEXICON Poikkeavat_n
 Summayhdyssanat	;
+[Ln][Xp]aamukaksi[X]aamu[Bm]ka:aamuka	NimisanaKaksi_a	;
+[Ln][Xp]aamuyksi[X]aamu[Bm]y:aamuy	NimisanaKaksi_ä	;
+[Ln][Xp]iltakaksi[X]ilta[Bm]ka:iltaka	NimisanaKaksi_a	;
+[Ln][Xp]iltayksi[X]ilta[Bm]y:iltay	NimisanaKaksi_ä	;
 [Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;
 [Ln][Xp]cow[X]cow[Bc]:cow	Boy	;
 [Ln][Xp]enkeli[X]enkel[Sg][N]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
+[Ln][Xp]haaksi[X]haa:haa	NimisanaKaksi_a	;
 [Ln][Xp]hunningolla[X]hunningo:hunningo	Ulkopaikallissijat_Yks_a	;
 [Ln][Xp]huomassa[X]huoma:huoma	SisäpaikallissijatVn_a	;
 [Ln][Xp]isämeidän[X][Sn][Ny]isä[Bm]meidän:isämeidän	Liitesana_ä	;
@@ -221,6 +226,9 @@ LEXICON Summayhdyssanat
 [Ln][Xp]loka-marraskuu[X]@P.INEN_SALLITTU.ON@loka-[Bm]marras[Bm]ku:@P.INEN_SALLITTU.ON@loka-marrasku	NimisanaPuu_a	;
 [Ln][Xp]marras-joulukuu[X]@P.INEN_SALLITTU.ON@marras-[Bm]joulu[Bm]ku:@P.INEN_SALLITTU.ON@marras-jouluku	NimisanaPuu_a	;
 [Ln][Xp]joulu-tammikuu[X]@P.INEN_SALLITTU.ON@joulu-[Bm]tammi[Bm]ku:@P.INEN_SALLITTU.ON@joulu-tammiku	NimisanaPuu_a	;
+[Ln][Xp]aivo-selkäydinneste[X]aivo-[Bm]selkä[Bm]ydin[Bm]neste:aivo-selkäydinneste	NimisanaHame_ä	;
+[Ln][Xp]jääkaappi-pakastin[X]jääkaappi-[Bm]pakasti:jääkaappi-pakasti	NimisanaUistin_a	;
+[Ln][Xp]laulaja-kitaristi[X]laulaja-[Bm]kitarist:laulaja-kitarist	NimisanaRisti_a	;
 
 LEXICON Poikkeavat_ep
 [Lep][Xp]Kangasala[X]kangas[Bm]a:kangasa	Ulkopaikallissijat_Yks_a	;
