@@ -2234,36 +2234,36 @@
 
 # {{{2 puoliväli (50, 51)
 
-[perusmuoto: "puoliväli", alku: "puoliväli",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolenväli",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolenväli",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoltaväli",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolenaväli",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoleksiväli", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolessavälissä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "puoliväli", alku: "puolestavälistä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "puoliväli", alku: "puoleenväli",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolellavälillä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "puoliväli", alku: "puoleltaväliltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "puoliväli", alku: "puolellevälille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "puoliväli", alku: "puolettaväli", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoliväli",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolenväli",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolenväli",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoltaväli",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolenaväli",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoleksiväli", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolessavälissä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "puoliväli", alku: "puolestavälistä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "puoliväli", alku: "puoleenväli",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolellavälillä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "puoliväli", alku: "puoleltaväliltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "puoliväli", alku: "puolellevälille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "puoliväli", alku: "puolettaväli", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolienväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoltenväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoliaväle",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolinaväle",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoliksiväleiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolissaväleissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolistaväleistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoliinväle",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolillaväleillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puoliltaväleiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolilleväleille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolittaväleittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puoliväli", alku: "puolineväle",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "puoliväli", alku: "puolinvälein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolienväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoltenväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoliaväle",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolinaväle",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoliksiväleiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolissaväleissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolistaväleistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoliinväle",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolillaväleillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puoliltaväleiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolilleväleille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolittaväleittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puoliväli", alku: "puolineväle",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "puoliväli", alku: "puolinvälein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppp"];
 
 # {{{2 puoliyö (50, 51)
 
@@ -2544,35 +2544,35 @@
 
 # {{{2 täysikuu (51, 50)
 
-[perusmuoto: "täysikuu", alku: "täysikuu",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täyttäkuu",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täytenäkuu",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydeksikuu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydessäkuussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "täysikuu", alku: "täydestäkuusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "täysikuu", alku: "täyteenkuu",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydelläkuulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "täysikuu", alku: "täydeltäkuulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "täysikuu", alku: "täydellekuulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "täysikuu", alku: "täydettäkuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysikuu",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täyttäkuu",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täytenäkuu",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydeksikuu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydessäkuussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "täysikuu", alku: "täydestäkuusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "täysikuu", alku: "täyteenkuu",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydelläkuulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "täysikuu", alku: "täydeltäkuulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "täysikuu", alku: "täydellekuulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "täysikuu", alku: "täydettäkuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppp"];
 
-[perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysiäku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysinäku",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysiksikuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysissäkuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysistäkuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysiinku",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysilläkuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysiltäkuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysillekuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysittäkuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "täysikuu", alku: "täysineku",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppp"];
-[perusmuoto: "täysikuu", alku: "täysinkuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysiäku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysinäku",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysiksikuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysissäkuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysistäkuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysiinku",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysilläkuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysiltäkuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysillekuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysittäkuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "täysikuu", alku: "täysineku",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppp"];
+ [perusmuoto: "täysikuu", alku: "täysinkuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppp"];
 
 # {{{2 uusikuu (51)
 
