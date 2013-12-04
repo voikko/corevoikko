@@ -1,3 +1,6 @@
+2013-12-04 Harri Pitkänen <hatapitk@iki.fi>
+	* Grammar checker should allow numeric references to footnotes.
+
 2013-11-21 Harri Pitkänen <hatapitk@iki.fi>
 	* Increase version numbers for 3.7.
 

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -45,6 +45,7 @@ struct CapitalizationContext {
 	const Paragraph * paragraph;
 	size_t currentSentence; // may be one past the end of array if at the end of paragraph
 	size_t currentToken;
+	const Token * tokenBeforeNextWord;
 	const Token * nextWord;
 	voikko_options_t * options;
 	stack<wchar_t> quotes;
@@ -111,6 +112,7 @@ static const Token * getTokenAndAdvance(CapitalizationContext & context) {
 
 static list<const Token *> getTokensUntilNextWord(CapitalizationContext & context) {
 	list<const Token *> tokens;
+	context.tokenBeforeNextWord = context.nextWord;
 	while (true) {
 		const Token * token = getTokenAndAdvance(context);
 		if (!token) {
@@ -122,6 +124,7 @@ static list<const Token *> getTokensUntilNextWord(CapitalizationContext & contex
 			break;
 		}
 		tokens.push_back(token);
+		context.tokenBeforeNextWord = token;
 	}
 	return tokens;
 }
@@ -224,6 +227,7 @@ static bool isListItemAndClosingParenthesis(const Token * word, const list<const
 }
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
+	const Token * tokenBeforeWord = context.tokenBeforeNextWord;
 	const Token * word = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	if (isListItemAndClosingParenthesis(word, separators)) {
@@ -254,6 +258,9 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 		return DONT_CARE;
 	}
 	if (context.options->accept_titles_in_gc && StringUtils::isChapterNumber(word->str)) {
+		return DONT_CARE;
+	}
+	if (StringUtils::isInteger(word->str) && tokenBeforeWord->type != TOKEN_WHITESPACE) {
 		return DONT_CARE;
 	}
 	if (lastPunctuationEndsSentence(separators)) {
@@ -355,6 +362,7 @@ void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * pa
 	context.paragraph = paragraph;
 	context.currentSentence = 0;
 	context.currentToken = 0;
+	context.tokenBeforeNextWord = 0;
 	context.nextWord = 0;
 	context.options = options;
 	context.sentenceEnded = false;

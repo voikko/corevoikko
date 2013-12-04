@@ -60,4 +60,7 @@ Sisä-, reuna- ja ulkopiste
  [<Sisä-,WORD>, <,,PUNCTUATION>, < ,WHITESPACE>, <reuna-,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <ulkopiste,WORD>]
 Chișinău on kaupunki.
  [<Chișinău,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <kaupunki,WORD>, <.,PUNCTUATION>]
-
+alaviite.24
+ [<alaviite,WORD>, <.,PUNCTUATION>, <24,WORD>]
+20.3.1984
+ [<20.3.1984,WORD>]

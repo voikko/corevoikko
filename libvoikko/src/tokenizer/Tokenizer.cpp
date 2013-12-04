@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2007 - 2011
+ * Portions created by the Initial Developer are Copyright (C) 2007 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -115,6 +115,7 @@ static size_t findUrlOrEmail(const wchar_t * text, size_t textlen) {
 static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t * options) {
 	size_t wlen = 0;
 	bool processing_number = false;
+	bool seenLetters = false;
 	
 	const size_t urlLength = findUrlOrEmail(text, textlen);
 	if (urlLength != 0) {
@@ -131,6 +132,7 @@ static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t
 		switch (get_char_type(text[wlen])) {
 			case CHAR_LETTER:
 				processing_number = false;
+				seenLetters = true;
 				wlen++;
 				break;
 			case CHAR_DIGIT:
@@ -177,7 +179,11 @@ static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t
 						if (wlen + 1 == textlen) return wlen + adot;
 						switch (get_char_type(text[wlen+1])) {
 							case CHAR_LETTER:
+								break;
 							case CHAR_DIGIT:
+								if (seenLetters) {
+									return wlen + adot;
+								}
 								break;
 							case CHAR_WHITESPACE:
 							case CHAR_UNKNOWN:

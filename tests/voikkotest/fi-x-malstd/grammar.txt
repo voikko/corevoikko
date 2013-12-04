@@ -91,6 +91,9 @@ Virke päättyy kolmeen pisteeseen...
 Virke päättyy kolmeen pisteeseen... Toinen alkaa sen jälkeen.
 Kolme pistettä voi olla myös yhtä merkkiä… Ja perässä voi olla toinen virke.
 Virkkeessä on kolme pistettä... ja jotain muutakin.
+Virkkeen perässä voi olla alaviitteen merkki.1 Se on ehkä yläindeksissä, mehän emme sitä voi tietää.
+Minä juoksen. 3 Miestä juoksee.
+ [code=6, level=0, descr="", stpos=16, len=6, suggs={"miestä"}]
 VIRKE ON KIRJOITETTU KOKONAAN ISOILLA KIRJAIMILLA.
 ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
 YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.

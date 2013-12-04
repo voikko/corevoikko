@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2010
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -89,8 +89,12 @@ voikko_sentence_type Sentence::next(voikko_options_t * options,
 		if (end_found && !in_quotation) {
 			if (token != TOKEN_WHITESPACE) {
 				*sentencelen = slen;
-				if (end_dotword || possible_end_punctuation) return SENTENCE_POSSIBLE;
-				else return SENTENCE_PROBABLE;
+				if (end_dotword || possible_end_punctuation || (previous_token_type != TOKEN_WHITESPACE && token == TOKEN_WORD)) {
+					return SENTENCE_POSSIBLE;
+				}
+				else {
+					return SENTENCE_PROBABLE;
+				}
 			}
 		}
 		else if (token == TOKEN_PUNCTUATION) {

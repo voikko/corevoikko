@@ -34,3 +34,5 @@ Kolme pistettä... Ellipsis… Neljä pistettä.... Kuusi pistettä......
  [<»Lause voi olla myös toisenlaisissa lainausmerkeissä!» ,POSSIBLE>, <kirjoittaa ohjelman tekijä.,NONE>]
 Joulua vietetään 24.-26. joulukuuta.
 [<Joulua vietetään 24.,POSSIBLE>, <-26. ,POSSIBLE>, <joulukuuta.,NONE>]
+Virkkeen perässä voi olla alaviitteen merkki.24 Se on ehkä yläindeksissä, mehän emme sitä voi tietää.
+[<Virkkeen perässä voi olla alaviitteen merkki.,POSSIBLE>, <24 Se on ehkä yläindeksissä, mehän emme sitä voi tietää.,NONE>]
