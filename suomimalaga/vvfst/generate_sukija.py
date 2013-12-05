@@ -41,6 +41,7 @@
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
+# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
 
 # Style- ja usage-lippujen arvot suoraan Joukahaisesta:
 # grep -A1 '<style>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
@@ -262,11 +263,15 @@ word_list = [
     (u"alkovi",           (u"alkov",         u"alkoov")),
     (u"ameba",            (u"ameb",          u"ameeb")),
     (u"amfiteatteri",     (u"amfiteatter",   u"amfiiteaatter", u"amfiteaatter")),
+    (u"apassi",           (u"apass",         u"apash")),
     (u"arsenikki",        (u"arsenik",       u"arseniik")),
     (u"assistentti",      (u"assistent",     u"asistent")),
     (u"barbaari",         (u"barbaar",       u"barbar")),
     (u"beduiini",         (u"beduiin",       u"beduin")),
     (u"biljoona",         (u"biljoon",       u"biljon")),
+    (u"borssi",           (u"borssi",        u"borsh")),
+    (u"dervissi",         (u"derviss",       u"dervish")),
+    (u"divaani",          (u"divaan",        u"divan")),
     (u"emali",            (u"emal",          u"emalj")),
     (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi")),
     (u"eteinen",          (u"etei",          u"etehi")),
@@ -320,6 +325,7 @@ word_list = [
     (u"lähimmäinen",    (u"lähimmäi",    u"lähimäi")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"majuri",         (u"majur",       u"majuur")),
+    (u"mansetti",       (u"manset",      u"manshet")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
     (u"mieluinen",      (u"mielui",      u"mieluhi")),
     (u"miljoona",       (u"miljoon",     u"miljon")),
@@ -367,7 +373,10 @@ word_list = [
     (u"temperamentti",  (u"temperament",  u"tempperament")),
     (u"tooga",          (u"toog",         u"tog")),
     (u"Toscana",        (u"toscan",       u"toskan")),
-    (u"tällainen",      ((u"tällai",      u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), )),
+    (u"tussi",          (u"tuss",         u"tush")),
+    (u"tällainen",      ((u"tällai",      u"tällai", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
+                         (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
+                         (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_a"))),
     (u"ulommainen",     (u"ulommai",      u"uloimmai")),
     (u"upseeri",        (u"upseer",       u"upser", u"upsier")),
     (u"upseeristo",     (u"upseeristo",   u"upsieristo")),
