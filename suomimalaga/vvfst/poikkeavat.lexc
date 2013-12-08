@@ -388,7 +388,22 @@ Summayhdyssanat	;
 [Ln][Xp]veli[X]@D.YS_ALKANUT@[Sn][Ny]veliseni:@D.YS_ALKANUT@veliseni	Liitesana_ä	;
 [Ln][Xp]viive[X]vii:vii	Viive	;
 [Ln][Xp]vuosi[X]vuo[Ses][Ny]nna:vuonna	NimisanaLiOlV_a	;
+[Ln][Xp]vuosituhat[X]vuosi[Bm]tuha:vuosituha	NimisanaTuhat	;
 [Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
+
+LEXICON NimisanaTuhat
+[Sn][Ny]t:t	NimisanaNormaaliYsJatkoOl_a	;
+[Sg][Ny]nnen:nnen	NimisanaYksikönGenetiivinJatko_a	;
+[Sp][Ny]tta:tta	NimisanaLiOlV_a	;
+[Ses][Ny]ntena:ntena	NimisanaLiOlV_a	;
+nne:nne	NimisanaYhteisetYksikönPaikallissijat_a	;
+[Sill][Ny]ntee:ntee	NimisanaLiOlN_a	;
+[Sn][Nm]nnet:nnet	Liitesana_a	;
+[Sg][Nm]nsi:nsi	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sp][Nm]nsia:nsia	NimisanaLiOlV_a	;
+ns:ns	NimisanaYhteisetMonikonSijat2_a	;
+ns:ns	NimisanaYhteisetMonikonPaikallissijat_a	;
+[Sill][Nm]nsii:nsii	NimisanaLiOlN_a	;
 
 LEXICON Boy
 [Ln][Xp]boy[X][Sn][Ny]boy:boy	NimisanaNormaaliYsJatkoOl_a	;

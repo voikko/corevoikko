@@ -3912,7 +3912,7 @@ LEXICON Voittoaste
 [Sn][Ny][Cc]mp<A>:mp<A>	Omistusliite_<A>	;
 [Sn][Nm][Cc]mm<A>t@D.EI_VERTM@:mm<A>t@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	Liitesana_<A>	;
-[Sg][Nm][Cc]mpien@D.EI_VERTM@:mpien@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Nm][Cc]mpie@D.EI_VERTM@:mpie@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sp][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sp][Nm][Cc]mpi<A>@D.EI_VERTM@:mpi<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Str][Ny][Cc]mm<A>ksi@D.EI_VERTM@:mm<A>ksi@D.EI_VERTM@	Liitesana_<A>	;
@@ -4345,6 +4345,7 @@ LukusananJälkiliiteJl	;
 
 LEXICON JärjestyslukuNainen
 [Sn][Ny]nen:nen Liitesana_<A> ;
+[Sn][Ny]se:se Omistusliite_<A> ;
 [Sn][Nm]set:set Liitesana_<A> ;
 [Sg][Ny]sen:sen Liitesana_<A> ;
 [Sg][Nm]sten:sten JärjestyslukuSgNm39_<A> ;

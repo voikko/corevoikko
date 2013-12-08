@@ -2344,3 +2344,6 @@ tummanoranssi
 saarsi
 saarti
 kukakin
+toisensa
+vanhempiensa
+vuosituhannen
