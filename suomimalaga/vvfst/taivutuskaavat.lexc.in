@@ -4343,6 +4343,10 @@ Liitesana_<A>	;
 LukusananJälkiliiteJl	;
 [Bc]:	Järjestysluku	;
 
+LEXICON XKymmentä
+Liitesana_<A>	;
+XKymmentäEiLiitesana	;
+
 LEXICON JärjestyslukuNainen
 [Sn][Ny]nen:nen Liitesana_<A> ;
 [Sn][Ny]se:se Omistusliite_<A> ;

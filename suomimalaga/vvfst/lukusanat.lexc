@@ -129,21 +129,25 @@ LEXICON Erikoisluku
 [Lu][Xp]kahdeksisen[X]kahdeksisen:kahdeksisen	XKymmentä_a	;
 [Lu][Xp]yhdeksisen[X]yhdeksisen:yhdeksisen	XKymmentä_ä	;
 [Lu][Xp]kymmenisen[X]kymmenisen:kymmenisen	Liitesana_ä	;
+[Lu][Xp]toista[X]toista:toista	XKymmentäEiLiitesana	;
+[Lu][Xp]kolmatta[X]kolmatta:kolmatta	XKymmentäEiLiitesana	;
+[Lu][Xp]neljättä[X]neljättä:neljättä	XKymmentäEiLiitesana	;
+[Lu][Xp]viidettä[X]viidettä:viidettä	XKymmentäEiLiitesana	;
+[Lu][Xp]kuudetta[X]kuudetta:kuudetta	XKymmentäEiLiitesana	;
+[Lu][Xp]seitsemättä[X]seitsemättä:seitsemättä	XKymmentäEiLiitesana	;
+[Lu][Xp]kahdeksatta[X]kahdeksatta:kahdeksatta	XKymmentäEiLiitesana	;
+[Lu][Xp]yhdeksättä[X]yhdeksättä:yhdeksättä	XKymmentäEiLiitesana	;
 
 LEXICON ParisenKymmentä
 Liitesana_a	;
 [Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Loppu	;
 [Bc][Lu][Xp]sataa[X]sataa:sataa	Loppu	;
 
-LEXICON XKymmentä_a
-Liitesana_a	;
+LEXICON XKymmentäEiLiitesana
 [Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
-! TODO myös sataa, tuhatta
+[Bc][Lu][Xp]sataa[X]sataa:sataa	Liitesana_a	;
+[Bc][Lu][Xp]tuhatta[X]tuhatta:tuhatta	Liitesana_a	;
 
-LEXICON XKymmentä_ä
-Liitesana_ä	;
-[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
-! TODO myös sataa, tuhatta
 
 LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;

@@ -145,6 +145,13 @@
  [perusmuoto: "kahdeksisenkymmentä", alku: "kahdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
  [perusmuoto: "yhdeksisenkymmentä", alku: "yhdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppppp=pppppppp"];
  [perusmuoto: "parisensataa", alku: "parisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kolmisensataa", alku: "kolmisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nelisensataa", alku: "nelisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "viitisensataa", alku: "viitisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuutisensataa", alku: "kuutisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "seitsemisensataa", alku: "seitsemisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "kahdeksisensataa", alku: "kahdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "yhdeksisensataa", alku: "yhdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
 [perusmuoto: "kolmi", alku: "kolmi", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
 [perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
@@ -161,32 +168,32 @@
 [perusmuoto: "monisata", alku: "monisata", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=ppppp"];
 
-[perusmuoto: "toistakymmentä",      alku: "toistakymmentä",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "kolmattakymmentä",    alku: "kolmattakymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "neljättäkymmentä",    alku: "neljättäkymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "viidettäkymmentä",    alku: "viidettäkymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuudettakymmentä",    alku: "kuudettakymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "seitsemättäkymmentä", alku: "seitsemättäkymmentä", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "kahdeksattakymmentä", alku: "kahdeksattakymmentä", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "yhdeksättäkymmentä",  alku: "yhdeksättäkymmentä",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "toistakymmentä",      alku: "toistakymmentä",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "kolmattakymmentä",    alku: "kolmattakymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "neljättäkymmentä",    alku: "neljättäkymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "viidettäkymmentä",    alku: "viidettäkymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuudettakymmentä",    alku: "kuudettakymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "seitsemättäkymmentä", alku: "seitsemättäkymmentä", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "kahdeksattakymmentä", alku: "kahdeksattakymmentä", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "yhdeksättäkymmentä",  alku: "yhdeksättäkymmentä",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppppp=pppppppp"];
 
-[perusmuoto: "toistasataa",      alku: "toistasataa",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kolmattasataa",    alku: "kolmattasataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "neljättäsataa",    alku: "neljättäsataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "viidettäsataa",    alku: "viidettäsataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuudettasataa",    alku: "kuudettasataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "seitsemättäsataa", alku: "seitsemättäsataa", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "kahdeksattasataa", alku: "kahdeksattasataa", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "yhdeksättäsataa",  alku: "yhdeksättäsataa",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "toistasataa",      alku: "toistasataa",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kolmattasataa",    alku: "kolmattasataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "neljättäsataa",    alku: "neljättäsataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "viidettäsataa",    alku: "viidettäsataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuudettasataa",    alku: "kuudettasataa",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "seitsemättäsataa", alku: "seitsemättäsataa", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "kahdeksattasataa", alku: "kahdeksattasataa", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "yhdeksättäsataa",  alku: "yhdeksättäsataa",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "toistatuhatta",      alku: "toistatuhatta",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "kolmattatuhatta",    alku: "kolmattatuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "neljättätuhatta",    alku: "neljättätuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "viidettätuhatta",    alku: "viidettätuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "kuudettatuhatta",    alku: "kuudettatuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "seitsemättätuhatta", alku: "seitsemättätuhatta", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kahdeksattatuhatta", alku: "kahdeksattatuhatta", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "yhdeksättätuhatta",  alku: "yhdeksättätuhatta",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "toistatuhatta",      alku: "toistatuhatta",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "kolmattatuhatta",    alku: "kolmattatuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "neljättätuhatta",    alku: "neljättätuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "viidettätuhatta",    alku: "viidettätuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "kuudettatuhatta",    alku: "kuudettatuhatta",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "seitsemättätuhatta", alku: "seitsemättätuhatta", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kahdeksattatuhatta", alku: "kahdeksattatuhatta", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "yhdeksättätuhatta",  alku: "yhdeksättätuhatta",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppppp"];
 
 [alku: "1", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
 [alku: "2", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
