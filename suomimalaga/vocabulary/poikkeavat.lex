@@ -47,7 +47,7 @@
  [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
  [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
-[perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
 [perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
@@ -77,7 +77,7 @@
  [perusmuoto: "Sokrates", alku: "Sokratee", luokka: etunimi, jatko: <sisätulento_hVn>, äs: a];
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: <osanto_tA, liitesana, loppu>, äs: a];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a, tiedot: <ei_ys>];
-[perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
+ [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "utujälki", alku: "utujäl", luokka: nimisana, jatko: <jälki>, äs: ä, rakenne: "=ppp=ppppp", tiedot: <ei_voikko>];
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>]; # Epäilen, että nalle-taivutus ei ole oikein.
  [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
