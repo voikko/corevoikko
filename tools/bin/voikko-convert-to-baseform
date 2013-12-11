@@ -1,0 +1,114 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2013 Harri Pitkänen (hatapitk@iki.fi)
+
+# This program reads running text from standard input, converts all
+# recognized words to baseform and prints out the frequency list.
+
+# The program requires Python and Python module of libvoikko from
+# libvoikko 3.0 or later.
+
+
+
+# ======== USAGE ========
+#
+# - Install the Python module for libvoikko. In Ubuntu or Debian this can be done
+#   by installing package "python-libvoikko":
+#
+#      sudo apt-get install python-libvoikko
+#
+# - Download a morphological dictionary from http://www.puimula.org/htp/testing/voikko-snapshot/dict-morpho.zip
+#   and unzip it under $HOME/.voikko:
+#
+#      unzip dict-morpho.zip -d ~/.voikko
+#
+# - Run this script and pipe your input text through it. You can test this
+#   by using "Seitsemän veljestä" by Aleksis Kivi: http://www.gutenberg.org/cache/epub/11940/pg11940.txt
+#
+#     cat pg11940.txt | voikko-convert-to-baseform > results.txt
+#
+# - Now you will have tab separated frequency list of all words in results.txt.
+#
+# Ambiguous words will have their score split evenly among possible readings. Thus
+# "tulen" will score 0.5 points for "tuli" and 0.5 points for "tulla".
+
+
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import operator
+from libvoikko import Voikko, Token
+
+LANGUAGE = u"fi-x-morpho"
+ENCODING = u"UTF-8"
+
+
+def filterAnalysisList(analysisList, word):
+	if len(word) < 2 or len(analysisList) == 0:
+		return analysisList
+	if word[0].isupper() and word[1].islower():
+		# "Kari" is likely a proper noun but we don't know for sure
+		return analysisList
+	elif word[0].lower():
+		# "kari" cannot really be a proper noun so we only return common nouns if we have any
+		filteredList = []
+		for analysis in analysisList:
+			if "STRUCTURE" not in analysis or not analysis["STRUCTURE"].startswith(u"=i"):
+				filteredList.append(analysis)
+		if len(filteredList) > 0:
+			return filteredList
+		else:
+			return analysisList
+	else:
+		return analysisList
+
+
+voikko = Voikko(LANGUAGE)
+knownWordFreqs = {}
+unknownWordFreqs = {}
+
+
+for line in sys.stdin:
+	paragraph = unicode(line.strip(), ENCODING)
+	for token in voikko.tokens(paragraph):
+		if token.tokenType != Token.WORD:
+			continue
+		word = token.tokenText
+		analysisList = filterAnalysisList(voikko.analyze(word), word)
+		if len(analysisList) > 0:
+			weight = 1.0 / len(analysisList)
+			for analysis in analysisList:
+				if u"BASEFORM" in analysis:
+					baseform = analysis[u"BASEFORM"]
+				else:
+					baseform = word
+				if baseform not in knownWordFreqs:
+					knownWordFreqs[baseform] = 0.0
+				knownWordFreqs[baseform] = knownWordFreqs[baseform] + weight
+		else:
+			if word not in unknownWordFreqs:
+				unknownWordFreqs[word] = 0
+			unknownWordFreqs[word] = unknownWordFreqs[word] + 1
+
+
+print u"=== Known words ==="
+for word in sorted(knownWordFreqs.items(), key=lambda(k,v):(v,k), reverse=True):
+	print word[0].encode(ENCODING), "\t", word[1]
+
+print u"=== Unknown words ==="
+for word in sorted(unknownWordFreqs.items(), key=lambda(k,v):(v,k), reverse=True):
+	print word[0].encode(ENCODING), "\t", word[1]
