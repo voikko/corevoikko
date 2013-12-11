@@ -2816,39 +2816,39 @@
 
 # {{{2 vierasmies (51, 50) '(jäävitön) todistaja'
 
-[perusmuoto: "vierasmies", alku: "vierasmies",      luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vierastamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraanamiehe",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraaksimiehe",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraassamiehessä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "vierasmies", alku: "vieraastamiehestä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "vierasmies", alku: "vieraaseenmiehe", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraallamiehellä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "vierasmies", alku: "vieraaltamieheltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "vierasmies", alku: "vieraallemiehelle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "vierasmies", alku: "vieraattamiehe",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vierasmies",      luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vierastamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraanamiehe",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraaksimiehe",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraassamiehessä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraastamiehestä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraaseenmiehe", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraallamiehellä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraaltamieheltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraallemiehelle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraattamiehe",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraidenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraittenmieh",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraidenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraittenmies",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraitamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vierainamieh",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraiksimiehiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraissamiehissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraistamiehistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraisiinmieh",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraihinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraillamiehillä",   luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vierailtamiehiltä",   luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraillemiehille",   luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vieraittamiehittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "vierasmies", alku: "vierainemieh",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "vierasmies", alku: "vierainmiehin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraidenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraittenmieh",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraidenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraittenmies",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraitamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vierainamieh",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraiksimiehiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraissamiehissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraistamiehistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraisiinmieh",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraihinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraillamiehillä",   luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vierailtamiehiltä",   luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraillemiehille",   luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vieraittamiehittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "vierasmies", alku: "vierainemieh",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "vierasmies", alku: "vierainmiehin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
 
 # {{{2 (Esimerkkitietueet)
 
