@@ -523,7 +523,7 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Keltainenmeri[X][Sabl][Ny]keltaiselta[Bm]mereltä:keltaiseltamereltä	PaikannimiLiOlV_ä	;
 [Lep][Xp]Keltainenmeri[X][Sall][Ny]keltaiselle[Bm]merelle:keltaisellemerelle	PaikannimiLiOlV_ä	;
 [Lep][Xp]Keltainenmeri[X][Sall][Ny]keltaisetta[Bm]merettä:keltaisettamerettä	PaikannimiLiOlV_ä	;
-[Lep][Xp]Kuollutmeri[X][Sn][Ny]kuollut[Bm]meri:kullutmeri	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Kuollutmeri[X][Sn][Ny]kuollut[Bm]meri:kuollutmeri	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Kuollutmeri[X][Sg][Ny]kuolleen[Bm]meren:kuolleenmeren	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Kuollutmeri[X][Sp][Ny]kuollutta[Bm]merta:kuolluttamerta	PaikannimiLiOlV_a	;
 [Lep][Xp]Kuollutmeri[X][Ses][Ny]kuolleena[Bm]merenä:kuolleenamerenä	PaikannimiLiOlV_ä	;
