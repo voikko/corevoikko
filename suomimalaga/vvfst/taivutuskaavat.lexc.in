@@ -3595,7 +3595,7 @@ LEXICON Ehtotapa
 [Te][Ap][P3][Ny]isi:isi	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@isimme	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
+[Te][Ap][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
 t:t	Ehtotapa_tA_<A>	;
@@ -3861,6 +3861,7 @@ LEXICON Johdin_ja_kulkija
 [Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Nm]j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sin][Nm]j<O>in@C.JOHDETTAVA_NIMISANAKSI@:j<O>in@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 j<O>:j<O>	Johdin_ittAin_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
 
@@ -3924,7 +3925,7 @@ LEXICON Voittoaste
 [Sela][Ny][Cc]mm<A>st<A>@D.EI_VERTM@:mm<A>st<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sela][Nm][Cc]mmist<A>@D.EI_VERTM@:mmist<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sill][Ny][Cc]mp<A><A>n@D.EI_VERTM@:mp<A><A>n@D.EI_VERTM@	Liitesana_<A>	;
-[Sill][Nm][Cc]mpiin@D.EI_VERTM@:mpiin@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Nm][Cc]mpii@D.EI_VERTM@:mpii@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sade][Ny][Cc]mm<A>ll<A>@D.EI_VERTM@:mm<A>ll<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sade][Nm][Cc]mmill<A>@D.EI_VERTM@:mmill<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sabl][Ny][Cc]mm<A>lt<A>@D.EI_VERTM@:mm<A>lt<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
@@ -3934,12 +3935,14 @@ LEXICON Voittoaste
 [Sab][Ny][Cc]mm<A>tt<A>@D.EI_VERTM@:mm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
+[Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 
 LEXICON Yliaste
 [Sn][Ny][Cs]in@D.EI_VERTM@:in@D.EI_VERTM@	Liitesana_<A>	;
 [Sn][Nm][Cs]imm<A>t@D.EI_VERTM@:imm<A>t@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Ny][Cs]imm<A>n@D.EI_VERTM@:imm<A>n@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Nm][Cs]impien@D.EI_VERTM@:impien@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Nm][Cs]inten@D.EI_VERTM@:inten@D.EI_VERTM@	Liitesana_<A>	;
 [Sp][Ny][Cs]int<A>@D.EI_VERTM@:int<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sp][Ny][Cs]imp<A><A>@D.EI_VERTM@:imp<A><A>@D.EI_VERTM@	NimisanaLiOlAA_<A>	;
 [Sp][Nm][Cs]impi<A>@D.EI_VERTM@:impi<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
