@@ -125,6 +125,7 @@ re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 
 re_toninen = makeRe (u"Ll", u".toninen")
+re_iivinen = makeRe (u"Ll", u"Ciivinen")
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_");
@@ -184,6 +185,7 @@ spelling_pattern_list = [
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
 
   (re_toninen, u"toni", u"tooni"),
+  (re_iivinen, u"iivi", u"ivi"),
 
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
@@ -346,6 +348,7 @@ word_list = [
     (u"poliitikko",     (u"poliitik",    u"politik", u"poliitiik")),
     (u"poliittinen",    (u"poliitti",    u"politti", u"poliittii")),
     (u"politiikka",     (u"politiik",    u"politik", u"poliitiik")),
+    (u"positiivi",      (u"positiiv",    u"positiv")),
     (u"posliini",       (u"posliin",     u"poslin"   u"porsliin", u"porslin")),
     (u"preettori",      (u"preettor",    u"preetor", u"pretor")),
     (u"pretoriaani",    (u"pretoriaan",  u"pretorian")),
