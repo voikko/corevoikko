@@ -10,6 +10,8 @@ LEXICON Poikkeavat_s
 [Ls][Xp]hujakassa[X][Sine][Ny]hujakassa:hujakassa	Liitesana_a	;
 [Ls][Xp]hörö[X]hörö:hörö	Ulkopaikallissijat_Yks_ä	;
 [Ls][Xp]hörö[X]hörö:hörö	SisäpaikallissijatVn_ä	;
+[Ls][Xp]huosta[X]huosta:huosta	SisäpaikallissijatVn_a	;
+[Ls][Xp]huosta[X]huosta:huosta	Loppu	;
 [Ls][Xp]jalkeilla[X]jalke:jalke	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]juovuksissa[X]juovuksi:juovuksi	SisäpaikallissijatVn_a	;
 [Ls][Xp]karku[X][Sp][Ny]karkua:karkua	Liitesana_a	;
@@ -43,6 +45,7 @@ LEXICON Poikkeavat_s
 [Ls][Xp]tekeillä[X]teke:teke	Ulkopaikallissijat_Mon_ä	;
 [Ls][Xp]tännempänä[X]tännem:tännem	Sivumpana_ä	;
 [Ls][Xp]väijyksissä[X]väijyksi:väijyksi	SisäpaikallissijatVn_ä	;
+[Ls][Xp]vääjäämättä[X]vääjäämättä:vääjäämättä	Liitesana_ä	;
 Ys_perusosa_seikkasanasta	;
 
 LEXICON Ys_perusosa_seikkasanasta

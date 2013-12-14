@@ -2357,3 +2357,7 @@ johtuisivat
 inarinsaamelaisten
 vanhemmikseen
 kultaseni
+parhaansa
+liekö
+kyyneliin
+minkäkin

@@ -706,6 +706,7 @@ yö:yö	Johdin_tOn_ä	;
 LEXICON Paras
 ha:ha	Yliaste_a	;
 [Sn][Ny][Cs]as:as	Liitesana_a	;
+[Sn][Ny][Cs]haa:haa	Omistusliite_a	;
 [Sn][Nm][Cs]haat:haat	Liitesana_a	;
 [Sg][Ny][Cs]haan:haan	NimisanaYksikönGenetiivinJatko_a	;
 [Sg][Nm][Cs]haid:haid	NimisanaMonikonGenetiiviEnJatko_a	;

@@ -32,7 +32,7 @@ lko:lko                 Loppu ;        # Kielteinen käsky: (älkää) olko.
 
 LEXICON Lienee
 n:n Mahtotapa_ä ;
-Loppu ;
+Liitesana_ä	;
 
 LEXICON Kieltosana
 [Lk][Xp]älkää[X]äl:äl    Älkää ;
