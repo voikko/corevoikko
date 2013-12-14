@@ -33,7 +33,7 @@ LEXICON PaikannimiYsJatko
 -[Bc]:-	Sanasto_nimisanat	;
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
-@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 
 LEXICON SukunimiYsJatko
 -[Bc]:-	Erisnimet	;

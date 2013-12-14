@@ -2208,7 +2208,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
-?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]@P.INEN_VAADITTU.ON@:	Sanasto_ep	;
+?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
@@ -3916,8 +3916,8 @@ LEXICON Voittoaste
 [Sg][Nm][Cc]mpie@D.EI_VERTM@:mpie@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sp][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sp][Nm][Cc]mpi<A>@D.EI_VERTM@:mpi<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
-[Str][Ny][Cc]mm<A>ksi@D.EI_VERTM@:mm<A>ksi@D.EI_VERTM@	Liitesana_<A>	;
-[Str][Nm][Cc]mmiksi@D.EI_VERTM@:mmiksi@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Ny][Cc]mm<A>ksi@D.EI_VERTM@:mm<A>ksi@D.EI_VERTM@	NimisanaLiOlI_<A>	;
+[Str][Nm][Cc]mmiksi@D.EI_VERTM@:mmiksi@D.EI_VERTM@	NimisanaLiOlI_<A>	;
 [Ses][Ny][Cc]mp<A>n<A>@D.EI_VERTM@:mp<A>n<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Ses][Nm][Cc]mpin<A>@D.EI_VERTM@:mpin<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sine][Ny][Cc]mm<A>ss<A>@D.EI_VERTM@:mm<A>ss<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
