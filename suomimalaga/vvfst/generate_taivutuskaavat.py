@@ -192,12 +192,16 @@ for sija in MULTI.keys():
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	if sija in [u"SelaNy", u"SelaNm"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
+	if sija == u"SelaNm":
+		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
 MULTI_ORDINALS = {

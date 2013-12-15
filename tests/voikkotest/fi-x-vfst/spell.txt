@@ -2361,3 +2361,9 @@ parhaansa
 liekö
 kyyneliin
 minkäkin
+viisiottelija
+!viiteenottelija
+yksistään
+kaksistaan
+kahdestaan
+!neljäään

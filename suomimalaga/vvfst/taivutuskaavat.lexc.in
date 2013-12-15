@@ -4310,22 +4310,23 @@ LEXICON LukusanaSeitsemän
 <A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON LukusanaSnNy
-@U.LS.SNNY@	LukusanaToista	;
-@U.LS.SNNY@	Liitesana_<A>	;
-@U.LS.SNNY@	LukusananJälkiliite	;
+@U.LS.SNNY@:@U.LS.SNNY@	LukusanaToista	;
+@U.LS.SNNY@:@U.LS.SNNY@	Liitesana_<A>	;
+@U.LS.SNNY@:@U.LS.SNNY@	LukusananJälkiliite	;
+@U.LS.SNNY@@P.JOHDETTAVA_NIMISANAKSI.ON@[Bc][Bh]:@U.LS.SNNY@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 
 LEXICON LukusanaSnNm
-@U.LS.SNNM@	LukusanaToista	;
-@U.LS.SNNM@	Liitesana_<A>	;
-@U.LS.SNNM@	LukusananJälkiliite	;
+@U.LS.SNNM@:@U.LS.SNNM@	LukusanaToista	;
+@U.LS.SNNM@:@U.LS.SNNM@	Liitesana_<A>	;
+@U.LS.SNNM@:@U.LS.SNNM@	LukusananJälkiliite	;
 
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;
-@U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
+@U.LS.SNNY@:@U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
 
 LEXICON LukusanaSnNm29
 LukusanaSnNm_<A>	;
-@U.LS.SNNM@	LukusanaKymmentäSnNm_<A>	;
+@U.LS.SNNM@:@U.LS.SNNM@	LukusanaKymmentäSnNm_<A>	;
 
 LEXICON LukusanaKymmentäSnNy
 @U.LS.SNNY@[Bc]kymmentä:@U.LS.SNNY@kymmentä	LukusanaLiitesana_ä	;
