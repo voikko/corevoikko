@@ -1978,8 +1978,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (loitolla in $tietue.jatko) then 
     choose $i in taivutuskaava ($tietue,
-                                 [ulkopaikallissija_llA: "",
-                                  tulento_s:       ""])
+                                 [ulkopaikallissija_llA: ""])
                  + sivumpana ($tietue, "m" + pA($tietue), "m" + mA($tietue));
     result $i.alku, $i - alku;
 

@@ -2367,3 +2367,5 @@ yksistään
 kaksistaan
 kahdestaan
 !neljäään
+yksikseen
+loitolla

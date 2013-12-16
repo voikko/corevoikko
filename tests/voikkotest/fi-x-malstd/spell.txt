@@ -237,6 +237,7 @@ von
 Toholammilla
 !Pertein-
 Yhdysvaltain-mestaruuden
+Nätti-Jussi
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
@@ -311,6 +312,8 @@ italialaisamerikkalainen
 hartolalaisesti
 eritasoiset # laatusanan etuliite + inen-johdos
 inarinsaamelaiset
+!Paris-Charles
+demokraattis-republikaaninen
 
 # = voitto- ja yliasteet =
 []
@@ -373,6 +376,7 @@ college-aika # vokaaliloppuinen sitaattilaina + vokaali
 college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 blues-kissainen # sitaattilaina + inen-johdos
 !heitto-iskuista
+kaakkois-
 
 # = johdetut sanat yhdyssanoissa =
 []
@@ -465,6 +469,7 @@ tykönään
 tykönänsä
 kanssaan
 kissateitse # ys_perusosa-lippu
+!loitos
 
 # = nimitavat =
 []

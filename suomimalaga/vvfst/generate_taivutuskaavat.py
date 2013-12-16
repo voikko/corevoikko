@@ -202,6 +202,8 @@ for sija in MULTI.keys():
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
 	if sija == u"SelaNm":
 		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
+	if sija == u"StrNm":
+		numeralLines.append(diacritic + u":" + diacritic + u"\tOlI_<A>\t;")
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
 MULTI_ORDINALS = {
