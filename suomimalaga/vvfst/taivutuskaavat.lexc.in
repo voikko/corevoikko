@@ -1730,6 +1730,8 @@ pim<A>:pim<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 pim:pim	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	pim<A>:pim<A>	Voittoaste_<A>	;
 ?Laatusana	pim:pim	Yliaste_<A>	;
+?Sukija [Sill][Ny]pim<A>h<A>:pim<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]pimihi:pimihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Vasen
 [Sn][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
@@ -1746,6 +1748,8 @@ mm:mm	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]mpii:mpii	<WC>LiOlN_<A>	;
 mm<A>:mm<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 mm:mm	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija [Sill][Ny]mp<A>h<A>:mp<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]mpihi:mpihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Pahin
 [Ses][Ny]inn<A>:inn<A>	Liitesana_<A>	;
@@ -3591,9 +3595,11 @@ LEXICON TositavanKestämäXaan
 
 LEXICON TositavanKertomaTtiin
 @D.VAIN_YM3@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@ttiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@[Tt][Ai][P4]ttihin:@D.VAIN_YM3@ttihin	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTiin
 @D.VAIN_YM3@[Tt][Ai][P4]tiin:@D.VAIN_YM3@tiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@[Tt][Ai][P4]tihin:@D.VAIN_YM3@tihin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P1][Ny]isin:@D.VAIN_YM3@isin	Liitesana_<A>	;
@@ -3615,6 +3621,7 @@ Johdin_tAvA_<A>	;
 LEXICON Ehtotapa_tA
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@t<A>isi	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@t<A>isiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isihin:@D.VAIN_YM3@t<A>isihin	Liitesana_<A>	;
 
 LEXICON Mahtotapa
 @D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
@@ -3631,6 +3638,7 @@ t:t	Mahtotapa_tA_<A>	;
 LEXICON Mahtotapa_tA
 @D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>ne:@D.VAIN_YM3@t<A>ne	Liitesana_<A>	;
 @D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>neen:@D.VAIN_YM3@t<A>neen	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>nehen:@D.VAIN_YM3@t<A>nehen	Liitesana_<A>	;
 
 LEXICON Käskytapa_0
 Käskytapa_<A>	;
@@ -3756,10 +3764,12 @@ LEXICON Johdin_nUt
 [Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	LaatusanaKuollut_<A>	;
 neis:neis	Johdin_UUs_<A>	;
 [Ll]nee:nee	Omistusliite_<A>	;
+?Sukija [Ll]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
 [Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 [Ll]lee:lee	Omistusliite_<A>	;
+?Sukija [Ll]lehe:lehe	Omistusliite_<A>	;
 
 LEXICON Johdin_rUt
 [Ll]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
@@ -3787,6 +3797,8 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i:<A>i	LaatusanaNainen_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_<A>	;
@@ -4028,6 +4040,7 @@ LEXICON Sivumpana
 m<A>:m<A>	SisäpaikallissijatSsaSta_<A>	;
 [Sill][Ny]p<A><A>n:p<A><A>n	Liitesana_<A>	;
 m<A>:m<A>	Ulkopaikallissijat_Yks_<A>	;
+?Sukija [Sill][Ny]p<A>h<A>n:p<A>h<A>n	Liitesana_<A>	;
 
 LEXICON Ulkopaikallissijat_Yks
 [Sade][Ny]ll<A>:ll<A>	LoppuLiitesanaOlV_<A>	;
