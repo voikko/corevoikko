@@ -16,6 +16,7 @@ InenLoppuisenYsJatko	;
 [Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
 -[Bh][Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nl	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
 
 LEXICON InenLoppuisenYsJatko
@@ -95,9 +96,13 @@ EtuliitteenJatko_eln2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_eln2
-[Bh]:	EtuliitteenJatko_elnH	;
+[Bh]:	EtuliitteenJatko_elnEiLoppuH	;
 
 LEXICON EtuliitteenJatko_elnH
+EtuliitteenJatko_elnEiLoppuH	;
+Loppu	;
+
+LEXICON EtuliitteenJatko_elnEiLoppuH
 [Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 [Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nimisanat	;
 
@@ -139,9 +144,13 @@ EtuliitteenJatko_elleln2	;
 -@C.JOHDETTAVA_NIMISANAKSI@:-@C.JOHDETTAVA_NIMISANAKSI@	Loppu	;
 
 LEXICON EtuliitteenJatko_elleln2
-[Bh]:	EtuliitteenJatko_ellelnH	;
+[Bh]:	EtuliitteenJatko_ellelnEiLoppuH	;
 
 LEXICON EtuliitteenJatko_ellelnH
+EtuliitteenJatko_ellelnEiLoppuH	;
+Loppu	;
+
+LEXICON EtuliitteenJatko_ellelnEiLoppuH
 [Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Sanasto_n	;
 [Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nl	;
 [Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;

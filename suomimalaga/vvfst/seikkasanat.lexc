@@ -21,6 +21,7 @@ LEXICON Poikkeavat_s
 [Ls][Xp]kilpasilla[X]kilpas:kilpas	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]loitolla[X]loito:loito	Ulkopaikallissijat_Yks_a	;
 [Ls][Xp]loitolla[X]loitom:loitom	Sivumpana_a	;
+[Ls][Xp]miten[X]mitenkä:mitenkä	Liitesana_ä	;
 [Ls][Xp]painuksissa[X]painuksi:painuksi	SisäpaikallissijatVn_a	;
 [Ls][Xp]parissa[X]pari:pari	SisäpaikallissijatVn_a	;
 [Ls][Xp]perempänä[X]perem:perem	Sivumpana_ä	;

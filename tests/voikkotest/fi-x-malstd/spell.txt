@@ -377,6 +377,7 @@ college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 blues-kissainen # sitaattilaina + inen-johdos
 !heitto-iskuista
 kaakkois-
+!hassuna-
 
 # = johdetut sanat yhdyssanoissa =
 []

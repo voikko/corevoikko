@@ -157,9 +157,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
 
 [alku: "na",    luokka: sijapääte, sija: olento_nA, sijamuoto: olento,
-                luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
+                luku: yksikkö, äs: a, jatko: @sijan_jatko_ol - <tavuviiva>];
 [alku: "nä",    luokka: sijapääte, sija: olento_nA, sijamuoto: olento,
-                luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol - <tavuviiva>];
 
 
 [alku: "ina",   luokka: sijapääte, sija: olento_inA, sijamuoto: olento,
