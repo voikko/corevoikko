@@ -331,6 +331,7 @@ LEXICON NOUN Autio
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Sukija [[H]][Sill][Ny]:[[H]]	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
@@ -1273,6 +1274,8 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Rosé
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -2197,6 +2200,8 @@ ts:ts	<WC>YhteisetMonikonSijat2_<A>	;
 tse:tse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	tse:tse	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]tsehe:tsehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]tsihi:tsihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Loppu
 [Sn][Ny]:	Loppu	;
@@ -3937,6 +3942,8 @@ LEXICON Voittoaste
 [Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
 [Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
+?Sukija [Sill][Nm][Cc]mpihi@D.EI_VERTM@:mpihi@D.EI_VERTM@	NimisanaLiOlN_<A>	
 
 LEXICON Yliaste
 [Sn][Ny][Cs]in@D.EI_VERTM@:in@D.EI_VERTM@	Liitesana_<A>	;
@@ -3967,6 +3974,8 @@ LEXICON Yliaste
 [Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
+?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
+?Sukija [Sill][Nm][Cs]impihi@D.EI_VERTM@:impihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 
 LEXICON LiitesanaPi
 Liitesana_<A>	;

@@ -42,6 +42,7 @@
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
+# cp test.out ~/Lataukset/vvfst-sukija-testi.out
 
 # Style- ja usage-lippujen arvot suoraan Joukahaisesta:
 # grep -A1 '<style>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
@@ -285,6 +286,7 @@ word_list = [
     (u"humaaninen",       (u"humaani",       u"humani")),
     (u"husaari",          (u"husaar",        u"husar")),
     (u"huumori",          (u"huumor",        u"humor")),
+    (u"inhimillinen",     (u"inhimilli",     u"inhimmilli")),
     (u"inkvisiittori",    (u"inkvisiittor",  u"inkvisitor", u"inkvisiitor")),
     (u"inkvisitio",       (u"inkvisitio",    u"inkvisiitio")),
     (u"insinööri",        (u"insinöör",      u"insinör")),
