@@ -79,5 +79,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
  [alku: "°K", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
  [alku: "°", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
  [alku: "€", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+ [alku: "§", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];

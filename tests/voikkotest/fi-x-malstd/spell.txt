@@ -259,6 +259,7 @@ USA:ssakin
 !ivkaihosta
 Ab:ltä
 !esim.:ssä
+§:ssä
 
 # = sijamuodot =
 []
