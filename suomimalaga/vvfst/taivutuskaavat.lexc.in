@@ -851,6 +851,7 @@ LEXICON NOUN Matala
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
@@ -874,6 +875,7 @@ LEXICON NOUN Asema_s
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -1276,6 +1278,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Rosé
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -4184,6 +4187,8 @@ LEXICON LukusanaYksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm1_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm1_<A>	;
 hde:hde	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
+?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm1_<A>	;
 
 LEXICON LukusanaKaksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
@@ -4213,6 +4218,8 @@ LEXICON LukusanaKaksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm29_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm29_<A>	;
 hde:hde	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy29_<A>	;
+?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm29_<A>	;
 
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>	;
@@ -4242,6 +4249,7 @@ LEXICON LukusanaKolme
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 e:e	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]ehen:ehen	LukusanaSillNy29_<A>	;
 
 LEXICON LukusanaNeljä
 [Sn][Ny]<A>:<A>	LukusanaSnNy29_<A>	;
@@ -4271,6 +4279,8 @@ LEXICON LukusanaNeljä
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]<A>h<A>n:<A>h<A>n	LukusanaSillNy29_<A>	;
+?Sukija [Sill][Nm]ihin:ihin	LukusanaSillNm29_<A>	;
 
 LEXICON LukusanaViisi
 [Sn][Ny]si:si	LukusanaSnNy29_<A>	;
@@ -4301,6 +4311,8 @@ LEXICON LukusanaViisi
 [Sin][Nm]sin:sin	LukusanaSinNm29_<A>	;
 [Sko][Nm]sine:sine	LukusanaSkoNm29_<A>	;
 de:de	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]tehen:tehen	LukusanaSillNy29_<A>	;
+?Sukija [Sill][Nm]sihin:sihin	LukusanaSillNm29_<A>	;
 
 LEXICON LukusanaSeitsemän
 [Sn][Ny]<A>n:<A>n	LukusanaSnNy29_<A>	;
@@ -4330,6 +4342,8 @@ LEXICON LukusanaSeitsemän
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
+?Sukija [Sill][Ny]<A>h<A>n:<A>h<A>n	LukusanaSillNy29_<A>	;
+?Sukija [Sill][Nm]ihin:ihin	LukusanaSillNm29_<A>	;
 
 LEXICON LukusanaSnNy
 @U.LS.SNNY@:@U.LS.SNNY@	LukusanaToista	;
@@ -4416,6 +4430,8 @@ LEXICON JärjestyslukuNainen
 [Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
+?Sukija [Sill][Nm]sihin:sihin JärjestyslukuSillNm39_<A> ;
+?Sukija [Sill][Nm]sihi:sihi	Omistusliite_<A>
 
 LEXICON JärjestyslukuKahdeksas
 [Sn][Ny]s:s JärjestyslukuSnNy29_<A> ;
@@ -4443,6 +4459,8 @@ LEXICON JärjestyslukuKahdeksas
 [Sab][Ny]nnett<A>:nnett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> Liitesana_<A> ;
 [Sin][Nm]nsin:nsin Liitesana_<A> ;
+?Sukija [Sill][Ny]ntehen:ntehen JärjestyslukuSillNy39_<A> ;
+?Sukija [Sill][Nm]nsihin:nsihin Liitesana_<A> ;
 
 LEXICON JärjestyslukuSnNy
 @U.LS.SNNY@	JärjestyslukuToista	;
