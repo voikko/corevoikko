@@ -192,13 +192,17 @@ for sija in MULTI.keys():
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	if OPTIONS["sukija"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaLukusanaKolmattaYhdeksättä\t;")
 	if sija in [u"SelaNy", u"SelaNm"]:
 		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
-	
+
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	if OPTIONS["sukija"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaLukusanaKolmattaYhdeksättä\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
 	if sija == u"SelaNm":
 		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
@@ -245,12 +249,16 @@ for sija in MULTI_ORDINALS.keys():
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
+	if OPTIONS["sukija"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
 	numeralLines.append(lexiconName + u"Kertoimet\t;")
 	appendLines(u"Järjestysluku", sija + u"39", numeralLines, lexcFile)
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
+	if OPTIONS["sukija"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliiteJl\t;")
 	appendLines(u"Järjestysluku", sija + u"1", numeralLines, lexcFile)
 

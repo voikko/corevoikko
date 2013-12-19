@@ -4350,11 +4350,13 @@ LEXICON LukusanaSnNy
 @U.LS.SNNY@:@U.LS.SNNY@	Liitesana_<A>	;
 @U.LS.SNNY@:@U.LS.SNNY@	LukusananJälkiliite	;
 @U.LS.SNNY@@P.JOHDETTAVA_NIMISANAKSI.ON@[Bc][Bh]:@U.LS.SNNY@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+?Sukija @U.LS.SNNY@:@U.LS.SNNY@	SukijaLukusanaKolmattaYhdeksättä	;
 
 LEXICON LukusanaSnNm
 @U.LS.SNNM@:@U.LS.SNNM@	LukusanaToista	;
 @U.LS.SNNM@:@U.LS.SNNM@	Liitesana_<A>	;
 @U.LS.SNNM@:@U.LS.SNNM@	LukusananJälkiliite	;
+?Sukija @U.LS.SNNM@:@U.LS.SNNM@	SukijaLukusanaKolmattaYhdeksättä	;
 
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;
@@ -4466,6 +4468,7 @@ LEXICON JärjestyslukuSnNy
 @U.LS.SNNY@	JärjestyslukuToista	;
 @U.LS.SNNY@	Liitesana_<A>	;
 @U.LS.SNNY@	LukusananJälkiliiteJl	;
+?Sukija @U.LS.SNNY@	SukijaJärjestyslukuKolmattaYhdeksättä	;
 
 LEXICON JärjestyslukuSnNy29
 JärjestyslukuSnNy_<A>	;
