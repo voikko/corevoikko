@@ -200,6 +200,8 @@ def get_info_flags(word):
 				flags = flags + u"[Isf]"
 			elif flagName == u"el_altark":
 				flags = flags + u"[De]"
+			elif flagName == u"free_suffix":
+				flags = flags + u"[Ivj]"
 	return flags
 
 def get_vfst_class_prefix(vfst_class):

@@ -106,6 +106,8 @@ def get_additional_attributes(word):
 		result = result + u", aluetta_tarkentava_etuliite: yes"
 	if u"geo_suffix" in flags:
 		result = result + u", paikannimen_jälkiliite: yes"
+	if u"free_suffix" in flags:
+		result = result + u", vapaa_jälkiosa: yes"
 	return result
 
 def handle_word(word):

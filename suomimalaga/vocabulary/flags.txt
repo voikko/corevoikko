@@ -27,6 +27,7 @@
 50      compounding/eltj                         -               Teonsanan nimi- tai laatusanajohdoksen etuliite
 51      compounding/el_altark                    -               Aluetta tarkentava etuliite
 54      compounding/geo_suffix                   -               Paikannimen jälkiliite
+60      compounding/free_suffix                  -               Yhdistyy vapaasti yhdyssanan perusosaksi
 27      derivation/ei_lainen                     ei_lAinen       Ei lAinen-johdosta
 30      derivation/ei_mainen                     ei_mAinen       Ei mAinen-johdosta
 3       derivation/inen                          inen            Inen-johdin aina sallittu

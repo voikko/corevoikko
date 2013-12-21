@@ -3698,19 +3698,6 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
     $tietue :=+ [erisnimen_pääte: yes];
   end;
 
-  # Vapaasti yhdistyvät yhdyssanan jälkiosat. Verbit ovat mukana substantiivijohdosten takia.
-  if ($tietue.perusmuoto in <"adjektiivi", "adverbi", "adverbiaali", "agentti",
-			     "attribuutti", "huomautus", "huudahtaa",
-			     "ilmaisu", "infinitiivi", "interjektio",
-			     "konjunktio", "käsite", "lausahtaa", "nimi",
-			     "nimitys", "objekti", "partikkeli", "partisiippi",
-			     "postpositio", "predikaatti", "predikatiivi",
-			     "prepositio", "pronomini", "relatiivipronomini",
-			     "sana", "subjekti", "substantiivi", "tokaisu",
-			     "termi", "verbi">) then
-    $tietue :=+ [vapaa_jälkiosa: yes];
-  end;
-
   # Inen-loppuiset laatusanat
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];

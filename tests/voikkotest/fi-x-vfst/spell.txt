@@ -69,6 +69,63 @@ hilpeälampaisenkasvattava
 bosnialaisenkasvattava
 !bosnialaistakasvattava
 neljäabsoluuttisenkasvattava
+!neljäabsoluuttistakasvattava
+!viisivuotiastakasvattava
+juoksemisenkasvattava
+!juoksemisiakasvattava
+juoksemisenmenemisenkasvattava
+!juoksemisenmenemistäkasvattava
+koirallisenkasvattava
+!koirallistakasvattava
+ohjelmointisuuntautuneenkasvattava
+!ohjelmointisuuntautunuttakasvattava
+!työöitä
+työ-öitä
+kuutamoöitä
+!kuutamo-öitä
+liike-elämä
+matemaattis-luonnontieteellinen # -is
+kreikkalais-hellenistinen # -is, "kreikkalais" johdettu sanasta "Kreikka"
+#!kreikkalais-tyylinen Nämä sallitaan toistaiseksi, jotta "kreikkalais-hellenistinen" tunnistuu
+venäläis-kreikkalainen # -is, "kreikkalainen" johdettu sanasta "Kreikka"
+kreikkalais-latinalaisnorjalainen # -is, "latinalainen" laatusana, "norjalainen" johdettu sanasta "Norja"
+oopiumsodan
+!kissaismi
+!turunväylän
+!turkuväylä
+teollisuusliitoissa
+!lähkoirainen
+!juurihoito-klubi
+!paraslehmäinen # "paras" ei sallittu yhdyssanan osana
+!koeelää
+koe-elää
+!makeamäreinen # "märe" ei sallittu yhdyssanan osana
+!makeakäkinen # "käki" ei sallittu yhdyssanan jälkiosana
+!leipämainen # "mainen" ei sallittu yhdyssanan osana
+!kalasointi # "soida" ei sallittu yhdyssanan jälkiosana
+virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
+miellyttämishaluinen
+mannertenvälisiä
+!uutelleennimeä # adjektiivin genetiivi + substantiivi
+!kaivertajajuoda
+!kaivertajajoi
+kaivertajajuonti
+tomahawkjänis
+!tomahawkijänis
+!--koulu                       # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
+!Ammattikorkeakoulu-tutkintoon # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
+kissa-sanan
+ja-sana
+!---sana
+avaruustoimintaa
+!avaruustoimit
+-hitsaaminen
+!-jatkuu
+!Matti-kaunis
+NHL-painotteisella
+!selvännäkijä # selvänäkijä
+!kaunisjuoksija
+!juoksijakaunis
 nuoriinmiehiinkö
 nuorillapareilla
 

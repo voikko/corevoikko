@@ -100,6 +100,7 @@ Multichar_Symbols
 [Ips] ! paikannimi taipuu sisäpaikallissijoissa
 [Ipu] ! paikannimi taipuu ulkopaikallissijoissa
 [Isf] ! sitaattilaina
+[Ivj] ! vapaasti yhdistyvä yhdyssanan jälkiosa
 
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
