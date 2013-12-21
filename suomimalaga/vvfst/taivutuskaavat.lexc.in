@@ -1063,6 +1063,7 @@ LEXICON NOUN Ainoa
 
 LEXICON NOUN Suurempi
 Voittoaste_<A>	;
+?Nimisana	[Sg][Nm][Cc]mp<A>in:mp<A>in	<WC>YsJatko	;
 
 LEXICON NOUN Vapaa
 <WC>Vapaa_s_<A>	;
@@ -3935,6 +3936,7 @@ LEXICON Voittoaste
 [Sn][Nm][Cc]mm<A>t@D.EI_VERTM@:mm<A>t@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Nm][Cc]mpie@D.EI_VERTM@:mpie@D.EI_VERTM@	NimisanaLiOlN_<A>	;
+[Sg][Nm][Cc]mp<A>i@D.EI_VERTM@:mp<A>i@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sp][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sp][Nm][Cc]mpi<A>@D.EI_VERTM@:mpi<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Str][Ny][Cc]mm<A>ksi@D.EI_VERTM@:mm<A>ksi@D.EI_VERTM@	NimisanaLiOlI_<A>	;

@@ -5,7 +5,11 @@
 
 # = yhdyssanat =
 []
+yövieras
 kissakoira
+virka-auto
+viljamaa
+#taloonjuoksu
 seinäkissa
 seinänkissa
 !seinääkissa
@@ -25,6 +29,46 @@ suvialainen
 abitalo # "abi" ei sallittu yhdyssanan loppuosana
 !taloabikissa # "abi" ei sallittu yhdyssanan loppuosana
 !taloabi # "abi" ei sallittu yhdyssanan loppuosana
+!puuuineet
+!kahdeksankissa
+!hevosula
+vanhempainyhdistys
+!sisempäinyhdistys
+!vanhempaatalo
+vanhempaintalo
+kirkkoisillä
+johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
+!äidinsalli
+!laputkerimä
+pinta-alaltaan
+vapaa-ajallaan
+verhokonttaava
+!verhotkonttaava
+verhonkonttaava
+verhojenkonttaava
+!verhoakonttaava
+!verhojakonttaava
+!verhostakonttaava
+!verhottakonttaava
+elämähyppivä
+!elämäthyppivä
+!elämäähyppivä
+elämänhyppivä
+sairashyppivä
+!sairaathyppivä
+!sairastahyppivä
+sairaanhyppivä
+virkeydenlakaiseva
+!virkeyttälakaiseva
+!minuahyppäävä
+!kauniinlaistakasvattava
+suolaisienkasvattava
+!suolaistakasvattava
+hilpeälampaisenkasvattava
+!hilpeälampaistakasvattava
+bosnialaisenkasvattava
+!bosnialaistakasvattava
+neljäabsoluuttisenkasvattava
 nuoriinmiehiinkö
 nuorillapareilla
 
@@ -2374,3 +2418,4 @@ live-
 bi-
 !varhais
 mitenkähän
+vanhempain
