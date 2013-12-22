@@ -254,6 +254,7 @@ Nätti-Jussi
 # = lyhenteet =
 []
 USA:ssa
+!USA:s
 HTML-kieli
 USA:ssakin
 !ivkaihosta
