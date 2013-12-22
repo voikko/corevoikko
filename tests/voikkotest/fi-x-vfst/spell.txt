@@ -2476,3 +2476,7 @@ bi-
 !varhais
 mitenkähän
 vanhempain
+tervetulleeksi
+läksi
+yhtensä
+ensimmäisellään

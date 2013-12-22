@@ -38,6 +38,8 @@ LEXICON Poikkeavat_s
 [Ls][Xp]seinempänä[X]seinem:seinem	Sivumpana_ä	;
 [Ls][Xp]sinnempänä[X]sinnem:sinnem	Sivumpana_ä	;
 [Ls][Xp]sivumpana[X]sivum:sivum	Sivumpana_a	;
+[Ls][Xp]soopa[X][Sn][Ny]soopa:soopa	Liitesana_a	;
+[Ls][Xp]soopa[X][Sp][Ny]soopaa:soopaa	Liitesana_a	;
 [Ls][Xp]supussa[X]supu:supu	SisäpaikallissijatSsaSta_a	;
 [Ls][Xp]supussa[X]supu:supu	Ulkopaikallissijat_Yks_a	;
 [Ls][Xp]supussa[X][Sill][Ny]suppuun:suppuun	Liitesana_a	;

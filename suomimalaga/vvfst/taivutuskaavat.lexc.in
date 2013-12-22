@@ -2772,6 +2772,8 @@ hd:hd	Tuntea_w_<A>	;
 ht:ht	Tuntea_s_<A>	;
 hd:hd	KertomanTekijäpääteHeikko_<A>	;
 ht:ht	KertomanTekijäpääteVahva_<A>	;
+ks:ks	KertomanTekijäpääteHeikko_<A>	;
+ks:ks	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Tuntea
 n:n	Tuntea_w_<A>	;
@@ -4163,6 +4165,7 @@ LyhenteenTaivutuspääte_<A>	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
+[Sn][Ny]hte:hte	Omistusliite_<A>	;
 [Sg][Ny]hden:hden	LukusanaSgNy1_<A>	;
 [Sp][Ny]ht<A>:ht<A>	LukusanaSpNy1_<A>	;
 [Str][Ny]hdeksi:hdeksi	LukusanaStrNy1_<A>	;
@@ -4422,7 +4425,8 @@ LEXICON JärjestyslukuNainen
 [Sill][Ny]see:see Omistusliite_<A> ;
 [Sill][Nm]siin:siin JärjestyslukuSillNm39_<A> ;
 [Sill][Nm]sii:sii	Omistusliite_<A>	;
-[Sade][Ny]sell<A>:sell<A> Liitesana_<A> ;
+[Sade][Ny]sell<A>:sell<A> JärjestyslukuSadeNy39_<A> ;
+[Sade][Ny]sell<A>:sell<A> OlV_<A> ;
 [Sade][Nm]sill<A>:sill<A> JärjestyslukuSadeNm39_<A> ;
 [Sade][Nm]sill<A>:sill<A> OlV_<A> ;
 [Sabl][Ny]selt<A>:selt<A> Liitesana_<A> ;
