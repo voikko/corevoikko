@@ -143,6 +143,7 @@ EtuliitteenJatko_elleln2	;
 -:-	EtuliitteenJatko_elleln2	;
 -[Bc]@P.INEN_KIELLETTY.ON@:-@P.INEN_KIELLETTY.ON@	Erisnimet	;
 -@C.JOHDETTAVA_NIMISANAKSI@:-@C.JOHDETTAVA_NIMISANAKSI@	Loppu	;
+-:-	Sanasto_a	;
 
 LEXICON EtuliitteenJatko_elleln2
 [Bh]:	EtuliitteenJatko_ellelnEiLoppuH	;

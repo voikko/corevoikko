@@ -2480,3 +2480,6 @@ tervetulleeksi
 läksi
 yhtensä
 ensimmäisellään
+digi-tv:n
+auer
+autereella

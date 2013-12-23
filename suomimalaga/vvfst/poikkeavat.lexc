@@ -14,6 +14,8 @@ LEXICON Poikkeavat_n
 Summayhdyssanat	;
 [Ln][Xp]aamukaksi[X]aamu[Bm]ka:aamuka	NimisanaKaksi_a	;
 [Ln][Xp]aamuyksi[X]aamu[Bm]y:aamuy	NimisanaKaksi_ä	;
+[Ln][Xp]auer[X]auer:auer	NimisanaTaival_w_a	;
+[Ln][Xp]auer[X]auter:auter	NimisanaTaival_s_a	;
 [Ln][Xp]iltakaksi[X]ilta[Bm]ka:iltaka	NimisanaKaksi_a	;
 [Ln][Xp]iltayksi[X]ilta[Bm]y:iltay	NimisanaKaksi_ä	;
 [Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;

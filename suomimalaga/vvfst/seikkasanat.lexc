@@ -6,6 +6,7 @@ LEXICON Poikkeavat_s
 [Ls][Xp]etäämpänä[X]etääm:etääm	Sivumpana_ä	;
 [Ls][Xp]hallussa[X]hallu:hallu	SisäpaikallissijatSsaSta_a	;
 [Ls][Xp]hallussa[X][Sill][Ny]haltuu:haltuu	AsemosanaLiOlN_a	;
+[Ls][Xp]henkihieverissä[X]henki[Bm]hieveri:henkihieveri	SisäpaikallissijatVn_ä	;
 [Ls][Xp]hereillä[X]here:here	Ulkopaikallissijat_Mon_ä	;
 [Ls][Xp]hujakassa[X][Sine][Ny]hujakassa:hujakassa	Liitesana_a	;
 [Ls][Xp]hörö[X]hörö:hörö	Ulkopaikallissijat_Yks_ä	;
