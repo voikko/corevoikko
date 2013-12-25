@@ -30,7 +30,7 @@ LukusanaSallNm29Kertoimet	;
 LukusanaSabNm29Kertoimet	;
 LukusanaSinNm29Kertoimet	;
 LukusanaSkoNm29Kertoimet	;
-[Sn][Ny][Xp]sata[X]sata@U.LS.SNNY@:sata@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sata[X]sata@U.LS.SNNY@:sata@U.LS.SNNY@	LukusanaSnNy29_a	;
 [Sn][Nm][Xp]sata[X]sadat@U.LS.SNNM@:sadat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]tuhat[X]tuhat@U.LS.SNNY@:tuhat@U.LS.SNNY@	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]tuhat[X]tuhannet@U.LS.SNNM@:tuhannet@U.LS.SNNM@	LukusanaLiitesana_a	;
@@ -38,6 +38,7 @@ LukusanaSkoNm29Kertoimet	;
 [Sn][Nm][Xp]miljoona[X]miljoonat@U.LS.SNNM@:miljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]miljardi[X]miljardi@U.LS.SNNY@:miljardi@U.LS.SNNY@	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]miljardi[X]miljardit@U.LS.SNNM@:miljardit@U.LS.SNNM@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]biljoona[X]biljoona@U.LS.SNNY@:biljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
