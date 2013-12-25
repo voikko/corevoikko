@@ -41,6 +41,7 @@ LEXICON SukunimiYsJatko
 -[Bc]:-	Erisnimet	;
 -[Bc]:-	Sanasto_nimisanat	;
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_l	;
 -[Bc]:-	Loppu	;
 
 LEXICON EtunimiYsJatko
@@ -95,6 +96,7 @@ EtuliitteenJatko_eln2	;
 -:-	EtuliitteenJatko_eln2	;
 -[Bc]:-	Sanasto_ep	;
 -:-	Loppu	;
+-:-	Sanasto_a	;
 
 LEXICON EtuliitteenJatko_eln2
 [Bh]:	EtuliitteenJatko_elnEiLoppuH	;

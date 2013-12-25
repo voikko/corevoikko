@@ -2484,3 +2484,7 @@ digi-tv:n
 auer
 autereella
 !-III
+suhu-s
+miljoonasosa
+miljoonannen
+Hubble-avaruusteleskooppi

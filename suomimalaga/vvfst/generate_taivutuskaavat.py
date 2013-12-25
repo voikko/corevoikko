@@ -211,30 +211,30 @@ for sija in MULTI.keys():
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
 MULTI_ORDINALS = {
-	u"SgNy": [u"kymmenennen", u"sadannen", u"tuhannennen"],
-	u"SpNy": [u"kymmenettä", u"sadannetta", u"tuhannetta"],
-	u"StrNy": [u"kymmenenneksi", u"sadanneksi", u"tuhannenneksi"],
-	u"SesNy": [u"kymmenentenä", u"sadantena", u"tuhannentena"],
-	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa"],
-	u"SelaNy": [u"kymmenennestä", u"sadannesta", u"tuhannennesta"],
-	u"SillNy": [u"kymmenenteen", u"sadanteen", u"tuhannenteen"],
-	u"SadeNy": [u"kymmenennellä", u"sadannella", u"tuhannennella"],
-	u"SablNy": [u"kymmenenneltä", u"sadannelta", u"tuhannennelta"],
-	u"SallNy": [u"kymmenennelle", u"sadannelle", u"tuhannennelle"],
-	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta"],
-	u"SgNm": [u"kymmenensien", u"sadansien", u"tuhannensien"],
-	u"SpNm": [u"kymmenensiä", u"sadansia", u"tuhannensia"],
-	u"StrNm": [u"kymmenensiksi", u"sadansiksi", u"tuhannensiksi"],
-	u"SesNm": [u"kymmenensinä", u"sadansina", u"tuhannensina"],
-	u"SineNm": [u"kymmenensissä", u"sadansissa", u"tuhannensissa"],
-	u"SelaNm": [u"kymmenensistä", u"sadansista", u"tuhannensista"],
-	u"SillNm": [u"kymmenensiin", u"sadansiin", u"tuhannensiin"],
-	u"SadeNm": [u"kymmenensillä", u"sadansilla", u"tuhannensilla"],
-	u"SablNm": [u"kymmenensiltä", u"sadansilta", u"tuhannensilta"],
-	u"SallNm": [u"kymmenensille", u"sadansille", u"tuhannensille"],
-	u"SabNm": [u"kymmenensittä", u"sadansitta", u"tuhannensitta"],
-	u"SinNm": [u"kymmenensin", u"sadansin", u"tuhannensin"],
-	u"SkoNm": [u"kymmenensine", u"sadansine", u"tuhannensine"]
+	u"SgNy": [u"kymmenennen", u"sadannen", u"tuhannennen", u"miljoonannen"],
+	u"SpNy": [u"kymmenettä", u"sadannetta", u"tuhannetta", u"miljoonannetta"],
+	u"StrNy": [u"kymmenenneksi", u"sadanneksi", u"tuhannenneksi", u"miljoonanneksi"],
+	u"SesNy": [u"kymmenentenä", u"sadantena", u"tuhannentena", u"miljoonantena"],
+	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa", u"miljoonannessa"],
+	u"SelaNy": [u"kymmenennestä", u"sadannesta", u"tuhannennesta", u"miljoonannesta"],
+	u"SillNy": [u"kymmenenteen", u"sadanteen", u"tuhannenteen", u"miljoonanteen"],
+	u"SadeNy": [u"kymmenennellä", u"sadannella", u"tuhannennella", u"miljoonannella"],
+	u"SablNy": [u"kymmenenneltä", u"sadannelta", u"tuhannennelta", u"miljoonannelta"],
+	u"SallNy": [u"kymmenennelle", u"sadannelle", u"tuhannennelle", u"miljoonannelle"],
+	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta", u"miljoonannetta"],
+	u"SgNm": [u"kymmenensien", u"sadansien", u"tuhannensien", u"miljoonansien"],
+	u"SpNm": [u"kymmenensiä", u"sadansia", u"tuhannensia", u"miljoonansia"],
+	u"StrNm": [u"kymmenensiksi", u"sadansiksi", u"tuhannensiksi", u"miljoonansiksi"],
+	u"SesNm": [u"kymmenensinä", u"sadansina", u"tuhannensina", u"miljoonansina"],
+	u"SineNm": [u"kymmenensissä", u"sadansissa", u"tuhannensissa", u"miljoonansissa"],
+	u"SelaNm": [u"kymmenensistä", u"sadansista", u"tuhannensista", u"miljoonansista"],
+	u"SillNm": [u"kymmenensiin", u"sadansiin", u"tuhannensiin", u"miljoonansiin"],
+	u"SadeNm": [u"kymmenensillä", u"sadansilla", u"tuhannensilla", u"miljoonansilla"],
+	u"SablNm": [u"kymmenensiltä", u"sadansilta", u"tuhannensilta", u"miljoonansilta"],
+	u"SallNm": [u"kymmenensille", u"sadansille", u"tuhannensille", u"miljoonansille"],
+	u"SabNm": [u"kymmenensittä", u"sadansitta", u"tuhannensitta", u"miljoonansitta"],
+	u"SinNm": [u"kymmenensin", u"sadansin", u"tuhannensin", u"miljoonansin"],
+	u"SkoNm": [u"kymmenensine", u"sadansine", u"tuhannensine", u"miljoonansine"]
 }
 
 for sija in MULTI_ORDINALS.keys():
@@ -245,6 +245,7 @@ for sija in MULTI_ORDINALS.keys():
 	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][0] + u":" + diacritic + MULTI_ORDINALS[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
 	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][1] + u":" + diacritic + MULTI_ORDINALS[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
 	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][2] + u":" + diacritic + MULTI_ORDINALS[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][3] + u":" + diacritic + MULTI_ORDINALS[sija][3] + u"\t" + lexiconName + u"_a\t;\n")
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
