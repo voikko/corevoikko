@@ -837,6 +837,7 @@ LEXICON NOUN Matala
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
@@ -2223,6 +2224,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
+?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
@@ -3992,6 +3994,7 @@ LEXICON Yliaste
 [Sab][Ny][Cs]imm<A>tt<A>@D.EI_VERTM@:imm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
+[Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cs]impihi@D.EI_VERTM@:impihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
