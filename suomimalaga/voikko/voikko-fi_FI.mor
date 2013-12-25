@@ -638,6 +638,7 @@ end;
 
 combi_rule lyhennesääntö ($vasen, $oikea, $sana):
   ? $oikea.luokka = lyhenne;
+  ? $oikea.alaluokka /= roomalainen;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (kaksoispiste in $oikea.jatko) then result $res, rules kaksoispiste; end;

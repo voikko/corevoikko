@@ -169,7 +169,7 @@ Sanasto	;
 -[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_l	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 LukusananAlku	;
--[Bc]:-	LukusananAlku	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	LukusananAlku	;
 YhdysmerkkiJaLukusananJälkiliite	;
 Asemosana	;
 Suhdesana	;

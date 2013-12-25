@@ -3,7 +3,7 @@ Lukusana	;
 Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
-RoomalainenNumero	;
+@D.YS_ALKANUT@:@D.YS_ALKANUT@	RoomalainenNumero	;
 
 LEXICON LukusananAlkuKerroin
 LukusanaSgNy29Kertoimet	;
