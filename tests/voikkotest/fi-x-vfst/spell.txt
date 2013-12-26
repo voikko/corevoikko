@@ -2491,3 +2491,5 @@ Hubble-avaruusteleskooppi
 satatuhatta
 Euroopan-puoleisen
 lähimpine
+maalis-huhtikuussa
+kiiruun

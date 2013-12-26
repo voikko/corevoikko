@@ -57,7 +57,7 @@
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a, tiedot: <yt>];
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
+ [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
  [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];

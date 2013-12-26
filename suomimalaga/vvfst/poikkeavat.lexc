@@ -28,6 +28,7 @@ Summayhdyssanat	;
 [Ln][Xp]hurraa[X][Sn][Ny]hurraa:hurraa	Liitesana_a	;
 [Ln][Xp]hurraa[X][Sp][Ny]hurraata:hurraata	NimisanaLiOlV_a	;
 [Ln][Xp]isämeidän[X][Sn][Ny]isä[Bm]meidän:isämeidän	Liitesana_ä	;
+[Ln][Xp]kiiru[X]kiiru:kiiru	Kiiru	;
 [Ln][Xp]kultanen[X][Sn][Ny]kultase:kultase	Omistusliite_a	;
 [Ln][Xp]meikä[X]meikä[Sn][Ny]meikä:meikä	NimisanaNormaaliYsJatko_ä	;
 [Ln][Xp]nukke[X]nukk[Sg][Nm]i:nukki	NimisanaMonikonGenetiiviEnJatko_a	;
@@ -448,6 +449,26 @@ nne:nne	NimisanaYhteisetYksikönPaikallissijat_a	;
 ns:ns	NimisanaYhteisetMonikonSijat2_a	;
 ns:ns	NimisanaYhteisetMonikonPaikallissijat_a	;
 [Sill][Nm]nsii:nsii	NimisanaLiOlN_a	;
+
+LEXICON Kiiru
+[Sn][Ny]:	NimisanaNormaaliYsJatko_a	;
+[Sp][Ny]tta:tta	NimisanaLiOlV_a	;
+[Sn][Ny]u:u	Omistusliite_a	;
+[Sn][Nm]ut:ut	Liitesana_a	;
+[Sg][Ny]un:un	NimisanaYksikönGenetiivinJatko_a	;
+[Sg][Nm]id:id	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sg][Nm]itt:itt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sp][Nm]ita:ita	NimisanaLiOlV_a	;
+[Ses][Ny]una:una	NimisanaLiOlV_a	;
+NimisanaYhteisetMonikonSijat2_a	;
+[Sill][Ny]usee:usee	NimisanaLiOlN_a	;
+[Sill][Nm]ihi:ihi	NimisanaLiOlN_a	;
+[Sill][Nm]isii:isii	NimisanaLiOlN_a	;
+u:u	NimisanaYhteisetYksikönPaikallissijat_a	;
+NimisanaYhteisetMonikonPaikallissijat_a	;
+Johdin_mAinen_a	;
+u:u	Johdin_tOn_a	;
+Johdin_inen_vain_lipulla_a	;
 
 LEXICON Boy
 [Ln][Xp]boy[X][Sn][Ny]boy:boy	NimisanaNormaaliYsJatkoOl_a	;

@@ -258,6 +258,7 @@ static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, 
 }
 
 static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
+	wchar_t beforeLastChar = L'\0';
 	wchar_t lastChar = L'\0';
 	bool boundaryPassed = false;
 	bool hyphenPresent = false;
@@ -297,6 +298,9 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 		}
 		else {
 			if (boundaryPassed) {
+				if (beforeLastChar == L'i' && lastChar == L's') {
+					hyphenUnconditionallyAllowed = true;
+				}
 				if (!hyphenUnconditionallyAllowed) {
 					lastChar = SimpleChar::lower(lastChar);
 					wchar_t nextChar = SimpleChar::lower(fstOutput[i]);
@@ -308,6 +312,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				boundaryPassed = false;
 				hyphenUnconditionallyAllowed = false;
 			}
+			beforeLastChar = lastChar;
 			lastChar = fstOutput[i];
 		}
 	}
