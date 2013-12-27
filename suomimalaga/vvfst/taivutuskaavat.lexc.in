@@ -483,7 +483,7 @@ k:k	<WC>Lovi_s_<A>	;
 g:g	<WC>Lovi_w_<A>	;
 
 LEXICON NOUN Lampi
-! TODO yksikkö "Lammin"
+[Sg][Ny]min:min	<WC>YksikönGenetiivinJatko_<A>	;
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;
 
@@ -985,6 +985,7 @@ LEXICON NOUN Solakka_s
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
