@@ -3775,7 +3775,7 @@ neis:neis	Johdin_UUs_<A>	;
 ?Sukija [Ll]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
-[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
 [Ll]lee:lee	Omistusliite_<A>	;
 ?Sukija [Ll]lehe:lehe	Omistusliite_<A>	;
 

@@ -741,20 +741,20 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 
 # Jersey [dzöösi] (mon. gen. -in/-jen; mon. part. -jA) {{{2
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_tA>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tulento_ksi>, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @sisä_ssA_stA, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tulento_ksi>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @sisä_ssA_stA, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jerseyhin", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jerseyhi", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
+ [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
 # Linné [linnee] {{{2
  [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];

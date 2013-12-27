@@ -539,6 +539,15 @@ LEXICON Summayhdyssanat
 [Ln][Xp]laulaja-kitaristi[X]laulaja-[Bm]kitarist:laulaja-kitarist	NimisanaRisti_a	;
 
 LEXICON Poikkeavat_ep
+[Lep][Xp]Jersey[X][Sn][Ny]jersey:jersey	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Jersey[X][Sg][Ny]jersey:jersey	Omistusliite_ä	;
+[Lep][Xp]Jersey[X][Sg][Ny]jerseyn:jerseyn	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Jersey[X][Sp][Ny]jerseyä:jerseyä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Jersey[X][Ses][Ny]jerseynä:jerseynä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Jersey[X]jersey:jersey	PaikannimiYhteisetYksikönPaikallissijat_ä	;
+[Lep][Xp]Jersey[X][Sill][Ny]jerseyy:jerseyy	PaikannimiLiOlN_ä	;
+[Lep][Xp]Jersey[X]jersey:jersey	Ulkopaikallissijat_Yks_ä	;
+[Lep][Xp]Jersey[X]jersey:jersey	Johdin_lAinen_ä	;
 [Lep][Xp]Kangasala[X]kangas[Bm]a:kangasa	Ulkopaikallissijat_Yks_a	;
 [Lep][Xp]Keltainenmeri[X][Sn][Ny]keltainen[Bm]meri:keltainenmeri	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Keltainenmeri[X][Sg][Ny]keltaisen[Bm]meren:keltaisenmeren	PaikannimiYksikönGenetiivinJatko_ä	;
@@ -689,6 +698,19 @@ LEXICON Poikkeavat_es
 [Les][Xp]Monroe[X][Ses][Ny]monroena:monroena	SukunimiLiOlV_a	;
 [Les][Xp]Monroe[X]monroe:monroe	SukunimiYhteisetYksikönPaikallissijat_a	;
 [Les][Xp]Monroe[X][Sill][Ny]monroehu:monroehu	SukunimiLiOlN_a	;
+[Les][Xp]Ogilvy[X]ogilvy:ogilvy	SukunimiNalle_w_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sn][Ny]:ogilvy	SukunimiNormaaliYsJatkoOl_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sg][Nm]j:ogilvyj	SukunimiMonikonGenetiiviEnJatko_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sg][Nm]:ogilvy	SukunimiMonikonGenetiiviInJatko_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sp][Ny]a:ogilvya	SukunimiLiOlV_a	;
+[Les][Xp]Ogilvy[X]ogilvy[Sp][Ny]ä:ogilvyä	SukunimiLiOlV_ä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sp][Nm]ja:ogilvyja	SukunimiLiOlV_a	;
+[Les][Xp]Ogilvy[X]ogilvy[Sp][Nm]jä:ogilvyjä	SukunimiLiOlV_ä	;
+[Les][Xp]Ogilvy[X]ogilvy[Ses][Ny]na:ogilvyna	SukunimiLiOlV_a	;
+[Les][Xp]Ogilvy[X]ogilvy[Ses][Ny]nä:ogilvynä	SukunimiLiOlV_ä	;
+[Les][Xp]Ogilvy[X]ogilvy:ogilvy	SukunimiYhteisetMonikonSijat2_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sill][Ny]y:ogilvyy	SukunimiLiOlN_aä	;
+[Les][Xp]Ogilvy[X]ogilvy[Sill][Nm]ihi:ogilvyihi	SukunimiLiOlN_aä	;
 [Les][Xp]Poe[X][Sn][Ny]poe:poe	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Poe[X][Sn][Nm]poet:poet	Liitesana_a	;
 [Les][Xp]Poe[X][Sg][Ny]poen:poen	SukunimiYksikönGenetiivinJatko_a	;

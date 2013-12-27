@@ -62,7 +62,7 @@
  [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
+ [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "ojentaa", alku: "oje", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_sukija, ei_ysj>];
