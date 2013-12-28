@@ -326,8 +326,10 @@ end;
 ###### ETULIITESÄÄNNÖT PÄÄTTYVÄT
 
 
-combi_rule erisnimi ($vasen, $oikea, $sana):
+combi_rule erisnimi ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @erisnimi;
+  ? ($oikea.tiedot = nil) or ($index = 1) or
+    (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if omistusliite in $oikea.jatko then

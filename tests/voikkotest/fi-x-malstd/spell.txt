@@ -238,6 +238,7 @@ Toholammilla
 !Pertein-
 Yhdysvaltain-mestaruuden
 Nätti-Jussi
+!-San # ei sallittu yhdyssanan osana
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
