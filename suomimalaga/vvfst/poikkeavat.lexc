@@ -28,6 +28,36 @@ Summayhdyssanat	;
 [Ln][Xp]hurraa[X][Sn][Ny]hurraa:hurraa	Liitesana_a	;
 [Ln][Xp]hurraa[X][Sp][Ny]hurraata:hurraata	NimisanaLiOlV_a	;
 [Ln][Xp]isämeidän[X][Sn][Ny]isä[Bm]meidän:isämeidän	Liitesana_ä	;
+[Ln][Xp]kevytsarja[X][Sn][Ny]kevyt[Bm]sarja:kevytsarja	NimisanaNormaaliYsJatko_a ;
+[Ln][Xp]kevytsarja[X][Sn][Ny]kevyen[Bm]sarja:kevyensarja       Omistusliite_a ;
+[Ln][Xp]kevytsarja[X][Sg][Ny]kevyen[Bm]sarjan:kevyensarjan	NimisanaYksikönGenetiivinJatko_a ;
+[Ln][Xp]kevytsarja[X][Sp][Ny]kevyttä[Bm]sarjaa:kevyttäsarjaa	NimisanaLiOlAA_a ;
+[Ln][Xp]kevytsarja[X][Ses][Ny]kevyenä[Bm]sarjana:kevyenäsarjana	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Str][Ny]kevyeksi[Bm]sarjaksi:kevyeksisarjaksi	NimisanaLiOlI_a ;
+[Ln][Xp]kevytsarja[X][Sine][Ny]kevyessä[Bm]sarjassa:kevyessäsarjassa	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sela][Ny]kevyestä[Bm]sarjasta:kevyestäsarjasta	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sill][Ny]kevyeeseen[Bm]sarjaa:kevyeeseensarjaa	NimisanaLiOlN_a ;
+[Ln][Xp]kevytsarja[X][Sade][Ny]kevyellä[Bm]sarjalla:kevyelläsarjalla	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sabl][Ny]kevyeltä[Bm]sarjalta:kevyeltäsarjalta	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sall][Ny]kevyelle[Bm]sarjalle:kevyellesarjalle	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sab][Ny]kevyettä[Bm]sarjatta:kevyettäsarjatta	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sn][Nm]kevyet[Bm]sarjat:kevyetsarjat		Liitesana_a ;
+[Ln][Xp]kevytsarja[X][Sn][Nm]kevyet[Bm]sarja:kevyetsarja		Omistusliite_a ;
+[Ln][Xp]kevytsarja[X][Sg][Nm]kevyiden[Bm]sarjoj:kevyidensarjoj		NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]kevytsarja[X][Sg][Nm]kevyitten[Bm]sarjoj:kevyittensarjoj		NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]kevytsarja[X][Sp][Nm]kevyitä[Bm]sarjoja:kevyitäsarjoja		NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Ses][Nm]kevyinä[Bm]sarjoina:kevyinäsarjoina	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Str][Nm]kevyiksi[Bm]sarjoiksi:kevyiksisarjoiksi	NimisanaLiOlI_a ;
+[Ln][Xp]kevytsarja[X][Sine][Nm]kevyissä[Bm]sarjoissa:kevyissäsarjoissa	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sela][Nm]kevyistä[Bm]sarjoista:kevyistäsarjoista	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sill][Nm]kevyisiin[Bm]sarjoihi:kevyisiinsarjoihi	NimisanaLiOlN_a ;
+[Ln][Xp]kevytsarja[X][Sill][Nm]kevyihin[Bm]sarjoihi:kevyihinsarjoihi	NimisanaLiOlN_a ;
+[Ln][Xp]kevytsarja[X][Sade][Nm]kevyillä[Bm]sarjoilla:kevyilläsarjoilla	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sabl][Nm]kevyiltä[Bm]sarjoilta:kevyiltäsarjoilta	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sall][Nm]kevyille[Bm]sarjoille:kevyillesarjoille	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sab][Nm]kevyittä[Bm]sarjoitta:kevyittäsarjoitta	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sko][Nm]kevyine[Bm]sarjoine:kevyinesarjoine	NimisanaLiOlV_a ;
+[Ln][Xp]kevytsarja[X][Sin][Nm]kevyin[Bm]sarjoin:kevyinsarjoin		Liitesana_a;
 [Ln][Xp]kiiru[X]kiiru:kiiru	Kiiru	;
 [Ln][Xp]kultanen[X][Sn][Ny]kultase:kultase	Omistusliite_a	;
 [Ln][Xp]meikä[X]meikä[Sn][Ny]meikä:meikä	NimisanaNormaaliYsJatko_ä	;
@@ -279,6 +309,7 @@ Summayhdyssanat	;
 [Ln][Xp]tanhuvilla[X]tanhuv:tanhuv	Ulkopaikallissijat_Mon_a	;
 [Ln][Xp]tarvis[X][Sn][Ny]tarvis:tarvis	Liitesana_a	;
 [Ln][Xp]tarvis[X][Sp][Ny]tarvista:tarvista	NimisanaLiOlV_a	;
+[Ln][Xp]tiu[X]tiu@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:tiu@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@	Tiu	;
 [Ln][Xp]täysikuu[X][Sn][Ny]täysi[Bm]kuu:täysikuu	NimisanaNormaaliYsJatkoOl_a	;
 [Ln][Xp]täysikuu[X][Sg][Ny]täyden[Bm]kuu:täydenkuu	Omistusliite_a	;
 [Ln][Xp]täysikuu[X][Sg][Ny]täyden[Bm]kuun:täydenkuun	NimisanaYksikönGenetiivinJatko_a	;
@@ -483,6 +514,16 @@ LEXICON Boy
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonSijat2_a	;
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonPaikallissijat_a	;
 [Ln][Xp]boy[X][Sill][Nm]boyihi:boyihi	NimisanaLiOlN_a	;
+
+LEXICON Tiu
+[Sn][Ny]:	NimisanaNormaaliYsJatkoOl_a	;
+[Sg][Ny]n:n	NimisanaYksikönGenetiivinJatko_a	;
+[Sp][Ny]ta:ta	NimisanaLiOlV_a	;
+[Ses][Ny]na:na	NimisanaLiOlV_a	;
+NimisanaYhteisetYksikönPaikallissijat_a	;
+[Sill][Ny]hu:hu	NimisanaLiOlN_a	;
+Johdin_tOn_a	;
+Johdin_mAinen_a	;
 
 LEXICON Oboe
 [Sn][Ny]:	NimisanaNormaaliYsJatkoOl_a	;
@@ -718,6 +759,8 @@ LEXICON Poikkeavat_es
 [Les][Xp]Poe[X][Ses][Ny]poena:poena	SukunimiLiOlV_a	;
 [Les][Xp]Poe[X]poe:poe	SukunimiYhteisetYksikönPaikallissijat_a	;
 [Les][Xp]Poe[X][Sill][Ny]poehu:poehu	SukunimiLiOlN_a	;
+[Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_w_a	;
+[Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_s_a	;
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t

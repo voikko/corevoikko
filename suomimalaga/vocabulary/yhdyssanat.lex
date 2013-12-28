@@ -986,37 +986,37 @@
 
 # {{{2 kevytsarja (51)
 
-[perusmuoto: "kevytsarja", alku: "kevytsarja",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyttäsarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyenäsarja",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyeksisarja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyessäsarjassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyestäsarjasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyeensarja",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyelläsarjalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyeltäsarjalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyellesarjalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyettäsarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevytsarja",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyttäsarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyenäsarja",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyeksisarja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyessäsarjassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyestäsarjasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyeensarja",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyelläsarjalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyeltäsarjalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyellesarjalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyettäsarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyitäsarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyinäsarjo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyiksisarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyissäsarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyistäsarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyihinsarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyisiinsarjo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyilläsarjoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyiltäsarjoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyillesarjoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyittäsarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyinesarjo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kevytsarja", alku: "kevyinsarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyitäsarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyinäsarjo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyiksisarjoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyissäsarjoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyistäsarjoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyihinsarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyisiinsarjo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyilläsarjoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyiltäsarjoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyillesarjoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyittäsarjoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyinesarjo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kevytsarja", alku: "kevyinsarjoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 kuivakakku (51, 50)
 
