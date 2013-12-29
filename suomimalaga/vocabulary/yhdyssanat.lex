@@ -1086,38 +1086,38 @@
 
 # {{{2 kultainennoutaja (51)
 
-[perusmuoto: "kultainennoutaja", alku: "kultainennoutaja",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaistanoutaja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisenanoutaja",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaiseksinoutaja", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisessanoutajassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppppp=pppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisestanoutajasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaiseennoutaja",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisellanoutajalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppppp=pppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaiseltanoutajalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisellenoutajalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisettanoutaja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultainennoutaja",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaistanoutaja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisenanoutaja",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaiseksinoutaja", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisessanoutajassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppppp=pppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisestanoutajasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaiseennoutaja",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisellanoutajalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppppp=pppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaiseltanoutajalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisellenoutajalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=pppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisettanoutaja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
 
-[perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaistennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisiennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaistennoutaja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisiennoutaja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisianoutaj",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisinanoutaj",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisiksinoutajiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisissanoutajissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisistanoutajista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisiinnoutaj",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisillanoutajilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisiltanoutajilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisillenoutajille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisittanoutajitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisinenoutaj",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "kultainennoutaja", alku: "kultaisinnoutajin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaistennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisiennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaistennoutaja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisiennoutaja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisianoutaj",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisinanoutaj",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisiksinoutajiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisissanoutajissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisistanoutajista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisiinnoutaj",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisillanoutajilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisiltanoutajilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisillenoutajille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisittanoutajitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppppp=ppppppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisinenoutaj",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "kultainennoutaja", alku: "kultaisinnoutajin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppppp=ppppppppp"];
 
 # {{{2 lämminruoka (51)
 

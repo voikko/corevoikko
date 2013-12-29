@@ -85,7 +85,7 @@
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta.
  [perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "vääntää", alku: "vää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];
+ [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];
  [perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö_yksikkö>, äs: ä, tiedot: <ei_inen, ei_sukija>];
  [perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö>, äs: ä, tiedot: <ei_inen, ei_voikko>];
