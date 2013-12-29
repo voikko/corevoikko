@@ -130,6 +130,7 @@ NHL-painotteisella
 !selvännäkijä # selvänäkijä
 !kaunisjuoksija
 !juoksijakaunis
+!sijaistee # "tee" ei sallittu yhdyssanan jälkiosana
 
 # = vain yhdyssanan jälkiosana =
 []
@@ -455,7 +456,6 @@ talotäsmäkoira
 avo-ohut
 kissanpikaliitäjä # nimisanan genetiivi + nimisanan etuliite
 !kissanpikaliitää # nimisanan genetiivi + nimisanan etuliite
-kiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 !mielenkiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 koejuoksee
 !kissakoejuoksee
