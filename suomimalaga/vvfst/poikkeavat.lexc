@@ -580,6 +580,20 @@ LEXICON Summayhdyssanat
 [Ln][Xp]laulaja-kitaristi[X]laulaja-[Bm]kitarist:laulaja-kitarist	NimisanaRisti_a	;
 
 LEXICON Poikkeavat_ep
+[Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Isokyrö[X][Sp][Ny]isoa[Bm]kyröä:isoakyröä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Ses][Ny]isona[Bm]kyrönä:isonakyrönä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Str][Ny]isoksi[Bm]kyröksi:isoksikyröksi	PaikannimiLiOlI_ä	;
+[Lep][Xp]Isokyrö[X][Sine][Ny]isossa[Bm]kyrössä:isossakyrössä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Sela][Ny]isosta[Bm]kyröstä:isostakyröstä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Sill][Ny]isoon[Bm]kyröö:isoonkyröö	PaikannimiLiOlN_ä	;
+[Lep][Xp]Isokyrö[X][Sill][Ny]isoon[Bm]kyröhö:isoonkyröhö	PaikannimiLiOlN_ä	;
+[Lep][Xp]Isokyrö[X][Sade][Ny]isolla[Bm]kyröllä:isollakyröllä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Sabl][Ny]isolta[Bm]kyröltä:isoltakyröltä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Sall][Ny]isolle[Bm]kyrölle:isollekyrölle	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X][Sab][Ny]isotta[Bm]kyröttä:isottakyröttä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokyrö[X]iso[Bm]kyrö:isokyrö	Johdin_lAinen_ä	;
 [Lep][Xp]Jersey[X][Sn][Ny]jersey:jersey	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Jersey[X][Sg][Ny]jersey:jersey	Omistusliite_ä	;
 [Lep][Xp]Jersey[X][Sg][Ny]jerseyn:jerseyn	PaikannimiYksikönGenetiivinJatko_ä	;
@@ -590,6 +604,18 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Jersey[X]jersey:jersey	Ulkopaikallissijat_Yks_ä	;
 [Lep][Xp]Jersey[X]jersey:jersey	Johdin_lAinen_ä	;
 [Lep][Xp]Kangasala[X]kangas[Bm]a:kangasa	Ulkopaikallissijat_Yks_a	;
+[Lep][Xp]Keltainenjoki[X][Sn][Ny]keltainen[Bm]joki:keltainenjoki	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Keltainenjoki[X][Sg][Ny]keltaisen[Bm]joen:keltaisenjoen	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Keltainenjoki[X][Sp][Ny]keltaista[Bm]jokea:keltaistajokea	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Ses][Ny]keltaisena[Bm]jokena:keltaisenajokena	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Ses][Ny]keltaiseksi[Bm]joeksi:keltaiseksijoeksi	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sine][Ny]keltaisessa[Bm]joessa:keltaisessajoessa	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sela][Ny]keltaisesta[Bm]joesta:keltaisestajoesta	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sill][Ny]keltaiseen[Bm]jokee:keltaiseenjokee	PaikannimiLiOlN_a	;
+[Lep][Xp]Keltainenjoki[X][Sade][Ny]keltaisella[Bm]joella:keltaisellajoella	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sabl][Ny]keltaiselta[Bm]joelta:keltaiseltajoelta	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sall][Ny]keltaiselle[Bm]joelle:keltaisellejoelle	PaikannimiLiOlV_a	;
+[Lep][Xp]Keltainenjoki[X][Sall][Ny]keltaisetta[Bm]joetta:keltaisettajoetta	PaikannimiLiOlV_a	;
 [Lep][Xp]Keltainenmeri[X][Sn][Ny]keltainen[Bm]meri:keltainenmeri	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Keltainenmeri[X][Sg][Ny]keltaisen[Bm]meren:keltaisenmeren	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Keltainenmeri[X][Sp][Ny]keltaista[Bm]merta:keltaistamerta	PaikannimiLiOlV_a	;
