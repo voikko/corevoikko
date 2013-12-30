@@ -770,12 +770,16 @@ combi_rule merkki_numeron_jälkeen ($vasen, $oikea, $sana):
   end;
 end;
 
-combi_rule yhdysmerkki_etuliitteen_jälkeen ($vasen, $oikea, $sana):
+combi_rule yhdysmerkki_etuliitteen_jälkeen ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = tavuviiva;
 
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
   result $res, accept;
-  result $res, rules nimisana, laatusana, etuliite, teonsana, erisnimi, lyhennesääntö;
+  if teonsana in $vasen.($index - 1).jatko then
+    result $res, rules nimisana, laatusana, etuliite, erisnimi, lyhennesääntö, teonsana;
+  else
+    result $res, rules nimisana, laatusana, etuliite, erisnimi, lyhennesääntö, nimisana_teonsanasta;
+  end;
 end;
 
 combi_rule yhdysmerkki_ennen_paikannimea ($vasen, $oikea, $sana):
