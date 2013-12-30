@@ -11,5 +11,5 @@ vanhat_muodot    (mallex) Hyväksytään vanhoja tai murteellisia taivutusmuotoj
 voikko_debug     (mallex) Lisätään sanastoon virheiden jäljityksessä hyödyllistä
                           tietoa.
 voikko_murre     (mallex) Lisätään sanastoon murre-lipulla merkityt sanat.
-sukijan_muodot   (mallex) Lisätään sanastoon latex- ja ei_voikko-lipuilla merkityt sanat.
+sukijan_muodot   (mallex) Lisätään sanastoon ei_voikko-lipuilla merkityt sanat.
 

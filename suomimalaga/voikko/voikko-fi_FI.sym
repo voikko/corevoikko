@@ -339,7 +339,6 @@ loukkaava; # Alatyylinen tai loukkaava
   aä;  # Analyysia, analyysiä.
 
 tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestyksessä.
-  atk;       # Tietojenkäsittelyn sana.
   ei_inen;   # Sanasta ei voi johtaa inen-loppista laatusanaa. Esimerkiksi
              # aateli => aatelinen, koska aatelinen voi olla myös nimisana, ja
              # se on erikseen sanastossa.
@@ -355,7 +354,6 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   inen;      # Nimisanasta johdettu inen-loppuinen laatusana
              # hyväksytään myös erillisenä sanana (aamu+inen).
              # Muuten tällaiset sanat hyväksytään vain yhdyssanan jälkiosana.
-  latex;     # LaTeX-komento.
   murre;     # Murteissa tai puhekielessä esiintyvä sana.
   siv;       # Sivistyssanan alku- tai loppuosa.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.

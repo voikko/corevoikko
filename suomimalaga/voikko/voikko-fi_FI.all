@@ -122,8 +122,7 @@ end;
 
 allo_rule generate_allos ($tietue):
   if (($tietue.tiedot /= nil) and
-      ((latex in $tietue.tiedot and switch(sukijan_muodot) = no) or
-       (murre in $tietue.tiedot and switch(voikko_murre) = no) or
+      ((murre in $tietue.tiedot and switch(voikko_murre) = no) or
        (ei_voikko in $tietue.tiedot and switch(sukijan_muodot) = no))) then
     stop;
 
