@@ -109,6 +109,7 @@ Loppu	;
 LEXICON EtuliitteenJatko_elnEiLoppuH
 [Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 [Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nimisanat	;
+[Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 
 LEXICON EtuliitteenJatko_ell
 EtuliitteenJatko_ell2	;

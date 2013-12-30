@@ -2501,3 +2501,5 @@ Hämeenmaa-lehden
 keskipakoisvoima
 !olympialainen
 ultramarina
+luoteiskaukasialaiset
+demokraattis-republikaaninen
