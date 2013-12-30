@@ -68,7 +68,7 @@
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
  [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
-[perusmuoto: "ystävys", alku: "ystävys", luokka: nimisana, jatko: <osanto_tA>, äs: ä]; # kaksi ystävystä
+ [perusmuoto: "ystävys", alku: "ystävys", luokka: nimisana, jatko: <osanto_tA>, äs: ä]; # kaksi ystävystä
 [perusmuoto: "Zürich", alku: "Zürich", luokka: paikannimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Züri-ch[+liitesana]"
 
 # Kiva-sanan kive-kantainen komparatiivi etuvokaalisena {{{1

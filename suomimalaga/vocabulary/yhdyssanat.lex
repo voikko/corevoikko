@@ -1824,35 +1824,35 @@
 
 # {{{2 omatunto (51)
 
-[perusmuoto: "omatunto", alku: "omatunto",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omantunto",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omantunno",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omaatunto",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omanatunto",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omaksitunno", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omassatunnossa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omatunto", alku: "omastatunnosta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omatunto", alku: "omaantunto",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omallatunnolla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omatunto", alku: "omaltatunnolta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omatunto", alku: "omalletunnolle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omatunto", alku: "omattatunno", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omatunto",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omantunto",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omantunno",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omaatunto",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omanatunto",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omaksitunno", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omassatunnossa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omatunto", alku: "omastatunnosta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omatunto", alku: "omaantunto",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omallatunnolla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omatunto", alku: "omaltatunnolta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omatunto", alku: "omalletunnolle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omatunto", alku: "omattatunno", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "omatunto", alku: "omattunno",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "omatunto", alku: "omattunto",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "omatunto", alku: "omientunto",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omiatunto",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "omatunto", alku: "ominatunto",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omiksitunnoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omissatunnoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omistatunnoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omiintunto",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omillatunnoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omiltatunnoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omilletunnoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omittatunnoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "omatunto", alku: "ominetunto",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "omatunto", alku: "omintunnoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppp=ppppppp"];
+ [perusmuoto: "omatunto", alku: "omattunno",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "omatunto", alku: "omattunto",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "omatunto", alku: "omientunto",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omiatunto",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "ominatunto",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omiksitunnoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omissatunnoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omistatunnoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omiintunto",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omillatunnoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omiltatunnoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omilletunnoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omittatunnoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "omatunto", alku: "ominetunto",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "omatunto", alku: "omintunnoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppp=ppppppp"];
 
 # {{{2 pahahenki (51)
 

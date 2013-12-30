@@ -2934,7 +2934,7 @@ k<A>is:k<A>is	Johdin_U_arvelu_<A>	;
 LEXICON Kalista
 is:is	Nuolaista_w_<A>	;
 is:is	Nuolaista_s_<A>	;
-[Ln]in:in	NimisanaApila_<A>	;
+[Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 
 LEXICON Vavista
 vis:vis	Nuolaista_w_<A>	;
