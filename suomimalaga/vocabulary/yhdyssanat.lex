@@ -2787,38 +2787,38 @@
 
 # {{{2 vanhapoika (51)
 
-[perusmuoto: "vanhapoika", alku: "vanhapoika",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhanpoika",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhanpoja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhaapoika",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhanapoika",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhaksipoja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhassapojassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhastapojasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhaanpoika",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhallapojalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhaltapojalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhallepojalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhattapoja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhapoika",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhanpoika",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhanpoja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhaapoika",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhanapoika",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhaksipoja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhassapojassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhastapojasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhaanpoika",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhallapojalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhaltapojalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhallepojalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhattapoja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "vanhapoika", alku: "vanhatpoja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhatpoika",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhojenpoik",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhainpoik",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhojenpoika", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhainpoika",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhojapoik",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoinapoik",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoiksipojiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoissapojissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoistapojista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoihinpoik", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoillapojilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoiltapojilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoillepojille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoittapojitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoinepoik",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "vanhapoika", alku: "vanhoinpojin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhatpoja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhatpoika",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhojenpoik",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhainpoik",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhojenpoika", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhainpoika",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhojapoik",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoinapoik",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoiksipojiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoissapojissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoistapojista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoihinpoik", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoillapojilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoiltapojilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoillepojille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoittapojitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoinepoik",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "vanhapoika", alku: "vanhoinpojin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppp"];
 
 # {{{2 vierasmies (51, 50) '(jäävitön) todistaja'
 

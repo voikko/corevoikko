@@ -418,6 +418,7 @@ irlantilaissyntyinen
 solidaarisuusjohtoinen
 !talotällaisuudessaan
 !etisyyskissa
+!uudensalauksen
 
 # = etuliitteet =
 []

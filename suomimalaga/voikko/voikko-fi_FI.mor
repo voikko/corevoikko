@@ -448,6 +448,18 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   result $res, rules teonsanan_johdos; # FIXME: johdetun muodon on oltava nimisana
 end;
 
+# Teonsanasta johdettu laatusana, esim. kasvattava <- kasvattaa.
+combi_rule laatusana_teonsanasta ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = teonsana;
+  if ($index greater 1) then
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  end;
+  ? $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  result $res, rules johdin_laatusana_teonsanasta;
+end;
+
 # Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.
 combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
@@ -963,7 +975,7 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
         (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
       if $oikea.sijamuoto = omanto then
         result $res,
-               rules laatusana, nimisana_teonsanasta, tavuviiva;
+               rules laatusana, laatusana_teonsanasta, tavuviiva;
       end;
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_ennen_paikannimea;
@@ -1799,6 +1811,46 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   elseif $oikea.luokka in @johdin_jA then
     result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos;
   end;
+end;
+
+combi_rule johdin_laatusana_teonsanasta ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka in @johtimet_laatusana_teonsanasta + <johdin_inen>;
+
+  define $edellinen := $vasen.($index - 1);
+  ? $oikea.luokka in $edellinen.jatko;
+  ? vokaalisointu_oikein($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+
+  if ($edellinen.luokka = teonsana) then
+    $vasen.($index - 1) :=+ [lähtöluokka: teonsana];
+    if $oikea.luokka in @johtimet_laatusana_teonsanasta then
+      $vasen.($index - 1).luokka := laatusana;
+    else
+      $vasen.($index - 1).luokka := nimisana;
+    end;
+  end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if $oikea.luokka = johdin_lUt then
+    result $res, rules laatusanan_sijapääte;
+  else
+    result $res, rules laatusanan_sijapääte_omistusliitteellä;
+  end;
+
+  if tavuviiva in $oikea.jatko then
+     result $res, rules inen_johdos_nimisanasta, yhdysmerkki_laatusanan_jälkeen,
+                        inen_päätteinen_laatusana;
+  end;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  result $res, rules teonsanan_johdos, voitto_yliaste;
 end;
 
 
