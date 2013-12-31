@@ -607,7 +607,11 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   
   if tavuviiva in $oikea.jatko and
     ($oikea.tiedot = nil or not (ei_ys in $oikea.tiedot or ei_ysa in $oikea.tiedot)) then
-    result $res, rules laatusana;
+    if $oikea.luokka /= laatusana or $oikea.inen_loppu = yes then
+      result $res, rules laatusana;
+    else
+      result $res, rules inen_päätteinen_laatusana;
+    end;
     if ($oikea.luokka = laatusana or $index greater 1) then
       result $res, rules etuliite, nimisana, inen_johdos_nimisanasta;
     end;

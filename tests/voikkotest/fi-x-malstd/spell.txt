@@ -419,6 +419,9 @@ solidaarisuusjohtoinen
 !talotällaisuudessaan
 !etisyyskissa
 !uudensalauksen
+!nopeanolon
+vankkarakenteinen
+kristillisdemokraatti
 
 # = etuliitteet =
 []

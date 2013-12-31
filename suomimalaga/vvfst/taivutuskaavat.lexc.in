@@ -1546,6 +1546,7 @@ LEXICON LaatusanaNainenInen
 @C.INEN_VAADITTU@:@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
 s-@C.INEN_VAADITTU@[Bc]:s-@C.INEN_VAADITTU@	Yleisnimet	;
 s-@C.INEN_VAADITTU@@R.LAINEN@[Bc]:s-@C.INEN_VAADITTU@@R.LAINEN@	Sanasto_ep	;
+s[Bc]@P.YS_ALKANUT.ON@:s@P.YS_ALKANUT.ON@	Sanasto_nl	;
 
 LEXICON NimiLaatusanaNainenInen
 @C.INEN_VAADITTU@:@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
@@ -2223,6 +2224,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Nimisana	[Bc]:	Sanasto_laatusanat	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
@@ -3798,7 +3800,7 @@ LEXICON Johdin_vA_muodot
 NimisanaYhteisetMonikonSijat2_<A>	;
 <A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
-[Sg][Ny]<A>n:<A>n	LaatusanaNormaaliYsJatko_<A>	;
+[Sg][Ny]<A>n:<A>n	LaatusanaYksikönGenetiivinJatko_<A>	;
 <A>:<A>	NimisanaYhteisetYksikönPaikallissijat_<A>	;
 NimisanaYhteisetMonikonPaikallissijat_<A>	;
 <A>:<A>	Voittoaste_<A>	;
