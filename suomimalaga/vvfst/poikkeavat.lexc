@@ -921,12 +921,41 @@ LEXICON Poikkeavat_t
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 
 LEXICON Poikkeavat_l
+GenetiiviLiitepartikkeliInenAdjektiivi	;
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;
 @P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
 [Ll][Xp]viime[X][Sn][Ny]viime:viime	Liitesana_ä	;
 
 LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
+
+LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
+[Ll][Xp]kahdenlainen[X]kahdenkaan[Bm]lai:kahdenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]kahdenlainen[X]kahdenkin[Bm]lai:kahdenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]kolmenlainen[X]kolmenkaan[Bm]lai:kolmenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]kolmenlainen[X]kolmenkin[Bm]lai:kolmenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]kummanlainen[X]kummankaan[Bm]lai:kummankaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]kummanlainen[X]kummankin[Bm]lai:kummankinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]minkälainen[X]minkähän[Bm]lai:minkähänlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]minkälainen[X]minkäkin[Bm]lai:minkäkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]minkälainen[X]minkäköhän[Bm]lai:minkäköhänlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]muunlainen[X]muunkaan[Bm]lai:muunkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]muunlainen[X]muunkin[Bm]lai:muunkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]muunmaalainen[X]muunkaan[Bm]maalai:muunkaanmaalai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]muunmaalainen[X]muunkin[Bm]maalai:muunkinmaalai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]neljänlainen[X]neljänkin[Bm]lai:neljänkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]toisenlainen[X]toisenkaan[Bm]lai:toisenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]toisenlainen[X]toisenkin[Bm]lai:toisenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänkertainen[X]tämänkään[Bm]kertai:tämänkäänkertai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänkertainen[X]tämänkin[Bm]kertai:tämänkinkertai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänpäiväinen[X]tämänkään[Bm]päiväi:tämänkäänpäiväi	GenetiiviLiitepartikkeliInenLoppu_ä	;
+[Ll][Xp]tämänpäiväinen[X]tämänkin[Bm]päiväi:tämänkinpäiväi	GenetiiviLiitepartikkeliInenLoppu_ä	;
+[Ll][Xp]tämänviikkoinen[X]tämänkään[Bm]viikkoi:tämänkäänviikkoi	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänviikkoinen[X]tämänkin[Bm]viikkoi:tämänkinviikkoi	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänvuotinen[X]tämänkään[Bm]vuoti:tämänkäänvuoti	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]tämänvuotinen[X]tämänkin[Bm]vuoti:tämänkinvuoti	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]yhdenlainen[X]yhdenkään[Bm]lai:yhdenkäänlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+[Ll][Xp]yhdenlainen[X]yhdenkin[Bm]lai:yhdenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
 
 LEXICON Yö
 [Sn][Ny]yö:yö	NimisanaNormaaliYsJatkoOl_ä	;

@@ -2248,6 +2248,9 @@ LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
 ?NotAsemosana	<WC>YsJatko	;
 
+LEXICON GenetiiviLiitepartikkeliInenLoppu
+@P.EI_VERTM.ON@:@P.EI_VERTM.ON@	LaatusanaNainen_<A>	;
+
 LEXICON NOUN YhteisetYksikönPaikallissijat
 [Str][Ny]ksi:ksi	<WC>LiOlI_<A>	;
 [Sine][Ny]ss<A>:ss<A>	<WC>LiOlV_<A>	;
