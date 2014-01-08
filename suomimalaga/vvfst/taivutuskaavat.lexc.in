@@ -3315,6 +3315,10 @@ LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
 <A>:<A>	<WC>SalataSalailla_s_<A>	;
 
+LEXICON Digata
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+g<A>:g<A>	<WC>SalataSalailla_s_<A>	;
+
 LEXICON Kammata
 m<A>:m<A>	<WC>SalataSalailla_w_<A>	;
 p<A>:p<A>	<WC>SalataSalailla_s_<A>	;
