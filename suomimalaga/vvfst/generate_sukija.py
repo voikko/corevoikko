@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2014 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
 # Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
@@ -35,9 +35,12 @@
 # spellings and spelling errors that do not exist in real life.
 
 # Compiling (in directory suomimalaga):
-# make vvfst-sukija
+# make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/
 
-# Testing:
+# Compiling (in directory suomimalaga/vvfst):
+# cd ..; make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/; cd vvfst
+
+# Testing (in directory suomimalaga/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
@@ -131,6 +134,8 @@ re_iivinen = makeRe (u"Ll", u"Ciivinen")
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_");
 
+re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
+
 
 # Words to be excluded.
 #
@@ -191,13 +196,6 @@ spelling_pattern_list = [
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
 ]
-
-
-def generate (lexicon, word_class, a):
-    p = []
-    for i in lexicon:
-        p.append (i.replace(u"<WC>", word_class).replace(u"<A>", a))
-    return p
 
 
 def word_class (line):
@@ -272,7 +270,6 @@ word_list = [
     (u"Australia",        (u"Australi",      u"Austraali")),
     (u"barbaari",         (u"barbaar",       u"barbar")),
     (u"beduiini",         (u"beduiin",       u"beduin")),
-    (u"biljoona",         (u"biljoon",       u"biljon")),
     (u"borssi",           (u"borssi",        u"borsh")),
     (u"dervissi",         (u"derviss",       u"dervish")),
     (u"divaani",          (u"divaan",        u"divan")),
@@ -338,7 +335,6 @@ word_list = [
     (u"mansetti",       (u"manset",      u"manshet")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
     (u"mieluinen",      (u"mielui",      u"mieluhi")),
-    (u"miljoona",       (u"miljoon",     u"miljon")),
     (u"minareetti",     (u"minareet",    u"minaret")),
     (u"modeemi",        (u"modeem",      u"modem")),
     (u"moduuli",        (u"moduul",      u"modul")),
@@ -598,6 +594,20 @@ def generate_from_function (r, line, function_list):
             x[0] (line, r.group(1))
 
 
+def generate_xiljoona (line):
+#    outfile.write ("! LINE " + line)
+    if (line.startswith ("[Sn]")):
+        u = line.replace (u"miljoona@", u"miljona@")
+        u = u.replace (u"miljoonat@", u"miljonat@")
+        u = u.replace (u"biljoona@",  u"biljona@")
+        u = u.replace (u"biljoonat@", u"biljonat@")
+        u = u.replace (u"triljoona@",  u"triljona@")
+        u = u.replace (u"triljoonat@", u"triljonat@")
+        outfile.write (u)
+    else:
+        outfile.write (line.replace (u"iljoon", u"iljon"))
+
+
 # Copy Voikko vocabulary and insert forms that Sukija needs.
 #
 while True:
@@ -615,10 +625,13 @@ while True:
         outfile.write (u"Sukija ;\n")
     generate_from_pattern (line, spelling_pattern_list)
 
-    r = r = base_form_re.search (line)
+    r = base_form_re.search (line)
     if r:
         generate_word (r, line, sukija_dictionary)
         generate_from_function (r, line, function_list)
+
+    if (re_Xiljoona.search (line)):
+        generate_xiljoona (line)
 infile.close()
 
 

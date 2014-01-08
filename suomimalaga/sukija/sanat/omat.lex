@@ -1502,6 +1502,8 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "päikkäin", alku: "päikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "mustaliki", alku: "mustalik", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "punaliki", alku: "punalik", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "gimppi", alku: "gimp", luokka: nimi, jatko: <keppi>, äs: ä];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
