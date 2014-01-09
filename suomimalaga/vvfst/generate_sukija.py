@@ -606,6 +606,9 @@ def generate_xiljoona (line):
         outfile.write (u)
     else:
         outfile.write (line.replace (u"iljoon", u"iljon"))
+        if (line.startswith (u"@") and line.find (u"iljoonien:")):
+            outfile.write (line.replace (u"iljoonien", u"iljoonain"))
+            outfile.write (line.replace (u"iljoonien", u"iljonain"))
 
 
 # Copy Voikko vocabulary and insert forms that Sukija needs.
@@ -629,7 +632,6 @@ while True:
     if r:
         generate_word (r, line, sukija_dictionary)
         generate_from_function (r, line, function_list)
-
     if (re_Xiljoona.search (line)):
         generate_xiljoona (line)
 infile.close()
