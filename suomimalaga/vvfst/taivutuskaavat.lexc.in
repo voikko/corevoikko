@@ -234,6 +234,7 @@ LEXICON NOUN Arvelu_w
 ?Nimisana	Johdin_tOn_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Sukija [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 
 LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -3901,6 +3902,7 @@ LEXICON Johdin_ja_kulkija
 [Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 j<O>:j<O>	Johdin_ittAin_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
+?Sukija [Sp][Ny]j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 
 LEXICON Johdin_ja_myyjä
 Johdin_ja_kantaja_myyjä_<A>	;
