@@ -231,6 +231,17 @@ def write_altis (line, word):
     outfile.write (u"%s %sSukijaAltis_%s ;\n" % (prefix, word_class(line), A))
 
 
+# Minä => mä, mie. Sinä => sä, sie.
+#
+def write_m_s (line, word):
+    if (line.startswith (u"[Lr][Xp]minä")):
+        outfile.write (line.replace (u"min", u"m"))
+        outfile.write (u"[Lr][Xp]mie[X]mi:mi SukijaAsemosanaMie ;\n")
+    elif (line.startswith (u"[Lr][Xp]sinä")):
+        outfile.write (line.replace (u"sin", u"s"))
+        outfile.write (u"[Lr][Xp]sie[X]si:si SukijaAsemosanaMie ;\n")
+
+
 def generate_from_pattern (line, pattern_list):
     for x in pattern_list:
         if x[0].match(line):
@@ -518,6 +529,8 @@ function_list = [
       u"tiivis")),
 
      (write_altis, (u"altis", )),
+
+     (write_m_s, (u"minä", u"sinä")),
 ]
 
 def convert_to_dictionary (word_list):
@@ -619,13 +632,13 @@ while True:
         break;
     if line.startswith (u"[Ln][Xp]neiti[X]nei@P."):
         outfile.write (line.replace (u"NimisanaVati", u"SukijaNeiti"))
-#        continue
-#    elif line.startswith (u"[Ln][Xp]neiti[X]nei:nei "):
-#        outfile.write (u"[Ln][Xp]neiti[X]nei:nei SukijaNeiti_ä ;")
     else:
         outfile.write (line)
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
+    elif line.startswith (u"LEXICON AsemosanaMinä"):
+        outfile.write (u"[Sill][Ny]uhun:uhun	Liitesana_a	;\n")  # Minuhun, sinuhun.
+
     generate_from_pattern (line, spelling_pattern_list)
 
     r = base_form_re.search (line)
@@ -723,6 +736,19 @@ u"[Bc]kahdeksatta:kahdeksatta Liitesana_a     ;",
 u"[Bc]kahdeksatta:kahdeksatta LukusananJälkiliiteJl     ;",
 u"[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;",
 u"[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;",
+
+u"LEXICON SukijaAsemosanaMie",
+u"[Sn][Ny]e:e	Liitesana_ä	;",
+u"[Sg][Ny]un:un	Liitesana_a	;",
+u"[Sak][Ny]ut:ut	Liitesana_a	;",
+u"[Str][Ny]uksi:uksi	Liitesana_a	;",
+u"[Ses][Ny]una:una	Liitesana_a	;",
+u"[Sine][Ny]ussa:ussa	Liitesana_a	;",
+u"[Sela][Ny]usta:usta	Liitesana_a	;",
+u"[Sill][Ny]uhun:uhun	Liitesana_a	;",
+u"[Sade][Ny]ulla:ulla	Liitesana_a	;",
+u"[Sabl][Ny]ulta:ulta	Liitesana_a	;",
+u"[Sall][Ny]ulle:ulle	Liitesana_a	;",
 ]
 
 for x in OUTPUT:
