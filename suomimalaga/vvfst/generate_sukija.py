@@ -231,6 +231,20 @@ def write_altis (line, word):
     outfile.write (u"%s %sSukijaAltis_%s ;\n" % (prefix, word_class(line), A))
 
 
+def write_virkkaa (line, word):
+    prefix = line[0:line.find (u" ")]
+    outfile.write (u"%s SukijaVirkkaa_ä ;\n" % (prefix))
+
+def write_paistaa (line, word):
+    prefix = line[0:line.find (u" ")]
+    outfile.write (u"%s SukijaPaistaa_a ;\n" % (prefix))
+
+def write_paahtaa (line, word):
+    prefix = line[0:line.find (u" ")]
+    outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
+
+
+
 # Minä => mä, mie. Sinä => sä, sie.
 #
 def write_m_s (line, word):
@@ -529,6 +543,18 @@ function_list = [
       u"tiivis")),
 
      (write_altis, (u"altis", )),
+
+     # 11 paistaa (9, 9). Tuomi s. 1, 2, 8, 11, 12, 15, 17.
+     #
+     (write_virkkaa, (u"vilkkaa",
+                      u"virkkaa")),
+     (write_paistaa, (u"paistaa", )),
+     (write_paahtaa, (u"paahtaa",
+                      u"raistaa",
+                      u"saattaa",
+                      u"taittaa",
+                      u"palttaa",
+                      u"varttaa")),
 
      (write_m_s, (u"minä", u"sinä")),
 ]

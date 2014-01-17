@@ -2650,6 +2650,7 @@ t<A>:t<A>	Johdin_ja_kantaja_<A>	;
 t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_vA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
+?Sukija t:t	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
@@ -4523,3 +4524,12 @@ LEXICON JärjestyslukuKymmentäSnNy
 
 ?Sukija LEXICON NOUN SukijaAltis
 ?Sukija t:t <WC>SukijaKaunis_<A> ;
+
+?Sukija LEXICON SukijaPaistaa
+?Sukija KertomanTekijäpääteVahva_<A> ;
+
+?Sukija LEXICON SukijaPaahtaa
+?Sukija t:t KertomanTekijäpääteVahva_<A> ;
+
+?Sukija LEXICON SukijaVirkkaa
+?Sukija k:k KertomanTekijäpääteVahva_<A> ;
