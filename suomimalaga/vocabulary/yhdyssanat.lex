@@ -1952,35 +1952,35 @@
 
 # {{{2 palavarakkaus (51)
 
-[perusmuoto: "palavarakkaus", alku: "palavarakkaus",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavanrakkaute",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavanrakkaude",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavaarakkaut",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavanarakkaute",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavaksirakkaude", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavassarakkaudessa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavastarakkaudesta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavaanrakkaute",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavallarakkaudella", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavaltarakkaudelta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavallerakkaudelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavattarakkaude", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavarakkaus",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavanrakkaute",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavanrakkaude",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavaarakkaut",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavanarakkaute",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavaksirakkaude", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavassarakkaudessa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavastarakkaudesta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavaanrakkaute",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavallarakkaudella", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavaltarakkaudelta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavallerakkaudelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavattarakkaude", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 
-[perusmuoto: "palavarakkaus", alku: "palavatrakkaude",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavatrakkaute",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavienrakkauks",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palaviarakkauks",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavinarakkauks",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palaviksirakkauksiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavissarakkauksissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavistarakkauksista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palaviinrakkauks",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavillarakkauksilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palaviltarakkauksilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavillerakkauksille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavittarakkauksitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavinerakkauks",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "palavarakkaus", alku: "palavinrakkauksin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavatrakkaude",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavatrakkaute",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavienrakkauks",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palaviarakkauks",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavinarakkauks",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palaviksirakkauksiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavissarakkauksissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavistarakkauksista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palaviinrakkauks",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavillarakkauksilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palaviltarakkauksilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavillerakkauksille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavittarakkauksitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavinerakkauks",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "palavarakkaus", alku: "palavinrakkauksin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=ppppppppp"];
 
 # {{{2 pitkäperjantai (50, 51)
 
@@ -2515,38 +2515,38 @@
 
 # {{{2 särkynytsydän (51) 'eräs huone- ja koristekasvi'
 
-[perusmuoto: "särkynytsydän", alku: "särkynytsydän",      luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneensydäme",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneensydäme",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkynyttäsydän",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneenäsydäme",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneeksisydäme",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneessäsydämessä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneestäsydämestä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneeseensydäme", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneelläsydämellä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneeltäsydämeltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneellesydämelle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneettäsydäme",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkynytsydän",      luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneensydäme",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneensydäme",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkynyttäsydän",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneenäsydäme",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneeksisydäme",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneessäsydämessä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneestäsydämestä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneeseensydäme", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneelläsydämellä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneeltäsydämeltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneellesydämelle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneettäsydäme",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
 
-[perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneidensydäm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneittensydäm",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneidensydän",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneittensydän",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneitäsydäm",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneinäsydäm",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneiksisydämiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneissäsydämissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneistäsydämistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneisiinsydäm",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneilläsydämillä",   luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneiltäsydämiltä",   luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneillesydämille",   luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneittäsydämittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneinesydäm",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "särkynytsydän", alku: "särkyneinsydämin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneidensydäm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneittensydäm",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneidensydän",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneittensydän",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneitäsydäm",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneinäsydäm",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneiksisydämiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneissäsydämissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneistäsydämistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneisiinsydäm",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneilläsydämillä",   luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneiltäsydämiltä",   luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneillesydämille",   luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneittäsydämittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppppp=ppppppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneinesydäm",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "särkynytsydän", alku: "särkyneinsydämin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppppp=ppppppp"];
 
 # {{{2 täysikuu (51, 50)
 
