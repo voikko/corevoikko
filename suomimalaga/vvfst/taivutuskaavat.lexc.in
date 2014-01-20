@@ -1091,6 +1091,7 @@ LEXICON NOUN Vapaa_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Sukija  <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NOUN Vapaa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1878,6 +1879,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
+?Sukija e:e <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NimisanaKaksi
 [Sn][Ny]ksi:ksi	NimisanaNormaaliYsJatko_<A>	;
@@ -2168,6 +2170,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
+?Sukija  <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NOUN Hapsi
 <WC>Lapsi_yhteiset_<A>	;
