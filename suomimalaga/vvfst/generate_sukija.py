@@ -342,7 +342,8 @@ word_list = [
     (u"konossementti",  (u"konossement", u"konnossement")),
     (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer")),
-    (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaTakki_ä", u"NimisanaRisti_ä"), )),
+    (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaTakki_ä", u"NimisanaRisti_ä"),
+                         (u"kritiik",    u"kriitiik"))),
     (u"kulttuuri",      (u"kulttuur",    u"kultuur", "kulttur")),
     (u"kuriiri",        (u"kuriir",      u"kurier")),
     (u"kuvernööri",     (u"kuvernöör",   u"kuvernör")),
@@ -602,8 +603,11 @@ def write_tuple (line, key, g):
              replace_and_write (line, g[0], g[i])
      elif type(g[0]) == TupleType:
          for i in range (0, len(g)):
-             s = line.replace (g[i][2], g[i][3])
-             outfile.write (replace (s, g[i][0], g[i][1]))
+             if (len(g[i]) == 2):
+                 replace_and_write (line, g[i][0], g[i][1])
+             else:
+                 s = line.replace (g[i][2], g[i][3])
+                 outfile.write (replace (s, g[i][0], g[i][1]))
      else:
          error (line)
 
