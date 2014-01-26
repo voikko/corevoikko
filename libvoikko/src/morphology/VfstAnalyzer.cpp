@@ -222,7 +222,12 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				charsFromDefault = 0;
 			}
 			else if (i != 0) {
-				charsSeen++;
+				if (charsSeen == charsFromDefault) {
+					structure[structurePos++] = L'-';
+				}
+				else {
+					charsSeen++;
+				}
 			}
 			if (charsMissing) {
 				charsMissing--;
