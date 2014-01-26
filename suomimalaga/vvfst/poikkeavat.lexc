@@ -296,6 +296,8 @@ Summayhdyssanat	;
 [Ln][Xp]omatunto[X][Sab][Nm]omitta[Bm]tunnoitta:omittatunnoitta	NimisanaLiOlV_a ;
 [Ln][Xp]omatunto[X][Sko][Nm]omine[Bm]tuntoine:ominetuntoine	NimisanaLiOlV_a ;
 [Ln][Xp]omatunto[X][Sin][Nm]omin[Bm]tunnoin:omintunnoin	Liitesana_a;
+[Ln][Xp]ori[X][Sp][Nm]oriita@D.YS_ALKANUT@:oriita@D.YS_ALKANUT@	NimisanaLiOlV_a	;SisäpaikallissijatSsaSta
+[Ln][Xp]ori[X]orii@D.YS_ALKANUT@:orii@D.YS_ALKANUT@	SisäpaikallissijatSsaSta_a	;
 [Ln][Xp]palavarakkaus[X][Sn][Ny]palava[Bm]rakkaus:palavarakkaus	NimisanaNormaaliYsJatkoOl_a	;
 [Ln][Xp]palavarakkaus[X][Sg][Ny]palavan[Bm]rakkaute:palavanrakkaute	Omistusliite_a	;
 [Ln][Xp]palavarakkaus[X][Sg][Ny]palavan[Bm]rakkauden:palavanrakkauden	NimisanaYksikönGenetiivinJatko_a	;

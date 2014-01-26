@@ -2505,3 +2505,7 @@ luoteiskaukasialaiset
 demokraattis-republikaaninen
 vaaleanharmaat
 vihertävänruskea
+oriita
+oriissa
+joitakuita
+-miehinen

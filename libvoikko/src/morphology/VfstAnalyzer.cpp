@@ -304,7 +304,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 		}
 		else {
 			if (boundaryPassed) {
-				if (beforeLastChar == L'i' && lastChar == L's') {
+				if (lastChar == L'\0' || (beforeLastChar == L'i' && lastChar == L's')) {
 					hyphenUnconditionallyAllowed = true;
 				}
 				if (hyphenRequired) {

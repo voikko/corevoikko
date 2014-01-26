@@ -491,3 +491,7 @@ word:huhti-toukokuusta
     NUMBER=singular
     SIJAMUOTO=sisaeronto
     STRUCTURE==ppppp-=ppppp=pppppp
+word:viisivuotiskausi
+ expected:1
+  analysis
+    STRUCTURE==ppppp=pppppp=ppppp
