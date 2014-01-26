@@ -499,3 +499,7 @@ word:AIDS-epidemia
  expected:1
   analysis
     STRUCTURE==jjjj-=pppppppp
+word:vammaisuusaste
+ expected:1
+  analysis
+    STRUCTURE==pppppppppp=pppp

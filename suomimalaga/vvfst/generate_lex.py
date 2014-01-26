@@ -358,8 +358,8 @@ def handle_word(word):
 			jatko = u"NainenInen"
 		
 		if vfst_word_class == u"[Lp]":
-			entry = u'[Lp]%s%s:%s EtuliitteenJatko_%s;' \
-			        % (wordform, infoFlags, wordform, get_prefix_jatko(word, altform))
+			entry = u'[Lp]%s%s%s:%s%s EtuliitteenJatko_%s;' \
+			        % (wordform, diacritics, infoFlags, wordform, diacritics, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, rakenne, infoFlags,
