@@ -2264,6 +2264,11 @@ LEXICON NOUN YhteisetYksikönPaikallissijat
 [Sall][Ny]lle:lle	<WC>LiOlV_<A>	;
 [Sab][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 ?Laatusana	Kerronto_sti_<A>	;
+?Sukija [Str][Ny]ks:ks	Loppu ;
+?Sukija [Sine][Ny]ss:ss	Loppu ;
+?Sukija [Sela][Ny]st:st	Loppu ;
+?Sukija [Sade][Ny]ll:ll	Loppu ;
+?Sukija [Sabl][Ny]lt:lt	Loppu ;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
 [Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;
@@ -2275,6 +2280,11 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 [Sab][Nm]itt<A>:itt<A>	<WC>LiOlV_<A>	;
 ?Nimisana	Johdin_ittAin_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+?Sukija [Str][Nm]iks:iks	Loppu ;
+?Sukija [Sine][Nm]iss:iss	Loppu ;
+?Sukija [Sela][Nm]ist:ist	Loppu ;
+?Sukija [Sade][Nm]ill:ill	Loppu ;
+?Sukija [Sabl][Nm]ilt:ilt	Loppu ;
 
 LEXICON NOUN YhteisetMonikonSijat2
 [Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
@@ -3631,6 +3641,7 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@isimme	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
 [Te][Ap][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
+?Sukija [Te][Ap][P3][Ny]is:is	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
 t:t	Ehtotapa_tA_<A>	;
