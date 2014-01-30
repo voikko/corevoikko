@@ -375,7 +375,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
 
   ? ($oikea.tiedot = nil) or
     (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
-  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana) or ($oikea.tiedot /= nil and sitlaina in $oikea.tiedot and $edellinen.luokka = tavuviiva);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   

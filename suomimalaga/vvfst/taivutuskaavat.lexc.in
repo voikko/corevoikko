@@ -2229,6 +2229,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
+?Laatusana	Johdin_lAinen_<A>	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
