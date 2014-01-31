@@ -2544,3 +2544,4 @@ oriissa
 joitakuita
 -miehinen
 kauniinlainen
+!Kauko-idän
