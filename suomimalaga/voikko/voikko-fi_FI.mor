@@ -367,6 +367,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
 
   define $edellinen := $vasen.($index - 1);
+
   ? ((nimisana in $edellinen.jatko)    or
      (tavuviiva in $edellinen.jatko and $edellinen.luokka in @nimisana + <laatusana>) or
      ($edellinen.luokka = lukusana)    or
@@ -389,7 +390,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
       result $res, rules etuliite, tavuviiva;
     end;
     result $res,
-           rules nimisanan_johdos, nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
+           rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
     stop;
   end;
 

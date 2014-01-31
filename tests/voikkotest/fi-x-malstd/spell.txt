@@ -524,6 +524,7 @@ kahdellekymmenelletuhannelle
 yhteen
 !yhteyn
 !viisikissa
+!kolmejuoksija
 !viisikaunis
 yksipuoluejärjestelmä
 yksipuolueyhteiskunta
