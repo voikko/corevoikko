@@ -2545,3 +2545,6 @@ joitakuita
 -miehinen
 kauniinlainen
 !Kauko-idän
+!kemikaalisten
+kliseinen
+jämäkkyys

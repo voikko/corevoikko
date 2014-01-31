@@ -536,6 +536,7 @@ toisiinsa
 kolmeentoistakin
 tuhannenkaan
 !tuhannenkään
+!toisesti
 sadaskuudeskymmenesviides
 viidessadaskolmaskymmenestuhannesneljäs
 viidestuhanneskolmaskymmenes

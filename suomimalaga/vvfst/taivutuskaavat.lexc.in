@@ -987,6 +987,7 @@ LEXICON NOUN Solakka_s
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
@@ -1133,6 +1134,7 @@ LEXICON NOUN Kamee_s
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Kamee_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -2233,6 +2235,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
+?Paikannimi	@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
