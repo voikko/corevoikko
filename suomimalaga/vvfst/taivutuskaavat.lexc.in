@@ -1518,6 +1518,7 @@ LEXICON NOUN Nainen
 s:s	<WC>NainenYsJatko_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
+?Paikannimi	nen:nen	<WC>YsJatko	;
 
 LEXICON NOUN InenLoppuinen
 <WC>NainenYhteiset_<A>	;
@@ -4188,10 +4189,12 @@ LEXICON LyhenteenTaivutuspääte
 [Sg][Ny]%:<A>n:%:<A>n	Liitesana_<A>	;
 [Sg][Ny]%:in:%:in	Liitesana_<A>	;
 [Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
+[Sg][Nm]%:ien:%:ien	Liitesana_<A>	;
 [Sp][Ny]%:<A><A>:%:<A><A>	Liitesana_<A>	;
 [Sp][Ny]%:t<A>:%:t<A>	Liitesana_<A>	;
 [Sp][Ny]%:<A>:%:<A>	Liitesana_<A>	;
 [Sp][Nm]%:i<A>:%:i<A>	Liitesana_<A>	;
+[Sp][Nm]%:it<A>:%:it<A>	Liitesana_<A>	;
 [Str][Ny]%:ksi:%:ksi	Liitesana_<A>	;
 [Str][Nm]%:iksi:%:iksi	Liitesana_<A>	;
 [Ses][Ny]%:n<A>:%:n<A>	Liitesana_<A>	;
@@ -4199,9 +4202,10 @@ LEXICON LyhenteenTaivutuspääte
 [Sine][Ny]%:ss<A>:%:ss<A>	Liitesana_<A>	;
 [Sine][Nm]%:iss<A>:%:iss<A>	Liitesana_<A>	;
 [Sela][Ny]%:st<A>:%:st<A>	Liitesana_<A>	;
-[Sela][Nm]%:ist<A>:%:st<A>	Liitesana_<A>	;
+[Sela][Nm]%:ist<A>:%:ist<A>	Liitesana_<A>	;
 [Sill][Ny]%:seen:%:seen	Liitesana_<A>	;
 [Sill][Ny]%:een:%:een	Liitesana_<A>	;
+[Sill][Ny]%:en:%:en	Liitesana_<A>	;
 [Sill][Ny]%:iin:%:iin	Liitesana_<A>	;
 [Sill][Ny]%:<A><A>n:%:<A><A>n	Liitesana_<A>	;
 [Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>   ;
@@ -4209,6 +4213,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sill][Ny]%:h<A>n:%:h<A>n	Liitesana_<A>	;
 [Sill][Ny]%:h<O>n:%:h<O>n	Liitesana_<A>   ;
 [Sill][Ny]%:h<U>n:%:h<U>n	Liitesana_<A>	;
+[Sill][Ny]%:hin:%:hin	Liitesana_<A>	;
 [Sill][Nm]%:ihin:%:ihin	Liitesana_<A>	;
 [Sade][Ny]%:ll<A>:%:ll<A>	Liitesana_<A>	;
 [Sade][Nm]%:ill<A>:%:ill<A>	Liitesana_<A>	;
@@ -4216,6 +4221,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
+[Sab][Ny]%:tt<A>:%:tt<A>	Liitesana_<A>	;
 
 LEXICON RoomalaisenNumeronJatko
 Loppu	;
