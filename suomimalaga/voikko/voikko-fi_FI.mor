@@ -486,7 +486,13 @@ combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
-  result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $edellinen := $vasen.($index - 1);
+  if tavuviiva in $oikea.jatko and $edellinen.luokka /= etuliite then
+    result $res, rules johdin_inen, inen_johdos_nimisanasta;
+  else
+    result $res, rules johdin_inen;
+  end;
 end;
 
 # Paikannimestä johdettu kansallisuuden nimi
@@ -573,7 +579,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
-                 nimisana_teonsanasta, paikannimen_lainen_johdos;
+                 nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana;
   end;
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
@@ -1741,7 +1747,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   if tavuviiva in $oikea.jatko then
     if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
         + @johdin_jA) or $oikea.jluokka = nimisana then
-      result $res, rules nimisana, nimisana_teonsanasta,
+      result $res, rules nimisana, nimisana_teonsanasta, inen_päätteinen_laatusana,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          nimisanan_etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else

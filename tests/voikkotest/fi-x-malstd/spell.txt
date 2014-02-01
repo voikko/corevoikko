@@ -424,6 +424,11 @@ solidaarisuusjohtoinen
 !nopeanolon
 vankkarakenteinen
 kristillisdemokraatti
+liikuntapainotteinen
+norjalaisomisteinen
+kiinteäpolttoaineinen
+maatalousvaltainen
+harvaetuhampainen
 
 # = etuliitteet =
 []
