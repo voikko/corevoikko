@@ -3632,6 +3632,9 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- johdin_tOn;
     $taivutus :=- johdin_mAinen;
     $taivutus :=- johdin_ittAin;
+    if ($tietue.perusmuoto in <"va", "vä">) then
+      $taivutus :=- nimisana;
+    end;
   end;
 
   if ($tietue.tiedot /= nil and ei_vertm in $tietue.tiedot) then

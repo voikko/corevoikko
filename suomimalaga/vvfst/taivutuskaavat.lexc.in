@@ -3862,7 +3862,7 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
-<A>i:<A>i	LaatusanaNainen_<A>	;
+<A>i:<A>i	NimiLaatusanaNainen_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 

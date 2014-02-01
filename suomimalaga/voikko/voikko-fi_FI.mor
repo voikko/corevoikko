@@ -1763,6 +1763,9 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
+  if nimisana in $oikea.jatko then
+    result $res, rules nimisana;
+  end;
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
     result $res, rules nimisanan_sijapääte;

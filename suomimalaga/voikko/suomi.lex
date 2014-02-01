@@ -928,7 +928,7 @@ define @jatko_vE2 := <voittoaste>;
 
 # Ensimmäinen laatutapa: punova, punovia, punottava, punottavia.
 #
-define @jatko_vA := @jatko_vE1 + @jatko_vE2;
+define @jatko_vA := @jatko_vE1 + @jatko_vE2 - <nimisana>;
 
 define @jatko_v :=
        <omanto_ien,

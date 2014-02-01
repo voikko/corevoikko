@@ -432,6 +432,8 @@ kiinteäpolttoaineinen
 maatalousvaltainen
 harvaetuhampainen
 armeijamyönteisen
+paisuvaiskudoksen
+!eläväarkisto
 
 # = etuliitteet =
 []
