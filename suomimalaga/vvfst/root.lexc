@@ -137,6 +137,9 @@ Multichar_Symbols
 ! inen-johdin aina kielletty
 @P.INEN_KIELLETTY.ON@ @D.INEN_KIELLETTY@ @C.INEN_KIELLETTY@
 
+! ei mAinen-johdosta
+@P.EI_MAINEN.ON@ @D.EI_MAINEN@
+
 ! inen-johdin vaaditaan
 @P.INEN_VAADITTU.ON@ @D.INEN_VAADITTU@ @C.INEN_VAADITTU@ @R.INEN_VAADITTU@
 

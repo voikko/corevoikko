@@ -3784,7 +3784,7 @@ LEXICON Johdin_U_arvelu
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
 
 LEXICON Johdin_mAinen
-[Ll]m<A>i@C.EI_YKS@:m<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
+[Ll]m<A>i@D.EI_MAINEN@@C.EI_YKS@:m<A>i@D.EI_MAINEN@@C.EI_YKS@	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttAx
 Ehtotapa_ttA_<A>	;
