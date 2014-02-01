@@ -431,6 +431,7 @@ norjalaisomisteinen
 kiinteäpolttoaineinen
 maatalousvaltainen
 harvaetuhampainen
+armeijamyönteisen
 
 # = etuliitteet =
 []

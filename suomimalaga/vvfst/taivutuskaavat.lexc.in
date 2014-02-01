@@ -1393,6 +1393,7 @@ LEXICON NOUN Pieni
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Laatusana	e:e	Johdin_Us_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
@@ -3846,6 +3847,7 @@ LEXICON Johdin_vA_vE_muodot
 [Sn][Ny]<A>:<A>	Omistusliite_<A>	;
 [Sn][Ny]<A>:<A>	LaatusanaNormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>:<A>	LaatusanaMonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	NimisanaLiOlV_<A>	;
 [Sill][Ny]<A><A>:<A><A>	NimisanaLiOlN_<A>	;
