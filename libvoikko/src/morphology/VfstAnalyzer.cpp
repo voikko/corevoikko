@@ -336,9 +336,11 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 	return true;
 }
 
-static void addInfoFlag(Analysis * analysis, const wchar_t * outputBuffer) {
-	if (wcsncmp(outputBuffer, L"vj", 2) == 0) {
-		analysis->addAttribute("MALAGA_VAPAA_JALKIOSA", StringUtils::copy(L"true"));
+static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, const wchar_t * outputBuffer) {
+	if (wcsncmp(outputPosition, L"vj", 2) == 0) {
+		if (outputBuffer[0] != L'-') {
+			analysis->addAttribute("MALAGA_VAPAA_JALKIOSA", StringUtils::copy(L"true"));
+		}
 	}
 }
 
@@ -380,7 +382,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);
 					}
 					else if (fstOutput[j + 1] == L'I') {
-						addInfoFlag(analysis, fstOutput + (j + 2));
+						addInfoFlag(analysis, fstOutput + (j + 2), fstOutput);
 					}
 					break;
 				}

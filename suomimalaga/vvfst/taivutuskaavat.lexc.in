@@ -258,6 +258,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<O>:<O>	Johdin_tOn_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_mAinen_<A>	;
+?Paikannimi	k<O>:k<O>	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]k<O>h<O>:k<O>h<O>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Paperi
@@ -1601,6 +1602,7 @@ de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	ks:ks	Johdin_inen_vain_lipulla_<A>	;
+?Paikannimi	te:te	Johdin_lAinen_<A>	;
 ?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ksihi:ksihi	<WC>LiOlN_<A>	;
@@ -3550,6 +3552,7 @@ ise:ise	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Nm]isev<A>t:isev<A>t	Liitesana_<A>	;
 is:is	TositavanKestämäTaan_<A>	;
 is:is	KertomanTekijäpääteVahva_<A>	;
+is:is	KertomanTekijäpääteHeikko_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
 ise:ise	Johdin_vA_<A>	;

@@ -174,7 +174,7 @@ Sanasto	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 LukusananAlku	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	LukusananAlku	;
-YhdysmerkkiJaLukusananJälkiliite	;
+-:-	LukusananJälkiliiteEiYhdysmerkkiä	;
 Asemosana	;
 Suhdesana	;
 Kieltosana	;

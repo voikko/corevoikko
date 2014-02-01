@@ -503,3 +503,6 @@ word:vammaisuusaste
  expected:1
   analysis
     STRUCTURE==pppppppppp=pppp
+word:-nimen
+ expected:1
+ !MALAGA_VAPAA_JALKIOSA
