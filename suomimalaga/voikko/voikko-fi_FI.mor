@@ -831,10 +831,14 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -872,10 +876,14 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? $oikea.sija /= kerronto_sti or $edellinen.luokka in @sti_edeltäjä;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -914,10 +922,14 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -963,10 +975,14 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1004,10 +1020,14 @@ combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $in
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1048,10 +1068,14 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1080,10 +1104,14 @@ combi_rule ei_ys_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? vokaalisointu_oikein($edellinen, $oikea);
-
-  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
-  ? $oikea.sija /= sisätulento_hVn or sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;

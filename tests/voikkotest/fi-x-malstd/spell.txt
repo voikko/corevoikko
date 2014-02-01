@@ -241,6 +241,8 @@ Toholammilla
 Yhdysvaltain-mestaruuden
 Nätti-Jussi
 !-San # ei sallittu yhdyssanan osana
+Andyyn
+countryyn
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
