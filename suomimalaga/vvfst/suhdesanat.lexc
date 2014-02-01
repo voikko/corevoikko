@@ -14,7 +14,7 @@ LEXICON Suhdesana
 [Ld][Xp]kanssa[X]keralla:keralla	LoppuOlV_a	;
 [Ld][Xp]kera[X]keralle:keralle	Liitesana_a	;
 [Ld][Xp]keskuudessa[X]keskuude:keskuude	SisäpaikallissijatSsaSta_a	;
-[Ld][Xp]keskuudessa[X]keskuute[Sill][Ny]en:keskuuteen	Liitesana_a	;
+[Ld][Xp]keskuudessa[X]keskuute[Sill][Ny]e:keskuutee	NimisanaLiOlN_a	;
 [Ld][Xp]kohden[X]kohden:kohden	Liitesana_a	;
 [Ld][Xp]kohti[X]kohti:kohti	Liitesana_a	;
 [Ld][Xp]luota[X]luota:luota	LoppuLiitesanaOlV_a	;

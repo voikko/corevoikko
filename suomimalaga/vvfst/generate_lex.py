@@ -228,6 +228,8 @@ def vowel_type_for_derived_verb(wordform):
 			return u"@P.V_SALLITTU.E@"
 		if char in u"uao":
 			return u"@P.V_SALLITTU.T@"
+		if char in u"]":
+			break
 	return u"@P.V_SALLITTU.T@"
 
 def get_prefix_jatko(word, altform):
@@ -352,7 +354,7 @@ def handle_word(word):
 		
 		# Vowel type in derived verbs
 		if jatko in [u"Heittää", u"Muistaa", u"Juontaa", u"Hohtaa", u"Murtaa", u"Nousta", u"Loistaa", u"Jättää", u"Kihistä"]:
-			diacritics = diacritics + vowel_type_for_derived_verb(alku)
+			diacritics = diacritics + vowel_type_for_derived_verb(alkuWithTags)
 		
 		if jatko == u"Nainen" and vfst_class_prefix in [u"Laatusana", u"NimiLaatusana"] and altform.endswith(u"inen"):
 			jatko = u"NainenInen"

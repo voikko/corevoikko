@@ -946,6 +946,7 @@ LEXICON NOUN Karahka
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
@@ -1598,6 +1599,7 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
+?Nimisana	ks:ks	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ksihi:ksihi	<WC>LiOlN_<A>	;
@@ -1716,6 +1718,7 @@ LEXICON NOUN Onneton_s
 [Sn][Nm]m<A>t:m<A>t	Liitesana_<A>	;
 [Sg][Ny]m<A>n:m<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]mi:mi	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]m<A>:m<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Nm]mi<A>:mi<A>     <WC>LiOlV_<A> ;
 [Ses][Ny]m<A>n<A>:m<A>n<A>	<WC>LiOlV_<A>	;
 m:m	<WC>YhteisetMonikonSijat2_<A>	;
@@ -1724,6 +1727,8 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 m:m	Johdin_UUs_<A>	;
+?Laatusana	m<A>:m<A>	Voittoaste_<A>	;
+?Laatusana	m:m	Yliaste_<A>	;
 ?Sukija [Sill][Ny]m<A>h<A>:m<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]m<A>:m<A>	<WC>MonikonGenetiiviInJatko_<A>	;
@@ -2942,7 +2947,7 @@ Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
 Johdin_tU_dA_<A>	;
 Johdin_nUt_<A>	;
-Johdin_vA_<A>	;
+Johdin_vE_<A>	;
 
 LEXICON Voida_s
 KertomanTekijäpääteHeikko_<A>	;
@@ -3238,6 +3243,7 @@ LEXICON Aleta_w
 Tositapa4Tt_<A>	;
 Johdin_ttAx_<A>	;
 t:t	Käskytapa_<A>	;
+nn:nn	Mahtotapa_<A>	;
 t:t	Johdin_nimitapa1A_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
@@ -3778,7 +3784,7 @@ LEXICON Johdin_U_arvelu
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
 
 LEXICON Johdin_mAinen
-[Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
+[Ll]m<A>i@C.EI_YKS@:m<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttAx
 Ehtotapa_ttA_<A>	;
@@ -3821,7 +3827,18 @@ LEXICON Johdin_rUt
 LEXICON Johdin_vA
 [Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
 
+LEXICON Johdin_vE
+[Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vE_muodot_<A>	;
+
 LEXICON Johdin_vA_muodot
+Johdin_vA_vE_muodot_<A>	;
+<A>:<A>	Voittoaste_<A>	;
+
+LEXICON Johdin_vE_muodot
+Johdin_vA_vE_muodot_<A>	;
+e:e	Voittoaste_<A>	;
+
+LEXICON Johdin_vA_vE_muodot
 [Sn][Ny]<A>:<A>	Omistusliite_<A>	;
 [Sn][Ny]<A>:<A>	LaatusanaNormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	LaatusanaMonikonGenetiiviEnJatko_<A>	;
@@ -3836,7 +3853,6 @@ NimisanaYhteisetMonikonSijat2_<A>	;
 [Sg][Ny]<A>n:<A>n	LaatusanaYksikönGenetiivinJatko_<A>	;
 <A>:<A>	NimisanaYhteisetYksikönPaikallissijat_<A>	;
 NimisanaYhteisetMonikonPaikallissijat_<A>	;
-<A>:<A>	Voittoaste_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
@@ -4001,6 +4017,7 @@ LEXICON Voittoaste
 [Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
 [Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+mm:mm	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cc]mpihi@D.EI_VERTM@:mpihi@D.EI_VERTM@	NimisanaLiOlN_<A>	
 
@@ -4034,6 +4051,7 @@ LEXICON Yliaste
 [Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
 [Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
+imm<A>:imm<A>	Kerronto_sti_<A>	;
 ?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cs]impihi@D.EI_VERTM@:impihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 
