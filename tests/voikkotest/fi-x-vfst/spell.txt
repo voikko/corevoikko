@@ -220,6 +220,7 @@ kahdellekymmenelletuhannelle
 !kahdelletoistatuhansille
 yhteen
 !yhteyn
+!yhtenne
 !viisikissa
 !kolmejuoksija
 !viisikaunis
@@ -2512,7 +2513,6 @@ mitenkähän
 vanhempain
 tervetulleeksi
 läksi
-yhtensä
 ensimmäisellään
 digi-tv:n
 auer
@@ -2548,3 +2548,10 @@ kauniinlainen
 !kemikaalisten
 kliseinen
 jämäkkyys
+utaremaisia
+lipeäinen
+leveäharteinen
+jazzmainen
+juoksin
+minnesotalainen
+kohistaan

@@ -1167,7 +1167,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
                    lukusanan_jälkiliite,
                    nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
-    if (omistusliite in $oikea.jatko) then
+    if ($oikea.lukutyyppi = järjestysluku and omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
     end;
   elseif ($oikea.alaluokka in <kymmenen, sata>) then

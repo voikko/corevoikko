@@ -461,6 +461,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suksi
@@ -875,6 +876,7 @@ LEXICON NOUN Asema_s
 <WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
@@ -1062,6 +1064,7 @@ LEXICON NOUN Ainoa
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
@@ -1281,6 +1284,7 @@ ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
+?Nimisana	e:e	Johdin_mAinen_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
@@ -3537,6 +3541,7 @@ ist:ist	Johdin_nimitapa1A_<A>	;
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]isee:isee	Liitesana_<A>	;
 [Tt][P3][Nm]isev<A>t:isev<A>t	Liitesana_<A>	;
+is:is	TositavanKestämäTaan_<A>	;
 is:is	KertomanTekijäpääteVahva_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
@@ -3562,6 +3567,7 @@ kse:kse	KestämänTekijäpääteHeikko_<A>	;
 s:s	TositavanKestämäTaan_<A>	;
 s:s	TositavanKertomaTiin_<A>	;
 ks:ks	KertomanTekijäpääteVahva_<A>	;
+ks:ks	KertomanTekijäpääteHeikko_<A>	;
 s:s	Käskytapa_<A>	;
 kse:kse	Käskytapa_y2_<A>	;
 ss:ss	Mahtotapa_<A>	;
@@ -4201,7 +4207,6 @@ LyhenteenTaivutuspääte_<A>	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
-[Sn][Ny]hte:hte	Omistusliite_<A>	;
 [Sg][Ny]hden:hden	LukusanaSgNy1_<A>	;
 [Sp][Ny]ht<A>:ht<A>	LukusanaSpNy1_<A>	;
 [Str][Ny]hdeksi:hdeksi	LukusanaStrNy1_<A>	;

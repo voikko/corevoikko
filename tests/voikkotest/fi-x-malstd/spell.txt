@@ -523,6 +523,7 @@ kahdellekymmenelletuhannelle
 !kahdelletoistatuhansille
 yhteen
 !yhteyn
+!yhtenne
 !viisikissa
 !kolmejuoksija
 !viisikaunis
