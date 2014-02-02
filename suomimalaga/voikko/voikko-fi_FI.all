@@ -4346,6 +4346,7 @@ subrule hapan_uistin ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
                         [johdin_tOn:      $vahva_aste + $ääntiö,
                          johdin_UUs:      $vahva_aste,
                          johdin_mAinen:   $heikko_aste,
+                         johdin_lAinen:   $vahva_aste + $ääntiö,
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($vahva_aste + $ääntiö,
                                   $vahva_aste, $vahva_aste,

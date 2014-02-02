@@ -202,6 +202,7 @@ Sveitsi
 sveitsiläinen
 Sveitsiläinen
 haapaveteläinen
+punkalaitumelainen
 !Sveitsimäinen
 !sveitsimäinen #(tätä johdosta ei tueta ainakaan toistaiseksi)
 Teppo

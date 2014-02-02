@@ -1685,6 +1685,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Paikannimi	e:e	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
