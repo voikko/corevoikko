@@ -2148,9 +2148,10 @@ LEXICON NOUN Vieras_s
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 [[L]]:[[L]]	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
-?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	[[L]]:[[L]]	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
+?Paikannimi	[[L]]:[[L]]	Johdin_lAinen_<A>	;
 ?Sukija ?NotLaatusana [Sn][Ny]h<A>:h<A> Omistusliite_<A>	;
 ?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
 ?Sukija [Sg][Ny]h<A>n:h<A>n <WC>YksikönGenetiivinJatko_<A>	;

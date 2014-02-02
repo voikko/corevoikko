@@ -4835,6 +4835,7 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
                         [johdin_tOn:        $vahva_aste,
                          johdin_Us:         $johdin_Us,
                          johdin_mAinen:     $heikko_aste,
+                         johdin_lAinen:     $vahva_aste,
                          johdin_inen:       $monikko,
 
                          nimentö_t:         $vahva_aste,
