@@ -321,6 +321,7 @@ eritasoiset # laatusanan etuliite + inen-johdos
 inarinsaamelaiset
 !Paris-Charles
 demokraattis-republikaaninen
+!eläkeläisoiva
 
 # = voitto- ja yliasteet =
 []
@@ -375,8 +376,8 @@ Jyväskylä-paikka
 Pohjois-Suomi
 !pohjois-Suomi
 Moilanen-Savolainen
-!kaivooivuus
-kaivo-oivuus
+!kaivooranssius
+kaivo-oranssius
 apartheid-elämä # konsonanttiloppuinen sitaattilaina + vokaalialkuinen
 apartheid-kissa # konsonanttiloppuinen sitaattilaina + konsonanttialkuinen
 folk-rock # sitaattilaina jälkiosana
@@ -534,6 +535,7 @@ kahdellekymmenelletuhannelle
 yhteen
 !yhteyn
 !yhtenne
+!satani
 !viisikissa
 !kolmejuoksija
 !viisikaunis

@@ -2592,4 +2592,6 @@ kaustislainen
 tunnetuiden
 veljellistä
 pakanoina
-#parodisoiva
+kukaanhan
+vapise
+!vavise

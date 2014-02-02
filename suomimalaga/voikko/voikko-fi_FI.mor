@@ -1206,9 +1206,6 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
     end;
   elseif ($oikea.alaluokka in <kymmenen, sata>) then
     if (nimentö in $oikea.jatko) then
-      if omistusliite in $oikea.jatko then
-        result $res, rules omistusliite;
-      end;
       if loppu in $oikea.jatko then
         result $res, accept;
       end;
