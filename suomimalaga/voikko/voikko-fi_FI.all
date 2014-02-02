@@ -4663,6 +4663,7 @@ subrule tosi ($tietue):
                                   "de", "si") +
                         [johdin_tOn:      "de",
                          johdin_mAinen:   "si",
+                         johdin_lAinen:   "te",
                          johdin_Us:       "te",
                          johdin_inen:     "t"] +
                         monikko7 ("de", "s", "s",

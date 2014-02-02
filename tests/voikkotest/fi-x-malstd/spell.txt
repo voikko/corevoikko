@@ -201,6 +201,7 @@ Sveitsi
 !sveitsi
 sveitsiläinen
 Sveitsiläinen
+haapaveteläinen
 !Sveitsimäinen
 !sveitsimäinen #(tätä johdosta ei tueta ainakaan toistaiseksi)
 Teppo

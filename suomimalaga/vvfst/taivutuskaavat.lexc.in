@@ -1482,6 +1482,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	si:si	Johdin_mAinen_<A>	;
 ?Laatusana	de:de	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
+?Paikannimi	te:te	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
