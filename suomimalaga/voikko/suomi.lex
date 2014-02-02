@@ -1243,7 +1243,7 @@ define @jatko_vastaukse := @jatko_de + @jatko_te;
 
 # Juhla => juhlallinen
 [alku: "llinen", luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen", jatko: <liitesana, loppu>];
-[alku: "llise",  luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen" ,jatko: @jatko_se + <kerronto_sti, voittoaste>];
+[alku: "llise",  luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen" ,jatko: @jatko_se + <kerronto_sti, voittoaste> - <omistusliite>];
 [alku: "llis",   luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 
 # Juhla => juhlainen.

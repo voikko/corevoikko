@@ -579,6 +579,7 @@ j:j	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]jii:jii	<WC>LiOlN_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	je:je	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]jehe:jehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]jihi:jihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]e:e		<WC>MonikonGenetiiviInJatko_<A>	;
@@ -912,6 +913,7 @@ LEXICON NOUN Apila_y
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 [[L]][Sill][Ny]:[[L]]	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1032,6 +1034,7 @@ LEXICON NOUN Peruna
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1405,6 +1408,7 @@ LEXICON NOUN Lumi
 [Sn][Nm]met:met	Liitesana_<A>	;
 [Sg][Ny]men:men	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]mi:mi	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]nt:nt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]mi<A>:mi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]men<A>:men<A>	<WC>LiOlV_<A>	;
@@ -1547,6 +1551,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?NimisanaOnly	@R.LAINEN@s:@R.LAINEN@s	Johdin_UUs_<A>	;
 ?Sukunimi	s:s	SukunimiYsJatko	;
 ?Sukunimi	nen:nen	SukunimiYsJatko	;
+?Paikannimi	s:s	Johdin_lAinen_<A>	;
 ?Sukija [Ses][Ny]sn<A>:sn<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]sehe:sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
@@ -3256,6 +3261,7 @@ LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
 n:n	KertomanTekijäpääteVahva_<A>	;
+n:n	KertomanTekijäpääteHeikko_<A>	;
 ne:ne	Johdin_mA_<A>	;
 ne:ne	Johdin_vA_<A>	;
 n:n	Ehtotapa_<A>	;
@@ -3903,6 +3909,7 @@ LEXICON Johdin_lAinen
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
 [Ll]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaHattu_<A>	;
+[Ll][Sg][Nm]tuid@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:tuid@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
 ! myydä -> myyty

@@ -703,6 +703,7 @@ omalletunnolleen
 !reggaeen
 hylätessään
 romahtamaisillaan
+!tyypillisesi
 
 # = liitesanat =
 []
