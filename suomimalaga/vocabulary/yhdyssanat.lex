@@ -2100,38 +2100,38 @@
 
 # {{{2 puolikymmentä (51)
 
-[perusmuoto: "puolikymmentä", alku: "puolikymmentä",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolenkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolenkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoltakymmen",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolenakymmene",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoleksikymmene", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolessakymmenessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolestakymmenestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoleenkymmene",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolellakymmenellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoleltakymmeneltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolellekymmenelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolettakymmene", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolikymmentä",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolenkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolenkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoltakymmen",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolenakymmene",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoleksikymmene", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolessakymmenessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolestakymmenestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoleenkymmene",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolellakymmenellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoleltakymmeneltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolellekymmenelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolettakymmene", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoltenkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoltenkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoliakymmen",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolinakymmen",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoliksikymmeniksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolissakymmenissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolistakymmenistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoliinkymmen",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolillakymmenillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puoliltakymmeniltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolillekymmenille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolittakymmenittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolinekymmen",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "puolikymmentä", alku: "puolinkymmenin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoltenkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoltenkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoliakymmen",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolinakymmen",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoliksikymmeniksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolissakymmenissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolistakymmenistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoliinkymmen",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolillakymmenillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puoliltakymmeniltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolillekymmenille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolittakymmenittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolinekymmen",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "puolikymmentä", alku: "puolinkymmenin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=pppppppppp"];
 
 # {{{2 puolimatka (50, 51)
 
@@ -2205,38 +2205,38 @@
 
 # {{{2 puolisataa (51)
 
-[perusmuoto: "puolisataa", alku: "puolisataa",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolensata",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolensada",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoltasata",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolenasata",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoleksisada", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolessasadassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolisataa", alku: "puolestasadasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolisataa", alku: "puoleensata",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolellasadalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolisataa", alku: "puoleltasadalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolisataa", alku: "puolellesadalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "puolisataa", alku: "puolettasada", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolisataa",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolensata",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolensada",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoltasata",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolenasata",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoleksisada", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolessasadassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolisataa", alku: "puolestasadasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolisataa", alku: "puoleensata",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolellasadalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolisataa", alku: "puoleltasadalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolisataa", alku: "puolellesadalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "puolisataa", alku: "puolettasada", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "puolisataa", alku: "puoletsada",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoletsata",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoltensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliensata",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, tiedot: <ei_voikko>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoltensata",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliasato",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolinasato",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliksisadoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolissasadoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolistasadoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliinsato",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolillasadoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puoliltasadoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolillesadoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolittasadoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "puolisataa", alku: "puolinesato",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "puolisataa", alku: "puolinsadoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "puolisataa", alku: "puoletsada",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoletsata",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoltensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliensata",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, tiedot: <ei_voikko>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoltensata",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliasato",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolinasato",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliksisadoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolissasadoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolistasadoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliinsato",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolillasadoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puoliltasadoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolillesadoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolittasadoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "puolisataa", alku: "puolinesato",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "puolisataa", alku: "puolinsadoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 puoliväli (50, 51)
 
