@@ -709,6 +709,7 @@ omalletunnolleen
 hylätessään
 romahtamaisillaan
 !tyypillisesi
+!palavarakkausnsa
 
 # = liitesanat =
 []
