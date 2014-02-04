@@ -2413,37 +2413,37 @@
 
 # {{{2 raskasvety (50, 51)
 
-[perusmuoto: "raskasvety", alku: "raskasvety",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaanvety",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaanvedy",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskastavety",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaanavety",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaaksivedy",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaassavedyssä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "raskasvety", alku: "raskaastavedystä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "raskasvety", alku: "raskaaseenvety", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaallavedyllä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "raskasvety", alku: "raskaaltavedyltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "raskasvety", alku: "raskaallevedylle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "raskasvety", alku: "raskaattavedy",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskasvety",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaanvety",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaanvedy",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskastavety",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaanavety",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaaksivedy",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaassavedyssä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaastavedystä",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaaseenvety", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaallavedyllä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaaltavedyltä",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaallevedylle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaattavedy",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "raskasvety", alku: "raskaatvedy",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaatvety",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaidenvety",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaittenvety", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaitavety",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskainavety",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaiksivedyiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaissavedyissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaistavedyistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaisiinvety", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaihinvety",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaillavedyillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskailtavedyiltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaillevedyille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskaittavedyittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "raskasvety", alku: "raskainevety",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raskasvety", alku: "raskainvedyin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "raskasvety", alku: "raskaatvedy",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaatvety",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaidenvety",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaittenvety", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaitavety",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskainavety",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaiksivedyiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaissavedyissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaistavedyistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaisiinvety", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaihinvety",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaillavedyillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskailtavedyiltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaillevedyille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskaittavedyittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "raskasvety", alku: "raskainevety",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raskasvety", alku: "raskainvedyin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
 
 # {{{2 suorakulma (50, 51)
 
