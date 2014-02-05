@@ -143,7 +143,7 @@
 <help>
 <![CDATA[
 	Eräät verbit (esim. erehtyä ja ryhtyä) vaativat seurakseen ns. MA-infinitiivissä olevan verbin.
-	Esimerkiksi ”Minä erehdyin <b>juoksemaan</b>." on oikein, mutta ”Minä erehdyin <b>juoksta</b>.” on väärin.
+	Esimerkiksi ”Minä erehdyin <b>juoksemaan</b>." on oikein, mutta ”Minä erehdyin <b>juosta</b>.” on väärin.
 ]]>
 </help>
 </error>
