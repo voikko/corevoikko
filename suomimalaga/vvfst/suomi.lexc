@@ -129,7 +129,7 @@ EtuliitteenJatko_elt2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_elt2
-[Bh][Bc]:	Sanasto_t	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_t	;
 
 LEXICON EtuliitteenJatko_eltj
 EtuliitteenJatko_eltj2	;

@@ -126,6 +126,10 @@ NHL-painotteisella
 !selvännäkijä # selvänäkijä
 !kaunisjuoksija
 !juoksijakaunis
+!sijaistee # "tee" ei sallittu yhdyssanan jälkiosana
+!kaukoidän # etuliite + "itää" ei sallittu yhdyssanan jälkiosana
+!kaukolastuan # etuliite + "lastuta" ei sallittu yhdyssanan osana
+itänyt
 nuoriinmiehiinkö
 nuorillapareilla
 
