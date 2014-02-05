@@ -133,8 +133,8 @@
 <description>Jälkimmäisen verbin tulisi olla a/ä-päätteisessä infinitiivissä</description>
 <help>
 <![CDATA[
-	Eräät verbit (esim. alkaa ja tarvita) vaativat seurakseen ns. A-infinitiivissä olevan verbin.
-	Esimerkiksi ”Minä alan <b>juosta</b>." on oikein, mutta ”Minä alan <b>juoksemaan</b>.” on väärin.
+	Eräät verbit (esim. rohjeta ja tarvita) vaativat seurakseen ns. A-infinitiivissä olevan verbin.
+	Esimerkiksi ”Minä rohkenen <b>juosta</b>." on oikein, mutta ”Minä rohkenen <b>juoksemaan</b>.” on väärin.
 ]]>
 </help>
 </error>

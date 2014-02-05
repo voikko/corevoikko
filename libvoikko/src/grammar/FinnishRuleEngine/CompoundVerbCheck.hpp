@@ -33,7 +33,7 @@
 
 namespace libvoikko { namespace grammar { namespace check {
 /**
- * Check for errors in compound verbs. Example "alkaa tekemään"
+ * Check for errors in compound verbs. Example "uhkaa tekemään"
  */
 class CompoundVerbCheck : public SentenceCheck {
 	public:
