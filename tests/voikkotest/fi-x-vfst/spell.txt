@@ -2672,3 +2672,9 @@ pakanoina
 kukaanhan
 vapise
 !vavise
+vilauttaa
+!viläyttää
+ammolleen
+varsimaisen
+kolmannellaan
+pode

@@ -1449,11 +1449,12 @@ LEXICON NOUN Kansi_t
 [Sg][Nm]si:si	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
-[Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;,
 s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	si:si	Johdin_mAinen_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
@@ -2833,6 +2834,7 @@ LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
 e:e	Mahtotapa_ttA_<A>	;
+e:e	Käskytapa_y2_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
@@ -3551,8 +3553,10 @@ Katketa_s_<A>	;
 
 LEXICON Kihistä
 @C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
-<A><U>t@C.V_SALLITTU@:<A><U>t@C.V_SALLITTU@	MuistaaMuistella_w_<A>	;
-<A><U>tt@C.V_SALLITTU@:<A><U>tt@C.V_SALLITTU@	MuistaaMuistella_s_<A>  ;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@autt:@R.V_SALLITTU.T@@C.V_SALLITTU@autt	MuistaaMuistella_s_a  ;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äytt:@R.V_SALLITTU.E@@C.V_SALLITTU@äytt	MuistaaMuistella_s_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
 
@@ -4539,10 +4543,13 @@ LEXICON JärjestyslukuKahdeksas
 [Sill][Ny]nteen:nteen JärjestyslukuSillNy39_<A> ;
 [Sill][Nm]nsiin:nsiin Liitesana_<A> ;
 [Sade][Ny]nnell<A>:nnell<A> JärjestyslukuSadeNy39_<A> ;
+[Sade][Ny]nnell<A>:nnell<A> OlV_<A> ;
 [Sade][Nm]nsill<A>:nsill<A> Liitesana_<A> ;
 [Sabl][Ny]nnelt<A>:nnelt<A> JärjestyslukuSablNy39_<A> ;
+[Sabl][Ny]nnelt<A>:nnelt<A> OlV_<A> ;
 [Sabl][Nm]nsilt<A>:nsilt<A> Liitesana_<A> ;
 [Sall][Ny]nnelle:nnelle JärjestyslukuSallNy39_<A> ;
+[Sall][Ny]nnelle:nnelle OlV_<A> ;
 [Sall][Nm]nsille:nsille Liitesana_<A> ;
 [Sab][Ny]nnett<A>:nnett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> Liitesana_<A> ;
