@@ -64,6 +64,7 @@ OPTIONS = generate_lex_common.get_options()
 
 infile = codecs.open (OPTIONS["destdir"] + u"/all.lexc", "r", "UTF-8")
 outfile = codecs.open (OPTIONS["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
+sukijafile = codecs.open (OPTIONS["destdir"] + u"/poikkeavat-sukija.lexc", 'r', 'UTF-8')
 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyåäö]"              # Vovels.
@@ -242,18 +243,6 @@ def write_paistaa (line, word):
 def write_paahtaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
-
-
-
-# Minä => mä, mie. Sinä => sä, sie.
-#
-def write_m_s (line, word):
-    if (line.startswith (u"[Lr][Xp]minä")):
-        outfile.write (line.replace (u"min", u"m"))
-        outfile.write (u"[Lr][Xp]mie[X]mi:mi SukijaAsemosanaMie ;\n")
-    elif (line.startswith (u"[Lr][Xp]sinä")):
-        outfile.write (line.replace (u"sin", u"s"))
-        outfile.write (u"[Lr][Xp]sie[X]si:si SukijaAsemosanaMie ;\n")
 
 
 def generate_from_pattern (line, pattern_list):
@@ -558,8 +547,11 @@ function_list = [
                       u"taittaa",
                       u"palttaa",
                       u"varttaa")),
-
-     (write_m_s, (u"minä", u"sinä")),
+     (lambda line, word: outfile.write (line.replace (u"NimisanaVati_ä", u"SukijaNeiti")),
+       (u"neiti",
+        u"hovineiti",
+        u"paimenneiti",
+        u"ylimysneiti")),
 ]
 
 def convert_to_dictionary (word_list):
@@ -661,15 +653,10 @@ def generate_xiljoona (line):
 while True:
     line = infile.readline()
     if line == u"":
-        break;
-    if line.startswith (u"[Ln][Xp]neiti[X]nei@P."):
-        outfile.write (line.replace (u"NimisanaVati", u"SukijaNeiti"))
-    else:
-        outfile.write (line)
+        break
+    outfile.write (line)
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
-    elif line.startswith (u"LEXICON AsemosanaMinä"):
-        outfile.write (u"[Sill][Ny]uhun:uhun	Liitesana_a	;\n")  # Minuhun, sinuhun.
 
     generate_from_pattern (line, spelling_pattern_list)
 
@@ -681,123 +668,13 @@ while True:
         generate_xiljoona (line)
 infile.close()
 
-
 outfile.write (u"\n\n\n")
 
-OUTPUT = [
-u"LEXICON SukijaNuolaista_a",
-u"s:s   Nuolaista_w_a ;",
-u"s:s   Nuolaista_s_a ;",
-u"s:s   Johdin_U_arvelu_a ;",
-u"LEXICON SukijaNuolaista_ä",
-u"s:s   Nuolaista_w_ä ;",
-u"s:s   Nuolaista_s_ä ;",
-u"s:s   Johdin_U_arvelu_ä ;",
-u"LEXICON SukijaNuolaista_aä",
-u"s:s   Nuolaista_w_a ;",
-u"s:s   Nuolaista_w_ä ;",
-u"s:s   Nuolaista_s_a ;",
-u"s:s   Nuolaista_s_ä ;",
-u"s:s   Johdin_U_arvelu_a ;",
-u"s:s   Johdin_U_arvelu_ä ;",
-u"LEXICON SukijaRangaista_a",
-u"gas:gas Nuolaista_w_a ;",
-u"kas:kas Nuolaista_s_a ;",
-u"kas:kas Johdin_U_arvelu_a ;",
-u"LEXICON SukijaHerttua",
-u"NimisanaApila_m_a ;",
-u"LEXICON SukijaLohi",
-u"[Sg][Nm]t:t NimisanaMonikonGenetiiviEnJatko_a ;",
-u"LEXICON SukijaOmistusliite_a_in",
-u"Omistusliite_a ;",
-u"[O1y]in:in Liitesana_a ;",
-u"LEXICON SukijaTuta",
-u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;",
-u"[Tn2]ten:ten Liitesana_a ;",
-u"LEXICON SukijaNeiti_ä",
-u"NimisanaVati_ä ;",
-u"?NotLaatusana	[Sn][Ny]te:te	Omistusliite_ä	;",
-u"[Sg][Ny]den:den   NimisanaYksikönGenetiivinJatko_ä	;",
-u"[Sp][Ny]ttä:ttä   NimisanaLiOlV_ä ;",
-u"[Ses]Ny]tenä:tenä NimisanaLiOlV_ä ;",
-u"[Ses]Ny]nnä:nnä   NimisanaLiOlV_ä ;",
-u"de:de	NimisanaYhteisetYksikönPaikallissijat_ä	;",
-u"[Sill][Ny]tee:tee   NimisanaLiOlN_ä ;",
-u"[Sill][Ny]tehe:tehe NimisanaLiOlN_ä ;",
-u"[Sn][Nm]det:det     Liitesana_ä	;",
-u"[Sg][Nm]tt:tt       NimisanaMonikonGenetiiviEnJatko_ä ;",
-u"[Sill][Nm]tihi:tihi NimisanaLiOlN_ä ;",
-u"t:t                 NimisanaYhteisetMonikonSijat2_ä ;",
-u"?Nimisana d:d       Johdin_ittAin_ä	;",
-u"?Nimisana de:de     Johdin_tOn_ä ;",
+while True:
+    line = sukijafile.readline()
+    if line == u"":
+        break
+    outfile.write (line)
+sukijafile.close()
 
-u"LEXICON Sukija",
-u"[Ln][Xp]aatelisneiti[X][Xr]ppppppp=[X]aatelisnei[Sg][Ny]den:aatelisneiden Loppu ;",
-u"[Ln][Xp]herrasneiti[X][Xr]pppppp=[X]herrasnei[Sg][Ny]den:herrasneiden Loppu ;",
-u"[Ln][Xp]hovineiti[X][Xr]pppp=[X]hovinei[Sg][Ny]den:hovineiden Loppu ;",
-u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;",
-u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;",
-u"[Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sp][Nm]eläviä[Bm]kuvia:eläviäkuvia       NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Ses][Nm]elävinä[Bm]kuvina:elävinäkuvina  NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Str][Nm]eläviksi[Bm]kuviksi:eläviksikuviksi      NimisanaLiOlI_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sine][Nm]elävissä[Bm]kuvissa:elävissäkuvissa     NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sela][Nm]elävistä[Bm]kuvista:elävistäkuvista     NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sill][Nm]eläviin[Bm]kuvii:eläviinkuvii   NimisanaLiOlN_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sade][Nm]elävillä[Bm]kuvilla:elävilläkuvilla     NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sabl][Nm]eläviltä[Bm]kuvilta:eläviltäkuvilta     NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sall][Nm]eläville[Bm]kuville:elävillekuville     NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;",
-u"[Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;",
-
-u"LEXICON SukijaLukusanaKolmattaYhdeksättä",
-u"[Bc]kolmatta:kolmatta       Liitesana_a     ;",
-u"[Bc]kolmatta:kolmatta       LukusananJälkiliite     ;",
-u"[Bc]neljättä:neljättä       Liitesana_ä     ;",
-u"[Bc]neljättä:neljättä       LukusananJälkiliite     ;",
-u"[Bc]viidettä:viidettä       Liitesana_ä     ;",
-u"[Bc]viidettä:viidettä       LukusananJälkiliite     ;",
-u"[Bc]kuudetta:kuudetta       Liitesana_a     ;",
-u"[Bc]kuudetta:kuudetta       LukusananJälkiliite     ;",
-u"[Bc]seitsemättä:seitsemättä Liitesana_ä     ;",
-u"[Bc]seitsemättä:seitsemättä LukusananJälkiliite     ;",
-u"[Bc]kahdeksatta:kahdeksatta Liitesana_a    ;",
-u"[Bc]kahdeksatta:kahdeksatta LukusananJälkiliite     ;",
-u"[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;",
-u"[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliite     ;",
-
-u"LEXICON SukijaJärjestyslukuKolmattaYhdeksättä",
-u"[Bc]kolmatta:kolmatta       Liitesana_a     ;",
-u"[Bc]kolmatta:kolmatta       LukusananJälkiliiteJl   ;",
-u"[Bc]neljättä:neljättä       Liitesana_ä     ;",
-u"[Bc]neljättä:neljättä       LukusananJälkiliiteJl   ;",
-u"[Bc]viidettä:viidettä       Liitesana_ä     ;",
-u"[Bc]viidettä:viidettä       LukusananJälkiliiteJl     ;",
-u"[Bc]kuudetta:kuudetta       Liitesana_a     ;",
-u"[Bc]kuudetta:kuudetta       LukusananJälkiliiteJl     ;",
-u"[Bc]seitsemättä:seitsemättä Liitesana_ä     ;",
-u"[Bc]seitsemättä:seitsemättä LukusananJälkiliiteJl     ;",
-u"[Bc]kahdeksatta:kahdeksatta Liitesana_a     ;",
-u"[Bc]kahdeksatta:kahdeksatta LukusananJälkiliiteJl     ;",
-u"[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;",
-u"[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;",
-
-u"LEXICON SukijaAsemosanaMie",
-u"[Sn][Ny]e:e	Liitesana_ä	;",
-u"[Sg][Ny]un:un	Liitesana_a	;",
-u"[Sak][Ny]ut:ut	Liitesana_a	;",
-u"[Str][Ny]uksi:uksi	Liitesana_a	;",
-u"[Ses][Ny]una:una	Liitesana_a	;",
-u"[Sine][Ny]ussa:ussa	Liitesana_a	;",
-u"[Sela][Ny]usta:usta	Liitesana_a	;",
-u"[Sill][Ny]uhun:uhun	Liitesana_a	;",
-u"[Sade][Ny]ulla:ulla	Liitesana_a	;",
-u"[Sabl][Ny]ulta:ulta	Liitesana_a	;",
-u"[Sall][Ny]ulle:ulle	Liitesana_a	;",
-]
-
-for x in OUTPUT:
-    outfile.write (x + u"\n")
+outfile.close()

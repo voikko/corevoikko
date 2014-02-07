@@ -1,0 +1,125 @@
+LEXICON SukijaRangaista_a
+gas:gas Nuolaista_w_a ;
+kas:kas Nuolaista_s_a ;
+kas:kas Johdin_U_arvelu_a ;
+
+LEXICON SukijaHerttua
+NimisanaApila_m_a ;
+
+LEXICON SukijaLohi
+[Sg][Nm]t:t NimisanaMonikonGenetiiviEnJatko_a ;
+
+LEXICON SukijaOmistusliite_a_in
+Omistusliite_a ;
+[O1y]in:in Liitesana_a ;
+
+LEXICON SukijaTuta
+[Tn1p]takse:takse SukijaOmistusliite_a_in ;
+[Tn2]ten:ten Liitesana_a ;
+
+LEXICON SukijaNeiti
+?NotLaatusana	[Sn][Ny]te:te	Omistusliite_ä	;
+! [Sg][Ny]den:den   NimisanaYksikönGenetiivinJatko_ä	;  ! Pala=neiden ei käy.
+[Sp][Ny]ttä:ttä   NimisanaLiOlV_ä ;
+[Ses]Ny]tenä:tenä NimisanaLiOlV_ä ;
+[Ses]Ny]nnä:nnä   NimisanaLiOlV_ä ;
+de:de	NimisanaYhteisetYksikönPaikallissijat_ä	;
+[Sill][Ny]tee:tee   NimisanaLiOlN_ä ;
+[Sill][Ny]tehe:tehe NimisanaLiOlN_ä ;
+[Sn][Nm]det:det     Liitesana_ä	;
+[Sg][Nm]tt:tt       NimisanaMonikonGenetiiviEnJatko_ä ;
+[Sill][Nm]tihi:tihi NimisanaLiOlN_ä ;
+t:t                 NimisanaYhteisetMonikonSijat2_ä ;
+?Nimisana d:d       Johdin_ittAin_ä	;
+?Nimisana de:de     Johdin_tOn_ä ;
+
+LEXICON SukijaLukusanaKolmattaYhdeksättä
+[Bc]kolmatta:kolmatta       Liitesana_a     ;
+[Bc]kolmatta:kolmatta       LukusananJälkiliite     ;
+[Bc]neljättä:neljättä       Liitesana_ä     ;
+[Bc]neljättä:neljättä       LukusananJälkiliite     ;
+[Bc]viidettä:viidettä       Liitesana_ä     ;
+[Bc]viidettä:viidettä       LukusananJälkiliite     ;
+[Bc]kuudetta:kuudetta       Liitesana_a     ;
+[Bc]kuudetta:kuudetta       LukusananJälkiliite     ;
+[Bc]seitsemättä:seitsemättä Liitesana_ä     ;
+[Bc]seitsemättä:seitsemättä LukusananJälkiliite     ;
+[Bc]kahdeksatta:kahdeksatta Liitesana_a    ;
+[Bc]kahdeksatta:kahdeksatta LukusananJälkiliite     ;
+[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
+[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliite     ;
+LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
+[Bc]kolmatta:kolmatta       Liitesana_a     ;
+[Bc]kolmatta:kolmatta       LukusananJälkiliiteJl   ;
+[Bc]neljättä:neljättä       Liitesana_ä     ;
+[Bc]neljättä:neljättä       LukusananJälkiliiteJl   ;
+[Bc]viidettä:viidettä       Liitesana_ä     ;
+[Bc]viidettä:viidettä       LukusananJälkiliiteJl     ;
+[Bc]kuudetta:kuudetta       Liitesana_a     ;
+[Bc]kuudetta:kuudetta       LukusananJälkiliiteJl     ;
+[Bc]seitsemättä:seitsemättä Liitesana_ä     ;
+[Bc]seitsemättä:seitsemättä LukusananJälkiliiteJl     ;
+[Bc]kahdeksatta:kahdeksatta Liitesana_a     ;
+[Bc]kahdeksatta:kahdeksatta LukusananJälkiliiteJl     ;
+[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
+[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;
+
+LEXICON SukijaAsemosanaMie
+[Sn][Ny]e:e	Liitesana_ä	;
+[Sg][Ny]un:un	Liitesana_a	;
+[Sak][Ny]ut:ut	Liitesana_a	;
+[Str][Ny]uksi:uksi	Liitesana_a	;
+[Ses][Ny]una:una	Liitesana_a	;
+[Sine][Ny]ussa:ussa	Liitesana_a	;
+[Sela][Ny]usta:usta	Liitesana_a	;
+[Sill][Ny]uhun:uhun	Liitesana_a	;
+[Sade][Ny]ulla:ulla	Liitesana_a	;
+[Sabl][Ny]ulta:ulta	Liitesana_a	;
+[Sall][Ny]ulle:ulle	Liitesana_a	;
+
+LEXICON SukijaAsemosanaMinä
+[Sill][Ny]uhun:uhun	Liitesana_a	;
+
+LEXICON SukijaAsemosanaMä
+Sn][Ny]ä:ä	Liitesana_ä	;
+[Sg][Ny]un:un	Liitesana_a	;
+[Sp][Ny]ua:ua	Liitesana_a	;
+[Sak][Ny]ut:ut	Liitesana_a	;
+[Str][Ny]uksi:uksi	Liitesana_a	;
+[Ses][Ny]una:una	Liitesana_a	;
+[Sine][Ny]ussa:ussa	Liitesana_a	;
+[Sela][Ny]usta:usta	Liitesana_a	;
+[Sill][Ny]uhun:uhun	Liitesana_a	;
+[Sade][Ny]ulla:ulla	Liitesana_a	;
+[Sabl][Ny]ulta:ulta	Liitesana_a	;
+[Sall][Ny]ulle:ulle	Liitesana_a	;
+
+LEXICON Sukija
+[Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
+[Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
+[Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
+[Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
+[Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]elävätkuvat[X][Sp][Nm]eläviä[Bm]kuvia:eläviäkuvia       NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Ses][Nm]elävinä[Bm]kuvina:elävinäkuvina  NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Str][Nm]eläviksi[Bm]kuviksi:eläviksikuviksi      NimisanaLiOlI_a ;
+[Ln][Xp]elävätkuvat[X][Sine][Nm]elävissä[Bm]kuvissa:elävissäkuvissa     NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sela][Nm]elävistä[Bm]kuvista:elävistäkuvista     NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sill][Nm]eläviin[Bm]kuvii:eläviinkuvii   NimisanaLiOlN_a ;
+[Ln][Xp]elävätkuvat[X][Sade][Nm]elävillä[Bm]kuvilla:elävilläkuvilla     NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sabl][Nm]eläviltä[Bm]kuvilta:eläviltäkuvilta     NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sall][Nm]eläville[Bm]kuville:elävillekuville     NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
+[Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
+[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
+[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;
+[Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
+[Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
+[Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
+[Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
+[Lr][Xp]mä[X]m:m        SukijaAsemosanaMä ;
+[Lr][Xp]sie[X]si:si     SukijaAsemosanaMie ;
+[Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
+[Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;

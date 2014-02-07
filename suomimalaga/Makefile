@@ -45,7 +45,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
          vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
-         vvfst/main.foma.in $(VVFST_LEXC) vvfst/generate_sukija.py
+         vvfst/main.foma.in $(VVFST_LEXC) vvfst/generate_sukija.py vvfst/poikkeavat-sukija.lexc
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
@@ -267,7 +267,7 @@ voikko-sukija:
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 
-$(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp
+$(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/poikkeavat-sukija.lexc
 	$(PYTHON) vvfst/generate_sukija.py --destdir=$(VVFST_BUILDDIR)
 
 $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma
