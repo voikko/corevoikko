@@ -95,6 +95,8 @@ Sn][Ny]ä:ä	Liitesana_ä	;
 [Sall][Ny]ulle:ulle	Liitesana_a	;
 
 LEXICON Sukija
+[Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
+[Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
