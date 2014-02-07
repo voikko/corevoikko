@@ -112,6 +112,7 @@ Multichar_Symbols
 [[L]] ! edellisen merkin toisto
 [[IE]] ! edeltävä i-kirjain muutetaan e-kirjaimeksi
 [[H]] ! Lisätään h kahden saman ääntiön väliin vanhoissa taivutuksissa, esim. valo(h)on.
+[[HV]] ! ö -> öhö jne.
 
 ! Diakriitit
 @P.EI_YKS.ON@ @D.EI_YKS@ @C.EI_YKS@ ! Yksikkömuotoja ei sallita

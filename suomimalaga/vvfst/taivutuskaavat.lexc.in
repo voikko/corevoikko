@@ -1154,6 +1154,7 @@ LEXICON NOUN Kamee_l
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Maa
 <WC>Maa_s_<A>	;
@@ -1306,7 +1307,7 @@ LEXICON NOUN Rosé
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
-[Sill][Ny]he:he	<WC>LiOlN_<A>	;
+[Sill][Ny][[HV]]:[[HV]]	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -3784,7 +3785,7 @@ Johdin_nimitapa4_<A>	;
 Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
-mi@C.JOHDETTAVA_NIMISANAKSI@:mi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNainen_<A>	;
+mi@C.JOHDETTAVA_NIMISANAKSI@:mi@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
