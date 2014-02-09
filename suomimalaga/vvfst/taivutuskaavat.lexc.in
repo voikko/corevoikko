@@ -4450,16 +4450,16 @@ LEXICON LukusanaSnNm
 
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;
-@U.LS.SNNY@:@U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
+LukusanaKymmentäSnNy_<A>	;
 
 LEXICON LukusanaSnNm29
 LukusanaSnNm_<A>	;
 @U.LS.SNNM@:@U.LS.SNNM@	LukusanaKymmentäSnNm_<A>	;
 
 LEXICON LukusanaKymmentäSnNy
-@U.LS.SNNY@[Bc]kymmentä:@U.LS.SNNY@kymmentä	LukusanaLiitesana_ä	;
-@U.LS.SNNY@[Bc]sataa:@U.LS.SNNY@sataa	LukusanaLiitesana_a	;
-@U.LS.SNNY@[Bc]tuhatta:@U.LS.SNNY@tuhatta	LukusanaLiitesana_a	;
+[Bc]kymmentä:kymmentä	LukusanaLiitesana_ä	;
+[Bc]sataa:sataa	LukusanaLiitesana_a	;
+[Bc]tuhatta:tuhatta	LukusanaLiitesana_a	;
 
 LEXICON LukusanaKymmentäSnNm
 [Bc]kymmenet:kymmenet	LukusanaLiitesana_ä	;
@@ -4500,10 +4500,12 @@ LEXICON JärjestyslukuNainen
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> JärjestyslukuSesNm39_<A> ;
 [Ses][Nm]sin<A>:sin<A> OlV_<A> ;
-[Sine][Ny]sess<A>:sess<A> Liitesana_<A> ;
+[Sine][Ny]sess<A>:sess<A> JärjestyslukuSineNy39_<A> ;
+[Sine][Ny]sess<A>:sess<A> OlV_<A> ;
 [Sine][Nm]siss<A>:siss<A> JärjestyslukuSineNm39_<A> ;
 [Sine][Nm]siss<A>:siss<A> OlV_<A> ;
-[Sela][Ny]sest<A>:sest<A> Liitesana_<A> ;
+[Sela][Ny]sest<A>:sest<A> JärjestyslukuSelaNy39_<A> ;
+[Sela][Ny]sest<A>:sest<A> OlV_<A> ;
 [Sela][Nm]sist<A>:sist<A> JärjestyslukuSelaNm39_<A> ;
 [Sela][Nm]sist<A>:sist<A> OlV_<A> ;
 [Sill][Ny]seen:seen JärjestyslukuSillNy39_<A> ;
@@ -4514,13 +4516,15 @@ LEXICON JärjestyslukuNainen
 [Sade][Ny]sell<A>:sell<A> OlV_<A> ;
 [Sade][Nm]sill<A>:sill<A> JärjestyslukuSadeNm39_<A> ;
 [Sade][Nm]sill<A>:sill<A> OlV_<A> ;
-[Sabl][Ny]selt<A>:selt<A> Liitesana_<A> ;
+[Sabl][Ny]selt<A>:selt<A> JärjestyslukuSablNy39_<A> ;
+[Sabl][Ny]selt<A>:selt<A> OlV_<A> ;
 [Sabl][Nm]silt<A>:silt<A> JärjestyslukuSablNm39_<A> ;
 [Sabl][Nm]silt<A>:silt<A> OlV_<A> ;
-[Sall][Ny]selle:selle Liitesana_<A> ;
+[Sall][Ny]selle:selle JärjestyslukuSallNy39_<A> ;
+[Sall][Ny]selle:selle OlV_<A> ;
 [Sall][Nm]sille:sille JärjestyslukuSallNm39_<A> ;
 [Sall][Nm]sille:sille OlV_<A>	;
-[Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
+[Sab][Ny]sett<A>:sett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
 ?Sukija [Sill][Nm]sihin:sihin JärjestyslukuSillNm39_<A> ;

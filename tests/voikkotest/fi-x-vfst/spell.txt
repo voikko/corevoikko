@@ -2684,3 +2684,5 @@ Malmöhön
 !Malmöhen
 kahdeksansiksikymmenensiksi
 kahdeksansikseen
+sadastuhannes
+kaksisataatuhatta

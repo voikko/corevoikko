@@ -81,6 +81,7 @@ JärjestyslukuSkoNm39Kertoimet	;
 [Sn][Ny][Xp]kymmenes[X]kymmenes@U.LS.SNNY@:kymmenes@U.LS.SNNY@	JärjestyslukuLiitesana_ä	;
 [Sn][Nm][Xp]kymmenes[X]kymmenennet@U.LS.SNNM@:kymmenennet@U.LS.SNNM@	JärjestyslukuLiitesana_ä	;
 [Sn][Ny][Xp]sadas[X]sadas@U.LS.SNNY@:sadas@U.LS.SNNY@	JärjestyslukuLiitesana_a	;
+[Sn][Ny][Xp]tuhannes[X]tuhannes@U.LS.SNNY@:tuhannes@U.LS.SNNY@	JärjestyslukuLiitesana_a	;
 [Sn][Ny][Xp]miljoonas[X]miljoonas@U.LS.SNNY@:miljoonas@U.LS.SNNY@	JärjestyslukuLiitesana_a	;
 [Sn][Ny][Xp]miljardis[X]miljardis@U.LS.SNNY@:miljardis@U.LS.SNNY@	JärjestyslukuLiitesana_a	;
 
