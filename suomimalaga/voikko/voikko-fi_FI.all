@@ -1694,7 +1694,7 @@ allo_rule generate_allos ($tietue):
                                           [osanto_ttA: ""], sisätulento_Vn,
                                           "nne", "t") +
                                 monikko7 ("nne", "ns", "ns",
-                                          [omanto_ien: "ns", omanto_ten: "n"],
+                                          [omanto_ien: "ns"],
                                           [osanto_iA: "ns"],
                                           [sisätulento_iin: "ns"], "ns"));
     result $i.alku, $i - alku;

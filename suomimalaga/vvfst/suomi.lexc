@@ -122,6 +122,7 @@ LEXICON EtuliitteenJatko_ellH
 [Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 [Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 [Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_n	;
+[Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 
 LEXICON EtuliitteenJatko_elt
 EtuliitteenJatko_elt2	;
