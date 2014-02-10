@@ -18,19 +18,19 @@ LEXICON SukijaTuta
 [Tn2]ten:ten Liitesana_a ;
 
 LEXICON SukijaNeiti
-?NotLaatusana	[Sn][Ny]te:te	Omistusliite_ä	;
-! [Sg][Ny]den:den   NimisanaYksikönGenetiivinJatko_ä	;  ! Pala=neiden ei käy.
+[Sg][Ny]tin:tin   Liitesana_a ;
+?NotLaatusana     [Sn][Ny]te:te Omistusliite_ä	;
 [Sp][Ny]ttä:ttä   NimisanaLiOlV_ä ;
 [Ses]Ny]tenä:tenä NimisanaLiOlV_ä ;
 [Ses]Ny]nnä:nnä   NimisanaLiOlV_ä ;
-de:de	NimisanaYhteisetYksikönPaikallissijat_ä	;
+de:de             NimisanaYhteisetYksikönPaikallissijat_ä ;
+ti:ti             NimisanaYhteisetYksikönPaikallissijat_ä ;
 [Sill][Ny]tee:tee   NimisanaLiOlN_ä ;
 [Sill][Ny]tehe:tehe NimisanaLiOlN_ä ;
 [Sn][Nm]det:det     Liitesana_ä	;
-[Sg][Nm]tt:tt       NimisanaMonikonGenetiiviEnJatko_ä ;
 [Sill][Nm]tihi:tihi NimisanaLiOlN_ä ;
-t:t                 NimisanaYhteisetMonikonSijat2_ä ;
-?Nimisana d:d       Johdin_ittAin_ä	;
+[Sko][Nm]tine:tine  NimisanaLiOlV_ä ;
+?Nimisana d:d       Johdin_ittAin_ä ;
 ?Nimisana de:de     Johdin_tOn_ä ;
 
 LEXICON SukijaLukusanaKolmattaYhdeksättä
@@ -48,6 +48,7 @@ LEXICON SukijaLukusanaKolmattaYhdeksättä
 [Bc]kahdeksatta:kahdeksatta LukusananJälkiliite     ;
 [Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
 [Bc]yhdeksättä:yhdeksättä   LukusananJälkiliite     ;
+
 LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
 [Bc]kolmatta:kolmatta       Liitesana_a     ;
 [Bc]kolmatta:kolmatta       LukusananJälkiliiteJl   ;
@@ -81,7 +82,7 @@ LEXICON SukijaAsemosanaMinä
 [Sill][Ny]uhun:uhun	Liitesana_a	;
 
 LEXICON SukijaAsemosanaMä
-Sn][Ny]ä:ä	Liitesana_ä	;
+[Sn][Ny]ä:ä	Liitesana_ä	;
 [Sg][Ny]un:un	Liitesana_a	;
 [Sp][Ny]ua:ua	Liitesana_a	;
 [Sak][Ny]ut:ut	Liitesana_a	;
@@ -98,7 +99,9 @@ LEXICON Sukija
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
+[Ln][Xp]aaetelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
+[Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
@@ -115,8 +118,12 @@ LEXICON Sukija
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
+[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
-[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
+[Ln][Xp]neiti[X]nei:nei SukijaNeiti;
+[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu;
+[Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
@@ -125,3 +132,5 @@ LEXICON Sukija
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMie ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
+[Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
+[Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;

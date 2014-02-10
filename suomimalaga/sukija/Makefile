@@ -19,7 +19,6 @@ voikonsanat/lainen.lex \
 voikonsanat/lukusanat.lex \
 voikonsanat/matluonnontiede.lex \
 voikonsanat/poikkeavat.lex \
-voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
 voikonsanat/taivutustaydennykset.lex \
 voikonsanat/yhdyssanat.lex \

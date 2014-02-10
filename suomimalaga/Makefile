@@ -274,7 +274,8 @@ $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUIL
 	foma -f $(VVFST_BUILDDIR)/main-sukija.foma | grep -v "defined but not used" 2>&1
 
 $(VVFST_BUILDDIR)/main-sukija.foma: $(VVFST_BUILDDIR)/main.foma
-	sed -e 's,/all,/all-sukija,' -e 's/Lengthening;/Lengthening .o. OldH;/g' \
+	sed -e 's,/all,/all-sukija,' \
+            -e 's/HV;/HV .o. OldH;/' \
             -e '\%set flag%idefine OldH a "[[H]]" -> a h a ,\
             e "[[H]]" -> e h e ,\
             i "[[H]]" -> i h i ,\

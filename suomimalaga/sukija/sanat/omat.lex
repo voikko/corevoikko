@@ -1516,6 +1516,17 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "pielaveteläinen", alku: "pielaveteläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "lapveteläinen", alku: "lapveteläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "marketoida", alku: "marketo", luokka: teonsana, jatko: <voida>, äs: a];
+[perusmuoto: "pien", alku: "pien", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "piki", alku: "piki", luokka: etuliite, jatko: @sana2, äs: aä];
+
+[perusmuoto: "aatelisneiti", alku: "atelisnei", luokka: nimisana, jatko: <neiti>, äs: ä];
+[perusmuoto: "herrasneiti", alku: "herrasnei", luokka: nimisana, jatko: <neiti>, äs: ä];
+[perusmuoto: "hovineiti", alku: "hovinei", luokka: nimisana, jatko: <neiti>, äs: ä];
+[perusmuoto: "neiti", alku: "nei", luokka: nimisana, jatko: <neiti>, äs: ä, tiedot: <ei_ys>];
+[perusmuoto: "aatelisimpi", alku: "aatelisim", luokka: nimisana, jatko: <sampi>, äs: ä];
+[perusmuoto: "juutalaisimpi", alku: "juutalaisim", luokka: nimisana, jatko: <sampi>, äs: ä];
+[perusmuoto: "maalaisimpi", alku: "maalaisim", luokka: nimisana, jatko: <sampi>, äs: ä];
+[perusmuoto: "ulkoasu", alku: "ulkoasu", luokka: nimisana, jatko: <valo>, äs: a];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
