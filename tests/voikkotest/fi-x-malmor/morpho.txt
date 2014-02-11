@@ -103,3 +103,6 @@ word:kauniinlaisuus
 word:tuuppaajalla
  analysis
   WORDBASES=+tuuppaa(tuupata)+ja(+ja)
+word:pikilappu
+ analysis
+  WORDBASES=+pikilappu(piki=lappu)

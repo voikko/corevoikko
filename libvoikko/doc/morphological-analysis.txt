@@ -232,7 +232,9 @@ are provided only as information for external applications.
   Sanan osien perusmuodot. Attribuutti ei ole käytössä libvoikon
   sisällä. Attribuutin arvona on sanan perusmuoto, jossa yhdyssanan
   osat ja päätteet on erotettu toisistaan +-merkillä. Lisäksi kunkin
-  yhdyssanan osan perusmuoto on osan perässä suluissa.
+  yhdyssanan osan perusmuoto on osan perässä suluissa. Mikäli yhdyssanan
+  osat itsessään ovat jaettavissa osiin, osat voidaan sulkujen sisällä
+  olevassa perusmuodossa erotella merkeillä = tai |.
 
   Esimerkkejä:
    Sana: köydenvetoa ->     WORDBASES: +köyde(köysi)+n+veto(veto)

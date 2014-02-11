@@ -194,11 +194,13 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if baseform is None:
-			baseform = wordform
+			altBaseform = altform
+		else:
+			altBaseform = baseform
 		if malaga_word_class == u"lyhenne":
 			perusmuotoEntry = u""
 		else:
-			perusmuotoEntry = u'perusmuoto: "%s", ' % baseform
+			perusmuotoEntry = u'perusmuoto: "%s", ' % altBaseform
 		entry = u'[%salku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
 		          % (perusmuotoEntry, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),

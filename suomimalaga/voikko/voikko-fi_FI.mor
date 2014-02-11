@@ -2356,7 +2356,12 @@ subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     if ($vain_alku or $tietue.perusmuoto = nil) then
       $res :=+ $tietue.alku;
     else
-      $res :=+ $tietue.perusmuoto;
+      foreach $i in length($tietue.perusmuoto):
+        define $c := substring($tietue.perusmuoto, $i, $i);
+        if not $c in <"=", "|"> then
+          $res :=+ $c;
+        end;
+      end;
     end;
     if ($tietue.lähtösana /= nil) then
       $res :=+ "(p=" + $tietue.lähtösana + ")";
