@@ -1792,35 +1792,35 @@
 
 # {{{2 omakuva (51, 50)
 
-[perusmuoto: "omakuva", alku: "omakuva",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
-[perusmuoto: "omakuva", alku: "omankuva",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "omankuva",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "omaakuva",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "omanakuva",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omaksikuva", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omassakuvassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "omakuva", alku: "omastakuvasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "omakuva", alku: "omaankuva",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omallakuvalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "omakuva", alku: "omaltakuvalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "omakuva", alku: "omallekuvalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "omakuva", alku: "omattakuva", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omakuva",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omankuva",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omankuva",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omaakuva",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omanakuva",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omaksikuva", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omassakuvassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "omakuva", alku: "omastakuvasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "omakuva", alku: "omaankuva",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omallakuvalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "omakuva", alku: "omaltakuvalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "omakuva", alku: "omallekuvalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "omakuva", alku: "omattakuva", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "omienkuv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omiakuv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "omakuva", alku: "ominakuv",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omiksikuviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omissakuvissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omistakuvista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omiinkuv",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omillakuvilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omiltakuvilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omillekuville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "omakuva", alku: "omittakuvitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "omakuva", alku: "ominekuv",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "omakuva", alku: "ominkuvin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omienkuv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omiakuv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "omakuva", alku: "ominakuv",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omiksikuviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omissakuvissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omistakuvista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omiinkuv",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omillakuvilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omiltakuvilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omillekuville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "omittakuvitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "omakuva", alku: "ominekuv",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "omakuva", alku: "ominkuvin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppp=pppppp"];
 
 # {{{2 omatunto (51)
 
@@ -1888,67 +1888,67 @@
 
 # {{{2 palavakivi (51)
 
-[perusmuoto: "palavakivi", alku: "palavakivi",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavankive",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavankive",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavaakive",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavanakive",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavaksikive", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavassakivessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavakivi", alku: "palavastakivestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavakivi", alku: "palavaankive",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavallakivellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavakivi", alku: "palavaltakiveltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavakivi", alku: "palavallekivelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
-[perusmuoto: "palavakivi", alku: "palavattakive", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavakivi",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavankive",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavankive",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavaakive",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavanakive",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavaksikive", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavassakivessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavastakivestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavaankive",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavallakivellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavaltakiveltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavallekivelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=ppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavattakive", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavienkiv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palaviakiv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavinakiv",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palaviksikiviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavissakivissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavistakivistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palaviinkiv",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavillakivillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palaviltakiviltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavillekiville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavittakivittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
-[perusmuoto: "palavakivi", alku: "palavinekiv",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "palavakivi", alku: "palavinkivin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavienkiv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palaviakiv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavinakiv",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palaviksikiviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavissakivissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavistakivistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palaviinkiv",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavillakivillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palaviltakiviltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavillekiville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavittakivittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppppp=pppppppp"];
+ [perusmuoto: "palavakivi", alku: "palavinekiv",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "palavakivi", alku: "palavinkivin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppppp=pppppp"];
 
 # {{{2 palavapensas (51)
 
-[perusmuoto: "palavapensas", alku: "palavapensas",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavanpensaa",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavanpensaa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavaapensas",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavanapensaa",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavaksipensaa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavassapensaassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavastapensaasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavaanpensaa",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_seen>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavallapensaalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavaltapensaalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavallepensaalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavattapensaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavapensas",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavanpensaa",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavanpensaa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavaapensas",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavanapensaa",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavaksipensaa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavassapensaassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavastapensaasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavaanpensaa",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_seen>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavallapensaalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavaltapensaalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavallepensaalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=ppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavattapensaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=pppppp"];
 
-[perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavienpensa",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palaviapensa",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavinapensa",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palaviksipensaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavissapensaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavistapensaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palaviinpensa",   luokka: nimisana, luku: monikko, jatko: <sisätulento_isiin>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavillapensailla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palaviltapensailta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavillepensaille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavittapensaitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "palavapensas", alku: "palavinepensa",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "palavapensas", alku: "palavinpensain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavienpensa",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palaviapensa",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavinapensa",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palaviksipensaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavissapensaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavistapensaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palaviinpensa",   luokka: nimisana, luku: monikko, jatko: <sisätulento_isiin>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavillapensailla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palaviltapensailta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavillepensaille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavittapensaitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "palavapensas", alku: "palavinepensa",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "palavapensas", alku: "palavinpensain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppp"];
 
 # {{{2 palavarakkaus (51)
 
