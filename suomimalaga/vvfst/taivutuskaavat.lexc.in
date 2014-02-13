@@ -2525,6 +2525,7 @@ t:t	<WC>MuistaaMuistella_s_<A>	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_a	;
 d<A>t:d<A>t	<WC>MuistaaMuistella_w_<A>	;
 d<A>tt:d<A>tt	<WC>MuistaaMuistella_s_<A>	;
+d<A>t:d<A>t	Johdin_Us_ksen_<A>	;
 
 LEXICON Hujahtaa
 hd:hd	<WC>MuistaaMuistella_w_<A>	;
@@ -3903,7 +3904,7 @@ LEXICON Johdin_tOn
 [Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
-[Ll]lli@C.YS_EI_JATKOA@:lli@C.YS_EI_JATKOA@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
+[Ll]lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis:llis	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Yleisnimet	;
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
