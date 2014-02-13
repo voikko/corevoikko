@@ -3796,7 +3796,7 @@ LEXICON Johdin_Us_ksen
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
-[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKalleus_<A>	;
+[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:<U>@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimisanaKalleus_<A>	;
 
 LEXICON Johdin_UUs
 [Ln]<U><U>@C.JOHDETTAVA_NIMISANAKSI@:<U><U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKalleus_<A>	;
@@ -4028,7 +4028,7 @@ LEXICON Voittoaste
 [Sine][Nm][Cc]mmiss<A>@D.EI_VERTM@:mmiss<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sela][Ny][Cc]mm<A>st<A>@D.EI_VERTM@:mm<A>st<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sela][Nm][Cc]mmist<A>@D.EI_VERTM@:mmist<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
-[Sill][Ny][Cc]mp<A><A>n@D.EI_VERTM@:mp<A><A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sill][Nm][Cc]mpii@D.EI_VERTM@:mpii@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sade][Ny][Cc]mm<A>ll<A>@D.EI_VERTM@:mm<A>ll<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sade][Nm][Cc]mmill<A>@D.EI_VERTM@:mmill<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;

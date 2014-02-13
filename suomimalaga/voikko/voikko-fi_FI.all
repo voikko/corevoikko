@@ -128,9 +128,9 @@ allo_rule generate_allos ($tietue):
 
   elseif ($tietue.luokka = etuliite) then
     if (last($tietue.alku) = "-") then
-      result $tietue.perusmuoto, $tietue - alku;
+      result $tietue.alku, $tietue - alku;
     else
-      result $tietue.perusmuoto, $tietue - alku + [jatko: $tietue.jatko + <tavuviiva>];
+      result $tietue.alku, $tietue - alku + [jatko: $tietue.jatko + <tavuviiva>];
     end;
 
   elseif (valo in $tietue.jatko) then

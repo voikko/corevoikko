@@ -490,6 +490,8 @@ koejuoksee
 !viimesilauksen
 vaalirahoitusepäselvyydet
 haja-asutusalueilla
+aikakauslehden
+!aika=kauslehden
 
 # = seikkasanat =
 []
