@@ -267,8 +267,11 @@ voikko-sukija:
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 
+vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija --sukija-ys
+vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
+
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/poikkeavat-sukija.lexc
-	$(PYTHON) vvfst/generate_sukija.py --destdir=$(VVFST_BUILDDIR)
+	$(PYTHON) vvfst/generate_sukija.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
 $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma
 	foma -f $(VVFST_BUILDDIR)/main-sukija.foma | grep -v "defined but not used" 2>&1

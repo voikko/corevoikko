@@ -654,6 +654,8 @@ while True:
     line = infile.readline()
     if line == u"":
         break
+    if OPTIONS["sukija-ys"]:
+        line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
     outfile.write (line)
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
