@@ -2440,7 +2440,7 @@ Johdin_ttAx_<A>	;
 
 LEXICON Punoa_s
 Johdin_nimitapa1A_<A>	;
-[Tt][Ap][P3][Ny][[L]]:[[L]]	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][[L]]:[[L]]	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
@@ -2735,6 +2735,7 @@ e:e	Johdin_ttAx_<A>	;
 
 LEXICON Kaivaa_s
 <A>:<A>	Johdin_nimitapa1A_<A>	;
+<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
 <O>:<O>	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Käskytapa_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
@@ -2769,7 +2770,7 @@ t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
 
 LEXICON Kapsaa
-[Tt][Ap][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
 
@@ -2906,7 +2907,7 @@ i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
 
 LEXICON Sallia_s
-[Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]ii:ii	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
@@ -2949,7 +2950,7 @@ e:e	Voida_s_<A>	;
 
 LEXICON Voida_l
 KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]:	LiitesanaPi_<A>	;
+[Tt][Ap][P3][Ny]:	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
@@ -3010,7 +3011,7 @@ Johdin_sUt_<A>	;
 
 LEXICON Nuolaista_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
@@ -3037,7 +3038,7 @@ l:l	<WC>Tulla_l_<A>	;
 Johdin_lUt_<A>	;
 
 LEXICON Tulla_s
-[Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
@@ -3129,7 +3130,7 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 e:e	Johdin_mA_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 TositavanKestämäLaan_<A>	;
 TositavanKertomaTiin_<A>	;
@@ -3156,7 +3157,7 @@ i:i	Johdin_nimitapa2_tAessA_<A>	;
 i:i	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]i:i	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	TositavanKestämäDaan_<A>	;
 i:i	TositavanKertomaTiin_<A>	;
@@ -3177,7 +3178,7 @@ t:t	Johdin_nimitapa2_<A>	;
 tse:tse	KestämänTekijäpääteHeikko_<A>	;
 ts:ts	KertomanTekijäpääteHeikko_<A>	;
 ts:ts	KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Ny]tsee:tsee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]tsee:tsee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]tsev<A>t:tsev<A>t	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
 ts:ts	Ehtotapa_<A>	;
@@ -3268,7 +3269,7 @@ n:n	Johdin_nUt_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]nee:nee	KestämänTekijäpääteY3Liitesana_<A>	;
 n:n	KertomanTekijäpääteVahva_<A>	;
 n:n	KertomanTekijäpääteHeikko_<A>	;
 ne:ne	Johdin_mA_<A>	;
@@ -3610,7 +3611,7 @@ ksi:ksi	Johdin_ja_kulkija_<A>	;
 ks:ks	Ehtotapa_<A>	;
 
 LEXICON Nähdä
-[Tt][Ap][P3][Ny]kee:kee	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]kee:kee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]kev<A>t:kev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
@@ -3642,6 +3643,10 @@ LEXICON KertomanTekijäpääteHeikko
 @D.VAIN_YM3@[Tt][Ai][P2][Ny]it:@D.VAIN_YM3@it	Liitesana_<A>	;
 @D.VAIN_YM3@[Tt][Ai][P1][Nm]imme:@D.VAIN_YM3@imme	Liitesana_<A>	;
 @D.VAIN_YM3@[Tt][Ai][P2][Nm]itte:@D.VAIN_YM3@itte	Liitesana_<A>	;
+
+LEXICON KestämänTekijäpääteY3Liitesana
+Liitesana_<A>	;
+LiitesanaPi_<A>	;
 
 LEXICON KertomanTekijäpääteVahva
 [Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
@@ -4487,7 +4492,7 @@ LEXICON JärjestyslukuNainen
 [Sn][Ny]nen:nen Liitesana_<A> ;
 [Sn][Ny]se:se Omistusliite_<A> ;
 [Sn][Nm]set:set Liitesana_<A> ;
-[Sg][Ny]sen:sen Liitesana_<A> ;
+[Sg][Ny]sen:sen JärjestyslukuSgNy39_<A> ;
 [Sg][Nm]sten:sten JärjestyslukuSgNm39_<A> ;
 [Sg][Nm]ste:ste Omistusliite_<A> ;
 [Sg][Nm]sien:sien JärjestyslukuSgNm39_<A> ;

@@ -444,6 +444,7 @@ armeijamyönteisen
 paisuvaiskudoksen
 !eläväarkisto
 suurinopeuksinen # adjektiivi + adjektiivista johdettu substantiivin inen-johdos
+!nopeuksinen
 
 # = etuliitteet =
 []

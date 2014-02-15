@@ -1962,7 +1962,7 @@ combi_rule johdin_nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
     result $res, rules nimisana, laatusana, nimisana_teonsanasta,
            etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
-  if johdin_inen in $oikea.jatko then
+  if $index greater 2 and johdin_inen in $oikea.jatko then
     result $res, rules johdin_inen;
   end;
   if omistusliite in $oikea.jatko then

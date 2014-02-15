@@ -2697,3 +2697,6 @@ rakkaudentunnustus
 teknistieteellinen
 siedätys
 !pienaari
+-raskas
+toisentyyppisen
+saattaapi
