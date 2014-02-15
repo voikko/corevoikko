@@ -252,8 +252,17 @@ Sanasto_n	;
 @P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Sanasto_nl	;
 @P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
 
+LEXICON Sanasto_nimisanat_ja_nl_vertailumuodot
+Sanasto_n	;
+@P.VAIN_NIMISANA.ON@:@P.VAIN_NIMISANA.ON@	Sanasto_nl	;
+@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
+
 LEXICON Sanasto_nimisana_yhdyssanana_perusosana
 Sanasto_nimisanat	;
+Ys_perusosa_seikkasanasta	;
+
+LEXICON Sanasto_nimisana_yhdyssanana_perusosana_ja_nl_vertailumuodot
+Sanasto_nimisanat_ja_nl_vertailumuodot	;
 Ys_perusosa_seikkasanasta	;
 
 LEXICON Yleisnimet

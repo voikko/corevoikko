@@ -3792,7 +3792,7 @@ Johdin_nimitapa4_<A>	;
 Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
-mi@C.JOHDETTAVA_NIMISANAKSI@:mi@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaNainen_<A>	;
+mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimiLaatusanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
@@ -4238,6 +4238,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sill][Ny]%:iin:%:iin	Liitesana_<A>	;
 [Sill][Ny]%:<A><A>n:%:<A><A>n	Liitesana_<A>	;
 [Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>   ;
+[Sill][Ny]%:<O>n:%:<O>n	Liitesana_<A>   ;
 [Sill][Ny]%:hen:%:hen	Liitesana_<A>	;
 [Sill][Ny]%:h<A>n:%:h<A>n	Liitesana_<A>	;
 [Sill][Ny]%:h<O>n:%:h<O>n	Liitesana_<A>   ;

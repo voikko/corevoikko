@@ -2700,3 +2700,5 @@ siedätys
 -raskas
 toisentyyppisen
 saattaapi
+riskialttiimpia
+lastuamisneste

@@ -3,7 +3,7 @@ LEXICON NimisanaYsJatko
 -[Bc]@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@:-@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@	Sanasto_a	;
 
 LEXICON NimiLaatusanaYsJatko
-@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuu	;
+@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuuJaNlVertailumuodot	;
 -[Bc]@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@@C.INEN_KIELLETTY@:-@D.YS_EI_JATKOA@@C.YS_JATKETTAVA@@C.INEN_KIELLETTY@	Sanasto_a	;
 [Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 -[Bh][Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_l	;
@@ -52,8 +52,16 @@ LEXICON AsemosanaYsJatko
 [Bc][Bh]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 
 LEXICON YhdyssanaJatkuu
+YhdyssanaJatkuuYhteiset	;
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana	;
 -[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana	;
+
+LEXICON YhdyssanaJatkuuJaNlVertailumuodot
+YhdyssanaJatkuuYhteiset	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana_ja_nl_vertailumuodot	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana_ja_nl_vertailumuodot	;
+
+LEXICON YhdyssanaJatkuuYhteiset
 -[Bh][Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Loppu	;
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
