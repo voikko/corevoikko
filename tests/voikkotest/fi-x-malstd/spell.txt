@@ -251,6 +251,10 @@ Nätti-Jussi
 !-San # ei sallittu yhdyssanan osana
 Andyyn
 countryyn
+Vantaanjokilaakson
+!Vantaanjoe-laakso
+!Vantaansuooja
+Järvistensaari
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä

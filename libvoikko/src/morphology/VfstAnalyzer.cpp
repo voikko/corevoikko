@@ -269,6 +269,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 	bool hyphenPresent = false;
 	bool hyphenUnconditionallyAllowed = false;
 	bool hyphenRequired = false;
+	bool requiredHyphenMissing = false;
 	for (size_t i = 0; i < len; i++) {
 		if (fstOutput[i] == L'[') {
 			if (i + 2 >= len) {
@@ -279,10 +280,13 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				boundaryPassed = false;
 				hyphenUnconditionallyAllowed = true;
 			}
-			if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Icu", 3) == 0) {
+			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Icu", 3) == 0) {
 				boundaryPassed = false;
 				hyphenUnconditionallyAllowed = true;
 				hyphenRequired = true;
+			}
+			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Ica", 3) == 0) {
+				requiredHyphenMissing = false;
 			}
 			if (fstOutput[i + 1] == L'X') {
 				while (i + 3 < len) {
@@ -297,6 +301,12 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				i += 3;
 				boundaryPassed = true;
 				hyphenPresent = false;
+				if (requiredHyphenMissing) {
+					return false;
+				}
+				if (hyphenRequired) {
+					requiredHyphenMissing = true;
+				}
 			}
 			else {
 				while (++i < len && fstOutput[i] != L']') { }
@@ -313,9 +323,6 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 					hyphenUnconditionallyAllowed = true;
 				}
 				if (hyphenRequired) {
-					if (!hyphenPresent) {
-						return false;
-					}
 					hyphenRequired = false;
 				}
 				else if (!hyphenUnconditionallyAllowed) {
@@ -333,7 +340,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 			lastChar = fstOutput[i];
 		}
 	}
-	return true;
+	return !requiredHyphenMissing;
 }
 
 static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, const wchar_t * outputBuffer) {

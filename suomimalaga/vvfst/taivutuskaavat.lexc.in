@@ -2266,10 +2266,12 @@ LEXICON NOUN YksikönGenetiivinJatko
 
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
+?Sukunimi	in@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:in@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Sukija?NotLaatusana i[O3]ns_<A>:ins<A>		Liitesana_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 en:en	<WC>NormaaliYsJatko_<A>	;
+?Sukunimi	en@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:en@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?NotLaatusana	e:e	Omistusliite_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
@@ -3026,6 +3028,7 @@ LEXICON Mennä
 <WC>Tulla_s_<A>	;
 n:n	<WC>Tulla_l_<A>	;
 Johdin_nUt_<A>	;
+Johdin_tU_nA_<A>	;
 
 LEXICON Purra
 <WC>Tulla_s_<A>	;
@@ -3939,6 +3942,10 @@ LEXICON Johdin_tU_dA
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
 [Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaKatseltu_<A>   ;
+
+! panna -> pantu
+LEXICON Johdin_tU_nA
+[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaLintu_<A>   ;
 
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA

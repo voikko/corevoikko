@@ -101,6 +101,7 @@ Multichar_Symbols
 [Ipu] ! paikannimi taipuu ulkopaikallissijoissa
 [Isf] ! sitaattilaina
 [Icu] ! voidaan jatkaa yhdyssanana vain yhdysmerkin kanssa
+[Ica] ! sallitaan yhdysmerkin puuttuminen [Icu]-lipusta huolimatta lippua edeltävällä rajalla (muttei myöhemmin)
 [Ivj] ! vapaasti yhdistyvä yhdyssanan jälkiosa
 
 ! Rajamerkit

@@ -557,6 +557,7 @@ end;
 
 combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
   ? $oikea.paikannimen_jälkiliite = yes;
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
@@ -567,9 +568,10 @@ combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $res, rules
-         erisnimen_sijapääte,
-         yhdysmerkki_erisnimen_jälkeen;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi;
+  end;
+  result $res, rules erisnimen_sijapääte;
 end;
 
 combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
@@ -859,6 +861,9 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     end;
     if tavuviiva in $oikea.jatko and $oikea.sijamuoto = omanto then
       result $res, rules yhdysmerkki_erisnimen_jälkeen;
+    end;
+    if $oikea.sijamuoto = omanto and $edellinen.luokka = sukunimi then
+      result $res, rules johdettu_paikannimi;
     end;
   end;
   if loppu in $oikea.jatko then
