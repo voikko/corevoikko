@@ -1105,7 +1105,8 @@ NimisanaYhteisetMonikonPaikallissijat_a	;
 [Sill][Nm]ihi:ihi	NimisanaLiOlN_a	;
 
 LEXICON Uksi
-[Sn][Ny]ksi:ksi	NimisanaNormaaliYsJatkoOl_a	;
+[Sn][Ny]ksi:ksi	NimisanaNormaaliYsJatko_a	;
+[Sn][Ny]kse:kse	Omistusliite_a	;
 [Sg][Ny]ksen:ksen	NimisanaYksikönGenetiivinJatko_a	;
 [Sp][Ny]ksea:ksea	NimisanaLiOlV_a	;
 [Ses][Ny]ksena:ksena	NimisanaLiOlV_a	;

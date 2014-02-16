@@ -175,7 +175,8 @@ MULTI = {
 	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille", u"miljoonille", u"miljardeille", u"biljoonille", u"triljoonille"],
 	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta", u"miljoonitta", u"miljardeitta", u"biljoonitta", u"triljoonitta"],
 	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin", u"miljoonin", u"miljardein", u"biljoonin", u"triljoonin"],
-	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine", u"miljoonine", u"miljardeine", u"biljoonine", u"triljoonine"]
+	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine", u"miljoonine", u"miljardeine", u"biljoonine", u"triljoonine"],
+	u"SstiNy": [u"kymmenesti", u"sadasti", u"tuhannesti", u"miljoonasti", u"miljardisti", u"biljoonasti", u"triljoonasti"]
 }
 
 MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a"]
