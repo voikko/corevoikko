@@ -323,7 +323,9 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 					hyphenUnconditionallyAllowed = true;
 				}
 				if (hyphenRequired) {
-					hyphenRequired = false;
+					if (hyphenPresent) {
+						hyphenRequired = false;
+					}
 				}
 				else if (!hyphenUnconditionallyAllowed) {
 					lastChar = SimpleChar::lower(lastChar);

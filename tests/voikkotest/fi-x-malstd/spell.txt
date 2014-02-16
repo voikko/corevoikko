@@ -838,6 +838,7 @@ vaahteraa # Kotus 13
 !vaahterata # Kotus 13
 ainoisiin # Kotus 15
 ainoihin # Kotus 15
+kaksipilttuinen # Kotus 17
 nugaata # Kotus 20
 !parfait'illinen # Kotus 22
 !-parfait'iinen # Kotus 22

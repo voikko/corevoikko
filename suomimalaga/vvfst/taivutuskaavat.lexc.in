@@ -4550,47 +4550,53 @@ LEXICON JärjestyslukuNainen
 ?Sukija [Sill][Nm]sihi:sihi	Omistusliite_<A>
 
 LEXICON JärjestyslukuKahdeksas
+JärjestyslukuKahdeksasEiOmistusliitettä_<A>	;
+JärjestyslukuKahdeksasOmistusliitteet_<A>	;
+
+LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 [Sn][Ny]s:s JärjestyslukuSnNy29_<A> ;
 [Sn][Nm]nnet:nnet Liitesana_<A> ;
 [Sg][Ny]nnen:nnen JärjestyslukuSgNy39_<A> ;
 [Sg][Nm]nsien:nsien JärjestyslukuSgNm39_<A> ;
-[Sg][Nm]nsie:nsie Omistusliite_<A> ;
 [Sp][Ny]tt<A>:tt<A> JärjestyslukuSpNy39_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> JärjestyslukuSpNm39_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> OlV_<A> ;
 [Str][Ny]nneksi:nneksi	JärjestyslukuStrNy39_<A>	;
 [Str][Nm]nsiksi:nsiksi	JärjestyslukuStrNm39_<A>	;
-[Str][Nm]nsiksi:nsiksi	OlI_<A> ;
 [Ses][Ny]nten<A>:nten<A> JärjestyslukuSesNy39_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> JärjestyslukuSesNm39_<A> ;
-[Ses][Nm]nsin<A>:nsin<A> OlV_<A> ;
 [Sine][Ny]nness<A>:nness<A> JärjestyslukuSineNy39_<A> ;
 [Sine][Nm]nsiss<A>:nsiss<A> JärjestyslukuSineNm39_<A> ;
-[Sine][Nm]nsiss<A>:nsiss<A> OlV_<A> ;
 [Sela][Ny]nnest<A>:nnest<A> JärjestyslukuSelaNy39_<A> ;
 [Sela][Nm]nsist<A>:nsist<A> JärjestyslukuSelaNm39_<A> ;
-[Sela][Nm]nsist<A>:nsist<A> OlV_<A> ;
 [Sill][Ny]nteen:nteen JärjestyslukuSillNy39_<A> ;
 [Sill][Nm]nsiin:nsiin JärjestyslukuSillNm39_<A> ;
-[Sill][Nm]nsii:nsii Omistusliite_<A> ;
 [Sade][Ny]nnell<A>:nnell<A> JärjestyslukuSadeNy39_<A> ;
-[Sade][Ny]nnell<A>:nnell<A> OlV_<A> ;
 [Sade][Nm]nsill<A>:nsill<A> JärjestyslukuSadeNm39_<A> ;
-[Sade][Nm]nsill<A>:nsill<A> OlV_<A> ;
 [Sabl][Ny]nnelt<A>:nnelt<A> JärjestyslukuSablNy39_<A> ;
-[Sabl][Ny]nnelt<A>:nnelt<A> OlV_<A> ;
 [Sabl][Nm]nsilt<A>:nsilt<A> JärjestyslukuSablNm39_<A> ;
-[Sabl][Nm]nsilt<A>:nsilt<A> OlV_<A> ;
 [Sall][Ny]nnelle:nnelle JärjestyslukuSallNy39_<A> ;
-[Sall][Ny]nnelle:nnelle OlV_<A> ;
 [Sall][Nm]nsille:nsille JärjestyslukuSallNm39_<A> ;
-[Sall][Nm]nsille:nsille OlV_<A> ;
 [Sab][Ny]nnett<A>:nnett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> JärjestyslukuSabNm39_<A> ;
-[Sab][Nm]nsitt<A>:nsitt<A> OlV_<A> ;
 [Sin][Nm]nsin:nsin JärjestyslukuSinNm39_<A> ;
 ?Sukija [Sill][Ny]ntehen:ntehen JärjestyslukuSillNy39_<A> ;
 ?Sukija [Sill][Nm]nsihin:nsihin Liitesana_<A> ;
+
+LEXICON JärjestyslukuKahdeksasOmistusliitteet
+[Sg][Nm]nsie:nsie Omistusliite_<A> ;
+[Str][Nm]nsiksi:nsiksi	OlI_<A> ;
+[Ses][Nm]nsin<A>:nsin<A> OlV_<A> ;
+[Sine][Nm]nsiss<A>:nsiss<A> OlV_<A> ;
+[Sela][Nm]nsist<A>:nsist<A> OlV_<A> ;
+[Sill][Nm]nsii:nsii Omistusliite_<A> ;
+[Sade][Ny]nnell<A>:nnell<A> OlV_<A> ;
+[Sade][Nm]nsill<A>:nsill<A> OlV_<A> ;
+[Sabl][Ny]nnelt<A>:nnelt<A> OlV_<A> ;
+[Sabl][Nm]nsilt<A>:nsilt<A> OlV_<A> ;
+[Sall][Ny]nnelle:nnelle OlV_<A> ;
+[Sall][Nm]nsille:nsille OlV_<A> ;
+[Sab][Nm]nsitt<A>:nsitt<A> OlV_<A> ;
 
 LEXICON JärjestyslukuSnNy
 @U.LS.SNNY@	JärjestyslukuToista	;
