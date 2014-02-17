@@ -1251,37 +1251,37 @@
 
 # {{{2 mustaleipä (51)
 
-[perusmuoto: "mustaleipä", alku: "mustaleipä",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustaaleipä",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustanaleipä",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustaksileivä", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustassaleivässä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustastaleivästä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustaanleipä",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustallaleivällä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustaltaleivältä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustalleleivälle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustattaleivä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustaleipä",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustaaleipä",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustanaleipä",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustaksileivä", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustassaleivässä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustastaleivästä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustaanleipä",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustallaleivällä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustaltaleivältä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustalleleivälle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustattaleivä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustaleipä", alku: "mustatleivä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustatleipä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustienleip",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustienleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustainleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustialeip",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustinaleip",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustiksileiviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustissaleivissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustistaleivistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustiinleip",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustillaleivillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustiltaleiviltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustilleleiville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustittaleivittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "mustaleipä", alku: "mustineleip",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "mustaleipä", alku: "mustinleivin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustatleivä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustatleipä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustienleip",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustienleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustainleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustialeip",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustinaleip",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustiksileiviksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustissaleivissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustistaleivistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustiinleip",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustillaleivillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustiltaleiviltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustilleleiville",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustittaleivittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustineleip",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "mustaleipä", alku: "mustinleivin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 mustaleski (51)
 
