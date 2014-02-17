@@ -4547,7 +4547,7 @@ LEXICON JärjestyslukuNainen
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
 ?Sukija [Sill][Nm]sihin:sihin JärjestyslukuSillNm39_<A> ;
-?Sukija [Sill][Nm]sihi:sihi	Omistusliite_<A>
+?Sukija [Sill][Nm]sihi:sihi	Omistusliite_<A> ;
 
 LEXICON JärjestyslukuKahdeksas
 JärjestyslukuKahdeksasEiOmistusliitettä_<A>	;
@@ -4581,7 +4581,7 @@ LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 [Sab][Nm]nsitt<A>:nsitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]nsin:nsin JärjestyslukuSinNm39_<A> ;
 ?Sukija [Sill][Ny]ntehen:ntehen JärjestyslukuSillNy39_<A> ;
-?Sukija [Sill][Nm]nsihin:nsihin Liitesana_<A> ;
+?Sukija [Sill][Nm]nsihin:nsihin JärjestyslukuSillNm39_<A> ;
 
 LEXICON JärjestyslukuKahdeksasOmistusliitteet
 [Sg][Nm]nsie:nsie Omistusliite_<A> ;
@@ -4597,6 +4597,8 @@ LEXICON JärjestyslukuKahdeksasOmistusliitteet
 [Sall][Ny]nnelle:nnelle OlV_<A> ;
 [Sall][Nm]nsille:nsille OlV_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> OlV_<A> ;
+?Sukija [Sill][Ny]ntehe:ntehe Omistusliite_<A> ;
+?Sukija [Sill][Nm]nsihi:nsihi Omistusliite_<A> ;
 
 LEXICON JärjestyslukuSnNy
 @U.LS.SNNY@	JärjestyslukuToista	;
