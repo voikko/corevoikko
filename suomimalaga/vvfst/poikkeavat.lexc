@@ -236,7 +236,7 @@ Summayhdyssanat	;
 [Ln][Xp]nuoriherra[X][Sab][Nm]nuoritta[Bm]herroitta:nuorittaherroitta	NimisanaLiOlV_a ;
 [Ln][Xp]nuoriherra[X][Sko][Nm]nuorine[Bm]herroine:nuorineherroine	NimisanaLiOlV_a ;
 [Ln][Xp]nuoriherra[X][Sin][Nm]nuorin[Bm]herroin:nuorinherroin		Liitesana_a;
-[Ln][Xp]nuori-isäntä[X][Sn][Ny]nuori[Bm]isäntä:nuoriisäntä	NimisanaNormaaliYsJatko_ä ;
+[Ln][Xp]nuori-isäntä[X][Sn][Ny]nuori-[Bm]isäntä:nuori-isäntä	NimisanaNormaaliYsJatko_ä ;
 [Ln][Xp]nuori-isäntä[X][Sn][Ny]nuoren[Bm]isännä:nuorenisännä       Omistusliite_ä ;
 [Ln][Xp]nuori-isäntä[X][Sg][Ny]nuoren[Bm]isännän:nuorenisännän	NimisanaYksikönGenetiivinJatko_ä ;
 [Ln][Xp]nuori-isäntä[X][Sp][Ny]nuorta[Bm]isäntää:nuortaisäntää	NimisanaLiOlV_ä ;
