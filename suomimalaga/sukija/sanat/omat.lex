@@ -1517,6 +1517,7 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "lapveteläinen", alku: "lapveteläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "marketoida", alku: "marketo", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "pien", alku: "pien", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "piki", alku: "piki", luokka: etuliite, jatko: @sana2, äs: aä];
 
 [perusmuoto: "aatelisneiti", alku: "atelisnei", luokka: nimisana, jatko: <neiti>, äs: ä];
 [perusmuoto: "herrasneiti", alku: "herrasnei", luokka: nimisana, jatko: <neiti>, äs: ä];

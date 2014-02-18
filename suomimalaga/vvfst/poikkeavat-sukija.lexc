@@ -132,5 +132,6 @@ LEXICON Sukija
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMie ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
+[Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasOmistusliitteet_a	;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
