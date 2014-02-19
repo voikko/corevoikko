@@ -358,6 +358,7 @@ word_list = [
     (u"muhamettilainen", (u"muhamettilai", u"muhammettilai", u"mahomettilai", u"muhamedilai")),
     (u"musiikki",        (u"musiik",      u"musik")),
     (u"paneeli",         (u"paneel",      u"panel")),
+    (u"parhaisto",       (u"parhaisto",   u"parahisto")),
     (u"paronitar",       (u"paronit",     u"paroonit")),
     (u"pasuuna",         (u"pasuun",      u"pasun")),
     (u"pataljoona",      (u"pataljoon",   u"pataljon")),
