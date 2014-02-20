@@ -42,7 +42,7 @@
 
 # Testing (in directory suomimalaga/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
-# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
+# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' | sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
 # cp test.out ~/Lataukset/vvfst-sukija-testi.out
@@ -68,12 +68,13 @@ sukijafile = codecs.open (OPTIONS["destdir"] + u"/poikkeavat-sukija.lexc", 'r', 
 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyåäö]"              # Vovels.
-
+A = u"[aä]"
 
 def makeRePattern (wordClass, word):
     u = u"^\\[%s\\]\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
     u = u.replace ('C', C)
     u = u.replace ('V', V)
+    u = u.replace ('A', A)
     return u
 
 
@@ -132,10 +133,12 @@ re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 re_toninen = makeRe (u"Ll", u".toninen")
 re_iivinen = makeRe (u"Ll", u"Ciivinen")
 
-re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
-re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_");
+re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
+re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
 
 re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
+
+re_eikAs = makeRe (u"Ll", u"eikAs")
 
 
 # Words to be excluded.
@@ -196,6 +199,8 @@ spelling_pattern_list = [
 
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
+
+  (re_eikAs, u"eik", u"ehik"),
 ]
 
 
@@ -551,10 +556,7 @@ function_list = [
                       u"palttaa",
                       u"varttaa")),
      (lambda line, word: outfile.write (line.replace (u"NimisanaVati_ä", u"SukijaNeiti")),
-       (u"neiti",
-        u"hovineiti",
-        u"paimenneiti",
-        u"ylimysneiti")),
+       (u"neiti")),
 ]
 
 def convert_to_dictionary (word_list):
@@ -563,21 +565,6 @@ def convert_to_dictionary (word_list):
     return dict (zip (l0, l1))
 
 sukija_dictionary = convert_to_dictionary (word_list)
-
-
-def convert_function_list_to_dictionary (function_list):
-    l0 = map (lambda x : x[1], function_list)
-    l1 = map (lambda x : [x[0] for i in range (len(x[1]))], function_list)
-    d1 = dict (zip (l0, l1))
-    d2 = dict()
-    for key, value in d1.iteritems():
-        d2.update (zip (key, value))
-    return d2
-
-
-#function_dictionary = convert_function_list_to_dictionary (function_list)
-#print (function_dictionary)
-#sukija_dictionary.update (function_dictionary)
 
 
 def error (line):
@@ -635,7 +622,6 @@ def generate_from_function (r, line, function_list):
 
 
 def generate_xiljoona (line):
-#    outfile.write ("! LINE " + line)
     if (line.startswith ("[Sn]")):
         u = line.replace (u"miljoona@", u"miljona@")
         u = u.replace (u"miljoonat@", u"miljonat@")
