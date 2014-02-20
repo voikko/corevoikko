@@ -7,7 +7,7 @@ tasks.
 An example session demonstrating the use of this module:
 
  >>> import libvoikko
- >>> v = libvoikko.Voikko()
+ >>> v = libvoikko.Voikko(u"fi")
  >>> v.analyze(u"kissa")
  [{'SIJAMUOTO': u'nimento', 'CLASS': u'nimisana', 'STRUCTURE': u'=ppppp'}]
  >>> v.spell(u"kissa")
