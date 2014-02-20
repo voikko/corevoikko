@@ -861,10 +861,12 @@ LEXICON NOUN Matala
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
 <WC>Asema_w_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Emäntä
 t:t	<WC>Asema_s_<A>	;
 n:n	<WC>Asema_w_<A>	;
+?Nimisana	t<A>:t<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -876,7 +878,6 @@ LEXICON NOUN Asema_s
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
-?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
@@ -1284,6 +1285,7 @@ LEXICON NOUN Taival_s
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
+[Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -3838,7 +3840,9 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaAsema_<A>	;
+[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaAsema_<A>	;
+[Ln]t<A>v<U><U>s:t<A>v<U><U>s	NimisanaYsJatko	;
+[Ll]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
 
 LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
@@ -3895,7 +3899,8 @@ Johdin_UUs_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_mA
-[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_<A>	;
+[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_s_<A>	;
+[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_w_<A>	;
 Johdin_nimitapa3_<A>	;
 Johdin_nimitapa45_<A>	;
 
@@ -3931,7 +3936,8 @@ LEXICON Johdin_lAinen
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
 [Ll]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaHattu_<A>	;
-[Ll][Sg][Nm]tuid@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:tuid@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Ll][Sg][Ny]t<U>n@C.JOHDETTAVA_NIMISANAKSI@:t<U>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYsJatko	;
+[Ll][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
 ! myydä -> myyty
@@ -3949,7 +3955,7 @@ LEXICON Johdin_tU_nA
 
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA
-[Ll]t<U>@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
+[Ll]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
 [Ll]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON NOUN Katseltu
