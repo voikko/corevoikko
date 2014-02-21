@@ -1485,69 +1485,69 @@
 
 # {{{2 mustapippuri (50, 51)
 
-[perusmuoto: "mustapippuri", alku: "mustapippuri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustaapippuri",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustanapippuri",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustaksipippuri", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustassapippurissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustastapippurista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustaanpippuri",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustallapippurilla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustaltapippurilta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustallepippurille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustattapippuri", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustapippuri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustaapippuri",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustanapippuri",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustaksipippuri", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustassapippurissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustastapippurista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustaanpippuri",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustallapippurilla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustaltapippurilta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustallepippurille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustattapippuri", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppp"];
 
-[perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustienpippuri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustienpippure",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustinapippure",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustiksipippureiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustissapippureissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustistapippureista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustiinpippure",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustillapippureilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustiltapippureilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustillepippureille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustittapippureitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustinepippure",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustinpippurein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustienpippuri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustienpippure",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustinapippure",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustiksipippureiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustissapippureissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustistapippureista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustiinpippure",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustillapippureilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustiltapippureilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustillepippureille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustittapippureitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustinepippure",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "mustapippuri", alku: "mustinpippurein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppppp"];
 
 # {{{2 mustaraamattu (51)
 
-[perusmuoto: "mustaraamattu", alku: "mustaraamattu",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustanraamattu",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustanraamatu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustaaraamattu",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustanaraamattu", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustaksiraamatu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustassaraamatussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustastaraamatusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustaanraamattu", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustallaraamatulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustaltaraamatulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustalleraamatulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustattaraamatu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustaraamattu",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustanraamattu",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustanraamatu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustaaraamattu",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustanaraamattu", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustaksiraamatu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustassaraamatussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustastaraamatusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustaanraamattu", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustallaraamatulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustaltaraamatulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustalleraamatulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustattaraamatu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "mustaraamattu", alku: "mustatraamatu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustatraamattu",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustienraamattu", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustiaraamattu",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustinaraamattu", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustiksiraamatuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustissaraamatuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustistaraamatuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustiinraamattu", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustillaraamatuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustiltaraamatuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustilleraamatuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustittaraamatuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustineraamattu", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "mustaraamattu", alku: "mustinraamatuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustatraamatu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustatraamattu",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustienraamattu", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustiaraamattu",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustinaraamattu", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustiksiraamatuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustissaraamatuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustistaraamatuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustiinraamattu", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustillaraamatuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustiltaraamatuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustilleraamatuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustittaraamatuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustineraamattu", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "mustaraamattu", alku: "mustinraamatuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppppppp"];
 
 # {{{2 mustaviinimarja (51)
 
