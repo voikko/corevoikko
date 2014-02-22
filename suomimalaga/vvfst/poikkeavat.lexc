@@ -324,7 +324,7 @@ Summayhdyssanat	;
 [Ln][Xp]mustapekka[X][Sab][Nm]mustitta[Bm]pekoitta:mustittapekoitta	NimisanaLiOlV_a ;
 [Ln][Xp]mustapekka[X][Sko][Nm]mustine[Bm]pekkoine:mustinepekkoine	NimisanaLiOlV_a ;
 [Ln][Xp]mustapekka[X][Sin][Nm]mustin[Bm]pekoin:mustinpekoin		Liitesana_a;
-[Ln][Xp]mustapippuri[X][Sn][Ny]musta[Bm]pippuri:pippuri	NimisanaNormaaliYsJatko_a ;
+[Ln][Xp]mustapippuri[X][Sn][Ny]musta[Bm]pippuri:mustapippuri	NimisanaNormaaliYsJatko_a ;
 [Ln][Xp]mustapippuri[X][Sn][Ny]mustan[Bm]pippuri:mustanpippuri       Omistusliite_a ;
 [Ln][Xp]mustapippuri[X][Sg][Ny]mustan[Bm]pippurin:mustanpippurin	NimisanaYksikönGenetiivinJatko_a ;
 [Ln][Xp]mustapippuri[X][Sp][Ny]mustaa[Bm]pippuria:mustaapippuria	NimisanaLiOlV_a ;

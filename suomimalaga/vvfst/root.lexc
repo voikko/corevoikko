@@ -148,6 +148,9 @@ Multichar_Symbols
 ! lAinen-loppuinen sana (toistaiseksi vain nimisana)
 @P.LAINEN.ON@ @R.LAINEN@
 
+! lAinen-johdin vaaditaan
+@P.LAINEN_VAADITTU.ON@ @D.LAINEN_VAADITTU@ @C.LAINEN_VAADITTU@
+
 ! etu/takavokaalimuodot sallittu
 @P.V_SALLITTU.E@ @P.V_SALLITTU.T@ @R.V_SALLITTU.E@ @R.V_SALLITTU.T@ @C.V_SALLITTU@
 

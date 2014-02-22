@@ -2261,7 +2261,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
-?Paikannimi	@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+?Paikannimi	@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
@@ -3929,7 +3929,7 @@ LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Liitesana_<A>	;
 
 LEXICON Johdin_lAinen
-[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenInen_<A>	;
+[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.LAINEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.LAINEN_VAADITTU@	NimiLaatusanaNainenInen_<A>	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_ep	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_n	;
 

@@ -2721,3 +2721,5 @@ juostuaan
 !merkittävärooli
 merkittävyyskriteeri
 korjattavanvärinen
+!sveitsinkielinen
+pippuripallokala

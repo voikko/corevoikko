@@ -53,8 +53,6 @@
 # vaikka myöhemmin sitä on tarkoitus käyttää vain sanojen ja etuliitteiden
 # rajalla.
 
-[perusmuoto: "suomalais-permiläinen", alku: "suomalais-permiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=ppppppppppp"];
-
 # Special abbreviations. There are some more of these, but they should preferably be
 # included only in special scientific word lists.
 [alku: "m:eissä", luokka: lyhenne, jatko: <loppu>, äs: aä];
