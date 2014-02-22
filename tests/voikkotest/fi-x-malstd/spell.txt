@@ -400,6 +400,8 @@ blues-kissainen # sitaattilaina + inen-johdos
 !heitto-iskuista
 kaakkois-
 !hassuna-
+!peri-r
+suhu-s
 
 # = johdetut sanat yhdyssanoissa =
 []
