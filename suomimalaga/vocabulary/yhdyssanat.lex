@@ -385,15 +385,15 @@
 
 # -Vn
 
-[perusmuoto: "hänenlainen", alku: "hänenlaistaan",    luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisenaan",   luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisekseen",  luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisessaan",  luokka: laatusana, luku: yksikkö, sijamuoto: sisäolento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisestaan",  luokka: laatusana, luku: yksikkö, sijamuoto: sisäeronto, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisellaan",  luokka: laatusana, luku: yksikkö, sijamuoto: ulko_olento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaiseltaan",  luokka: laatusana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaiselleen",  luokka: laatusana, luku: yksikkö, sijamuoto: ulkotulento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hänenlainen", alku: "hänenlaisettaan",  luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaistaan",    luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisenaan",   luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisekseen",  luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisessaan",  luokka: laatusana, luku: yksikkö, sijamuoto: sisäolento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisestaan",  luokka: laatusana, luku: yksikkö, sijamuoto: sisäeronto, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisellaan",  luokka: laatusana, luku: yksikkö, sijamuoto: ulko_olento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaiseltaan",  luokka: laatusana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaiselleen",  luokka: laatusana, luku: yksikkö, sijamuoto: ulkotulento, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hänenlainen", alku: "hänenlaisettaan",  luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
 
 [perusmuoto: "hänenlainen", alku: "hänenlaisiaan",    luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "hänenlainen", alku: "hänenlaisinaan",   luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];

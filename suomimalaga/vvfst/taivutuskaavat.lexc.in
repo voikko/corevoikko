@@ -4486,6 +4486,14 @@ LEXICON LukusanaKymmentäSnNy
 [Bc]kymmentä:kymmentä	LukusanaLiitesana_ä	;
 [Bc]sataa:sataa	LukusanaLiitesana_a	;
 [Bc]tuhatta:tuhatta	LukusanaLiitesana_a	;
+[Bc]miljoonaa:miljoonaa	LukusanaLiitesana_a	;
+[Bc]miljardia:miljardia	LukusanaLiitesana_a	;
+[Bc]triljoonaa:triljoonaa	LukusanaLiitesana_a	;
+[Bc]kvadriljoonaa:kvadriljoonaa	LukusanaLiitesana_a	;
+[Bc]kvintiljoonaa:kvintiljoonaa	LukusanaLiitesana_a	;
+[Bc]sekstiljoonaa:sekstiljoonaa	LukusanaLiitesana_a	;
+[Bc]septiljoonaa:septiljoonaa	LukusanaLiitesana_a	;
+[Bc]sentiljoonaa:sentiljoonaa	LukusanaLiitesana_a	;
 
 LEXICON LukusanaKymmentäSnNm
 [Bc]kymmenet:kymmenet	LukusanaLiitesana_ä	;

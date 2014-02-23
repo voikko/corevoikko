@@ -88,19 +88,19 @@
 
 [perusmuoto: "nelitoista", alku: "nelitoista", luokka: lukusana, jatko: @nimisana + <laatusana, nimi_laatusana, teonsana, etuliite, tavuviiva>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
 
-[perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: sata, jatko: <pata>, äs: a];
-[perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: tuhat, jatko: <tuhat>, äs: a];
-[perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <apaja>, äs: a];
+ [perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: sata, jatko: <pata>, äs: a];
+ [perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: tuhat, jatko: <tuhat>, äs: a];
+ [perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <apaja>, äs: a];
 [perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, lukutyyppi: perusluku, alaluokka:  miljoona, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a];
+ [perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a];
 [perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "kvadriljoona", alku: "kvadriljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "kvintiljoona", alku: "kvintiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "sekstiljoona", alku: "sekstiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "septiljoona", alku: "septiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-[perusmuoto: "sentiljoona", alku: "sentiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "kvadriljoona", alku: "kvadriljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "kvintiljoona", alku: "kvintiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "sekstiljoona", alku: "sekstiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "septiljoona", alku: "septiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+ [perusmuoto: "sentiljoona", alku: "sentiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
 
  [perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä];
 [perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä, tiedot: <murre>];

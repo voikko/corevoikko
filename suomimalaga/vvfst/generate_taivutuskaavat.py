@@ -152,34 +152,34 @@ appendLexicon(lexicon, lexcLines, lexcFile)
 # Generate lexicons for numerals
 
 MULTI = {
-	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen", u"miljoonan", u"miljardin", u"biljoonan", u"triljoonan"],
-	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta", u"miljoonaa", u"miljardia", u"biljoonaa", u"triljoonaa"],
-	u"StrNy": [u"kymmeneksi", u"sadaksi", u"tuhanneksi", u"miljoonaksi", u"miljardiksi", u"biljoonaksi", u"triljoonaksi"],
-	u"SesNy": [u"kymmenenä", u"satana", u"tuhantena", u"miljoonana", u"miljardina", u"biljoonana", u"triljoonana"],
-	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa", u"miljoonassa", u"miljardissa", u"biljoonassa", u"triljoonassa"],
-	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta", u"miljoonasta", u"miljardista", u"biljoonasta", u"triljoonasta"],
-	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen", u"miljoonaan", u"miljardiin", u"biljoonaan", u"triljoonaan"],
-	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella", u"miljoonalla", u"miljardilla", u"biljoonalla", u"triljoonalla"],
-	u"SablNy": [u"kymmeneltä", u"sadalta", u"tuhannelta", u"miljoonalta", u"miljardilta", u"biljoonalta", u"triljoonalta"],
-	u"SallNy": [u"kymmenelle", u"sadalle", u"tuhannelle", u"miljoonalle", u"miljardille", u"biljoonalle", u"triljoonalle"],
-	u"SabNy": [u"kymmenettä", u"sadatta", u"tuhannetta", u"miljoonatta", u"miljarditta", u"biljoonatta", u"triljoonatta"],
-	u"SgNm": [u"kymmenien", u"satojen", u"tuhansien", u"miljoonien", u"miljardien", u"biljoonien", u"triljoonien"],
-	u"SpNm": [u"kymmeniä", u"satoja", u"tuhansia", u"miljoonia", u"miljardeja", u"biljoonia", u"triljoonia"],
-	u"StrNm": [u"kymmeniksi", u"sadoiksi", u"tuhansiksi", u"miljooniksi", u"miljardeiksi", u"biljooniksi", u"triljooniksi"],
-	u"SesNm": [u"kymmeninä", u"satoina", u"tuhansina", u"miljoonina", u"miljardeina", u"biljoonina", u"triljoonina"],
-	u"SineNm": [u"kymmenissä", u"sadoissa", u"tuhansissa", u"miljoonissa", u"miljardeissa", u"biljoonissa", u"triljoonissa"],
-	u"SelaNm": [u"kymmenistä", u"sadoista", u"tuhansista", u"miljoonista", u"miljardeista", u"biljoonista", u"triljoonista"],
-	u"SillNm": [u"kymmeniin", u"satoihin", u"tuhansiin", u"miljooniin", u"miljardeihin", u"biljooniin", u"triljooniin"],
-	u"SadeNm": [u"kymmenillä", u"sadoilla", u"tuhansilla", u"miljoonilla", u"miljardeilla", u"biljoonilla", u"triljoonilla"],
-	u"SablNm": [u"kymmeniltä", u"sadoilta", u"tuhansilta", u"miljoonilta", u"miljardeilta", u"biljoonilta", u"triljoonilta"],
-	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille", u"miljoonille", u"miljardeille", u"biljoonille", u"triljoonille"],
-	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta", u"miljoonitta", u"miljardeitta", u"biljoonitta", u"triljoonitta"],
-	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin", u"miljoonin", u"miljardein", u"biljoonin", u"triljoonin"],
-	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine", u"miljoonine", u"miljardeine", u"biljoonine", u"triljoonine"],
-	u"SstiNy": [u"kymmenesti", u"sadasti", u"tuhannesti", u"miljoonasti", u"miljardisti", u"biljoonasti", u"triljoonasti"]
+	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen", u"miljoonan", u"miljardin", u"biljoonan", u"triljoonan", u"kvadriljoonan", u"kvintiljoonan", u"sekstiljoonan", u"septiljoonan", u"sentiljoonan"],
+	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta", u"miljoonaa", u"miljardia", u"biljoonaa", u"triljoonaa", u"kvadriljoonaa", u"kvintiljoonaa", u"sekstiljoonaa", u"septiljoonaa", u"sentiljoonaa"],
+	u"StrNy": [u"kymmeneksi", u"sadaksi", u"tuhanneksi", u"miljoonaksi", u"miljardiksi", u"biljoonaksi", u"triljoonaksi", u"kvadriljoonaksi", u"kvintiljoonaksi", u"sekstiljoonaksi", u"septiljoonaksi", u"sentiljoonaksi"],
+	u"SesNy": [u"kymmenenä", u"satana", u"tuhantena", u"miljoonana", u"miljardina", u"biljoonana", u"triljoonana", u"kvadriljoonana", u"kvintiljoonana", u"sekstiljoonana", u"septiljoonana", u"sentiljoonana"],
+	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa", u"miljoonassa", u"miljardissa", u"biljoonassa", u"triljoonassa", u"kvadriljoonassa", u"kvintiljoonassa", u"sekstiljoonassa", u"septiljoonassa", u"sentiljoonassa"],
+	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta", u"miljoonasta", u"miljardista", u"biljoonasta", u"triljoonasta", u"kvadriljoonasta", u"kvintiljoonasta", u"sekstiljoonasta", u"septiljoonasta", u"sentiljoonasta"],
+	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen", u"miljoonaan", u"miljardiin", u"biljoonaan", u"triljoonaan", u"kvadriljoonaan", u"kvintiljoonaan", u"sekstiljoonaan", u"septiljoonaan", u"sentiljoonaan"],
+	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella", u"miljoonalla", u"miljardilla", u"biljoonalla", u"triljoonalla", u"kvadriljoonalla", u"kvintiljoonalla", u"sekstiljoonalla", u"septiljoonalla", u"sentiljoonalla"],
+	u"SablNy": [u"kymmeneltä", u"sadalta", u"tuhannelta", u"miljoonalta", u"miljardilta", u"biljoonalta", u"triljoonalta", u"kvadriljoonalta", u"kvintiljoonalta", u"sekstiljoonalta", u"septiljoonalta", u"sentiljoonalta"],
+	u"SallNy": [u"kymmenelle", u"sadalle", u"tuhannelle", u"miljoonalle", u"miljardille", u"biljoonalle", u"triljoonalle", u"kvadriljoonalle", u"kvintiljoonalle", u"sekstiljoonalle", u"septiljoonalle", u"sentiljoonalle"],
+	u"SabNy": [u"kymmenettä", u"sadatta", u"tuhannetta", u"miljoonatta", u"miljarditta", u"biljoonatta", u"triljoonatta", u"kvadriljoonatta", u"kvintiljoonatta", u"sekstiljoonatta", u"septiljoonatta", u"sentiljoonatta"],
+	u"SgNm": [u"kymmenien", u"satojen", u"tuhansien", u"miljoonien", u"miljardien", u"biljoonien", u"triljoonien", u"kvadriljoonien", u"kvintiljoonien", u"sekstiljoonien", u"septiljoonien", u"sentiljoonien"],
+	u"SpNm": [u"kymmeniä", u"satoja", u"tuhansia", u"miljoonia", u"miljardeja", u"biljoonia", u"triljoonia", u"kvadriljoonia", u"kvintiljoonia", u"sekstiljoonia", u"septiljoonia", u"sentiljoonia"],
+	u"StrNm": [u"kymmeniksi", u"sadoiksi", u"tuhansiksi", u"miljooniksi", u"miljardeiksi", u"biljooniksi", u"triljooniksi", u"kvadriljooniksi", u"kvintiljooniksi", u"sekstiljooniksi", u"septiljooniksi", u"sentiljooniksi"],
+	u"SesNm": [u"kymmeninä", u"satoina", u"tuhansina", u"miljoonina", u"miljardeina", u"biljoonina", u"triljoonina", u"kvadriljoonina", u"kvintiljoonina", u"sekstiljoonina", u"septiljoonina", u"sentiljoonina"],
+	u"SineNm": [u"kymmenissä", u"sadoissa", u"tuhansissa", u"miljoonissa", u"miljardeissa", u"biljoonissa", u"triljoonissa", u"kvadriljoonissa", u"kvintiljoonissa", u"sekstiljoonissa", u"septiljoonissa", u"sentiljoonissa"],
+	u"SelaNm": [u"kymmenistä", u"sadoista", u"tuhansista", u"miljoonista", u"miljardeista", u"biljoonista", u"triljoonista", u"kvadriljoonista", u"kvintiljoonista", u"sekstiljoonista", u"septiljoonista", u"sentiljoonista"],
+	u"SillNm": [u"kymmeniin", u"satoihin", u"tuhansiin", u"miljooniin", u"miljardeihin", u"biljooniin", u"triljooniin", u"kvadriljooniin", u"kvintiljooniin", u"sekstiljooniin", u"septiljooniin", u"sentiljooniin"],
+	u"SadeNm": [u"kymmenillä", u"sadoilla", u"tuhansilla", u"miljoonilla", u"miljardeilla", u"biljoonilla", u"triljoonilla", u"kvadriljoonilla", u"kvintiljoonilla", u"sekstiljoonilla", u"septiljoonilla", u"sentiljoonilla"],
+	u"SablNm": [u"kymmeniltä", u"sadoilta", u"tuhansilta", u"miljoonilta", u"miljardeilta", u"biljoonilta", u"triljoonilta", u"kvadriljoonilta", u"kvintiljoonilta", u"sekstiljoonilta", u"septiljoonilta", u"sentiljoonilta"],
+	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille", u"miljoonille", u"miljardeille", u"biljoonille", u"triljoonille", u"kvadriljoonille", u"kvintiljoonille", u"sekstiljoonille", u"septiljoonille", u"sentiljoonille"],
+	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta", u"miljoonitta", u"miljardeitta", u"biljoonitta", u"triljoonitta", u"kvadriljoonitta", u"kvintiljoonitta", u"sekstiljoonitta", u"septiljoonitta", u"sentiljoonitta"],
+	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin", u"miljoonin", u"miljardein", u"biljoonin", u"triljoonin", u"kvadriljoonin", u"kvintiljoonin", u"sekstiljoonin", u"septiljoonin", u"sentiljoonin"],
+	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine", u"miljoonine", u"miljardeine", u"biljoonine", u"triljoonine", u"kvadriljoonine", u"kvintiljoonine", u"sekstiljoonine", u"septiljoonine", u"sentiljoonine"],
+	u"SstiNy": [u"kymmenesti", u"sadasti", u"tuhannesti", u"miljoonasti", u"miljardisti", u"biljoonasti", u"triljoonasti", u"kvadriljoonasti", u"kvintiljoonasti", u"sekstiljoonasti", u"septiljoonasti", u"sentiljoonasti"]
 }
 
-MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a"]
+MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a"]
 
 for sija in MULTI.keys():
 	diacritic = u"@U.LS." + sija.upper() + u"@"

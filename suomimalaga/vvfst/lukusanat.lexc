@@ -41,6 +41,11 @@ LukusanaSstiNy29Kertoimet	;
 [Sn][Nm][Xp]miljardi[X]miljardit@U.LS.SNNM@:miljardit@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]biljoona[X]biljoona@U.LS.SNNY@:biljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]triljoona[X]triljoona@U.LS.SNNY@:triljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]kvadriljoona[X]kvadriljoona@U.LS.SNNY@:kvadriljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]kvintiljoona[X]kvintiljoona@U.LS.SNNY@:kvintiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sekstiljoona[X]sekstiljoona@U.LS.SNNY@:sekstiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]septiljoona[X]septiljoona@U.LS.SNNY@:septiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sentiljoona[X]sentiljoona@U.LS.SNNY@:sentiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
@@ -153,7 +158,6 @@ LEXICON XKymmentäEiLiitesana
 [Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
 [Bc][Lu][Xp]sataa[X]sataa:sataa	Liitesana_a	;
 [Bc][Lu][Xp]tuhatta[X]tuhatta:tuhatta	Liitesana_a	;
-
 
 LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;

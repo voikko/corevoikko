@@ -1687,6 +1687,7 @@ LEXICON Poikkeavat_t
 
 LEXICON Poikkeavat_l
 GenetiiviLiitepartikkeliInenAdjektiivi	;
+PronomininLainen	;
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;
 @P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
 [Ll][Xp]viime[X][Sn][Ny]viime:viime	Liitesana_ä	;
@@ -1721,6 +1722,17 @@ LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]tämänvuotinen[X]tämänkin[Bm]vuoti:tämänkinvuoti	GenetiiviLiitepartikkeliInenLoppu_a	;
 [Ll][Xp]yhdenlainen[X]yhdenkään[Bm]lai:yhdenkäänlai	GenetiiviLiitepartikkeliInenLoppu_a	;
 [Ll][Xp]yhdenlainen[X]yhdenkin[Bm]lai:yhdenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
+
+LEXICON PronomininLainen
+[Ll][Xp]hänenlainen[Xp][Sp][Ny][O3]hänen[Bm]laistaan:hänenlaistaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Ses][Ny][O3]hänen[Bm]laisenaan:hänenlaisenaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Str][Ny][O3]hänen[Bm]laisekseen:hänenlaisekseen	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sine][Ny][O3]hänen[Bm]laisessaan:hänenlaisessaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sela][Ny][O3]hänen[Bm]laisestaan:hänenlaisestaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sade][Ny][O3]hänen[Bm]laisellaan:hänenlaisellaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sabl][Ny][O3]hänen[Bm]laiseltaan:hänenlaiseltaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sall][Ny][O3]hänen[Bm]laiselleen:hänenlaiselleen	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sab][Ny][O3]hänen[Bm]laisettaan:hänenlaisettaan	Liitesana_a	;
 
 LEXICON Yö
 [Sn][Ny]yö:yö	NimisanaNormaaliYsJatkoOl_ä	;
