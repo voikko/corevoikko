@@ -1535,6 +1535,7 @@ s:s	<WC>NainenYsJatko_<A>	;
 LEXICON NOUN InenLoppuinen
 <WC>NainenYhteiset_<A>	;
 ?Laatusana	InenLoppuisenYsJatko	;
+?Laatusana	[Bh][Bc]@C.INEN_KIELLETTY@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@C.INEN_KIELLETTY@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
 
 LEXICON NOUN NainenYhteiset
 [Sn][Ny]nen:nen	Liitesana_<A>	;
