@@ -1013,7 +1013,7 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
         result $res,
                rules laatusana, laatusana_teonsanasta, tavuviiva;
       end;
-      if $edellinen.luokka in <laatusana, nimi_laatusana> then
+      if $edellinen.aluetta_tarkentava_etuliite = yes then
         result $res, rules yhdysmerkki_ennen_paikannimea;
       end;
       if $oikea.sijamuoto = omanto and $oikea.luku = yksikkö then

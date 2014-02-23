@@ -255,6 +255,7 @@ Vantaanjokilaakson
 !Vantaanjoe-laakso
 !Vantaansuooja
 Järvistensaari
+!sulin-Ahola
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
