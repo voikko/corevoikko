@@ -1724,6 +1724,30 @@ LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]yhdenlainen[X]yhdenkin[Bm]lai:yhdenkinlai	GenetiiviLiitepartikkeliInenLoppu_a	;
 
 LEXICON PronomininLainen
+[Ll][Xp]hänenlainen[Xp][Sn][Ny][O3]hänen[Bm]laisensa:hänenlaisensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sp][Ny][O3]hänen[Bm]laistansa:hänenlaistansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Ses][Ny][O3]hänen[Bm]laisenansa:hänenlaisenansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Str][Ny][O3]hänen[Bm]laiseksensa:hänenlaiseksensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sine][Ny][O3]hänen[Bm]laisessansa:hänenlaisessansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sela][Ny][O3]hänen[Bm]laisestansa:hänenlaisestansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sill][Ny][O3]hänen[Bm]laiseensa:hänenlaiseensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sade][Ny][O3]hänen[Bm]laisellansa:hänenlaisellansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sabl][Ny][O3]hänen[Bm]laiseltansa:hänenlaiseltansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sall][Ny][O3]hänen[Bm]laisellensa:hänenlaisellensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sab][Ny][O3]hänen[Bm]laisettansa:hänenlaisettansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sg][Nm][O3]hänen[Bm]laisiensa:hänenlaisiensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sg][Nm][O3]hänen[Bm]laistensa:hänenlaistensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sp][Nm][O3]hänen[Bm]laisiansa:hänenlaisiansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Ses][Nm][O3]hänen[Bm]laisinansa:hänenlaisinansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Str][Nm][O3]hänen[Bm]laisiksensa:hänenlaisiksensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sine][Nm][O3]hänen[Bm]laisissansa:hänenlaisissansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sela][Nm][O3]hänen[Bm]laisistansa:hänenlaisistansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sill][Nm][O3]hänen[Bm]laisiinsa:hänenlaisiinsa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sade][Nm][O3]hänen[Bm]laisillansa:hänenlaisillansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sabl][Nm][O3]hänen[Bm]laisiltansa:hänenlaisiltansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sall][Nm][O3]hänen[Bm]laisillensa:hänenlaisillensa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sab][Nm][O3]hänen[Bm]laisittansa:hänenlaisittansa	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sko][Nm][O3]hänen[Bm]laisinensa:hänenlaisinensa	Liitesana_a	;
 [Ll][Xp]hänenlainen[Xp][Sp][Ny][O3]hänen[Bm]laistaan:hänenlaistaan	Liitesana_a	;
 [Ll][Xp]hänenlainen[Xp][Ses][Ny][O3]hänen[Bm]laisenaan:hänenlaisenaan	Liitesana_a	;
 [Ll][Xp]hänenlainen[Xp][Str][Ny][O3]hänen[Bm]laisekseen:hänenlaisekseen	Liitesana_a	;
@@ -1733,6 +1757,17 @@ LEXICON PronomininLainen
 [Ll][Xp]hänenlainen[Xp][Sabl][Ny][O3]hänen[Bm]laiseltaan:hänenlaiseltaan	Liitesana_a	;
 [Ll][Xp]hänenlainen[Xp][Sall][Ny][O3]hänen[Bm]laiselleen:hänenlaiselleen	Liitesana_a	;
 [Ll][Xp]hänenlainen[Xp][Sab][Ny][O3]hänen[Bm]laisettaan:hänenlaisettaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sp][Nm][O3]hänen[Bm]laisiaan:hänenlaisiaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Ses][Nm][O3]hänen[Bm]laisinaan:hänenlaisinaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Str][Nm][O3]hänen[Bm]laisikseen:hänenlaisikseen	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sine][Nm][O3]hänen[Bm]laisissaan:hänenlaisissaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sela][Nm][O3]hänen[Bm]laisistaan:hänenlaisistaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sade][Nm][O3]hänen[Bm]laisillaan:hänenlaisillaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sabl][Nm][O3]hänen[Bm]laisiltaan:hänenlaisiltaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sall][Nm][O3]hänen[Bm]laisilleen:hänenlaisilleen	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sab][Nm][O3]hänen[Bm]laisittaan:hänenlaisittaan	Liitesana_a	;
+[Ll][Xp]hänenlainen[Xp][Sko][Nm][O3]hänen[Bm]laisineen:hänenlaisineen	Liitesana_a	;
+
 
 LEXICON Yö
 [Sn][Ny]yö:yö	NimisanaNormaaliYsJatkoOl_ä	;
