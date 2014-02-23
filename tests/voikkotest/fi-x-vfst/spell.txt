@@ -2728,3 +2728,5 @@ hänenlaistaan
 !venäjäläinen
 !metsäisarjalainen
 varhaiskristillisten
+!äkeenkauneus
+!epäjuotuinen

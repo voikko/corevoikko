@@ -2254,7 +2254,7 @@ LEXICON NOUN Loppu
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
 ?Asemosana	AsemosanaYsJatko	;
-?Nimisana	[Bc]:	Sanasto_laatusanat	;
+?Nimisana	@D.YS_EI_JATKOA@[Bc]:@D.YS_EI_JATKOA@	Sanasto_laatusanat	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
@@ -3944,7 +3944,7 @@ LEXICON Johdin_ttU
 ! myydä -> myyty
 LEXICON Johdin_tU_dA
 [Ll]@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@ LaatusanaLaatu_<A>   ;
-[Ll]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaLaatu_<A>   ;
+[Ll]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@:@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@ NimiLaatusanaLaatu_<A>   ;
 
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
