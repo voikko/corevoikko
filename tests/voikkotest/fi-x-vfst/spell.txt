@@ -2732,3 +2732,9 @@ varhaiskristillisten
 !epäjuotuinen
 aamukahdessatoista
 !aamusatakymmenen
+kivempänä
+kivimmän
+kivoimpana
+kuultensa
+nähtemme
+tietesi

@@ -1677,10 +1677,13 @@ LEXICON Poikkeavat_es
 
 LEXICON Poikkeavat_t
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;
+[Lt][Xp]kuulla[X]kuulte[Tn2]:kuulte	Omistusliite_a	;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
+[Lt][Xp]nähdä[X]nähte[Tn2]:nähte	Omistusliite_ä	;
 [Lt][Xp]olla[X]o:o       Olla ;
 [Lt][Xp]potea[X]po:po       Potea ;
 [Lt][Xp]seistä[X]seis:seis	Seistä	;
+[Lt][Xp]tietää[X]tiete[Tn2]:tiete	Omistusliite_ä	;
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 
 LEXICON Poikkeavat_l
@@ -1688,6 +1691,9 @@ GenetiiviLiitepartikkeliInenAdjektiivi	;
 PronomininLainen	;
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;
 @P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
+[Ll][Xp]kiva[X]kive:kive	Voittoaste_ä	;
+[Ll][Xp]kiva[X]kiv:kiv	Yliaste_ä	;
+[Ll][Xp]kiva[X]kivo:kivo	Yliaste_a	;
 [Ll][Xp]viime[X][Sn][Ny]viime:viime	Liitesana_ä	;
 
 LEXICON Poikkeavat_nl
