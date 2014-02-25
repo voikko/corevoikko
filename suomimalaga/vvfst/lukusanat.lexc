@@ -48,6 +48,10 @@ LukusanaSstiNy29Kertoimet	;
 [Sn][Ny][Xp]sentiljoona[X]sentiljoona@U.LS.SNNY@:sentiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
+LukusanaYksiYhdeksän	;
+[Lu]:	LukusananAlkuKerroin	;
+
+LEXICON LukusanaYksiYhdeksän
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
 [Lu][Xp]kaksi[X]ka:ka	LukusanaKaksi_a	;
 [Lu][Xp]kolme[X]kolm:kolm	LukusanaKolme_a	;
@@ -57,7 +61,6 @@ LEXICON Lukusana
 [Lu][Xp]seitsemän[X]seitsem:seitsem	LukusanaSeitsemän_ä	;
 [Lu][Xp]kahdeksan[X]kahdeks:kahdeks	LukusanaSeitsemän_a	;
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
-[Lu]:	LukusananAlkuKerroin	;
 
 LEXICON JärjestysluvunAlkuKerroin
 JärjestyslukuSgNy39Kertoimet	;
