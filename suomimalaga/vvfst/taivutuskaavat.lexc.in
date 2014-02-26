@@ -951,6 +951,7 @@ LEXICON NOUN Karahka
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
@@ -1507,6 +1508,7 @@ LEXICON NOUN Sisar_w
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Sisar_s
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
@@ -3918,13 +3920,13 @@ LEXICON Johdin_inen
 [Ll]is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@:is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@	InenLoppuisenYsJatko	;
 
 LEXICON Johdin_tOn
-[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
-tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
-tt<O>m:tt<O>m	Yliaste_<A>	;
-[Ll]lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
-llis:llis	NimisanaYsJatko	;
-llis-[Bc]@D.INEN_KIELLETTY@:llis-@D.INEN_KIELLETTY@	Yleisnimet	;
-llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
+[Ll]t@C.EI_YKS@@C.YS_EI_JATKOA@:t@C.EI_YKS@@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
+tt<O>m<A>@C.EI_YKS@:tt<O>m<A>@C.EI_YKS@	Voittoaste_<A>	;
+tt<O>m@C.EI_YKS@:tt<O>m@C.EI_YKS@	Yliaste_<A>	;
+[Ll]lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
+llis@C.EI_YKS@:llis@C.EI_YKS@	NimisanaYsJatko	;
+llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnimet	;
+llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Liitesana_<A>	;
@@ -4563,7 +4565,6 @@ LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 [Sg][Nm]nsien:nsien JärjestyslukuSgNm39_<A> ;
 [Sp][Ny]tt<A>:tt<A> JärjestyslukuSpNy39_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> JärjestyslukuSpNm39_<A> ;
-[Sp][Nm]nsi<A>:nsi<A> OlV_<A> ;
 [Str][Ny]nneksi:nneksi	JärjestyslukuStrNy39_<A>	;
 [Str][Nm]nsiksi:nsiksi	JärjestyslukuStrNm39_<A>	;
 [Ses][Ny]nten<A>:nten<A> JärjestyslukuSesNy39_<A> ;
@@ -4587,7 +4588,9 @@ LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 ?Sukija [Sill][Nm]nsihin:nsihin JärjestyslukuSillNm39_<A> ;
 
 LEXICON JärjestyslukuKahdeksasOmistusliitteet
+[Sn][Ny]nte:nte Omistusliite_<A> ;
 [Sg][Nm]nsie:nsie Omistusliite_<A> ;
+[Sp][Nm]nsi<A>:nsi<A> OlV_<A> ;
 [Str][Nm]nsiksi:nsiksi	OlI_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> OlV_<A> ;
 [Sine][Nm]nsiss<A>:nsiss<A> OlV_<A> ;
