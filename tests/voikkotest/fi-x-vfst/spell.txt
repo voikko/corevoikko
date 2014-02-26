@@ -2738,3 +2738,6 @@ kivoimpana
 kuultensa
 nähtemme
 tietesi
+viisitoistatuhatta
+!viisitoistasataa
+satayksi
