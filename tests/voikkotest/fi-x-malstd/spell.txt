@@ -679,6 +679,7 @@ susimainen
 !kuolleessaan
 ranskanturkkilainen
 jugoslavianmakedonialainen
+!toteutta
 
 # = sijapäätteet =
 []
@@ -884,6 +885,7 @@ vilkkaana # Kotus 41
 !-rukinen # Kotus 41
 vieraat # Kotus 41
 !vierahat # Kotus 41
+!naurihit # Kotus 41
 röyhkeäpenkereinen # Kotus 49
 röyhkeäpenkerinen # Kotus 49
 säen # Kotus 49

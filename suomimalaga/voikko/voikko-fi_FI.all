@@ -4664,7 +4664,6 @@ subrule tosi ($tietue):
                         [johdin_tOn:      "de",
                          johdin_mAinen:   "si",
                          johdin_lAinen:   "te",
-                         johdin_Us:       "te",
                          johdin_inen:     "t"] +
                         monikko7 ("de", "s", "s",
                                   [omanto_ien: "s"],
@@ -4886,9 +4885,6 @@ subrule kauris ($tietue, $kerake):
                          seuranto_ine:      $monikko,
                          johdin_ittAin:     $monikko,
                          yliaste:           $kerake + "e"]) +
-         s_hV_loppuinen ($tietue,
-                         $monikko + "hi",
-                         $monikko + "h") +
          voikko_lista_vain_lipulla(vanhat_muodot,
 	                 taivutuskaava ($tietue,
                                         [olento_nA: "is"])  # Kauris+na.
