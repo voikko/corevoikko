@@ -574,7 +574,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kampa in $tietue.jatko) then
-    choose $i in kala ($tietue, "p", "m", "me", "");
+    choose $i in kala ($tietue, "p", "m", "me", "m");
     result $i.alku, $i - alku;
 
   elseif (kanta in $tietue.jatko) then
@@ -618,7 +618,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (valta in $tietue.jatko) then
-    choose $i in kala ($tietue, "t", "l", "le", "");
+    choose $i in kala ($tietue, "t", "l", "le", "l");
     result $i.alku, $i - alku;
 
 
