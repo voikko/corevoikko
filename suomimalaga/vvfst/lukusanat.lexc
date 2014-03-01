@@ -41,12 +41,19 @@ LukusanaSstiNy29Kertoimet	;
 [Sn][Ny][Xp]miljardi[X]miljardi@U.LS.SNNY@:miljardi@U.LS.SNNY@	LukusanaLiitesana_a	;
 [Sn][Nm][Xp]miljardi[X]miljardit@U.LS.SNNM@:miljardit@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]biljoona[X]biljoona@U.LS.SNNY@:biljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]biljoona[X]biljoonat@U.LS.SNNM@:biljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]triljoona[X]triljoona@U.LS.SNNY@:triljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]triljoona[X]triljoonat@U.LS.SNNM@:triljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]kvadriljoona[X]kvadriljoona@U.LS.SNNY@:kvadriljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]kvadriljoona[X]kvadriljoonat@U.LS.SNNM@:kvadriljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]kvintiljoona[X]kvintiljoona@U.LS.SNNY@:kvintiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]kvintiljoona[X]kvintiljoonat@U.LS.SNNM@:kvintiljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]sekstiljoona[X]sekstiljoona@U.LS.SNNY@:sekstiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sekstiljoona[X]sekstiljoonat@U.LS.SNNM@:sekstiljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]septiljoona[X]septiljoona@U.LS.SNNY@:septiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]septiljoona[X]septiljoonat@U.LS.SNNM@:septiljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 [Sn][Ny][Xp]sentiljoona[X]sentiljoona@U.LS.SNNY@:sentiljoona@U.LS.SNNY@	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sentiljoona[X]sentiljoonat@U.LS.SNNM@:sentiljoonat@U.LS.SNNM@	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 LukusanaYksiYhdeksän	;

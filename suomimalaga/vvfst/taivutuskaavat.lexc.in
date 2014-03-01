@@ -1020,6 +1020,7 @@ LEXICON NOUN Apaja
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
@@ -1046,6 +1047,7 @@ LEXICON NOUN Peruna
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
@@ -1905,6 +1907,7 @@ LEXICON NOUN Kuollut
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
+[Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana ee:ee	Voittoaste_<A>	;
@@ -2263,12 +2266,13 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
 ?Laatusana	Johdin_lAinen_a	;
+?Etunimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
+?Paikannimi	@P.INEN_VAADITTU.ON@[Dg][Bc]:@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
 ?Paikannimi	@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
-?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 
 LEXICON NOUN MonikonGenetiiviInJatko
@@ -3148,6 +3152,7 @@ TositavanKestämäLaan_<A>	;
 TositavanKertomaTiin_<A>	;
 Ehtotapa_<A>	;
 Käskytapa_e_<A>	;
+l:l	Mahtotapa_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
@@ -3864,6 +3869,7 @@ neis:neis	Johdin_UUs_<A>	;
 
 LEXICON Johdin_lUt
 [Ll]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll]lee:lee	Omistusliite_<A>	;
 ?Sukija [Ll]lehe:lehe	Omistusliite_<A>	;
 
