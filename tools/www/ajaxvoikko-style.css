@@ -30,6 +30,9 @@ div.updating {
 span.error {
   color: red;
 }
+span.maybeError {
+  background-color: #8888ff;
+}
 span.gErrorOuter {
   padding-bottom: 0.3em;
   background-color: #FFBBBB;

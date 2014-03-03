@@ -22,6 +22,8 @@
 var AJAX_HANDLER_URL="";
 var LOCAL_STORAGE_KEY = "WebVoikkoSpell";
 
+var checkForMaybeErrors = false;
+
 function initLocalStorage() {
   if (!window.localStorage) {
     return;
@@ -196,7 +198,7 @@ function requestUpdate() {
   $.ajax({
     type: 'POST',
     url: AJAX_HANDLER_URL + "spell",
-    data: {q: textContent, d: dict},
+    data: {q: textContent, d: dict, cme: checkForMaybeErrors},
     success: updateReceived,
     error: updateError,
     dataType: "html"
@@ -215,7 +217,7 @@ function checkPageClicked() {
   setProgressMessage();
   var url = $("#pageUrl").val();
   var dict = $("#voikkoDict").val();
-  $.post(AJAX_HANDLER_URL + "checkPage", {url: url, d: dict}, updateReceived, "html");
+  $.post(AJAX_HANDLER_URL + "checkPage", {url: url, d: dict, cme: checkForMaybeErrors}, updateReceived, "html");
 }
 
 function inputChanged() {

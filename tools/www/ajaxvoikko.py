@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 - 2011 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2014 Harri Pitkänen (hatapitk@iki.fi)
 # Web server that provides Ajax interface for using Voikko.
 # Requires Python version 2.5 or newer and Python interface to libvoikko.
 
@@ -34,6 +34,7 @@ from voikkohtml import getHtmlSafely, parseHtml, HttpException
 from voikkohtml import SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH, SEGMENT_TYPE_OTHER
 from HTMLParser import HTMLParseError
 import codecs
+import re
 
 _voikko = {}
 _dictInfo = {}
@@ -146,7 +147,7 @@ def fromMapIfPossible(key, valueMap):
 		return key
 
 def nonOverlappingGrammarErrorsByStartPosition(text, v):
-	errors = v.grammarErrors(text)
+	errors = v.grammarErrors(text, u"fi")
 	nonOverlapping = {}
 	lastEnd = 0
 	for error in errors:
@@ -174,7 +175,7 @@ def markTrailingDots(tokenList):
 
 def grammarErrorDetails(grammarError, v):
 	errorCode = grammarError.errorCode
-	errorText = v.grammarErrorExplanation(errorCode, "fi")
+	errorText = grammarError.shortDescription
 	if len(grammarError.suggestions) == 0:
 		return errorText
 	else:
@@ -183,17 +184,59 @@ def grammarErrorDetails(grammarError, v):
 		return errorText + u' Ehkäpä ennemminkin "...' + \
 		       u'...", "...'.join(grammarError.suggestions) + u'..."?'
 
-def spell(text, dictionary):
+def spell(text, dictionary, checkForMaybeErrors):
 	if dictionary not in _voikko:
 		return u""
 	v = _voikko[dictionary]
 	v.setAcceptUnfinishedParagraphsInGc(True)
 	v.setAcceptTitlesInGc(False)
 	v.setAcceptBulletedListsInGc(False)
-	return doSpell(text, v, True)
+	return doSpell(text, v, True, checkForMaybeErrors)
 
-def doSpell(text, v, checkGrammar):
+def keyAndScoreForSingleAnalysis(analysis):
+	if u"WORDIDS" in analysis:
+		idParts = analysis[u"WORDIDS"].split(u"+")
+		key = u""
+		score = 0
+		pattern = re.compile(u"^(.+)\((w[0-9]+)\)$")
+		for idPart in idParts:
+			match = pattern.match(idPart)
+			if match:
+				word = match.group(1)
+				idString = match.group(2)
+				key = key + idString
+				if len(word) > 1: # not "A-studio"
+					score = (score + 1) * (11 / len(word))
+			elif idPart == u"-":
+				score = score / 2
+		return (key, score)
+	return (u"", 0)
+
+def keyAndScore(analysisList):
+	if len(analysisList) == 0:
+		return (u"", 0)
+	(key, score) = keyAndScoreForSingleAnalysis(analysisList[0])
+	for analysis in analysisList[1:]:
+		(newKey, newScore) = keyAndScoreForSingleAnalysis(analysis)
+		if newKey == key:
+			score = min(score, newScore)
+		else:
+			return (u"", 0)
+	return (key, score)
+
+def doSpell(text, v, checkGrammar, checkForMaybeErrors):
+	wordToKey = {}
+	keyToScore = {}
 	tokens = markTrailingDots(v.tokens(text))
+	for token in tokens:
+		if checkForMaybeErrors and token.tokenType == Token.WORD and token.tokenText not in wordToKey:
+			analysis = v.analyze(token.tokenText)
+			(key, score) = keyAndScore(analysis)
+			wordToKey[token.tokenText] = key
+			if key in keyToScore:
+				keyToScore[key] = 0
+			else:
+				keyToScore[key] = score
 	gErrors = {}
 	if checkGrammar:
 		gErrors = nonOverlappingGrammarErrorsByStartPosition(text, v)
@@ -209,7 +252,10 @@ def doSpell(text, v, checkGrammar):
 		if token.tokenType == Token.WORD:
 			if v.spell(token.tokenText) or \
 			   (token.dotFollows and v.spell(token.tokenText + u".")):
-				res = res + u"<span class='word'>" \
+				maybeError = u""
+				if checkForMaybeErrors and keyToScore[wordToKey[token.tokenText]] > 11:
+					maybeError = u" maybeError"
+				res = res + u"<span class='word" + maybeError + u"'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
 			else:
@@ -364,7 +410,7 @@ def wordInfo(word, dictionary):
 	res = res + "</div>"
 	return res
 
-def checkPage(url, dictionary, clientIp, requestHeaders):
+def checkPage(url, dictionary, clientIp, requestHeaders, checkForMaybeErrors):
 	log("checkPage: " + url.encode("UTF-8"))
 	if dictionary not in _voikko:
 		return u""
@@ -392,7 +438,7 @@ def checkPage(url, dictionary, clientIp, requestHeaders):
 			elif segment[0] == SEGMENT_TYPE_OTHER:
 				checkGrammar = False
 				segmentClass = u"webvoikkoO"
-			res = res + u"<p class='" + segmentClass + u"'>" + doSpell(segment[1], v, checkGrammar) + u"</p>"
+			res = res + u"<p class='" + segmentClass + u"'>" + doSpell(segment[1], v, checkGrammar, checkForMaybeErrors) + u"</p>"
 		return res
 	except HttpException, e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
@@ -505,13 +551,15 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.path.startswith("/spell"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
-			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d")) + stats(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
+			checkForMaybeErrors = parseQuery(queryData, "cme") == u"true"
+			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d"), checkForMaybeErrors) + stats(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
 		elif self.path.startswith("/checkPage"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
 			clientIp = self.client_address[0]
 			headers = self.headers.headers
-			self.sendHtmlPage(checkPage(parseQuery(queryData, "url"), parseQuery(queryData, "d"), clientIp, headers), "text/html")
+			checkForMaybeErrors = parseQuery(queryData, "cme") == u"true"
+			self.sendHtmlPage(checkPage(parseQuery(queryData, "url"), parseQuery(queryData, "d"), clientIp, headers, checkForMaybeErrors), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()
