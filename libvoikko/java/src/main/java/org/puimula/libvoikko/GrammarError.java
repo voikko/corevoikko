@@ -54,8 +54,7 @@ public class GrammarError {
     }
 
     /**
-     * Error code describing the type of error. Use {@link Voikko#grammarErrorExplanation(int, String)}
-     * to get a human readable explanation for the error.
+     * Error code describing the type of error.
      * @return the error code
      */
     public int getErrorCode() {
@@ -83,6 +82,9 @@ public class GrammarError {
         return suggestions;
     }
 
+    /**
+     * @return human readable short description for the error.
+     */
     public String getShortDescription() {
         return shortDescription;
     }

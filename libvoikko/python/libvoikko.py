@@ -449,13 +449,6 @@ class Voikko(object):
 			offset = offset + len(paragraph) + 1
 		return errorList
 	
-	def grammarErrorExplanation(self, errorCode, language):
-		"""Return a human readable explanation for grammar error code in
-		given language.
-		"""
-		explanation = self.__lib.voikko_error_message_cstr(_anyStringToUtf8(errorCode), _anyStringToUtf8(language))
-		return unicode(explanation, "UTF-8")
-	
 	def analyze(self, word):
 		"""Analyze the morphology of given word and return the list of
 		analysis results. The results are represented as maps having property
