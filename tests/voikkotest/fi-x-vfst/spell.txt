@@ -132,6 +132,7 @@ NHL-painotteisella
 itänyt
 nuoriinmiehiinkö
 nuorillapareilla
+Yhdysvallat-Sveitsi
 
 # = erisnimet =
 []
@@ -2767,3 +2768,4 @@ kehittyneihin
 madonnamainen
 !lais-roomalainen
 !suositeltuleima
+Alankomaat-Viro

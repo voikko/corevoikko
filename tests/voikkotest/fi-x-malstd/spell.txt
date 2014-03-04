@@ -136,6 +136,7 @@ NHL-painotteisella
 itänyt
 nuoriinmiehiinkö
 nuorillapareilla
+Yhdysvallat-Sveitsi
 
 # = vain yhdyssanan jälkiosana =
 []

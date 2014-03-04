@@ -863,7 +863,7 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    if tavuviiva in $oikea.jatko and $oikea.sijamuoto = omanto then
+    if tavuviiva in $oikea.jatko and $oikea.sijamuoto in <nimentö, omanto> then
       result $res, rules yhdysmerkki_erisnimen_jälkeen;
     end;
     if $oikea.sijamuoto = omanto and $edellinen.luokka = sukunimi then

@@ -698,6 +698,7 @@ LEXICON NOUN Kala_s
 
 LEXICON NOUN Kala_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+?Paikannimi	[Sn][Nm]<A>t:<A>t	PaikannimiYsJatko	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -1194,6 +1195,7 @@ LEXICON NOUN Maa_s
 LEXICON NOUN Maa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]t:t	Liitesana_<A>	;
+?Paikannimi	[Sn][Nm]t:t	PaikannimiYsJatko	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
