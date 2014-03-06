@@ -1859,7 +1859,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   elseif $oikea.luokka in @johtimet_laatusana_nimisanasta then
     result $res, rules laatusana, laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;
   elseif $oikea.luokka in @johdin_jA then
-    result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos, inen_päätteinen_laatusana;
+    result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos, inen_päätteinen_laatusana, nimisana_laatusanasta;
   end;
 end;
 

@@ -137,6 +137,7 @@ itänyt
 nuoriinmiehiinkö
 nuorillapareilla
 Yhdysvallat-Sveitsi
+taiteilijalahjakkuus
 
 # = vain yhdyssanan jälkiosana =
 []
