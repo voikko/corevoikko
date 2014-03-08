@@ -337,6 +337,7 @@ inarinsaamelaiset
 !Paris-Charles
 demokraattis-republikaaninen
 !eläkeläisoiva
+!eliminointinen
 
 # = voitto- ja yliasteet =
 []

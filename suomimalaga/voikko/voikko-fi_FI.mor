@@ -1757,6 +1757,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
+  ? $oikea.luokka /= johdin_inen or $edellinen.luokka /= johdin_nti or $index greater 3;
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
