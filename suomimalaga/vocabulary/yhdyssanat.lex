@@ -603,37 +603,37 @@
 
 # {{{2 hienosokeri (51)
 
-[perusmuoto: "hienosokeri", alku: "hienosokeri",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoasokeri",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienonasokeri",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoksisokeri",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienossasokerissa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienostasokerista",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoonsokeri",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienollasokerilla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoltasokerilta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienollesokerille",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienottasokeri",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienosokeri",     luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoasokeri",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienonasokeri",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoksisokeri",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienossasokerissa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienostasokerista",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoonsokeri",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienollasokerilla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoltasokerilta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienollesokerille",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienottasokeri",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienojensokeri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "hienosokeri", alku: "hienojensokere",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoinasokere",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoiksisokereiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoissasokereissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoistasokereista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoihinsokere", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoillasokereilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoiltasokereilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoillesokereille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoittasokereitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoinesokere",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "hienosokeri", alku: "hienoinsokerein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienojensokeri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienojensokere",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoinasokere",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoiksisokereiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoissasokereissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoistasokereista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoihinsokere", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoillasokereilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoiltasokereilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoillesokereille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoittasokereitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppppp=pppppppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoinesokere",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "hienosokeri", alku: "hienoinsokerein", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppppp=pppppppp"];
 
 # {{{2 isojako (51, 50)
 
