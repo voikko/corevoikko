@@ -637,35 +637,35 @@
 
 # {{{2 isojako (51, 50)
 
-[perusmuoto: "isojako", alku: "isojako",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
-[perusmuoto: "isojako", alku: "isonjako",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isojako", alku: "isonjao",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isojako", alku: "isoajako",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isojako", alku: "isonajako",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoksijao",   luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isojako", alku: "isossajaossa",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isojako", alku: "isostajaosta",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isojako", alku: "isoonjako",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isojako", alku: "isollajaolla",   luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isojako", alku: "isoltajaolta",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isojako", alku: "isollejaolle",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isojako", alku: "isottajao",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isojako",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
+ [perusmuoto: "isojako", alku: "isonjako",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isojako", alku: "isonjao",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoajako",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isojako", alku: "isonajako",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoksijao",   luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isossajaossa",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isojako", alku: "isostajaosta",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isojako", alku: "isoonjako",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isollajaolla",   luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isojako", alku: "isoltajaolta",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isojako", alku: "isollejaolle",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isojako", alku: "isottajao",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isojako", alku: "isotjao",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isojako", alku: "isotjako",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isojako", alku: "isojenjako",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isojako", alku: "isojajako",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoinajako",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoiksijaoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoissajaoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoistajaoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoihinjako", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoillajaoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoiltajaoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoillejaoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoittajaoitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "isojako", alku: "isoinejako",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isojako", alku: "isoinjaoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isojako", alku: "isotjao",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isojako", alku: "isotjako",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isojako", alku: "isojenjako",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isojajako",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoinajako",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoiksijaoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoissajaoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoistajaoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoihinjako", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoillajaoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoiltajaoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoillejaoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoittajaoitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "isojako", alku: "isoinejako",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isojako", alku: "isoinjaoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppp"];
 
 # {{{2 isomasto (51, 50)
 
@@ -734,35 +734,35 @@
 
 # {{{2 isorokko (51, 50)
 
-[perusmuoto: "isorokko", alku: "isorokko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isonrokko",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isonroko",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoarokko",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isonarokko",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoksiroko",   luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isossarokossa",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "isorokko", alku: "isostarokosta",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "isorokko", alku: "isoonrokko",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isollarokolla",   luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "isorokko", alku: "isoltarokolta",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "isorokko", alku: "isollerokolle",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "isorokko", alku: "isottaroko",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isorokko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isonrokko",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isonroko",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoarokko",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isonarokko",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoksiroko",   luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isossarokossa",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "isorokko", alku: "isostarokosta",   luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "isorokko", alku: "isoonrokko",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isollarokolla",   luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "isorokko", alku: "isoltarokolta",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "isorokko", alku: "isollerokolle",   luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "isorokko", alku: "isottaroko",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isorokko", alku: "isotroko",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isotrokko",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isojenrokko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isojarokko",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoinarokko",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoiksirokoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoissarokoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoistarokoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoihinrokko", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoillarokoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoiltarokoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoillerokoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoittarokoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "isorokko", alku: "isoinerokko",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "isorokko", alku: "isoinrokoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppppp"];
+ [perusmuoto: "isorokko", alku: "isotroko",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isotrokko",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isojenrokko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isojarokko",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoinarokko",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoiksirokoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoissarokoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoistarokoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoihinrokko", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoillarokoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoiltarokoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoillerokoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoittarokoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "isorokko", alku: "isoinerokko",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "isorokko", alku: "isoinrokoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=ppppppp"];
 
 # {{{2 isorumpu (50, 51)
 
