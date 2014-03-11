@@ -193,6 +193,7 @@ LEXICON NOUN Raamattu
 t<U>:t<U>	<WC>Arvelu_s_<A>	;
 t<U><U>:t<U><U>	<WC>Arvelu_sl_<A>	;
 <U>:<U>	<WC>Arvelu_w_<A>	;
+<U>[Sill][Nm]ihi:<U>ihi	<WC>LiOlN_<A>	;
 ?Sukija t<U>h<U>:t<U>h<U>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Pihatto

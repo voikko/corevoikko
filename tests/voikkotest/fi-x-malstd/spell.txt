@@ -338,6 +338,7 @@ inarinsaamelaiset
 demokraattis-republikaaninen
 !eläkeläisoiva
 !eliminointinen
+kiinalaislahjakkuus
 
 # = voitto- ja yliasteet =
 []
@@ -368,6 +369,8 @@ nopeanlaisinta
 moniulotteisempi
 moniulotteisimmassa
 rammin
+amerikkalaisempaan
+amerikkalaisimpaan
 
 # = yhdysviivat =
 []
@@ -732,6 +735,7 @@ hylätessään
 romahtamaisillaan
 !tyypillisesi
 !palavarakkausnsa
+!ehdottomasi
 
 # = liitesanat =
 []

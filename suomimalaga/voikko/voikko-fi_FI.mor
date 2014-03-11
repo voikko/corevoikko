@@ -581,12 +581,13 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
-                 nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana;
+                 nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana, nimisana_laatusanasta;
   end;
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, accept; end;
   if johdin_ittAin in $oikea.jatko then result $res, rules johdin_seikkasana_ittain; end;
+  if voittoaste in $oikea.jatko or yliaste in $oikea.jatko then result $res, rules voitto_yliaste; end;
   result $res, rules laatusanan_sijapääte_omistusliitteellä, johdin_nimisana_laatusanasta;
 end;
 
@@ -1846,7 +1847,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
     result $res, rules nimisana, nimisana_teonsanasta,
            etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
-  if omistusliite in $oikea.jatko then
+  if omistusliite in $oikea.jatko and not $oikea.luokka in @johtimet_laatusana_nimisanasta then
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
