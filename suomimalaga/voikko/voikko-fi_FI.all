@@ -4282,7 +4282,7 @@ subrule edam ($tietue, $vahva_aste, $heikko_aste):
                                   $vahva_aste + "i", $heikko_aste + "i",
                                   [osanto_A: $vahva_aste  + "i"],
                                   sisätulento_Vn,
-                                  $heikko_aste + "i", $vahva_aste + "i") +
+                                  $heikko_aste + "i", $vahva_aste) +
                         [johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
                          johdin_lAinen:   $vahva_aste + "i",

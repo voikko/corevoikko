@@ -1010,6 +1010,7 @@ LEXICON NOUN Apaja
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
 [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
@@ -2254,6 +2255,8 @@ ts:ts	<WC>YhteisetMonikonSijat2_<A>	;
 tse:tse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	tse:tse	Johdin_tOn_<A>	;
+?Nimisana	tsi:tsi	Johdin_mAinen_<A>	;
+?Nimisana	ts:ts	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]tsehe:tsehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]tsihi:tsihi	<WC>LiOlN_<A>	;
 
@@ -4082,6 +4085,7 @@ LEXICON Voittoaste
 [Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
 [Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+mm<A>:mm<A>	Kerronto_sti_<A>	;
 mm:mm	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cc]mpihi@D.EI_VERTM@:mpihi@D.EI_VERTM@	NimisanaLiOlN_<A>	

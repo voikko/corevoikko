@@ -813,6 +813,7 @@ glamouriton # Kotus 5
 !nailonnen # Kotus 6
 nailoninen # Kotus 6
 !nailoniinen # Kotus 6
+!nylonikissa # Kotus 6
 lahtea # Kotus 7
 !lahta # Kotus 7
 jäljettä # Kotus 7
