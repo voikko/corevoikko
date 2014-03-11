@@ -2777,3 +2777,4 @@ pidemmästi
 vainajain
 veitsimäiset
 teräväveitsinen
+yksityisteitse

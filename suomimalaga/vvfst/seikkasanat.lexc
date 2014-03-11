@@ -21,9 +21,12 @@ LEXICON Poikkeavat_s
 [Ls][Xp]keskessä[X]keske:keske	SisäpaikallissijatVn_ä	;
 [Ls][Xp]keväämmällä[X]kevääm:kevääm	Keväämmällä	;
 [Ls][Xp]kilpasilla[X]kilpas:kilpas	Ulkopaikallissijat_Mon_a	;
+[Ls][Xp]kohme[X]kohmee[Sine][Ny]ssa:kohmeessa	Liitesana_a	;
+[Ls][Xp]kohme[X]kohmee[Sill][Ny]seen:kohmeeseen	Liitesana_a	;
 [Ls][Xp]loitolla[X]loito:loito	Ulkopaikallissijat_Yks_a	;
 [Ls][Xp]loitolla[X]loitom:loitom	Sivumpana_a	;
 [Ls][Xp]miten[X]mitenkä:mitenkä	Liitesana_ä	;
+[Ls][Xp]nonstop[X]non[Bm]stop:nonstop	Liitesana_a	;
 [Ls][Xp]painuksissa[X]painuksi:painuksi	SisäpaikallissijatVn_a	;
 [Ls][Xp]parissa[X]pari:pari	SisäpaikallissijatVn_a	;
 [Ls][Xp]perempänä[X]perem:perem	Sivumpana_ä	;
@@ -51,6 +54,13 @@ LEXICON Poikkeavat_s
 [Ls][Xp]tasa[X]tasa:tasa	Ulkopaikallissijat_Yks_a	;
 [Ls][Xp]tasa[X]tasa:tasa	SisäpaikallissijatVn_a	;
 [Ls][Xp]tekeillä[X]teke:teke	Ulkopaikallissijat_Mon_ä	;
+[Ls][Xp]tenä[X]tenä[Sn][Ny]:tenä	Liitesana_ä	;
+[Ls][Xp]tenä[X]tenä[Sg][Ny]n:tenän	Liitesana_ä	;
+[Ls][Xp]tenä[X]tenä[Sp][Ny]ä:tenää	Liitesana_ä	;
+[Ls][Xp]tenä[X]tenä[Sine][Ny]ssä:tenässä	Liitesana_ä	;
+[Ls][Xp]tenä[X]tenä[Sn][Nm]t:tenät	Liitesana_ä	;
+[Ls][Xp]tipotiehen[X]tipo[Bm]tie[Sine][Ny]he:tipotiehe	NimisanaLiOlN_ä	;
+[Ls][Xp]tukkanuottasilla[X]tukka[Bm]nuottas:tukkanuottas	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]tännempänä[X]tännem:tännem	Sivumpana_ä	;
 [Ls][Xp]väijyksissä[X]väijyksi:väijyksi	SisäpaikallissijatVn_ä	;
 [Ls][Xp]vääjäämättä[X]vääjäämättä:vääjäämättä	Liitesana_ä	;
