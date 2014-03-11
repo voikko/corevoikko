@@ -339,6 +339,7 @@ demokraattis-republikaaninen
 !eläkeläisoiva
 !eliminointinen
 kiinalaislahjakkuus
+!valintainen
 
 # = voitto- ja yliasteet =
 []
