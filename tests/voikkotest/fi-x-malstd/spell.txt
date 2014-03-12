@@ -138,6 +138,8 @@ nuoriinmiehiinkö
 nuorillapareilla
 Yhdysvallat-Sveitsi
 taiteilijalahjakkuus
+vanhempain-
+vanhempainyhteistyötoimikunta
 
 # = vain yhdyssanan jälkiosana =
 []

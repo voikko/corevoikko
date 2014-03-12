@@ -921,7 +921,8 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
 
   if $vasen.($index - 2).luokka in <nimisana, nimi_laatusana> and
      $oikea.sijamuoto = omanto then
-    result $res, rules nimisana, nimisana_teonsanasta, nimisana_laatusanasta;
+    result $res, rules nimisana, nimisana_teonsanasta, nimisana_laatusanasta,
+                 yhdysmerkki_yleisnimen_jälkeen, nimisanan_etuliite;
   end;
 end;
 

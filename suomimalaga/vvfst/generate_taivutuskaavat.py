@@ -56,7 +56,7 @@ def filterLines(lines, lexiconPrefix):
 			if lexiconPrefix == u"Nimisana":
 				yield line[13:].replace(u"<WC>", lexiconPrefix)
 		elif line.startswith("?NotLaatusana"):
-			if lexiconPrefix != u"Laatusana":
+			if lexiconPrefix not in [u"Laatusana", u"Asemosana"]:
 				yield line[13:].replace(u"<WC>", lexiconPrefix)
 		elif line.startswith("?Paikannimi"):
 			if lexiconPrefix == u"Paikannimi":
