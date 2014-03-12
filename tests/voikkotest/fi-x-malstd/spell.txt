@@ -281,6 +281,8 @@ USA:ssakin
 Ab:ltä
 !esim.:ssä
 §:ssä
+DVD:nsä
+DVD:än
 
 # = sijamuodot =
 []
@@ -848,6 +850,7 @@ Berijoitten # Kotus 12
 jäkälää # Kotus 12
 !jäkälätä # Kotus 12
 !porstuitten # Kotus 12
+kypärineen # Kotus 12
 kurpitsaa # Kotus 13
 !kurpitsata # Kotus 13
 vaahteraa # Kotus 13

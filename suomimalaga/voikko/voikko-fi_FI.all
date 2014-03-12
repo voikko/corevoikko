@@ -823,7 +823,8 @@ allo_rule generate_allos ($tietue):
                                            osanto_iA:  ""],
                                           [sisätulento_ihin: O($tietue),
                                            sisätulento_iin:  ""],
-                                          O($tietue)));
+                                          O($tietue)) +
+                                [seuranto_ine: ""]);
     result $i.alku, $i - alku;
 
 

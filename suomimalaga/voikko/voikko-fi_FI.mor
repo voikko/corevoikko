@@ -678,7 +678,7 @@ combi_rule kaksoispiste ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = kaksoispiste;
 
   result $vasen + <[alku: $sana] + $oikea + [äs: $vasen.($index - 1).äs]>,
-         rules kaksoispisteen_sijapääte;
+         rules kaksoispisteen_sijapääte, omistusliite;
 end;
 
 

@@ -40,15 +40,15 @@ EtuliitteellinenKieltosana	;
 KieltosananEtuliite	;
 
 LEXICON KieltosananEtuliite
-[Xp]ehk[X]ehk:ehk	Kieltosana	;
-[Xp]ell[X]ell:ell	Kieltosana	;
-[Xp]ett[X]ett:ett	Kieltosana	;
-[Xp]joll[X]joll:joll	Kieltosana	;
-[Xp]jott[X]jott:jott	Kieltosana	;
-[Xp]miks[X]miks:miks	Kieltosana	;
-[Xp]vaikk[X]vaikk:vaikk	Kieltosana	;
-[Xp]kosk[X]kosk:kosk	Kieltosana	;
-[Xp]mutt[X]mutt:mutt	Kieltosana	;
+[Xp]ehk[X]ehk:ehk	EtuliitteellinenKieltosanaEiKoPaHan	;
+[Xp]ell[X]ell:ell	EtuliitteellinenKieltosanaEiKoPaHan	;
+[Xp]ett[X]ett:ett	EtuliitteellinenKieltosanaEiKoPaHan	;
+[Xp]joll[X]joll:joll	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]jott[X]jott:jott	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]miks[X]miks:miks	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]vaikk[X]vaikk:vaikk	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]kosk[X]kosk:kosk	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]mutt[X]mutt:mutt	EtuliitteellinenKieltosanaEiLoppu	;
 
 LEXICON EtuliitteellinenKieltosana
 [Lk][Xp]ei[X]e:e         Ei ;
@@ -61,6 +61,27 @@ LEXICON Ei
 [P2][Nm]tte:tte    KieltosananLiitesana_ä ;
 [P3][Nm]ivät:ivät  KieltosananLiitesana_ä ;
 
+LEXICON EtuliitteellinenKieltosanaEiLoppu
+[Lk][Xp]ei[X]e:e         EiLoppu ;
+
+LEXICON EtuliitteellinenKieltosanaEiKoPaHan
+[Lk][Xp]ei[X]e:e         EiKoPaHan ;
+
+LEXICON EiLoppu
+[P1][Ny]n:n        Loppu ;
+[P2][Ny]t:t        Loppu ;
+[P3][Ny]i:i        Loppu ;
+[P1][Nm]mme:mme    Loppu ;
+[P2][Nm]tte:tte    Loppu ;
+[P3][Nm]ivät:ivät  Loppu ;
+
+LEXICON EiKoPaHan
+[P1][Ny]n:n        LiitesanaKoPaHan_ä ;
+[P2][Ny]t:t        LiitesanaKoPaHan_ä ;
+[P3][Ny]i:i        LiitesanaKoPaHan_ä ;
+[P1][Nm]mme:mme    LiitesanaKoPaHan_ä ;
+[P2][Nm]tte:tte    LiitesanaKoPaHan_ä ;
+[P3][Nm]ivät:ivät  LiitesanaKoPaHan_ä ;
 
 Lexicon Älkää
 [P2][Ny]ä:ä           KieltosananLiitesana_ä ;
