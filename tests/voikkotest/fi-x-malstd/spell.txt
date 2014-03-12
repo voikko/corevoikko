@@ -140,6 +140,7 @@ Yhdysvallat-Sveitsi
 taiteilijalahjakkuus
 vanhempain-
 vanhempainyhteistyötoimikunta
+lukemisesteisiä
 
 # = vain yhdyssanan jälkiosana =
 []

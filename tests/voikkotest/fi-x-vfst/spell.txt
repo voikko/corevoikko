@@ -2785,3 +2785,7 @@ EU:ikseen
 !koskenpä
 ettenkö
 !muumme
+II-ultrakevyt
+sanokin
+mikseipä
+miks'en

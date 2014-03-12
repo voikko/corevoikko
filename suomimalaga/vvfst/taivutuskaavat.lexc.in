@@ -3764,7 +3764,7 @@ LEXICON Käskytapa
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
-[Tk][Ap][P2][Ny][Eb]:	LiitesanaPaHan_<A>	;
+[Tk][Ap][P2][Ny][Eb]:	LiitesanaKinPaHan_<A>	;
 [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
 
 LEXICON Käskytapa_ttA
@@ -4164,6 +4164,10 @@ LiitesanaPaHan_<A>	;
 [Fkaan]k<A><A>n:k<A><A>n	Loppu ;
 [Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
 
+LEXICON LiitesanaKinPaHan
+LiitesanaPaHan_<A>	;
+[Fkin]kin:kin	Loppu       ;
+
 LEXICON LiitesanaPaHan
 p<A>:p<A>	Loppu ;
 h<A>n:h<A>n	Loppu ;
@@ -4299,6 +4303,7 @@ LEXICON RoomalaisenNumeronJatko
 Loppu	;
 LyhenteenTaivutuspääte_<A>	;
 -[Bc]:-	Sanasto_n	;
+-[Bc]:-	Sanasto_p	;
 -:-	Loppu	;
 
 LEXICON LukusanaYksi

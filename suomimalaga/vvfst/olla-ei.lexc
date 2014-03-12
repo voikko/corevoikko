@@ -45,13 +45,14 @@ LEXICON KieltosananEtuliite
 [Xp]ett[X]ett:ett	EtuliitteellinenKieltosanaEiKoPaHan	;
 [Xp]joll[X]joll:joll	EtuliitteellinenKieltosanaEiLoppu	;
 [Xp]jott[X]jott:jott	EtuliitteellinenKieltosanaEiLoppu	;
-[Xp]miks[X]miks:miks	EtuliitteellinenKieltosanaEiLoppu	;
+[Xp]miks[X]miks:miks	EtuliitteellinenKieltosanaEiKoPaHan	;
 [Xp]vaikk[X]vaikk:vaikk	EtuliitteellinenKieltosanaEiLoppu	;
 [Xp]kosk[X]kosk:kosk	EtuliitteellinenKieltosanaEiLoppu	;
 [Xp]mutt[X]mutt:mutt	EtuliitteellinenKieltosanaEiLoppu	;
 
 LEXICON EtuliitteellinenKieltosana
 [Lk][Xp]ei[X]e:e         Ei ;
+'[Lk][Xp]ei[X]e:'e         Ei ;
 
 LEXICON Ei
 [P1][Ny]n:n        KieltosananLiitesana_ä ;
@@ -63,9 +64,11 @@ LEXICON Ei
 
 LEXICON EtuliitteellinenKieltosanaEiLoppu
 [Lk][Xp]ei[X]e:e         EiLoppu ;
+'[Lk][Xp]ei[X]e:'e         EiLoppu ;
 
 LEXICON EtuliitteellinenKieltosanaEiKoPaHan
 [Lk][Xp]ei[X]e:e         EiKoPaHan ;
+'[Lk][Xp]ei[X]e:'e         EiKoPaHan ;
 
 LEXICON EiLoppu
 [P1][Ny]n:n        Loppu ;
