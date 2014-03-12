@@ -633,6 +633,8 @@ IV:nä
 !yli-ii
 nelisensataa
 !vuosituhanten
+!ensimmäinen-
+-neljän
 
 # = johtimet =
 []

@@ -211,7 +211,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
                  etuliite, nimisana_teonsanasta, lukusanan_jälkiliite, inen_johdos_nimisanasta,
-                 lukusana_numero;
+                 lukusana;
 
   elseif $oikea.luokka in <nimisana, nimi_laatusana> then
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
@@ -1207,9 +1207,11 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       if liitesana in $oikea.jatko then
         result $res, rules liitesana;
       end;
-      result $res, rules lukusana_toista, lukusana_sisäkerroin,
-                   lukusanan_jälkiliite,
-                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+      if tavuviiva in $oikea.jatko then
+        result $res, rules lukusana_toista, lukusana_sisäkerroin,
+                     lukusanan_jälkiliite,
+                     nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+      end;
     end;
     if ($oikea.lukutyyppi = järjestysluku and omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
