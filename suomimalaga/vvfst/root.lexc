@@ -133,6 +133,9 @@ Multichar_Symbols
 ! Sana (nimi_laatusana) on tulkittava vain nimisanamerkityksessään
 @P.VAIN_NIMISANA.ON@ @D.VAIN_NIMISANA@ @C.VAIN_NIMISANA@
 
+! Sana on yksitekijäinen teonsana
+@P.YKSITEKIJÄINEN.ON@ @D.YKSITEKIJÄINEN@
+
 ! inen-johdin aina sallittu
 @P.INEN_SALLITTU.ON@ @R.INEN_SALLITTU@ @C.INEN_SALLITTU@
 

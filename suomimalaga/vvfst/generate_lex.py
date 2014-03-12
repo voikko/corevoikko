@@ -175,6 +175,8 @@ def get_diacritics(word, altforms, vfst_word_class):
 				diacritics.append(u"@P.EI_LAINEN.ON@")
 			elif flagName == u"ym3":
 				diacritics.append(u"@P.VAIN_YM3.ON@")
+			elif flagName == u"yt":
+				diacritics.append(u"@P.YKSITEKIJÄINEN.ON@")
 			elif flagName == u"geo_suffix":
 				diacritics.append(u"@C.PAIKANNIMEN_JL@")
 			if flagName in [u"ei_ys", u"ei_ysa"]:

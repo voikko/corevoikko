@@ -133,6 +133,49 @@ itänyt
 nuoriinmiehiinkö
 nuorillapareilla
 Yhdysvallat-Sveitsi
+taiteilijalahjakkuus
+vanhempain-
+vanhempainyhteistyötoimikunta
+lukemisesteisiä
+
+# = vain yhdyssanan jälkiosana =
+[]
+yltiökutrinen
+peruskulmio
+-kutrinen
+-kulmio
+suorakutrinen
+koirakulmio
+!kulmio
+!kutrinen
+
+# = teonsanat =
+[]
+osteta # ei osteta, tositavan_kestämä_tAAn_kielto
+kuljettamansa
+!kuljettamannsa
+ollako
+oleminen
+paleltaa
+!palellan
+!palellat
+paleltaa
+!palellamme
+!palellatte
+!paleltaisivat
+!palelletaan
+salamoida
+!tuiskuan
+!salamoit
+salamoi
+!salamoimme
+!salamoitte
+salamoivat
+!salamoidaan
+!salamoija
+sada
+luottavansa
+!leikkaanun
 
 # = erisnimet =
 []

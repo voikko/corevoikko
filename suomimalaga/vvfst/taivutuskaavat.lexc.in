@@ -3661,16 +3661,16 @@ ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
 
 LEXICON KestämänTekijäpääteHeikko
-@D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ap][P2][Ny]t:@D.VAIN_YM3@t	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ap][P1][Nm]mme:@D.VAIN_YM3@mme	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ap][P2][Nm]tte:@D.VAIN_YM3@tte	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@n	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Ny]t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Nm]mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@mme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm]tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tte	Liitesana_<A>	;
 
 LEXICON KertomanTekijäpääteHeikko
-@D.VAIN_YM3@[Tt][Ai][P1][Ny]in:@D.VAIN_YM3@in	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ai][P2][Ny]it:@D.VAIN_YM3@it	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ai][P1][Nm]imme:@D.VAIN_YM3@imme	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ai][P2][Nm]itte:@D.VAIN_YM3@itte	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Ny]in:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@in	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Ny]it:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@it	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Nm]imme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@imme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Nm]itte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@itte	Liitesana_<A>	;
 
 LEXICON KestämänTekijäpääteY3Liitesana
 Liitesana_<A>	;
@@ -3678,7 +3678,7 @@ LiitesanaPi_<A>	;
 
 LEXICON KertomanTekijäpääteVahva
 [Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
-[Tt][Ai][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+@D.YKSITEKIJÄINEN@[Tt][Ai][P3][Nm]iv<A>t:@D.YKSITEKIJÄINEN@iv<A>t	Liitesana_<A>	;
 
 LEXICON Tositapa4Tt
 TositavanKestämäTaan_<A>	;
@@ -3694,24 +3694,24 @@ LEXICON TositavanKestämäTaan
 t:t	TositavanKestämäXaan_<A>	;
 
 LEXICON TositavanKestämäXaan
-@D.VAIN_YM3@[Tt][Ap][P4]<A><A>n:@D.VAIN_YM3@<A><A>n	Liitesana_<A>	;
-@D.VAIN_YM3@[Tt][Ap][P4]<A>:@D.VAIN_YM3@<A>	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4]<A><A>n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A><A>n	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4]<A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A>	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
-@D.VAIN_YM3@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@ttiin	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@[Tt][Ai][P4]ttihin:@D.VAIN_YM3@ttihin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]ttihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttihin	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTiin
-@D.VAIN_YM3@[Tt][Ai][P4]tiin:@D.VAIN_YM3@tiin	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@[Tt][Ai][P4]tihin:@D.VAIN_YM3@tihin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]tiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]tihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tihin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
-@D.VAIN_YM3@[Te][Ap][P1][Ny]isin:@D.VAIN_YM3@isin	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P2][Ny]isit:@D.VAIN_YM3@isit	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Ny]isin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Ny]isit:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isit	Liitesana_<A>	;
 [Te][Ap][P3][Ny]isi:isi	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@isimme	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
-[Te][Ap][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isimme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isitte	Liitesana_<A>	;
+@D.YKSITEKIJÄINEN@[Te][Ap][P3][Nm]isiv<A>t:@D.YKSITEKIJÄINEN@isiv<A>t	Liitesana_<A>	;
 ?Sukija [Te][Ap][P3][Ny]is:is	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
@@ -3724,26 +3724,26 @@ Käskytapa_tA_<A>	;
 Johdin_tAvA_<A>	;
 
 LEXICON Ehtotapa_tA
-@D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@t<A>isi	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@t<A>isiin	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isihin:@D.VAIN_YM3@t<A>isihin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isihin	Liitesana_<A>	;
 
 LEXICON Mahtotapa
-@D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
-@D.VAIN_YM3@[Tm][Ap][P2][Ny]et:@D.VAIN_YM3@et	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@en	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P2][Ny]et:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@et	Liitesana_<A>	;
 [Tm][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
 [Tm][Ap][Et]e:e	Liitesana_<A>	;
-@D.VAIN_YM3@[Tm][Ap][P1][Nm]emme:@D.VAIN_YM3@emme	Liitesana_<A>	;
-@D.VAIN_YM3@[Tm][Ap][P2][Nm]ette:@D.VAIN_YM3@ette	Liitesana_<A>	;
-[Tm][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P1][Nm]emme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@emme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P2][Nm]ette:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ette	Liitesana_<A>	;
+@D.YKSITEKIJÄINEN@[Tm][Ap][P3][Nm]ev<A>t:@D.YKSITEKIJÄINEN@ev<A>t	Liitesana_<A>	;
 
 LEXICON Mahtotapa_ttA
 t:t	Mahtotapa_tA_<A>	;
 
 LEXICON Mahtotapa_tA
-@D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>ne:@D.VAIN_YM3@t<A>ne	Liitesana_<A>	;
-@D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>neen:@D.VAIN_YM3@t<A>neen	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@[Tm][Ap][P4][Ny]t<A>nehen:@D.VAIN_YM3@t<A>nehen	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny]t<A>ne:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>ne	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny]t<A>neen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>neen	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny]t<A>nehen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>nehen	Liitesana_<A>	;
 
 LEXICON Käskytapa_0
 Käskytapa_<A>	;
@@ -3754,11 +3754,11 @@ Käskytapa_<A>	;
 e:e	Käskytapa_y2_<A>	;
 
 LEXICON Käskytapa
-@D.VAIN_YM3@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@k<A><A>mme	LiitesanaPaHan_<A>	;
-@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@k<A><A>	LiitesanaPaHan_<A>	;
-@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>mme	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tte	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
-[Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	LiitesanaPaHan_<A>	;
+@D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	LiitesanaPaHan_<A>	;
 [Tk][Ap][Et]k<O>:k<O>	Loppu	;
 ?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
@@ -3993,20 +3993,20 @@ Johdin_ja_kantaja_myyjä_<A>	;
 Johdin_ja_kulkija_<A>	;
 
 LEXICON Johdin_ja_kulkija
-[Sg][Nm]j<O>id@C.JOHDETTAVA_NIMISANAKSI@:j<O>id@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]j<O>itt@C.JOHDETTAVA_NIMISANAKSI@:j<O>itt@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
-[Sp][Nm]j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Str][Nm]j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@:j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
-[Ses][Nm]j<O>in<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>in<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sill][Nm]j<O>ihi@C.JOHDETTAVA_NIMISANAKSI@:j<O>ihi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
-[Sade][Nm]j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sabl][Nm]j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sab][Nm]j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sin][Nm]j<O>in@C.JOHDETTAVA_NIMISANAKSI@:j<O>in@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sg][Nm]j<O>id@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>id@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
+@D.VAIN_YM3@[Sg][Nm]j<O>itt@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>itt@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
+@D.VAIN_YM3@[Sp][Nm]j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Str][Nm]j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
+@D.VAIN_YM3@[Ses][Nm]j<O>in<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>in<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sill][Nm]j<O>ihi@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ihi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
+@D.VAIN_YM3@[Sade][Nm]j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sabl][Nm]j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sab][Nm]j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@[Sin][Nm]j<O>in@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>in@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@[Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 j<O>:j<O>	Johdin_ittAin_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
 ?Sukija [Sp][Ny]j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
@@ -4016,41 +4016,41 @@ Johdin_ja_kantaja_myyjä_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
 
 LEXICON Johdin_ja_kulkija_myyjä
-[Sn][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatkoOl_<A>	;
-[Sn][Nm]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sg][Ny]j<A>n@C.JOHDETTAVA_NIMISANAKSI@:j<A>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYksikönGenetiivinJatko_<A>	;
-[Sg][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]j<A><A>@C.JOHDETTAVA_NIMISANAKSI@:j<A><A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sp][Ny]j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Str][Ny]j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@:j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
-[Ses][Ny]j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Ny]j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sela][Ny]j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sill][Ny]j<A><A>@C.JOHDETTAVA_NIMISANAKSI@:j<A><A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
-[Sade][Ny]j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
+@D.VAIN_YM3@[Sn][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatkoOl_<A>	;
+@D.VAIN_YM3@[Sn][Nm]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@[Sg][Ny]j<A>n@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYksikönGenetiivinJatko_<A>	;
+@D.VAIN_YM3@[Sg][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviInJatko_<A>	;
+@D.VAIN_YM3@[Sp][Ny]j<A><A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A><A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sp][Ny]j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Str][Ny]j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
+@D.VAIN_YM3@[Ses][Ny]j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sine][Ny]j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sela][Ny]j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sill][Ny]j<A><A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A><A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
+@D.VAIN_YM3@[Sade][Ny]j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@[Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 j:j	Johdin_UUs_<A>	;
 j<A>:j<A>	Johdin_mAinen_<A>	;
 j<A>:j<A>	Johdin_tOn_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
-[Sg][Nm]ji@C.JOHDETTAVA_NIMISANAKSI@:ji@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
-[Sp][Nm]ji<A>@C.JOHDETTAVA_NIMISANAKSI@:ji<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Str][Nm]jiksi@C.JOHDETTAVA_NIMISANAKSI@:jiksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
-[Ses][Nm]jin<A>@C.JOHDETTAVA_NIMISANAKSI@:jin<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sela][Nm]jist<A>@C.JOHDETTAVA_NIMISANAKSI@:jist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sill][Nm]jii@C.JOHDETTAVA_NIMISANAKSI@:jii@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
-[Sade][Nm]jill<A>@C.JOHDETTAVA_NIMISANAKSI@:jill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sabl][Nm]jilt<A>@C.JOHDETTAVA_NIMISANAKSI@:jilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sall][Nm]jille@C.JOHDETTAVA_NIMISANAKSI@:jille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-j@C.JOHDETTAVA_NIMISANAKSI@:j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
-[Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sg][Nm]ji@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@ji@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
+@D.VAIN_YM3@[Sp][Nm]ji<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@ji<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Str][Nm]jiksi@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jiksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
+@D.VAIN_YM3@[Ses][Nm]jin<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jin<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sela][Nm]jist<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sill][Nm]jii@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jii@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
+@D.VAIN_YM3@[Sade][Nm]jill<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sabl][Nm]jilt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sall][Nm]jille@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+@D.VAIN_YM3@[Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
+@D.VAIN_YM3@[Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+@D.VAIN_YM3@[Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 
 LEXICON Johdin_nti
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
