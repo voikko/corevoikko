@@ -2839,3 +2839,8 @@ Kovalanrannantie
 -nopeuksinen
 vaikkeikaan
 ylkänsä
+virranjakajaton
+virranjakajamainen
+pitkäaskelinen
+XXXVIII-ottelun
+virtten

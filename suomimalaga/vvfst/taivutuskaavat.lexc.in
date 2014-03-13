@@ -1306,6 +1306,7 @@ ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
 ?Nimisana	e:e	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
@@ -1464,6 +1465,7 @@ LEXICON NOUN Kansi_t
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sg][Nm]si:si	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;,
@@ -4041,8 +4043,8 @@ LEXICON Johdin_ja_kulkija_myyjä
 @D.VAIN_YM3@[Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 @D.VAIN_YM3@[Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 j:j	Johdin_UUs_<A>	;
-j<A>:j<A>	Johdin_mAinen_<A>	;
-j<A>:j<A>	Johdin_tOn_<A>	;
+j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	Johdin_mAinen_<A>	;
+j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tOn_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
 @D.VAIN_YM3@[Sg][Nm]ji@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@ji@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
@@ -4312,6 +4314,7 @@ Loppu	;
 LyhenteenTaivutuspääte_<A>	;
 -[Bc]:-	Sanasto_n	;
 -[Bc]:-	Sanasto_p	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -:-	Loppu	;
 
 LEXICON LukusanaYksi
