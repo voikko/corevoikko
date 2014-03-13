@@ -270,6 +270,8 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 	bool hyphenUnconditionallyAllowed = false;
 	bool hyphenRequired = false;
 	bool requiredHyphenMissing = false;
+	bool startsWithProperNoun = false;
+	bool endsWithNonIcaNoun = false;
 	for (size_t i = 0; i < len; i++) {
 		if (fstOutput[i] == L'[') {
 			if (i + 2 >= len) {
@@ -287,6 +289,17 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 			}
 			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Ica", 3) == 0) {
 				requiredHyphenMissing = false;
+				endsWithNonIcaNoun = false;
+			}
+			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Le", 2) == 0) {
+				startsWithProperNoun = true; // TODO starts?
+				endsWithNonIcaNoun = false;
+			}
+			else if (i + 2 < len && wcsncmp(fstOutput + i + 1, L"Ln", 2) == 0) {
+				endsWithNonIcaNoun = true;
+			}
+			else if (i + 2 < len && wcsncmp(fstOutput + i + 1, L"Dg", 2) == 0) {
+				startsWithProperNoun = false;
 			}
 			if (fstOutput[i + 1] == L'X') {
 				while (i + 3 < len) {
@@ -312,10 +325,14 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				while (++i < len && fstOutput[i] != L']') { }
 			}
 		}
-		else if (fstOutput[i] == L'-' && i + 5 < len && wcsncmp(fstOutput + i + 1, L"[Bh]", 4) == 0) {
-			boundaryPassed = true;
-			hyphenPresent = true;
-			i += 4;
+		else if (fstOutput[i] == L'-') {
+			startsWithProperNoun = false;
+			endsWithNonIcaNoun = false;
+			if (i + 5 < len && wcsncmp(fstOutput + i + 1, L"[Bh]", 4) == 0) {
+				boundaryPassed = true;
+				hyphenPresent = true;
+				i += 4;
+			}
 		}
 		else {
 			if (boundaryPassed) {
@@ -342,7 +359,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 			lastChar = fstOutput[i];
 		}
 	}
-	return !requiredHyphenMissing;
+	return !requiredHyphenMissing && (!startsWithProperNoun || !endsWithNonIcaNoun);
 }
 
 static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, const wchar_t * outputBuffer) {

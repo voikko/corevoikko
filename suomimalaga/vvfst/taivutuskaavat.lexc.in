@@ -2278,17 +2278,17 @@ LEXICON NOUN YksikönGenetiivinJatko
 ?Paikannimi	-@P.INEN_VAADITTU.ON@[Bc]:-@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
 ?Paikannimi	@P.INEN_VAADITTU.ON@[Dg][Bc]:@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
 ?Paikannimi	@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc][Dg]:@P.LAINEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
-?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Sukunimi	@P.PAIKANNIMEN_JL.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Nimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
-?Sukunimi	in@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:in@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Sukunimi	in@P.PAIKANNIMEN_JL.ON@[Bc]:in@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?Sukija?NotLaatusana i[O3]ns_<A>:ins<A>		Liitesana_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 en:en	<WC>NormaaliYsJatko_<A>	;
-?Sukunimi	en@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:en@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Sukunimi	en@P.PAIKANNIMEN_JL.ON@[Bc]:en@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
 ?NotLaatusana	e:e	Omistusliite_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
