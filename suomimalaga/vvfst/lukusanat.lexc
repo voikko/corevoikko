@@ -242,11 +242,11 @@ LEXICON YhdysmerkkiJaLukusananJälkiliite
 
 LEXICON LukusananJälkiliite
 LukusananJälkiliiteEiYhdysmerkkiä	;
+@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 [Bc]-:-	Loppu;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
 [Bc][Bh]@P.YS_JATKETTAVA.ON@:@P.YS_JATKETTAVA.ON@	Sanasto_n	;
-@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 [Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;

@@ -2834,3 +2834,6 @@ mikseipä
 miks'en
 Kovalanrannantie
 !Kovalanrannantiekissa
+!haineko
+!--ilmeisesti
+-nopeuksinen
