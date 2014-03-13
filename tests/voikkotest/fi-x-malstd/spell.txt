@@ -818,6 +818,7 @@ tappiota # Kotus 3
 !autioa # Kotus 3
 glamouriton # Kotus 5
 !glamoureton # Kotus 5
+!poppkissa # Kotus 5
 !nailonnen # Kotus 6
 nailoninen # Kotus 6
 !nailoniinen # Kotus 6

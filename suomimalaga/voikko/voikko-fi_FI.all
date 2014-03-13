@@ -4424,8 +4424,7 @@ subrule poppi ($tietue, $vahva_aste, $heikko_aste):
                                   [sisätulento_ihin: $vahva_aste  + "e"],
                                   $heikko_aste + "i"))
          + <taivutus ($tietue, "", <liitesana, loppu>, [])>
-         + yhdyssanan_taivutuskaava ($tietue, "")
-         + yhdyssanan_taivutuskaava ($tietue, $vahva_aste);
+         + yhdyssanan_taivutuskaava ($tietue, "");
 end;
 
 
