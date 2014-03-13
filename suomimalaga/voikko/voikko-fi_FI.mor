@@ -1775,9 +1775,6 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if nimisana in $oikea.jatko then
-    result $res, rules nimisana;
-  end;
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
     result $res, rules nimisanan_sijapääte;
@@ -1789,7 +1786,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
 
   if tavuviiva in $oikea.jatko then
     if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
-        + @johdin_jA) or $oikea.jluokka = nimisana then
+        + @johdin_jA) or $oikea.jluokka in <nimisana, nimi_laatusana> then
       result $res, rules nimisana, nimisana_teonsanasta, inen_päätteinen_laatusana,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          nimisanan_etuliite, yhdysmerkki_yleisnimen_jälkeen;

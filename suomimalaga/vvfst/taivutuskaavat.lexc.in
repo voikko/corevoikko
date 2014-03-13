@@ -2341,7 +2341,7 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 
 LEXICON NOUN YhteisetMonikonSijat2
 [Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Sko][Nm]ine:ine	OlVLoppu_<A>	;
+[Sko][Nm]ine:ine	<WC>OlVLoppu_<A>	;
 
 LEXICON NOUN LiOlN
 n:n	Liitesana_<A>	;
@@ -2358,8 +2358,8 @@ Liitesana_<A>	;
 ?NotLaatusana	OlV_<A>	;
 ?Laatusana	LaatusananErisnimijatko	;
 
-LEXICON OlVLoppu
-OlV_<A>	;
+LEXICON NOUN OlVLoppu
+?NotLaatusana	OlV_<A>	;
 Loppu	;
 
 LEXICON OlV
@@ -4016,7 +4016,7 @@ LEXICON Johdin_ja_kulkija
 @D.VAIN_YM3@[Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 @D.VAIN_YM3@[Sab][Nm]j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 @D.VAIN_YM3@[Sin][Nm]j<O>in@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>in@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-@D.VAIN_YM3@[Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	OlVLoppu_<A>	;
+@D.VAIN_YM3@[Sko][Nm]j<O>ine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<O>ine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaOlVLoppu_<A>	;
 j<O>:j<O>	Johdin_ittAin_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
 ?Sukija [Sp][Ny]j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>t<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
@@ -4060,7 +4060,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 @D.VAIN_YM3@[Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 @D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
 @D.VAIN_YM3@[Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-@D.VAIN_YM3@[Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jine@C.JOHDETTAVA_NIMISANAKSI@	OlVLoppu_<A>	;
+@D.VAIN_YM3@[Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaOlVLoppu_<A>	;
 
 LEXICON Johdin_nti
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
@@ -4094,7 +4094,7 @@ LEXICON Voittoaste
 [Sab][Ny][Cc]mm<A>tt<A>@D.EI_VERTM@:mm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
-[Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	OlVLoppu_<A>	;
+[Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaOlVLoppu_<A>	;
 mm<A>:mm<A>	Kerronto_sti_<A>	;
 mm:mm	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
@@ -4130,7 +4130,7 @@ LEXICON Yliaste
 [Sab][Ny][Cs]imm<A>tt<A>@D.EI_VERTM@:imm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
-[Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	OlVLoppu_<A>	;
+[Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	NimisanaOlVLoppu_<A>	;
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
 imm<A>:imm<A>	Kerronto_sti_<A>	;
 ?Sukija [Sg][Nm][Cs]imp<A>in@D.EI_VERTM@:imp<A>in@D.EI_VERTM@	Liitesana_<A>	;

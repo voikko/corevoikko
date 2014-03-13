@@ -955,8 +955,8 @@ define @jatko_v :=
 [alku: "vyy", luokka: johdin_vE, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
 
 
-[alku: "vai", luokka: johdin_vA, äs: a, jatko: <nainen>, perusmuoto: "vainen"];
-[alku: "väi", luokka: johdin_vA, äs: ä, jatko: <nainen>, perusmuoto: "väinen"];
+[alku: "vai", luokka: johdin_vA, jluokka: nimi_laatusana, äs: a, jatko: <nainen>, perusmuoto: "vainen"];
+[alku: "väi", luokka: johdin_vA, jluokka: nimi_laatusana, äs: ä, jatko: <nainen>, perusmuoto: "väinen"];
 
 [alku: "ttava", luokka: johdin_ttAvA, äs: a, jatko: @jatko_vA, perusmuoto: "ttava"];
 [alku: "ttävä", luokka: johdin_ttAvA, äs: ä, jatko: @jatko_vA, perusmuoto: "ttävä"];

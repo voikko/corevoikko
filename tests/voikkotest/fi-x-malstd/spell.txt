@@ -141,6 +141,7 @@ taiteilijalahjakkuus
 vanhempain-
 vanhempainyhteistyötoimikunta
 lukemisesteisiä
+virvoitusjuomateollisuusliiton
 
 # = vain yhdyssanan jälkiosana =
 []
@@ -345,6 +346,7 @@ demokraattis-republikaaninen
 !eliminointinen
 kiinalaislahjakkuus
 !valintainen
+tarkkaavaisesti
 
 # = voitto- ja yliasteet =
 []
