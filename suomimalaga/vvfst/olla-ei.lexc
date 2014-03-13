@@ -64,6 +64,7 @@ LEXICON Ei
 
 LEXICON EtuliitteellinenKieltosanaEiLoppu
 [Lk][Xp]ei[X]e:e         EiLoppu ;
+[Lk][Xp]ei[X]ei[Fkaan]kaan:eikaan         Loppu ;
 '[Lk][Xp]ei[X]e:'e         EiLoppu ;
 
 LEXICON EtuliitteellinenKieltosanaEiKoPaHan

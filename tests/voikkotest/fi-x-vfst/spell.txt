@@ -2837,3 +2837,5 @@ Kovalanrannantie
 !haineko
 !--ilmeisesti
 -nopeuksinen
+vaikkeikaan
+ylkänsä

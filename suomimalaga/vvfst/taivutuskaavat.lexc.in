@@ -759,6 +759,10 @@ LEXICON NOUN Poika
 ik:ik	<WC>Koira_s_<A>	;
 j:j	<WC>Koira_w_<A>	;
 
+LEXICON NOUN Ylkä
+k:k	<WC>Koira_s_<A>	;
+j:j	<WC>Koira_w_<A>	;
+
 LEXICON NOUN Hoikka
 k:k	<WC>Koira_s_<A>	;
 <WC>Koira_w_<A>	;
