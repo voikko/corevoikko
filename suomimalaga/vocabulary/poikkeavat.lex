@@ -48,7 +48,7 @@
  [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
  [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
+ [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
 [perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "hurraa", alku: "hurraa", luokka: nimisana, jatko: <liitesana, osanto_tA, loppu>, äs: a];
  [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];

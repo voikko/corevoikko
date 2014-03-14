@@ -488,6 +488,7 @@ k:k	<WC>Lovi_s_<A>	;
 g:g	<WC>Lovi_w_<A>	;
 
 LEXICON NOUN Lampi
+[Sn][Nm]mit:mit	Liitesana_<A>	;
 [Sg][Ny]min:min	<WC>YksikönGenetiivinJatko_<A>	;
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;
@@ -3591,12 +3592,18 @@ Katketa_s_<A>	;
 
 LEXICON Kihistä
 @C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	Kihajaa_<A>	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@autt:@R.V_SALLITTU.T@@C.V_SALLITTU@autt	MuistaaMuistella_s_a  ;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äytt:@R.V_SALLITTU.E@@C.V_SALLITTU@äytt	MuistaaMuistella_s_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
+
+LEXICON Kihajaa
+<A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;
+[Tt][P3][Ny]<A>j<A><A>:<A>j<A><A>	Liitesana_<A>	;
+[Tt][P3][Nm]<A>j<A>v<A>t:<A>j<A>v<A>t	Liitesana_<A>	;
 
 LEXICON Kitistä
 ist:ist	Johdin_nimitapa1A_<A>	;

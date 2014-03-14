@@ -20,6 +20,7 @@ Summayhdyssanat	;
 [Ln][Xp]enkeli[X]enkel[Sg][Nm]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
 [Ln][Xp]haaksi[X]haa:haa	NimisanaKaksi_a	;
 [Ln][Xp]harteet[X]harte:harte	Harteet	;
+[Ln][Xp]hepene[X]hepen:hepen	NimisanaAskel_ä	;
 [Ln][Xp]hienosokeri[X][Sn][Ny]hieno[Bm]sokeri:hienosokeri	NimisanaNormaaliYsJatko_a ;
 [Ln][Xp]hienosokeri[X][Sn][Ny]hienon[Bm]sokeri:hienonsokeri       Omistusliite_a ;
 [Ln][Xp]hienosokeri[X][Sg][Ny]hienon[Bm]sokerin:hienonsokerin	NimisanaYksikönGenetiivinJatko_a ;
@@ -783,8 +784,10 @@ Summayhdyssanat	;
 [Ln][Xp]omatunto[X][Sab][Nm]omitta[Bm]tunnoitta:omittatunnoitta	NimisanaLiOlV_a ;
 [Ln][Xp]omatunto[X][Sko][Nm]omine[Bm]tuntoine:ominetuntoine	NimisanaLiOlV_a ;
 [Ln][Xp]omatunto[X][Sin][Nm]omin[Bm]tunnoin:omintunnoin	Liitesana_a;
-[Ln][Xp]ori[X][Sp][Nm]oriita@D.YS_ALKANUT@:oriita@D.YS_ALKANUT@	NimisanaLiOlV_a	;SisäpaikallissijatSsaSta
+[Ln][Xp]ori[X][Sg][Nm]oriid@D.YS_ALKANUT@:oriid@D.YS_ALKANUT@	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]ori[X][Sp][Nm]oriita@D.YS_ALKANUT@:oriita@D.YS_ALKANUT@	NimisanaLiOlV_a	;
 [Ln][Xp]ori[X]orii@D.YS_ALKANUT@:orii@D.YS_ALKANUT@	SisäpaikallissijatSsaSta_a	;
+[Ln][Xp]ori[X]orii@D.YS_ALKANUT@:orii@D.YS_ALKANUT@	Ulkopaikallissijat_Yks_a	;
 [Ln][Xp]palavakivi[X][Sn][Ny]palava[Bm]kivi:palavakivi	NimisanaNormaaliYsJatko_ä	;
 [Ln][Xp]palavakivi[X][Sg][Ny]palavan[Bm]kive:palavankive	Omistusliite_ä	;
 [Ln][Xp]palavakivi[X][Sg][Ny]palavan[Bm]kiven:palavankiven	NimisanaYksikönGenetiivinJatko_ä	;
@@ -1821,6 +1824,7 @@ LEXICON Poikkeavat_es
 LEXICON Poikkeavat_t
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;
 [Lt][Xp]kuulla[X]kuulte[Tn2]:kuulte	Omistusliite_a	;
+[Lt][Xp]kutiaa[X]kutia:kutia Kutiaa ;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]nähdä[X]nähte[Tn2]:nähte	Omistusliite_ä	;
 [Lt][Xp]olla[X]o:o       Olla ;
@@ -2100,6 +2104,14 @@ LEXICON Potea
 d:d	Tuntea_w_a	;
 t:t	Tuntea_s_a	;
 t:t	KertomanTekijäpääteVahva_a	;
+
+LEXICON Kutiaa
+KestämänTekijäpääteHeikko_a	;
+[Tt][Ap][P3][Ny]a:a	KestämänTekijäpääteY3Liitesana_a	;
+Johdin_nimitapa3_a	;
+Johdin_nimitapa45_a	;
+Ehtotapa_a	;
+Johdin_mA_a	;
 
 LEXICON Viive
 ve:ve	NimisanaHame_w_ä	;
