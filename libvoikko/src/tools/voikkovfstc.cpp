@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2012
+ * Portions created by the Initial Developer are Copyright (C) 2012 - 2014
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -222,6 +222,10 @@ int main(int argc, char ** argv) {
 			ss >> targetStateOrd;
 			ss >> symInStr;
 			ss >> symOutStr;
+			if (attStateVector.size() < sourceStateOrd) {
+				cerr << "ERROR: invalid source state" << endl;
+				exit(1);
+			}
 			if (attStateVector.size() == sourceStateOrd) {
 				attStateVector.push_back(AttState());
 			}
