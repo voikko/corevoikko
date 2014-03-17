@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2013 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2014 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1505,7 +1505,6 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "gimppi", alku: "gimp", luokka: nimi, jatko: <keppi>, äs: ä];
 [perusmuoto: "veteläinen", alku: "veteläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "euforisoida", alku: "euforiso", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "parodisoida", alku: "parodiso", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "klassisoida", alku: "klassiso", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "energisoida", alku: "energiso", luokka: teonsana, jatko: <voida>, äs: a];

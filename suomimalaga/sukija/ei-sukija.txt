@@ -83,6 +83,7 @@ calmetterokotus
 edellisvuotinen
 Eesti
 eetillinen
+ehtoollinen
 eksymä
 ekvivalenttiannos
 elinajanodote
@@ -209,6 +210,7 @@ hyvänsuopuus
 hyväntahdonlähettiläs
 hyväntekijä
 Hyväntoivonniemi
+Hyyryläinen
 hyytymä
 häipymä
 Härmä
@@ -216,6 +218,7 @@ hölmöläinen
 höpötys
 höyhensarjalainen
 ihmisläheinen
+illallinen
 Ilma
 Ilmajoki
 ilmentymä
@@ -661,6 +664,7 @@ miljardiluokka
 miljarditappio
 miljoonabisnes
 miljoonaluokka
+miljoonaperijä
 miljoonaperintö
 miljoonatappio
 Minttu
@@ -809,6 +813,7 @@ pullistuma
 punavihoittuma
 Puola
 puolipäivä
+puolittua
 puoluelainen
 purema
 puristuma
@@ -1150,6 +1155,7 @@ Vasemmistoliitto
 vastaanotto
 vastaavanlainen
 Vehmas
+velallinen
 velvoitus
 Vento
 venymä
