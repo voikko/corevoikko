@@ -914,36 +914,36 @@
 
 # {{{2 isoveli (51, 50)
 
-[perusmuoto: "isoveli", alku: "isoveli",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppp"];
-[perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoavelje",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoveli", alku: "isonavelje",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoksivelje", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isossaveljessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoveli", alku: "isostaveljestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoveli", alku: "isoonvelje",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isollaveljellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoveli", alku: "isoltaveljeltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoveli", alku: "isolleveljelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoveli", alku: "isottavelje", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoveli",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoavelje",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isonavelje",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoksivelje", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isossaveljessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoveli", alku: "isostaveljestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoveli", alku: "isoonvelje",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isollaveljellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoveli", alku: "isoltaveljeltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoveli", alku: "isolleveljelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoveli", alku: "isottavelje", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoveli", alku: "isojenveli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isojenvelj",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isojavelj",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoinavelj",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoiksiveljiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoissaveljissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoistaveljistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoihinvelj", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoillaveljillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoiltaveljiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoilleveljille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoittaveljittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "isoveli", alku: "isoinevelj",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoveli", alku: "isoinveljin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isojenveli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isojenvelj",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isojavelj",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoinavelj",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoiksiveljiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoissaveljissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoistaveljistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoihinvelj", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoillaveljillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoiltaveljiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoilleveljille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoittaveljittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "isoveli", alku: "isoinevelj",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoveli", alku: "isoinveljin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppp"];
 
 # {{{2 isoviha (51, 50)
 
