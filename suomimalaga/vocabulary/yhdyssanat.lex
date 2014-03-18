@@ -881,36 +881,36 @@
 
 # {{{2 isovarvas (51, 50)
 
-[perusmuoto: "isovarvas", alku: "isovarvas",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoavarvas",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isonavarpaa",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoksivarpaa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isossavarpaassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "isovarvas", alku: "isostavarpaasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "isovarvas", alku: "isoonvarpaa",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_seen>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isollavarpaalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "isovarvas", alku: "isoltavarpaalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "isovarvas", alku: "isollevarpaalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "isovarvas", alku: "isottavarpaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isovarvas",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoavarvas",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isonavarpaa",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoksivarpaa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isossavarpaassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isostavarpaasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isoonvarpaa",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_seen>, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isollavarpaalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isoltavarpaalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isollevarpaalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isottavarpaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppppp"];
 
-[perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isojenvarpa",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isojavarpa",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoinavarpa",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoiksivarpaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoissavarpaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoistavarpaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoihinvarpa", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoihinvarpa", luokka: nimisana, luku: monikko, jatko: <sisätulento_isiin>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoillavarpailla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoiltavarpailta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoillevarpaille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoittavarpaitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppppp"];
-[perusmuoto: "isovarvas", alku: "isoinevarpa",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "isovarvas", alku: "isoinvarpain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppppp"];
+ [perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isojenvarpa",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isojavarpa",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoinavarpa",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoiksivarpaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoissavarpaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoistavarpaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoihinvarpa", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoihinvarpa", luokka: nimisana, luku: monikko, jatko: <sisätulento_isiin>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoillavarpailla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoiltavarpailta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoillevarpaille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoittavarpaitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppppp"];
+ [perusmuoto: "isovarvas", alku: "isoinevarpa",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "isovarvas", alku: "isoinvarpain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppppp"];
 
 # {{{2 isoveli (51, 50)
 
