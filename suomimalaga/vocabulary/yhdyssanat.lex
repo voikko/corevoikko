@@ -947,35 +947,35 @@
 
 # {{{2 isoviha (51, 50)
 
-[perusmuoto: "isoviha", alku: "isoviha",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
-[perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoaviha",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoviha", alku: "isonaviha",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoksiviha",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isossavihassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoviha", alku: "isostavihasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoviha", alku: "isoonviha",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isollavihalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoviha", alku: "isoltavihalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoviha", alku: "isollevihalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "isoviha", alku: "isottaviha",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoviha",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoaviha",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isonaviha",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoksiviha",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isossavihassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoviha", alku: "isostavihasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoviha", alku: "isoonviha",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isollavihalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoviha", alku: "isoltavihalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoviha", alku: "isollevihalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "isoviha", alku: "isottaviha",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "isoviha", alku: "isojenviho",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isojaviho",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoinaviho",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoiksivihoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoissavihoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoistavihoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoihinviho", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoillavihoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoiltavihoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoillevihoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoittavihoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "isoviha", alku: "isoineviho",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "isoviha", alku: "isoinvihoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isojenviho",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isojaviho",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoinaviho",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoiksivihoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoissavihoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoistavihoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoihinviho", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoillavihoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoiltavihoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoillevihoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoittavihoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "isoviha", alku: "isoineviho",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "isoviha", alku: "isoinvihoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=ppppp=pppppp"];
 
 # {{{2 kevytsarja (51)
 
@@ -2440,36 +2440,36 @@
 
 # {{{2 suorakulma (50, 51)
 
-[perusmuoto: "suorakulma", alku: "suorakulma",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoraakulma",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoranakulma",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoraksikulma", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorassakulmassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "suorakulma", alku: "suorastakulmasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "suorakulma", alku: "suoraankulma",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorallakulmalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "suorakulma", alku: "suoraltakulmalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "suorakulma", alku: "suorallekulmalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "suorakulma", alku: "suorattakulma", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorakulma",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoraakulma",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoranakulma",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoraksikulma", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorassakulmassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "suorakulma", alku: "suorastakulmasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "suorakulma", alku: "suoraankulma",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorallakulmalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "suorakulma", alku: "suoraltakulmalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "suorakulma", alku: "suorallekulmalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "suorakulma", alku: "suorattakulma", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorienkulm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorienkulma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoriakulm",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorinakulm",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoriksikulmiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorissakulmissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoristakulmista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoriinkulm",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorillakulmilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suoriltakulmilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorillekulmille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorittakulmitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "suorakulma", alku: "suorinekulm",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "suorakulma", alku: "suorinkulmin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorienkulm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorienkulma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoriakulm",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorinakulm",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoriksikulmiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorissakulmissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoristakulmista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoriinkulm",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorillakulmilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suoriltakulmilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorillekulmille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorittakulmitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "suorakulma", alku: "suorinekulm",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "suorakulma", alku: "suorinkulmin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 syvämeri (51)
 
