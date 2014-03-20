@@ -1977,35 +1977,35 @@
 
 # {{{2 pitkäperjantai (50, 51)
 
-[perusmuoto: "pitkäperjantai", alku: "pitkäperjantai",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkääperjantai",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkänäperjantai",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkäksiperjantai", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkässäperjantaissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkästäperjantaista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkäänperjantai",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkälläperjantailla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkältäperjantailta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkälleperjantaille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkättäperjantai", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkäperjantai",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkääperjantai",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkänäperjantai",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkäksiperjantai", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkässäperjantaissa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkästäperjantaista", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkäänperjantai",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkälläperjantailla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkältäperjantailta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkälleperjantaille", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkättäperjantai", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppppp"];
 
-[perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkienperjanta",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkiäperjanta",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkinäperjanta",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkiksiperjantaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkissäperjantaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkistäperjantaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkiinperjanta",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkilläperjantailla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkiltäperjantailta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkilleperjantaille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkittäperjantaitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkineperjanta",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppppppp"];
-[perusmuoto: "pitkäperjantai", alku: "pitkinperjantain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkienperjanta",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkiäperjanta",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkinäperjanta",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkiksiperjantaiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkissäperjantaissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkistäperjantaista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkiinperjanta",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkilläperjantailla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkiltäperjantailta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkilleperjantaille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkittäperjantaitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkineperjanta",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppppppp"];
+ [perusmuoto: "pitkäperjantai", alku: "pitkinperjantain", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppppppp"];
 
 # {{{2 pitkäsiima (51)
 
