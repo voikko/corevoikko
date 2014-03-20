@@ -14,6 +14,7 @@ Aarni
 aarnialue
 Aarnio
 Aatami
+Aatos
 agroekologi
 agroekologia
 Aho
@@ -218,6 +219,7 @@ hölmöläinen
 höpötys
 höyhensarjalainen
 ihmisläheinen
+Iiris
 illallinen
 Ilma
 Ilmajoki
@@ -1006,6 +1008,7 @@ tarkennus
 tarkentaa
 Tarkka
 Tarmo
+Taru
 tasavalta
 tasavaltalainen
 tataarilainen
@@ -1067,6 +1070,7 @@ Turkki
 turpoama
 turvamerkitä
 Tuuli
+Tytti
 tyynenmerensilli
 tyynenmerenlohi
 tyynenmerenmonarkki

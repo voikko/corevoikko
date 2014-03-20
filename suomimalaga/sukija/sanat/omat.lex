@@ -559,7 +559,6 @@
 [perusmuoto: "pueblo", alku: "pueblo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "kaivuu", alku: "kaivu", luokka: nimisana, jatko: <puu>, äs: a];
 
-[perusmuoto: "Isabella", alku: "Isabell", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Callisto", alku: "Callisto", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Huttula", alku: "Huttul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "sadankomitea", alku: "sadankomite", luokka: nimisana, jatko: <karahka>, äs: a];
