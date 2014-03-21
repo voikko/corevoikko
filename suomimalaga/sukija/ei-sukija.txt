@@ -733,8 +733,10 @@ onnistua
 opettajainen
 opetus
 opistolainen
+Orpana
 Orvokki
 otella
+Otso
 otto
 Otto
 pahalainen
@@ -823,6 +825,7 @@ putoama
 puuvillajersey
 Pyhäjoki
 Pyhäjärvi
+Pyry
 pystytys
 pysyttäytyä
 pysähdys
@@ -1088,6 +1091,7 @@ täyttö
 törähtää
 uhkarohkea
 uitto
+Ukko
 Ukraina
 uloskäytävä
 uloslasku
@@ -1103,6 +1107,7 @@ uppoama
 Urho
 URL-osoite
 Utra
+Uuno
 uurteisvalas
 Uusikylä
 uusiseelantilainen
