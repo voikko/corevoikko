@@ -2009,54 +2009,54 @@
 
 # {{{2 pitkäsiima (51)
 
-[perusmuoto: "pitkäsiima", alku: "pitkäsiima",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkänsiima",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkänsiima",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkääsiima",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkänäsiima",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkäksisiima", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkässäsiimassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkästäsiimasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkäänsiima",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkälläsiimalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkältäsiimalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkällesiimalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkättäsiima", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkäsiima",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkänsiima",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkänsiima",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkääsiima",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkänäsiima",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkäksisiima", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkässäsiimassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkästäsiimasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkäänsiima",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkälläsiimalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkältäsiimalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkällesiimalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkättäsiima", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkiensiimo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkäinsiima",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkiäsiimo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkinäsiimo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkiksisiimoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkissäsiimoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkistäsiimoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkiinsiimo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkilläsiimoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkiltäsiimoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkillesiimoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkittäsiimoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkinesiimo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pitkäsiima", alku: "pitkinsiimoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkiensiimo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkäinsiima",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkiäsiimo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkinäsiimo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkiksisiimoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkissäsiimoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkistäsiimoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkiinsiimo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkilläsiimoilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkiltäsiimoilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkillesiimoille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkittäsiimoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkinesiimo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pitkäsiima", alku: "pitkinsiimoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 pitkäthousut (51)
 
-[perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkienhousu",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkiähousu",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkinähousu",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkiksihousuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkissähousuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkistähousuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkiinhousu",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkillähousuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkiltähousuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkillehousuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkittähousuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkinehousu",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "pitkäthousut", alku: "pitkinhousuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkienhousu",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkiähousu",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkinähousu",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkiksihousuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkissähousuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkistähousuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkiinhousu",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkillähousuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkiltähousuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkillehousuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkittähousuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkinehousu",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "pitkäthousut", alku: "pitkinhousuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=pppppppp"];
 
 # {{{2 puolikuu (51) 'kuukauden puoliväli'
 
@@ -2299,38 +2299,38 @@
 
 # {{{2 raitisilma (50, 51)
 
-[perusmuoto: "raitisilma", alku: "raitisilma",      luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiinilma",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiinilma",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raitistailma",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiinailma",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiiksiilma",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiissailmassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiistailmasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiiseenilma", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiillailmalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiiltailmalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiilleilmalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiittailma",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raitisilma",      luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiinilma",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiinilma",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raitistailma",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiinailma",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiiksi-ilma",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp-=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiissailmassa",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiistailmasta",  luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiiseenilma", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiillailmalla",  luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiiltailmalta",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiilleilmalle",  luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiittailma",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=pppp"];
 
-[perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiidenilmo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiittenilmo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiidenilma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiittenilma", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiitailmo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiinailmo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiiksiilmoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiissailmoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiistailmoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiisiinilmo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiillailmoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiiltailmoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiilleilmoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiittailmoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "raitisilma", alku: "raittiineilmo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppppp=pppp"];
-[perusmuoto: "raitisilma", alku: "raittiinilmoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiidenilmo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiittenilmo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiidenilma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiittenilma", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiitailmo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiinailmo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiiksi-ilmoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp-=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiissailmoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiistailmoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiisiinilmo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiillailmoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiiltailmoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiilleilmoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiittailmoitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "raitisilma", alku: "raittiineilmo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppppp=pppp"];
+ [perusmuoto: "raitisilma", alku: "raittiinilmoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=pppppp"];
 
 # {{{2 raskassarja (51)
 
