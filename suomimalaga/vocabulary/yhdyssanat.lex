@@ -1849,35 +1849,35 @@
 
 # {{{2 pahahenki (51)
 
-[perusmuoto: "pahahenki", alku: "pahahenki",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahanhenke",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahanhenge",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahaahenke",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahanahenke",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahaksihenge", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahassahengessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "pahahenki", alku: "pahastahengestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "pahahenki", alku: "pahaanhenke",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahallahengellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "pahahenki", alku: "pahaltahengeltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "pahahenki", alku: "pahallehengelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "pahahenki", alku: "pahattahenge", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahahenki",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahanhenke",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahanhenge",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahaahenke",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahanahenke",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahaksihenge", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahassahengessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahastahengestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahaanhenke",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahallahengellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahaltahengeltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahallehengelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahattahenge", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=ppppp"];
 
-[perusmuoto: "pahahenki", alku: "pahathenge",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahathenke",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahojenhenk",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahojahenk",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoinahenk",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoiksihengiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoissahengissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoistahengistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoihinhenk", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoillahengillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoiltahengiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoillehengille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoittahengittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "pahahenki", alku: "pahoinehenk",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "pahahenki", alku: "pahoinhengin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahathenge",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahathenke",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahojenhenk",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahojahenk",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoinahenk",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoiksihengiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoissahengissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoistahengistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoihinhenk", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoillahengillä", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoiltahengiltä", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoillehengille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoittahengittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoinehenk",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "pahahenki", alku: "pahoinhengin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 palavakivi (51)
 
