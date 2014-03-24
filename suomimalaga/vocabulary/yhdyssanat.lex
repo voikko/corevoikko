@@ -1013,35 +1013,35 @@
 
 # {{{2 kuivakakku (51, 50)
 
-[perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivankakku",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivankaku",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivanakakku", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivaksikaku", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivassakakussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivastakakusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivaankakku", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivallakakulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivaltakakulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivallekakulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivattakaku", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivankakku",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivankaku",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivanakakku", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivaksikaku", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivassakakussa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivastakakusta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivaankakku", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivallakakulla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivaltakakulta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivallekakulle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivattakaku", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kuivakakku", alku: "kuivatkaku",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivatkakku",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivienkakku", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuiviakakku",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivinakakku", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuiviksikakuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivissakakuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivistakakuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuiviinkakku", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivillakakuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuiviltakakuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivillekakuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivittakakuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivinekakku", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivakakku", alku: "kuivinkakuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivatkaku",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivatkakku",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivienkakku", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuiviakakku",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivinakakku", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuiviksikakuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivissakakuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivistakakuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuiviinkakku", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivillakakuilla", luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuiviltakakuilta", luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivillekakuille", luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivittakakuitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivinekakku", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivakakku", alku: "kuivinkakuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 kuivamuona (50, 51)
 
@@ -2473,38 +2473,38 @@
 
 # {{{2 syvämeri (51)
 
-[perusmuoto: "syvämeri", alku: "syvämeri",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvänmere",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvänmere",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syväämer",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvänämere",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syväksimere", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvässämeressä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "syvämeri", alku: "syvästämerestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "syvämeri", alku: "syväänmere",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvällämerellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "syvämeri", alku: "syvältämereltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "syvämeri", alku: "syvällemerelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "syvämeri", alku: "syvättämere", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvämeri",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvänmere",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvänmere",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syväämer",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvänämere",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syväksimere", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvässämeressä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "syvämeri", alku: "syvästämerestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "syvämeri", alku: "syväänmere",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvällämerellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "syvämeri", alku: "syvältämereltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "syvämeri", alku: "syvällemerelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "syvämeri", alku: "syvättämere", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppp"];
 
-[perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syväinmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syväinmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syviämer",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvinämer",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syviksimeriksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvissämerissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvistämeristä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syviinmer",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvillämerillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syviltämeriltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvillemerille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvittämerittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "syvämeri", alku: "syvinemer",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "syvämeri", alku: "syvinmerin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syväinmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syväinmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syviämer",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvinämer",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syviksimeriksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvissämerissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvistämeristä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syviinmer",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvillämerillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syviltämeriltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvillemerille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvittämerittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "syvämeri", alku: "syvinemer",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppp"];
+ [perusmuoto: "syvämeri", alku: "syvinmerin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppp"];
 
 # {{{2 särkynytsydän (51) 'eräs huone- ja koristekasvi'
 
