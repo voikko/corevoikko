@@ -1045,37 +1045,37 @@
 
 # {{{2 kuivamuona (50, 51)
 
-[perusmuoto: "kuivamuona", alku: "kuivamuona",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivaamuona",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivanamuona",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivaksimuona", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivassamuonassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivastamuonasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivaanmuona",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivallamuonalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivaltamuonalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivallemuonalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivattamuona", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivamuona",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivaamuona",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivanamuona",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivaksimuona", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivassamuonassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivastamuonasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivaanmuona",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivallamuonalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivaltamuonalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivallemuonalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivattamuona", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivienmuon",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivienmuona",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivainmuona",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuiviamuon",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivinamuon",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuiviksimuoniksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivissamuonissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivistamuonista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuiviinmuon",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivillamuonilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuiviltamuonilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivillemuonille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivittamuonitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivinemuon",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
-[perusmuoto: "kuivamuona", alku: "kuivinmuonin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivienmuon",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivienmuona",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivainmuona",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuiviamuon",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivinamuon",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuiviksimuoniksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivissamuonissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivistamuonista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuiviinmuon",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivillamuonilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuiviltamuonilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivillemuonille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivittamuonitta", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppp=ppppppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivinemuon",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kuivamuona", alku: "kuivinmuonin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppp=ppppppp"];
 
 # {{{2 kultainennoutaja (51)
 
@@ -1116,58 +1116,58 @@
 
 # "ruoka : ruoan"
 
-[perusmuoto: "lämminruoka", alku: "lämminruoka",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimänruoka",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimänruoa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämmintäruoka",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimänäruoka", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimäksiruoa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimässäruoassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimästäruoasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimäänruoka", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimälläruoalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimältäruoalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimälleruoalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimättäruoa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämminruoka",    luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimänruoka",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimänruoa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämmintäruoka",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimänäruoka", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimäksiruoa", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimässäruoassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimästäruoasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimäänruoka", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimälläruoalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimältäruoalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimälleruoalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimättäruoa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "lämminruoka", alku: "lämpimätruoa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimätruoka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimienruok",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimienruoka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimäinruoka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiäruok",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpiminäruok",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiksiruoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimissäruoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimistäruoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiinruok",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimilläruoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiltäruoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimilleruoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimittäruoitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimineruok",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpiminruoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimätruoa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimätruoka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimienruok",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimienruoka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimäinruoka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiäruok",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpiminäruok",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiksiruoiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimissäruoissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimistäruoista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiinruok",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimilläruoilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiltäruoilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimilleruoille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimittäruoitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimineruok",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpiminruoin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=ppppppp"];
 
 # "ruoka : ruuan"
 
-[perusmuoto: "lämminruoka", alku: "lämpimänruua",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimäksiruua", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimässäruuassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimästäruuasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimälläruualla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimältäruualta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimälleruualle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimättäruua", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimänruua",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimäksiruua", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimässäruuassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimästäruuasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimälläruualla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimältäruualta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimälleruualle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimättäruua", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "lämminruoka", alku: "lämpimätruua",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiksiruuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimissäruuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimistäruuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimilläruuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimiltäruuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimilleruuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpimittäruuitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppppp"];
-[perusmuoto: "lämminruoka", alku: "lämpiminruuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=ppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimätruua",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiksiruuiksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimissäruuissa", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimistäruuista", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimilläruuilla",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimiltäruuilta",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimilleruuille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpimittäruuitta",  luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=pppppppppp=ppppppppp"];
+ [perusmuoto: "lämminruoka", alku: "lämpiminruuin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: a, rakenne: "=pppppppp=ppppppp"];
 
 # {{{2 matalameri (51)
 
