@@ -587,9 +587,9 @@ define @loppu := <liitesana, loppu>;
 
 #### Nimisanat ####
 
-[perusmuoto: "meri", alku: "mer", luokka: nimisana, jatko: <osanto_tA>, paikannimen_jälkiliite: yes, äs: a];
-[perusmuoto: "Itämeri", alku: "Itämer", luokka: paikannimi, jatko: <osanto_tA>, äs: a, rakenne: "=ipp=ppp"];
-[perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
+ [perusmuoto: "meri", alku: "mer", luokka: nimisana, jatko: <osanto_tA>, paikannimen_jälkiliite: yes, äs: a];
+ [perusmuoto: "Itämeri", alku: "Itämer", luokka: paikannimi, jatko: <osanto_tA>, äs: a, rakenne: "=ipp=ppp"];
+ [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
 # Oboe (Kotuksen taivutusluokka 3 "valtio") {{{1
  [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];

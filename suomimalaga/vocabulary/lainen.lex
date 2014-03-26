@@ -55,15 +55,15 @@
 
 # Special abbreviations. There are some more of these, but they should preferably be
 # included only in special scientific word lists.
-[alku: "m:eissä", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "s:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "h:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "m:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "s:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "h:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "m:einä", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "s:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "h:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "m:eissä", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "s:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "h:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "m:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "s:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "h:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "m:einä", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "s:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
+ [alku: "h:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
 
 
 # genetiivi + liitepartikkeli + inen-adjektiivi

@@ -195,17 +195,17 @@
  [perusmuoto: "kahdeksattatuhatta", alku: "kahdeksattatuhatta", luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
  [perusmuoto: "yhdeksättätuhatta",  alku: "yhdeksättätuhatta",  luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppppp=ppppppp"];
 
-[alku: "1", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "2", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "3", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "4", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "5", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "6", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "7", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "8", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "9", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: "0", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
-[alku: ",", luokka: lukusana, alaluokka: pilkku, jatko: <>];
+ [alku: "1", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "2", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "3", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "4", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "5", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "6", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "7", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "8", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "9", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: "0", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+ [alku: ",", luokka: lukusana, alaluokka: pilkku, jatko: <>];
 
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
 #
@@ -214,14 +214,14 @@
 # sanaluokkaa ei määritellä, minkä johdosta jälkiliitteiden
 # automaattinen johtaminen ja käyttö yhdyssanan sisäosana on jonkin
 # verran tavallista rajoitetumpaa. (Verbit eivät tunnu toimivan.)
-[perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
-[perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
-[perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
-[perusmuoto: "luku", alku: "lu", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <luku>, äs: a]; # "kahdeksankymmentäluku"
-[perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
-[perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
-[perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
-[perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
+ [perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
+ [perusmuoto: "luku", alku: "lu", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <luku>, äs: a]; # "kahdeksankymmentäluku"
+ [perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
+ [perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
+ [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
 
 
 # Roomalaiset numerot 2-4, 6-9, 11-40. I, V ja X jäsennetään kirjaimina.

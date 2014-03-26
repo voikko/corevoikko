@@ -1,7 +1,16 @@
 LEXICON Poikkeavat_a
+[La][Xp]h[X]h%:eissa:h%:eissa	Liitesana_a	;
+[La][Xp]h[X]h%:eineen:h%:eineen	Liitesana_a	;
+[La][Xp]h[X]h%:eina:h%:eina	Liitesana_a	;
 [La][Xp]khra[X]khra:khra	LyhenneIlmanTaivutusta_aä	; ! kirkkoherra
 [La][Xp]klo[X]klo:klo	LyhenneIlmanTaivutusta_aä	; ! kello (sisälyhenne, ei taivuteta kaksoispisteen avulla)
+[La][Xp]m[X]m%:eissä:m%:eissä	Liitesana_ä	;
+[La][Xp]m[X]m%:eineen:m%:eineen	Liitesana_ä	;
+[La][Xp]m[X]m%:einä:m%:einä	Liitesana_ä	;
 [La][Xp]pj[X]pj:pj	LyhenneIlmanLoppua_aä	; ! puheenjohtaja
+[La][Xp]s[X]s%:eissa:s%:eissa	Liitesana_a	;
+[La][Xp]s[X]s%:eineen:s%:eineen	Liitesana_a	;
+[La][Xp]s[X]s%:eina:s%:eina	Liitesana_a	;
 [La][Xp]varapj[X]varapj:varapj	LyhenneIlmanLoppua_aä	; ! varapuheenjohtaja
 [La][Xp]°C[X]°C:°C	Lyhenne_a	;
 [La][Xp]°F[X]°F:°F	Lyhenne_a	;
