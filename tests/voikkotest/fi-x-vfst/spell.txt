@@ -2859,3 +2859,5 @@ varhaismoderni
 !vaiheistettusammalinen
 suosituimmuusaseman
 !kaunispitkä
+!Pohjois-savon
+!sveitsinmehiläinen
