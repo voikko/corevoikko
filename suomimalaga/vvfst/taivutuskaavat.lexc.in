@@ -3951,9 +3951,31 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	NimiLaatusanaNainenYhteiset_<A>	;
+[Ll]i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_<A>	;
 [Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	NimiLaatusanaYsJatko	;
 [Ll]is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@:is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@	InenLoppuisenYsJatko	;
+
+LEXICON Johdin_inen_jatko
+[Sn][Ny]nen:nen	Liitesana_<A>	;
+[Sn][Ny]se:se	Omistusliite_<A>	;
+[Sn][Nm]set:set	Liitesana_<A>	;
+[Sg][Ny]sen:sen	LaatusanaYksikönGenetiivinJatko_<A>	;
+[Sg][Nm]st:st	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]si:si	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]st<A>:st<A>	NimiLaatusanaLiOlV_<A>	;
+[Sp][Nm]si<A>:si<A>	NimiLaatusanaLiOlV_<A>	;
+[Ses][Ny]sen<A>:sen<A>	NimiLaatusanaLiOlV_<A>	;
+s:s	NimiLaatusanaYhteisetMonikonSijat2_<A>	;
+[Sill][Ny]see:see	NimiLaatusanaLiOlN_<A>	;
+[Sill][Nm]sii:sii	NimiLaatusanaLiOlN_<A>	;
+se:se	NimiLaatusanaYhteisetYksikönPaikallissijat_<A>	;
+s:s	NimiLaatusanaYhteisetMonikonPaikallissijat_<A>	;
+se:se	Voittoaste_<A>	;
+s:s	Yliaste_<A>	;
+s:s	Johdin_UUs_<A>	;
+?Sukija [Ses][Ny]sn<A>:sn<A>	NimiLaatusanaLiOlV_<A>	;
+?Sukija [Sill][Ny]sehe:sehe	NimiLaatusanaLiOlN_<A>	;
+?Sukija [Sill][Nm]sihi:sihi	NimiLaatusanaLiOlN_<A>	;
 
 LEXICON Johdin_tOn
 [Ll]t@C.EI_YKS@@C.YS_EI_JATKOA@:t@C.EI_YKS@@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
