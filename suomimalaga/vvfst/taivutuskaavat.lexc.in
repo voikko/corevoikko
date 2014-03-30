@@ -1583,6 +1583,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN NainenYsJatko
 <WC>YsJatko	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@	Sanasto_l	;
 
 LEXICON LaatusanaNainenInen
 @C.INEN_VAADITTU@:@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;

@@ -2864,3 +2864,5 @@ suosituimmuusaseman
 !sinisenvarjon
 !maailmanparhaimpiin
 !sveitsi-unkarilainen
+!visualin
+!kauniskaunis
