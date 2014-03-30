@@ -1692,6 +1692,7 @@ LEXICON NOUN Uistin_n
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Uistin_m
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
@@ -3617,7 +3618,8 @@ is:is	KertomanTekijäpääteVahva_<A>	;
 is:is	KertomanTekijäpääteHeikko_<A>	;
 is:is	TositavanKertomaTiin_<A>	;
 is:is	Käskytapa_e_<A>	;
-is:is	Mahtotapa_tA_<A>	;
+iss:iss	Mahtotapa_<A>	;
+is:is	EhtoMahtoKäskytapa_tA_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
 ise:ise	Johdin_vA_<A>	;

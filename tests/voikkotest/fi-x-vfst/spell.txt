@@ -2866,3 +2866,7 @@ suosituimmuusaseman
 !sveitsi-unkarilainen
 !visualin
 !kauniskaunis
+sienieläinmäiset
+saas
+ulisse
+hyvä-status

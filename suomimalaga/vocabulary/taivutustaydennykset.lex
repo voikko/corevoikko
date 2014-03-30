@@ -54,7 +54,7 @@
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppp"];
+ [perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppp"];
  [perusmuoto: "kultanen", alku: "kultasemme", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
  [perusmuoto: "kultanen", alku: "kultaseni", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
  [perusmuoto: "kultanen", alku: "kultasenne", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
@@ -63,7 +63,7 @@
 [perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "nukke", alku: "nukk", luokka: nimisana, jatko: <omanto_ien>, äs: a];
-[perusmuoto: "saada", alku: "saas", luokka: teonsana, jatko: <loppu>, äs: a];
+ [perusmuoto: "saada", alku: "saas", luokka: teonsana, jatko: <loppu>, äs: a];
  [perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <omanto_ten>, äs: a];
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
