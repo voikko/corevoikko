@@ -2275,7 +2275,7 @@ LEXICON NOUN Loppu
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
 ?Asemosana	AsemosanaYsJatko	;
-?Nimisana	@D.YS_EI_JATKOA@[Bc]:@D.YS_EI_JATKOA@	Sanasto_laatusanat	;
+?Nimisana	@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@[Bc]:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_laatusanat	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
