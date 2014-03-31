@@ -146,6 +146,8 @@ def get_structure(wordform, vfst_word_class, alku):
 		returnedLength = len(structstr)
 		while structstr[returnedLength - 1] == p:
 			returnedLength = returnedLength - 1
+		if returnedLength > 2 and structstr[returnedLength-2:returnedLength] == u'-=':
+			returnedLength = returnedLength - 1
 		return (structstr[0:returnedLength] + u'[X]', alku)
 	else:
 		return (u"", newAlku)
@@ -368,8 +370,8 @@ def handle_word(word):
 			jatko = u"NainenInen"
 		
 		if vfst_word_class == u"[Lp]":
-			entry = u'[Lp]%s%s%s:%s%s EtuliitteenJatko_%s;' \
-			        % (wordform, diacritics, infoFlags, wordform, diacritics, get_prefix_jatko(word, altform))
+			entry = u'[Lp]%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
+			        % (rakenne, alku, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, rakenne, infoFlags,

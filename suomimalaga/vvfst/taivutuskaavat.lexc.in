@@ -1548,7 +1548,7 @@ LEXICON NOUN Nainen
 s:s	<WC>NainenYsJatko_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
-?Paikannimi	nen:nen	<WC>YsJatko	;
+?Erisnimi	nen:nen	<WC>YsJatko	;
 
 LEXICON NOUN InenLoppuinen
 <WC>NainenYhteiset_<A>	;

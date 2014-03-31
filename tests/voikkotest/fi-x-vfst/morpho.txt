@@ -506,3 +506,7 @@ word:vammaisuusaste
 word:-nimen
  expected:1
  !MALAGA_VAPAA_JALKIOSA
+word:Euro-sarja
+ expected:1
+   analysis
+     STRUCTURE==ippp-=ppppp
