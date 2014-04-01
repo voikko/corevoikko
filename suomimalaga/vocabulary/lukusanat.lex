@@ -120,10 +120,10 @@
 [perusmuoto: "eka", alku: "ek", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <ei_ys, murre>];
 [perusmuoto: "toka", alku: "tok", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_ys, murre>];
 
-[perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: sata, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: tuhat, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
+ [perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: sata, jatko: <kahdeksas>, äs: a];
+ [perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: tuhat, jatko: <kahdeksas>, äs: a];
+ [perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
+ [perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
 
 
  [perusmuoto: "parisen", alku: "parisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a];
