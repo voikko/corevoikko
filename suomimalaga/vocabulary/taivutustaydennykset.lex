@@ -51,7 +51,7 @@
 [perusmuoto: "Bach", alku: "Bach", luokka: sukunimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Ba-ch[+liitesana]"
 [perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Banglade-sh[+liitesana]"
 [perusmuoto: "Friedrich", alku: "Friedrich", luokka: etunimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Friedri-ch[+liitesana]"
-[perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
+ [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppp"];

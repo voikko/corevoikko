@@ -153,20 +153,20 @@
  [perusmuoto: "kahdeksisensataa", alku: "kahdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
  [perusmuoto: "yhdeksisensataa", alku: "yhdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "kolmi", alku: "kolmi", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
-[perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
-[perusmuoto: "seitsen", alku: "seitsen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
-[perusmuoto: "kymmen", alku: "kymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
-[perusmuoto: "kaksikymmen", alku: "kaksikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "kolmikymmen", alku: "kolmikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "nelikymmen", alku: "nelikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=pppp=pppppp"];
-[perusmuoto: "viisikymmen", alku: "viisikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "kuusikymmen", alku: "kuusikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "seitsenkymmen", alku: "seitsenkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppppp=pppppp"];
-[perusmuoto: "kahdeksankymmen", alku: "kahdeksankymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppppppp=pppppp"];
-[perusmuoto: "yhdeksänkymmen", alku: "yhdeksänkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=pppppppp=pppppp"];
-[perusmuoto: "monisata", alku: "monisata", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=ppppp"];
+ [perusmuoto: "kolmi", alku: "kolmi", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+ [perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+ [perusmuoto: "seitsen", alku: "seitsen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+ [perusmuoto: "kymmen", alku: "kymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+ [perusmuoto: "kaksikymmen", alku: "kaksikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "kolmikymmen", alku: "kolmikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "nelikymmen", alku: "nelikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=pppp=pppppp"];
+ [perusmuoto: "viisikymmen", alku: "viisikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "kuusikymmen", alku: "kuusikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppp=pppppp"];
+ [perusmuoto: "seitsenkymmen", alku: "seitsenkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppppp=pppppp"];
+ [perusmuoto: "kahdeksankymmen", alku: "kahdeksankymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+ [perusmuoto: "yhdeksänkymmen", alku: "yhdeksänkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä, rakenne: "=pppppppp=pppppp"];
+ [perusmuoto: "monisata", alku: "monisata", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=pppp"];
+ [perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=ppppp"];
 
  [perusmuoto: "toistakymmentä",      alku: "toistakymmentä",      luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppppp"];
  [perusmuoto: "kolmattakymmentä",    alku: "kolmattakymmentä",    luokka: lukusana, alaluokka: erikoisluku, sijamuoto: osanto, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];

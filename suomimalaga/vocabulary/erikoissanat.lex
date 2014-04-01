@@ -30,8 +30,8 @@
 define @loppu := <liitesana, loppu>;
 
 # Vain nämä muodot ovat yleisessä käytössä. Tuttu ja tuttava tajutaan eri sanoiksi.
-[perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
-[perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
+ [perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
+ [perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 
 # Tosi harvinaiset muodot I infinitiivin pitkä muoto (vrt. puhuakse(ni)) ja II infinitiivin instruktiivi (vrt. puhuen).
 [perusmuoto: "tuta", alku: "tutakseni", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];

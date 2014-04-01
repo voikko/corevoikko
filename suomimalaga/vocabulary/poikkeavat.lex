@@ -28,7 +28,7 @@
 [perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <kahdeksan>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
  [perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
 [perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <kahdeksan>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
+ [perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
  [perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
  [perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
@@ -39,7 +39,7 @@
 [perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <kahdeksan>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
  [perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
 [perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <kahdeksan>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
+ [perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
  [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
  [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
