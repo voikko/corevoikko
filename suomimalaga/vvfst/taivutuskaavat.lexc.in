@@ -1311,8 +1311,10 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
-?Sukija [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisi:eisi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Rosé
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1928,6 +1930,8 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisi:eisi	<WC>LiOlN_<A>	;
 ?Sukija e:e <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NimisanaKaksi
@@ -2183,6 +2187,7 @@ LEXICON NOUN Vieras_s
 ?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
 ?Sukija [Sg][Ny]h<A>n:h<A>n <WC>YksikönGenetiivinJatko_<A>	;
 ?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
+?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	
 ?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
