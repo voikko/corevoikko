@@ -249,6 +249,165 @@ Nätti-Jussi
 !-San # ei sallittu yhdyssanan osana
 Andyyn
 countryyn
+Vantaanjokilaakson
+!Vantaanjoe-laakso
+!Vantaansuooja
+Järvistensaari
+!sulin-Ahola
+
+# Nämä testit bugin 1706814 korjaamiseksi
+#sveitsiläistyä
+#!sveitsiläistya
+#kuubalaistumme
+#porvoolaistuminen
+#porvoolaistumisessa
+#!porvoolaistyminen
+#!porvoolaistymisessä
+#!porvoolaistumisessä
+#porvoolaistumisilmiö
+#!porvoolaistuminenilmiö
+
+# = lyhenteet =
+[]
+USA:ssa
+!USA:s
+HTML-kieli
+USA:ssakin
+!ivkaihosta
+Ab:ltä
+!esim.:ssä
+§:ssä
+DVD:nsä
+DVD:än
+
+# = sijamuodot =
+[]
+tulisessa
+!talojeen
+antimia # Vain monikkomuodot
+!anninta # Vain monikkomuodot
+korkeassa
+!korkiassa
+valmiina
+!valmeina
+!kauneina
+kauniina
+kauneimpina
+kaunein
+hautajaisiin
+myyjin
+!maksissa
+
+# = inen-johdokset =
+[]
+isoponttoninen
+kahdeksanjärvinen
+kielipoliittinen
+!ponttoninen
+!kissainen
+!lahkoainen
+!tuliinen
+viisiulotteinen
+hauenhampainen
+hopeahelainen
+terävä-älyinen
+!nopea-älyinen
+viitontakielinen
+kaunokirjallisuus
+!pulaaerobinen
+pula-aerobinen
+kiiltäväkorvainen
+vihertävänhohtoinen
+vaikuttava-aittainen
+!vaikuttavaaittainen
+yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
+kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
+filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
+!kaunismuotoisenkissa # inen-johdos + genetiivi + substantiivi
+vaaleanpunakukkainen
+sisäänhyppimisketteryys
+ammattilaisuuteen
+italialaisamerikkalainen
+hartolalaisesti
+eritasoiset # laatusanan etuliite + inen-johdos
+inarinsaamelaiset
+!Paris-Charles
+demokraattis-republikaaninen
+!eläkeläisoiva
+!eliminointinen
+kiinalaislahjakkuus
+!valintainen
+tarkkaavaisesti
+
+# = voitto- ja yliasteet =
+[]
+kauniimmanvärinen
+!kauniimmanväri
+kauneimmanvärinen
+!kauneimmanväri
+kauniimpivärinen
+!kauneinvärinen
+!kauniimmastavärinen
+!kauneimmastavärinen
+karkeampirakenteinen
+painavarakenteinen
+luettavampina
+suoraviivaisempaa
+talottomampi
+talollisempi
+pyökkimäisempi
+kattavampi
+kattavin
+luultavampi
+!luultavempi
+paremmuus
+kauneimmuudessa
+tunnetumpi
+myydyimmissä
+nopeanlaisinta
+moniulotteisempi
+moniulotteisimmassa
+rammin
+amerikkalaisempaan
+amerikkalaisimpaan
+
+# = yhdysviivat =
+[]
+puna-
+-Suomi
+Kaakkois-
+sosiaali-
+!punainen-
+!-ja
+!Kaakkois
+!sosiaali
+!juoksemise-
+-äänisesti
+!äänisesti
+-albumillaan
+presidentin-
+!id- # itä-
+matka-aerokissa # yhdysmerkki etuliitteen edessä
+!matkaaerokissa
+tiedotus-
+!Jyväskyl-paikka
+Jyväskylä-paikka
+Pohjois-Suomi
+!pohjois-Suomi
+Moilanen-Savolainen
+!kaivooranssius
+kaivo-oranssius
+apartheid-elämä # konsonanttiloppuinen sitaattilaina + vokaalialkuinen
+apartheid-kissa # konsonanttiloppuinen sitaattilaina + konsonanttialkuinen
+folk-rock # sitaattilaina jälkiosana
+college-aika # vokaaliloppuinen sitaattilaina + vokaali
+college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
+blues-kissainen # sitaattilaina + inen-johdos
+!heitto-iskuista
+kaakkois-
+!hassuna-
+!peri-r
+suhu-s
 
 # = johtimet =
 []

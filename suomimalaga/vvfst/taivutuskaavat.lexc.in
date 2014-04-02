@@ -4108,7 +4108,7 @@ LEXICON Voittoaste
 [Sn][Ny][Cc]mpi@D.EI_VERTM@@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:mpi@D.EI_VERTM@@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 [Sn][Ny][Cc]mp<A>:mp<A>	Omistusliite_<A>	;
 [Sn][Nm][Cc]mm<A>t@D.EI_VERTM@:mm<A>t@D.EI_VERTM@	Liitesana_<A>	;
-[Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	LaatusanaYksikönGenetiivinJatko_<A>	;
 [Sg][Nm][Cc]mpie@D.EI_VERTM@:mpie@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sg][Nm][Cc]mp<A>i@D.EI_VERTM@:mp<A>i@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 [Sp][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
@@ -4142,7 +4142,7 @@ LEXICON Yliaste
 [Sn][Ny][Cs]in@D.EI_VERTM@:in@D.EI_VERTM@	Liitesana_<A>	;
 [Sn][Nm][Cs]imm<A>t@D.EI_VERTM@:imm<A>t@D.EI_VERTM@	Liitesana_<A>	;
 [Sn][Nm][Cs]imp<A>@D.EI_VERTM@:imp<A>@D.EI_VERTM@	Omistusliite_<A>	;
-[Sg][Ny][Cs]imm<A>n@D.EI_VERTM@:imm<A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Ny][Cs]imm<A>n@D.EI_VERTM@:imm<A>n@D.EI_VERTM@	LaatusanaYksikönGenetiivinJatko_<A>	;
 [Sg][Nm][Cs]impien@D.EI_VERTM@:impien@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Nm][Cs]inten@D.EI_VERTM@:inten@D.EI_VERTM@	Liitesana_<A>	;
 [Sg][Nm][Cs]imp<A>in@D.EI_VERTM@:imp<A>in@D.EI_VERTM@	Liitesana_<A>	;
