@@ -3036,3 +3036,4 @@ monituhatvuotinen
 ha'uitta
 ha'uissa
 ha'uilla
+!sveitsinlainen

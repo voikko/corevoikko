@@ -510,3 +510,8 @@ word:Euro-sarja
  expected:1
    analysis
      STRUCTURE==ippp-=ppppp
+word:Pohjois-
+#  analysis
+#    STRUCTURE==ipppppp-
+  analysis
+    STRUCTURE==ppppppp-

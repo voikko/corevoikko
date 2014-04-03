@@ -2159,6 +2159,7 @@ LEXICON Poikkeavat_em
 [Lep][Xp]Xinhua[X]xinhu:xinhu	PaikannimiPeruna_a	;
 
 LEXICON Poikkeavat_ep
+[Lep]:	AluettaTarkentavatYksinäisetEtuliitteet	;
 [Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokyrö[X][Sp][Ny]isoa[Bm]kyröä:isoakyröä	PaikannimiLiOlV_ä	;
@@ -2394,6 +2395,10 @@ PronomininLainen	;
 
 LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
+
+LEXICON AluettaTarkentavatYksinäisetEtuliitteet
+[Xp]Kanta[Xp]kanta[Bc]-:kanta-	Loppu	;
+[Xp]Pohjois[Xp]pohjois[Bc]-:pohjois-	Loppu	;
 
 LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]kahdenlainen[X]kahdenkaan[Bm]lai:kahdenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
