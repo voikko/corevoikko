@@ -2397,8 +2397,8 @@ LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
 
 LEXICON AluettaTarkentavatYksinäisetEtuliitteet
-[Xp]Kanta[Xp]kanta[Bc]-:kanta-	Loppu	;
-[Xp]Pohjois[Xp]pohjois[Bc]-:pohjois-	Loppu	;
+[Xp]Kanta[X]kanta[Bc]-:kanta-	Loppu	;
+[Xp]Pohjois[X]pohjois[Bc]-:pohjois-	Loppu	;
 
 LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]kahdenlainen[X]kahdenkaan[Bm]lai:kahdenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;

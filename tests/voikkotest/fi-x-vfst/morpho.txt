@@ -511,7 +511,7 @@ word:Euro-sarja
    analysis
      STRUCTURE==ippp-=ppppp
 word:Pohjois-
-#  analysis
-#    STRUCTURE==ipppppp-
+  analysis
+    STRUCTURE==ipppppp-
   analysis
     STRUCTURE==ppppppp-
