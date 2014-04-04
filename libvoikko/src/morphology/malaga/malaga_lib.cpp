@@ -43,7 +43,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-static const char * const project_file = "voikko-fi_FI.pro";
 static const char * const morphology_file = "voikko-fi_FI.mor";
 static const char * const lexicon_file = "voikko-fi_FI.lex";
 static const char * const symbol_file = "voikko-fi_FI.sym";
