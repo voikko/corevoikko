@@ -2397,8 +2397,16 @@ LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
 
 LEXICON AluettaTarkentavatYksinäisetEtuliitteet
+[Xp]Etelä[X]etelä[Bc]-:etelä-	Loppu	;
+[Xp]Iso[X]iso[Bc]-:iso-	Loppu	;
+[Xp]Itä[X]itä[Bc]-:itä-	Loppu	;
 [Xp]Kanta[X]kanta[Bc]-:kanta-	Loppu	;
+[Xp]Keski[X]keski[Bc]-:keski-	Loppu	;
+[Xp]Länsi[X]länsi[Bc]-:länsi-	Loppu	;
 [Xp]Pohjois[X]pohjois[Bc]-:pohjois-	Loppu	;
+[Xp]Suur[X]suur[Bc]-:suur-	Loppu	;
+[Xp]Sydän[X]sydän[Bc]-:sydän-	Loppu	;
+[Xp]Uusi[X]uusi[Bc]-:uusi-	Loppu	;
 
 LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]kahdenlainen[X]kahdenkaan[Bm]lai:kahdenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
