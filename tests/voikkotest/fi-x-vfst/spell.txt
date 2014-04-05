@@ -766,7 +766,10 @@ pöytämäinen # Kotus 10
 !pityys # Kotus 10
 !nopeapitkäinen # Kotus 10
 !pitkätön # Kotus 10
+höppänin # Kotus 12
 !höppänöimmän # Kotus 12
+höppänimmän # Kotus 12
+höppänämmän # Kotus 12
 Berija # Kotus 12
 Berijoiden # Kotus 12
 Berijoitten # Kotus 12
@@ -786,6 +789,8 @@ nugaata # Kotus 20
 !-parfait'iinen # Kotus 22
 parfait'llinen # Kotus 22
 -parfait'inen # Kotus 22
+show'kin # Kotus 22
+!showkin # Kotus 22
 lohien # Kotus 23
 !lohten # Kotus 23
 tuohimainen # Kotus 23
@@ -822,6 +827,7 @@ vilkkaana # Kotus 41
 vieraat # Kotus 41
 !vierahat # Kotus 41
 !naurihit # Kotus 41
+röyhkeäpenkereinen # Kotus 49
 röyhkeäpenkerinen # Kotus 49
 säen # Kotus 49
 säkene # Kotus 49
@@ -888,6 +894,7 @@ lyhennettiin # Kotus 54
 !lyhendettiin # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
+häädin # Kotus 55
 !häälin # Kotus 55
 !saaretaan # Kotus 57
 !saarettiin # Kotus 57
@@ -902,6 +909,8 @@ vavista # Kotus 66
 vapista # Kotus 66
 !vavisen # Kotus 66
 vapisen # Kotus 66
+kihajaa # Kotus 66
+!kihäjää # Kotus 66
 !helajaa # Kotus 66
 heläjää # Kotus 66
 !pesy # Kotus 66

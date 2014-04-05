@@ -919,6 +919,8 @@ LEXICON NOUN Apila
 <A>:<A>	<WC>Apila_y_<A>	;
 <O>:<O>	<WC>Apila_m_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Video
 <WC>Apila_y_<A>	;
@@ -1317,6 +1319,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
 ?Nimisana	e:e	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	e:e	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	ee:ee	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
@@ -1361,8 +1364,10 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Parfait
-[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sn][Ny]:	Loppu	;
+[Sn][Ny]':'	LiitesanaEiLoppu_<A>	;
 [Sn][Ny]':'	Omistusliite_<A>	;
+[Sn][Ny]:	<WC>YsJatko	;
 [Sn][Nm]'t:'t	Liitesana_<A>	;
 [Sg][Ny]'n:'n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]'id:'id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -2801,6 +2806,7 @@ d:d	Huutaa_w_<A>	;
 del:del	Katsella_w_<A>	;
 Huutaa_s_<A>	;
 tel:tel	Katsella_s_<A>	;
+d:d	KertomanTekijäpääteHeikko_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Saartaa
@@ -3610,7 +3616,8 @@ Katketa_s_<A>	;
 
 LEXICON Kihistä
 @C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
-@C.V_SALLITTU@:@C.V_SALLITTU@	Kihajaa_<A>	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	Kihajaa_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	Kihajaa_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@autt:@R.V_SALLITTU.T@@C.V_SALLITTU@autt	MuistaaMuistella_s_a  ;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
@@ -4188,6 +4195,26 @@ imm<A>:imm<A>	Kerronto_sti_<A>	;
 LEXICON LiitesanaPi
 Liitesana_<A>	;
 pi:pi	Loppu	;
+
+LEXICON LiitesanaEiLoppu
+[Fkaan]k<A><A>n:k<A><A>n	Loppu ;
+[Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
+[Fkaan]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
+[Fkaan]k<A><A>nk<O>:k<A><A>nk<O>	Loppu ;
+[Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
+[Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
+k<O>:k<O>	Loppu ;
+k<O>h<A>n:k<O>h<A>n	Loppu ;
+k<O>s:k<O>s	Loppu ;
+p<A>:p<A>	Loppu ;
+h<A>n:h<A>n	Loppu ;
+p<A>h<A>n:p<A>h<A>n	Loppu ;
+p<A>s:p<A>s	Loppu ;
+[Fkin]kin:kin	Loppu       ;
+[Fkin]kink<O>:kink<O>	Loppu ;
+[Fkin]kinh<A>n:kinh<A>n	Loppu ;
+[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
+[Fkin]kink<O>s:kink<O>s	Loppu ;
 
 LEXICON Liitesana
 LiitesanaKinKoPaHan_<A>	;

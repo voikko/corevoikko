@@ -2679,3 +2679,10 @@ LEXICON Viive
 ve:ve	NimisanaHame_w_ä	;
 ve:ve	NimisanaHame_s_ä	;
 pe:pe	NimisanaHame_s_ä	;
+
+LEXICON Helistä_ä
+@C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_ä	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	Kihajaa_ä	;
+@C.V_SALLITTU@aut:@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
+@C.V_SALLITTU@autt:@C.V_SALLITTU@autt	MuistaaMuistella_s_a  ;
+@C.V_SALLITTU@ah:@C.V_SALLITTU@ah	Astahtaa_a	;

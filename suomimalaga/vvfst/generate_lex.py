@@ -365,6 +365,8 @@ def handle_word(word):
 		# Vowel type in derived verbs
 		if jatko in [u"Heittää", u"Muistaa", u"Juontaa", u"Hohtaa", u"Murtaa", u"Nousta", u"Loistaa", u"Jättää", u"Kihistä"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alkuWithTags)
+			if jatko == u"Kihistä" and vtype == voikkoutils.VOWEL_FRONT and u"y" not in alku and u"ä" not in alku and u"ö" not in alku and u"e" in alku:
+				jatko = u"Helistä"
 		
 		if jatko == u"Nainen" and vfst_class_prefix in [u"Laatusana", u"NimiLaatusana"] and altform.endswith(u"inen"):
 			jatko = u"NainenInen"
