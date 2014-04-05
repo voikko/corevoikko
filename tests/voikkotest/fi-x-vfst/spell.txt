@@ -122,6 +122,7 @@ avaruustoimintaa
 -hitsaaminen
 !-jatkuu
 !Matti-kaunis
+Siiri-kauneusvoide
 NHL-painotteisella
 !selvännäkijä # selvänäkijä
 !kaunisjuoksija
@@ -238,6 +239,7 @@ Coca-Cola
 !Coca-cola
 !juosseisuus
 !purreisuus
+Venäjä-myönteinen
 !Penttinä-talli
 eckeröläinen
 von
@@ -1014,6 +1016,61 @@ hatapitk@iki.fi
 !J.K.Paasikivi
 1.4.
 23.12.
+
+# = Unicode-muunnoksia =
+[]
+mäti # mäti
+kuorma‐auto # kuorma-auto
+℃ # °C
+muﬃni # muffini
+
+# = Tavutusvihje =
+[]
+kerros­talo # kerros<SH>talo
+ker­rostalo # ker<SH>rostalo
+ker­ros­ta­lo # ker<SH>ros<SH>ta<SH>lo
+!kerros­­talo # kerros<SH><SH>talo
+!kerrost­alo # kerrost<SH>alo
+!­kerrostalo # <SH>kerrostalo
+!kerrostalo­ # kerrostalo<SH>
+kuorma-au­to # kuorma-au<SH>to
+!kuorma­-auto # kuorma<SH>-auto
+!kuorma-­auto # kuorma-<SH>auto
+au­to­nos­to # au<SH>to<SH>nos<SH>to
+au­ton­os­to # au<SH>ton<SH>os<SH>to
+!vaa­'an # vaa<SH>'an
+!vaa'­an # vaa'<SH>an
+
+# = muita virheitä =
+[]
+!kolaaa
+!kullakinkin
+tuntematon
+varovaisuuden
+lämmönjohtavuus
+ohjelmointisuuntautunut
+työelämäsuuntautunut
+uppopaistettu
+pitkäaikaisvihollistensa
+näkökohdista
+turvallisuusnäkökohdista
+tummanpuhuva
+valkoisenkellertävä
+TV-kanavalistaus
+tv-kanavalistaus
+!päällekäin
+ja
+!aaaaلوبادوتماكوسلاكوغاليوكرانيوليبسانودريميبوتريماتوسيلفيوكارابومليتوكاتاككيمنوكيكلبيكوسيبوباتوبريسترالكتريونوبتوكباليوغكوبليولاغو
+australialaisineen
+!mein
+!meine
+!meittä
+!hänettä
+!minutta
+!kenettä
+!keittä
+!kessä
+vittu # loukkaavat sanat ovat sanastossa mukana
 
 hevonen
 !hevvonen
@@ -3544,3 +3601,9 @@ ha'uitta
 ha'uissa
 ha'uilla
 !sveitsinlainen
+
+# = poikkeavat asetukset =
+
+[voikko.setAcceptMissingHyphens(True)]
+Kaakkois
+Kaakkois-Suomi

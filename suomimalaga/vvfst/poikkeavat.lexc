@@ -12,9 +12,9 @@ LEXICON Poikkeavat_a
 [La][Xp]s[X]s%:eineen:s%:eineen	Liitesana_a	;
 [La][Xp]s[X]s%:eina:s%:eina	Liitesana_a	;
 [La][Xp]varapj[X]varapj:varapj	LyhenneIlmanLoppua_aä	; ! varapuheenjohtaja
-[La][Xp]°C[X]°C:°C	Lyhenne_a	;
-[La][Xp]°F[X]°F:°F	Lyhenne_a	;
-[La][Xp]°K[X]°K:°K	Lyhenne_a	;
+[La][Xp]°C[X][Xr]jj[X]°c:°c	Lyhenne_a	;
+[La][Xp]°F[X][Xr]jj[X]°f:°f	Lyhenne_a	;
+[La][Xp]°K[X][Xr]jj[X]°k:°k	Lyhenne_a	;
 [La][Xp]°[X]°:°	Lyhenne_a	;
 [La][Xp]€[X]€:€	Lyhenne_a	;
 [La][Xp]§[X]§:§	Lyhenne_ä	;
