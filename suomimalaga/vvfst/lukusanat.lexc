@@ -188,8 +188,59 @@ LEXICON LukusanaKerroinTuhatta
 
 LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;
+[Lu]:	PvmIpAlku	;
+
+LEXICON PvmIpAlku
+%0:%0	PvmIpJatko	;
+1:1	PvmIpJatko	;
+2:2	PvmIpJatko	;
+3:3	PvmIpJatko	;
+4:4	PvmIpJatko	;
+5:5	PvmIpJatko	;
+6:6	PvmIpJatko	;
+7:7	PvmIpJatko	;
+8:8	PvmIpJatko	;
+9:9	PvmIpJatko	;
+
+LEXICON PvmIpJatko
+PvmIpAlku	;
+.:.	PvmIpAlku2	;
+
+LEXICON PvmIpAlku2
+%0:%0	PvmIpJatko2	;
+1:1	PvmIpJatko2	;
+2:2	PvmIpJatko2	;
+3:3	PvmIpJatko2	;
+4:4	PvmIpJatko2	;
+5:5	PvmIpJatko2	;
+6:6	PvmIpJatko2	;
+7:7	PvmIpJatko2	;
+8:8	PvmIpJatko2	;
+9:9	PvmIpJatko2	;
+
+LEXICON PvmIpJatko2
+PvmIpAlku2	;
+.:.	PvmIpAlku3	;
+
+LEXICON PvmIpAlku3
+%0:%0	PvmIpJatko3	;
+1:1	PvmIpJatko3	;
+2:2	PvmIpJatko3	;
+3:3	PvmIpJatko3	;
+4:4	PvmIpJatko3	;
+5:5	PvmIpJatko3	;
+6:6	PvmIpJatko3	;
+7:7	PvmIpJatko3	;
+8:8	PvmIpJatko3	;
+9:9	PvmIpJatko3	;
+
+LEXICON PvmIpJatko3
+PvmIpAlku3	;
+.:.	PvmIpAlku3	;
+Loppu	;
 
 LEXICON Numeromerkki
+%0:%0	NumeromerkinJatko	;
 1:1	NumeromerkinJatko	;
 2:2	NumeromerkinJatko	;
 3:3	NumeromerkinJatko	;
@@ -214,7 +265,6 @@ LEXICON NumeromerkkiPilkunJälkeen
 
 LEXICON NumeromerkinJatko
 Numeromerkki	;
-%0:%0	NumeromerkinJatko	;
 ,:,	NumeromerkkiPilkunJälkeen	;
 YhdysmerkkiJaLukusananJälkiliite	;
 -:-	LukusananJälkiliiteJl	;

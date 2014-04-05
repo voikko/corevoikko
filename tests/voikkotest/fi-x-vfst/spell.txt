@@ -410,6 +410,224 @@ kaakkois-
 !peri-r
 suhu-s
 
+# = johdetut sanat yhdyssanoissa =
+[]
+luovuttajarekisteri
+hakasitoja
+hevossitoja
+!leipomapäivä
+!suomankielisessä
+yritystoiminnassa
+toimintamahdollisuus
+joukkuepelaaminen
+luovuusnäkökulma
+!sohivakita
+!haksitova
+!hevonensitoja
+!vanhempaakasvatus
+!nopeimpainkasvatus
+vanhempainkasvatus
+vanhempainselvyys
+siirrettävyysperiaate
+siirtyvyysperiaate
+mentävyysperiaate
+!siirrettäväperiaate
+!johtamis
+johtamis-
+ahdistuneisuushäiriö
+!ahdistuneisuuskaunis
+!ahdistunuthäiriö
+ranskalais-suomalainen
+irlantilaissyntyinen
+!voimmetsäinen
+solidaarisuusjohtoinen
+!talotällaisuudessaan
+!uudensalauksen
+!nopeanolon
+vankkarakenteinen
+kristillisdemokraatti
+liikuntapainotteinen
+norjalaisomisteinen
+kiinteäpolttoaineinen
+maatalousvaltainen
+harvaetuhampainen
+armeijamyönteisen
+paisuvaiskudoksen
+!eläväarkisto
+suurinopeuksinen # adjektiivi + adjektiivista johdettu substantiivin inen-johdos
+!nopeuksinen
+
+# = etuliitteet =
+[]
+yleisopetus
+asuinrakentaminen
+koeottaa
+ulosotto # teonsanan etuliitteen on käytävä myös teonsanasta johdetun nimisanan eteen
+# "uudelleen" on teonsanan substantiivi
+uudelleenjulkaisu # teonsanan nimisanajohdos
+uudelleenjuoksevainen # teonsanan laatusanajohdos
+!uudelleenjuoksen # teonsana
+!uudelleenkissaa # nimisana
+!uudelleenkaunis # laatusana
+#!uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
+valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
+!esiinkaunis # teonsanan etuliite ei saa olla laatusanan edessä
+!biojuosta # nimisanan etuliite ei saa olla teonsanan edessä
+!kissabiojuosta # nimisanan etuliite ei saa olla teonsanan edessä
+!siistiesiinkaunis
+ulkohartolalainen
+perusulkohartolalainen
+kaakkoishartolalainen
+peruskaakkoishartolalainen
+bi-vihreä
+!bi--vihreä
+ei-kaunis
+!ei--kaunis
+bi-
+!bi--
+miniei-
+!miniei--
+miniei-opisto
+!miniei--opisto
+!talouuskoira # etuliite "uus" on sallittu vain sanan alussa
+talotäsmäkoira
+!avoohut
+avo-ohut
+kissanpikaliitäjä # nimisanan genetiivi + nimisanan etuliite
+!kissanpikaliitää # nimisanan genetiivi + nimisanan etuliite
+!mielenkiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
+koejuoksee
+!asiafanliittyvässä
+!perieri
+!viimesilauksen
+vaalirahoitusepäselvyydet
+haja-asutusalueilla
+aikakauslehden
+!aika=kauslehden
+
+# = seikkasanat =
+[]
+keskenään
+takanaan
+takanansa
+tykönään
+tykönänsä
+kanssaan
+kissateitse # ys_perusosa-lippu
+!loitos
+
+# = nimitavat =
+[]
+puhuakseen
+puhuakseni
+!lammasvetäessä
+!jakamisjuokse
+jakamisjuokseminen
+
+# = lukusanat =
+[]
+kolme
+neljällä
+kaksitoista
+kahdessatoista
+kaksikymmentä
+viittäkymmentä
+kuudellekymmenelle
+kolmekymmentäneljä
+sataviisitoista
+kaksitoistatuhattakolmesataaneljä
+kuudennestakymmenennestäkahdeksannesta
+kahdellekymmenelletuhannelle
+!kaksikolme
+!kahtakymmenen
+!satasata
+!kaksikaksi
+!neljäkymmenta
+!kahdessakymmentä
+!kuusillekymmenelle
+!kahdestoistas
+!kahdennellekymmenelleviidennelle
+!kahdellekymmenelleviidennelle
+!kahdellekymmenellekolmen
+!viidennestäkymmenenkahdesta
+!viidennestäkymmenennestäkaksi
+!viidennestäkymmenennestäkolmannelle
+!kahdelletoistatuhansille
+yhteen
+!yhteyn
+!yhtenne
+!satani
+!viisikissa
+!kolmejuoksija
+!viisikaunis
+yksipuoluejärjestelmä
+yksipuolueyhteiskunta
+yksiajoratainen
+yhdenveroinen
+viideskymmenes
+tuhatlukuinen
+toisiinsa
+kolmeentoistakin
+tuhannenkaan
+!tuhannenkään
+!toisesti
+sadaskuudeskymmenesviides
+viidessadaskolmaskymmenestuhannesneljäs
+viidestuhanneskolmaskymmenes
+yhdestoista
+kahdeskymmenesyhdes
+miljoonas
+miljardis
+miljoonaa
+miljardia
+kaksitoistavuotias
+viisivuotiaallekin
+-vuotias
+!setävuotias
+neljäsosassa
+!neljäspöytä
+toisensa
+nelivuotias
+biljoonia
+biljoona
+triljoonin
+kaksi-
+viidessadaskolmaskymmenes-
+!kaksitoista-vuotias
+kissaloikkiminen
+!kissaloikiminen
+koiramääkiminen
+!koiramääminen
+1
+04
+253,73
+!,1
+!2,
+!76,62,3
+!1.3
+2.3.2010
+!2.3,2010
+!2,3.2010
+194.187.213.116
+!12vuotias
+12-vuotias
+65-
+-45
+!12:kissa
+300:ssa
+12:ssa
+6:n # Valtatie 6:n
+iii # sivunumeroissa
+!iii:n # taivutukset vain isoille kirjaimille
+III:n # Aleksanteri III:n
+!IV:na
+IV:nä
+!yli-ii
+nelisensataa
+!vuosituhanten
+!ensimmäinen-
+-neljän
+
 # = johtimet =
 []
 !suvealainen
@@ -2365,7 +2583,6 @@ puidaan
 rangaistakoon
 23
 76-vuotias
-!01
 10
 1034
 34,5
