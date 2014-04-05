@@ -726,6 +726,200 @@ yhteen
 yksipuoluejärjestelmä
 yksipuolueyhteiskunta
 
+# = taivutusluokat =
+[]
+vihkon # Kotus 1
+vihon # Kotus 1
+pehkon # Kotus 1
+!pehon # Kotus 1
+luo'on # Kotus 1
+!luoon # Kotus 1
+tappiota # Kotus 3
+!tappioa # Kotus 3
+!autioa # Kotus 3
+glamouriton # Kotus 5
+!glamoureton # Kotus 5
+!poppkissa # Kotus 5
+!nailonnen # Kotus 6
+nailoninen # Kotus 6
+!nailoniinen # Kotus 6
+!nylonikissa # Kotus 6
+lahtea # Kotus 7
+!lahta # Kotus 7
+jäljettä # Kotus 7
+!jälettä # Kotus 7
+kaidempi # Kotus 9, komparatiivi
+kaidin # Kotus 9, superlatiivi
+kaidoin # Kotus 9, superlatiivi
+!kaiin # Kotus 9, superlatiivi
+kaidointa # Kotus 9, superlatiivi
+liiempi # Kotus 9, komparatiivi
+liioin # Kotus 9, superlatiivi
+!liiin # Kotus 9, superlatiivi
+sankempi # Kotus 9, komparatiivi
+sankin # Kotus 9, superlatiivi
+rei'illä # Kotus 10
+!reiillä # Kotus 10
+pöytämäinen # Kotus 10
+!pöydämäinen # Kotus 10
+!pitkyys # Kotus 10
+!pityys # Kotus 10
+!nopeapitkäinen # Kotus 10
+!pitkätön # Kotus 10
+!höppänöimmän # Kotus 12
+Berija # Kotus 12
+Berijoiden # Kotus 12
+Berijoitten # Kotus 12
+jäkälää # Kotus 12
+!jäkälätä # Kotus 12
+!porstuitten # Kotus 12
+kypärineen # Kotus 12
+kurpitsaa # Kotus 13
+!kurpitsata # Kotus 13
+vaahteraa # Kotus 13
+!vaahterata # Kotus 13
+ainoisiin # Kotus 15
+ainoihin # Kotus 15
+kaksipilttuinen # Kotus 17
+nugaata # Kotus 20
+!parfait'illinen # Kotus 22
+!-parfait'iinen # Kotus 22
+parfait'llinen # Kotus 22
+-parfait'inen # Kotus 22
+lohien # Kotus 23
+!lohten # Kotus 23
+tuohimainen # Kotus 23
+monien # Kotus 23
+!monten # Kotus 23
+unien # Kotus 24
+unten # Kotus 24
+lapsena # Kotus 25
+!lasna # Kotus 25
+!hasta # Kotus 29
+!usta # Kotus 29
+!usten # Kotus 29
+!ikennä # Kotus 32
+hervottomimman # Kotus 34
+hervottomimpaa # Kotus 34
+!hervottomaimman # Kotus 34
+!hervottomaimpaa # Kotus 34
+!lämpimätön # Kotus 35
+hyttynen # Kotus 38
+!leikkimielisisissä # Kotus 38, ei inen-johdosta
+!kissahyttysinen # Kotus 38, ei inen-johdosta
+ystävystä # Kotus 39 ei yksikkömuotoja, mutta kuitenkin "kaksi ystävystä"
+alavutelainen # Kotus 40
+kauriiden # Kotus 41
+!kauriiiden # Kotus 41
+vilkkaana # Kotus 41
+!vilkasna # Kotus 41 (vanhat_muodot)
+!-ruumiiinen # Kotus 41
+-ruumiinen # Kotus 41
+!-ruuminen # Kotus 41
+!-rukiiinen # Kotus 41
+-rukiinen # Kotus 41
+!-rukinen # Kotus 41
+vieraat # Kotus 41
+!vierahat # Kotus 41
+!naurihit # Kotus 41
+röyhkeäpenkerinen # Kotus 49
+säen # Kotus 49
+säkene # Kotus 49
+säenten # Kotus 49
+säkenien # Kotus 49
+udar # Kotus 49
+utare # Kotus 49
+udarta # Kotus 49
+utaretta # Kotus 49
+!piennaria # Kotus 49
+pientaria # Kotus 49
+!piennariin # Kotus 49
+pientariin # Kotus 49
+!piennarilla # Kotus 49
+pientarilla # Kotus 49
+pientarilta # Kotus 49
+!piennarille # Kotus 49
+!piennaritta # Kotus 49
+pientaritta # Kotus 49
+pientarille # Kotus 49
+pientareita # Kotus 49
+ylläpito # Kotus 53
+!ylläpitö # Kotus 53
+kielsi # Kotus 54
+!kielti # Kotus 54
+löysi # Kotus 54
+!löyti # Kotus 54
+sukelsi # Kotus 54
+!sukelti # Kotus 54
+palelsi # Kotus 54
+!palelti # Kotus 54
+mursi # Kotus 54
+!murti # Kotus 54
+muunsi # Kotus 54
+!muunti # Kotus 54
+heikensi # Kotus 54
+!heikenti # Kotus 54
+juursi # Kotus 54
+!juurrella # Kotus 54
+!juurto # Kotus 54
+saksansi # Kotus 54
+!saksannella # Kotus 54
+!saksanto # Kotus 54
+nuotinsi # Kotus 54
+!nuotinnella # Kotus 54
+!nuotinto # Kotus 54
+nuotinnus # Kotus 54
+pyörsi # Kotus 54
+pyörrellä # Kotus 54
+pyörrön # Kotus 54
+jäykensi # Kotus 54
+jäykennellä # Kotus 54
+jäykennys # Kotus 54
+murros # Kotus 54
+!murrös # Kotus 54
+kierros # Kotus 54
+!kierrös # Kotus 54
+vierroksessa # Kotus 54
+!vierroksessä # Kotus 54
+!piirrys # Kotus 54
+uusinnettiin # Kotus 54
+!uusindettiin # Kotus 54
+lyhennettiin # Kotus 54
+!lyhendettiin # Kotus 54
+sousi # Kotus 55
+souti # Kotus 55
+!häälin # Kotus 55
+!saaretaan # Kotus 57
+!saarettiin # Kotus 57
+saarretaan # Kotus 57
+saarrettiin # Kotus 57
+potiko # Kotus 58
+!posiko # Kotus 58
+rangaissee # Kotus 66
+!rankaissen # Kotus 66
+rangaistane # Kotus 66
+vavista # Kotus 66
+vapista # Kotus 66
+!vavisen # Kotus 66
+vapisen # Kotus 66
+!helajaa # Kotus 66
+heläjää # Kotus 66
+!pesy # Kotus 66
+pesu # Kotus 66
+!pääsu # Kotus 66
+pääsy # Kotus 66
+ihmettely # Kotus 67
+!ihmettelu # Kotus 67
+lobbasi # Kotus 73
+peljätköön # Kotus 73
+!peljäsi # Kotus 73
+pynttäys # Kotus 73
+!pynttäs # Kotus 73
+kapsaa # Kotus 78
+!kapsan # Kotus 78
+!kapsat # Kotus 78
+kapsaisi # Kotus 78
+
 hevonen
 !hevvonen
 Hevonen

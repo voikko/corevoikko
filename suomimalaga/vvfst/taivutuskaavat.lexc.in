@@ -445,6 +445,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kalsium
@@ -639,6 +640,7 @@ v:v	<WC>Kala_w_<A>	;
 LEXICON NOUN Pata
 t:t	<WC>Kala_s_<A>	;
 d:d	<WC>Kala_w_<A>	;
+?Laatusana	d<O>:d<O>	Yliaste_<A>	;
 
 LEXICON NOUN Kampa
 p:p	<WC>Kala_s_<A>	;
@@ -648,10 +650,14 @@ LEXICON NOUN Hanka
 k:k	<WC>Kala_s_<A>	;
 g:g	<WC>Kala_w_<A>	;
 
-!TODO i-loppuisille vartaloille erilainen taivutus
 LEXICON NOUN Haka
 k:k	<WC>Kala_s_<A>	;
 <WC>Kala_w_<A>	;
+
+LEXICON NOUN Liika
+k:k	<WC>Kala_s_<A>	;
+<WC>Kala_w_ei_yliaste_<A>	;
+?Laatusana	<O>:<O>	Yliaste_<A>	;
 
 LEXICON NOUN Raaka
 k:k	<WC>Kala_s_<A>	;
@@ -699,6 +705,10 @@ LEXICON NOUN Kala_s
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kala_w
+<WC>Kala_w_ei_yliaste_<A>	;
+?Laatusana	Yliaste_<A>	;
+
+LEXICON NOUN Kala_w_ei_yliaste
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 ?Paikannimi	[Sn][Nm]<A>t:<A>t	PaikannimiYsJatko	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
@@ -706,7 +716,6 @@ LEXICON NOUN Kala_w
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
-?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Nahka
 k:k	<WC>Kala_s_<A>	;
@@ -1370,6 +1379,7 @@ LEXICON NOUN Parfait
 ':'	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ':'	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	':'	Johdin_tOn_<A>	;
+?Nimisana	':'	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;

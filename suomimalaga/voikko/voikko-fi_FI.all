@@ -560,14 +560,13 @@ allo_rule generate_allos ($tietue):
     choose $i in kala ($tietue, "t", "", "e", "");
     result $i.alku, $i - alku;
 
+  elseif (liika in $tietue.jatko) then
+    choose $i in kala ($tietue, "k", "", "e", "o");
+    result $i.alku, $i - alku;
+    
   elseif (haka in $tietue.jatko) then
-    if last($tietue.alku) = "i" then
-      choose $i in kala ($tietue, "k", "", "e", "o");
-      result $i.alku, $i - alku;
-    else
-      choose $i in kala ($tietue, "k", "", "e", "");
-      result $i.alku, $i - alku;
-    end;
+    choose $i in kala ($tietue, "k", "", "e", "");
+    result $i.alku, $i - alku;
 
   elseif (hanka in $tietue.jatko) then
     choose $i in kala ($tietue, "k", "g", "ge", "");
