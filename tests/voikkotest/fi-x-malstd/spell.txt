@@ -695,6 +695,7 @@ huonovointisuus
 susimainen
 !kuolleessaan
 ranskanturkkilainen
+baltianturkkilainen
 jugoslavianmakedonialainen
 !toteutta
 

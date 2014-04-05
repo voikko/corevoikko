@@ -680,51 +680,117 @@ susimainen
 !kuolleessaan
 ranskanturkkilainen
 baltianturkkilainen
+jugoslavianmakedonialainen
+!toteutta
 
-# = lyhenteet =
+# = sijapäätteet =
 []
-USA:ssa
-HTML-kieli
-USA:ssakin
-!ivkaihosta
-Ab:ltä
-!esim.:ssä
+!Erkkiän
+Erkkiin
+!Erkkie-
+!saksella
 
-# = lukusanat =
+# = kieltosanat =
 []
-kolme
-neljällä
-kaksitoista
-kahdessatoista
-kaksikymmentä
-viittäkymmentä
-kuudellekymmenelle
-kolmekymmentäneljä
-kuudennestakymmenennestäkahdeksannesta
-kahdellekymmenelletuhannelle
-!kaksikolme
-!kahtakymmenen
-!satasata
-!kaksikaksi
-!neljäkymmenta
-!kahdessakymmentä
-!kuusillekymmenelle
-!kahdestoistas
-!kahdennellekymmenelleviidennelle
-!kahdellekymmenelleviidennelle
-!kahdellekymmenellekolmen
-!viidennestäkymmenenkahdesta
-!viidennestäkymmenennestäkaksi
-!viidennestäkymmenennestäkolmannelle
-!kahdelletoistatuhansille
-yhteen
-!yhteyn
-!yhtenne
-!viisikissa
-!kolmejuoksija
-!viisikaunis
-yksipuoluejärjestelmä
-yksipuolueyhteiskunta
+eihän
+ei
+!eikään
+!eikaan
+emmepä
+!emmepa
+!emmekin
+!jollälä
+!vaikkälkäämme
+vaikkette
+jott'ei
+!joll'eikään
+vaikkeikaan
+!vaikkeikään
+
+# = omistusliitteet =
+[]
+koirani
+!kauniini
+!kauniistani
+!eteeen
+!kissaaan
+kissaansa
+taloaan
+!taloaen
+!taloaon
+!kampaamoain # vanhahtava muoto
+!maleksimaaan
+maleksimaansa
+erityistoivomustensa
+omalletunnolleen
+!omalletunnollean
+!sakseen
+!reggaeen
+hylätessään
+romahtamaisillaan
+!tyypillisesi
+!palavarakkausnsa
+!ehdottomasi
+
+# = liitesanat =
+[]
+kissakin
+!raatakaakaan
+tiedäkään
+!jokakin
+!jotkakin
+!jonkakin
+kukahan
+
+# = vokaalisointu =
+[]
+!jakamisessä
+jakamisessa
+!puintiä
+puintia
+!kaurallisessä
+kaurallisessa
+!ryöstökalastamisessä
+ryöstökalastamisessa
+!Kullervollä
+Kullervolla
+!leveimmässa
+leveimmässä
+!leveässa
+leveässä
+!belgialaisessäni
+belgialaisessani
+!hänessa
+hänessä
+!lähella
+lähellä
+!VR:ssa
+VR:ssä
+!kolmessä
+kolmessa
+!kolmessakymmenessa
+kolmessakymmenessä
+!laulavät
+laulavat
+!kalastamässä
+kalastamassa
+!karhunsä
+karhunsa
+!selvemmalle
+selvemmälle
+!talotön
+taloton
+!siisteus
+siisteys
+!synkronoitynyt
+synkronoitunut
+kutian
+kutiat
+kutiaa
+kutiaminen
+kutiaisin
+kutiamaan
+kutiamaton
 
 # = taivutusluokat =
 []
@@ -928,6 +994,26 @@ kapsaa # Kotus 78
 !kapsan # Kotus 78
 !kapsat # Kotus 78
 kapsaisi # Kotus 78
+
+isännöikää
+!isännöitkää
+!isännöitsekää
+olko
+!olkö
+seissee
+seisse # ei seisse
+
+# = ei-sanat =
+[]
+http://kissa.fi
+!kissa.fi
+www.kissa.fi
+!www..kissa.fi
+hatapitk@iki.fi
+!iki.fi
+!J.K.Paasikivi
+1.4.
+23.12.
 
 hevonen
 !hevvonen

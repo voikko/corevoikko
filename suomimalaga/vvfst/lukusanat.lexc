@@ -221,6 +221,7 @@ LEXICON PvmIpAlku2
 LEXICON PvmIpJatko2
 PvmIpAlku2	;
 .:.	PvmIpAlku3	;
+.:.	Loppu	;
 
 LEXICON PvmIpAlku3
 %0:%0	PvmIpJatko3	;
