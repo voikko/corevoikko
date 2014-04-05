@@ -400,6 +400,7 @@ kaivo-oranssius
 apartheid-elämä # konsonanttiloppuinen sitaattilaina + vokaalialkuinen
 apartheid-kissa # konsonanttiloppuinen sitaattilaina + konsonanttialkuinen
 folk-rock # sitaattilaina jälkiosana
+!musteevergreen # sitaattilaina jälkiosana
 college-aika # vokaaliloppuinen sitaattilaina + vokaali
 college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 blues-kissainen # sitaattilaina + inen-johdos

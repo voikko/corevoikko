@@ -268,6 +268,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 	bool boundaryPassed = false;
 	bool hyphenPresent = false;
 	bool hyphenUnconditionallyAllowed = false;
+	bool hyphenUnconditionallyAllowedJustSet = false;
 	bool hyphenRequired = false;
 	bool requiredHyphenMissing = false;
 	bool startsWithProperNoun = false;
@@ -279,8 +280,8 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				return false;
 			}
 			if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Isf", 3) == 0) {
-				boundaryPassed = false;
 				hyphenUnconditionallyAllowed = true;
+				hyphenUnconditionallyAllowedJustSet = true;
 			}
 			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Icu", 3) == 0) {
 				boundaryPassed = false;
@@ -353,7 +354,12 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 					}
 				}
 				boundaryPassed = false;
-				hyphenUnconditionallyAllowed = false;
+				if (hyphenUnconditionallyAllowedJustSet) {
+					hyphenUnconditionallyAllowedJustSet = false;
+				}
+				else {
+					hyphenUnconditionallyAllowed = false;
+				}
 			}
 			beforeLastChar = lastChar;
 			lastChar = fstOutput[i];
