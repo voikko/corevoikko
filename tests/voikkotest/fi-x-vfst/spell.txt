@@ -3604,6 +3604,8 @@ ha'uilla
 itseisesti
 x-nopeuksinen
 keskiesiklassisella
+!kaksisylinterin
+yksipuoluejärjestelmän
 
 # = poikkeavat asetukset =
 

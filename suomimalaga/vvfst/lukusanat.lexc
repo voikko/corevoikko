@@ -297,7 +297,7 @@ LukusananJälkiliiteEiYhdysmerkkiä	;
 [Bc]-:-	Loppu;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
-[Bc][Bh]@P.YS_JATKETTAVA.ON@:@P.YS_JATKETTAVA.ON@	Sanasto_n	;
+[Bc][Bh]@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@:@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@	Sanasto_n	;
 [Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;

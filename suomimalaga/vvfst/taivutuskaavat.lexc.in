@@ -2296,7 +2296,8 @@ LEXICON NOUN Loppu
 ?Nimi	NimiYsJatko	;
 
 LEXICON NOUN YksikönGenetiivinJatko
-<WC>NormaaliYsJatko_<A>	;
+Liitesana_<A>	;
+?NotAsemosana	@D.YS_EI_GENETIIVIALKUA@:@D.YS_EI_GENETIIVIALKUA@	<WC>YsJatko	;
 ?Asemosana	AsemosanaYsJatko	;
 ?Nimisana	@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@[Bc]:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_laatusanat	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
