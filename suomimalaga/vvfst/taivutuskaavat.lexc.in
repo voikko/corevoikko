@@ -618,6 +618,7 @@ LEXICON NOUN Nalle_s
 [Sill][Ny]e:e	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]he:he	<WC>LiOlN_<A>	;
 
@@ -4339,7 +4340,7 @@ LyhenteenTaivutuspääte_<A>	;
 LEXICON LyhenneIlmanLoppuaTaiTaivutusta
 -[Bc]:-	Loppu	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_l	;
+-[Bc]@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@	Sanasto_l	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
 -[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 

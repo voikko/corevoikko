@@ -3601,6 +3601,9 @@ ha'uitta
 ha'uissa
 ha'uilla
 !sveitsinlainen
+itseisesti
+x-nopeuksinen
+keskiesiklassisella
 
 # = poikkeavat asetukset =
 
