@@ -444,6 +444,7 @@ irlantilaissyntyinen
 !voimmetsäinen
 solidaarisuusjohtoinen
 !talotällaisuudessaan
+!etisyyskissa
 !uudensalauksen
 !nopeanolon
 vankkarakenteinen
