@@ -348,7 +348,7 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				if (!(hyphenUnconditionallyAllowed && hyphenPresent)) {
 					lastChar = SimpleChar::lower(lastChar);
 					wchar_t nextChar = SimpleChar::lower(fstOutput[i]);
-					bool hyphenRequired = ((lastChar == nextChar) && wcschr(VOIKKO_VOWELS, lastChar));
+					bool hyphenRequired = (((lastChar == nextChar) && wcschr(VOIKKO_VOWELS, lastChar)) || (lastChar >= L'0' && lastChar <= L'9'));
 					if (hyphenRequired != hyphenPresent) {
 						return false;
 					}

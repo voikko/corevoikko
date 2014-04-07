@@ -656,6 +656,8 @@ järjettömästi
 hyppijöistään
 !kissamaisiaan
 !kissahämärästi
+aamuviluisesti
+äänestyksenomaisesti
 oltu
 ollut
 oltava

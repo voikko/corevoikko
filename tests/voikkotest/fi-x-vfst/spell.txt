@@ -138,6 +138,7 @@ taiteilijalahjakkuus
 vanhempain-
 vanhempainyhteistyötoimikunta
 lukemisesteisiä
+virvoitusjuomateollisuusliiton
 
 # = vain yhdyssanan jälkiosana =
 []
@@ -616,6 +617,7 @@ koiramääkiminen
 !12vuotias
 12-vuotias
 65-
+90-kissainen
 -45
 !12:kissa
 300:ssa
@@ -646,7 +648,9 @@ hyppijöistään
 !kissahämärästi
 aamuviluisesti
 äänestyksenomaisesti
+oltu
 ollut
+oltava
 vakiintuneempi
 kuolleempi
 purreempi
