@@ -539,6 +539,7 @@ kolmekymmentäneljä
 sataviisitoista
 kaksitoistatuhattakolmesataaneljä
 kuudennestakymmenennestäkahdeksannesta
+kaksintoistatuhansin
 kahdellekymmenelletuhannelle
 !kaksikolme
 !kahtakymmenen

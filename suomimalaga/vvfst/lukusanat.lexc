@@ -282,6 +282,7 @@ LEXICON LukusanaToista
 [Bc]toista:toista	Liitesana_a	;
 [Bc]toista:toista	LukusananJälkiliite	;
 [Bc]toista:toista	LukusanaKerroinTuhatta	;
+[Bc]toista:toista	LukusananAlkuKerroin	;
 
 LEXICON JärjestyslukuToista
 [Bc]toista:toista	Liitesana_a	;
