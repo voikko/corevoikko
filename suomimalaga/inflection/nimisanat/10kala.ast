@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2014 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -53,6 +53,7 @@ hanka  kala  ka  ga ko  go ge g  k
 kampa  kala  pa  ma po  mo me m  p
 kanta  kala  ta  na to  no ne n  t
 kappa  kala  pa  a  po  o  e  "" p
+liika  kala  ka  a  ko  o  e  '  k
 nahka  nahka ka  a  ko  o  e  ke ""
 napa   kala  pa  va po  vo ve v  p
 parta  kala  ta  ra to  ro e  r  t

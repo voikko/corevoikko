@@ -1328,6 +1328,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (liika in $tietue.jatko) then
+    choose $i in kala ($tietue, "k"+A($tietue), A($tietue), "k"+O($tietue), O($tietue), "e", "'", "k");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (nahka in $tietue.jatko) then
     choose $i in nahka ($tietue, "k"+A($tietue), A($tietue), "k"+O($tietue), O($tietue), "e", "ke", "");
     if (value_type($i) = record) then
