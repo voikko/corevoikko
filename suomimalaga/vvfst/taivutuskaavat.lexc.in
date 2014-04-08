@@ -3893,6 +3893,11 @@ de:de   NimisanaYhteisetYksikönPaikallissijat_<A>   ;
 ks:ks   NimisanaYhteisetMonikonPaikallissijat_<A>   ;
 de:de   Johdin_tOn_<A>  ;
 ks:ks   Johdin_inen_vain_lipulla_<A>    ;
+?Sukija [Sn][Ny]tte:tte   Omistusliite_<A>   ;
+?Sukija [Sg][Ny]tten@C.YS_EI_JATKOA@:tten@C.YS_EI_JATKOA@ NimisanaYksikönGenetiivinJatko_<A>  ;
+?Sukija [Sill][Ny]ttee:ttee       NimisanaLiOlN_<A>   ;
+?Sukija [Sill][Ny]tehe:tehe       NimisanaLiOlN_<A>   ;
+?Sukija [Sill][Nm]ksihi:ksihi     NimisanaLiOlN_<A>   ;
 
 LEXICON Johdin_UUs
 <U>:<U>	Johdin_Us_<A>	;
