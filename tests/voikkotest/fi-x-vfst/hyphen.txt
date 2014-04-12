@@ -1,0 +1,93 @@
+[voikko.setNoUglyHyphenation(True) voikko.setIgnoreDot(False)]
+kissa           kis-sa
+kerrostalo      ker-ros-ta-lo
+elävä           elä-vä
+määyntä         määyn-tä
+maito           mai-to
+peili           pei-li
+noita           noi-ta
+kuiva           kui-va
+lyijy           lyi-jy
+Joensuu         Joen-suu
+kuoria          kuo-ria
+Äetsä           Äet-sä
+kieuttiin       kieut-tiin
+aiottu          aiot-tu
+sprintteri      sprint-te-ri
+traktori        trak-to-ri
+vaieta          vaie-ta
+proteiini       pro-teii-ni
+intiaani        in-tiaa-ni
+jesuiitta       je-suiit-ta
+AA              AA
+hienosto	hie-nos-to
+pöytähienosto	pöy-tä-hienos-to
+90-vuotias      90-vuo-tias
+hiili-12        hiili-12
+hiili12         hiili12
+http://www.lappeenranta.fi     http://www.lappeenranta.fi
+www.lappeenranta.fi     www.lappeenranta.fi
+asukkaat.hoas.fi asuk-kaat.hoas.fi
+tuhataskelinen	tu-hat-as-ke-li-nen
+jok'ikinen       jok-iki-nen
+nougat'kaan     nou-gat'kaan
+te'vaste         te'vas-te # Ei tavutusta heittomerkin jälkeen, eikä kohdalla, kun perässä on konsonantti
+juurihoitoklubi	juu-ri-hoi-to-klu-bi
+demokraattiosavaltio	de-mo-kraat-ti-osa-val-tio
+kissa/koira     kis-sa/koi-ra
+hatapitk@iki.fi hatapitk@iki.fi
+
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(False)]
+elävä           e-lä-vä
+kansaneläke.    kan-sa-ne-lä-ke.
+määyntä         mää-yn-tä
+maito           mai-to
+peili           pei-li
+noita           noi-ta
+kuiva           kui-va
+lyijy           lyi-jy
+Joensuu         Jo-en-suu
+kuoria          kuo-ri-a
+Äetsä           Ä-et-sä
+kieuttiin       kie-ut-tiin
+#pietty          pi-et-ty tai piet-ty
+aiottu          ai-ot-tu
+sprintteri      sprint-te-ri
+traktori        trak-to-ri
+vaieta          vai-e-ta
+proteiini       pro-te-ii-ni
+intiaani        in-ti-aa-ni
+jesuiitta       je-su-iit-ta
+yö              yö
+hiili-12        hii-li-12
+Ruokala.com     Ruo-ka-la.com
+http://www.lappeenranta.fi     http://www.lap-peen-ran-ta.fi
+KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
+jok'ikinen       jok-i-ki-nen
+pop-musiikkia   pop-mu-siik-ki-a
+erinomaisuutta  e-rin-o-mai-suut-ta
+
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(True)]
+kansaneläke.    kan-san-e-lä-ke.
+kuorma-allas.   kuor-ma-al-las.
+
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(True) voikko.setMinHyphenatedWordLength(6)]
+kuorma-allas.   kuor-ma-allas.
+talon.          talon.
+
+[voikko.setNoUglyHyphenation(True)]
+# "hienosto" has a compound and non-compound analysis. The non-compound analysis is assumed to be correct.
+hienosto	hie-nos-to
+# If there is a compound analysis with two components and another with three components, do not guess which one is correct.
+pöytähienosto   pöy-tä-hienos-to
+
+# TODO: check if this test is just for testing the test tool
+# (in which case it can be safely removed).
+#[-s!]
+#kissa           kis!sa
+#kuorma-auto     kuor!ma!-au!to
+#jok'ikinen      jok!'i!ki!nen
+
+[voikko.setHyphenateUnknownWords(False)]
+koirra          koirra
+koira           koi-ra

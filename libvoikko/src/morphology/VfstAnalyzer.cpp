@@ -374,6 +374,9 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 			analysis->addAttribute("MALAGA_VAPAA_JALKIOSA", StringUtils::copy(L"true"));
 		}
 	}
+	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
+		analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
+	}
 }
 
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {

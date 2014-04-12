@@ -1,0 +1,66 @@
+Hauki on kala.
+ [<Hauki,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <kala,WORD>, <.,PUNCTUATION>]
+Tässä lauseessa on ääkkösiä.
+ [<Tässä,WORD>, < ,WHITESPACE>, <lauseessa,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <ääkkösiä,WORD>, <.,PUNCTUATION>]
+Onko siellä kylmä? Täällä ainakin on...
+ [<Onko,WORD>, < ,WHITESPACE>, <siellä,WORD>, < ,WHITESPACE>, <kylmä,WORD>, <?,PUNCTUATION>, < ,WHITESPACE>, <Täällä,WORD>, < ,WHITESPACE>, <ainakin,WORD>, < ,WHITESPACE>, <on,WORD>, <...,PUNCTUATION>]
+Missä, missä ovat avaimeni!
+ [<Missä,WORD>, <,,PUNCTUATION>, < ,WHITESPACE>, <missä,WORD>, < ,WHITESPACE>, <ovat,WORD>, < ,WHITESPACE>, <avaimeni,WORD>, <!,PUNCTUATION>]
+Talossa asui 52-vuotias nainen 22,3 päivää vanhan leppäkertun kanssa←
+ [<Talossa,WORD>, < ,WHITESPACE>, <asui,WORD>, < ,WHITESPACE>, <52-vuotias,WORD>, < ,WHITESPACE>, <nainen,WORD>, < ,WHITESPACE>, <22,3,WORD>, < ,WHITESPACE>, <päivää,WORD>, < ,WHITESPACE>, <vanhan,WORD>, < ,WHITESPACE>, <leppäkertun,WORD>, < ,WHITESPACE>, <kanssa,WORD>, <←,UNKNOWN>]
+kissa, koira,kissa!koira ? kiss3a-
+ [<kissa,WORD>, <,,PUNCTUATION>, < ,WHITESPACE>, <koira,WORD>, <,,PUNCTUATION>, <kissa,WORD>, <!,PUNCTUATION>, <koira,WORD>, < ,WHITESPACE>, <?,PUNCTUATION>, < ,WHITESPACE>, <kiss3a-,WORD>]
+Vaa'an 'välit' "varras".
+ [<Vaa'an,WORD>, < ,WHITESPACE>, <',PUNCTUATION>, <välit,WORD>, <',PUNCTUATION>, < ,WHITESPACE>, <",PUNCTUATION>, <varras,WORD>, <",PUNCTUATION>, <.,PUNCTUATION>]
+Filosiﬁn deﬂaatio  me®essä
+ [<Filosiﬁn,WORD>, < ,WHITESPACE>, <deﬂaatio,WORD>, <  ,WHITESPACE>, <me,WORD>, <®,UNKNOWN>, <essä,WORD>]
+Kuorma-auto Keski- -etelä- kuorma‑auto
+ [<Kuorma-auto,WORD>, < ,WHITESPACE>, <Keski-,WORD>, < ,WHITESPACE>, <-etelä-,WORD>, < ,WHITESPACE>, <kuorma‑auto,WORD>]
+‑kuorma‑auto‑ (vanha).
+ [<‑kuorma‑auto‑,WORD>, < ,WHITESPACE>, <(,PUNCTUATION>, <vanha,WORD>, <),PUNCTUATION>, <.,PUNCTUATION>]
+[sanoja] {suluissa}
+ [<[,PUNCTUATION>, <sanoja,WORD>, <],PUNCTUATION>, < ,WHITESPACE>, <{,PUNCTUATION>, <suluissa,WORD>, <},PUNCTUATION>]
+ongelma
+ [<ongelma,WORD>]
+Kolme pistettä...
+ [<Kolme,WORD>, < ,WHITESPACE>, <pistettä,WORD>, <...,PUNCTUATION>]
+Neljä pistettä....
+ [<Neljä,WORD>, < ,WHITESPACE>, <pistettä,WORD>, <...,PUNCTUATION>, <.,PUNCTUATION>]
+Kuusi pistettä......
+ [<Kuusi,WORD>, < ,WHITESPACE>, <pistettä,WORD>, <...,PUNCTUATION>, <...,PUNCTUATION>]
+Ellipsis…
+ [<Ellipsis,WORD>, <…,PUNCTUATION>]
+tavutus­vihje
+ [<tavutus­vihje,WORD>]
+»
+ [<»,PUNCTUATION>]
+”
+ [<”,PUNCTUATION>]
+“
+ [<“,PUNCTUATION>]
+—
+ [<—,PUNCTUATION>]
+–
+ [<–,PUNCTUATION>]
+Grænlands Sigurður Þeir það
+ [<Grænlands,WORD>, < ,WHITESPACE>, <Sigurður,WORD>, < ,WHITESPACE>, <Þeir,WORD>, < ,WHITESPACE>, <það,WORD>]
+Brøndbyssä
+ [<Brøndbyssä,WORD>]
+Kissa ja/tai koira.
+ [<Kissa,WORD>, < ,WHITESPACE>, <ja,WORD>, </,PUNCTUATION>, <tai,WORD>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
+Kissa & koira.
+ [<Kissa,WORD>, < ,WHITESPACE>, <&,PUNCTUATION>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
+Osoitteissa https://www.turku.fi ja http://example.org/jotain/muuta?p=tuo&q=m%20m#n tai http://example.com.
+ [<Osoitteissa,WORD>, < ,WHITESPACE>, <https://www.turku.fi,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <http://example.org/jotain/muuta?p=tuo&q=m%20m#n,WORD>, < ,WHITESPACE>, <tai,WORD>, < ,WHITESPACE>, <http://example.com,WORD>, <.,PUNCTUATION>]
+Sähköpostiosoite on ha_ta-pi.tk@iki.fi.
+ [<Sähköpostiosoite,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <ha_ta-pi.tk@iki.fi,WORD>, <.,PUNCTUATION>]
+kissa,koira@joku.com
+ [<kissa,WORD>, <,,PUNCTUATION>, <koira@joku.com,WORD>]
+Sisä-, reuna- ja ulkopiste
+ [<Sisä-,WORD>, <,,PUNCTUATION>, < ,WHITESPACE>, <reuna-,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <ulkopiste,WORD>]
+Chișinău on kaupunki.
+ [<Chișinău,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <kaupunki,WORD>, <.,PUNCTUATION>]
+alaviite.24
+ [<alaviite,WORD>, <.,PUNCTUATION>, <24,WORD>]
+20.3.1984
+ [<20.3.1984,WORD>]

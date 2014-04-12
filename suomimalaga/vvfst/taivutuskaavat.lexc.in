@@ -3739,8 +3739,8 @@ LEXICON TositavanKestämäTaan
 t:t	TositavanKestämäXaan_<A>	;
 
 LEXICON TositavanKestämäXaan
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4]<A><A>n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A><A>n	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4]<A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A>	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4][Ef]<A><A>n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A><A>n	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4][Et]<A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A>	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttiin	Liitesana_<A>	;
@@ -3832,7 +3832,7 @@ LEXICON Johdin_nimitapa1tA
 t:t	Johdin_nimitapa1A_<A>	;
 
 LEXICON Johdin_nimitapa1A
-[Tn1]<A>:<A>	Nimitapa1Jatko_<A>	;
+[Tn1][Eb]<A>:<A>	Nimitapa1Jatko_<A>	;
 
 LEXICON Nimitapa1Jatko
 Liitesana_<A>	;
