@@ -171,6 +171,10 @@ Ette ovat siellä.
 Älä juoksehan kotiin.
  [code=13, level=0, descr="", stpos=0, len=13, suggs={}]
 Pertti jaksaa tehdä läksyjä.
+#Pertti jaksaa tekemään läksyjä.
+# [code=14, level=0, descr="", stpos=7, len=15, suggs={}]
+#Pertti ryhtyy tehdä läksyjä.
+# [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
 Tätä ei käsittääkseni voi näin esittää.
 Pitkänen pystyy tarvittaessa muokkaamaan käsityksiään maailmankaikkeuden fysikaalisista ominaisuuksista.

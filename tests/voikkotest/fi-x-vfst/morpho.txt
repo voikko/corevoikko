@@ -10,8 +10,14 @@ word:kissa
   CLASS=nimisana
   SIJAMUOTO=nimento
   STRUCTURE==ppppp
+word:kuorma-auto
+ analysis
+  STRUCTURE==pppppp-=pppp
 word:koirra
  expected:0
+word:EU
+ expected:1
+  STRUCTURE==jj
 word:alusta
  analysis
   STRUCTURE==pppppp
@@ -26,6 +32,9 @@ word:kissojen
 word:kissaa
  analysis
   SIJAMUOTO=osanto
+word:meidät
+ analysis
+  SIJAMUOTO=kohdanto
 word:kissana
  analysis
   SIJAMUOTO=olento
@@ -53,9 +62,44 @@ word:kissalle
 word:kissatta
  analysis
   SIJAMUOTO=vajanto
+word:kissoineni
+ analysis
+  SIJAMUOTO=seuranto
 word:kissoin
  analysis
   SIJAMUOTO=keinonto
+word:nopeasti
+ analysis
+  SIJAMUOTO=kerrontosti
+word:juosta
+ !SIJAMUOTO
+ analysis
+  CLASS=teonsana
+word:nopea
+ analysis
+  CLASS=laatusana
+word:hyvin
+ analysis
+  CLASS=seikkasana
+ analysis
+  CLASS=laatusana
+  SIJAMUOTO=keinonto
+word:taistolainen
+ analysis
+  CLASS=nimisana_laatusana
+word:joka
+ analysis
+  CLASS=asemosana
+  SIJAMUOTO=nimento
+  NUMBER=singular
+word:jotka
+ analysis
+  CLASS=asemosana
+  SIJAMUOTO=nimento
+  NUMBER=plural
+word:ohi
+ analysis
+  CLASS=suhdesana
 word:hyttynen
  expected:1
  analysis
