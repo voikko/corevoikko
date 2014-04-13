@@ -212,6 +212,10 @@ def get_info_flags(word):
 				flags = flags + u"[Ica]"
 			elif flagName == u"free_suffix":
 				flags = flags + u"[Ivj]"
+			elif flagName == u"require_following_a":
+				flags = flags + u"[Ira]"
+			elif flagName == u"require_following_ma":
+				flags = flags + u"[Irm]"
 	return flags
 
 def get_vfst_class_prefix(vfst_class):

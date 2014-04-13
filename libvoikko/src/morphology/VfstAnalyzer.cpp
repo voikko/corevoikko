@@ -88,6 +88,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
 	moodMap.insert(std::make_pair(L"n2", L"E-infinitive"));
 	moodMap.insert(std::make_pair(L"n3", L"MA-infinitive"));
+	moodMap.insert(std::make_pair(L"n4", L"MINEN-infinitive"));
 	moodMap.insert(std::make_pair(L"t", L"indicative"));
 	moodMap.insert(std::make_pair(L"e", L"conditional"));
 	moodMap.insert(std::make_pair(L"k", L"imperative"));
@@ -376,6 +377,17 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
 		analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
+	}
+	else {
+		const wchar_t * mood = analysis->getValue("MOOD");
+		if (!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0)) {
+			if (wcsncmp(outputPosition, L"ra", 2) == 0) {
+				analysis->addAttribute("REQUIRE_FOLLOWING_VERB", StringUtils::copy(L"A-infinitive"));
+			}
+			else if (wcsncmp(outputPosition, L"rm", 2) == 0) {
+				analysis->addAttribute("REQUIRE_FOLLOWING_VERB", StringUtils::copy(L"MA-infinitive"));
+			}
+		}
 	}
 }
 

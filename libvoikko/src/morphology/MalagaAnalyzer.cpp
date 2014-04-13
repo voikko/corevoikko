@@ -228,6 +228,7 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "nimitapa_1", L"A-infinitive");
 	insertToSymbolMap(symbolMap, "nimitapa_2", L"E-infinitive");
 	insertToSymbolMap(symbolMap, "nimitapa_3", L"MA-infinitive");
+	insertToSymbolMap(symbolMap, "nimitapa_4", L"MINEN-infinitive");
 	
 	insertToSymbolMap(symbolMap, "yes", L"true");
 	insertToSymbolMap(symbolMap, "no", L"false");

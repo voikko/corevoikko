@@ -28,6 +28,7 @@
 51      compounding/el_altark                    -               Aluetta tarkentava etuliite
 54      compounding/geo_suffix                   -               Paikannimen jälkiliite
 60      compounding/free_suffix                  -               Yhdistyy vapaasti yhdyssanan perusosaksi
+61      compounding/org_suffix                   -               Organisaationimen jälkiliite
 27      derivation/ei_lainen                     ei_lAinen       Ei lAinen-johdosta
 30      derivation/ei_mainen                     ei_mAinen       Ei mAinen-johdosta
 3       derivation/inen                          inen            Inen-johdin aina sallittu
@@ -39,6 +40,8 @@
 40      style/incorrect                          -               Tyypillinen kielivirhe
 41      style/foreignloan                        sitlaina        Sitaattilaina
 44      style/inappropriate                      loukkaava       Mahdollisesti loukkaava tai alatyylinen
+62      grammar/require_following_a              -               Verbiketju: vaatii A-infinitiivin
+63      grammar/require_following_ma             -               Verbiketju: vaatii MA-infinitiivin
 5       application/not_voikko                   -               Ei kuulu oikolukusanastoon
 6       application/not_sukija                   -               Ei kuulu indeksointisanastoon
 39      frequency/confusing                      -               Sekoittuu helposti yleisempään sanaan

@@ -3865,7 +3865,7 @@ Johdin_nimitapa4_<A>	;
 Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
-mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimiLaatusanaNainen_<A>	;
+[Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimiLaatusanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;

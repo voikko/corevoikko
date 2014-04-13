@@ -98,7 +98,8 @@ MOODS = {
 "potential": u"potentiaali eli mahtotapa",
 "A-infinitive": u"A-infinitiivi",
 "E-infinitive": u"E-infinitiivi",
-"MA-infinitive": u"MA-infinitiivi"
+"MA-infinitive": u"MA-infinitiivi",
+"MINEN-infinitive": u"MINEN-infinitiivi"
 }
 
 TENSES = {

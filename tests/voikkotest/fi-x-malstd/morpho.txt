@@ -397,6 +397,8 @@ word:agraariruotsalainen
   CLASS=laatusana
 word:juoksemiseen
  expected:1
+ analysis
+  MOOD=MINEN-infinitive
 word:superhämärästi
  expected:1
  analysis

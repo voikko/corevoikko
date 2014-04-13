@@ -3694,24 +3694,16 @@ end;
 # Operaatioita, jotka tehdään taivutuskaavan muodostamisen yhteydessä
 # kaikille tietueille.
 subrule muokkaa_tietuetta($tietue, $taivutus):
-  # Yleisnimestä mahdollisesti erisnimen muodostava jälkiliite
-  if $tietue.perusmuoto in <"arkisto", "hallitus", "kassa", "keskus", "koulu",
-                             "laitos", "opisto", "rahasto"> then
-    $tietue :=+ [erisnimen_pääte: yes];
-  end;
-
   # Inen-loppuiset laatusanat
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];
   end;
   
   # Verbiketjuihin liittyvät säännöt, ks. http://kaino.kotus.fi/visk/sisallys.php?p=496
-  if ($tietue.perusmuoto in <"aikoa", "haluta", "jaksaa", "kannattaa", "mahtaa", "pitää", "rohjeta", "saattaa",
-                             "tahtoa", "taitaa", "tarvita", "täytyä", "uhata", "voida", "yrittää">) then
+  if ($tietue.perusmuoto in <"kannattaa">) then
     $tietue :=+ [vaatii_tapaluokan: nimitapa_1];
   end;
-  if ($tietue.perusmuoto in <"erehtyä", "innostaa", "innostua", "kannustaa", "keskittyä", "kyetä", "kyllästyä", "lakata", "onnistua",
-        "pakottaa", "pystyä", "pyrkiä", "ruveta", "ryhtyä", "sattua", "tupata", "väsyä">) then
+  if ($tietue.perusmuoto in <"kyllästyä", "lakata">) then
     $tietue :=+ [vaatii_tapaluokan: nimitapa_3];
   end;
   # -vAn: ajatella, haaveilla, kuvitella, laskea, luulla, näyttää, odottaa, suunnitella, tavoitella, tietää, tuntea, uneksia, uskoa

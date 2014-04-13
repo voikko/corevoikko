@@ -106,8 +106,15 @@ def get_additional_attributes(word):
 		result = result + u", aluetta_tarkentava_etuliite: yes"
 	if u"geo_suffix" in flags:
 		result = result + u", paikannimen_jälkiliite: yes"
+	if u"org_suffix" in flags:
+		result = result + u", erisnimen_pääte: yes"
 	if u"free_suffix" in flags:
 		result = result + u", vapaa_jälkiosa: yes"
+	flags = generate_lex_common.get_flags_from_group(word, u"grammar")
+	if u"require_following_a" in flags:
+		result = result + u", vaatii_tapaluokan: nimitapa_1"
+	if u"require_following_ma" in flags:
+		result = result + u", vaatii_tapaluokan: nimitapa_3"
 	return result
 
 def handle_word(word):
