@@ -3706,16 +3706,16 @@ ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
 
 LEXICON KestämänTekijäpääteHeikko
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@n	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Ny]t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Nm]mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@mme	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm]tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tte	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Ny][Ef]n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@n	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Ny][Ef]t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Nm][Ef]mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@mme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm][Ef]tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tte	Liitesana_<A>	;
 
 LEXICON KertomanTekijäpääteHeikko
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Ny]in:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@in	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Ny]it:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@it	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Nm]imme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@imme	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Nm]itte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@itte	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Ny][Ef]in:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@in	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Ny][Ef]it:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@it	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Nm][Ef]imme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@imme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Nm][Ef]itte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@itte	Liitesana_<A>	;
 
 LEXICON KestämänTekijäpääteY3Liitesana
 Liitesana_<A>	;
@@ -3799,11 +3799,11 @@ Käskytapa_<A>	;
 e:e	Käskytapa_y2_<A>	;
 
 LEXICON Käskytapa
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>mme	LiitesanaPaHan_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>	LiitesanaPaHan_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tte	LiitesanaPaHan_<A>	;
-[Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
-@D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P1][Nm][Ef]k<A><A>mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>mme	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tte	LiitesanaPaHan_<A>	;
+[Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
+@D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm][Ef]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	LiitesanaPaHan_<A>	;
 [Tk][Ap][Et]k<O>:k<O>	Loppu	;
 ?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
@@ -4278,10 +4278,10 @@ LiitesanaPaHan_<A>	;
 [Fkin]kin:kin	Loppu       ;
 
 LEXICON LiitesanaPaHan
-p<A>:p<A>	Loppu ;
-h<A>n:h<A>n	Loppu ;
-p<A>h<A>n:p<A>h<A>n	Loppu ;
-p<A>s:p<A>s	Loppu ;
+p<A>[Ef]:p<A>	Loppu ;
+h<A>n[Ef]:h<A>n	Loppu ;
+p<A>h<A>n[Ef]:p<A>h<A>n	Loppu ;
+p<A>s[Ef]:p<A>s	Loppu ;
 Loppu      ;
 
 LEXICON Sivumpana

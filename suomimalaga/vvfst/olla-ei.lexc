@@ -8,19 +8,19 @@ l:l                 EhtoMahtoKäskytapa_tA_a ;
 le:le               Johdin_mA_a ;
 le:le               Johdin_vA_a ;
 l:l                 Johdin_tU_lA_a	;
-[Tt][Ap][P1][Ny]len:len     Liitesana_a ;  # Minä olen.
-[Tt][Ap][P2][Ny]let:let     Liitesana_a ;  # Sinä olet.
-[Tt][Ap][P3][Ny]n:n         Liitesana_a ;  # Hän on. 
-[Tt][Ap][P3][Ny]mpi:mpi     Loppu       ;  # Hän ompi.
-[Tt][Ap][P1][Nm]lemme:lemme Liitesana_a ;  # Me olemme.
-[Tt][Ap][P2][Nm]lette:lette Liitesana_a ;  # Te olette.
-[Tt][Ap][P3][Nm]vat:vat     Liitesana_a ;  # He ovat.
-[Tt][Ai][P1][Ny]lin:lin     Liitesana_a ;  # Minä olin.
-[Tt][Ai][P2][Ny]lit:lit     Liitesana_a ;  # Sinä olit.
-[Tt][Ai][P3][Ny]li:li       Liitesana_a ;  # Hän oli. 
-[Tt][Ai][P1][Nm]limme:limme Liitesana_a ;  # Me olimme.
-[Tt][Ai][P2][Nm]litte:litte Liitesana_a ;  # Te olitte.
-[Tt][Ai][P3][Nm]livat:livat Liitesana_a ;  # He olivat.
+[Tt][Ap][P1][Ny][Ef]len:len     Liitesana_a ;  # Minä olen.
+[Tt][Ap][P2][Ny][Ef]let:let     Liitesana_a ;  # Sinä olet.
+[Tt][Ap][P3][Ny][Ef]n:n         Liitesana_a ;  # Hän on.
+[Tt][Ap][P3][Ny][Ef]mpi:mpi     Loppu       ;  # Hän ompi.
+[Tt][Ap][P1][Nm][Ef]lemme:lemme Liitesana_a ;  # Me olemme.
+[Tt][Ap][P2][Nm][Ef]lette:lette Liitesana_a ;  # Te olette.
+[Tt][Ap][P3][Nm][Ef]vat:vat     Liitesana_a ;  # He ovat.
+[Tt][Ai][P1][Ny][Ef]lin:lin     Liitesana_a ;  # Minä olin.
+[Tt][Ai][P2][Ny][Ef]lit:lit     Liitesana_a ;  # Sinä olit.
+[Tt][Ai][P3][Ny][Ef]li:li       Liitesana_a ;  # Hän oli.
+[Tt][Ai][P1][Nm][Ef]limme:limme Liitesana_a ;  # Me olimme.
+[Tt][Ai][P2][Nm][Ef]litte:litte Liitesana_a ;  # Te olitte.
+[Tt][Ai][P3][Nm][Ef]livat:livat Liitesana_a ;  # He olivat.
 l:l                     Ehtotapa_a ;   # Minä olisin, sinä olisit, jne.
 [Tk][Ap][P1][Ny]le:le   Liitesana_a ;  # Ole.
 l:l                     Käskytapa_a ;

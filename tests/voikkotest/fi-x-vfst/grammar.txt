@@ -160,6 +160,16 @@ Komissio haluaa ottaa käyttöön rekisterin, jossa ei mainittaisi edunvalvojien
 Mietintö voidaan täällä hyväksyä, eikä kaataa sitä pienten yksityiskohtien vuoksi.
 Täytyy ostaa lisää maitoa, eikä luopua siitä.
 Älä virheellinensanaaslkdjalk.
+En juoksen kotiin.
+ [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
+En juoksepa kotiin.
+ [code=13, level=0, descr="", stpos=0, len=11, suggs={}]
+Ette ovat siellä.
+ [code=13, level=0, descr="", stpos=0, len=9, suggs={}]
+Älä juoskoot kotiin.
+ [code=13, level=0, descr="", stpos=0, len=12, suggs={}]
+Älä juoksehan kotiin.
+ [code=13, level=0, descr="", stpos=0, len=13, suggs={}]
 Pertti jaksaa tehdä läksyjä.
 Pertti ryhtyy tekemään läksyjä.
 Tätä ei käsittääkseni voi näin esittää.
