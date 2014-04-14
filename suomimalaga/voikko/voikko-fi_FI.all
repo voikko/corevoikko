@@ -3699,16 +3699,6 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
     $tietue :=+ [inen_loppu: yes];
   end;
   
-  # Verbiketjuihin liittyvät säännöt, ks. http://kaino.kotus.fi/visk/sisallys.php?p=496
-  if ($tietue.perusmuoto in <"kannattaa">) then
-    $tietue :=+ [vaatii_tapaluokan: nimitapa_1];
-  end;
-  if ($tietue.perusmuoto in <"kyllästyä", "lakata">) then
-    $tietue :=+ [vaatii_tapaluokan: nimitapa_3];
-  end;
-  # -vAn: ajatella, haaveilla, kuvitella, laskea, luulla, näyttää, odottaa, suunnitella, tavoitella, tietää, tuntea, uneksia, uskoa
-  # -minen: lopettaa
-
   return $tietue;
 end;
 
