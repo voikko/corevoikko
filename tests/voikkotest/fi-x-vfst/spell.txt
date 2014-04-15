@@ -3612,6 +3612,9 @@ x-nopeuksinen
 keskiesiklassisella
 !kaksisylinterin
 yksipuoluejärjestelmän
+Hannunniitussa
+-siirtoisen
+Alppi-studiossa
 
 # = poikkeavat asetukset =
 
