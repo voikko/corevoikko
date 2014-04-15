@@ -2321,6 +2321,7 @@ in:in	<WC>NormaaliYsJatko_<A>	;
 LEXICON NOUN MonikonGenetiiviEnJatko
 en:en	<WC>NormaaliYsJatko_<A>	;
 ?Sukunimi	en@P.PAIKANNIMEN_JL.ON@[Bc]:en@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
+?Laatusana	en[Bh][Bc]@C.INEN_KIELLETTY@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:en@C.INEN_KIELLETTY@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 ?NotLaatusana	e:e	Omistusliite_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
@@ -4023,11 +4024,33 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_<A>	;
+[Ll]i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_<A>	;
+[Ll]i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_omistusliite_<A>	;
 [Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	NimiLaatusanaYsJatko	;
 [Ll]is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@:is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@	InenLoppuisenYsJatko	;
 
 LEXICON Johdin_inen_jatko
+[Sn][Ny]nen:nen	Liitesana_<A>	;
+[Sn][Nm]set:set	Liitesana_<A>	;
+[Sg][Ny]sen:sen	LaatusanaYksikönGenetiivinJatko_<A>	;
+[Sg][Nm]st:st	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]si:si	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]st<A>:st<A>	LaatusanaLiOlV_<A>	;
+[Sp][Nm]si<A>:si<A>	LaatusanaLiOlV_<A>	;
+[Ses][Ny]sen<A>:sen<A>	LaatusanaLiOlV_<A>	;
+s:s	LaatusanaYhteisetMonikonSijat2_<A>	;
+[Sill][Ny]see:see	LaatusanaLiOlN_<A>	;
+[Sill][Nm]sii:sii	LaatusanaLiOlN_<A>	;
+se:se	LaatusanaYhteisetYksikönPaikallissijat_<A>	;
+s:s	LaatusanaYhteisetMonikonPaikallissijat_<A>	;
+se:se	Voittoaste_<A>	;
+s:s	Yliaste_<A>	;
+s:s	Johdin_UUs_<A>	;
+?Sukija [Ses][Ny]sn<A>:sn<A>	LaatusanaLiOlV_<A>	;
+?Sukija [Sill][Ny]sehe:sehe	LaatusanaLiOlN_<A>	;
+?Sukija [Sill][Nm]sihi:sihi	LaatusanaLiOlN_<A>	;
+
+LEXICON Johdin_inen_jatko_omistusliite
 [Sn][Ny]nen:nen	Liitesana_<A>	;
 [Sn][Ny]se:se	Omistusliite_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;

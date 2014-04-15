@@ -3617,6 +3617,8 @@ Hannunniitussa
 Alppi-studiossa
 korjattava-
 ohjattaviensa
+!nopeatorvisieni
+ikäisieni
 
 # = poikkeavat asetukset =
 
