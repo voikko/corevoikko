@@ -3619,6 +3619,7 @@ korjattava-
 ohjattaviensa
 !nopeatorvisieni
 ikäisieni
+J-pop-artisteista
 
 # = poikkeavat asetukset =
 
