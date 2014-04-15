@@ -3615,6 +3615,8 @@ yksipuoluejärjestelmän
 Hannunniitussa
 -siirtoisen
 Alppi-studiossa
+korjattava-
+ohjattaviensa
 
 # = poikkeavat asetukset =
 

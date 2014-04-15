@@ -3927,9 +3927,32 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaAsema_<A>	;
+[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
 [Ln]t<A>v<U><U>s:t<A>v<U><U>s	NimisanaYsJatko	;
 [Ll]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
+
+LEXICON Johdin_tAvA_muodot
+[Sn][Ny]<A>:<A>	Omistusliite_<A>	;
+[Sn][Ny]<A>:<A>	LaatusanaNormaaliYsJatkoOl_<A>	;
+[Sg][Nm]i:i	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>:<A>	LaatusanaMonikonGenetiiviInJatko_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	NimisanaLiOlV_<A>	;
+[Sill][Ny]<A><A>:<A><A>	NimisanaLiOlN_<A>	;
+[Sill][Nm]ii:ii	NimisanaLiOlN_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	NimisanaLiOlV_<A>	;
+NimisanaYhteisetMonikonSijat2_<A>	;
+<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	LaatusanaYksikönGenetiivinJatko_<A>	;
+<A>:<A>	NimisanaYhteisetYksikönPaikallissijat_<A>	;
+NimisanaYhteisetMonikonPaikallissijat_<A>	;
+<A>:<A>	Kerronto_sti_<A>	;
+<A>:<A>	Voittoaste_<A>	;
+Yliaste_<A>	;
+Johdin_UUs_<A>	;
+<A>i:<A>i	NimiLaatusanaNainen_<A>	;
+
 
 LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
