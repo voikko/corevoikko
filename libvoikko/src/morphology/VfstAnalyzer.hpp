@@ -64,6 +64,7 @@ class VfstAnalyzer : public Analyzer {
 		std::map<std::wstring, std::wstring> negativeMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
+		void duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList);
 };
 
 } }

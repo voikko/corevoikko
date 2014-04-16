@@ -391,6 +391,50 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 }
 
+void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList) {
+	const wchar_t * oldClass = analysis->getValue("CLASS");
+	if (!oldClass || wcscmp(oldClass, L"nimisana") != 0) {
+		return;
+	}
+	const wchar_t * fstOutput = analysis->getValue("FSTOUTPUT");
+	if (!fstOutput) {
+		return;
+	}
+	size_t fstLen = wcslen(fstOutput);
+	if (fstLen < 13) {
+		return;
+	}
+	for (size_t i = fstLen - 5; i >= 8; i--) {
+		if (wcsncmp(fstOutput + i, L"[Ion]", 5) == 0) {
+			for (size_t j = i - 4; j >= 4; j--) {
+				if (wcsncmp(fstOutput + j, L"[Bc]", 4) == 0) {
+					Analysis * newAnalysis = new Analysis();
+					const char ** keys = analysis->getKeys();
+					for (const char ** keyPtr = keys; *keyPtr; keyPtr++) {
+						const char * key = *keyPtr;
+						if (strcmp(key, "CLASS") == 0) {
+							newAnalysis->addAttribute(key, StringUtils::copy(L"nimi"));
+						}
+						else if (strcmp(key, "STRUCTURE") == 0) {
+							const wchar_t * oldStructure = analysis->getValue(key);
+							size_t structureLen = wcslen(oldStructure);
+							if (structureLen >= 2) {
+								wchar_t * newStructure = StringUtils::copy(oldStructure);
+								newStructure[1] = L'i';
+								newAnalysis->addAttribute(key, newStructure);
+							}
+						}
+						else {
+							newAnalysis->addAttribute(key, StringUtils::copy(analysis->getValue(key)));
+						}
+					}
+					analysisList->push_back(newAnalysis);
+				}
+			}
+		}
+	}
+}
+
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
@@ -501,6 +545,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			analysis->addAttribute("STRUCTURE", structure);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
+			duplicateOrgName(analysis, analysisList);
 		}
 	}
 	

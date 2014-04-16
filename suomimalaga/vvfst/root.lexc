@@ -104,6 +104,7 @@ Multichar_Symbols
 [Icu] ! voidaan jatkaa yhdyssanana vain yhdysmerkin kanssa
 [Ica] ! sallitaan yhdysmerkin puuttuminen [Icu]-lipusta huolimatta lippua edeltävällä rajalla (muttei myöhemmin)
 [Ivj] ! vapaasti yhdistyvä yhdyssanan jälkiosa
+[Ion] ! organisaation nimenä voidaan kirjoittaa isolla alkukirjaimella
 [Ira] ! Verbiketju: vaatii A-infinitiivin
 [Irm] ! Verbiketju: vaatii MA-infinitiivin
 

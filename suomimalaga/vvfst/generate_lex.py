@@ -210,6 +210,8 @@ def get_info_flags(word):
 				flags = flags + u"[De]"
 			elif flagName == u"geo_suffix":
 				flags = flags + u"[Ica]"
+			elif flagName == u"org_suffix":
+				flags = flags + u"[Ion]"
 			elif flagName == u"free_suffix":
 				flags = flags + u"[Ivj]"
 			elif flagName == u"require_following_a":
