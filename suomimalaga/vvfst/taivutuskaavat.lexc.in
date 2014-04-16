@@ -2316,7 +2316,7 @@ Liitesana_<A>	;
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
 ?Sukunimi	in@P.PAIKANNIMEN_JL.ON@[Bc]:in@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
-?Sukija?NotLaatusana i[O3]ns_<A>:ins<A>		Liitesana_<A>	;
+?Sukija ?NotLaatusana i[O3]ns<A>:ins<A>		Liitesana_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 en:en	<WC>NormaaliYsJatko_<A>	;
@@ -3953,7 +3953,9 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i:<A>i	NimiLaatusanaNainen_<A>	;
-
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
@@ -4007,6 +4009,7 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i:<A>i	NimiLaatusanaNainen_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
@@ -4046,6 +4049,7 @@ s:s	LaatusanaYhteisetMonikonPaikallissijat_<A>	;
 se:se	Voittoaste_<A>	;
 s:s	Yliaste_<A>	;
 s:s	Johdin_UUs_<A>	;
+?Sukija [Sn][Ny]se:se	Omistusliite_<A>	;
 ?Sukija [Ses][Ny]sn<A>:sn<A>	LaatusanaLiOlV_<A>	;
 ?Sukija [Sill][Ny]sehe:sehe	LaatusanaLiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	LaatusanaLiOlN_<A>	;
