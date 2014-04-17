@@ -139,6 +139,7 @@ vanhempain-
 vanhempainyhteistyötoimikunta
 lukemisesteisiä
 virvoitusjuomateollisuusliiton
+!Heinäsiepäitä
 
 # = vain yhdyssanan jälkiosana =
 []
@@ -3620,6 +3621,11 @@ ohjattaviensa
 !nopeatorvisieni
 ikäisieni
 J-pop-artisteista
+omenoineen
+omenoihin
+askelena
+hattaramaisia
+laulannoita
 
 # = poikkeavat asetukset =
 

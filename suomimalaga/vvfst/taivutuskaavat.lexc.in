@@ -862,12 +862,15 @@ LEXICON NOUN Matala
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+[Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
@@ -1307,6 +1310,7 @@ LEXICON NOUN Taival_s
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
@@ -4021,6 +4025,7 @@ Johdin_nimitapa45_<A>	;
 
 LEXICON Johdin_ntA
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKanta_<A>	;
+[Ln]nn[Sp][Nm]<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:nn<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
