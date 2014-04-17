@@ -2304,9 +2304,9 @@ Liitesana_<A>	;
 ?NotAsemosana	@D.YS_EI_GENETIIVIALKUA@:@D.YS_EI_GENETIIVIALKUA@	<WC>YsJatko	;
 ?Asemosana	AsemosanaYsJatko	;
 ?Nimisana	@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@[Bc]:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_laatusanat	;
-?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
-?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
-?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
+?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_VERTM@	Sanasto_t	;
+?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@C.EI_VERTM@	Sanasto_l	;
+?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@C.EI_VERTM@	Sanasto_nl	;
 ?Laatusana	Johdin_lAinen_a	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_ALKANUT.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_ALKANUT.ON@[Bc][Icu]:@P.PAIKANNIMEN_JL.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
@@ -3870,7 +3870,7 @@ Johdin_nimitapa4_<A>	;
 Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
-[Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimiLaatusanaNainen_<A>	;
+[Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimisanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
@@ -4032,10 +4032,10 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_<A>	;
-[Ll]i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	Johdin_inen_jatko_omistusliite_<A>	;
-[Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@	NimiLaatusanaYsJatko	;
-[Ll]is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@:is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@	InenLoppuisenYsJatko	;
+[Ll]i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@:i@D.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@	Johdin_inen_jatko_<A>	;
+[Ll]i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@:i@R.INEN_SALLITTU@@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@	Johdin_inen_jatko_omistusliite_<A>	;
+[Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.EI_YKS@@C.EI_VERTM@	NimiLaatusanaYsJatko	;
+[Ll]is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@@C.EI_VERTM@:is@C.VAIN_NIMISANA@@D.YS_ALKANUT@@C.EI_YKS@@C.EI_VERTM@	InenLoppuisenYsJatko	;
 
 LEXICON Johdin_inen_jatko
 [Sn][Ny]nen:nen	Liitesana_<A>	;
@@ -4245,7 +4245,7 @@ LEXICON Yliaste
 [Sp][Ny][Cs]int<A>@D.EI_VERTM@:int<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sp][Ny][Cs]imp<A><A>@D.EI_VERTM@:imp<A><A>@D.EI_VERTM@	NimisanaLiOlAA_<A>	;
 [Sp][Nm][Cs]impi<A>@D.EI_VERTM@:impi<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
-[Str][Ny][Cs]imm<A>ksi@D.EI_VERTM@:imm<A>ksi@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Ny][Cs]imm<A>ksi@D.EI_VERTM@:imm<A>ksi@D.EI_VERTM@	NimisanaLiOlI_<A>	;
 [Str][Nm][Cs]immiksi@D.EI_VERTM@:immiksi@D.EI_VERTM@	NimisanaLiOlI_<A>	;
 [Ses][Ny][Cs]imp<A>n<A>@D.EI_VERTM@:imp<A>n<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Ses][Nm][Cs]impin<A>@D.EI_VERTM@:impin<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
@@ -4259,7 +4259,7 @@ LEXICON Yliaste
 [Sade][Nm][Cs]immill<A>@D.EI_VERTM@:immill<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sabl][Ny][Cs]imm<A>lt<A>@D.EI_VERTM@:imm<A>lt<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sabl][Nm][Cs]immilt<A>@D.EI_VERTM@:immilt<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
-[Sall][Ny][Cs]imm<A>lle@D.EI_VERTM@:imm<A>lle@D.EI_VERTM@	Liitesana_<A>	;
+[Sall][Ny][Cs]imm<A>lle@D.EI_VERTM@:imm<A>lle@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sall][Nm][Cs]immille@D.EI_VERTM@:immille@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sab][Ny][Cs]imm<A>tt<A>@D.EI_VERTM@:imm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;

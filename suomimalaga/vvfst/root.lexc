@@ -166,7 +166,7 @@ Multichar_Symbols
 @P.V_SALLITTU.E@ @P.V_SALLITTU.T@ @R.V_SALLITTU.E@ @R.V_SALLITTU.T@ @C.V_SALLITTU@
 
 ! vertailumuodot eivät ole sallittuja
-@P.EI_VERTM.ON@ @D.EI_VERTM@
+@P.EI_VERTM.ON@ @D.EI_VERTM@ @C.EI_VERTM@
 
 ! paikannimen jälkiliite vaaditaan
 @P.PAIKANNIMEN_JL.ON@ @C.PAIKANNIMEN_JL@ @D.PAIKANNIMEN_JL@

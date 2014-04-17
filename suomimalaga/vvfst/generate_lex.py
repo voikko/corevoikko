@@ -175,6 +175,8 @@ def get_diacritics(word, altforms, vfst_word_class):
 				diacritics.append(u"@P.EI_MAINEN.ON@")
 			elif flagName == u"ei_lainen":
 				diacritics.append(u"@P.EI_LAINEN.ON@")
+			elif flagName == u"ei_vertm":
+				diacritics.append(u"@P.EI_VERTM.ON@")
 			elif flagName == u"ym3":
 				diacritics.append(u"@P.VAIN_YM3.ON@")
 			elif flagName == u"yt":

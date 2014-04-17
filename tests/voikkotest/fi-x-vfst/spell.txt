@@ -3626,6 +3626,13 @@ omenoihin
 askelena
 hattaramaisia
 laulannoita
+!alisointi
+!hyvemmin
+!hajoamisesti
+demokraattisemman
+rakkaimmalleen
+rakkaimmakseen
+hyvännäköisimmän
 
 # = poikkeavat asetukset =
 
