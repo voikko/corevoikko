@@ -2084,6 +2084,7 @@ LEXICON Boy
 [Ln][Xp]boy[X][Sill][Ny]boyhi:boyhi	NimisanaLiOlN_a	;
 [Ln][Xp]boy[X][Sn][Nm]boyt:boyt	Liitesana_a	;
 [Ln][Xp]boy[X][Sg][Nm]boyitt:boyitt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Ln][Xp]boy[X][Sg][Nm]boyid:boyid	NimisanaMonikonGenetiiviEnJatko_a	;
 [Ln][Xp]boy[X][Sp][Nm]boyita:boyita	NimisanaLiOlV_a	;
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonSijat2_a	;
 [Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonPaikallissijat_a	;

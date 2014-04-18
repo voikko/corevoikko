@@ -1854,6 +1854,7 @@ LEXICON NOUN Airut
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
+[Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -3193,6 +3194,7 @@ e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
+ee:ee	LiitesanaPi_<A>	;
 
 LEXICON Arvailla
 l:l	Johdin_nimitapa1A_<A>	;
@@ -4426,7 +4428,8 @@ LyhenteenTaivutuspääte_<A>	;
 
 LEXICON LyhenneIlmanLoppuaTaiTaivutusta
 -[Bc]:-	Loppu	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_n	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nl	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_p	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@	Sanasto_l	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
@@ -4753,6 +4756,7 @@ LEXICON JärjestyslukuNainen
 [Sab][Ny]sett<A>:sett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> JärjestyslukuSabNm39_<A> ;
 [Sin][Nm]sin:sin JärjestyslukuSinNm39_<A> ;
+[Sko][Nm]sine:sine JärjestyslukuSkoNm39_<A> ;
 ?Sukija [Sill][Nm]sihin:sihin JärjestyslukuSillNm39_<A> ;
 ?Sukija [Sill][Nm]sihi:sihi	Omistusliite_<A> ;
 
@@ -4792,6 +4796,7 @@ LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 LEXICON JärjestyslukuKahdeksasOmistusliitteet
 [Sn][Ny]nte:nte Omistusliite_<A> ;
 [Sg][Nm]nsie:nsie Omistusliite_<A> ;
+[Sp][Ny]tt<A>:tt<A> OlV_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> OlV_<A> ;
 [Str][Nm]nsiksi:nsiksi	OlI_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> OlV_<A> ;

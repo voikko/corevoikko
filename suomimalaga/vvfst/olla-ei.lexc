@@ -68,8 +68,8 @@ LEXICON EtuliitteellinenKieltosanaEiLoppu
 '[Lk][Xp]ei[X]e:'e         EiLoppu ;
 
 LEXICON EtuliitteellinenKieltosanaEiKoPaHan
-[Lk][Xp]ei[X]e:e         EiKoPaHan ;
-'[Lk][Xp]ei[X]e:'e         EiKoPaHan ;
+[Lk][Xp]ei[X][Bm]e:e         EiKoPaHan ;
+'[Lk][Xp]ei[X][Bm]e:'e         EiKoPaHan ;
 
 LEXICON EiLoppu
 [P1][Ny]n:n        Loppu ;
