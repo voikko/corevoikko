@@ -918,6 +918,7 @@ LEXICON NOUN Asema_w
 LEXICON NOUN Kulkija
 j:j	<WC>Apila_<A>	;
 j<A>t:j<A>t	NimisanaTytär_<A>	;
+?NimisanaOnly	j:j	Johdin_UUs_<A>	;
 
 LEXICON NOUN Apila
 <A>:<A>	<WC>Apila_y_<A>	;
@@ -3631,6 +3632,8 @@ LEXICON Kihistä
 @R.V_SALLITTU.E@@C.V_SALLITTU@äytt:@R.V_SALLITTU.E@@C.V_SALLITTU@äytt	MuistaaMuistella_s_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	Johdin_Us_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	Johdin_Us_ä	;
 
 LEXICON Kihajaa
 <A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;
@@ -3647,6 +3650,7 @@ is:is	KertomanTekijäpääteVahva_<A>	;
 is:is	KertomanTekijäpääteHeikko_<A>	;
 is:is	TositavanKertomaTiin_<A>	;
 is:is	Käskytapa_e_<A>	;
+is:is	Ehtotapa_<A>	;
 iss:iss	Mahtotapa_<A>	;
 is:is	EhtoMahtoKäskytapa_tA_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
@@ -3965,7 +3969,7 @@ LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Johdin_nUt
-[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	LaatusanaKuollut_<A>	;
+[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 neis:neis	Johdin_UUs_<A>	;
 [Ll]nee:nee	Omistusliite_<A>	;
 ?Sukija [Ll]nehe:nehe	Omistusliite_<A>	;

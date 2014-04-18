@@ -3633,6 +3633,10 @@ demokraattisemman
 rakkaimmalleen
 rakkaimmakseen
 hyvännäköisimmän
+armeijuutta
+haavoittuneellaan
+humautus
+jyrisisikään
 
 # = poikkeavat asetukset =
 
