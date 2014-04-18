@@ -701,6 +701,8 @@ ranskanturkkilainen
 baltianturkkilainen
 jugoslavianmakedonialainen
 !toteutta
+!sidotuita
+jerseyläinen
 
 # = sijapäätteet =
 []

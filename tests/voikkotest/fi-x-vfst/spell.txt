@@ -691,6 +691,8 @@ ranskanturkkilainen
 baltianturkkilainen
 jugoslavianmakedonialainen
 !toteutta
+!sidotuita
+jerseyläinen
 
 # = sijapäätteet =
 []
@@ -3643,6 +3645,9 @@ kaunihina
 juorkunalaisia
 kyyneletön
 miljoonain
+Stalin-myönteistä
+!erikoituneen
+!Halosarka
 
 # = poikkeavat asetukset =
 

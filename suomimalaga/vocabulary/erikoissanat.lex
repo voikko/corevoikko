@@ -755,6 +755,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Jersey", alku: "Jerseyhi", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
  [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
  [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
+ [perusmuoto: "jerseyläinen", alku: "jerseyläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 
 # Linné [linnee] {{{2
  [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
