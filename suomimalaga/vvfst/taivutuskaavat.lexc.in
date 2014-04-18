@@ -1072,6 +1072,7 @@ LEXICON NOUN Peruna
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
@@ -1322,6 +1323,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
 ?Nimisana	e:e	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
@@ -2169,6 +2171,9 @@ k<A>:k<A>	<WC>Vieras_s_<A>	;
 LEXICON NOUN Kaunis
 i:i	<WC>Vieras_w_<A>	;
 i:i	<WC>Vieras_s_<A>	;
+i[Sn][Nm]hit:ihit	Liitesana_<A>	;
+i[Sg][Ny]hin:ihin <WC>YksikönGenetiivinJatko_<A>	;
+i[Ses][Ny]ihin<A>:ihin<A>	<WC>LiOlV_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 ?Laatusana	ihi:ihi	Voittoaste_<A>	;

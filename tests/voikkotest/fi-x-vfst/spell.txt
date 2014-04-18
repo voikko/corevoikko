@@ -3637,6 +3637,12 @@ armeijuutta
 haavoittuneellaan
 humautus
 jyrisisikään
+kaunihit
+kaunihin
+kaunihina
+juorkunalaisia
+kyyneletön
+miljoonain
 
 # = poikkeavat asetukset =
 
