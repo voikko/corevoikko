@@ -342,6 +342,7 @@ demokraattis-republikaaninen
 kiinalaislahjakkuus
 !valintainen
 tarkkaavaisesti
+Zeus-syntyinen
 
 # = voitto- ja yliasteet =
 []
@@ -3654,6 +3655,10 @@ EU-keskeisempää
 kolmattaan
 ilmatiehyeisiin
 kyseleepi
+Hitler-mielisen
+Tampere-teemainen
+Madeleine-peräinen
+Egypti-johtoiseen
 
 # = poikkeavat asetukset =
 

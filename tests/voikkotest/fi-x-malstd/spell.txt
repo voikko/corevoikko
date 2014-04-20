@@ -348,6 +348,7 @@ demokraattis-republikaaninen
 kiinalaislahjakkuus
 !valintainen
 tarkkaavaisesti
+Zeus-syntyinen
 
 # = voitto- ja yliasteet =
 []
