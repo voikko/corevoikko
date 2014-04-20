@@ -190,7 +190,7 @@ Sanasto	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 LukusananAlku	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	LukusananAlku	;
--:-	LukusananJälkiliiteEiYhdysmerkkiä	;
+-@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	LukusananJälkiliiteEiYhdysmerkkiä	;
 Asemosana	;
 Suhdesana	;
 Kieltosana	;

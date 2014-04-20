@@ -3661,6 +3661,8 @@ Madeleine-peräinen
 Egypti-johtoiseen
 kuhisseet
 Laitiset-lehti
+!-emiraati
+!loisnokkelin
 
 # = poikkeavat asetukset =
 

@@ -1607,7 +1607,8 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN NainenYsJatko
 <WC>YsJatko	;
-?Yleisnimi	[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@	Sanasto_l	;
+?Laatusana	[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@	Sanasto_l	;
+?NimisanaOnly	[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_l	;
 
 LEXICON LaatusanaNainenInen
 @C.INEN_VAADITTU@:@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
@@ -3888,7 +3889,12 @@ Johdin_nimitapa4_<A>	;
 Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
-[Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	NimisanaNainen_<A>	;
+[Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	Nimitapa4_jatko_<A>	;
+
+LEXICON Nimitapa4_jatko
+NimisanaNainenYhteiset_<A>	;
+s:s	NimisanaYsJatko	;
+s[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:s@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@	Sanasto_l	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
