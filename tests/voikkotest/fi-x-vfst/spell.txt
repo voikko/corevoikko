@@ -3659,6 +3659,8 @@ Hitler-mielisen
 Tampere-teemainen
 Madeleine-peräinen
 Egypti-johtoiseen
+kuhisseet
+Laitiset-lehti
 
 # = poikkeavat asetukset =
 
