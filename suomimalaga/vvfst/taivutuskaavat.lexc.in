@@ -4136,7 +4136,7 @@ LEXICON Johdin_tU_dA
 
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
-[Ll]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaKatseltu_<A>   ;
+[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
 
 ! panna -> pantu
 LEXICON Johdin_tU_nA
@@ -4147,11 +4147,18 @@ LEXICON Johdin_tU_tA
 [Ll]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
 [Ll]t<U>:t<U>	Johdin_nUt_<A>	;
 
-LEXICON NOUN Katseltu
-t<U>:t<U>       <WC>Valo_s_<A>  ;
-t<U><U>:t<U><U> <WC>Valo_sl_<A> ;
-l<U>:l<U>       <WC>Valo_w_<A>  ;
-?Sukija t<U>h<U>:t<U>h<U> <WC>Valo_sl_<A> ;
+LEXICON Johdin_tU_lA_jatko
+t<U>[Sn][Ny]:t<U>	Liitesana_<A>	;
+t<U>[Sn][Ny]:t<U>	Omistusliite_<A>	;
+t<U>[Sg][Nm]j:t<U>j	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+t<U>[Sp][Ny]<A>:t<U><A>	NimiLaatusanaLiOlV_<A>	;
+t<U>[Sp][Nm]j<A>:t<U>j<A>	NimiLaatusanaLiOlV_<A>	;
+t<U>[Sill][Nm]ihi:t<U>ihi	NimiLaatusanaLiOlN_<A>	;
+t<U>[Ses][Ny]n<A>:t<U>n<A>	NimiLaatusanaLiOlV_<A>	;
+t<U>:t<U>	NimiLaatusanaYhteisetMonikonSijat2_<A>	;
+t<U><U>:t<U><U> NimiLaatusanaValo_sl_<A> ;
+l<U>:l<U>       NimiLaatusanaValo_w_<A>  ;
+?Sukija t<U>h<U>:t<U>h<U> NimiLaatusanaValo_sl_<A> ;
 
 LEXICON Kerronto_sti
 @D.VAIN_NIMISANA@[Ssti]sti:@D.VAIN_NIMISANA@sti	Liitesana_<A>	;

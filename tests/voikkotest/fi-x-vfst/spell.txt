@@ -3663,6 +3663,7 @@ kuhisseet
 Laitiset-lehti
 !-emiraati
 !loisnokkelin
+kuullunymmärtäminen
 
 # = poikkeavat asetukset =
 
