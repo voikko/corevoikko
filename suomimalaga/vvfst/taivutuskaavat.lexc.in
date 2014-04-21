@@ -321,6 +321,7 @@ LEXICON NOUN Autio
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
@@ -3876,6 +3877,10 @@ Johdin_nimitapa2_<A>	;
 
 LEXICON Johdin_nimitapa2_tAessA
 [Tn2]t<A>ess<A>:t<A>ess<A>	LaatusanaLiOlV_<A>	;
+Nimitapa3_tAmAn_<A>	;
+
+LEXICON Nimitapa3_tAmAn
+[Tn3][Ny]t<A>m<A>n:t<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa3
 [Tn3][Ny][Sine]m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
@@ -4720,9 +4725,12 @@ Liitesana_<A>	;
 LukusananJälkiliite	;
 [Bc]:	Lukusana	;
 
+LEXICON JärjestyslukuLiitesanaJl
+JärjestyslukuLiitesana_<A>	;
+LukusananJälkiliiteJl	;
+
 LEXICON JärjestyslukuLiitesana
 Liitesana_<A>	;
-LukusananJälkiliiteJl	;
 [Bc]:	Järjestysluku	;
 
 LEXICON XKymmentä
@@ -4786,7 +4794,7 @@ JärjestyslukuKahdeksasOmistusliitteet_<A>	;
 
 LEXICON JärjestyslukuKahdeksasEiOmistusliitettä
 [Sn][Ny]s:s JärjestyslukuSnNy29_<A> ;
-[Sn][Nm]nnet:nnet Liitesana_<A> ;
+[Sn][Nm]nnet:nnet JärjestyslukuSnNm29_<A> ;
 [Sg][Ny]nnen:nnen JärjestyslukuSgNy39_<A> ;
 [Sg][Nm]nsien:nsien JärjestyslukuSgNm39_<A> ;
 [Sp][Ny]tt<A>:tt<A> JärjestyslukuSpNy39_<A> ;
@@ -4843,10 +4851,25 @@ LEXICON JärjestyslukuSnNy29
 JärjestyslukuSnNy_<A>	;
 @U.LS.SNNY@	JärjestyslukuKymmentäSnNy_<A>	;
 
+LEXICON JärjestyslukuSnNm
+@U.LS.SNNM@	JärjestyslukuToista	;
+@U.LS.SNNM@	Liitesana_<A>	;
+@U.LS.SNNM@	LukusananJälkiliiteJl	;
+?Sukija @U.LS.SNNM@	SukijaJärjestyslukuKolmattaYhdeksättä	;
+
+LEXICON JärjestyslukuSnNm29
+JärjestyslukuSnNm_<A>	;
+@U.LS.SNNM@	JärjestyslukuKymmentäSnNm_<A>	;
+
 LEXICON JärjestyslukuKymmentäSnNy
-[Bc]kymmenes:kymmenes	JärjestyslukuLiitesana_ä	;
-[Bc]sadas:sadas	JärjestyslukuLiitesana_a	;
-[Bc]tuhannes:tuhannes	JärjestyslukuLiitesana_a	;
+[Bc]kymmenes:kymmenes	JärjestyslukuLiitesanaJl_ä	;
+[Bc]sadas:sadas	JärjestyslukuLiitesanaJl_a	;
+[Bc]tuhannes:tuhannes	JärjestyslukuLiitesanaJl_a	;
+
+LEXICON JärjestyslukuKymmentäSnNm
+[Bc]kymmenennet:kymmenennet	JärjestyslukuLiitesanaJl_ä	;
+[Bc]sadannet:sadannet	JärjestyslukuLiitesanaJl_a	;
+[Bc]tuhannennet:tuhannennet	JärjestyslukuLiitesanaJl_a	;
 
 ?Sukija LEXICON NOUN SukijaYhteisetHMuodot
 ?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;

@@ -260,7 +260,10 @@ for sija in MULTI_ORDINALS.keys():
 	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][4] + u":" + diacritic + MULTI_ORDINALS[sija][4] + u"\t" + lexiconName + u"_a\t;\n")
 	
 	numeralLines = []
-	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
+	if sija in [u"SgNy", u"SgNm"]:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesanaJl_<A>\t;")
+	else:
+		numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
 	if OPTIONS["sukija"]:
 		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
