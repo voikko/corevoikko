@@ -6,10 +6,12 @@
 #  key=value
 word:kissa
  expected:1
+ !NEGATIVE
  analysis
   CLASS=nimisana
   SIJAMUOTO=nimento
   STRUCTURE==ppppp
+  NUMBER=singular
 word:kuorma-auto
  analysis
   STRUCTURE==pppppp-=pppp
@@ -151,10 +153,6 @@ word:kaksikymmentäyksi
 word:10
  analysis
   CLASS=lukusana
-word:kissa
- !NEGATIVE
- analysis
-  NUMBER=singular
 word:kissat
  analysis
   NUMBER=plural
