@@ -3776,12 +3776,12 @@ LEXICON TositavanKertomaTiin
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]tihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tihin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Ny]isin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isin	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Ny]isit:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isit	Liitesana_<A>	;
-[Te][Ap][P3][Ny]isi:isi	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isimme	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isitte	Liitesana_<A>	;
-@D.YKSITEKIJÄINEN@[Te][Ap][P3][Nm]isiv<A>t:@D.YKSITEKIJÄINEN@isiv<A>t	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Ny][Ef]isin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Ny][Ef]isit:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isit	Liitesana_<A>	;
+[Te][Ap][P3][Ny][Eb]isi:isi	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Nm][Ef]isimme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isimme	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Nm][Ef]isitte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isitte	Liitesana_<A>	;
+@D.YKSITEKIJÄINEN@[Te][Ap][P3][Nm][Ef]isiv<A>t:@D.YKSITEKIJÄINEN@isiv<A>t	Liitesana_<A>	;
 ?Sukija [Te][Ap][P3][Ny]is:is	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
@@ -3794,8 +3794,8 @@ Käskytapa_tA_<A>	;
 Johdin_tAvA_<A>	;
 
 LEXICON Ehtotapa_tA
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny][Et]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny][Ef]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isihin	Liitesana_<A>	;
 
 LEXICON Mahtotapa

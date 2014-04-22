@@ -376,7 +376,9 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 		}
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
-		analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
+		if (!wcsstr(outputPosition, L"[Bc]")) {
+			analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
+		}
 	}
 	else {
 		const wchar_t * mood = analysis->getValue("MOOD");

@@ -280,6 +280,76 @@ word:maalaakaan
   MOOD=indicative
   PERSON=3
   NEGATIVE=both # "Mitä hän (ei) maalaakaan?
+word:juoksepa
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
+word:juoksehan
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
+word:juoskoot
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
+word:olla
+ analysis
+  NEGATIVE=both # Siellä ei olla hereillä. Haluan olla hereillä.
+word:luopua
+ analysis
+  NEGATIVE=both # Siellä ei haluttaisi luopua. Haluan luopua.
+word:mainittaisiin
+ analysis
+  NEGATIVE=false # "Hänet mainittaisiin ..."
+word:mainittaisi
+ analysis
+  NEGATIVE=true # "Häntä ei mainittaisi ..."
+word:sämpyläjauho
+ !POSSIBLE_GEOGRAPHICAL_NAME
+word:sämpyläjoki
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjoella
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjoellakin
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:Välimerta
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjokilaiva
+ !POSSIBLE_GEOGRAPHICAL_NAME
+word:haluan
+ analysis
+  REQUIRE_FOLLOWING_VERB=A-infinitive
+word:ryhdymme
+ analysis
+  REQUIRE_FOLLOWING_VERB=MA-infinitive
+word:juoksemme
+ !REQUIRE_FOLLOWING_VERB
+word:minä
+ analysis
+  NUMBER=singular
+word:sinä
+ analysis
+  NUMBER=singular
+word:hän
+ analysis
+  NUMBER=singular
+word:me
+ analysis
+  NUMBER=plural
+word:te
+ analysis
+  NUMBER=plural
+word:he
+ analysis
+  NUMBER=plural
+word:kovalevy
+ expected:1
+word:kovakalloinen
+ expected:1
 
 
 word:hyttynen
