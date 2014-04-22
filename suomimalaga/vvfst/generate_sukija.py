@@ -640,14 +640,19 @@ def generate_xiljoona (line):
             outfile.write (line.replace (u"iljoonien", u"iljonain"))
 
 
+ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
+
 # Copy Voikko vocabulary and insert forms that Sukija needs.
 #
 while True:
     line = infile.readline()
     if line == u"":
         break
+    line = re.sub (ei_vertm, u"", line)
     if OPTIONS["sukija-ys"]:
-        line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
+        line = line.replace (u"@P.YS_EI_JATKOA.ON@" , u"")
+        line = line.replace (u"@D.YS_EI_JATKOA@", u"")
+        line = line.replace (u"@C.YS_EI_JATKOA@", u"")
     outfile.write (line)
     if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
