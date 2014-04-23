@@ -3670,6 +3670,8 @@ tultaman
 kolmannettoista
 !palamisilmijuoksee
 brittipop-huumassa
+paremmilta
+parempilaatuinen
 
 # = poikkeavat asetukset =
 

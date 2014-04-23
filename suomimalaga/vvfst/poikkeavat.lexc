@@ -2388,7 +2388,7 @@ LEXICON Poikkeavat_l
 GenetiiviLiitepartikkeliInenAdjektiivi	;
 PronomininLainen	;
 [Ll][Xp]ehta[X][Sn][Ny]ehta:ehta	Liitesana_a	;
-@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
+@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@D.YS_ALKANUT@par	Paras	;
 [Ll][Xp]kiva[X]kive:kive	Voittoaste_ä	;
 [Ll][Xp]kiva[X]kiv:kiv	Yliaste_ä	;
 [Ll][Xp]kiva[X]kivo:kivo	Yliaste_a	;
@@ -2655,6 +2655,7 @@ ha[Cs]:ha	NimisanaYhteisetMonikonSijat2_a	;
 [Sill][Nm][Cs]haisii:haisii	NimisanaLiOlN_a	;
 haa[Cs]:haa	NimisanaYhteisetYksikönPaikallissijat_a	;
 ha[Cs]:ha	NimisanaYhteisetMonikonPaikallissijat_a	;
+e:e	Voittoaste_a	;
 emm@C.YS_EI_JATKOA@:emm@C.YS_EI_JATKOA@	Johdin_UUs_a	;
 
 LEXICON Seistä
