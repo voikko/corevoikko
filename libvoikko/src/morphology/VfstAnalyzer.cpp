@@ -455,6 +455,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'S') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
+						if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
+							analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+						}
 					}
 					else if (fstOutput[j + 1] == L'T') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "MOOD", moodMap);
