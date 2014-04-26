@@ -19,6 +19,7 @@ word:koirra
  expected:0
 word:EU
  expected:1
+  CLASS=lyhenne
   STRUCTURE==jj
 word:alusta
  analysis
@@ -126,10 +127,8 @@ word:Neptunus
 word:ei
  analysis
   CLASS=kieltosana
+  NUMBER=singular
   STRUCTURE==pp
-word:EU
- analysis
-  CLASS=lyhenne
 word:kymmenen
  analysis
   CLASS=lukusana
@@ -269,7 +268,19 @@ word:haravoi
  analysis
   MOOD=indicative
   PERSON=3
+  NEGATIVE=false
+  TENSE=past_imperfective
+ analysis
+  MOOD=indicative
+  PERSON=3
   NEGATIVE=both
+  TENSE=present_simple
+ analysis
+  CLASS=teonsana
+  MOOD=imperative
+  NUMBER=singular
+  PERSON=2
+  TENSE=present_simple
 word:maalaakin
  analysis
   MOOD=indicative
@@ -398,10 +409,8 @@ word:superhämärästi
  analysis
   CLASS=laatusana
   SIJAMUOTO=kerrontosti
-#word:tapakristitty
-# expected:1
-# analysis
-#  CLASS=nimisana
+word:tapakristitty
+ expected:1
 word:härkäjuoksijana
  expected:1
  analysis
@@ -421,7 +430,10 @@ word:ruotsalaishenkinen
 word:eräs
  expected:1
  analysis
- CLASS=asemosana
+  CLASS=asemosana
+  NUMBER=singular
+  SIJAMUOTO=nimento
+  STRUCTURE==pppp
 word:jotta
  expected:1
  analysis
@@ -715,12 +727,6 @@ word:älkööt
   analysis
     CLASS=kieltosana
     NUMBER=plural
-word:haravoi
-  analysis
-    CLASS=teonsana
-    MOOD=imperative
-    NUMBER=singular
-    PERSON=2
 word:kukistaneen
   expected:1
 word:ab
@@ -767,13 +773,6 @@ word:kahdeksaakymmentä
     STRUCTURE==ppppppppp=pppppppp
 word:myyty
   expected:1
-word:eräs
-  expected:1
-  analysis
-    CLASS=asemosana
-    NUMBER=singular
-    SIJAMUOTO=nimento
-    STRUCTURE==pppp
 word:minut
   expected:1
   analysis
@@ -855,12 +854,6 @@ word:Isossa-Britanniassa
   analysis
     CLASS=paikannimi
     STRUCTURE==ippppp-=ippppppppppp
-word:ei
- expected:1
-  analysis
-    CLASS=kieltosana
-    NUMBER=singular
-    STRUCTURE==pp
 word:Uusimaa
   analysis
     CLASS=paikannimi

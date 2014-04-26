@@ -19,6 +19,7 @@ word:koirra
  expected:0
 word:EU
  expected:1
+  CLASS=lyhenne
   STRUCTURE==jj
 word:alusta
  analysis
@@ -126,10 +127,8 @@ word:Neptunus
 word:ei
  analysis
   CLASS=kieltosana
+  NUMBER=singular
   STRUCTURE==pp
-word:EU
- analysis
-  CLASS=lyhenne
 word:kymmenen
  analysis
   CLASS=lukusana
@@ -425,7 +424,10 @@ word:ruotsalaishenkinen
 word:eräs
  expected:1
  analysis
- CLASS=asemosana
+  CLASS=asemosana
+  NUMBER=singular
+  SIJAMUOTO=nimento
+  STRUCTURE==pppp
 word:jotta
  expected:1
  analysis

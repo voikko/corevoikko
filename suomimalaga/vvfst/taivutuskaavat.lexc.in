@@ -3747,8 +3747,8 @@ Liitesana_<A>	;
 LiitesanaPi_<A>	;
 
 LEXICON KertomanTekijäpääteVahva
-[Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
-@D.YKSITEKIJÄINEN@[Tt][Ai][P3][Nm]iv<A>t:@D.YKSITEKIJÄINEN@iv<A>t	Liitesana_<A>	;
+[Tt][Ai][P3][Ny][Ef]i:i	Liitesana_<A>	;
+@D.YKSITEKIJÄINEN@[Tt][Ai][P3][Nm][Ef]iv<A>t:@D.YKSITEKIJÄINEN@iv<A>t	Liitesana_<A>	;
 
 LEXICON Tositapa4Tt
 TositavanKestämäTaan_<A>	;
