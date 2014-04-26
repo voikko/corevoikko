@@ -7,6 +7,7 @@
 word:kissa
  expected:1
  !NEGATIVE
+ !MALAGA_VAPAA_JALKIOSA
  analysis
   CLASS=nimisana
   SIJAMUOTO=nimento
@@ -105,6 +106,8 @@ word:ohi
   CLASS=suhdesana
 word:hei
  !PERSON
+ !SIJAMUOTO
+ expected:1
  analysis
   CLASS=huudahdussana
 word:eli
@@ -178,6 +181,10 @@ word:juokse
  analysis
   MOOD=imperative
   NEGATIVE=both
+  CLASS=teonsana
+  NUMBER=singular
+  PERSON=2
+  STRUCTURE==pppppp
 word:juossee
  analysis
   MOOD=potential
@@ -236,11 +243,11 @@ word:hyppely
 word:ilmaisu
  analysis
   MALAGA_VAPAA_JALKIOSA=true
-word:kissa
- !MALAGA_VAPAA_JALKIOSA
 word:Pohjois-
  analysis
   STRUCTURE==ipppppp-
+ analysis
+  STRUCTURE==ppppppp-
 word:sydän-
  analysis
   STRUCTURE==ppppp-

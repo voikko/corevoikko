@@ -7,6 +7,7 @@
 word:kissa
  expected:1
  !NEGATIVE
+ !MALAGA_VAPAA_JALKIOSA
  analysis
   CLASS=nimisana
   SIJAMUOTO=nimento
@@ -105,6 +106,8 @@ word:ohi
   CLASS=suhdesana
 word:hei
  !PERSON
+ !SIJAMUOTO
+ expected:1
  analysis
   CLASS=huudahdussana
 word:eli
@@ -178,6 +181,11 @@ word:juokse
  analysis
   MOOD=imperative
   NEGATIVE=both
+  CLASS=teonsana
+  NUMBER=singular
+  PERSON=2
+  STRUCTURE==pppppp
+  TENSE=present_simple
 word:juossee
  analysis
   MOOD=potential
@@ -236,11 +244,11 @@ word:hyppely
 word:ilmaisu
  analysis
   MALAGA_VAPAA_JALKIOSA=true
-word:kissa
- !MALAGA_VAPAA_JALKIOSA
 word:Pohjois-
  analysis
   STRUCTURE==ipppppp-
+ analysis
+  STRUCTURE==ppppppp-
 word:sydän-
  analysis
   STRUCTURE==ppppp-
@@ -503,8 +511,6 @@ word:ampiaiset
  expected:1
  analysis
   STRUCTURE==ppppppppp
-word:koirra
- expected:0
 word:lapinkirvinen
  expected:1
  analysis
@@ -514,11 +520,6 @@ word:Pokkinen
  analysis
   CLASS=sukunimi
   STRUCTURE==ippppppp
-word:hei
- expected:1
- analysis
-  CLASS=huudahdussana
-  !SIJAMUOTO
 word:Nousiainen
  expected:1
  analysis
@@ -657,12 +658,6 @@ word:talonne
 word:talonsa
  analysis
   POSSESSIVE=3
-word:montenegrolainen
- expected:1
- analysis
- CLASS=laatusana
- SIJAMUOTO=nimento
- STRUCTURE==pppppppppppppppp
 word:-legenda
  expected:1
  analysis
@@ -793,16 +788,6 @@ word:asuin-Sveitsi
   analysis
     CLASS=paikannimi
     STRUCTURE==ppppp-=ipppppp
-word:juokse
-  expected:1
-  analysis
-    CLASS=teonsana
-    MOOD=imperative
-    NEGATIVE=both
-    NUMBER=singular
-    PERSON=2
-    STRUCTURE==pppppp
-    TENSE=present_simple
 word:juoksekaan
   expected:1
   analysis
@@ -831,10 +816,6 @@ word:ja
   analysis
     CLASS=sidesana
     STRUCTURE==pp
-word:iiii
-  analysis
-    CLASS=lukusana
-    STRUCTURE==qqqq
 word:Gallen-Kallela-Sirén
   analysis
     CLASS=sukunimi
@@ -896,8 +877,3 @@ word:Euro-sarja
  expected:1
    analysis
      STRUCTURE==ippp-=ppppp
-word:Pohjois-
-  analysis
-    STRUCTURE==ipppppp-
-  analysis
-    STRUCTURE==ppppppp-
