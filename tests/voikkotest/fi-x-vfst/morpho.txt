@@ -381,18 +381,14 @@ word:ruotsalainenkin
  expected:1
  analysis
   CLASS=nimisana_laatusana
-#word:ruotsalaisessa
-# expected:2
-# analysis
-#  CLASS=nimisana
-# analysis
-#  CLASS=laatusana
-#word:agraariruotsalainen
-# expected:2
-# analysis
-#  CLASS=nimisana
-# analysis
-#  CLASS=laatusana
+word:ruotsalaisessa
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana
+word:agraariruotsalainen
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana
 word:juoksemiseen
  expected:1
  analysis

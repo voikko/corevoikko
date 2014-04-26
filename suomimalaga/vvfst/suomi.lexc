@@ -61,7 +61,7 @@ LEXICON YhdyssanaJatkuu
 YhdyssanaJatkuuYhteiset	;
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana	;
 -[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisana_yhdyssanana_perusosana	;
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_laatusanat	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_l	;
 
 LEXICON YhdyssanaJatkuuJaNlVertailumuodot
 YhdyssanaJatkuuYhteiset	;
