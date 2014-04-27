@@ -504,6 +504,7 @@ kissanpikaliitäjä # nimisanan genetiivi + nimisanan etuliite
 !kissanpikaliitää # nimisanan genetiivi + nimisanan etuliite
 !mielenkiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 koejuoksee
+!kissakoejuoksee
 !asiafanliittyvässä
 !perieri
 !viimesilauksen
@@ -622,6 +623,7 @@ koiramääkiminen
 65-
 90-kissainen
 -45
+12:15
 !12:kissa
 300:ssa
 12:ssa
@@ -639,6 +641,7 @@ nelisensataa
 
 # = johtimet =
 []
+märänlaiselleko
 !suvealainen
 talomainen # Oikea mainen-johdos
 !siistimainen # Väärä mainen-johdos
