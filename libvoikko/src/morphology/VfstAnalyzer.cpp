@@ -493,11 +493,18 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 
 static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen) {
 	bool isDe = false;
+	size_t hyphenCount = 0;
 	for (size_t j = 0; j + 3 < fstLen; j++) {
 		if (wcsncmp(fstOutput + j, L"[Dg]", 4) == 0) {
+			size_t hyphensInStructure = 0;
 			for (size_t i = 0; structure[i]; i++) {
 				if (structure[i] == L'i') {
-					structure[i] = L'p';
+					if (hyphensInStructure == hyphenCount) {
+						structure[i] = L'p';
+					}
+				}
+				else if (structure[i] == L'-') {
+					hyphensInStructure++;
 				}
 			}
 		}
@@ -505,6 +512,7 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 			isDe = true;
 		}
 		else if (fstOutput[j] == L'-') {
+			hyphenCount++;
 			if (isDe) {
 				j++;
 				while (j + 4 < fstLen) {

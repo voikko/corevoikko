@@ -467,8 +467,6 @@ word:Uudenmaansa
  CLASS=paikannimi
  SIJAMUOTO=omanto
  STRUCTURE==ipppp=pppppp
-
-
 word:hyttynen
  expected:1
  analysis

@@ -460,3 +460,372 @@ word:Uudenmaansa
  CLASS=paikannimi
  SIJAMUOTO=omanto
  STRUCTURE==ipppp=pppppp
+word:hyttynen
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE==pppppppp
+  SIJAMUOTO=nimento
+word:hyttysen
+ expected:1
+ analysis
+  SIJAMUOTO=omanto
+word:hyttystä
+ expected:1
+ analysis
+  SIJAMUOTO=osanto
+word:hyttysessä
+ expected:1
+ analysis
+  SIJAMUOTO=sisaolento
+word:hyttysestä
+ expected:1
+ analysis
+  SIJAMUOTO=sisaeronto
+word:hyttyseen
+ expected:1
+ analysis
+  SIJAMUOTO=sisatulento
+word:hyttysellä
+ expected:1
+ analysis
+  SIJAMUOTO=ulkoolento
+word:hyttyseltä
+ expected:1
+ analysis
+  SIJAMUOTO=ulkoeronto
+word:hyttyselle
+ expected:1
+ analysis
+  SIJAMUOTO=ulkotulento
+word:ampiaiset
+ expected:1
+ analysis
+  STRUCTURE==ppppppppp
+word:lapinkirvinen
+ expected:1
+ analysis
+  STRUCTURE==ppppp=pppppppp
+word:Pokkinen
+ expected:1
+ analysis
+  CLASS=sukunimi
+  STRUCTURE==ippppppp
+word:Nousiainen
+ expected:1
+ analysis
+  CLASS=paikannimi
+word:Alfred
+ expected:1
+ analysis
+  CLASS=etunimi
+word:Kanteletar
+ expected:1
+ analysis
+  CLASS=nimi
+  STRUCTURE==ippppppppp
+word:keltainen
+ expected:1
+ analysis
+  CLASS=laatusana
+  STRUCTURE==ppppppppp
+word:arktisuus
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE==ppppppppp
+word:pottusyltty
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE==ppppp=pppppp
+word:vieras
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana
+word:katsella
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=A-infinitive
+word:katselen
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=1
+word:katselet
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=2
+word:katselee
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=3
+word:katselemme
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=plural
+  PERSON=1
+word:katselette
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=plural
+  PERSON=2
+word:lunastetaan
+ analysis
+  PERSON=4
+word:adverbisija
+ analysis
+  STRUCTURE==pp=ppppp=pppp
+word:Pötsönlahdella
+ analysis
+  STRUCTURE==ippppp=pppppppp
+word:katselemassa
+ analysis
+  CLASS=teonsana
+  MOOD=MA-infinitive
+  NUMBER=singular
+  SIJAMUOTO=sisaolento
+word:katsellessa
+ analysis
+  CLASS=teonsana
+  MOOD=E-infinitive
+word:katselisin
+ analysis
+  CLASS=teonsana
+  MOOD=conditional
+word:pahoinpiteli
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=3
+  STRUCTURE==pppppp=pppppp
+word:hinaajalla
+ analysis
+  CLASS=nimisana
+  SIJAMUOTO=ulkoolento
+word:Suomi-Sveitsi
+ analysis
+   CLASS=paikannimi
+   STRUCTURE==ipppp-=ipppppp
+word:CD-ROM
+ analysis
+   CLASS=nimisana
+   STRUCTURE==ii-=iii
+ analysis
+   CLASS=nimisana
+   STRUCTURE==pp-=ppp
+word:anonyymisti
+ analysis
+  CLASS=laatusana
+  SIJAMUOTO=kerrontosti
+word:-legenda
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE=-=ppppppp
+word:muisto
+ expected:1
+ analysis
+  CLASS=nimisana
+word:epäröin
+ expected:2
+word:kommentoikaa
+ expected:1
+ analysis
+  CLASS=teonsana
+  MOOD=imperative
+  NUMBER=plural
+  PERSON=2
+word:olemme
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=indicative
+    NUMBER=plural
+    PERSON=1
+word:kielteisemmin
+ expected:1
+ analysis
+  CLASS=laatusana
+  NUMBER=plural
+  SIJAMUOTO=keinonto
+word:kielteisimmin
+ expected:1
+ analysis
+  CLASS=laatusana
+  NUMBER=plural
+  SIJAMUOTO=keinonto
+word:lienen
+  expected:1
+  analysis
+    CLASS=teonsana
+    NUMBER=singular
+    PERSON=1
+word:älkööt
+  expected:1
+  analysis
+    CLASS=kieltosana
+    NUMBER=plural
+word:kukistaneen
+  expected:1
+word:ab
+  expected:1
+    CLASS=lyhenne
+    STRUCTURE==qq
+word:ab-kissa
+  expected:1
+    STRUCTURE==qq-=ppppp
+word:esiintyjittäin
+  expected:1
+    CLASS=seikkasana
+word:espanjalaisittain
+  expected:1
+    STRUCTURE==ppppppppppppppppp
+word:Helsinki-alueellinen
+  expected:1
+  analysis
+    STRUCTURE==ippppppp-=ppppppppppp
+word:roomalaiskissa
+  expected:1
+  analysis
+    STRUCTURE==ppppppppp=ppppp
+word:kissattomuus
+  expected:1
+word:ei-kenenkään-maa
+  expected:1
+  analysis
+    STRUCTURE==pp-=ppppppppp-=ppp
+word:yksi
+  expected:1
+  analysis
+    CLASS=lukusana
+    NUMBER=singular
+    SIJAMUOTO=nimento
+    STRUCTURE==pppp
+word:kaksituhattakolmetoista
+  expected:1
+  analysis
+    STRUCTURE==ppppp=ppppppp=ppppp=pppppp
+word:kahdeksaakymmentä
+  expected:1
+  analysis
+    STRUCTURE==ppppppppp=pppppppp
+word:myyty
+  expected:1
+word:minut
+  expected:1
+  analysis
+    CLASS=asemosana
+    SIJAMUOTO=kohdanto
+word:Aadolfinkatu
+  expected:1
+  analysis
+    CLASS=nimisana
+    STRUCTURE==ippppppp=pppp
+word:Suur-Sveitsi
+  expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ippp-=ipppppp
+word:asuin-Sveitsi
+  expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ppppp-=ipppppp
+word:juoksekaan
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=imperative
+    NEGATIVE=true
+    NUMBER=singular
+    PERSON=2
+    STRUCTURE==pppppppppp
+word:neljännentoista
+  expected:1
+  analysis
+    CLASS=lukusana
+    NUMBER=singular
+    SIJAMUOTO=omanto
+    STRUCTURE==ppppppppp=pppppp
+word:parhaassa
+  analysis
+    CLASS=laatusana
+word:ja
+  expected:1
+  analysis
+    CLASS=sidesana
+    STRUCTURE==pp
+word:Gallen-Kallela-Sirén
+  analysis
+    CLASS=sukunimi
+    STRUCTURE==ippppp-=ipppppp-=ipppp
+word:-sävellys-
+  analysis
+    CLASS=nimisana
+    STRUCTURE=-=pppppppp-
+word:ilman
+  analysis
+    CLASS=suhdesana
+word:suomalais-neuvostoliittolainen
+  analysis
+    STRUCTURE==ppppppppp-=pppppppp=pppppppppppp
+word:Isossa-Britanniassa
+ expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ippppp-=ippppppppppp
+word:Uusimaa
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ippp=ppp
+word:Keski-Uusimaa
+ expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ipppp-=ippp=ppp
+word:Tyynessämeressä
+ expected:1
+  analysis
+    CLASS=paikannimi
+    NUMBER=singular
+    SIJAMUOTO=sisaolento
+    STRUCTURE==ippppppp=ppppppp
+word:huhti-toukokuusta
+ expected:1
+  analysis
+    CLASS=nimisana
+    NUMBER=singular
+    SIJAMUOTO=sisaeronto
+    STRUCTURE==ppppp-=ppppp=pppppp
+word:viisivuotiskausi
+ expected:1
+  analysis
+    STRUCTURE==ppppp=pppppp=ppppp
+word:AIDS-epidemia
+ expected:1
+  analysis
+    STRUCTURE==jjjj-=pppppppp
+word:vammaisuusaste
+ expected:1
+  analysis
+    STRUCTURE==pppppppppp=pppp
+word:-nimen
+ expected:1
+ !MALAGA_VAPAA_JALKIOSA
+word:Euro-sarja
+ expected:1
+   analysis
+     STRUCTURE==ippp-=ppppp
