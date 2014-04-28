@@ -61,6 +61,7 @@ sairaanhyppivä
 virkeydenlakaiseva
 !virkeyttälakaiseva
 !minuahyppäävä
+kauniinlaisenkasvattava
 !kauniinlaistakasvattava
 suolaisienkasvattava
 !suolaistakasvattava
@@ -104,6 +105,7 @@ koe-elää
 !leipämainen # "mainen" ei sallittu yhdyssanan osana
 !kalasointi # "soida" ei sallittu yhdyssanan jälkiosana
 virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
+virkeäkissallinen # adjektiivi + substantiivin -llinen-johdos (toistaiseksi sallittu)
 miellyttämishaluinen
 mannertenvälisiä
 !uutelleennimeä # adjektiivin genetiivi + substantiivi
@@ -199,6 +201,7 @@ Esankujalta
 !esankujalta
 !HarrinKarin
 Pertinletto
+Mikonvuori-lava
 !Mikonvuorilava
 !mikonvuori-lava
 Jugoslavia
