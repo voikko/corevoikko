@@ -164,7 +164,6 @@ oleminen
 paleltaa
 !palellan
 !palellat
-paleltaa
 !palellamme
 !palellatte
 !paleltaisivat
@@ -1456,8 +1455,6 @@ melodiikan
 kappoja
 kapalla
 lohi
-lohien
-!lohten
 tuohi
 tuohien
 tuohten
@@ -1564,7 +1561,6 @@ naukuisi
 huudan
 huutaisi
 ongelmainen
-!kissainen
 !vainajainen
 risainen
 neopreeninen
@@ -1739,7 +1735,6 @@ huutelen
 huudella
 juonnella
 juontelen
-pyörrellä
 pyörtelen
 paimennella
 paimentelen
@@ -1782,7 +1777,6 @@ kiljahduksen
 lento
 !lennön
 lennon
-pyörrön
 pyörtöä
 pyörtöön
 papereita
@@ -1808,7 +1802,6 @@ kuteminen
 saattaminen
 juontaminen
 !valolainen
-sveitsiläinen
 ranskalainen
 italialainen
 kuubalainen
@@ -2023,7 +2016,6 @@ murron
 murtoon
 murrella
 murtelen
-murros
 murroksen
 sisar
 sisaren
@@ -2058,8 +2050,6 @@ nuolaisen
 rangaista
 rankaisen
 kalisen
-vavista
-vapisen
 rankaisee
 rankaisevat
 rankaisi
@@ -2079,7 +2069,6 @@ joutaa
 joudan
 soudella
 soutelen
-souti
 nalle
 nallen
 Atte
@@ -2212,8 +2201,6 @@ muserrus
 muserrella
 jäykentää
 jäykennän
-jäykennys
-jäykennellä
 tuonnempi
 tuonnempana
 etuina
@@ -2309,7 +2296,6 @@ kankaita
 ruis
 rukiiden
 kauris
-kauriiden
 rankaisija
 !rangaisija
 kamee
@@ -2343,12 +2329,8 @@ ommel
 ompeleella
 penger
 penkere
-udar
-utare
 taival
 taipale
-säen
-säkene
 askelina
 hävinneellä
 joensuulainen
@@ -2381,15 +2363,12 @@ ajalla
 pestä
 pesussa
 !pesyssä
-kapsaa
 kapsanta
-kapsaisi
 uskaltaa
 uskallan
 sähellys
 nuotintaa
 nuotinnan
-nuotinnus
 !pistö
 pisto
 poika
@@ -2536,7 +2515,6 @@ juurtakaamme
 raada
 raatakaamme
 !raadako
-!raatakaakaan
 raadakaan
 vuosiensa
 eronnut
@@ -2569,7 +2547,6 @@ lapsi
 lapsen
 hapsi
 hapsea
-!hasta
 etenisivät
 heikkonäköinen
 !käteväihminen
@@ -2588,7 +2565,6 @@ ay:ssäkin
 ab-kissa
 autio-
 !isbn-alkuperäinen
-Ab:ltä
 Ab:stä
 ADD:n
 yhdysvaltalainen
@@ -2614,7 +2590,6 @@ lensi
 liioitelleen
 nokkamainen
 opiskelevansa
-!eläväarkisto
 kansanedustajansa
 lähituntuma
 lähtenytkään
@@ -2685,7 +2660,6 @@ kauriiton
 !kauriaton
 kannellinen
 siistissä
-siisteys
 afroamerikkalaisessa
 kannattavasta
 seuraillut
@@ -2773,7 +2747,6 @@ analyysianneko
 !mertä
 !mertansä
 kiiskeen
-kaunein
 alttein
 tyyriimpi
 tyyrein
@@ -2827,7 +2800,6 @@ tunkenee
 tuntenee
 laatinee
 myynee
-rangaissee
 anteliaisuutta
 Minsk-
 Virtas-
@@ -2881,7 +2853,6 @@ yksi
 yhden
 yksikätinen
 !yksikäsi
-kolme
 kolmen
 yhdestä
 kahdesta
@@ -2889,7 +2860,6 @@ kahdenkin
 neljän
 yksitoistataloinen
 yksitoista
-kaksikymmentä
 kaksisataa
 kaksituhatta
 !yksikymmentä
@@ -2983,7 +2953,6 @@ hän
 hälle
 hänelle
 joka
-!jokakin
 jonkin
 joita
 kuta
@@ -3103,12 +3072,10 @@ evakuoitaessa
 hämillään
 eteensä
 !etee
-!eteeen
 suotakoon
 sallittakoon
 todettakoon
 seitsemänneksi
-miljoonaa
 taivaltaan
 tilhet
 tekivätkin
@@ -3118,8 +3085,6 @@ neljästoista
 paras
 parhaassa
 parhaimmassa
-ei-kaunis
-!ei--kaunis
 !ei--
 !eikaunis
 kotosalle
@@ -3149,7 +3114,6 @@ sadattuhannet
 kymmenennen
 sadansina
 avoimuus
-sada
 paetakseen
 annoit
 juostiin
@@ -3188,7 +3152,6 @@ polje
 vilahti
 !vilähti
 juostava
-oltava
 selvinnee
 ainutta
 edestä
@@ -3209,9 +3172,7 @@ keväisen
 historiallis-kielitieteelliseen
 Saint-Jacques
 III:a
-von
 kukakohan
-kukahan
 olueen
 !olueeseen
 Luja-Penttilä
@@ -3301,7 +3262,6 @@ haltuunsa
 tultiin
 ollakseen
 !toisiinnsa
-toisiinsa
 tietyntyyppisiin
 näe
 puolestatoista
@@ -3342,7 +3302,6 @@ tummanoranssi
 saarsi
 saarti
 kukakin
-toisensa
 vanhempiensa
 vuosituhannen
 toistakymmentä
@@ -3368,7 +3327,6 @@ yksikseen
 loitolla
 tarkka-ampuja
 live-
-bi-
 !varhais
 mitenkähän
 vanhempain
@@ -3379,7 +3337,6 @@ digi-tv:n
 auer
 autereella
 !-III
-suhu-s
 miljoonasosa
 miljoonannen
 Hubble-avaruusteleskooppi
@@ -3397,7 +3354,6 @@ keskipakoisvoima
 !olympialainen
 ultramarina
 luoteiskaukasialaiset
-demokraattis-republikaaninen
 vaaleanharmaat
 vihertävänruskea
 oriita
@@ -3426,7 +3382,6 @@ keskuuteemme
 tikapuumainen
 korkeataajuuksisen
 nöyrimmästi
-!ylläpitö
 luovempia
 !luovampia
 !jälkimäinen
@@ -3489,7 +3444,6 @@ lastuamisneste
 uksensa
 tuhoisi
 kymmenesti
-saarretaan
 pakistane
 toimeenpannuissa
 Simonkyläntie
@@ -3577,7 +3531,6 @@ Kovalanrannantie
 !haineko
 !--ilmeisesti
 -nopeuksinen
-vaikkeikaan
 ylkänsä
 virranjakajaton
 virranjakajamainen
