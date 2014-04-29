@@ -58,6 +58,7 @@ namespace libvoikko { namespace fst {
 	
 	const uint16_t FlagValueNeutral = 0;
 	const uint16_t FlagValueAny = 1;
+	const uint32_t MAX_LOOP_COUNT = 100000;
 	
 	static OpFeatureValue getDiacriticOperation(const string & symbol, map<string, uint16_t> & features, map<string, uint16_t> & values) {
 		OpFeatureValue operation;
@@ -390,7 +391,8 @@ namespace libvoikko { namespace fst {
 	}
 	
 	bool Transducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
-		while (true) {
+		uint32_t loopCounter = 0;
+		while (loopCounter < MAX_LOOP_COUNT) {
 			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
 			Transition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
 			uint32_t startTransitionIndex = currentTransition - stateHead;
@@ -459,8 +461,10 @@ namespace libvoikko { namespace fst {
 			}
 			configuration->currentTransitionStack[configuration->stackDepth]++;
 			nextInMainLoop:
-				;
+			loopCounter++;
 		}
+		DEBUG("maximum number of loops reached")
+		return false;
 	}
 	
 	uint16_t Transducer::getFlagDiacriticFeatureCount() const {

@@ -41,6 +41,7 @@ using namespace libvoikko::fst;
 namespace libvoikko { namespace morphology {
 
 static const int BUFFER_SIZE = 2000;
+static const int MAX_ANALYSIS_COUNT = 100;
 
 VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
 	string morFile = directoryName + "/mor.vfst";
@@ -544,7 +545,8 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
-		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
+		int analysisCount = 0;
+		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			size_t fstLen = wcslen(fstOutput);
 			if (!isValidAnalysis(fstOutput, fstLen)) {
