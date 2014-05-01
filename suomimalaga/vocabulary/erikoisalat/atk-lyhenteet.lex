@@ -49,8 +49,6 @@
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
 
-[alku: "vis5d", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "wxx11", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä];
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];

@@ -16,33 +16,17 @@
 # Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301, USA.
 
-[alku: "mA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"]; # milliampeeri
-
-[alku: "mC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # millicoulombi
 [alku: "µC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # mikrocoulombi
 [alku: "nC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # nanocoulombi
 [alku: "pC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # pikocoulombi
 
-[alku: "mF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # millifaradi
 [alku: "µF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # mikrofaradi
 [alku: "nF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # nanofaradi
 [alku: "pF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # pikofaradi
 
 [alku: "µg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # mikrogramma
 
-[alku: "mmHg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qqjq"]; # elohopeamillimetri
-
-[alku: "GHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjq"]; # gigahertsi
-
-[alku: "MJ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # megajoule
-
-[alku: "dm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # desimetri
 [alku: "µm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # mikrometri
-[alku: "nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # nanometri
-[alku: "pm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # pikometri
-
-[alku: "mol", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # mooli
-[alku: "mmol", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # millimooli
 
 [alku: "Nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jq"]; # newtonmetri
 
