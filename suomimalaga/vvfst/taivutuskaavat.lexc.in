@@ -2580,6 +2580,10 @@ LEXICON Purkaa
 <WC>Muistaa_w_<A>	;
 k:k	<WC>Muistaa_s_<A>	;
 
+LEXICON Kulahtaa
+d:d	<WC>Muistaa_w_<A>	;
+t:t	<WC>Muistaa_s_<A>	;
+
 LEXICON Kyntää
 t:t	<WC>Muistaa_s_<A>	;
 

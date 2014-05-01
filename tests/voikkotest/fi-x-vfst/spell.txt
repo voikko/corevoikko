@@ -3632,6 +3632,7 @@ kolmannettoista
 brittipop-huumassa
 paremmilta
 parempilaatuinen
+Snellman-johtoinen
 
 # = poikkeavat asetukset =
 
