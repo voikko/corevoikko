@@ -3032,11 +3032,11 @@ e:e	Voida_s_<A>	;
 
 LEXICON Voida_l
 KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]:	KestämänTekijäpääteY3Liitesana_<A>	;
-[Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Eb]:	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t	Liitesana_<A>	;
 TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
-Käskytapa_<A>	;
+Käskytapa_0_<A>	;
 n:n	Mahtotapa_<A>	;
 EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_nimitapa1dA_<A>	;
@@ -3121,7 +3121,7 @@ l:l	<WC>Tulla_l_<A>	;
 Johdin_lUt_<A>	;
 
 LEXICON Tulla_s
-[Tt][Ap][P3][Ny]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
@@ -4142,29 +4142,29 @@ LEXICON Johdin_lAinen
 [Ll][Dg]l<A>is-[Bc]@D.EI_LAINEN@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:l<A>is-@D.EI_LAINEN@@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_n	;
 
 LEXICON Johdin_ttU
-[Ll]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
-[Ll]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaHattu_<A>	;
-[Ll][Sg][Ny]t<U>n@C.JOHDETTAVA_NIMISANAKSI@:t<U>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYsJatko	;
-[Ll][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
-[Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
+[Ll][Rt]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
+[Ll][Rt]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaHattu_<A>	;
+[Ll][Rt][Sg][Ny]t<U>n@C.JOHDETTAVA_NIMISANAKSI@:t<U>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYsJatko	;
+[Ll][Rt][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Ll][Rt]tt<U><A>:tt<U><A>	OlV_<A>	;
 
 ! myydä -> myyty
 LEXICON Johdin_tU_dA
-[Ll]@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@ LaatusanaLaatu_<A>   ;
-[Ll]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@:@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@ NimiLaatusanaLaatu_<A>   ;
+[Ll][Rt]@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@ LaatusanaLaatu_<A>   ;
+[Ll][Rt]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@:@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_KIELLETTY.ON@ NimiLaatusanaLaatu_<A>   ;
 
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
-[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
+[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
 
 ! panna -> pantu
 LEXICON Johdin_tU_nA
-[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaLintu_<A>   ;
+[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaLintu_<A>   ;
 
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA
-[Ll]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
-[Ll]t<U>:t<U>	Johdin_nUt_<A>	;
+[Ll][Rt]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
+[Ll][Rt]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON Johdin_tU_lA_jatko
 t<U>[Sn][Ny]:t<U>	Liitesana_<A>	;

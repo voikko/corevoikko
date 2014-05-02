@@ -118,6 +118,8 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	negativeMap.insert(std::make_pair(L"t", L"true"));
 	negativeMap.insert(std::make_pair(L"f", L"false"));
 	negativeMap.insert(std::make_pair(L"b", L"both"));
+	
+	participleMap.insert(std::make_pair(L"t", L"past_passive"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -478,6 +480,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					else if (fstOutput[j + 1] == L'E') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);
 					}
+					else if (fstOutput[j + 1] == L'R') {
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+					}
 					else if (fstOutput[j + 1] == L'I') {
 						addInfoFlag(analysis, fstOutput + (j + 2), fstOutput);
 					}
@@ -559,6 +564,12 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			fixStructure(structure, fstOutput, fstLen);
 			analysis->addAttribute("STRUCTURE", structure);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
+			if (!analysis->getValue("COMPARISON")) {
+				const wchar_t * wclass = analysis->getValue("CLASS");
+				if (wclass && (wcscmp(wclass, L"laatusana") == 0 || wcscmp(wclass, L"nimisana_laatusana") == 0)) {
+					analysis->addAttribute("COMPARISON", StringUtils::copy(L"positive"));
+				}
+			}
 			analysisList->push_back(analysis);
 			duplicateOrgName(analysis, analysisList);
 		}

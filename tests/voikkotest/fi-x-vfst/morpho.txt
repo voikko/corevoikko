@@ -875,3 +875,22 @@ word:Euro-sarja
  expected:1
    analysis
      STRUCTURE==ippp-=ppppp
+word:tulee
+ expected:1
+  analysis:
+   NEGATIVE=false
+word:saa
+ expected:2
+  analysis:
+   MOOD=indicative
+   PERSON=3
+   NEGATIVE=both
+  analysis:
+   MOOD=imperative
+   PERSON=2
+   NEGATIVE=both
+word:julkaistu
+ expected:1
+  analysis:
+   COMPARISON=positive
+   PARTICIPLE=past_passive

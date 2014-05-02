@@ -78,6 +78,9 @@ Multichar_Symbols
 [Tk]  ! käskytapa
 [Tm]  ! mahtotapa
 
+! Laatutavat
+[Rt]  ! -ttU
+
 ! Tekijät
 [P1]  ! 1. persoona
 [P2]  ! 2. persoona

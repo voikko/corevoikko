@@ -62,6 +62,7 @@ class VfstAnalyzer : public Analyzer {
 		std::map<std::wstring, std::wstring> focusMap;
 		std::map<std::wstring, std::wstring> possessiveMap;
 		std::map<std::wstring, std::wstring> negativeMap;
+		std::map<std::wstring, std::wstring> participleMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 		void duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList);
