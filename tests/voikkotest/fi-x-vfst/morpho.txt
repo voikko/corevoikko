@@ -894,3 +894,11 @@ word:julkaistu
   analysis:
    COMPARISON=positive
    PARTICIPLE=past_passive
+word:tekijä
+ expected:1
+  analysis:
+   NUMBER=singular
+word:urallaan
+ expected:1
+  analysis:
+   POSSESSIVE=3

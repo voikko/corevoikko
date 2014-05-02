@@ -2413,7 +2413,7 @@ Omistusliite_<A>	;
 OlVL_<A>	;
 
 LEXICON OlVL
-[[L]]n:[[L]]n	Liitesana_<A>	;
+[[L]][O3]n:[[L]]n	Liitesana_<A>	;
 
 LEXICON NOUN LiOlI
 Liitesana_<A>	;
@@ -4210,7 +4210,7 @@ Johdin_ja_kantaja_myyjä_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
 
 LEXICON Johdin_ja_kulkija_myyjä
-@D.VAIN_YM3@[Ln][Sn][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatkoOl_<A>	;
+@D.VAIN_YM3@[Ln][Sn][Ny]j<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatkoOl_<A>	;
 @D.VAIN_YM3@[Ln][Sn][Nm]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 @D.VAIN_YM3@[Ln][Sg][Ny]j<A>n@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYksikönGenetiivinJatko_<A>	;
 @D.VAIN_YM3@[Ln][Sg][Nm]j<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviInJatko_<A>	;
