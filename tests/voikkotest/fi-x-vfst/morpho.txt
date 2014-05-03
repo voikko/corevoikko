@@ -902,3 +902,16 @@ word:urallaan
  expected:1
   analysis:
    POSSESSIVE=3
+word:käsittelee
+ expected:1
+ analysis:
+  TENSE=present_simple
+word:yhdistää
+ expected:2
+ analysis:
+  MOOD=indicative
+  NEGATIVE=false
+word:pääsee
+ expected:1
+ analysis:
+  NEGATIVE=false
