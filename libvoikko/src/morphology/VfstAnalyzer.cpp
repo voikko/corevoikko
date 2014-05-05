@@ -469,7 +469,12 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "TENSE", tenseMap);
 					}
 					else if (fstOutput[j + 1] == L'F') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "FOCUS", focusMap);
+						if (wcsncmp(fstOutput + (j + 2), L"ko", 2) == 0) {
+							analysis->addAttribute("KYSYMYSLIITE", StringUtils::copy(L"true"));
+						}
+						else {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "FOCUS", focusMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'O') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "POSSESSIVE", possessiveMap);

@@ -106,3 +106,5 @@ word:tuuppaajalla
 word:pikilappu
  analysis
   WORDBASES=+pikilappu(piki=lappu)
+word:kissaton
+ !PARTICIPLE

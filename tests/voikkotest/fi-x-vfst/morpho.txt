@@ -915,3 +915,20 @@ word:pääsee
  expected:1
  analysis:
   NEGATIVE=false
+word:koiralla
+ analysis
+  !KYSYMYSLIITE
+  !FOCUS
+  !COMPARISON
+word:koirallako
+ analysis
+  KYSYMYSLIITE=true
+word:eikö
+ analysis
+  KYSYMYSLIITE=true
+word:koirallakin
+ analysis
+  FOCUS=kin
+word:koirallakaan
+ analysis
+  FOCUS=kaan

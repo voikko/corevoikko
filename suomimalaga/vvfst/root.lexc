@@ -65,6 +65,7 @@ Multichar_Symbols
 ! Liitepartikkelit
 [Fkin] ! -kin
 [Fkaan] ! -kaan
+[Fko] ! kysymysliite ko/kö
 
 ! Tapaluokat
 [Tn1] ! 1. nimitapa

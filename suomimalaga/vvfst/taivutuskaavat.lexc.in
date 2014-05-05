@@ -4332,30 +4332,30 @@ LEXICON LiitesanaEiLoppu
 [Fkaan]k<A><A>n:k<A><A>n	Loppu ;
 [Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
 [Fkaan]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
-[Fkaan]k<A><A>nk<O>:k<A><A>nk<O>	Loppu ;
-[Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
-[Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
-k<O>:k<O>	Loppu ;
-k<O>h<A>n:k<O>h<A>n	Loppu ;
-k<O>s:k<O>s	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>:k<A><A>nk<O>	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>s:k<A><A>nk<O>s	Loppu ;
+[Fko]k<O>:k<O>	Loppu ;
+[Fko]k<O>h<A>n:k<O>h<A>n	Loppu ;
+[Fko]k<O>s:k<O>s	Loppu ;
 p<A>:p<A>	Loppu ;
 h<A>n:h<A>n	Loppu ;
 p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 [Fkin]kin:kin	Loppu       ;
-[Fkin]kink<O>:kink<O>	Loppu ;
+[Fkin]kin[Fko]k<O>:kink<O>	Loppu ;
 [Fkin]kinh<A>n:kinh<A>n	Loppu ;
-[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
-[Fkin]kink<O>s:kink<O>s	Loppu ;
+[Fkin]kin[Fko]k<O>h<A>n:kink<O>h<A>n	Loppu ;
+[Fkin]kin[Fko]k<O>s:kink<O>s	Loppu ;
 
 LEXICON Liitesana
 LiitesanaKinKoPaHan_<A>	;
 [Fkaan]k<A><A>n:k<A><A>n	Loppu ;
 [Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
-[Fkaan]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
-[Fkaan]k<A><A>nk<O>:k<A><A>nk<O>	Loppu ;
-[Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
-[Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
+[Fkaan][Fko]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>:k<A><A>nk<O>	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
+[Fkaan]k<A><A>n[Fko]k<O>s:k<A><A>nk<O>s	Loppu ;
 
 LEXICON KieltosananLiitesana
 LiitesanaKoPaHan_<A>	;
@@ -4363,17 +4363,17 @@ k<A>:k<A>	Loppu	;
 
 LEXICON LiitesanaKoPaHan
 LiitesanaPaHan_<A>	;
-k<O>:k<O>	Loppu ;
-k<O>h<A>n:k<O>h<A>n	Loppu ;
-k<O>s:k<O>s	Loppu ;
+[Fko]k<O>:k<O>	Loppu ;
+[Fko]k<O>h<A>n:k<O>h<A>n	Loppu ;
+[Fko]k<O>s:k<O>s	Loppu ;
 
 LEXICON LiitesanaKinKoPaHan
 LiitesanaKoPaHan_<A>	;
 [Fkin][Ef]kin:kin	Loppu       ;
-[Fkin]kink<O>:kink<O>	Loppu ;
+[Fkin]kin[Fko]k<O>:kink<O>	Loppu ;
 [Fkin][Ef]kinh<A>n:kinh<A>n	Loppu ;
-[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
-[Fkin]kink<O>s:kink<O>s	Loppu ;
+[Fkin]kin[Fko]k<O>h<A>n:kink<O>h<A>n	Loppu ;
+[Fkin]kin[Fko]k<O>s:kink<O>s	Loppu ;
 ?Sukija [Fkin]ki:ki	Loppu       ;
 
 LEXICON LiitesanaKaanPaHan
