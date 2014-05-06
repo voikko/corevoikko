@@ -367,7 +367,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: aä, jatko: @sijan_jatko];
 
 [alku: "sti",   luokka: sijapääte, sija: kerronto_sti, sijamuoto: kerronto_sti,
-                luku: yksikkö, äs: aä, jatko: <liitesana, loppu>];
+                äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "s",     luokka: sijapääte, sija: tulento_s, sijamuoto: tulento,
                 luku: yksikkö, äs: aä, jatko: <liitesana, loppu>];

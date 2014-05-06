@@ -75,6 +75,7 @@ word:kissoin
 word:nopeasti
  analysis
   SIJAMUOTO=kerrontosti
+  !NUMBER
 word:juosta
  !SIJAMUOTO
  analysis
@@ -896,6 +897,10 @@ word:julkaistu
   analysis:
    COMPARISON=positive
    PARTICIPLE=past_passive
+word:julkaistiin
+ expected:1
+ analysis:
+  NEGATIVE=false
 word:tekijä
  expected:1
   analysis:
@@ -962,3 +967,7 @@ word:juoksema
 word:juoksematon
  analysis
   PARTICIPLE=negation
+word:toimii
+ expected:1
+ analysis
+  NEGATIVE=false

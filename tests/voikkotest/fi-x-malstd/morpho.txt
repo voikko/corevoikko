@@ -75,6 +75,7 @@ word:kissoin
 word:nopeasti
  analysis
   SIJAMUOTO=kerrontosti
+  !NUMBER
 word:juosta
  !SIJAMUOTO
  analysis

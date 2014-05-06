@@ -2764,7 +2764,7 @@ LEXICON Huutaa_s
 [Tn1]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Nm]siv<A>t:siv<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]siv<A>t:siv<A>t	Liitesana_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
 t<A>n:t<A>n	Mahtotapa_<A>	;
@@ -2852,7 +2852,7 @@ t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
 
 LEXICON Kapsaa
-[Tt][Ap][P3][Ny]<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
 
@@ -2881,7 +2881,7 @@ p:p	LaskeaLaskeskella_s_<A>	;
 v:v	LaskeaLaskeskella_w_<A>	;
 
 LEXICON LaskeaLaskeskella_s
-[Tt][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][P3][Ny][Ef]ee:ee	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
 e:e	Käskytapa_<A>	;
@@ -2925,15 +2925,15 @@ e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
 e:e	Johdin_nimitapa1A_<A>	;
-[Tt][P3][Ny]ee:ee	Liitesana_<A>	;
-[Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+[Tt][P3][Ny][Ef]ee:ee	Liitesana_<A>	;
+[Tt][P3][Nm][Ef]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	Käskytapa_<A>	;
 en:en	Mahtotapa_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_nUt_<A>	;
-[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
@@ -2989,8 +2989,8 @@ i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
 
 LEXICON Sallia_s
-[Tt][Ap][P3][Ny]ii:ii	KestämänTekijäpääteY3Liitesana_<A>	;
-[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]ii:ii	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]iv<A>t:iv<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
 i:i	Käskytapa_<A>	;
@@ -3772,11 +3772,11 @@ LEXICON TositavanKestämäXaan
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P4][Et]<A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@<A>	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttiin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ttiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttiin	Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]ttihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ttihin	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTiin
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]tiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tiin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]tiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tiin	Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4]tihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tihin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
