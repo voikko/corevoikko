@@ -80,7 +80,12 @@ Multichar_Symbols
 [Tm]  ! mahtotapa
 
 ! Laatutavat
+[Rv]  ! -vA
+[Ra]  ! -tAvA
+[Ru]  ! -Ut
 [Rt]  ! -ttU
+[Rm]  ! -mA
+[Re]  ! -mAtOn
 
 ! Tekijät
 [P1]  ! 1. persoona

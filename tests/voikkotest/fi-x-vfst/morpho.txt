@@ -162,9 +162,11 @@ word:juoksen
  analysis
   PERSON=1
   MOOD=indicative
+  TENSE=present_simple
 word:olen
  analysis
   PERSON=1
+  TENSE=present_simple
 word:juokset
  analysis
   PERSON=2
@@ -932,3 +934,31 @@ word:koirallakin
 word:koirallakaan
  analysis
   FOCUS=kaan
+word:juoksin
+ analysis
+  TENSE=past_imperfective
+word:juokseva
+ analysis
+  PARTICIPLE=present_active
+word:juostava
+ analysis
+  PARTICIPLE=present_passive
+word:metsästettävä
+ analysis
+  PARTICIPLE=present_passive
+word:juossut
+ analysis
+  PARTICIPLE=past_active
+word:juosseet
+ analysis
+  PARTICIPLE=past_active
+word:juostu
+ analysis
+  PARTICIPLE=past_passive
+word:juoksema
+ analysis
+  PARTICIPLE=agent
+  !MOOD
+word:juoksematon
+ analysis
+  PARTICIPLE=negation

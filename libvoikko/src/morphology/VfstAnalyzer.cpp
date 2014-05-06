@@ -119,7 +119,12 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	negativeMap.insert(std::make_pair(L"f", L"false"));
 	negativeMap.insert(std::make_pair(L"b", L"both"));
 	
+	participleMap.insert(std::make_pair(L"v", L"present_active"));
+	participleMap.insert(std::make_pair(L"a", L"present_passive"));
+	participleMap.insert(std::make_pair(L"u", L"past_active"));
 	participleMap.insert(std::make_pair(L"t", L"past_passive"));
+	participleMap.insert(std::make_pair(L"m", L"agent"));
+	participleMap.insert(std::make_pair(L"e", L"negation"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {

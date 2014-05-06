@@ -3965,9 +3965,9 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
-[Ln]t<A>v<U><U>s:t<A>v<U><U>s	NimisanaYsJatko	;
-[Ll]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
+[Ll][Ra]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
+[Ln][Ra]t<A>v<U><U>s:t<A>v<U><U>s	NimisanaYsJatko	;
+[Ll][Ra]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
 
 LEXICON Johdin_tAvA_muodot
 [Sn][Ny]<A>:<A>	Omistusliite_<A>	;
@@ -3995,25 +3995,25 @@ Johdin_UUs_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_sUt
-[Ll]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
+[Ll][Ru]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Johdin_nUt
-[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
-neis:neis	Johdin_UUs_<A>	;
-[Ll]nee:nee	Omistusliite_<A>	;
+[Ll][Ru]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
+[Ru]neis:neis	Johdin_UUs_<A>	;
+[Ll][Ru]nee:nee	Omistusliite_<A>	;
 ?Sukija [Ll]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
-[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
-[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
-[Ll]lee:lee	Omistusliite_<A>	;
+[Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
+[Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Ll][Ru]lee:lee	Omistusliite_<A>	;
 ?Sukija [Ll]lehe:lehe	Omistusliite_<A>	;
 
 LEXICON Johdin_rUt
-[Ll]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+[Ll][Ru]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
-[Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
+[Ll][Rv]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
 
 LEXICON Johdin_vE
 [Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vE_muodot_<A>	;
@@ -4051,10 +4051,17 @@ Johdin_UUs_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_mA
-[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_s_<A>	;
-[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_w_<A>	;
+[Ln][Rm]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_s_<A>	;
+[Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_mA_jatko_<A>	;
 Johdin_nimitapa3_<A>	;
 Johdin_nimitapa45_<A>	;
+
+LEXICON Johdin_mA_jatko
+[Rm][Sn][Nm]<A>t:<A>t	NimisanaMonikonNominatiivinJatko_<A>	;
+[Rm][Sg][Ny]<A>n:<A>n	NimisanaYksikönGenetiivinJatko_<A>	;
+[Rm]<A>:<A>	NimisanaYhteisetYksikönPaikallissijat_<A>	;
+[Rm]:	NimisanaYhteisetMonikonPaikallissijat_<A>	;
+<A>[Re]:<A>	Johdin_tOn_<A>	;
 
 LEXICON Johdin_ntA
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKanta_<A>	;
