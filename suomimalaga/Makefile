@@ -22,7 +22,7 @@ SM_VERSION=1.16
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
-OPTIONAL_LEX=atk-lyhenteet po-oikoluku linux-distributions science-misc
+OPTIONAL_LEX=atk-lyhenteet po-oikoluku linux-distributions
 
 # Source files for Sukija version.
 SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
@@ -257,8 +257,7 @@ voikko-sukija:
 	make voikko VANHAT_MUODOT=yes SUKIJAN_MUODOT=yes \
 		GENLEX_OPTS='--style=dialect,foreign,incorrect --min-frequency=10 \
 		--extra-usage=sukija,it,medicine,science,education,orgname' \
-		EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex \
-		vocabulary/erikoisalat/science-misc.lex" VOIKKO_DEBUG=yes
+		EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex" VOIKKO_DEBUG=yes
 
 
 # Rules for creating vvfst morphology for Sukija indexer. See file
