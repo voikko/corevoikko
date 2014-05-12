@@ -2370,6 +2370,12 @@ LEXICON Poikkeavat_es
 [Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_s_a	;
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
+LEXICON Poikkeavat_p
+[Lep][Xp]Bach[X][Sn][Nm]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
+[Lep][Xp]Bangladesh[X][Sn][Nm]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
+[Lep][Xp]Friedrich[X][Sn][Nm]friedrich:friedrich	Liitesana_ä	; ! Estämään tavutus "Friedri-ch[+liitesana]"
+[Lep][Xp]Zürich[X][Sn][Nm]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
+
 LEXICON Poikkeavat_t
 [Lt][Xp]kaikaa[X]kaikaa:kaikaa	Liitesana_a	;
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;

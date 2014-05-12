@@ -66,6 +66,9 @@ KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
 jok'ikinen       jok-i-ki-nen
 pop-musiikkia   pop-mu-siik-ki-a
 erinomaisuutta  e-rin-o-mai-suut-ta
+Zürich          Zü-rich
+Zürichkin       Zü-rich-kin
+Zürichiin       Zü-ri-chiin
 
 [voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(True)]
 kansaneläke.    kan-san-e-lä-ke.

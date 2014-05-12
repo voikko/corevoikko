@@ -48,9 +48,9 @@
 # Täydennyksiä eräiden sanojen taivutusmuotoihin (sanan perustietue
 # on sanastossa muualla).
 
-[perusmuoto: "Bach", alku: "Bach", luokka: sukunimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Ba-ch[+liitesana]"
-[perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Banglade-sh[+liitesana]"
-[perusmuoto: "Friedrich", alku: "Friedrich", luokka: etunimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Friedri-ch[+liitesana]"
+ [perusmuoto: "Bach", alku: "Bach", luokka: sukunimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Ba-ch[+liitesana]"
+ [perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Banglade-sh[+liitesana]"
+ [perusmuoto: "Friedrich", alku: "Friedrich", luokka: etunimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Friedri-ch[+liitesana]"
  [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
@@ -69,7 +69,7 @@
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
  [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
  [perusmuoto: "ystävys", alku: "ystävys", luokka: nimisana, jatko: <osanto_tA>, äs: ä]; # kaksi ystävystä
-[perusmuoto: "Zürich", alku: "Zürich", luokka: paikannimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Züri-ch[+liitesana]"
+ [perusmuoto: "Zürich", alku: "Zürich", luokka: paikannimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Züri-ch[+liitesana]"
 
 # Kiva-sanan kive-kantainen komparatiivi etuvokaalisena {{{1
 # (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
