@@ -971,3 +971,26 @@ word:toimii
  expected:1
  analysis
   NEGATIVE=false
+word:haluavatkin
+ expected:2
+ analysis
+  CLASS=laatusana
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NEGATIVE=false
+  NUMBER=plural
+  PERSON=3
+  REQUIRE_FOLLOWING_VERB=A-infinitive
+word:vähentävät
+ expected:2
+ analysis
+  CLASS=laatusana
+ analysis
+  CLASS=teonsana
+word:jakavat
+ expected:2
+ analysis
+  CLASS=laatusana
+ analysis
+  CLASS=teonsana

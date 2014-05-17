@@ -2764,6 +2764,8 @@ LEXICON Huutaa_s
 [Tn1]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
+[Tt][P3][Ny][Ef]t<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][P3][Nm][Ef]t<A>v<A>t:t<A>v<A>t	Liitesana_<A>	;
 [Tt][Ap][P3][Nm][Ef]siv<A>t:siv<A>t	Liitesana_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
@@ -2817,6 +2819,7 @@ e:e	Johdin_ttAx_<A>	;
 LEXICON Kaivaa_s
 <A>:<A>	Johdin_nimitapa1A_<A>	;
 <A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <O>:<O>	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Käskytapa_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
@@ -3436,7 +3439,8 @@ Johdin_ttAx_<A>	;
 
 LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
-[Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][P3][Ny][Ef]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
