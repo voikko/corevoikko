@@ -994,3 +994,7 @@ word:jakavat
   CLASS=laatusana
  analysis
   CLASS=teonsana
+word:aikakauslehti
+ expected:1
+ analysis
+  STRUCTURE==pppp=pppp=ppppp
