@@ -245,6 +245,19 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				structure[0] = L'-';
 			}
 		}
+		else if (fstOutput[i] == L':' && isAbbr) {
+			if (charsSeen > charsFromDefault) {
+				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
+				charsMissing -= (charsSeen - charsFromDefault);
+				charsSeen = 0;
+				charsFromDefault = 0;
+			}
+			structure[structurePos++] = L':';
+			if (charsMissing) {
+				charsMissing--;
+			}
+			isAbbr = false;
+		}
 		else {
 			charsSeen++;
 		}

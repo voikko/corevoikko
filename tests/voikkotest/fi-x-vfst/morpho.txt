@@ -998,3 +998,6 @@ word:aikakauslehti
  expected:1
  analysis
   STRUCTURE==pppp=pppp=ppppp
+word:ADSL:n
+ analysis
+  STRUCTURE==jjjj:p
