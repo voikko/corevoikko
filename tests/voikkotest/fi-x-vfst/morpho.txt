@@ -1001,3 +1001,9 @@ word:aikakauslehti
 word:ADSL:n
  analysis
   STRUCTURE==jjjj:p
+word:kokevat
+ expected:2
+ analysis
+  CLASS=laatusana
+ analysis
+  CLASS=teonsana
