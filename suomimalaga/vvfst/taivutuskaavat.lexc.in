@@ -2847,10 +2847,11 @@ t:t	KertomanTekijäpääteVahva_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 re:re	Tositapa4Tt_<A>	;
 r<O>:r<O>	KertomanTekijäpääteHeikko_<A>	;
+r<A>:r<A>	Käskytapa_y2_<A>	;
 re:re	Johdin_ttAx_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
+EhtoMahtoKäskytapa_tA_<A>	;
 t<A>:t<A>	Johdin_ja_kulkija_<A>	;
-t<A>:t<A>	Johdin_vA_<A>	;
 t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
 

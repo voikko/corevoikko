@@ -3638,6 +3638,8 @@ Snellman-johtoinen
 !Pitkänen-ismi
 !eritäinen
 tiennet
+kaarra
+kaartakoon
 
 # = poikkeavat asetukset =
 
