@@ -3634,6 +3634,7 @@ paremmilta
 parempilaatuinen
 Snellman-johtoinen
 !enenää
+!af-rikanvästäräkki
 
 # = poikkeavat asetukset =
 

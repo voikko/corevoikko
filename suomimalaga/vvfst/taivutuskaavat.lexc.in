@@ -2305,7 +2305,7 @@ ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Loppu
 [Sn][Ny]:	Loppu	;
-?Nimi	NimiYsJatko	;
+?Nimi	-[Bc]:-	Erisnimet	;
 
 LEXICON NOUN MonikonNominatiivinJatko
 Liitesana_<A>	;
