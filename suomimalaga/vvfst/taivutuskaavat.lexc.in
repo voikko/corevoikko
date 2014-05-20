@@ -3694,6 +3694,7 @@ LEXICON Taitaa
 Huutaa_s_<A>	;
 d:d	Huutaa_w_<A>	;
 n:n	Johdin_nUt_<A>	;
+nn:nn	Mahtotapa_<A>	;
 Johdin_ttU_<A>	;
 
 LEXICON Juosta

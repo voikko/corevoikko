@@ -3635,6 +3635,9 @@ parempilaatuinen
 Snellman-johtoinen
 !enenää
 !af-rikanvästäräkki
+!Pitkänen-ismi
+!eritäinen
+tiennet
 
 # = poikkeavat asetukset =
 
