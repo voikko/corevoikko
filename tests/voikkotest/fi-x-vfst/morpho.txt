@@ -1007,3 +1007,13 @@ word:kokevat
   CLASS=laatusana
  analysis
   CLASS=teonsana
+word:itarin
+ expected:2
+ analysis
+  COMPARISON=positive
+  NUMBER=plural
+  SIJAMUOTO=keinonto
+ analysis
+  COMPARISON=superlative
+  NUMBER=singular
+  SIJAMUOTO=nimento

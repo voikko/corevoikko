@@ -704,6 +704,7 @@ jugoslavianmakedonialainen
 !sidotuita
 jerseyläinen
 !kustuitaan
+!lukijraisuus
 
 # = sijapäätteet =
 []

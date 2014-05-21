@@ -873,6 +873,7 @@ LEXICON NOUN Matala
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
