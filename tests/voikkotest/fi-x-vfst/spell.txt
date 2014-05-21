@@ -700,6 +700,7 @@ jugoslavianmakedonialainen
 !toteutta
 !sidotuita
 jerseyläinen
+!kustuitaan
 
 # = sijapäätteet =
 []
@@ -3640,6 +3641,7 @@ Snellman-johtoinen
 tiennet
 kaarra
 kaartakoon
+!maissulan
 
 # = poikkeavat asetukset =
 

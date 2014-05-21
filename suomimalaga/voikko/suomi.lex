@@ -1069,8 +1069,8 @@ define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 [alku: "tu", luokka: johdin_tU, äs: a, jatko: @jatko_vahva_aste, perusmuoto: "tu"];
 [alku: "ty", luokka: johdin_tU, äs: ä, jatko: @jatko_vahva_aste, perusmuoto: "ty"];
 
-[alku: "tu", luokka: johdin_sUt_stU, laatutapa: johdin_ttU, äs: a, jatko: @jatko, perusmuoto: "tu"];
-[alku: "ty", luokka: johdin_sUt_stU, laatutapa: johdin_ttU, äs: ä, jatko: @jatko, perusmuoto: "ty"];
+[alku: "tu", luokka: johdin_sUt_stU, laatutapa: johdin_ttU, äs: a, jatko: @jatko - <omanto_it, osanto_itA>, perusmuoto: "tu"];
+[alku: "ty", luokka: johdin_sUt_stU, laatutapa: johdin_ttU, äs: ä, jatko: @jatko - <omanto_it, osanto_itA>, perusmuoto: "ty"];
 
 
 define @m_jatko := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,

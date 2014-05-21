@@ -703,6 +703,7 @@ jugoslavianmakedonialainen
 !toteutta
 !sidotuita
 jerseyläinen
+!kustuitaan
 
 # = sijapäätteet =
 []
