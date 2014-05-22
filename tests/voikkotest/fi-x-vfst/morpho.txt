@@ -1019,3 +1019,5 @@ word:itarin
   SIJAMUOTO=nimento
 word:herännäis-kissa
  expected:1
+word:nelisormimangusti
+ expected:1

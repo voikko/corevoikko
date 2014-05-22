@@ -119,18 +119,18 @@ LEXICON Järjestysluku
 [Lu]:	JärjestysluvunAlkuKerroin	;
 
 LEXICON Erikoisluku
-[Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;
-[Lu][Xp]neli[X]neli:neli	LukusananJälkiliite	;
-[Lu][Xp]seitsen[X]seitsen:seitsen	LukusananJälkiliite	;
-[Lu][Xp]kymmen[X]kymmen:kymmen	LukusananJälkiliite	;
-[Lu][Xp]kaksikymmen[X]kaksi[Bm]kymmen:kaksikymmen	LukusananJälkiliite	;
-[Lu][Xp]kolmikymmen[X]kolmi[Bm]kymmen:kolmikymmen	LukusananJälkiliite	;
-[Lu][Xp]nelikymmen[X]neli[Bm]kymmen:nelikymmen	LukusananJälkiliite	;
-[Lu][Xp]viisikymmen[X]viisi[Bm]kymmen:viisikymmen	LukusananJälkiliite	;
-[Lu][Xp]kuusikymmen[X]kuusi[Bm]kymmen:kuusikymmen	LukusananJälkiliite	;
-[Lu][Xp]seitsenkymmen[X]seitsen[Bm]kymmen:seitsenkymmen	LukusananJälkiliite	;
-[Lu][Xp]kahdeksankymmen[X]kahdeksan[Bm]kymmen:kahdeksankymmen	LukusananJälkiliite	;
-[Lu][Xp]yhdeksänkymmen[X]yhdeksän[Bm]kymmen:yhdeksänkymmen	LukusananJälkiliite	;
+[Lu][Xp]kolmi[X]kolmi:kolmi	LukusananErikoisjälkiliite	;
+[Lu][Xp]neli[X]neli:neli	LukusananErikoisjälkiliite	;
+[Lu][Xp]seitsen[X]seitsen:seitsen	LukusananErikoisjälkiliite	;
+[Lu][Xp]kymmen[X]kymmen:kymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]kaksikymmen[X]kaksi[Bm]kymmen:kaksikymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]kolmikymmen[X]kolmi[Bm]kymmen:kolmikymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]nelikymmen[X]neli[Bm]kymmen:nelikymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]viisikymmen[X]viisi[Bm]kymmen:viisikymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]kuusikymmen[X]kuusi[Bm]kymmen:kuusikymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]seitsenkymmen[X]seitsen[Bm]kymmen:seitsenkymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]kahdeksankymmen[X]kahdeksan[Bm]kymmen:kahdeksankymmen	LukusananErikoisjälkiliite	;
+[Lu][Xp]yhdeksänkymmen[X]yhdeksän[Bm]kymmen:yhdeksänkymmen	LukusananErikoisjälkiliite	;
 [Lu][Xp]puolitoista[X]puoli[Bm]toista:puolitoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X]puolen[Bm]toista:puolentoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X]puolta[Bm]toista:puoltatoista	Liitesana_a	;
@@ -302,6 +302,9 @@ LukusananJälkiliiteEiYhdysmerkkiä	;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
 [Bc][Bh]@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@:@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@	Sanasto_n	;
+LukusananErikoisjälkiliite	;
+
+LEXICON LukusananErikoisjälkiliite
 [Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;
