@@ -3643,6 +3643,7 @@ tiennet
 kaarra
 kaartakoon
 !maissulan
+joine
 
 # = poikkeavat asetukset =
 

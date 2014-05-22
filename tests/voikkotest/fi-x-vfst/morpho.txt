@@ -1017,3 +1017,5 @@ word:itarin
   COMPARISON=superlative
   NUMBER=singular
   SIJAMUOTO=nimento
+word:herännäis-kissa
+ expected:1
