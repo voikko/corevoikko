@@ -468,7 +468,18 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 				j--;
 				if (fstOutput[j] == L'[') {
 					if (fstOutput[j + 1] == L'L') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "CLASS", classMap);
+						if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
+							const wchar_t * comp = analysis->getValue("COMPARISON");
+							if (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) {
+								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+							}
+							else {
+								analysis->addAttribute("CLASS", StringUtils::copy(L"nimisana_laatusana"));
+							}
+						}
+						else {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "CLASS", classMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'N') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);

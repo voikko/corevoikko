@@ -1021,3 +1021,7 @@ word:herännäis-kissa
  expected:1
 word:nelisormimangusti
  expected:1
+word:neutraalimpaan
+ expected:1
+ analysis
+  CLASS=laatusana
