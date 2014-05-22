@@ -2516,8 +2516,8 @@ Johdin_ttAx_<A>	;
 
 LEXICON Punoa_s
 Johdin_nimitapa1A_<A>	;
-[Tt][Ap][P3][Ny][[L]]:[[L]]	KestämänTekijäpääteY3Liitesana_<A>	;
-[Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef][[L]]:[[L]]	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
 Käskytapa_<A>	;
@@ -3805,9 +3805,9 @@ Käskytapa_tA_<A>	;
 Johdin_tAvA_<A>	;
 
 LEXICON Ehtotapa_tA
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny][Et]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny][Ef]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ny]t<A>isihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isihin	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Et]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ef]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4]t<A>isihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isihin	Liitesana_<A>	;
 
 LEXICON Mahtotapa
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P1][Ny][Ef]en:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@en	Liitesana_<A>	;
@@ -3822,9 +3822,9 @@ LEXICON Mahtotapa_ttA
 t:t	Mahtotapa_tA_<A>	;
 
 LEXICON Mahtotapa_tA
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny][Ef]t<A>ne:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>ne	Liitesana_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny][Ef]t<A>neen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>neen	Liitesana_<A>	;
-?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ny]t<A>nehen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>nehen	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ef]t<A>ne:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>ne	Liitesana_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ef]t<A>neen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>neen	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4]t<A>nehen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>nehen	Liitesana_<A>	;
 
 LEXICON Käskytapa_0
 Käskytapa_<A>	;

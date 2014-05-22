@@ -1028,3 +1028,10 @@ word:neutraalimpaan
 word:nimeämiskäytännöstä
  expected:1
  !MOOD
+word:muokattaisi
+ expected:1
+ !NUMBER
+word:mutkistuu
+ expected:1
+ analysis
+  NEGATIVE=false
