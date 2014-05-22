@@ -494,7 +494,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						}
 					}
 					else if (fstOutput[j + 1] == L'T') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "MOOD", moodMap);
+						if (!analysis->getValue("CLASS")) {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "MOOD", moodMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'A') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "TENSE", tenseMap);

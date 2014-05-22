@@ -1025,3 +1025,6 @@ word:neutraalimpaan
  expected:1
  analysis
   CLASS=laatusana
+word:nimeämiskäytännöstä
+ expected:1
+ !MOOD
