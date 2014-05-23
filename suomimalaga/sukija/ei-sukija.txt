@@ -166,6 +166,7 @@ HDL-kolesteroli
 hehkutus
 heijastuma
 heikentymä
+Heimo
 heimolainen
 heitellä
 Heitto

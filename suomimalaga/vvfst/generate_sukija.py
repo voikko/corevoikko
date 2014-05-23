@@ -658,6 +658,8 @@ while True:
         outfile.write (u"Sukija ;\n")
     if line == u"LEXICON Joukahainen_p\n":
         outfile.write (u"SukijaEtuliite ;\n")
+    if line == u"LEXICON LukusananErikoisjälkiliite\n":
+        outfile.write (u"SukijaLukusananErikoisjälkiliite ;\n")
 
     generate_from_pattern (line, spelling_pattern_list)
 

@@ -549,7 +549,6 @@
 
 [perusmuoto: "filippiinien", alku: "filippiinien", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "voimaan", alku: "voimaan", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "voimaantua", alku: "voimaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
 [perusmuoto: "savolainen", alku: "savolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "liikkeelle", alku: "liikkeelle", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "liikkeeseen", alku: "liikkeeseen", luokka: etuliite, jatko: @sana2, äs: aä];
