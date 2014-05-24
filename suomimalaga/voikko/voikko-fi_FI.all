@@ -4001,7 +4001,7 @@ subrule pitkä ($tietue):
                                    omanto_in:  "tk" + A($tietue)],
                                   [osanto_iA:  "tk"],
                                   [sisätulento_iin: "tk"], 
-                                  "si"));
+                                  "s"));
 end;
 
 
