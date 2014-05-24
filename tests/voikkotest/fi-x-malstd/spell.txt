@@ -143,6 +143,7 @@ vanhempainyhteistyötoimikunta
 lukemisesteisiä
 virvoitusjuomateollisuusliiton
 !Heinäsiepäitä
+!Al-rastini
 
 # = vain yhdyssanan jälkiosana =
 []

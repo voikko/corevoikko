@@ -712,7 +712,8 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
   result $res, accept;
   result $res, rules erisnimi;
-  if ($edellinen.luokka /= sijapääte or $edellinen.sijamuoto in <nimentö, omanto>) then
+  if ($edellinen.sijamuoto in <nimentö, omanto> or
+      ($edellinen.luokka /= sijapääte and ($edellinen.luokka /= nimi or tavuviiva in $edellinen.jatko or liitesana in $edellinen.jatko))) then
     result $res, rules
            nimisana, nimisana_laatusanasta,
            etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana, inen_johdos_nimisanasta;
