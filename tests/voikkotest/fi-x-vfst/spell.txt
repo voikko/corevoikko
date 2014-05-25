@@ -3649,6 +3649,8 @@ kaartakoon
 !maissulan
 joine
 !huhmarsi
+!surlun
+surrun
 
 # = poikkeavat asetukset =
 

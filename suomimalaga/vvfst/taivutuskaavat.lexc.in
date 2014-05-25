@@ -3119,10 +3119,12 @@ LEXICON Purra
 r:r	<WC>Tulla_l_<A>	;
 Johdin_rUt_<A>	;
 e:e	Johdin_ntA_<A>	;
+Johdin_tU_rA_<A>	;
 
 LEXICON Tulla
 <WC>Tulla_s_<A>	;
 l:l	<WC>Tulla_l_<A>	;
+Johdin_tU_lA_<A>	;
 Johdin_lUt_<A>	;
 
 LEXICON Tulla_s
@@ -3139,7 +3141,6 @@ Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-Johdin_tU_lA_<A>	;
 
 LEXICON Tulla_l
 TositavanKestämäXaan_<A>	;
@@ -4170,6 +4171,12 @@ LEXICON Johdin_tU_dA
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
 [Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
+[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>       NimiLaatusanaValo_w_<A>  ;
+
+! surra -> surtu
+LEXICON Johdin_tU_rA
+[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
+[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@r<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@r<U>       NimiLaatusanaValo_w_<A>  ;
 
 ! panna -> pantu
 LEXICON Johdin_tU_nA
@@ -4190,7 +4197,6 @@ t<U>[Sill][Nm]ihi:t<U>ihi	NimiLaatusanaLiOlN_<A>	;
 t<U>[Ses][Ny]n<A>:t<U>n<A>	NimiLaatusanaLiOlV_<A>	;
 t<U>:t<U>	NimiLaatusanaYhteisetMonikonSijat2_<A>	;
 t<U><U>:t<U><U> NimiLaatusanaValo_sl_<A> ;
-l<U>:l<U>       NimiLaatusanaValo_w_<A>  ;
 ?Sukija t<U>h<U>:t<U>h<U> NimiLaatusanaValo_sl_<A> ;
 
 LEXICON Kerronto_sti
