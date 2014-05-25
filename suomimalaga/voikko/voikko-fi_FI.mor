@@ -387,10 +387,8 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     end;
   elseif $edellinen.lukutyyppi /= nil then
     if tavuviiva in $oikea.jatko then
-      result $res, rules etuliite, tavuviiva;
+      result $res, rules etuliite, tavuviiva, nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
     end;
-    result $res,
-           rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
     stop;
   end;
 
