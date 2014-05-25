@@ -287,6 +287,7 @@ Ab:ltä
 §:ssä
 DVD:nsä
 DVD:än
+!tee-n.
 
 # = sijamuodot =
 []
@@ -3646,6 +3647,7 @@ kaarra
 kaartakoon
 !maissulan
 joine
+!huhmarsi
 
 # = poikkeavat asetukset =
 

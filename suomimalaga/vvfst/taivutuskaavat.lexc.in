@@ -1295,7 +1295,7 @@ en:en	<WC>Taival_w_<A>	;
 ken:ken	<WC>Taival_s_<A>	;
 
 LEXICON NOUN Taival_w
-[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;

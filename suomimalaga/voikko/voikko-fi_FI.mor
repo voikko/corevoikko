@@ -663,9 +663,10 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
 end;
 
 
-combi_rule lyhennesääntö ($vasen, $oikea, $sana):
+combi_rule lyhennesääntö ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = lyhenne;
   ? $oikea.alaluokka /= roomalainen;
+  ? $index less 2 or $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (kaksoispiste in $oikea.jatko) then result $res, rules kaksoispiste; end;

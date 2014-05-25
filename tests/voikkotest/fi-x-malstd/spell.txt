@@ -288,6 +288,7 @@ Ab:ltä
 §:ssä
 DVD:nsä
 DVD:än
+!tee-n.
 
 # = sijamuodot =
 []
