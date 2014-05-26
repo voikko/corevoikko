@@ -1902,7 +1902,6 @@ LEXICON NOUN Kevät
 ?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
-?Sukija h<A>:h<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Mies
 s:s   <WC>Mies_s_<A>  ;
@@ -1953,6 +1952,10 @@ ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana ee:ee	Voittoaste_<A>	;
 ?Laatusana e:e	Yliaste_<A>	;
+?Sukija ?NotLaatusana	[Sn][Ny]ehe:ehe	Omistusliite_<A>	;
+?Sukija [Sn][Nm]ehet:ehet	<WC>MonikonNominatiivinJatko_<A>	;
+?Sukija [Sg][Ny]ehen:ehen	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Ses][Ny]ehen<A>:ehen<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
@@ -2062,7 +2065,6 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]hese:hese	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisii:hisii	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
-?Sukija he:he	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija ?Laatusana	he:he	Voittoaste_<A>	;
 ?Sukija ?Laatusana	h:h	Yliaste_<A>	;
 ?Sukija ?Nimisana	he:he	Johdin_tOn_<A>	;
@@ -4009,13 +4011,13 @@ LEXICON Johdin_nUt
 [Ll][Ru]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 [Ru]neis:neis	Johdin_UUs_<A>	;
 [Ll][Ru]nee:nee	Omistusliite_<A>	;
-?Sukija [Ll]nehe:nehe	Omistusliite_<A>	;
+?Sukija [Ll][Ru]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
 [Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
 [Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll][Ru]lee:lee	Omistusliite_<A>	;
-?Sukija [Ll]lehe:lehe	Omistusliite_<A>	;
+?Sukija [Ll][Ru]lehe:lehe	Omistusliite_<A>	;
 
 LEXICON Johdin_rUt
 [Ll][Ru]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
@@ -4337,7 +4339,7 @@ LEXICON Yliaste
 [Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	NimisanaOlVLoppu_<A>	;
 [Cs]imm@D.EI_VERTM@@C.YS_EI_JATKOA@:imm@D.EI_VERTM@@C.YS_EI_JATKOA@	Johdin_UUs_<A>	;
 imm<A>:imm<A>	Kerronto_sti_<A>	;
-?Sukija [Sg][Nm][Cs]imp<A>in@D.EI_VERTM@:imp<A>in@D.EI_VERTM@	Liitesana_<A>	;
+?Sukija [Ses][Ny][Cs]inn<A>@D.EI_VERTM@:inn<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 ?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cs]impihi@D.EI_VERTM@:impihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 
@@ -4914,6 +4916,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija [Sp][Nm]hi<A>:hi<A> 	<WC>LiOlV_<A>	;
 ?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija [[H]]:[[H]] <WC>YhteisetYksikönPaikallissijat_<A>	;
 
 ?Sukija LEXICON NOUN SukijaKaunis
 ?Sukija [Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;
