@@ -65,8 +65,7 @@ LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
 [Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
 [Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;
 
-LEXICON SukijaAsemosanaMie
-[Sn][Ny]e:e	Liitesana_ä	;
+LEXICON SukijaAsemosanaMieMä
 [Sg][Ny]un:un	Liitesana_a	;
 [Sak][Ny]ut:ut	Liitesana_a	;
 [Str][Ny]uksi:uksi	Liitesana_a	;
@@ -77,29 +76,57 @@ LEXICON SukijaAsemosanaMie
 [Sade][Ny]ulla:ulla	Liitesana_a	;
 [Sabl][Ny]ulta:ulta	Liitesana_a	;
 [Sall][Ny]ulle:ulle	Liitesana_a	;
+
+LEXICON SukijaAsemosanaMie
+[Sn][Ny]e:e	Liitesana_ä	;
+SukijaAsemosanaMieMä ;
+
+LEXICON SukijaAsemosanaMikä
+[Sn][Ny]käs:käs   Loppu ;
+[Sg][Ny]nkäs:nkäs Loppu ;
+[Sg][Ny]nkäspähän:nkäspähän Loppu ;
+[Sp][Ny]täshän:täshän     Loppu ;
+[Sp][Ny]täspä:täspä       Loppu ;
+[Sp][Ny]tästä:tästä       Loppu ;
+[Sp][Ny]tästäpä:tästäpä   Loppu ;
+[Str][Ny]ksikäs:ksikäs    Loppu ;
+[Sela][Ny]stäkäs:stäkäs   Loppu ;
+[Sill][Ny]hinkäs:hinkäs   Loppu ;
+[Sill][Ny]nnekkäs:nnekkäs Loppu ;
+[Sill][Ny]nnekäs:nnekäs   Loppu ;
+[Sall][Ny]llekäs:llekäs   Loppu ;
+[Sn][Nm]tkäs:tkäs         Loppu ;
 
 LEXICON SukijaAsemosanaMinä
 [Sill][Ny]uhun:uhun	Liitesana_a	;
 
 LEXICON SukijaAsemosanaMä
 [Sn][Ny]ä:ä	Liitesana_ä	;
-[Sg][Ny]un:un	Liitesana_a	;
 [Sp][Ny]ua:ua	Liitesana_a	;
-[Sak][Ny]ut:ut	Liitesana_a	;
-[Str][Ny]uksi:uksi	Liitesana_a	;
-[Ses][Ny]una:una	Liitesana_a	;
-[Sine][Ny]ussa:ussa	Liitesana_a	;
-[Sela][Ny]usta:usta	Liitesana_a	;
-[Sill][Ny]uhun:uhun	Liitesana_a	;
-[Sade][Ny]ulla:ulla	Liitesana_a	;
-[Sabl][Ny]ulta:ulta	Liitesana_a	;
-[Sall][Ny]ulle:ulle	Liitesana_a	;
+SukijaAsemosanaMieMä ;
+
+LEXICON SukijaAsemosanaNämä
+[Sak][Ny]mät:mät	Liitesana_ä	;
 
 LEXICON Sukija
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
+[Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       Liitesana_a ;
+[Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       Omistusliite_a ;
+[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     Liitesana_a ;
+[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
+[Lep][Xp]Kaunisportti[X][Sp][Ny]kaunista[Bm]porttia:kaunistaporttia       PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Ses][Ny]kauniina[Bm]porttina:kauniinaporttina    PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Str][Ny]kauniiksi[Bm]portiksi:kauniiksiportiksi  PaikannimiLiOlI_a ;
+[Lep][Xp]Kaunisportti[X][Sine][Ny]kauniissa[Bm]portissa:kauniissaportissa PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sela][Ny]kauniista[Bm]portista:kauniistaportista PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sill][Ny]kauniiseen[Bm]porttii:kauniiseenporttii PaikannimiLiOlN_a ;
+[Lep][Xp]Kaunisportti[X][Sade][Ny]kauniilla[Bm]portilla:kauniillaportilla PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sabl][Ny]kauniilta[Bm]portilta:kauniiltaportilta PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sall][Ny]kauniille[Bm]portille:kauniilleportille PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sab][Ny]kauniitta[Bm]portitta:kauniittaportitta  PaikannimiLiOlV_a ;
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
-[Ln][Xp]aaetelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
+[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
@@ -121,17 +148,23 @@ LEXICON Sukija
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
+[Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
+[Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
+[Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
 [Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
 [Lr][Xp]mä[X]m:m        SukijaAsemosanaMä ;
+[Lr][Xp]nämä[X]nä:nä    SukijaAsemosanaNämä ;
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMie ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
 [Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasOmistusliitteet_a	;
+[Ls][Xp]miten[X]mitenkäs:mitenkäs Liitesana_ä ;
+[Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
 

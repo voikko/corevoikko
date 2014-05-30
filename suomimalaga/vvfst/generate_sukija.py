@@ -45,6 +45,7 @@
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' | sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
+# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | gawk '{print $2}' |flookup -i sukija.fst | gawk 'length($0) > 0'
 # cp test.out ~/Lataukset/vvfst-sukija-testi.out
 
 # Style- ja usage-lippujen arvot suoraan Joukahaisesta:
@@ -218,24 +219,20 @@ def word_class (line):
 # Tuomo Tuomi: Suomen kielen käänteissanakirja, 2. painos.
 # Suomalaisen Kirjallisuuden Seura 1980.
 
+def write_word (line, word, lexicon):
+    prefix = line[0:line.find (u" ")]
+    A = u"a" if re_A.search(word) else u"ä"
+    outfile.write (u"%s %s%s_%s ;\n" % (prefix, word_class(line), lexicon, A))
 
 def write_ahven (line, word):
-    prefix = line[0:line.find (u"[X]")+3]
-    A = u"a" if re_A.search(word) else u"ä"
-    outfile.write (u"%s%s[Ses][Ny]n%s:%sn%s NimisanaLiOlV_%s ;\n" % (prefix, word, A, word, A, A))
-
+    if not line.startswith (u"[Lu]"):
+        write_word (line, word, u"SukijaAhven")
 
 def write_kaunis (line, word):
-    prefix = line[0:line.find (u" ")]
-    A = u"a" if re_A.search(word) else u"ä"
-    outfile.write (u"%s %sSukijaKaunis_%s ;\n" % (prefix, word_class(line), A))
-
+    write_word (line, word, u"SukijaKaunis")
 
 def write_altis (line, word):
-    prefix = line[0:line.find (u" ")]
-    A = u"a" if re_A.search(word) else u"ä"
-    outfile.write (u"%s %sSukijaAltis_%s ;\n" % (prefix, word_class(line), A))
-
+    write_word (line, word, u"SukijaAltis")
 
 def write_virkkaa (line, word):
     prefix = line[0:line.find (u" ")]
@@ -248,6 +245,9 @@ def write_paistaa (line, word):
 def write_paahtaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
+
+def write_lahti (line, word):
+    write_word (line, word, u"SukijaLahti")
 
 
 def generate_from_pattern (line, pattern_list):
@@ -436,8 +436,8 @@ word_list = [
     (u"yhdeksäs",           (u"yhdeksä",          u"yheksä")),
     (u"ylimmäinen",         (u"ylimmäi",          u"ylimäi")),
 
-    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;"]),
-##                  u"[Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;"
+    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;",
+                  u"[Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;"]),
 
     (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
     (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
@@ -497,6 +497,38 @@ function_list = [
       u"saarua",
       u"tanhua")),
 
+# Vapaa ja tienoo ovat taivutuskaavoina SukijaVapaa.
+#
+    # 23 vapaa (8, 8). Tuomi, s. 1, 2.
+    #
+#    (write_vapaa_tienoo,
+#     (u"kajaa",
+#      u"vajaa",
+#      u"vakaa",
+#      u"suklaa",
+#      u"harmaa",
+#      u"vapaa",
+#      u"nepaa",
+#      u"hurraa")),
+
+    # 24 tienoo (14, 14). Tuomi, s. 345. Taipuu kuten vapaa.
+    #
+#    (write_vapaa_tienoo,
+#     (u"kabeljoo",
+#      u"kalikoo",
+#      u"pikoo",
+#      u"talkoo",
+#      u"haloo",
+#      u"halloo",
+#      u"tienoo",
+#      u"poppoo",
+#      u"bigarroo",
+#      u"platoo",
+#      u"ehtoo",
+#      u"palttoo",
+#      u"ponttoo",
+#      u"nivoo")),
+
     # 33 lohi (2, 2). Tuomi, s. 151.
     # lohten, uuhten
     #
@@ -505,6 +537,13 @@ function_list = [
      (u"lohi",
       u"tyynenmerenlohi",   # On Joukahaisessa.
       u"uuhi")),
+
+    # 34 lahti (2, 2). Tuomi, s. 193.
+    # lahta (= lahtea), lahtein
+    #
+    (write_lahti, 
+     (u"haahti",
+      u"lahti")),
 
     # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
     #
@@ -517,7 +556,7 @@ function_list = [
       u"huomen",
       u"häiven",
       u"höyhen",
-      u"ien",
+#      u"ien",  # On erikseen: ikene, ien.
       u"iljen",
       u"joutsen",
       u"jäsen",

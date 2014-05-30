@@ -1080,6 +1080,7 @@ LEXICON NOUN Peruna
 
 LEXICON NOUN Korkea
 e:e	<WC>Ainoa_<A>	;
+?Sukija <WC>SukijaKorkeaKorkeeKorkia_<A> ;
 
 LEXICON NOUN Ainoa
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1103,8 +1104,10 @@ LEXICON NOUN Ainoa
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
-?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   Liitesana_<A> ;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A> <WC>LiOlN_<A> ;
+?Sukija ?Yleisnimi [[L]]:[[L]]  <WC>SukijaAinoo_<A> ;
+?Sukija ?Yleisnimi [[L]][Sn][Ny]:[[L]] <WC>NormaaliYsJatkoOl_<A> ;
 
 LEXICON NOUN Suurempi
 Voittoaste_<A>	;
@@ -1133,7 +1136,7 @@ LEXICON NOUN Vapaa_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Laatusana	Yliaste_<A>	;
-?Sukija  <WC>SukijaYhteisetHMuodot_<A> ;
+?Sukija <WC>SukijaVapaa_<A> ;
 
 LEXICON NOUN Vapaa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1146,6 +1149,7 @@ LEXICON NOUN Vapaa_l
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
+?Sukija [Sill][Ny]sehe:sehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kamee
 <WC>Kamee_s_<A>	;
@@ -1956,10 +1960,14 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Sn][Nm]ehet:ehet	<WC>MonikonNominatiivinJatko_<A>	;
 ?Sukija [Sg][Ny]ehen:ehen	<WC>YksikönGenetiivinJatko_<A>	;
 ?Sukija [Ses][Ny]ehen<A>:ehen<A>	<WC>LiOlV_<A>	;
-?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
-?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
+?Sukija [Ses][Ny]<U>nn<A>:<U>nn<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]ehese:ehese	<WC>LiOlN_<A>	;
+?Sukija [Sg][Nm]<U>tt:<U>tt      <WC>MonikonGenetiiviEnJatko_<A> ;
 ?Sukija [Sill][Nm]eisi:eisi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ehisi:ehisi	<WC>LiOlN_<A>	;
 ?Sukija e:e <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NimisanaKaksi
@@ -4947,3 +4955,39 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija s:s   Nuolaista_w_<A> ;
 ?Sukija s:s   Nuolaista_s_<A> ;
 ?Sukija s:s   Johdin_U_arvelu_<A> ;
+
+?Sukija LEXICON NOUN SukijaKorkeaKorkeeKorkia
+?Sukija [Sg][Nm]e<O>id:e<O>id   <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sg][Nm]e<O>itt:e<O>itt <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sg][Nm]ehitt:ehitt     <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sg][Nm]ehi:ehi          <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sp][Nm]e<O>it<A>:e<O>it<A>  <WC>LiOlV_<A> ;
+?Sukija [Ses][Nm]e<O>in<A>:e<O>in<A> <WC>LiOlV_<A> ;
+?Sukija [Sill][Nm]e<O>ihi:e<O>ihi    <WC>LiOlN_<A> ;
+?Sukija e<O>:e<O> <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija e<O>:e<O> <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija i<A>:i<A> <WC>Apila_y_<A> ;
+?Sukija i<O>:i<O> <WC>Apila_m_<A> ;
+?Sukija ?Laatusana i<A>:i<A> Voittoaste_<A> ;
+
+?Sukija LEXICON NOUN SukijaAinoo
+?Sukija [Sg][Ny]n:n         <WC>YksikönGenetiivinJatko_<A> ;
+?Sukija [Sp][Ny]t<A>:t<A>   <WC>LiOlV_<A> ;
+?Sukija [Ses][Ny]n<A>:n<A>  <WC>LiOlV_<A> ;
+?Sukija [Sill][Ny]see:see   <WC>LiOlN_<A> ;
+?Sukija [Sill][Ny]sehe:sehe <WC>LiOlN_<A> ;
+?Sukija <WC>YhteisetYksikönPaikallissijat_<A> ;
+
+?Sukija LEXICON NOUN SukijaVapaa
+?Sukija <WC>SukijaYhteisetHMuodot_<A> ;
+?Sukija [[H]][Sg][Ny]n:[[H]]n        <WC>YksikönGenetiivinJatko_<A> ;
+?Sukija [[H]][Ses][Ny]n<A>:[[H]]n<A> <WC>LiOlV_<A> ;
+?Sukija [[H]][Sill][Ny]se:[[H]]se    <WC>LiOlN_<A> ;
+?Sukija [Sill][Nm]hisi:hisi          <WC>LiOlN_<A> ;
+?Sukija [Sill][Nm]isihi:isihi        <WC>LiOlN_<A> ;
+
+?Sukija LEXICON NOUN SukijaLahti
+?Sukija [Sp][Ny]t<A>:t<A> <WC>LiOlV_<A> ;
+
+?Sukija LEXICON NOUN SukijaAhven
+?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
