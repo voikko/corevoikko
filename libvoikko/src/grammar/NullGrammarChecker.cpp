@@ -33,21 +33,21 @@ namespace libvoikko { namespace grammar {
 
 class NullParagraphAnalyzer : public Analysis {
 	
-	void analyseToken(Token * token) {
+	void analyseToken(Token *) {
 	}
 	
-	Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos) {
+	Sentence * analyseSentence(const wchar_t *, size_t, size_t) {
 		return 0;
 	}
 	
-	Paragraph * analyseParagraph(const wchar_t * text, size_t textlen) {
+	Paragraph * analyseParagraph(const wchar_t *, size_t) {
 		return new Paragraph;
 	}
 };
 
 class NullRuleEngine : public RuleEngine {
 	
-	void check(const Paragraph * para) {
+	void check(const Paragraph *) {
 	}
 };
 
