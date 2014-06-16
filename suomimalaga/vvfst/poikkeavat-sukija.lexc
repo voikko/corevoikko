@@ -21,8 +21,8 @@ LEXICON SukijaNeiti
 [Sg][Ny]tin:tin   Liitesana_a ;
 ?NotLaatusana     [Sn][Ny]te:te Omistusliite_ä	;
 [Sp][Ny]ttä:ttä   NimisanaLiOlV_ä ;
-[Ses]Ny]tenä:tenä NimisanaLiOlV_ä ;
-[Ses]Ny]nnä:nnä   NimisanaLiOlV_ä ;
+[Ses[]Ny]tenä:tenä NimisanaLiOlV_ä ;
+[Ses][Ny]nnä:nnä   NimisanaLiOlV_ä ;
 de:de             NimisanaYhteisetYksikönPaikallissijat_ä ;
 ti:ti             NimisanaYhteisetYksikönPaikallissijat_ä ;
 [Sill][Ny]tee:tee   NimisanaLiOlN_ä ;
@@ -32,6 +32,23 @@ ti:ti             NimisanaYhteisetYksikönPaikallissijat_ä ;
 [Sko][Nm]tine:tine  NimisanaLiOlV_ä ;
 ?Nimisana d:d       Johdin_ittAin_ä ;
 ?Nimisana de:de     Johdin_tOn_ä ;
+
+LEXICON SukijaOri
+[Str][Ny]iksi:iksi    NimisanaLiOlI_a ;
+[Ses][Ny]ina:ina      NimisanaLiOlV_a ;
+[Sill][Ny]isee:isee   NimisanaLiOlN_a ;
+[Sab][Ny]itta:itta    NimisanaLiOlV_a ;
+[Ses][Ny]hina:hina    NimisanaLiOlV_a ;
+[Str][Ny]hiksi:hiksi  NimisanaLiOlI_a ;
+[Sill][Ny]hise:hise   NimisanaLiOlN_a ;
+[Sn][Nm]it:it         NimisanaMonikonNominatiivinJatko_a;
+[Sn][Nm]hit:hit       NimisanaMonikonNominatiivinJatko_a;
+[Sg][Nm]itt@D.YS_ALKANUT@:itt@D.YS_ALKANUT@ NimisanaMonikonGenetiiviEnJatko_a ;
+[Sg][Nm]tt@D.YS_ALKANUT@:tt@D.YS_ALKANUT@ NimisanaMonikonGenetiiviEnJatko_a ;
+[Sill][Nm]ihi:ihi     NimisanaLiOlN_a ;
+[Sill][Nm]isii:isii   NimisanaLiOlN_a ;
+[Sill][Nm]hisi:hisi   NimisanaLiOlN_a ;
+                      NimisanaSukijaYhteisetHMuodot_a ;
 
 LEXICON SukijaLukusanaKolmattaYhdeksättä
 [Bc]kolmatta:kolmatta       Liitesana_a     ;
@@ -153,6 +170,7 @@ LEXICON Sukija
 [Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
@@ -287,6 +305,8 @@ LEXICON SukijaEtuliite
 [Lp]niilin:niilin EtuliitteenJatko_ellelnelt;
 [Lp]ohitse:ohitse EtuliitteenJatko_ellelnelt;
 [Lp]olemassa:olemassa EtuliitteenJatko_ellelnelt;
+[Lp]orientaali:orientaali EtuliitteenJatko_ellelnelt;
+[Lp]orinocon:orinocon EtuliitteenJatko_ellelnelt;
 [Lp]pakistanin:pakistanin EtuliitteenJatko_ellelnelt;
 [Lp]panaman:panaman EtuliitteenJatko_ellelnelt;
 [Lp]papuan:papuan EtuliitteenJatko_ellelnelt;
