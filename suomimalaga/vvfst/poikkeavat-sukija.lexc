@@ -48,7 +48,36 @@ LEXICON SukijaOri
 [Sill][Nm]ihi:ihi     NimisanaLiOlN_a ;
 [Sill][Nm]isii:isii   NimisanaLiOlN_a ;
 [Sill][Nm]hisi:hisi   NimisanaLiOlN_a ;
-                      NimisanaSukijaYhteisetHMuodot_a ;
+NimisanaSukijaYhteisetHMuodot_a ;
+
+LEXICON SukijaUrosYksikkö
+Omistusliite_a ;
+[Sg][Ny]n:n    NimisanaYksikönGenetiivinJatko_a ;
+[Ses][Ny]na:na NimisanaLiOlV_a ;
+NimisanaYhteisetYksikönPaikallissijat_a ;
+[Sn][Nm]t:t NimisanaMonikonNominatiivinJatko_a ;
+
+LEXICON SukijaUrosMonikko
+[Sg][Nm]itt:itt  NimisanaMonikonGenetiiviEnJatko_a ;
+[Ses][Ny]ina:ina NimisanaLiOlV_a ;
+NimisanaYhteisetMonikonPaikallissijat_a ;
+[Sko][Nm]ine:ine NimisanaOlVLoppu_a ;
+
+LEXICON SukijaUros
+o:o   SukijaUrosYksikkö ;
+ho:ho SukijaUrosYksikkö ;
+[Ses][Ny]sna:sna    NimisanaLiOlV_a ;
+[Sill][Ny]osee:osee NimisanaLiOlN_a ;
+[Sill][Ny]hose:hose NimisanaLiOlN_a ;
+[Sg][Nm]hi:hi NimisanaMonikonGenetiiviEnJatko_a ;
+[Sg][Nm]id:id NimisanaMonikonGenetiiviEnJatko_a ;
+[Sp][Nm]ita:ita NimisanaLiOlV_a ;
+[Sp][Nm]hia:hia NimisanaLiOlV_a ;
+SukijaUrosMonikko ;
+h:h SukijaUrosMonikko ;
+[Sill][Nm]ihi:ihi   NimisanaLiOlN_a ;
+[Sill][Nm]isii:isii NimisanaLiOlN_a ;
+[Sill][Nm]hisi:hisi NimisanaLiOlN_a ;
 
 LEXICON SukijaLukusanaKolmattaYhdeksättä
 [Bc]kolmatta:kolmatta       Liitesana_a     ;
@@ -171,6 +200,7 @@ LEXICON Sukija
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
