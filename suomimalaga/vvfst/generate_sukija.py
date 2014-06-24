@@ -316,6 +316,7 @@ word_list = [
     (u"kahdeksanlainen",     (u"kahdeksanlai",      u"kaheksanlai")),
     (u"kahdeksannes",        (u"kahdeksanne",       u"kaheksanne")),
     (u"kahdeksas",           (u"kahdeksa",          u"kaheksa")),
+    (u"kaikenlainen",   (u"kaikenlai",   u"kaikellai")),
     (u"kaleeri",        (u"kaleer",      u"kaler")),
     (u"kamari",         (u"kamar",       u"kammar")),
     (u"kameli",         (u"kamel",       u"kameel")),
