@@ -202,6 +202,8 @@ LEXICON Sukija
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
+[Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]suurenmoinen[X]suuren[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
