@@ -108,3 +108,11 @@ word:pikilappu
   WORDBASES=+pikilappu(piki=lappu)
 word:kissaton
  !PARTICIPLE
+word:tuhannenpäämies
+ expected:1
+ analysis
+  BASEFORM=tuhannenpäämies
+word:kolmannessakymmenennessä
+ expected:1
+ analysis
+  BASEFORM=kolmaskymmenes

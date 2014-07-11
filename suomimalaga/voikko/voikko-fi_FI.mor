@@ -2457,7 +2457,7 @@ subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
   return debug_sanan_perusmuodon_osa($tietue.$i, no);
 end;
 
-subrule tulostus_debug_perusmuoto($tietue):
+subrule tulostus_debug_perusmuoto($tietue, $luokka):
   # Kopioitu Hannu Väisäsen Sukija-versiosta
   define $n := length ($tietue);
   define $k := $n;
@@ -2480,7 +2480,7 @@ subrule tulostus_debug_perusmuoto($tietue):
     if $skip then
       $skip := no;
     else
-      if ($tietue.$i.lukutyyppi /= nil) then
+      if ($tietue.$i.lukutyyppi /= nil and $luokka = lukusana) then
         $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
       elseif (($i+3) less $n and $tietue.$i.luokka = laatusana and $tietue.($i+1).luokka = sijapääte and
               $tietue.($i+2).luokka = tavuviiva and $tietue.($i+3).luokka = paikannimi) then
@@ -2519,11 +2519,12 @@ end;
 subrule tulostus_v2($tietue):
   define $res := nil;
   if @voikko_debug then
+    define $luokka := tulostus_luokka($tietue);
     $res := [rakenne: tulostus_rakenne($tietue),
-            luokka:  tulostus_luokka($tietue),
+            luokka: $luokka,
             luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue),
-            perusmuoto: tulostus_debug_perusmuoto($tietue)]
+            perusmuoto: tulostus_debug_perusmuoto($tietue, $luokka)]
           + tulostus_partisiipit($tietue)
           + tulostus_omistusliitteet($tietue)
           + tulostus_liitepartikkelit($tietue);
