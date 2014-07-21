@@ -31,6 +31,7 @@
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
+#include <cassert>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;
@@ -66,6 +67,7 @@ char * AnalyzerToFinnishHyphenatorAdapter::hyphenate(const wchar_t * word, size_
 	if (hyphenations == 0) {
 		return 0;
 	}
+	assert(hyphenations[0]);
 	
 	int i = 0;
 	while (hyphenations[i] != 0) {
@@ -122,6 +124,7 @@ char * AnalyzerToFinnishHyphenatorAdapter::allPossibleHyphenPositions(const wcha
 	if (hyphenations == 0) {
 		return 0;
 	}
+	assert(hyphenations[0]);
 	
 	int i = 0;
 	while (hyphenations[i] != 0) {

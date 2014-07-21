@@ -35,6 +35,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cassert>
 
 #ifdef HAVE_CONFIG_H
   #include "config.h"
@@ -198,6 +199,7 @@ static void queueNextBlock() {
 		cerr << "E: Failed to create thread" << endl;
 		exit(1);
 	}
+	assert(threadCount >= 1);
 	nextThread = (nextThread + 1) % threadCount;
 	++nThreadsInUse;
 	initNextBlock();

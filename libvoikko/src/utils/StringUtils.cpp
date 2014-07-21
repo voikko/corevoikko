@@ -140,6 +140,7 @@ void StringUtils::convertCStringArrayToMalloc(char ** & stringArray) {
 		size_t strLen = strlen(stringArray[i]);
 		newArray[i] = (char *) malloc((strLen + 1) * sizeof(char));
 		if (!newArray[i]) {
+			free(newArray);
 			return;
 		}
 		strcpy(newArray[i], stringArray[i]);
