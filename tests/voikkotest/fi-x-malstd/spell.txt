@@ -3633,6 +3633,22 @@ kolmannettoista
 brittipop-huumassa
 paremmilta
 parempilaatuinen
+Snellman-johtoinen
+!enenää
+!af-rikanvästäräkki
+!Pitkänen-ismi
+!eritäinen
+tiennet
+kaarra
+kaartakoon
+!maissulan
+joine
+!huhmarsi
+!surlun
+surrun
+perimpiesi
+perinteni
+!popmme
 
 # = poikkeavat asetukset =
 
