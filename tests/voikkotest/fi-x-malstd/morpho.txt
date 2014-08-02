@@ -830,3 +830,7 @@ word:Euro-sarja
  expected:1
    analysis
      STRUCTURE==ippp-=ppppp
+word:varo-EU
+ expected:1
+  analysis
+   STRUCTURE==pppp-=jj

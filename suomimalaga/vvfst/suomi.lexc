@@ -111,7 +111,7 @@ EtuliitteenJatko_eln2	;
 -:-	EtuliitteenJatko_eln2	;
 -[Bc]:-	Sanasto_ep	;
 -:-	Loppu	;
--:-	Sanasto_a	;
+-[Bc]:-	Sanasto_a	;
 
 LEXICON EtuliitteenJatko_eln2
 [Bh]:	EtuliitteenJatko_elnEiLoppuH	;
@@ -162,7 +162,7 @@ EtuliitteenJatko_elleln2	;
 -:-	EtuliitteenJatko_elleln2	;
 -[Bc]@P.INEN_KIELLETTY.ON@:-@P.INEN_KIELLETTY.ON@	Erisnimet	;
 -@C.JOHDETTAVA_NIMISANAKSI@:-@C.JOHDETTAVA_NIMISANAKSI@	Loppu	;
--:-	Sanasto_a	;
+-[Bc]:-	Sanasto_a	;
 
 LEXICON EtuliitteenJatko_elleln2
 [Bh]:	EtuliitteenJatko_ellelnEiLoppuH	;

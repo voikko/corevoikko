@@ -1035,3 +1035,7 @@ word:mutkistuu
  expected:1
  analysis
   NEGATIVE=false
+word:varo-EU
+ expected:1
+  analysis
+   STRUCTURE==pppp-=jj
