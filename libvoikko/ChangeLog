@@ -1,3 +1,6 @@
+2014-08-03 Harri Pitkänen <hatapitk@iki.fi>
+	* New dictionary format 5 for VFST.
+
 2013-12-04 Harri Pitkänen <hatapitk@iki.fi>
 	* Grammar checker should allow numeric references to footnotes.
 

@@ -120,6 +120,7 @@ noinst_HEADERS = \
     setup/V2DictionaryLoader.hpp \
     setup/V3DictionaryLoader.hpp \
     setup/V4DictionaryLoader.hpp \
+    setup/V5DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     setup/LanguageTag.hpp \
     character/charset.hpp \
@@ -221,7 +222,7 @@ VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
-VFST_CPP_FILES=morphology/VfstAnalyzer.cpp spellchecker/VfstSpeller.cpp
+VFST_CPP_FILES=morphology/VfstAnalyzer.cpp spellchecker/VfstSpeller.cpp setup/V5DictionaryLoader.cpp
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)

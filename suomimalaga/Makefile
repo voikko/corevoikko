@@ -44,13 +44,13 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
-         vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
+         vvfst/taivutuskaavat.lexc.in vvfst/index.txt.in \
          vvfst/main.foma.in $(VVFST_LEXC) vvfst/generate_sukija.py vvfst/poikkeavat-sukija.lexc
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
 
-VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
+VVFST_BINDIST=$(VVFST_BUILDDIR)/index.txt $(VVFST_BUILDDIR)/mor.vfst
 
 VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a s c
 VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))
@@ -143,7 +143,7 @@ clean:
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma $(VVFST_BUILDDIR)/mor.vfst
-	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/voikko-fi_FI.pro
+	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/index.txt
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
 	rm -f $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma*
@@ -204,7 +204,7 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 
 
 
-vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
+vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/index.txt
 
 $(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
@@ -235,13 +235,13 @@ VVFST_PRO_SEDSCRIPT="s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
 	s/SM_BUILDCONFIG/$(subst /,\\/,GENLEX_OPTS=$(GENLEX_OPTS) EXTRA_LEX=$(EXTRA_LEX))/; \
 	s/SM_BUILDDATE/$(SM_BUILDDATE)/"
 
-$(VVFST_BUILDDIR)/voikko-fi_FI.pro: vvfst/voikko-fi_FI.pro.in
+$(VVFST_BUILDDIR)/index.txt: vvfst/index.txt.in
 	sed -e $(VVFST_PRO_SEDSCRIPT) < $^ > $@
 
 
 vvfst-install: vvfst
-	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
-	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
+	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 
 
 TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
