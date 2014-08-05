@@ -264,10 +264,10 @@ voikko-sukija:
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
-vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
+vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 
 vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija --sukija-ys
-vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
+vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/poikkeavat-sukija.lexc
 	$(PYTHON) vvfst/generate_sukija.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
