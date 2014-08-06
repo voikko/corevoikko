@@ -1,3 +1,18 @@
+LEXICON SukijaOlla
+[Tt][Ap][P1][Ny][Ef]on:on     Liitesana_a ;  # Mä oon.
+[Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
+[Tt][Ap][P2][Nm][Ef]otte:otte Liitesana_a ;  # Te ootte.
+[Tt][Ap][P2][Nm][Ef]otta:otta Liitesana_a ;  # Te ootta.
+[Te][Ap][P1][Ny][Ef]isin:isin Liitesana_a ;  # Mä oisin jne.
+[Te][Ap][P2][Ny][Ef]isit:isit Liitesana_a ;
+[Te][Ap][P3][Ny][Eb]isi:isi   Liitesana_a ;
+[Te][Ap][P3][Ny][Eb]is:is     Liitesana_a ;
+[Te][Ap][P1][Nm][Ef]isimme:isimme Liitesana_a ;
+[Te][Ap][P2][Nm][Ef]isitte:isitte Liitesana_a ;
+[Te][Ap][P3][Nm][Ef]isivat:isivat Liitesana_a ;
+[Te][Ap][P3][Nm][Ef]isvat:isvat   Liitesana_a ;
+o:o   Loppu ;        # Ei oo.
+
 LEXICON SukijaRangaista_a
 gas:gas Nuolaista_w_a ;
 kas:kas Nuolaista_s_a ;
@@ -218,6 +233,7 @@ LEXICON Sukija
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
+[Lt][Xp]olla[X]o:o SukijaOlla ;
 
 LEXICON SukijaEtuliite
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
