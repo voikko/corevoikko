@@ -90,13 +90,8 @@ Dictionary V5DictionaryLoader::dictionaryFromPath(const string & path) {
 	BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", true);
 	while (file.good()) {
 		getline(file, line);
-		if (line.find("Language-Code: ") == 0) {
-			language.setLanguage(string(line.substr(15)));
-		}
-		else if (line.find("Language-Variant: ") == 0) {
-			string variant = line.substr(18);
-			tagToCanonicalForm(variant);
-			language.setPrivateUse(variant);
+		if (line.find("Language: ") == 0) {
+			language.setBcp47(string(line.substr(10)));
 		}
 		else if (line.find("Description: ") == 0) {
 			description = line.substr(13);

@@ -1,8 +1,7 @@
 Voikko-Dictionary-Format: 5
-Language-Code: fi_FI
+Language: fi-x-SM_VOIKKO_VARIANT
 Copyright: 2006-2014 Hannu Väisänen, Harri Pitkänen, Teemu Likonen and others
 License: GPL version 2 or later
-Language-Variant: SM_VOIKKO_VARIANT
 Description: SM_VOIKKO_DESCRIPTION
 SM-Version: SM_VERSION
 SM-Patchinfo: SM_PATCHINFO

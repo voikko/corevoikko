@@ -68,7 +68,7 @@ void LanguageTag::setBcp47(const string & bcp) {
 	size_t splitPos = bcp.find("-x-");
 	if (splitPos != string::npos) {
 		setLanguage(bcp.substr(0, splitPos));
-		setPrivateUse(bcp.substr(splitPos + 2));
+		setPrivateUse(bcp.substr(splitPos + 3));
 	}
 	else {
 		setLanguage(bcp);
