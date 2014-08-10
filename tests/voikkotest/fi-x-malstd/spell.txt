@@ -3652,6 +3652,8 @@ perinteni
 E:ja
 !e:nka
 !Googlet-uksen
+!jaminalaisuus
+!kiesikin
 
 # = poikkeavat asetukset =
 

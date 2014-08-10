@@ -3645,7 +3645,7 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   if ($tietue.tiedot /= nil and ei_yks in $tietue.tiedot) then
     define $taivutus_kopio := $taivutus;
     foreach $jatko in $taivutus_kopio:
-      if (luku_sijasta($jatko) = yksikkö) then
+      if (luku_sijasta($jatko) = yksikkö) or ($jatko = liitesana) then
         $taivutus :=- $jatko;
       end;
     end;
