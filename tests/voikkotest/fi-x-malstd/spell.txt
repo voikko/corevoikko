@@ -3654,6 +3654,7 @@ E:ja
 !Googlet-uksen
 !jaminalaisuus
 !kiesikin
+konservatiivis-liberaali
 
 # = poikkeavat asetukset =
 
