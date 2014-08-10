@@ -4521,6 +4521,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sp][Ny]%:<A>:%:<A>	NimisanaLiOlV_<A>	;
 [Sp][Nm]%:i<A>:%:i<A>	NimisanaLiOlV_<A>	;
 [Sp][Nm]%:it<A>:%:it<A>	NimisanaLiOlV_<A>	;
+[Sp][Nm]%:j<A>:%:j<A>   NimisanaLiOlV_<A>       ;
 [Str][Ny]%:ksi:%:ksi	NimisanaLiOlI_<A>	;
 [Str][Nm]%:iksi:%:iksi	NimisanaLiOlI_<A>	;
 [Ses][Ny]%:n<A>:%:n<A>	NimisanaLiOlV_<A>	;

@@ -3654,6 +3654,8 @@ surrun
 perimpiesi
 perinteni
 !popmme
+E:ja
+!e:nka
 
 # = poikkeavat asetukset =
 

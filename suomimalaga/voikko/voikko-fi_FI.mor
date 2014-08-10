@@ -1146,7 +1146,7 @@ end;
 
 combi_rule kaksoispisteen_sijapääte ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = sijapääte;
-  ? not $oikea.sija in <keinonto_n, tulento_s>;
+  ? not $oikea.sija in <keinonto_n, tulento_s, omanto_nkA>;
 
   define $edellinen := $vasen.($index - 1);
   ? vokaalisointu_oikein($edellinen, $oikea);
