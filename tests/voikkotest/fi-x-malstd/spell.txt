@@ -3651,6 +3651,7 @@ perinteni
 !popmme
 E:ja
 !e:nka
+!Googlet-uksen
 
 # = poikkeavat asetukset =
 

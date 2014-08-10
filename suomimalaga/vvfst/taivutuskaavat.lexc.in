@@ -2320,9 +2320,9 @@ LEXICON NOUN Loppu
 LEXICON NOUN MonikonNominatiivinJatko
 Liitesana_<A>	;
 ?Paikannimi	PaikannimiYsJatko	;
-?Sukunimi	-[Bc]:-	Sanasto_nimisanat	;
-?Etunimi	-[Bc]:-	Sanasto_nimisanat	;
-?Nimi	-[Bc]:-	Sanasto_nimisanat	;
+?Sukunimi	-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+?Etunimi	-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+?Nimi	-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 Liitesana_<A>	;
@@ -4541,6 +4541,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sill][Ny]%:h<A>:%:h<A>	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:h<O>:%:h<O>	NimisanaLiOlN_<A>   ;
 [Sill][Ny]%:h<U>:%:h<U>	NimisanaLiOlN_<A>	;
+[Sill][Ny]%:<U>:%:<U> NimisanaLiOlN_<A>       ;
 [Sill][Ny]%:hi:%:hi	NimisanaLiOlN_<A>	;
 [Sill][Nm]%:ihi:%:ihi	NimisanaLiOlN_<A>	;
 [Sade][Ny]%:ll<A>:%:ll<A>	NimisanaLiOlV_<A>	;
