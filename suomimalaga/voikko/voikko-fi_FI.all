@@ -3645,7 +3645,7 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   if ($tietue.tiedot /= nil and ei_yks in $tietue.tiedot) then
     define $taivutus_kopio := $taivutus;
     foreach $jatko in $taivutus_kopio:
-      if (luku_sijasta($jatko) = yksikkö) or ($jatko = liitesana) then
+      if (luku_sijasta($jatko) = yksikkö and $jatko /= omanto_n) or ($jatko = liitesana) then
         $taivutus :=- $jatko;
       end;
     end;
@@ -3697,6 +3697,9 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   # Inen-loppuiset laatusanat
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];
+  end;
+  if ($tietue.tiedot /= nil and ei_yks in $tietue.tiedot) then
+    $tietue :=+ [ei_yks: yes];
   end;
   
   return $tietue;

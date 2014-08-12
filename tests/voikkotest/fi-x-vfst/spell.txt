@@ -3657,9 +3657,11 @@ perinteni
 E:ja
 !e:nka
 !Googlet-uksen
-!jaminalaisuus
 !kiesikin
 konservatiivis-liberaali
+housunpoimuihin
+!housun
+!Andin
 
 # = poikkeavat asetukset =
 

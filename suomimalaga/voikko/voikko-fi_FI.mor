@@ -861,8 +861,8 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     end;
     result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi;
   else
-    if omistusliite in $oikea.jatko then
-      result $res, rules omistusliite;
+    if omistusliite in $oikea.jatko and ($oikea.sija /= omanto_n or $edellinen.ei_yks = nil) then
+       result $res, rules omistusliite;
     end;
     if tavuviiva in $oikea.jatko and $oikea.sijamuoto in <nimentö, omanto> then
       result $res, rules yhdysmerkki_erisnimen_jälkeen;
@@ -871,11 +871,13 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
       result $res, rules johdettu_paikannimi;
     end;
   end;
-  if loppu in $oikea.jatko then
-    result $res, accept;
-  end;
-  if liitesana in $oikea.jatko then
-    result $res, rules liitesana;
+  if $oikea.sija /= omanto_n or $edellinen.ei_yks = nil then
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    if liitesana in $oikea.jatko then
+      result $res, rules liitesana;
+    end;
   end;
 end;
 
@@ -950,14 +952,16 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, accept;
     result $res, rules liitesana;
   else
-    if omistusliite in $oikea.jatko then
-      result $res, rules omistusliite;
-    end;
-    if loppu in $oikea.jatko then
-      result $res, accept;
-    end;
-    if liitesana in $oikea.jatko then
-      result $res, rules liitesana;
+    if $oikea.sija /= omanto_n or $edellinen.ei_yks = nil then
+      if omistusliite in $oikea.jatko then
+        result $res, rules omistusliite;
+      end;
+      if loppu in $oikea.jatko then
+        result $res, accept;
+      end;
+      if liitesana in $oikea.jatko then
+        result $res, rules liitesana;
+      end;
     end;
     if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
         (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
