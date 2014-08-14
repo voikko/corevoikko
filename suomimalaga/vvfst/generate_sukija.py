@@ -182,10 +182,6 @@ spelling_pattern_list = [
   (re_loginen,  u"logi",   u"loogi"),
 
   (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
-  (re_aatio, u"aatio", u"atsio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
-  (re_uutio, u"uutio", u"utsio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
-  (re_uusio, u"uusio", u"usio",  u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x),
-  (re_tio,   u"tio",   u"tsio",  u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x),
   (re_oittaa1, u"o",   u"ot",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa2, u"ö",   u"öt",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa1, u"oit", u"ot",  u"Alittaa",    u"Alittaa"),
@@ -259,11 +255,30 @@ def generate_from_pattern (line, pattern_list):
                 replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
                 replace_and_write (line.replace(x[3], x[4]), x[1], x[2])
+#            else:
+#                sys.stderr.write (line)
+#                sys.stderr.write ("Wrong format in pattern_list.\n")
+#                sys.exit (1)
             elif (len(x) == 7) or (len(x) == 8 and not x[7].match(line)):
                 s = line.replace (x[5], x[6])
                 outfile.write (replace (s, x[1], x[3]))
                 outfile.write (replace (s, x[1], x[4]))
                 outfile.write (replace (line, x[1], x[2]))
+
+
+def generate_from_pattern_3 (line, pattern, args):
+    if pattern.match(line):
+        replace_and_write (line, args[0], args[1])
+        replace_and_write (line, args[0], args[2])
+        replace_and_write (line.replace(args[5], args[6]), args[0], args[3])
+        replace_and_write (line.replace(args[5], args[6]), args[0], args[4])
+
+
+def generate_from_pattern_4 (line, pattern, args, xpattern):
+    if pattern.match(line) and not xpattern.match(line):
+        replace_and_write (line, args[0], args[1])
+        replace_and_write (line.replace(args[4], args[5]), args[0], args[2])
+        replace_and_write (line.replace(args[4], args[5]), args[0], args[3])
 
 
 # Old spellings and common spelling errors of words
@@ -707,6 +722,11 @@ while True:
         outfile.write (u"SukijaLukusananErikoisjälkiliite ;\n")
 
     generate_from_pattern (line, spelling_pattern_list)
+
+    generate_from_pattern_3 (line, re_aatio, (u"aatio", u"atio", u"atsio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"))
+    generate_from_pattern_3 (line, re_uutio, (u"uutio", u"utio", u"utsio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"))
+    generate_from_pattern_4 (line, re_uusio, (u"uusio", u"usio", u"usion", u"usioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"), re_uusio_x)
+    generate_from_pattern_4 (line, re_tio,   (u"tio",   u"tsio", u"tsion", u"tsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"), re_tio_x)
 
     r = base_form_re.search (line)
     if r:
