@@ -3223,6 +3223,7 @@ e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
 ee:ee	LiitesanaVainPi_<A>	;
+?Sukija e:e Ehtotapa_<A>	;
 
 LEXICON Arvailla
 l:l	Johdin_nimitapa1A_<A>	;
@@ -3272,6 +3273,12 @@ i:i	Johdin_tU_dA_<A>   ;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_nUt_<A>	;
 i:i	Kaatua_<A>	;
+?Sukija i:i Johdin_nimitapa1tA_<A> ;
+?Sukija [Tk][Ap][P3][Ny][Ef]itk<O><O>n:itk<O><O>n   LiitesanaPaHan_<A> ;
+?Sukija [Tk][Ap][P3][Ny][Ef]itk<O>h<O>n:tk<O>h<O>n LiitesanaPaHan_<A> ;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittiin Liitesana_<A> ;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittihin Liitesana_<A> ;
+?Sukija [Ll][Ru]inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Valita
 Johdin_nimitapa1tA_<A>	;
@@ -3292,6 +3299,7 @@ tsi:tsi	Johdin_ja_kulkija_<A>	;
 n:n	Johdin_nUt_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
+?Sukija tse:tse	Ehtotapa_<A>	;
 
 LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
