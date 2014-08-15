@@ -129,7 +129,7 @@ re_oitin = makeRe (u"Ln", u".Coitin")
 re_aatio = makeRe (u"Ln", u".Caatio")
 re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
-re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
+re_tio   = makeRe (u"Ln", u"([^a]i|k)tio") # Traditio, funktio, mutta ei aitio.
 
 re_toninen = makeRe (u"Ll", u".toninen")
 re_iivinen = makeRe (u"Ll", u"Ciivinen")
@@ -144,15 +144,13 @@ re_eikAs = makeRe (u"Ll", u"eikAs")
 
 # Words to be excluded.
 #
-re_adi_x = re.compile (u"\\A\[Ln\]\[Xp\](dekadi|faradi|pikofaradi|stadi)\[X\]")
+re_adi_x = re.compile (u"\\A\[Ln\]\[Xp\](faradi|pikofaradi|stadi)\[X\]")
 re_ogi_x = re.compile (u"\\A\[Ln\]\[Xp\](blogi|grogi|judogi)\[X\]")
 re_omi_x = re.compile (u"\\A\[Ln\]\[Xp\](binomi|bromi|dibromi|genomi|kromi|trinomi)\[X\]")
 re_oni_x = re.compile (u"\\A\[Ln\]\[Xp\](ikoni)\[X\]")
 re_ori_x = re.compile (u"\\A\[Ln\]\[Xp\](hevosori|jalostusori|reettori|siitosori)\[X\]")
 
 re_logia_x = re.compile (u"\\A\[Ln\]\[Xp\](genealogia|trilogia)\[X\]")
-re_uusio_x = re.compile (u"\\A\[Ln\]\[Xp\](diffuusio)\[X\]")
-re_tio_x   = re.compile (u"\\A\[Ln\]\[Xp\](aitio)\[X\]")
 
 re_A = re.compile (u"[aou]")
 
@@ -246,7 +244,7 @@ def write_lahti (line, word):
     write_word (line, word, u"SukijaLahti")
 
 
-def generate_from_pattern (line, pattern_list):
+def generate_from_pattern_1 (line, pattern_list):
     for x in pattern_list:
         if x[0].match(line):
             if (len(x) == 2):
@@ -254,31 +252,15 @@ def generate_from_pattern (line, pattern_list):
             elif (len(x) == 3) or (len(x) == 4 and not x[3].match(line)):
                 replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
-                replace_and_write (line.replace(x[3], x[4]), x[1], x[2])
-#            else:
-#                sys.stderr.write (line)
-#                sys.stderr.write ("Wrong format in pattern_list.\n")
-#                sys.exit (1)
-            elif (len(x) == 7) or (len(x) == 8 and not x[7].match(line)):
-                s = line.replace (x[5], x[6])
-                outfile.write (replace (s, x[1], x[3]))
-                outfile.write (replace (s, x[1], x[4]))
-                outfile.write (replace (line, x[1], x[2]))
+                replace_and_write (line.replace(x[3],x[4]), x[1], x[2])
 
 
-def generate_from_pattern_3 (line, pattern, args):
-    if pattern.match(line):
-        replace_and_write (line, args[0], args[1])
-        replace_and_write (line, args[0], args[2])
-        replace_and_write (line.replace(args[5], args[6]), args[0], args[3])
-        replace_and_write (line.replace(args[5], args[6]), args[0], args[4])
-
-
-def generate_from_pattern_4 (line, pattern, args, xpattern):
-    if pattern.match(line) and not xpattern.match(line):
-        replace_and_write (line, args[0], args[1])
-        replace_and_write (line.replace(args[4], args[5]), args[0], args[2])
-        replace_and_write (line.replace(args[4], args[5]), args[0], args[3])
+def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
+    if pattern.match (line):
+        for x in p1:
+            replace_and_write (line, string, x)
+        for x in p2:
+            replace_and_write (line.replace(s1,s2), string, x)
 
 
 # Old spellings and common spelling errors of words
@@ -305,9 +287,10 @@ word_list = [
     (u"Australia",        (u"Australi",      u"Austraali")),
     (u"barbaari",         (u"barbaar",       u"barbar")),
     (u"beduiini",         (u"beduiin",       u"beduin")),
-    (u"borssi",           (u"borssi",        u"borsh")),
+    (u"borssi",           (u"borss",         u"borsh")),
     (u"dervissi",         (u"derviss",       u"dervish", u"dervisch")),
     (u"divaani",          (u"divaan",        u"divan")),
+    (u"drakma",           (u"drakm",         u"drakhm")),
     (u"edes",             (u"edes",          u"ees")),
     (u"emali",            (u"emal",          u"emalj")),
     (u"emaloida",         (u"emalo",         u"emaljo")),
@@ -721,12 +704,13 @@ while True:
     if line == u"LEXICON LukusananErikoisjälkiliite\n":
         outfile.write (u"SukijaLukusananErikoisjälkiliite ;\n")
 
-    generate_from_pattern (line, spelling_pattern_list)
+    generate_from_pattern_1 (line, spelling_pattern_list)
 
-    generate_from_pattern_3 (line, re_aatio, (u"aatio", u"atio", u"atsio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"))
-    generate_from_pattern_3 (line, re_uutio, (u"uutio", u"utio", u"utsio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"))
-    generate_from_pattern_4 (line, re_uusio, (u"uusio", u"usio", u"usion", u"usioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"), re_uusio_x)
-    generate_from_pattern_4 (line, re_tio,   (u"tio",   u"tsio", u"tsion", u"tsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"), re_tio_x)
+    generate_from_pattern_2 (line, re_uusio, u"uusio", (u"usio",),          (u"usion",  u"usioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
+    generate_from_pattern_2 (line, re_tio,   u"tio",   (u"tsio",),          (u"tsion",  u"tsioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
+    generate_from_pattern_2 (line, re_aatio, u"aatio", (u"atio", u"atsio"), (u"atsion", u"atsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
+    generate_from_pattern_2 (line, re_uutio, u"uutio", (u"utio", u"utsio"), (u"utsion", u"utsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
+
 
     r = base_form_re.search (line)
     if r:
