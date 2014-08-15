@@ -105,6 +105,8 @@ re_omi = makeRe (u"Ln", u".Comi")
 re_oni = makeRe (u"Ln", u".Coni")
 re_ori = makeRe (u"Ln", u".Cori")
 
+re_OOri = makeRe (u"Ln", u".Cööri")
+
 re_adinen = makeRe (u"Ln", u".Cadinen")
 re_odinen = makeRe (u"Ln", u".Codinen")
 re_ofinen = makeRe (u"Ln", u".Cofinen")
@@ -164,6 +166,8 @@ spelling_pattern_list = [
   (re_omi, u"om", u"oom", re_omi_x),  # Atomi     => atoomi.
   (re_oni, u"on", u"oon", re_oni_x),  # Telefoni  => telefooni.
   (re_ori, u"or", u"oor", re_ori_x),  # Pehtori   => pehtoori.
+
+  (re_OOri,     u"öör",   u"ör"),     # Amatööri => amatöri.
 
   (re_adinen,   u"adi",    u"aadi"),
   (re_odinen,   u"odi",    u"oodi"),
@@ -337,6 +341,7 @@ word_list = [
     (u"kollegio",       (u"kollegio",    u"kolleegio")),
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
+    (u"konttori",       (u"konttor",     u"kontoor")),
     (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer")),
     (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaTakki_ä", u"NimisanaRisti_ä"),
@@ -345,6 +350,7 @@ word_list = [
     (u"kuriiri",        (u"kuriir",      u"kurier")),
     (u"kurtiini",       (u"kurtiin",     u"kurtin")),
     (u"kuvernööri",     (u"kuvernöör",   u"kuvernör")),
+    (u"laboratorio",    (u"laboratorio", u"laboratoorio")),
     (u"leegio",         (u"leegio",      u"legio")),
     (u"legioona",       (u"legioon",     u"legion")),
     (u"legioonalainen", (u"legioonalai", u"legionalai")),
