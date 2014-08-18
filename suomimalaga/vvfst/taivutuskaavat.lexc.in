@@ -3765,6 +3765,7 @@ LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Ny][Ef]t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Nm][Ef]mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@mme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm][Ef]tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tte	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P3][Ny][Ef]vi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@vi	Liitesana_<A>	;
 
 LEXICON KertomanTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Ny][Ef]in:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@in	Liitesana_<A>	;
