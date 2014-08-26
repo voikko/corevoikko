@@ -575,6 +575,39 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 	}
 }
 
+static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
+	wchar_t * baseform = new wchar_t[fstLen + 1];
+	size_t baseformPos = 0;
+	bool isInXp = false;
+	
+	for (size_t i = 0; i < fstLen; i++) {
+		if (fstOutput[i] == L'[') {
+			if (i + 2 >= fstLen) {
+				// something wrong with the pattern
+				delete[] baseform;
+				return 0;
+			}
+			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
+				i += 3;
+				isInXp = true;
+			}
+			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
+				isInXp = false;
+			}
+		}
+		else if (isInXp) {
+			baseform[baseformPos++] = fstOutput[i];
+		}
+	}
+	
+	if (baseformPos == 0) {
+		delete[] baseform;
+		return 0;
+	}
+	baseform[baseformPos] = L'\0';
+	return baseform;
+}
+
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
@@ -610,6 +643,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			}
 			analysisList->push_back(analysis);
 			duplicateOrgName(analysis, analysisList);
+			wchar_t * baseform = parseBaseform(fstOutput, fstLen);
+			if (baseform) {
+				analysis->addAttribute("BASEFORM", baseform);
+			}
 		}
 	}
 	

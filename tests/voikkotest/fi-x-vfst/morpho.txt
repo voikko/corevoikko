@@ -13,6 +13,7 @@ word:kissa
   SIJAMUOTO=nimento
   STRUCTURE==ppppp
   NUMBER=singular
+  BASEFORM=kissa
 word:kuorma-auto
  analysis
   STRUCTURE==pppppp-=pppp
