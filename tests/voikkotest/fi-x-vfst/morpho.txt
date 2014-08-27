@@ -1040,3 +1040,7 @@ word:varo-EU
  expected:1
   analysis
    STRUCTURE==pppp-=jj
+word:alkeissidosta
+ expected:1
+  analysis
+   BASEFORM=alkeissidos

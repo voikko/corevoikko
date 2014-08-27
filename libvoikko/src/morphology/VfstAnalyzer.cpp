@@ -579,6 +579,8 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 	wchar_t * baseform = new wchar_t[fstLen + 1];
 	size_t baseformPos = 0;
 	bool isInXp = false;
+	bool newPartNoBaseform = true;
+	bool isInTag = false;
 	
 	for (size_t i = 0; i < fstLen; i++) {
 		if (fstOutput[i] == L'[') {
@@ -590,12 +592,26 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
 				i += 3;
 				isInXp = true;
+				newPartNoBaseform = false;
 			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
 				isInXp = false;
+				i += 2;
+			}
+			else if (i + 3 >= fstLen && wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+				newPartNoBaseform = true;
+				i += 3;
+			}
+			else {
+				isInTag = true;
 			}
 		}
-		else if (isInXp) {
+		else if (isInTag) {
+			if (fstOutput[i] == L']') {
+				isInTag = false;
+			}
+		}
+		else if (isInXp || newPartNoBaseform) {
 			baseform[baseformPos++] = fstOutput[i];
 		}
 	}
