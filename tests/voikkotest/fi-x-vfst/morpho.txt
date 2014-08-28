@@ -1044,3 +1044,7 @@ word:alkeissidosta
  expected:1
   analysis
    BASEFORM=alkeissidos
+word:alavireisyyttään
+ expected:1
+  analysis
+   BASEFORM=alavireisyys
