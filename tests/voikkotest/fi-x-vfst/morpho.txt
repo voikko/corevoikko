@@ -1062,3 +1062,19 @@ word:talottomampi
    BASEFORM=taloton
    CLASS=laatusana
    COMPARISON=comparative
+word:rakennus
+ expected:1
+  analysis
+   BASEFORM=rakennus
+word:palveluita
+ expected:1
+  analysis
+   BASEFORM=palvelu
+word:arkistoinnin
+ expected:1
+  analysis
+   BASEFORM=arkistointi
+word:EU-kieli
+ expected:1
+  analysis
+   BASEFORM=EU-kieli

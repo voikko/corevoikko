@@ -32,6 +32,7 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
+#include <queue>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -581,7 +582,9 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 	size_t latestXpStartInFst = 0;
 	size_t latestXpStartInBaseform = 0;
 	bool isInXp = false;
+	bool isInXr = false;
 	bool isInTag = false;
+	std::queue<wchar_t> structurePattern;
 	
 	for (size_t i = 0; i < fstLen; i++) {
 		if (fstOutput[i] == L'[') {
@@ -596,13 +599,21 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 				latestXpStartInFst = i + 1;
 				latestXpStartInBaseform = baseformPos;
 			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+				i += 3;
+				isInXr = true;
+			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
 				isInXp = false;
+				isInXr = false;
 				i += 2;
 			}
 			else {
 				isInTag = true;
 			}
+		}
+		else if (isInXr) {
+			structurePattern.push(fstOutput[i]);
 		}
 		else if (isInTag) {
 			if (fstOutput[i] == L']') {
@@ -610,7 +621,15 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 			}
 		}
 		else if (!isInXp) {
-			baseform[baseformPos++] = fstOutput[i];
+			wchar_t nextChar = fstOutput[i];
+			if (!structurePattern.empty()) {
+				wchar_t patternChar = structurePattern.front();
+				structurePattern.pop();
+				if (patternChar == L'i' || patternChar == L'j') {
+					nextChar = SimpleChar::upper(nextChar);
+				}
+			}
+			baseform[baseformPos++] = nextChar;
 		}
 	}
 	

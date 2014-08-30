@@ -3937,7 +3937,7 @@ LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>n:m<A>isill<A><A>n	Liitesana_<A>	;
 
 LEXICON Johdin_Us_ksen
-[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
+[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
 [Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@ Johdin_Us_jatko_<A>     ;
@@ -3968,7 +3968,7 @@ LEXICON Johdin_UUs
 <U>:<U>	Johdin_Us_<A>	;
 
 LEXICON Johdin_U_arvelu
-[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
+[Ln]<U>[Xp][X]@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i@D.EI_MAINEN@@C.EI_YKS@:m<A>i@D.EI_MAINEN@@C.EI_YKS@	LaatusanaNainen_<A>	;
@@ -4285,7 +4285,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 @D.VAIN_YM3@[Ln][Xp]j<A>[X][Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaOlVLoppu_<A>	;
 
 LEXICON Johdin_nti
-[Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
+[Ln]n[Xp]ti[X]@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
 
 LEXICON Voittoaste
 [Sn][Ny][Cc]mpi@D.EI_VERTM@:mpi@D.EI_VERTM@	Liitesana_<A>	;
