@@ -925,6 +925,7 @@ word:pääsee
   NEGATIVE=false
 word:koiralla
  analysis
+  BASEFORM=koira
   !KYSYMYSLIITE
   !FOCUS
   !COMPARISON
@@ -1048,3 +1049,16 @@ word:alavireisyyttään
  expected:1
   analysis
    BASEFORM=alavireisyys
+word:suunnittelijoita
+ expected:1
+  analysis
+   BASEFORM=suunnittelija
+word:avuttomasti
+  analysis
+   BASEFORM=avuton
+word:talottomampi
+ expected:1
+  analysis
+   BASEFORM=taloton
+   CLASS=laatusana
+   COMPARISON=comparative
