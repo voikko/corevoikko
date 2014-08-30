@@ -1078,3 +1078,15 @@ word:EU-kieli
  expected:1
   analysis
    BASEFORM=EU-kieli
+word:lento
+ expected:1
+  analysis
+   BASEFORM=lento
+word:sortoa
+ expected:1
+  analysis
+   BASEFORM=sorto
+word:laulanta
+ expected:1
+  analysis
+   BASEFORM=laulanta

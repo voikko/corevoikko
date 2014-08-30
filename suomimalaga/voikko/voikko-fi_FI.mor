@@ -2551,7 +2551,8 @@ subrule tulostus_v2($tietue):
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);
   end;
-  if $tietue.<1, vapaa_jälkiosa> = yes then
+  if $tietue.<1, vapaa_jälkiosa> = yes or
+     (length($tietue) greater 1 and $tietue.<1, luokka> /= tavuviiva and $tietue.<2, vapaa_jälkiosa> = yes) then
     $res :=+ [vapaa_jälkiosa: yes];
   end;
   return $res;

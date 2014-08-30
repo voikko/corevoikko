@@ -3662,6 +3662,7 @@ konservatiivis-liberaali
 housunpoimuihin
 !housun
 !Andin
+tämä-demonstratiivipronomini
 
 # = poikkeavat asetukset =
 
