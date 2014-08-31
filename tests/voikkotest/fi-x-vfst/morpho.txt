@@ -1138,3 +1138,15 @@ word:öykkärimäisesti
  expected:1
   analysis
    BASEFORM=öykkärimäinen
+word:HI-virus
+ expected:1
+  analysis
+   STRUCTURE==ii-=ppppp
+word:örinä
+ expected:1
+  analysis
+   BASEFORM=örinä
+word:diivailen
+ expected:1
+  analysis
+   BASEFORM=diivailla

@@ -3532,7 +3532,7 @@ k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON SalataSalailla_s
 Salata_s_<A>	;
-il:il	Arvailla_<A>	;
+il[Xp]l<A>[X]:il	Arvailla_<A>	;
 
 LEXICON SalataSalailla_w
 Salata_w_<A>	;
@@ -3697,7 +3697,7 @@ is:is	Käskytapa_e_<A>	;
 is:is	Ehtotapa_<A>	;
 iss:iss	Mahtotapa_<A>	;
 is:is	EhtoMahtoKäskytapa_tA_<A>	;
-[Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
+[Ln]in[Xp]<A>[X]@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
 ise:ise	Johdin_vA_<A>	;
 ise:ise	Johdin_mA_<A>	;

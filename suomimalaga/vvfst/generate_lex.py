@@ -146,8 +146,6 @@ def get_structure(wordform, vfst_word_class, alku):
 		returnedLength = len(structstr)
 		while structstr[returnedLength - 1] == p:
 			returnedLength = returnedLength - 1
-		if returnedLength > 2 and structstr[returnedLength-2:returnedLength] == u'-=':
-			returnedLength = returnedLength - 1
 		return (structstr[0:returnedLength] + u'[X]', alku)
 	else:
 		return (u"", newAlku)
