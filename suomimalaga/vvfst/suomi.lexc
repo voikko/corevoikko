@@ -184,11 +184,18 @@ LEXICON EtuliitteenJatko_ellelnEiLoppuH
 LEXICON EtuliitteenJatko_ellelnelt
 EtuliitteenJatko_ellelnelt2	;
 -:-	EtuliitteenJatko_ellelnelt2	;
--:-	Loppu	;
+-[Bc]@P.INEN_KIELLETTY.ON@:-@P.INEN_KIELLETTY.ON@	Erisnimet	;
+-[Bc]:-	Sanasto_a	;
+-@C.JOHDETTAVA_NIMISANAKSI@:-@C.JOHDETTAVA_NIMISANAKSI@	Loppu	;
 
 LEXICON EtuliitteenJatko_ellelnelt2
-EtuliitteenJatko_elt	;
-EtuliitteenJatko_elleln	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_t	;
+[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_n	;
+[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@	Ys_perusosa_seikkasanasta	;
+[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nl	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_p	;
+[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_VAADITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 
 LEXICON EtuliitteenJatko_ellelteltj
 EtuliitteenJatko_elt	;

@@ -1102,3 +1102,5 @@ word:byrokraattistua
    BASEFORM=byrokraattistua
 word:avoselkäinen
  !POSSIBLE_GEOGRAPHICAL_NAME
+word:esijuoksija
+ expected:1

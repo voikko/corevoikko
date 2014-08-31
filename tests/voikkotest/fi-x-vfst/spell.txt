@@ -3663,6 +3663,9 @@ housunpoimuihin
 !housun
 !Andin
 tämä-demonstratiivipronomini
+!esi--
+Sisä-Suomessa
+Sisä-EU:ssa
 
 # = poikkeavat asetukset =
 
