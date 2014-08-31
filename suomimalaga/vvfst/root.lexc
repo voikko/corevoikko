@@ -147,6 +147,9 @@ Multichar_Symbols
 ! Sana (nimi_laatusana) on tulkittava vain nimisanamerkityksessään
 @P.VAIN_NIMISANA.ON@ @D.VAIN_NIMISANA@ @C.VAIN_NIMISANA@
 
+! Sanan johtaminen nimisanaksi on kielletty
+@P.EI_NIMISANAJOHDOSTA.ON@ @D.EI_NIMISANAJOHDOSTA@
+
 ! Sana on yksitekijäinen teonsana
 @P.YKSITEKIJÄINEN.ON@ @D.YKSITEKIJÄINEN@
 

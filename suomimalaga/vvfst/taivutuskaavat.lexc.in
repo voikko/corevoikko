@@ -2328,7 +2328,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 Liitesana_<A>	;
 ?NotAsemosana	@D.YS_EI_GENETIIVIALKUA@:@D.YS_EI_GENETIIVIALKUA@	<WC>YsJatko	;
 ?Asemosana	AsemosanaYsJatko	;
-?Nimisana	@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@[Bc]:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_laatusanat	;
+?Nimisana	@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.EI_NIMISANAJOHDOSTA.ON@[Bc]:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.EI_NIMISANAJOHDOSTA.ON@	Sanasto_laatusanat	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_VERTM@	Sanasto_t	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@C.EI_VERTM@	Sanasto_l	;
 ?Laatusana	[Bh][Bc]@P.YS_ALKANUT.ON@@C.EI_VERTM@:@P.YS_ALKANUT.ON@@C.EI_VERTM@	Sanasto_nl	;
@@ -3937,10 +3937,10 @@ LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>n:m<A>isill<A><A>n	Liitesana_<A>	;
 
 LEXICON Johdin_Us_ksen
-[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
+@D.EI_NIMISANAJOHDOSTA@[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:@D.EI_NIMISANAJOHDOSTA@<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
-[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@ Johdin_Us_jatko_<A>     ;
+@D.EI_NIMISANAJOHDOSTA@[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@:@D.EI_NIMISANAJOHDOSTA@<U>@C.JOHDETTAVA_NIMISANAKSI@ Johdin_Us_jatko_<A>     ;
 
 LEXICON Johdin_Us_jatko
 [Sn][Ny]s:s     NimisanaNormaaliYsJatko_<A> ;

@@ -1104,3 +1104,5 @@ word:avoselkäinen
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:esijuoksija
  expected:1
+word:elämänviisaus
+ expected:1
