@@ -6302,9 +6302,7 @@ subrule muisto ($tietue):
   $tietue.luokka := nimisana;
 
   define $loppu := "o";
-  if ($tietue.perusmuoto in <"lypsää", "kylvää">) then
-    $loppu := "y";
-  elseif ($tietue.alku matches ".*" + @yäö + ".*") then
+  if ($tietue.alku matches ".*" + @yäö + ".*") then
     $loppu := "ö";
   end;
   $tietue.alku :=+ $loppu;

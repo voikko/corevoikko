@@ -1106,3 +1106,15 @@ word:esijuoksija
  expected:1
 word:elämänviisaus
  expected:1
+word:erehtyväinen
+ expected:1
+  analysis
+   BASEFORM=erehtyväinen
+word:hallitusti
+ expected:1
+  analysis
+   BASEFORM=hallittu
+word:hajakylvö
+ expected:1
+  analysis
+   BASEFORM=hajakylvö
