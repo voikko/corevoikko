@@ -1118,3 +1118,23 @@ word:hajakylvö
  expected:1
   analysis
    BASEFORM=hajakylvö
+word:eteläamerikkalainen
+ expected:1
+  analysis
+   BASEFORM=eteläamerikkalainen
+word:moottoroitu
+ expected:1
+  analysis
+   BASEFORM=moottoroitu
+word:käyttö
+ expected:1
+  analysis
+   BASEFORM=käyttö
+word:kaavoittuma
+ expected:1
+  analysis
+   BASEFORM=kaavoittuma
+word:öykkärimäisesti
+ expected:1
+  analysis
+   BASEFORM=öykkärimäinen
