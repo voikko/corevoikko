@@ -2558,7 +2558,7 @@ LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
 Johdin_Us_ksen_<A>	;
-<U>:<U>	Punoa_<A>	;
+<U>[Xp]<A>[X]:<U>	Punoa_<A>	;
 
 LEXICON Heittää
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
@@ -4040,7 +4040,7 @@ LEXICON Johdin_rUt
 [Ll][Ru]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
-[Ll][Rv]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
+[Ll][Rv]v[Xp]<A>[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
 
 LEXICON Johdin_vE
 [Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vE_muodot_<A>	;
@@ -4161,7 +4161,7 @@ s:s	Johdin_UUs_<A>	;
 
 LEXICON Johdin_tOn
 [Ll][Xp]t<O>n[X]t@C.EI_YKS@@C.YS_EI_JATKOA@:t@C.EI_YKS@@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
-[Ll]lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
+[Ll]lli[Xp]nen[X]@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis@C.EI_YKS@:llis@C.EI_YKS@	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnimet	;
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;

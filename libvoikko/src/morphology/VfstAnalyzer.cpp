@@ -392,19 +392,19 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 }
 
 static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, const wchar_t * outputBuffer) {
+	const wchar_t * className = analysis->getValue("CLASS");
 	if (wcsncmp(outputPosition, L"vj", 2) == 0) {
 		if (outputBuffer[0] != L'-') {
 			analysis->addAttribute("MALAGA_VAPAA_JALKIOSA", StringUtils::copy(L"true"));
 		}
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
-		if (!wcsstr(outputPosition, L"[Bc]")) {
+		if (!wcsstr(outputPosition, L"[Bc]") && (!className || wcscmp(className, L"laatusana") != 0)) {
 			analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
 		}
 	}
 	else {
 		const wchar_t * mood = analysis->getValue("MOOD");
-		const wchar_t * className = analysis->getValue("CLASS");
 		if ((!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0)) &&
 		    (!className || wcscmp(className, L"teonsana") == 0)) {
 			if (wcsncmp(outputPosition, L"ra", 2) == 0) {

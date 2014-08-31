@@ -945,8 +945,10 @@ word:juoksin
  analysis
   TENSE=past_imperfective
 word:juokseva
+ expected:1
  analysis
   PARTICIPLE=present_active
+  BASEFORM=juokseva
 word:juostava
  analysis
   PARTICIPLE=present_passive
@@ -1090,3 +1092,13 @@ word:laulanta
  expected:1
   analysis
    BASEFORM=laulanta
+word:avaruudellinen
+ expected:1
+  analysis
+   BASEFORM=avaruudellinen
+word:byrokraattistua
+ expected:1
+  analysis
+   BASEFORM=byrokraattistua
+word:avoselkäinen
+ !POSSIBLE_GEOGRAPHICAL_NAME
