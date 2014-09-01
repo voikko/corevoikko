@@ -206,6 +206,10 @@ LEXICON Sukija
 [Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
+[Ll][Xp]esimuistoinen[X]esi[Bm]muistoi:esimuistoi  LaatusanaNainenInen_a ;
+[Ll][Xp]esivalintainen[X]esi[Bm]valintai:esivalintai  LaatusanaNainenInen_a ;
+[Ll][Xp]etäkäyttöinen[X]etä[Bm]käyttöi:etäkäyttöi     LaatusanaNainenInen_ä ;
+[Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
@@ -216,6 +220,7 @@ LEXICON Sukija
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ll][Xp]sisäkäyttöinen[X]sisä[Bm]käyttöi:sisäkäyttöi     LaatusanaNainenInen_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]suurenmoinen[X]suuren[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
@@ -234,6 +239,7 @@ LEXICON Sukija
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
 [Lt][Xp]olla[X]o:o SukijaOlla ;
+[Ll][Xp]sisäviistoinen[X]sisä[Bm]viistoi:sisäviistoi     LaatusanaNainenInen_a ;
 
 LEXICON SukijaEtuliite
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
@@ -431,4 +437,4 @@ LEXICON SukijaEtuliite
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 
 LEXICON SukijaLukusananErikoisjälkiliite
-[Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi   LukusananJälkiliiteNainen_a     ;
+[Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
