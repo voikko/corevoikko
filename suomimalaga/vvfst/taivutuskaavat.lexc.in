@@ -879,7 +879,6 @@ LEXICON NOUN Matala
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
-?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
@@ -1077,6 +1076,13 @@ LEXICON NOUN Peruna
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija <WC>YhteisetMonikonPaikallissijat_<A> ;
+?Sukija <WC>YhteisetMonikonSijat2_<A> ;
+?Sukija <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija <O>j:<O>j <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sp][Nm]<O>j<A>:<O>j<A> <WC>LiOlV_<A> ;
+?Sukija ?Laatusana <A>:<A> Voittoaste_<A> ;
+?Sukija ?Laatusana Yliaste_<A> ;
 
 LEXICON NOUN Korkea
 e:e	<WC>Ainoa_<A>	;

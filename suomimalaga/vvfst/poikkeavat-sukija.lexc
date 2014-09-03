@@ -435,6 +435,7 @@ LEXICON SukijaEtuliite
 [Lp]yksi:yksi EtuliitteenJatko_ellelnelt;
 [Lp]äänisniemen:äänisniemen EtuliitteenJatko_ellelnelt;
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
+[Lp]öölannin:öölannin EtuliitteenJatko_ellelnelt;
 
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;

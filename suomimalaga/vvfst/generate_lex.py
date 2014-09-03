@@ -296,10 +296,22 @@ def handle_word(word):
 	
 	# Get the inflection class. Exactly one inflection class is needed
 	voikko_infclass = None
-	for infclass in word.getElementsByTagName("infclass"):
-		if infclass.getAttribute("type") != "historical":
-			voikko_infclass = generate_lex_common.tValue(infclass)
-			break
+        if OPTIONS["sukija"]:
+                for infclass in word.getElementsByTagName("infclass"):
+                        if infclass.getAttribute("type") == "historical":
+                                voikko_infclass = generate_lex_common.tValue(infclass)
+                                if voikko_infclass == u"banaali":   # Banaali taipuu kuten paperi.
+                                        voikko_infclass = u"paperi"
+                                elif voikko_infclass == u"pasuuna":
+                                        voikko_infclass = u"peruna"
+                                if voikko_infclass not in [u"karahka", u"matala", u"paperi", u"peruna"]:
+                                        voikko_infclass = None
+                                break
+        if voikko_infclass == None:
+                for infclass in word.getElementsByTagName("infclass"):
+                        if infclass.getAttribute("type") != "historical":
+                                voikko_infclass = generate_lex_common.tValue(infclass)
+                                break
 	if voikko_infclass == u"poikkeava": return
 	
 	# Get the word classes
