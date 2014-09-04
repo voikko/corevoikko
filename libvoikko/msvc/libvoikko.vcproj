@@ -273,14 +273,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\src\grammar\cache.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\src\grammar\cache.hpp"
-					>
-				</File>
-				<File
 					RelativePath="..\src\grammar\CacheEntry.cpp"
 					>
 				</File>
@@ -289,19 +281,27 @@
 					>
 				</File>
 				<File
-					RelativePath="..\src\grammar\cachesetup.cpp"
+					RelativePath="..\src\grammar\FinnishRuleEngine\CapitalizationCheck.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\src\grammar\cachesetup.hpp"
+					RelativePath="..\src\grammar\FinnishRuleEngine\CapitalizationCheck.hpp"
 					>
 				</File>
 				<File
-					RelativePath="..\src\grammar\checks.cpp"
+					RelativePath="..\src\grammar\FinnishRuleEngine\checks.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\src\grammar\checks.hpp"
+					RelativePath="..\src\grammar\FinnishRuleEngine\checks.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\CompoundVerbCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\CompoundVerbCheck.hpp"
 					>
 				</File>
 				<File
@@ -313,11 +313,51 @@
 					>
 				</File>
 				<File
+					RelativePath="..\src\grammar\FinnishAnalysis.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishAnalysis.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishGrammarChecker.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishGrammarChecker.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\src\grammar\GcCache.cpp"
 					>
 				</File>
 				<File
 					RelativePath="..\src\grammar\GcCache.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\GrammarChecker.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\GrammarChecker.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\GrammarCheckerFactory.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\GrammarCheckerFactory.hpp"
 					>
 				</File>
 				<File
@@ -343,11 +383,51 @@
 					</FileConfiguration>
 				</File>
 				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\MissingVerbCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\MissingVerbCheck.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\NegativeVerbCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\NegativeVerbCheck.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\NullGrammarChecker.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\NullGrammarChecker.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\src\grammar\Paragraph.cpp"
 					>
 				</File>
 				<File
 					RelativePath="..\src\grammar\Paragraph.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\ParagraphCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\ParagraphCheck.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\RuleEngine.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\RuleEngine.hpp"
 					>
 				</File>
 				<File
@@ -359,69 +439,33 @@
 					>
 				</File>
 				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\SentenceCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\SentenceCheck.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\SidesanaCheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\grammar\FinnishRuleEngine\SidesanaCheck.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\src\grammar\Token.hpp"
 					>
 				</File>
-				<Filter
-					Name="check"
+				<File
+					RelativePath="..\src\grammar\VoikkoGrammarError.cpp"
 					>
-					<File
-						RelativePath="..\src\grammar\check\CapitalizationCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\CapitalizationCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\CompoundVerbCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\CompoundVerbCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\MissingVerbCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\MissingVerbCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\NegativeVerbCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\NegativeVerbCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\ParagraphCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\ParagraphCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\SentenceCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\SentenceCheck.hpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\SidesanaCheck.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\src\grammar\check\SidesanaCheck.hpp"
-						>
-					</File>
-				</Filter>
+				</File>
+				<File
+					RelativePath="..\src\grammar\VoikkoGrammarError.hpp"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="hyphenator"
@@ -755,6 +799,14 @@
 				Name="setup"
 				>
 				<File
+					RelativePath="..\src\setup\BackendProperties.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\setup\BackendProperties.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\src\setup\Dictionary.cpp"
 					>
 				</File>
@@ -768,6 +820,14 @@
 				</File>
 				<File
 					RelativePath="..\src\setup\DictionaryException.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\setup\DictionaryFactory.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\setup\DictionaryFactory.hpp"
 					>
 				</File>
 				<File
@@ -814,6 +874,14 @@
 				</File>
 				<File
 					RelativePath="..\src\setup\setup.hpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\setup\V2DictionaryLoader.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\setup\V2DictionaryLoader.hpp"
 					>
 				</File>
 			</Filter>
