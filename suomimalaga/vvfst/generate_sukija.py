@@ -274,6 +274,7 @@ def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
 #
 word_list = [
     (u"aarteisto",        (u"aarteisto",     u"aartehisto")),
+    (u"agaave",           (u"agaave",        u"agave")),
     (u"aggressiivinen",   (u"aggressiivi",   u"akressiivi")),
     (u"aikainen",         (u"aikai",         u"aikahi")),
     (u"ainainen",         (u"ainai",         u"ainahi")),
