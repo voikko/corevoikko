@@ -2514,10 +2514,10 @@ subrule tulostus_teonsanan_attribuutit($tietue):
       return [];
     end;
     if $allomorfi.vaatii_tapaluokan /= nil then
-      return [vaatii_tapaluokan: $allomorfi.vaatii_tapaluokan];
+      return [vaatii_tapaluokan: $allomorfi.vaatii_tapaluokan, kielto: tulostus_kielto($tietue)];
     end;
   end;
-  return [];
+  return [kielto: tulostus_kielto($tietue)];
 end;
 
 subrule tulostus_v2($tietue):
@@ -2545,8 +2545,7 @@ subrule tulostus_v2($tietue):
   end;
   if $res.luokka = teonsana then
     $res :=+ [tekijä: tulostus_tekijä($tietue),
-              tapaluokka: tulostus_tapaluokka($tietue),
-              kielto: tulostus_kielto($tietue)]
+              tapaluokka: tulostus_tapaluokka($tietue)]
            + tulostus_teonsanan_attribuutit($tietue);
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);

@@ -116,3 +116,6 @@ word:kolmannessakymmenennessä
  expected:1
  analysis
   BASEFORM=kolmaskymmenes
+word:valvoessaan
+ expected:1
+ !NEGATIVE
