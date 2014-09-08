@@ -1186,3 +1186,15 @@ word:astahtelen
  expected:1
   analysis
    BASEFORM=astahdella
+word:kastele
+ expected:1
+  analysis
+   BASEFORM=kastella
+word:luovalle
+ expected:1
+  analysis
+   BASEFORM=luova
+word:kontti-
+ expected:1
+  analysis
+   BASEFORM=kontti-

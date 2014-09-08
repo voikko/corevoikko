@@ -636,11 +636,18 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen, const wchar_t
 		}
 	}
 	
+	bool addHyphen = false;
 	if (latestXpStartInFst != 0) {
+		if (baseformPos > 0 && baseform[baseformPos - 1] == L'-') {
+			addHyphen = true;
+		}
 		baseformPos = latestXpStartInBaseform;
 		for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
 			baseform[baseformPos++] = fstOutput[i];
 		}
+	}
+	if (addHyphen) {
+		baseform[baseformPos++] = L'-';
 	}
 	
 	if (baseformPos == 0) {
