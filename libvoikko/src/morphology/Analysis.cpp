@@ -49,6 +49,12 @@ void Analysis::addAttribute(const char * key, wchar_t * value) {
 	recreateKeys();
 }
 
+void Analysis::removeAttribute(const char * key) {
+	if (attributes.erase(std::string(key)) > 0) {
+		recreateKeys();
+	}
+}
+
 const char ** Analysis::getKeys() const {
 	return const_cast<const char **>(keys);
 }

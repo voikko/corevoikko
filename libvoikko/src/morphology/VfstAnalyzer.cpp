@@ -685,8 +685,11 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			fixStructure(structure, fstOutput, fstLen);
 			analysis->addAttribute("STRUCTURE", structure);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
+			const wchar_t * wclass = analysis->getValue("CLASS");
+			if (analysis->getValue("NEGATIVE") && wclass && wcscmp(wclass, L"teonsana") != 0) {
+				analysis->removeAttribute("NEGATIVE");
+			}
 			if (!analysis->getValue("COMPARISON")) {
-				const wchar_t * wclass = analysis->getValue("CLASS");
 				if (wclass && (wcscmp(wclass, L"laatusana") == 0 || wcscmp(wclass, L"nimisana_laatusana") == 0)) {
 					analysis->addAttribute("COMPARISON", StringUtils::copy(L"positive"));
 				}

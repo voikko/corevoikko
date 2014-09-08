@@ -338,6 +338,7 @@ word:sämpyläjoella
 word:sämpyläjoellakin
  analysis
   POSSIBLE_GEOGRAPHICAL_NAME=true
+  !NEGATIVE
 word:Välimerta
  analysis
   POSSIBLE_GEOGRAPHICAL_NAME=true

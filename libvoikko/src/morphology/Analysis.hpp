@@ -51,6 +51,11 @@ class Analysis {
 		void addAttribute(const char * key, wchar_t * value);
 		
 		/**
+		 * Deletes an attribute from analysis.
+		 */
+		void removeAttribute(const char * key);
+		
+		/**
 		 * Returns a null terminated array of strings containing
 		 * the attribute names in this analysis.
 		 */
