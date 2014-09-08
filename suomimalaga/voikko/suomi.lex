@@ -635,21 +635,21 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 # Ehtotapa. Olen yhdistänyt ehtotavan tunnuksen (isi) ja tekijäpäätteen.
 #
 [alku: "isin",   luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>, kielto: no];
 [alku: "isit",   luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>, kielto: no];
 [alku: "isi",    luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>, kielto: molemmat];
 [alku: "is",     luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
                  äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "isimme", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>, kielto: no];
 [alku: "isitte", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>, kielto: no];
 [alku: "isivat", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: a, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
+                 äs: a, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>, kielto: no];
 [alku: "isivät", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: ä, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
+                 äs: ä, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>, kielto: no];
 
 [alku: "ttaisi",   luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
                    äs: a, tekijä: tekijä_4, kielto: yes, jatko: <liitesana, loppu>];

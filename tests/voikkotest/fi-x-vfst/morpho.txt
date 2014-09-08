@@ -1215,3 +1215,7 @@ word:lätkäisseessä
 word:valvoessaan
  expected:1
  !NEGATIVE
+word:kuuntelisi
+ expected:1
+  analysis
+   NEGATIVE=both
