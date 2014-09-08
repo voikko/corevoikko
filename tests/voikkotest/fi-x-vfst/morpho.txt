@@ -1170,3 +1170,19 @@ word:Hanna-Liisa
  expected:1
   analysis
    BASEFORM=Hanna-Liisa
+word:hiihtojen
+ expected:1
+  analysis
+   BASEFORM=hiihto
+word:jättöä
+ expected:1
+  analysis
+   BASEFORM=jättö
+word:jäljittääkseen
+ expected:1
+  analysis
+   BASEFORM=jäljittää
+word:astahtelen
+ expected:1
+  analysis
+   BASEFORM=astahdella

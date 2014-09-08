@@ -2552,12 +2552,12 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Alittaa
 <WC>MuistaaMuistella_w_<A>	;
-[Xp]ell<A>[X]t:t	<WC>MuistaaMuistella_s_<A>	;
+<WC>MuistaaMuistella_s_tt_t_<A>	;
 Johdin_Us_ksen_<A>	;
 
 LEXICON Astahtaa
 d:d	<WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
+<WC>MuistaaMuistella_s_t_d_<A>	;
 d:d	Johdin_Us_ksen_<A>	;
 
 LEXICON Hidastaa
@@ -2568,7 +2568,7 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Heittää
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
-@C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>MuistaaMuistella_s_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_tt_t_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_a	;
 <A>:<A>	Johdin_ntA_<A>	;
@@ -2582,11 +2582,11 @@ LEXICON Muistaa
 
 LEXICON Inttää
 <WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
+<WC>MuistaaMuistella_s_tt_t_<A>	;
 
 LEXICON Itää
 d:d	<WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
+<WC>MuistaaMuistella_s_t_d_<A>	;
 
 LEXICON Sulaa
 <WC>Muistaa_w_<A>	;
@@ -2609,45 +2609,53 @@ t:t	<WC>Muistaa_s_<A>	;
 
 LEXICON Jättää
 <WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_a	;
+<WC>MuistaaMuistella_s_tt_t_<A>	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_a	;
 !TODO jätättää
 
 LEXICON Hohtaa
 d:d	<WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_a	;
+<WC>MuistaaMuistella_s_t_d_<A>	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_a	;
 d<A>t:d<A>t	<WC>MuistaaMuistella_w_<A>	;
-d<A>tt:d<A>tt	<WC>MuistaaMuistella_s_<A>	;
+d<A>t:d<A>t	<WC>MuistaaMuistella_s_tt_t_<A>	;
 d<A>t:d<A>t	Johdin_Us_ksen_<A>	;
 
 LEXICON Hujahtaa
 hd:hd	<WC>MuistaaMuistella_w_<A>	;
-ht:ht	<WC>MuistaaMuistella_s_<A>	;
+h:h	<WC>MuistaaMuistella_s_t_d_<A>	;
 hd:hd	Johdin_Us_ksen_<A>	;
 <U>t[Xp]t<A><A>[X]:<U>t	Alittaa_<A>	;
 
 LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
-itt:itt	<WC>MuistaaMuistella_s_<A>	;
+it:it	<WC>MuistaaMuistella_s_tt_t_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
 itt<A><U>[Xp]t<U><A>[X]:itt<A><U>	Kaatua_<A>	;
 
 LEXICON Ammottaa
 t:t	<WC>MuistaaMuistella_w_<A>	;
-tt:tt	<WC>MuistaaMuistella_s_<A>	;
+t:t	<WC>MuistaaMuistella_s_tt_t_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
 tt<A><U>[Xp]t<U><A>[X]:tt<A><U>	Kaatua_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
-el:el	<WC>Katsella_w_<A>	;
+el[Xp]l<A>[X]:el	<WC>Katsella_w_<A>	;
 
 LEXICON MuistaaMuistella_s
 <WC>Muistaa_s_<A>	;
-el:el	<WC>Katsella_s_<A>	;
+el[Xp]l<A>[X]:el	<WC>Katsella_s_<A>	;
+
+LEXICON MuistaaMuistella_s_tt_t
+t:t	<WC>Muistaa_s_<A>	;
+[Xp]ell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
+
+LEXICON MuistaaMuistella_s_t_d
+t:t	<WC>Muistaa_s_<A>	;
+[Xp]dell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Muistaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
@@ -3677,9 +3685,9 @@ LEXICON Kihistä
 @R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	Kihajaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	Kihajaa_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@autt:@R.V_SALLITTU.T@@C.V_SALLITTU@autt	MuistaaMuistella_s_a  ;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_s_tt_t_a  ;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äytt:@R.V_SALLITTU.E@@C.V_SALLITTU@äytt	MuistaaMuistella_s_ä  ;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_s_tt_t_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	Johdin_Us_a	;
