@@ -2552,7 +2552,7 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Alittaa
 <WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
+[Xp]ell<A>[X]t:t	<WC>MuistaaMuistella_s_<A>	;
 Johdin_Us_ksen_<A>	;
 
 LEXICON Astahtaa
@@ -2627,19 +2627,19 @@ LEXICON Hujahtaa
 hd:hd	<WC>MuistaaMuistella_w_<A>	;
 ht:ht	<WC>MuistaaMuistella_s_<A>	;
 hd:hd	Johdin_Us_ksen_<A>	;
-<U>t:<U>t	Alittaa_<A>	;
+<U>t[Xp]t<A><A>[X]:<U>t	Alittaa_<A>	;
 
 LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
 itt:itt	<WC>MuistaaMuistella_s_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
-itt<A><U>:itt<A><U>	Kaatua_<A>	;
+itt<A><U>[Xp]t<U><A>[X]:itt<A><U>	Kaatua_<A>	;
 
 LEXICON Ammottaa
 t:t	<WC>MuistaaMuistella_w_<A>	;
 tt:tt	<WC>MuistaaMuistella_s_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
-tt<A><U>:tt<A><U>	Kaatua_<A>	;
+tt<A><U>[Xp]t<U><A>[X]:tt<A><U>	Kaatua_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
@@ -3998,7 +3998,7 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll][Ra]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
+[Ll][Ra]t<A>v[Xp]<A>[X]@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
 [Ln][Ra]t<A>v<U><U>s:t<A>v<U><U>s	NimisanaYsJatko	;
 [Ll][Ra]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
 
@@ -4031,7 +4031,7 @@ LEXICON Johdin_sUt
 [Ll][Ru]s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Johdin_nUt
-[Ll][Ru]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
+[Ll][Ru]n[Xp]<U>t[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 [Ru]neis:neis	Johdin_UUs_<A>	;
 [Ll][Ru]nee:nee	Omistusliite_<A>	;
 ?Sukija [Ll][Ru]nehe:nehe	Omistusliite_<A>	;
@@ -4208,7 +4208,7 @@ LEXICON Johdin_tU_nA
 
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA
-[Ll][Rt]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
+[Ll][Rt]t<U>[Xp][X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
 [Ll][Rt]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON Johdin_tU_lA_jatko
