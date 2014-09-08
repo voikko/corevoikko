@@ -32,7 +32,6 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
-#include <queue>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -576,15 +575,16 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 	}
 }
 
-static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
+static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen, const wchar_t * structure) {
 	wchar_t * baseform = new wchar_t[fstLen + 1];
 	size_t baseformPos = 0;
 	size_t latestXpStartInFst = 0;
 	size_t latestXpStartInBaseform = 0;
+	size_t structurePos = 0;
+	size_t structureLen = wcslen(structure);
 	bool isInXp = false;
 	bool isInXr = false;
 	bool isInTag = false;
-	std::queue<wchar_t> structurePattern;
 	
 	for (size_t i = 0; i < fstLen; i++) {
 		if (fstOutput[i] == L'[') {
@@ -613,7 +613,7 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 			}
 		}
 		else if (isInXr) {
-			structurePattern.push(fstOutput[i]);
+			// do nothing
 		}
 		else if (isInTag) {
 			if (fstOutput[i] == L']') {
@@ -622,11 +622,14 @@ static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen) {
 		}
 		else if (!isInXp) {
 			wchar_t nextChar = fstOutput[i];
-			if (!structurePattern.empty()) {
-				wchar_t patternChar = structurePattern.front();
-				structurePattern.pop();
-				if (patternChar == L'i' || patternChar == L'j') {
-					nextChar = SimpleChar::upper(nextChar);
+			while (structurePos < structureLen) {
+				wchar_t patternChar = structure[structurePos];
+				structurePos++;
+				if (patternChar != L'=') {
+					if (patternChar == L'i' || patternChar == L'j') {
+						nextChar = SimpleChar::upper(nextChar);
+					}
+					break;
 				}
 			}
 			baseform[baseformPos++] = nextChar;
@@ -683,7 +686,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			}
 			analysisList->push_back(analysis);
 			duplicateOrgName(analysis, analysisList);
-			wchar_t * baseform = parseBaseform(fstOutput, fstLen);
+			wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);
 			if (baseform) {
 				analysis->addAttribute("BASEFORM", baseform);
 			}

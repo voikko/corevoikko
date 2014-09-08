@@ -1166,3 +1166,7 @@ word:hyödyntäneen
  expected:1
   analysis
    BASEFORM=hyödyntänyt
+word:Hanna-Liisa
+ expected:1
+  analysis
+   BASEFORM=Hanna-Liisa
