@@ -1198,3 +1198,17 @@ word:kontti-
  expected:1
   analysis
    BASEFORM=kontti-
+word:-kissakoira
+ expected:1
+word:kuulemat
+ expected:1
+  analysis
+   BASEFORM=kuulema
+word:muistu
+ expected:1
+  analysis
+   BASEFORM=muistua
+word:lätkäisseessä
+ expected:1
+  analysis
+   BASEFORM=lätkäissyt
