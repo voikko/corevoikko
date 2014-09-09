@@ -1260,3 +1260,5 @@ word:lähentelen
  expected:1
   analysis
    BASEFORM=lähennellä
+word:rumuus
+ expected:1
