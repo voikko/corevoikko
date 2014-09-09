@@ -1235,3 +1235,11 @@ word:nujersivat
  expected:1
   analysis
    TENSE=past_imperfective
+word:nimekseen
+ expected:1
+  analysis
+   POSSESSIVE=3
+word:muistelleet
+ expected:1
+  analysis
+   BASEFORM=muistellut

@@ -2314,6 +2314,9 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.luokka = johdin_mA then
       return [laatutapa: johdin_mA];
     end;
+    if $allomorfi.luokka = johdin_ttU then
+      return [laatutapa: johdin_ttU];
+    end;
   end;
   return [];
 end;

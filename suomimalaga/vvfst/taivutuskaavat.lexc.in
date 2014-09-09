@@ -2438,7 +2438,7 @@ Liitesana_<A>	;
 
 LEXICON OlI
 [[IE]]:[[IE]]	Omistusliite_<A>	;
-[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
+[[IE]][[L]][O3]n:[[IE]][[L]]n	Liitesana_<A>	;
 
 LEXICON Punoa
 <WC>Punoa_w_<A>	;
@@ -4044,7 +4044,7 @@ LEXICON Johdin_nUt
 ?Sukija [Ll][Ru]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
-[Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
+[Ll][Ru]l[Xp]<U>t[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
 [Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll][Ru]lee:lee	Omistusliite_<A>	;
 ?Sukija [Ll][Ru]lehe:lehe	Omistusliite_<A>	;

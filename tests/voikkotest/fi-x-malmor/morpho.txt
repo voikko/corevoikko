@@ -123,3 +123,7 @@ word:kuuntelisi
  expected:1
   analysis
    NEGATIVE=both
+word:nukuttu
+ expected:1
+  analysis
+   PARTICIPLE=past_passive
