@@ -4193,6 +4193,7 @@ LEXICON Johdin_ttU
 [Ll][Rt][Sg][Ny]t<U>n@C.JOHDETTAVA_NIMISANAKSI@:t<U>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYsJatko	;
 [Ll][Rt][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 [Ll][Rt]tt<U><A>:tt<U><A>	OlV_<A>	;
+?Sukija [Ll][Rt][Sp][Nm]t<U>it<A>:t<U>it<A> LaatusanaLiOlV_<A> ;
 
 ! myydä -> myyty
 LEXICON Johdin_tU_dA
