@@ -1262,3 +1262,8 @@ word:lähentelen
    BASEFORM=lähennellä
 word:rumuus
  expected:1
+word:käsiteltyjen
+ expected:1
+  analysis
+   BASEFORM=käsitelty
+   PARTICIPLE=past_passive

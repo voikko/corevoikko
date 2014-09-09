@@ -3211,9 +3211,6 @@ LEXICON Katsella_w
 Johdin_nimitapa1lA_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
-[Ll]t<U>:t<U>	LaatusanaValo_s_<A>	;
-[Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
-[Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
 TositavanKertomaTiin_<A>	;
 TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
@@ -4201,8 +4198,8 @@ LEXICON Johdin_tU_dA
 
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
-[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
-[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>       NimiLaatusanaValo_w_<A>  ;
+[Ll][Rt][Xp]t<U>[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
+[Ll][Rt][Xp]t<U>[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>       NimiLaatusanaValo_w_<A>  ;
 
 ! surra -> surtu
 LEXICON Johdin_tU_rA
