@@ -1281,3 +1281,19 @@ word:pysähtyneisyys
  expected:1
   analysis
    CLASS=nimisana
+word:signeeraa
+ expected:1
+  analysis
+   TENSE=present_simple
+word:peittoaa
+ expected:1
+  analysis
+   NEGATIVE=false
+word:otettakoon
+ expected:1
+  analysis
+   NEGATIVE=false
+word:tekisikö
+ expected:1
+  analysis
+   NEGATIVE=false

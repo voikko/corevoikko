@@ -442,8 +442,8 @@ define @jatko_mm := <sija_monikko_1,
 [alku: "kään",      luokka: liitesana, fokus: kaan, kielto: yes, äs: ä, jatko: <loppu>];
 [alku: "kaanhan",   luokka: liitesana, fokus: kaan, äs: a, jatko: <loppu>];
 [alku: "käänhän",   luokka: liitesana, fokus: kaan, äs: ä, jatko: <loppu>];
-[alku: "ko",        luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "kö",        luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "ko",        luokka: liitesana, kysymysliite: yes, kielto: no, äs: a, jatko: <loppu>];
+[alku: "kö",        luokka: liitesana, kysymysliite: yes, kielto: no, äs: ä, jatko: <loppu>];
 [alku: "kokaan",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: a, jatko: <loppu>];
 [alku: "kökään",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: ä, jatko: <loppu>];
 [alku: "pa",        luokka: liitesana, kielto: no, äs: a, jatko: <loppu>];

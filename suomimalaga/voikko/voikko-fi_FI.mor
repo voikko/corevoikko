@@ -1629,10 +1629,11 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
   end;
 
   if ($edellinen.kielto /= nil and $oikea.kielto /= no) then
-    $oikea.kielto := $edellinen.kielto;
+    result $vasen + <$oikea + [alku: $sana, kielto: $edellinen.kielto]>, accept;
+  else
+    result $vasen + <$oikea + [alku: $sana]>, accept;
   end;
     
-  result $vasen + <[alku: $sana] + $oikea>, accept;
 end;
 
 cimbi_rule liitesana_pi ($vasen, $oikea, $sana, $index):

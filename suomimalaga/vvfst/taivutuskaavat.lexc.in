@@ -3471,8 +3471,8 @@ Johdin_ttAx_<A>	;
 
 LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
-[Tt][P3][Ny][Ef]<A><A>:<A><A>	Liitesana_<A>	;
-[Tt][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
@@ -3552,8 +3552,8 @@ LEXICON Salata_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
-[Tt][P3][Ny][Eb]<A>:<A>	Liitesana_<A>	;
-[Tt][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Eb]<A>:<A>	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
@@ -3620,8 +3620,8 @@ LEXICON Katketa_s
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
-[Tt][P3][Ny][Eb]<A><A>:<A><A>	Liitesana_<A>	;
-[Tt][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 Ehtotapa_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
@@ -3692,14 +3692,14 @@ LEXICON Kihistä
 
 LEXICON Kihajaa
 <A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;
-[Tt][P3][Ny]<A>j<A><A>:<A>j<A><A>	Liitesana_<A>	;
-[Tt][P3][Nm]<A>j<A>v<A>t:<A>j<A>v<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]<A>j<A><A>:<A>j<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]<A>j<A>v<A>t:<A>j<A>v<A>t	Liitesana_<A>	;
 
 LEXICON Kitistä
 ist:ist	Johdin_nimitapa1A_<A>	;
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
-[Tt][P3][Ny][Ef]isee:isee	Liitesana_<A>	;
-[Tt][P3][Nm][Ef]isev<A>t:isev<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]isee:isee	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]isev<A>t:isev<A>t	Liitesana_<A>	;
 is:is	TositavanKestämäTaan_<A>	;
 is:is	KertomanTekijäpääteVahva_<A>	;
 is:is	KertomanTekijäpääteHeikko_<A>	;
@@ -3880,13 +3880,13 @@ LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
 
 LEXICON Käskytapa_ttA
-[Tk][Ap][P4]tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
-[Tk][Ap][P4]tt<A>k<O>:tt<A>k<O>	Loppu	;
+[Tk][Ap][P4][Ef]tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
+[Tk][Ap][P4][Et]tt<A>k<O>:tt<A>k<O>	Loppu	;
 ?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
 
 LEXICON Käskytapa_tA
-[Tk][Ap][P4]t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
-[Tk][Ap][P4]t<A>k<O>:t<A>k<O>	Loppu	;
+[Tk][Ap][P4][Ef]t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
+[Tk][Ap][P4][Et]t<A>k<O>:t<A>k<O>	Loppu	;
 ?Sukija t<A>k<O>h<O>n:t<A>k<O>h<O>n	Loppu	;
 
 LEXICON Johdin_nimitapa1dA

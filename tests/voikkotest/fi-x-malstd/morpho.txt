@@ -840,3 +840,7 @@ word:pysähtyneisyys
  expected:1
   analysis
    CLASS=nimisana
+word:tekisikö
+ expected:1
+  analysis
+   NEGATIVE=false
