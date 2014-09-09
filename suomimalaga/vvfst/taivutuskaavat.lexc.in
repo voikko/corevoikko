@@ -2743,8 +2743,8 @@ LEXICON Murtaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	MurtaaCVS_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_a	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]rö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@rö	NimisanaVastaus_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ro:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ro	NimisanaVastaus_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]rö[Xp]s[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@rö	NimisanaVastaus_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ro[Xp]s[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ro	NimisanaVastaus_a	;
 
 LEXICON MurtaaCVS
 r:r	<WC>Huutaa_w_<A>	;
@@ -2773,10 +2773,10 @@ tel:tel	<WC>Katsella_s_<A>	;
 LEXICON Pahentaa
 n:n	<WC>Huutaa_w_<A>	;
 <WC>Huutaa_s_<A>	;
-nel:nel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+nel[Xp]l<A>[X]:nel	<WC>Katsella_w_<A>	;
+[Xp]nell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
-Jakaantua_<A>	;
+[Xp]t<U><A>[X]:	Jakaantua_<A>	;
 
 LEXICON Huutaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
@@ -3359,7 +3359,7 @@ t<O>:t<O>	Aleta_s_<A>	;
 LEXICON Kaveta
 ve:ve	Aleta_w_<A>	;
 pe:pe	Aleta_s_<A>	;
-ven:ven	Alentaa_<A>	;
+ven[Xp]t<A><A>[X]:ven	Alentaa_<A>	;
 venn:venn	Johdin_Us_ksen_<A>	;
 
 LEXICON Kevetä

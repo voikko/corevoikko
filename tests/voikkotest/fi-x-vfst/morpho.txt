@@ -1297,3 +1297,19 @@ word:tekisikö
  expected:1
   analysis
    NEGATIVE=false
+word:kavensivat
+ expected:1
+  analysis
+   BASEFORM=kaventaa
+word:simpukkamurros
+ expected:1
+  analysis
+   BASEFORM=simpukkamurros
+word:tallentelen
+ expected:1
+  analysis
+   BASEFORM=tallennella
+word:tallentuu
+ expected:1
+  analysis
+   BASEFORM=tallentua
