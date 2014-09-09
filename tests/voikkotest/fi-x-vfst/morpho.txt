@@ -1267,3 +1267,17 @@ word:käsiteltyjen
   analysis
    BASEFORM=käsitelty
    PARTICIPLE=past_passive
+word:pyrimme
+ expected:2
+  analysis
+   TENSE=present_simple
+  analysis
+   TENSE=past_imperfective
+word:putoili
+ expected:1
+  analysis
+   BASEFORM=putoilla
+word:pysähtyneisyys
+ expected:1
+  analysis
+   CLASS=nimisana

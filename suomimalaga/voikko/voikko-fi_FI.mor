@@ -2184,6 +2184,9 @@ subrule tulostus_luokka($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.jluokka /= nil then
+      return $allomorfi.jluokka;
+    end;
     if $allomorfi.luokka in @johtimet_laatusana_nimisanasta then
       return laatusana;
     end;

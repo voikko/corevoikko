@@ -836,3 +836,7 @@ word:varo-EU
    STRUCTURE==pppp-=jj
 word:rumuus
  expected:1
+word:pysähtyneisyys
+ expected:1
+  analysis
+   CLASS=nimisana

@@ -3011,6 +3011,7 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
 i:i	Tositapa4Tt_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
@@ -3668,7 +3669,7 @@ Kohota_w_<A>	;
 
 LEXICON KohotaKohoilla_s
 Kohota_s_<A>	;
-il:il	Arvailla_<A>	;
+il[Xp]l<A>[X]:il	Arvailla_<A>	;
 
 LEXICON Kohota_w
 Katketa_w_<A>	;
