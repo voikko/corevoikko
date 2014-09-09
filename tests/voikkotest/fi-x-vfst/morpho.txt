@@ -1220,3 +1220,18 @@ word:kuuntelisi
  expected:1
   analysis
    NEGATIVE=both
+word:kaksijakoisesti
+ expected:1
+ !NUMBER
+word:ionisoituu
+ expected:1
+  analysis
+   BASEFORM=ionisoitua
+word:näkeekö
+ expected:1
+  analysis
+   NEGATIVE=false
+word:nujersivat
+ expected:1
+  analysis
+   TENSE=past_imperfective

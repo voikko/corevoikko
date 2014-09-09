@@ -2788,9 +2788,8 @@ LEXICON Huutaa_s
 [Tn1]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
-[Tt][P3][Ny][Ef]t<A><A>:t<A><A>	Liitesana_<A>	;
-[Tt][P3][Nm][Ef]t<A>v<A>t:t<A>v<A>t	Liitesana_<A>	;
-[Tt][Ap][P3][Nm][Ef]siv<A>t:siv<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]t<A><A>:t<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]t<A>v<A>t:t<A>v<A>t	Liitesana_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
 t<A>n:t<A>n	Mahtotapa_<A>	;
@@ -3286,7 +3285,7 @@ i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_dA_<A>   ;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_nUt_<A>	;
-i:i	Kaatua_<A>	;
+i[Xp]t<U><A>[X]:i	Kaatua_<A>	;
 ?Sukija i:i Johdin_nimitapa1tA_<A> ;
 ?Sukija [Tk][Ap][P3][Ny][Ef]itk<O><O>n:itk<O><O>n   LiitesanaPaHan_<A> ;
 ?Sukija [Tk][Ap][P3][Ny][Ef]itk<O>h<O>n:tk<O>h<O>n LiitesanaPaHan_<A> ;
@@ -4389,9 +4388,9 @@ LEXICON LiitesanaEiLoppu
 [Fkaan]k<A><A>n[Fko]k<O>:k<A><A>nk<O>	Loppu ;
 [Fkaan]k<A><A>n[Fko]k<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
 [Fkaan]k<A><A>n[Fko]k<O>s:k<A><A>nk<O>s	Loppu ;
-[Fko]k<O>:k<O>	Loppu ;
-[Fko]k<O>h<A>n:k<O>h<A>n	Loppu ;
-[Fko]k<O>s:k<O>s	Loppu ;
+[Fko][Ef]k<O>:k<O>	Loppu ;
+[Fko][Ef]k<O>h<A>n:k<O>h<A>n	Loppu ;
+[Fko][Ef]k<O>s:k<O>s	Loppu ;
 p<A>:p<A>	Loppu ;
 h<A>n:h<A>n	Loppu ;
 p<A>h<A>n:p<A>h<A>n	Loppu ;
@@ -4417,9 +4416,9 @@ k<A>:k<A>	Loppu	;
 
 LEXICON LiitesanaKoPaHan
 LiitesanaPaHan_<A>	;
-[Fko]k<O>:k<O>	Loppu ;
-[Fko]k<O>h<A>n:k<O>h<A>n	Loppu ;
-[Fko]k<O>s:k<O>s	Loppu ;
+[Fko][Ef]k<O>:k<O>	Loppu ;
+[Fko][Ef]k<O>h<A>n:k<O>h<A>n	Loppu ;
+[Fko][Ef]k<O>s:k<O>s	Loppu ;
 
 LEXICON LiitesanaKinKoPaHan
 LiitesanaKoPaHan_<A>	;
