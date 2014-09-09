@@ -3321,9 +3321,9 @@ LEXICON Saneerata
 LEXICON Aleta
 Aleta_w_<A>	;
 Aleta_s_<A>	;
-n:n	Saksantaa_<A>	;
-n:n	Jakaantua_<A>	;
-n:n	Pienennellä_<A>	;
+n[Xp]t<A><A>[X]:n	Saksantaa_<A>	;
+n[Xp]t<U><A>[X]:n	Jakaantua_<A>	;
+n[Xp]nell<A>[X]:n	Pienennellä_<A>	;
 nn:nn	Johdin_Us_ksen_<A>	;
 
 LEXICON Lämmetä

@@ -127,6 +127,14 @@ word:nukuttu
  expected:1
   analysis
    PARTICIPLE=past_passive
+word:rekisteröidyissä
+ expected:1
+  analysis
+   PARTICIPLE=past_passive
+word:rekisteröity
+ expected:1
+  analysis
+   PARTICIPLE=past_passive
 word:johtajattaren
  expected:1
   analysis

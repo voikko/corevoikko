@@ -1248,3 +1248,15 @@ word:johtajattaren
   analysis
    BASEFORM=johtajatar
    NUMBER=singular
+word:lähentyy
+ expected:1
+  analysis
+   BASEFORM=lähentyä
+word:lähennän
+ expected:1
+  analysis
+   BASEFORM=lähentää
+word:lähentelen
+ expected:1
+  analysis
+   BASEFORM=lähennellä
