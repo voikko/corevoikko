@@ -1278,15 +1278,15 @@ define @jatko_vastaukse := @jatko_de + @jatko_te;
 
 define @jatko_tar := <liitesana, loppu, osanto_tA, omanto_ten> + @yhdyssana;
 
-define @jatko_ttar := <omanto_en, omanto_ien, osanto_iA, olento_inA,
+define @jatko_ttar := <omanto_ien, osanto_iA, olento_inA,
                        sija_monikko_1, sisätulento_iin,
                        ulkopaikallissija_illA,
                        vajanto_ittA, seuranto_ine, johdin_UUs>;
 
-define @jatko_ttare := <olento_nA, tulento_ksi,
+define @jatko_ttare := <omanto_n, olento_nA, tulento_ksi,
                         sisäolento_ssA, sisätulento_Vn,
                         ulkopaikallissija_llA,
-                        vajanto_ttA, nimentö_t>;
+                        vajanto_ttA, nimentö_t, omistusliite>;
 
 [alku: "tar",   luokka: johdin_tAr, äs: a, perusmuoto: "tar", jatko: @jatko_tar];
 [alku: "ttar",  luokka: johdin_tAr, äs: a, perusmuoto: "tar", jatko: @jatko_ttar];
