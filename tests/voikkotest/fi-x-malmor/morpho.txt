@@ -140,3 +140,9 @@ word:johtajattaren
   analysis
    BASEFORM=johtajatar
    NUMBER=singular
+word:seuraillut
+ expected:2
+  analysis
+   PARTICIPLE=past_active
+  analysis
+   PARTICIPLE=past_passive
