@@ -3211,9 +3211,6 @@ LEXICON Katsella_w
 Johdin_nimitapa1lA_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
 Johdin_nimitapa2_tAessA_<A>	;
-[Ll]t<U>:t<U>	LaatusanaValo_s_<A>	;
-[Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
-[Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
 TositavanKertomaTiin_<A>	;
 TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
@@ -3321,9 +3318,9 @@ LEXICON Saneerata
 LEXICON Aleta
 Aleta_w_<A>	;
 Aleta_s_<A>	;
-n:n	Saksantaa_<A>	;
-n:n	Jakaantua_<A>	;
-n:n	Pienennellä_<A>	;
+n[Xp]t<A><A>[X]:n	Saksantaa_<A>	;
+n[Xp]t<U><A>[X]:n	Jakaantua_<A>	;
+n[Xp]nell<A>[X]:n	Pienennellä_<A>	;
 nn:nn	Johdin_Us_ksen_<A>	;
 
 LEXICON Lämmetä
@@ -4202,8 +4199,8 @@ LEXICON Johdin_tU_dA
 
 ! katsella -> katseltu
 LEXICON Johdin_tU_lA
-[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
-[Ll][Rt]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>       NimiLaatusanaValo_w_<A>  ;
+[Ll][Rt][Xp]t<U>[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ Johdin_tU_lA_jatko_<A>   ;
+[Ll][Rt][Xp]t<U>[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@l<U>       NimiLaatusanaValo_w_<A>  ;
 
 ! surra -> surtu
 LEXICON Johdin_tU_rA
@@ -4277,7 +4274,7 @@ LEXICON Johdin_ja_kulkija_myyjä
 @D.VAIN_YM3@[Ln][Xp]j<A>[X][Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 @D.VAIN_YM3@[Ln][Xp]j<A>[X][Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 @D.VAIN_YM3@[Ln][Xp]j<A>[X][Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-@D.VAIN_YM3@[Ln][Xp]j<A>[X]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
+@D.VAIN_YM3@[Ln]j<A>t[Xp]<A>r[X]@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 j:j	Johdin_UUs_<A>	;
 j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	Johdin_mAinen_<A>	;
 j<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tOn_<A>	;

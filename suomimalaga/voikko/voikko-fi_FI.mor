@@ -235,8 +235,12 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if liitesana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules liitesana;
     end;
-    result <$oikea + [alku: $sana, luokka: nimisana]>, rules nimisanan_sijapääte, nimisanan_johdos;
-
+    if $oikea.luokka = nimisana then
+      result <[alku: $sana] + $oikea>, rules nimisanan_sijapääte, nimisanan_johdos;
+    else
+      result <$oikea + [alku: $sana, luokka: nimisana, jatko: $oikea.jatko - <johdin_UUs>]>,
+             rules nimisanan_sijapääte, nimisanan_johdos;
+    end;
   end;
 end;
 
@@ -2314,7 +2318,7 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.luokka = johdin_mA then
       return [laatutapa: johdin_mA];
     end;
-    if $allomorfi.luokka = johdin_ttU then
+    if $allomorfi.luokka in <johdin_ttU, johdin_tU, johdin_dU, johdin_lU> then
       return [laatutapa: johdin_ttU];
     end;
   end;

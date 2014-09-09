@@ -834,3 +834,5 @@ word:varo-EU
  expected:1
   analysis
    STRUCTURE==pppp-=jj
+word:rumuus
+ expected:1
