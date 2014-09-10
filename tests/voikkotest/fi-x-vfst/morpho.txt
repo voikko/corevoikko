@@ -1346,3 +1346,15 @@ word:täräytyksen
  expected:1
   analysis
    BASEFORM=täräytys
+word:keventämällä
+ !NEGATIVE
+word:kanteleeni
+ expected:2
+  analysis
+   SIJAMUOTO=nimento
+  analysis
+   SIJAMUOTO=sisatulento
+word:rikkoneensa
+ expected:1
+  analysis
+   BASEFORM=rikkonut

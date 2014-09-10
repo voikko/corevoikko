@@ -1327,6 +1327,7 @@ LEXICON NOUN Taival_s
 <WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
+[Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
@@ -4039,7 +4040,6 @@ LEXICON Johdin_sUt
 LEXICON Johdin_nUt
 [Ll][Ru]n[Xp]<U>t[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 [Ru]neis:neis	Johdin_UUs_<A>	;
-[Ll][Ru]nee:nee	Omistusliite_<A>	;
 ?Sukija [Ll][Ru]nehe:nehe	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt

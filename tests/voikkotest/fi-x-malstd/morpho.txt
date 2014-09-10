@@ -859,3 +859,5 @@ word:pukemalla
   analysis
    MOOD=MA-infinitive
    SIJAMUOTO=ulkoolento
+word:keventämällä
+ !NEGATIVE
