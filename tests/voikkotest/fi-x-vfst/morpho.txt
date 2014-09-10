@@ -1366,3 +1366,5 @@ word:lehtikultaa
    CLASS=nimisana
 word:peruskoulukone
  expected:1
+word:Pohjois-Texas
+ expected:1

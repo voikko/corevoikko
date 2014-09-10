@@ -863,3 +863,5 @@ word:keventämällä
  !NEGATIVE
 word:johtavuus
  expected:1
+word:Pohjois-Texas
+ expected:1
