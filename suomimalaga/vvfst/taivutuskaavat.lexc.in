@@ -3389,7 +3389,8 @@ n:n	Johdin_nUt_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
-[Tt][Ap][P3][Ny]nee:nee	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]nee:nee	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]nev<A>t:nev<A>t	Liitesana_<A>	;
 n:n	KertomanTekijäpääteVahva_<A>	;
 n:n	KertomanTekijäpääteHeikko_<A>	;
 ne:ne	Johdin_mA_<A>	;
@@ -3681,14 +3682,14 @@ LEXICON Kihistä
 @C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	Kihajaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	Kihajaa_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_s_tt_t_a  ;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_s_tt_t_ä  ;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut[Xp]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut[Xp]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_s_tt_t_a  ;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt[Xp]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt[Xp]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_s_tt_t_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	Johdin_Us_a	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	Johdin_Us_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	Johdin_Us_ksen_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@äyt:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	Johdin_Us_ksen_ä	;
 
 LEXICON Kihajaa
 <A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;

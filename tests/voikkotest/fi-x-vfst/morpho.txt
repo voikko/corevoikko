@@ -1327,3 +1327,22 @@ word:linnoittautumisensa
   analysis
    NUMBER=singular
    SIJAMUOTO=nimento
+word:suppenevat
+ expected:2
+  analysis
+   BASEFORM=supeta
+  analysis
+   BASEFORM=suppeneva
+word:pukemalla
+ expected:2
+  analysis
+   MOOD=MA-infinitive
+   SIJAMUOTO=ulkoolento
+word:täräytti
+ expected:1
+  analysis
+   BASEFORM=täräyttää
+word:täräytyksen
+ expected:1
+  analysis
+   BASEFORM=täräytys

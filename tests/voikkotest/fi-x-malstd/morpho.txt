@@ -854,3 +854,8 @@ word:linnoittautumisensa
   analysis
    NUMBER=singular
    SIJAMUOTO=nimento
+word:pukemalla
+ expected:2
+  analysis
+   MOOD=MA-infinitive
+   SIJAMUOTO=ulkoolento
