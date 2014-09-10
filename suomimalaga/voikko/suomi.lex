@@ -942,9 +942,6 @@ define @jatko_v :=
 [alku: "v",  luokka: johdin_vA, äs: a, jatko: @jatko_v, perusmuoto: "va"];
 [alku: "v",  luokka: johdin_vA, äs: ä, jatko: @jatko_v, perusmuoto: "vä"];
 
-[alku: "vuu", luokka: johdin_vA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "vuus"];
-[alku: "vyy", luokka: johdin_vA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
-
 [alku: "va", luokka: johdin_vE, äs: a, jatko: @jatko_vE1];
 [alku: "vä", luokka: johdin_vE, äs: ä, jatko: @jatko_vE1];
 [alku: "ve", luokka: johdin_vE, äs: aä, jatko: @jatko_vE2];

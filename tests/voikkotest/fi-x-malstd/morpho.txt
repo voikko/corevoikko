@@ -861,3 +861,5 @@ word:pukemalla
    SIJAMUOTO=ulkoolento
 word:keventämällä
  !NEGATIVE
+word:johtavuus
+ expected:1

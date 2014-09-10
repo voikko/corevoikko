@@ -1358,3 +1358,5 @@ word:rikkoneensa
  expected:1
   analysis
    BASEFORM=rikkonut
+word:johtavuus
+ expected:1
