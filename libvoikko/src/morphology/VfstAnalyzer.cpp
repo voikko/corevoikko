@@ -416,6 +416,89 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 }
 
+static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const wchar_t * structure) {
+	wchar_t * baseform = new wchar_t[fstLen + 1];
+	size_t baseformPos = 0;
+	size_t latestXpStartInFst = 0;
+	size_t latestXpStartInBaseform = 0;
+	size_t structurePos = 0;
+	size_t structureLen = wcslen(structure);
+	bool isInXp = false;
+	bool isInXr = false;
+	bool isInTag = false;
+	
+	for (size_t i = 0; i < fstLen; i++) {
+		if (fstOutput[i] == L'[') {
+			if (i + 2 >= fstLen) {
+				// something wrong with the pattern
+				delete[] baseform;
+				return 0;
+			}
+			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
+				i += 3;
+				isInXp = true;
+				latestXpStartInFst = i + 1;
+				latestXpStartInBaseform = baseformPos;
+			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+				i += 3;
+				isInXr = true;
+			}
+			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
+				isInXp = false;
+				isInXr = false;
+				i += 2;
+			}
+			else {
+				isInTag = true;
+			}
+		}
+		else if (isInXr) {
+			// do nothing
+		}
+		else if (isInTag) {
+			if (fstOutput[i] == L']') {
+				isInTag = false;
+			}
+		}
+		else if (!isInXp) {
+			wchar_t nextChar = fstOutput[i];
+			while (structurePos < structureLen) {
+				wchar_t patternChar = structure[structurePos];
+				structurePos++;
+				if (patternChar != L'=') {
+					if (patternChar == L'i' || patternChar == L'j') {
+						nextChar = SimpleChar::upper(nextChar);
+					}
+					break;
+				}
+			}
+			baseform[baseformPos++] = nextChar;
+		}
+	}
+	
+	bool addHyphen = false;
+	if (latestXpStartInFst != 0) {
+		if (baseformPos > 0 && baseform[baseformPos - 1] == L'-') {
+			addHyphen = true;
+		}
+		baseformPos = latestXpStartInBaseform;
+		for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
+			baseform[baseformPos++] = fstOutput[i];
+		}
+	}
+	if (addHyphen) {
+		baseform[baseformPos++] = L'-';
+	}
+	
+	if (baseformPos == 0) {
+		delete[] baseform;
+		return 0;
+	}
+	baseform[baseformPos] = L'\0';
+	return baseform;
+}
+
 void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList) {
 	const wchar_t * oldClass = analysis->getValue("CLASS");
 	if (!oldClass || wcscmp(oldClass, L"nimisana") != 0) {
@@ -430,11 +513,15 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 		return;
 	}
 	for (size_t i = fstLen - 5; i >= 8; i--) {
+		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+			return;
+		}
 		if (wcsncmp(fstOutput + i, L"[Ion]", 5) == 0) {
 			for (size_t j = i - 4; j >= 4; j--) {
 				if (wcsncmp(fstOutput + j, L"[Bc]", 4) == 0) {
 					Analysis * newAnalysis = new Analysis();
 					const char ** keys = analysis->getKeys();
+					wchar_t * newStructure = 0;
 					for (const char ** keyPtr = keys; *keyPtr; keyPtr++) {
 						const char * key = *keyPtr;
 						if (strcmp(key, "CLASS") == 0) {
@@ -444,13 +531,22 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 							const wchar_t * oldStructure = analysis->getValue(key);
 							size_t structureLen = wcslen(oldStructure);
 							if (structureLen >= 2) {
-								wchar_t * newStructure = StringUtils::copy(oldStructure);
+								newStructure = StringUtils::copy(oldStructure);
 								newStructure[1] = L'i';
 								newAnalysis->addAttribute(key, newStructure);
 							}
 						}
+						else if (strcmp(key, "POSSIBLE_GEOGRAPHICAL_NAME") == 0) {
+							// skip
+						}
 						else {
 							newAnalysis->addAttribute(key, StringUtils::copy(analysis->getValue(key)));
+						}
+					}
+					if (newStructure) {
+						wchar_t * baseform = parseBaseform(fstOutput, fstLen, newStructure);
+						if (baseform) {
+							newAnalysis->addAttribute("BASEFORM", baseform);
 						}
 					}
 					analysisList->push_back(newAnalysis);
@@ -573,89 +669,6 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 			}
 		}
 	}
-}
-
-static wchar_t * parseBaseform(wchar_t * fstOutput, size_t fstLen, const wchar_t * structure) {
-	wchar_t * baseform = new wchar_t[fstLen + 1];
-	size_t baseformPos = 0;
-	size_t latestXpStartInFst = 0;
-	size_t latestXpStartInBaseform = 0;
-	size_t structurePos = 0;
-	size_t structureLen = wcslen(structure);
-	bool isInXp = false;
-	bool isInXr = false;
-	bool isInTag = false;
-	
-	for (size_t i = 0; i < fstLen; i++) {
-		if (fstOutput[i] == L'[') {
-			if (i + 2 >= fstLen) {
-				// something wrong with the pattern
-				delete[] baseform;
-				return 0;
-			}
-			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
-				i += 3;
-				isInXp = true;
-				latestXpStartInFst = i + 1;
-				latestXpStartInBaseform = baseformPos;
-			}
-			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
-				i += 3;
-				isInXr = true;
-			}
-			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
-				isInXp = false;
-				isInXr = false;
-				i += 2;
-			}
-			else {
-				isInTag = true;
-			}
-		}
-		else if (isInXr) {
-			// do nothing
-		}
-		else if (isInTag) {
-			if (fstOutput[i] == L']') {
-				isInTag = false;
-			}
-		}
-		else if (!isInXp) {
-			wchar_t nextChar = fstOutput[i];
-			while (structurePos < structureLen) {
-				wchar_t patternChar = structure[structurePos];
-				structurePos++;
-				if (patternChar != L'=') {
-					if (patternChar == L'i' || patternChar == L'j') {
-						nextChar = SimpleChar::upper(nextChar);
-					}
-					break;
-				}
-			}
-			baseform[baseformPos++] = nextChar;
-		}
-	}
-	
-	bool addHyphen = false;
-	if (latestXpStartInFst != 0) {
-		if (baseformPos > 0 && baseform[baseformPos - 1] == L'-') {
-			addHyphen = true;
-		}
-		baseformPos = latestXpStartInBaseform;
-		for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
-			baseform[baseformPos++] = fstOutput[i];
-		}
-	}
-	if (addHyphen) {
-		baseform[baseformPos++] = L'-';
-	}
-	
-	if (baseformPos == 0) {
-		delete[] baseform;
-		return 0;
-	}
-	baseform[baseformPos] = L'\0';
-	return baseform;
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {

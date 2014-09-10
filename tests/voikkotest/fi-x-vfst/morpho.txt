@@ -1364,3 +1364,5 @@ word:lehtikultaa
  expected:1
   analysis
    CLASS=nimisana
+word:peruskoulukone
+ expected:1
