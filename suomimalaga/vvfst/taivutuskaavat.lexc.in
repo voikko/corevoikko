@@ -2786,7 +2786,7 @@ e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 
 LEXICON Huutaa_s
-[Tn1]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
+[Tn1][Eb]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny][Ef]t<A><A>:t<A><A>	Liitesana_<A>	;
@@ -4104,6 +4104,7 @@ LEXICON Johdin_mA_jatko
 
 LEXICON Johdin_ntA
 [Ln]n[Xp]t<A>[X]@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKanta_<A>	;
+[Ln]n[Xp]t<A>[X]n[Sg][Nm]<O>id@C.JOHDETTAVA_NIMISANAKSI@:nn<O>id@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Ln]n[Xp]t<A>[X]n[Sp][Nm]<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:nn<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla

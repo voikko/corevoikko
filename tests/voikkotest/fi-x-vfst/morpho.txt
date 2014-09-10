@@ -1368,3 +1368,11 @@ word:peruskoulukone
  expected:1
 word:Pohjois-Texas
  expected:1
+word:murtaakseen
+ expected:1
+  analysis
+   NEGATIVE=both
+word:haennoiden
+ expected:1
+  analysis
+   BASEFORM=haenta
