@@ -2619,8 +2619,8 @@ d:d	<WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_t_d_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_a	;
-d<A>t:d<A>t	<WC>MuistaaMuistella_w_<A>	;
-d<A>t:d<A>t	<WC>MuistaaMuistella_s_tt_t_<A>	;
+d<A>t[Xp]t<A><A>[X]:d<A>t	<WC>MuistaaMuistella_w_<A>	;
+d<A>t[Xp]t<A><A>[X]:d<A>t	<WC>MuistaaMuistella_s_tt_t_<A>	;
 d<A>t:d<A>t	Johdin_Us_ksen_<A>	;
 
 LEXICON Hujahtaa

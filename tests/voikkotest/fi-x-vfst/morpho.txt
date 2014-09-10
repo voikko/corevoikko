@@ -1313,3 +1313,17 @@ word:tallentuu
  expected:1
   analysis
    BASEFORM=tallentua
+word:linnoittautuminen
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:nyhdätän
+ expected:1
+  analysis
+   BASEFORM=nyhdättää
+word:linnoittautumisensa
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento

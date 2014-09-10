@@ -2225,7 +2225,7 @@ subrule tulostus_sijamuoto($tietue):
       return $allomorfi.sijamuoto;
     end;
     if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana,
-                             etunimi, sukunimi, paikannimi, nimi, lukusana> then
+                             etunimi, sukunimi, paikannimi, nimi, lukusana, nimitapa_45> then
       return nimentö;
     end;
   end;
@@ -2243,7 +2243,7 @@ subrule tulostus_luku($tietue):
       return nil;
     end;
     if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana,
-                             etunimi, sukunimi, paikannimi, nimi, lukusana> then
+                             etunimi, sukunimi, paikannimi, nimi, lukusana, nimitapa_45> then
       return yksikkö;
     end;
   end;

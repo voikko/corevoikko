@@ -844,3 +844,13 @@ word:tekisikö
  expected:1
   analysis
    NEGATIVE=false
+word:linnoittautuminen
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:linnoittautumisensa
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
