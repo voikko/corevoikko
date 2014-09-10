@@ -1360,3 +1360,7 @@ word:rikkoneensa
    BASEFORM=rikkonut
 word:johtavuus
  expected:1
+word:lehtikultaa
+ expected:1
+  analysis
+   CLASS=nimisana

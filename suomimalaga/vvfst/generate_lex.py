@@ -186,7 +186,7 @@ def get_diacritics(word, altforms, vfst_word_class):
 			if flagName in [u"ei_ys", u"ei_ysj"]:
 				diacritics.append(u"@D.YS_ALKANUT@")
 	if vfst_word_class in [u"[Ln]", u"[Lnl]"] and (altforms[0].endswith(u"lainen") or altforms[0].endswith(u"läinen")):
-		diacritics.append(u"@P.LAINEN.ON@@C.LAINEN_VAADITTU@")
+		diacritics.append(u"@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@")
 	return diacritics
 
 def get_info_flags(word):
