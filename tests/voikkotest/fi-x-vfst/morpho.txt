@@ -1417,3 +1417,14 @@ word:huutelevat
    BASEFORM=huuteleva
   analysis
    BASEFORM=huudella
+word:aterioi
+ expected:3
+  analysis
+   TENSE=present_simple
+   MOOD=indicative
+  analysis
+   TENSE=past_imperfective
+   MOOD=indicative
+  analysis
+   TENSE=present_simple
+   MOOD=imperative

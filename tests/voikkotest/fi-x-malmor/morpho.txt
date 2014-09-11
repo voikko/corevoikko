@@ -157,3 +157,14 @@ word:luterilaisuus
  expected:1
 word:väännös
  expected:1
+word:aterioi
+ expected:3
+  analysis
+   TENSE=present_simple
+   MOOD=indicative
+  analysis
+   TENSE=past_imperfective
+   MOOD=indicative
+  analysis
+   TENSE=present_simple
+   MOOD=imperative

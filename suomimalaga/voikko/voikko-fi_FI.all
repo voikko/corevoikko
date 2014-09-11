@@ -2725,6 +2725,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (haravoida in $tietue.jatko) then
     choose $i in tositavan_kestämä_y3 ($tietue, "i")
+                 + käskytapa ($tietue, "i") 
                  + taivutuskaava ($tietue,
                                 tositapa_ei_kestämä_y3
                                  ($tietue,  "i", "i", "", "",
