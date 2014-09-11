@@ -224,6 +224,7 @@ Sanasto_c	;
 
 LEXICON Sanasto_ee
 Joukahainen_ee	;
+Poikkeavat_ee	;
 
 LEXICON Sanasto_em
 Joukahainen_em	;
@@ -258,7 +259,6 @@ Poikkeavat_t	;
 
 LEXICON Sanasto_p
 Joukahainen_p	;
-Poikkeavat_p	;
 
 LEXICON Sanasto_a
 Joukahainen_a	;

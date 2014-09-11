@@ -2161,6 +2161,7 @@ LEXICON Poikkeavat_em
 
 LEXICON Poikkeavat_ep
 [Lep]:	AluettaTarkentavatYksinäisetEtuliitteet	;
+[Lep][Xp]Bangladesh[X][Sn][Nm]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
 [Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokyrö[X][Sp][Ny]isoa[Bm]kyröä:isoakyröä	PaikannimiLiOlV_ä	;
@@ -2312,8 +2313,10 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusimaa[X][Sabl][Ny]uudelta[Bm]maalta:uudeltamaalta	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Sall][Ny]uudelle[Bm]maalle:uudellemaalle	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Sab][Ny]uudetta[Bm]maatta:uudettamaatta	PaikannimiLiOlV_a	;
+[Lep][Xp]Zürich[X][Sn][Nm]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
 
 LEXICON Poikkeavat_es
+[Les][Xp]Bach[X][Sn][Nm]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
 [Les][Xp]Brontë[X][Sn][Ny]brontë:brontë	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_a	;
 [Les][Xp]Brontë[X][Sg][Ny]brontën:brontën	SukunimiYksikönGenetiivinJatko_a	;
@@ -2370,11 +2373,8 @@ LEXICON Poikkeavat_es
 [Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_s_a	;
 [Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
-LEXICON Poikkeavat_p
-[Lep][Xp]Bach[X][Sn][Nm]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
-[Lep][Xp]Bangladesh[X][Sn][Nm]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
-[Lep][Xp]Friedrich[X][Sn][Nm]friedrich:friedrich	Liitesana_ä	; ! Estämään tavutus "Friedri-ch[+liitesana]"
-[Lep][Xp]Zürich[X][Sn][Nm]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
+LEXICON Poikkeavat_ee
+[Lee][Xp]Friedrich[X][Sn][Nm]friedrich:friedrich	Liitesana_ä	; ! Estämään tavutus "Friedri-ch[+liitesana]"
 
 LEXICON Poikkeavat_t
 [Lt][Xp]kaikaa[X]kaikaa:kaikaa	Liitesana_a	;

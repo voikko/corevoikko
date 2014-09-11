@@ -1403,3 +1403,17 @@ word:marxismi-leninismin
    BASEFORM=marxismi-leninismi
 word:väännös
  expected:1
+word:pahakseni
+ expected:1
+  analysis
+   CLASS=nimisana
+word:köyhälleen
+ expected:1
+  analysis
+   CLASS=nimisana
+word:huutelevat
+ expected:2
+  analysis
+   BASEFORM=huuteleva
+  analysis
+   BASEFORM=huudella

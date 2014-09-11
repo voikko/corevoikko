@@ -2418,7 +2418,8 @@ Liitesana_<A>	;
 
 LEXICON NOUN LiOlV
 Liitesana_<A>	;
-?NotLaatusana	OlV_<A>	;
+?ErisYleisOnly	OlV_<A>	;
+?NimiLaatusana	@P.VAIN_NIMISANA.ON@:@P.VAIN_NIMISANA.ON@	OlV_<A>	;
 ?Laatusana	LaatusananErisnimijatko	;
 
 LEXICON NOUN OlVLoppu
@@ -2434,7 +2435,8 @@ LEXICON OlVL
 
 LEXICON NOUN LiOlI
 Liitesana_<A>	;
-?NotLaatusana	OlI_<A>	;
+?ErisYleisOnly	OlI_<A>	;
+?NimiLaatusana	@P.VAIN_NIMISANA.ON@:@P.VAIN_NIMISANA.ON@	OlI_<A>	;
 ?Laatusana	LaatusananErisnimijatko	;
 
 LEXICON OlI
@@ -2705,8 +2707,8 @@ Huutaa_s_<A>	;
 LEXICON Huutaa
 d:d	<WC>Huutaa_w_<A>	;
 <WC>Huutaa_s_<A>	;
-del:del	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+del[Xp]l<A>[X]:del	<WC>Katsella_w_<A>	;
+[Xp]dell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Alentaa
 n:n	<WC>Huutaa_w_<A>	;

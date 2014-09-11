@@ -49,6 +49,9 @@ def filterLines(lines, lexiconPrefix):
 		if line.startswith("?Laatusana"):
 			if lexiconPrefix in [u"Laatusana", u"NimiLaatusana"]:
 				yield line[10:].replace(u"<WC>", lexiconPrefix)
+		elif line.startswith("?NimiLaatusana"):
+			if lexiconPrefix == u"NimiLaatusana":
+				yield line[14:].replace(u"<WC>", lexiconPrefix)
 		elif line.startswith("?NimisanaOnly"):
 			if lexiconPrefix == u"Nimisana":
 				yield line[13:].replace(u"<WC>", lexiconPrefix)
@@ -76,6 +79,9 @@ def filterLines(lines, lexiconPrefix):
 		elif line.startswith("?Yleisnimi"):
 			if lexiconPrefix in [u"Nimisana", u"Laatusana", u"NimiLaatusana"]:
 				yield line[10:].replace(u"<WC>", lexiconPrefix)
+		elif line.startswith("?ErisYleisOnly"):
+			if lexiconPrefix in [u"Nimisana", u"Sukunimi", u"Etunimi", u"Paikannimi", u"Nimi"]:
+				yield line[14:].replace(u"<WC>", lexiconPrefix)
 		elif line.startswith("?Asemosana"):
 			if lexiconPrefix == u"Asemosana":
 				yield line[10:].replace(u"<WC>", lexiconPrefix)
