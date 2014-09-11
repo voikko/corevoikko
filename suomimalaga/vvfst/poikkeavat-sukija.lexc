@@ -11,7 +11,8 @@ LEXICON SukijaOlla
 [Te][Ap][P2][Nm][Ef]isitte:isitte Liitesana_a ;
 [Te][Ap][P3][Nm][Ef]isivat:isivat Liitesana_a ;
 [Te][Ap][P3][Nm][Ef]isvat:isvat   Liitesana_a ;
-o:o   Loppu ;        # Ei oo.
+o:o       Loppu ;   # Ei oo.
+llos:llos Loppu ;   # Ollos huoleton.
 
 LEXICON SukijaRangaista_a
 gas:gas Nuolaista_w_a ;
@@ -234,12 +235,20 @@ LEXICON Sukija
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
 [Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasOmistusliitteet_a	;
-[Ls][Xp]miten[X]mitenkäs:mitenkäs Liitesana_ä ;
+[Lt][Xp]olla[X]o:o SukijaOlla ;
+[Lt][Xp]älkää[X]ällös:ällös     Loppu ;
+[Lt][Xp]älkää[X]ällöspä:ällöspä Loppu ;
+[Ll][Xp]sisäviistoinen[X]sisä[Bm]viistoi:sisäviistoi     LaatusanaNainenInen_a ;
+[Ls][Xp]käännyksissä[X]käännyksissä:käännyksissä Loppu ;
+[Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
+[Ls][Xp]miten[X]mitenkäs:mitenkäs      Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
-[Lt][Xp]olla[X]o:o SukijaOlla ;
-[Ll][Xp]sisäviistoinen[X]sisä[Bm]viistoi:sisäviistoi     LaatusanaNainenInen_a ;
+[Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä OlV_ä ;
+[Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä Loppu ;
+[Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;
+[Ls][Xp]väännyksissä[X]väännyksihin:väännyksihin Loppu ;
 
 LEXICON SukijaEtuliite
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
