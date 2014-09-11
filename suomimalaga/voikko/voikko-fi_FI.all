@@ -2476,8 +2476,7 @@ allo_rule generate_allos ($tietue):
                                   käskytapa_ttA    ($tietue, "hte", "hde") +
                                   nimitapa_laatutapa_i ($tietue, "hte", "hde", "hti"))
                  + tekijännimi ($tietue, "hti", kulkija)
-                 + tekijännimi ($tietue, "ksi", kulkija)
-                 + sana_O ($tietue, "h", tO($tietue), dO($tietue));
+                 + tekijännimi ($tietue, "ksi", kulkija);
     result $i.alku, $i - alku;
 
 
@@ -5375,16 +5374,6 @@ subrule seistä ($tietue):
                          nimitapa_3_tA: "",
                          johdin_tAvA: "",
                          johdin_sUt_stU: ""]);
-end;
-
-
-subrule sana_O ($tietue, $lisä, $vahva_aste, $heikko_aste):
-  $tietue :=+ johdoksen_lähtötiedot($tietue);
-  $tietue.alku :=+ $lisä;
-  $tietue.luokka := nimisana;
-  $tietue.perusmuoto := $tietue.alku + $vahva_aste;
-
-  return valo ($tietue, $vahva_aste, $heikko_aste);
 end;
 
 

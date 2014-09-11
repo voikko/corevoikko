@@ -168,3 +168,5 @@ word:aterioi
   analysis
    TENSE=present_simple
    MOOD=imperative
+word:lähdöllä
+ expected:1
