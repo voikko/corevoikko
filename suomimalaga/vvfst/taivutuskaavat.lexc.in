@@ -2856,9 +2856,9 @@ LEXICON Kaivaa_s
 
 LEXICON Soutaa
 d:d	Huutaa_w_<A>	;
-del:del	Katsella_w_<A>	;
+del[Xp]l<A>[X]:del	Katsella_w_<A>	;
 Huutaa_s_<A>	;
-tel:tel	Katsella_s_<A>	;
+[Xp]dell<A>[X]tel:tel	Katsella_s_<A>	;
 d:d	KertomanTekijäpääteHeikko_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
@@ -4180,7 +4180,7 @@ llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnim
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;
 
 LEXICON Johdin_ittAin
-[Ls]itt<A>in:itt<A>in	Liitesana_<A>	;
+[Ls]itt<A>in[Xp][X]:itt<A>in	Liitesana_<A>	;
 
 LEXICON Johdin_lAinen
 [Ll][Dg]l<A>i[Xp]nen[X]@D.EI_LAINEN@@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.LAINEN_VAADITTU@:l<A>i@D.EI_LAINEN@@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@@C.LAINEN_VAADITTU@	NimiLaatusanaNainenInen_<A>	;

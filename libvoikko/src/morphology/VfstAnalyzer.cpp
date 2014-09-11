@@ -463,6 +463,9 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 		}
 		else if (!isInXp) {
 			wchar_t nextChar = fstOutput[i];
+			if (nextChar == L'-') {
+				latestXpStartInFst = 0;
+			}
 			while (structurePos < structureLen) {
 				wchar_t patternChar = structure[structurePos];
 				structurePos++;
@@ -477,18 +480,11 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 		}
 	}
 	
-	bool addHyphen = false;
 	if (latestXpStartInFst != 0) {
-		if (baseformPos > 0 && baseform[baseformPos - 1] == L'-') {
-			addHyphen = true;
-		}
 		baseformPos = latestXpStartInBaseform;
 		for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
 			baseform[baseformPos++] = fstOutput[i];
 		}
-	}
-	if (addHyphen) {
-		baseform[baseformPos++] = L'-';
 	}
 	
 	if (baseformPos == 0) {

@@ -146,3 +146,10 @@ word:seuraillut
    PARTICIPLE=past_active
   analysis
    PARTICIPLE=past_passive
+word:kanavittain
+ expected:1
+  analysis
+   BASEFORM=kanavittain
+   CLASS=seikkasana
+   !NUMBER
+   !SIJAMUOTO

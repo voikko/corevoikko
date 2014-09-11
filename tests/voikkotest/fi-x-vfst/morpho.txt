@@ -1376,3 +1376,18 @@ word:haennoiden
  expected:1
   analysis
    BASEFORM=haenta
+word:liiteli
+ expected:1
+  analysis
+   BASEFORM=liidellä
+word:kunnan-
+ expected:1
+  analysis
+   BASEFORM=kunnan-
+word:kanavittain
+ expected:1
+  analysis
+   BASEFORM=kanavittain
+   CLASS=seikkasana
+   !NUMBER
+   !SIJAMUOTO

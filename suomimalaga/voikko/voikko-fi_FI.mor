@@ -2224,6 +2224,9 @@ subrule tulostus_sijamuoto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka = johdin_ittAin then
+      return nil;
+    end;
     if $allomorfi.sijamuoto /= nil then
       return $allomorfi.sijamuoto;
     end;
@@ -2239,6 +2242,9 @@ subrule tulostus_luku($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka = johdin_ittAin then
+      return nil;
+    end;
     if $allomorfi.luku /= nil then
       return $allomorfi.luku;
     end;
