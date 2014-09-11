@@ -3668,6 +3668,7 @@ Sisä-Suomessa
 Sisä-EU:ssa
 rakastajattarensa
 !täräytyden
+!pakkauksinen
 
 # = poikkeavat asetukset =
 

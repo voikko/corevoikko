@@ -3662,6 +3662,7 @@ tämä-demonstratiivipronomini
 Sisä-Suomessa
 Sisä-EU:ssa
 rakastajattarensa
+!pakkauksinen
 
 # = poikkeavat asetukset =
 

@@ -153,3 +153,5 @@ word:kanavittain
    CLASS=seikkasana
    !NUMBER
    !SIJAMUOTO
+word:luterilaisuus
+ expected:1
