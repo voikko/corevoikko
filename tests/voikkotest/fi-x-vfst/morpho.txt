@@ -1401,3 +1401,5 @@ word:marxismi-leninismin
  expected:1
   analysis
    BASEFORM=marxismi-leninismi
+word:väännös
+ expected:1

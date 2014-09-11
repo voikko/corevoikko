@@ -155,3 +155,5 @@ word:kanavittain
    !SIJAMUOTO
 word:luterilaisuus
  expected:1
+word:väännös
+ expected:1

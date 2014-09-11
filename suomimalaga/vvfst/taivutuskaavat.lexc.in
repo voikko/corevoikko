@@ -3718,11 +3718,6 @@ is:is	Johdin_tU_tA_<A>	;
 is:is	Johdin_sUt_<A>	;
 isi:isi	Johdin_ja_kulkija_<A>	;
 
-LEXICON Rakentaa
-Saksantaa_<A>	;
-Pienennellä_<A>	;
-n:n	Johdin_Us_ksen_<A>	;
-
 LEXICON Taitaa
 Huutaa_s_<A>	;
 d:d	Huutaa_w_<A>	;

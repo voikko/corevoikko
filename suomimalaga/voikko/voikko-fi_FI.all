@@ -3144,14 +3144,6 @@ allo_rule generate_allos ($tietue):
 ######################################
 
 
-  elseif (rakentaa in $tietue.jatko) then
-    choose $i in rakentaa ($tietue, "t", "n");
-    result $i.alku, $i - alku;
-
-
-######################################
-
-
   elseif (taitaa in $tietue.jatko) then
     choose $i in käskytapa ($tietue, dA($tietue))
                  + taivutuskaava ($tietue,
@@ -5551,13 +5543,6 @@ subrule kihauttaa_kihautella ($tietue):
 end;
 
 
-subrule rakentaa ($tietue, $vahva_aste, $heikko_aste):
-  return huutaa ($tietue, $vahva_aste, $heikko_aste)
-         + muistella ($tietue, $vahva_aste, $heikko_aste)
-         + rakennus ($tietue, $heikko_aste);
-end;
-
-
 subrule antautua ($tietue, $vahva_aste, $heikko_aste):
     return punoa ($tietue, $vahva_aste, $heikko_aste);
 end;
@@ -6253,21 +6238,6 @@ subrule pyörtö ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + tO($tietue);
   return valo ($tietue, tO($tietue), rO($tietue));
-end;
-
-
-subrule rakennus ($tietue, $lisä):
-  $tietue :=+ johdoksen_lähtötiedot($tietue);
-  if ($tietue.perusmuoto matches ".*ääntää") then
-    $lisä :=+ "ö";
-  else
-    $lisä :=+ U($tietue);
-  end;
-  $tietue.alku :=+ $lisä;
-  $tietue.luokka := nimisana;
-  $tietue.perusmuoto := $tietue.alku + "s";
-  $tietue.äs := ääntiösointu ($tietue);
-  return vastaus ($tietue);
 end;
 
 
