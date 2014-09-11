@@ -1391,3 +1391,13 @@ word:kanavittain
    CLASS=seikkasana
    !NUMBER
    !SIJAMUOTO
+word:musiikkioppilaitos
+ expected:2
+  analysis
+   CLASS=nimisana
+  analysis
+   CLASS=nimi
+word:marxismi-leninismin
+ expected:1
+  analysis
+   BASEFORM=marxismi-leninismi

@@ -421,6 +421,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 	size_t baseformPos = 0;
 	size_t latestXpStartInFst = 0;
 	size_t latestXpStartInBaseform = 0;
+	size_t hyphensInLatestXp = 0;
 	size_t structurePos = 0;
 	size_t structureLen = wcslen(structure);
 	bool isInXp = false;
@@ -439,6 +440,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				isInXp = true;
 				latestXpStartInFst = i + 1;
 				latestXpStartInBaseform = baseformPos;
+				hyphensInLatestXp = 0;
 			}
 			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 				i += 3;
@@ -461,10 +463,20 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				isInTag = false;
 			}
 		}
-		else if (!isInXp) {
+		else if (isInXp) {
+			if (fstOutput[i] == L'-') {
+				hyphensInLatestXp++;
+			}
+		}
+		else {
 			wchar_t nextChar = fstOutput[i];
 			if (nextChar == L'-') {
-				latestXpStartInFst = 0;
+				if (hyphensInLatestXp > 0) {
+					hyphensInLatestXp--;
+				}
+				else {
+					latestXpStartInFst = 0;
+				}
 			}
 			while (structurePos < structureLen) {
 				wchar_t patternChar = structure[structurePos];
@@ -546,6 +558,7 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 						}
 					}
 					analysisList->push_back(newAnalysis);
+					return;
 				}
 			}
 		}
