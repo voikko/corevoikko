@@ -2713,25 +2713,25 @@ del[Xp]l<A>[X]:del	<WC>Katsella_w_<A>	;
 LEXICON Alentaa
 n:n	<WC>Huutaa_w_<A>	;
 <WC>Huutaa_s_<A>	;
-nel:nel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+nel[Xp]l<A>[X]:nel	<WC>Katsella_w_<A>	;
+[Xp]nell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Sukeltaa
 Puoltaa_<A>	;
-lel:lel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+lel[Xp]l<A>[X]:lel	<WC>Katsella_w_<A>	;
+[Xp]lell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 l:l	Johdin_Us_ksen_<A>	;
 
 LEXICON Musertaa
 Juurtaa_<A>	;
-rel:rel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+rel[Xp]l<A>[X]:rel	<WC>Katsella_w_<A>	;
+[Xp]rell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 r:r	Johdin_Us_ksen_<A>	;
 
 LEXICON Jäykentää
 Saksantaa_<A>	;
-nel:nel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
+nel[Xp]l<A>[X]:nel	<WC>Katsella_w_<A>	;
+[Xp]nell<A>[X]tel:tel	<WC>Katsella_s_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
 
 LEXICON Paleltaa
@@ -4214,7 +4214,6 @@ LEXICON Johdin_tU_nA
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA
 [Ll][Rt]t<U>[Xp][X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
-[Ll][Rt]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON Johdin_tU_lA_jatko
 t<U>[Sn][Ny]:t<U>	Liitesana_<A>	;

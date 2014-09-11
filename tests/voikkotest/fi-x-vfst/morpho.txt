@@ -1430,3 +1430,23 @@ word:aterioi
    MOOD=imperative
 word:lähdöllä
  expected:1
+word:seitsemästoista
+ expected:1
+  analysis
+   BASEFORM=seitsemästoista
+word:kääntelen
+ expected:1
+  analysis
+   BASEFORM=käännellä
+word:soveltelen
+ expected:1
+  analysis
+   BASEFORM=sovellella
+word:nakertelen
+ expected:1
+  analysis
+   BASEFORM=nakerrella
+word:jäykentelen
+ expected:1
+  analysis
+   BASEFORM=jäykennellä
