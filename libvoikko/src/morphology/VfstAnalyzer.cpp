@@ -398,7 +398,7 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 		}
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
-		if (!wcsstr(outputPosition, L"[Bc]") && (!className || wcscmp(className, L"laatusana") != 0)) {
+		if (!wcsstr(outputPosition, L"[Bc]") && (!className || wcsncmp(className, L"nimisana", 8) == 0)) {
 			analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
 		}
 	}

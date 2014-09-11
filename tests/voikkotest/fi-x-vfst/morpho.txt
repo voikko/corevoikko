@@ -1450,3 +1450,7 @@ word:jäykentelen
  expected:1
   analysis
    BASEFORM=jäykennellä
+word:kylittäin
+ expected:1
+  analysis
+   !POSSIBLE_GEOGRAPHICAL_NAME
