@@ -170,3 +170,5 @@ word:aterioi
    MOOD=imperative
 word:lähdöllä
  expected:1
+word:tarjokkuus
+ expected:1

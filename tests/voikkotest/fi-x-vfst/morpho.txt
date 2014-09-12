@@ -1470,3 +1470,5 @@ word:kerrostalo-
  expected:1
   analysis
    !POSSIBLE_GEOGRAPHICAL_NAME
+word:tarjokkuus
+ expected:1

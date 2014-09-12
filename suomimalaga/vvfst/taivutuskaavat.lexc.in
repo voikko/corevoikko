@@ -1852,6 +1852,7 @@ LEXICON NOUN Pahin
 LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Nimisana	k:k	Johdin_UUs_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 
 LEXICON NOUN Airut
