@@ -1084,6 +1084,54 @@ combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $in
   end;
 end;
 
+combi_rule ttU_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+
+  define $edellinen := $vasen.($index - 1);
+
+  ? $oikea.sija in $edellinen.jatko;
+  
+  if $oikea.sija = sisätulento_Vn then
+    ? sisätulento_Vn_oikein(last($edellinen.alku), $sana);
+  elseif $oikea.sija = sisätulento_hVn then
+    ? sisätulento_hVn_oikein(last($edellinen.alku), $sana);
+  else
+    ? vokaalisointu_oikein($edellinen, $oikea);
+  end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if ($oikea.sija = kerronto_sti) then
+    ? $edellinen.luokka in @sti_edeltäjä;
+    result $res, accept;
+    result $res, rules liitesana;
+  else
+    if $oikea.sija = osanto_A and omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    if liitesana in $oikea.jatko then
+      result $res, rules liitesana;
+    end;
+    if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
+        (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
+      if $oikea.sijamuoto = omanto then
+        result $res,
+               rules laatusana, nimisana_teonsanasta, tavuviiva;
+        if $oikea.luku = yksikkö then
+          result $res, rules inen_johdos_nimisanasta;
+        end;
+      end;
+      if $edellinen.luokka in <laatusana, nimi_laatusana> then
+        result $res, rules yhdysmerkki_laatusanan_jälkeen;
+      end;
+    end;
+  end;
+end;
+
 combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = sijapääte;
 
@@ -1792,6 +1840,8 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
     result $res, rules nimisanan_sijapääte;
   elseif $oikea.luokka = johdin_lUt then
     result $res, rules laatusanan_sijapääte;
+  elseif $oikea.laatutapa = johdin_ttU then
+    result $res, rules ttU_sijapääte;
   else
     result $res, rules laatusanan_sijapääte_omistusliitteellä;
   end;

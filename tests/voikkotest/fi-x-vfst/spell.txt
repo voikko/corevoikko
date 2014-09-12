@@ -3670,6 +3670,10 @@ rakastajattarensa
 !täräytyden
 !pakkauksinen
 !mölistynyt
+!juostussaan
+!juostunsa
+jäätyään
+mentyään
 
 # = poikkeavat asetukset =
 

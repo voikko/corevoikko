@@ -1454,3 +1454,7 @@ word:kylittäin
  expected:1
   analysis
    !POSSIBLE_GEOGRAPHICAL_NAME
+word:ohjattuaan
+ expected:1
+  analysis
+   BASEFORM=ohjattu

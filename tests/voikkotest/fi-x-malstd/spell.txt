@@ -3664,6 +3664,8 @@ Sisä-EU:ssa
 rakastajattarensa
 !pakkauksinen
 !mölistynyt
+!juostussaan
+!juostunsa
 
 # = poikkeavat asetukset =
 
