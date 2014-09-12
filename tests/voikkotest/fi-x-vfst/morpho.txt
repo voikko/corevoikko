@@ -1466,3 +1466,7 @@ word:kirjailijanimi
  expected:1
   analysis
    MALAGA_VAPAA_JALKIOSA=true
+word:kerrostalo-
+ expected:1
+  analysis
+   !POSSIBLE_GEOGRAPHICAL_NAME
