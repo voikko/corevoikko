@@ -1458,3 +1458,11 @@ word:ohjattuaan
  expected:1
   analysis
    BASEFORM=ohjattu
+word:juostaman
+ expected:1
+  analysis
+   !NUMBER
+word:kirjailijanimi
+ expected:1
+  analysis
+   MALAGA_VAPAA_JALKIOSA=true

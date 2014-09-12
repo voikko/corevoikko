@@ -865,3 +865,11 @@ word:johtavuus
  expected:1
 word:Pohjois-Texas
  expected:1
+word:juostaman
+ expected:1
+  analysis
+   !NUMBER
+word:kirjailijanimi
+ expected:1
+  analysis
+   MALAGA_VAPAA_JALKIOSA=true

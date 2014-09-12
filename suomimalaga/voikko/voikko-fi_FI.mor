@@ -2620,9 +2620,15 @@ subrule tulostus_v2($tietue):
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);
   end;
-  if $tietue.<1, vapaa_jälkiosa> = yes or
-     (length($tietue) greater 1 and $tietue.<1, luokka> /= tavuviiva and $tietue.<2, vapaa_jälkiosa> = yes) then
-    $res :=+ [vapaa_jälkiosa: yes];
+  define $tlen := length($tietue);
+  if $tietue.<1, luokka> /= tavuviiva then
+    foreach $i in $tlen:
+      define $allomorfi := $tietue.($tlen + 1 - $i);
+      if $allomorfi.vapaa_jälkiosa = yes then
+        $res :=+ [vapaa_jälkiosa: yes];
+        break;
+      end;
+    end;
   end;
   return $res;
 end;

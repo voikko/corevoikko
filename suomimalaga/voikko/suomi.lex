@@ -884,13 +884,13 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 [alku: "mättä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
                 luku: yksikkö, sijamuoto: vajanto, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
-[alku: "ttaman", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
+[alku: "ttaman", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3,
                  äs: a, jatko: <liitesana, loppu>];
-[alku: "ttämän", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
+[alku: "ttämän", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3,
                  äs: ä, jatko: <liitesana, loppu>];
-[alku: "taman",  luokka: nimitapa_3_tA,  tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
+[alku: "taman",  luokka: nimitapa_3_tA,  tapaluokka: nimitapa_3,
                  äs: a, jatko: <liitesana, loppu>];
-[alku: "tämän",  luokka: nimitapa_3_tA,  tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
+[alku: "tämän",  luokka: nimitapa_3_tA,  tapaluokka: nimitapa_3,
                  äs: ä, jatko: <liitesana, loppu>];
 
 
