@@ -1472,3 +1472,7 @@ word:kerrostalo-
    !POSSIBLE_GEOGRAPHICAL_NAME
 word:tarjokkuus
  expected:1
+word:keskelläkin
+ expected:1
+  analysis
+   BASEFORM=keskellä
