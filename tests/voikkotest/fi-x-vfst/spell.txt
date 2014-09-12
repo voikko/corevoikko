@@ -3674,6 +3674,7 @@ rakastajattarensa
 !juostunsa
 jäätyään
 mentyään
+kaunis-
 
 # = poikkeavat asetukset =
 

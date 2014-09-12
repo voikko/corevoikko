@@ -1476,3 +1476,11 @@ word:keskelläkin
  expected:1
   analysis
    BASEFORM=keskellä
+word:rikas-
+ expected:1
+  analysis
+   CLASS=nimisana_laatusana
+word:kuljeskelee
+ expected:1
+  analysis
+   BASEFORM=kuljeskella

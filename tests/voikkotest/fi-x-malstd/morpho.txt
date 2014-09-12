@@ -877,3 +877,7 @@ word:kerrostalo-
  expected:1
   analysis
    !POSSIBLE_GEOGRAPHICAL_NAME
+word:rikas-
+ expected:1
+  analysis
+   CLASS=nimisana_laatusana

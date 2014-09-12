@@ -609,7 +609,8 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;
 
-  define $res := $vasen + <$oikea + [alku: $sana, luokka: laatusana]>;
+  define $lähtöluokka := $oikea.luokka;
+  define $res := $vasen + <$oikea + [alku: $sana, luokka: laatusana, lähtöluokka: $lähtöluokka]>;
   
   if $index greater 1 or $oikea.luokka = laatusana then
     if loppu in $oikea.jatko then
@@ -744,11 +745,13 @@ combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
          etuliite, nimisana_teonsanasta;
 end;
 
-combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
+combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = tavuviiva;
 
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
-  result $res, accept;
+  if $index /= 2 or $vasen.($index - 1).lähtöluokka /= nimi_laatusana then
+    result $res, accept;
+  end;
   result $res, rules
          nimisana, erisnimi, laatusana, lyhennesääntö,
          etuliite, nimisana_teonsanasta, inen_johdos_nimisanasta,

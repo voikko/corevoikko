@@ -3666,6 +3666,7 @@ rakastajattarensa
 !mölistynyt
 !juostussaan
 !juostunsa
+kaunis-
 
 # = poikkeavat asetukset =
 

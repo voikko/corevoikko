@@ -2932,7 +2932,7 @@ e:e	Tositapa4Tt_<A>	;
 e:e	Käskytapa_y2_<A>	;
 e:e	Johdin_ttAx_<A>	;
 e:e	Johdin_ntA_<A>	;
-eskel:eskel	Katsella_<A>	;
+eskel[Xp]l<A>[X]:eskel	Katsella_<A>	;
 
 LEXICON Lähteä
 hd:hd	Tuntea_w_<A>	;
