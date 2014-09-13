@@ -1026,10 +1026,10 @@ define @jatko_e := <omanto_iT,
 [alku: "se",  luokka: johdin_sUt_stU, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "syt"];
 
 
-[alku: "leisuu", luokka: johdin_lUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "leisuus"];
-[alku: "leisyy", luokka: johdin_lUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "leisyys"];
-[alku: "neisuu", luokka: johdin_nUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "neisuus"];
-[alku: "neisyy", luokka: johdin_nUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "neisyys"];
+[alku: "leisuu", luokka: johdin_lUt, jluokka: nimisana, äs: a, luku: yksikkö, jatko: <kalleus>, perusmuoto: "leisuus"];
+[alku: "leisyy", luokka: johdin_lUt, jluokka: nimisana, äs: ä, luku: yksikkö, jatko: <kalleus>, perusmuoto: "leisyys"];
+[alku: "neisuu", luokka: johdin_nUt, jluokka: nimisana, äs: a, luku: yksikkö, jatko: <kalleus>, perusmuoto: "neisuus"];
+[alku: "neisyy", luokka: johdin_nUt, jluokka: nimisana, äs: ä, luku: yksikkö, jatko: <kalleus>, perusmuoto: "neisyys"];
 
 
 define @jatko_vahva_aste :=

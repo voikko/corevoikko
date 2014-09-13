@@ -4044,7 +4044,7 @@ LEXICON Johdin_nUt
 LEXICON Johdin_lUt
 [Ll][Ru]l[Xp]<U>t[X]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
 [Ll][Ru]l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@[Sg][Nm]<U>id:l@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
-[Ll][Ru]lee:lee	Omistusliite_<A>	;
+[Ll][Ru]l[Xp]<U>t[X][Sn][Ny]ee:lee	Omistusliite_<A>	;
 ?Sukija [Ll][Ru]lehe:lehe	Omistusliite_<A>	;
 
 LEXICON Johdin_rUt

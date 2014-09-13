@@ -1494,3 +1494,13 @@ word:kohtauksittain
  expected:1
 word:kulta-aarre
  expected:1
+word:rajoittuneisuus
+ expected:1
+  analysis
+   NUMBER=singular
+word:opiskelleensa
+ expected:1
+  analysis
+   BASEFORM=opiskellut
+   NUMBER=singular
+   SIJAMUOTO=nimento
