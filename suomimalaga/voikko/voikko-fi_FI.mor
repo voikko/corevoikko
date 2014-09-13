@@ -751,10 +751,10 @@ combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
   if $index /= 2 or $vasen.($index - 1).lähtöluokka /= nimi_laatusana then
     result $res, accept;
-    result $res, rules nimisana;
+    result $res, rules nimisana, erisnimi;
   end;
   result $res, rules
-         erisnimi, laatusana, lyhennesääntö,
+         laatusana, lyhennesääntö,
          etuliite, nimisana_teonsanasta, inen_johdos_nimisanasta,
          paikannimen_lainen_johdos;
 end;
