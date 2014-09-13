@@ -1504,3 +1504,7 @@ word:opiskelleensa
    BASEFORM=opiskellut
    NUMBER=singular
    SIJAMUOTO=nimento
+word:käyttökelvoton
+ expected:1
+  analysis
+   CLASS=laatusana

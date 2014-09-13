@@ -2532,7 +2532,6 @@ Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
 Tositapa4Tt_<A>	;
 Käskytapa_y2_<A>	;
-Johdin_ttAx_<A>	;
 
 LEXICON Punoa_s
 Johdin_nimitapa1A_<A>	;
@@ -4172,7 +4171,7 @@ s:s	Johdin_UUs_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	NimiLaatusanaLiOlN_<A>	;
 
 LEXICON Johdin_tOn
-[Ll][Xp]t<O>n[X]t@C.EI_YKS@@C.YS_EI_JATKOA@:t@C.EI_YKS@@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
+[Ll][Xp]t<O>n[X]t@C.EI_YKS@@C.YS_EI_JATKOA@@C.VAIN_NIMISANA@:t@C.EI_YKS@@C.YS_EI_JATKOA@@C.VAIN_NIMISANA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
 [Ll]lli[Xp]nen[X]@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
 llis@C.EI_YKS@:llis@C.EI_YKS@	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnimet	;
@@ -4190,7 +4189,7 @@ LEXICON Johdin_ttU
 [Ll][Rt]t[Xp]t<U>[X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
 [Ll][Rt][Sg][Ny]t<U>n@C.JOHDETTAVA_NIMISANAKSI@:t<U>n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaYsJatko	;
 [Ll][Rt][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
-[Ll][Rt]tt<U>[Xp][X]<A>:tt<U><A>	OlV_<A>	;
+[Ll][Rt]tt<U>[Xp][X][Sp][Ny]<A>:tt<U><A>	OlV_<A>	;
 ?Sukija [Ll][Rt][Sp][Nm]t<U>it<A>:t<U>it<A> LaatusanaLiOlV_<A> ;
 
 ! myydä -> myyty
