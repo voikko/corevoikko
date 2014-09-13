@@ -4436,7 +4436,7 @@ LiitesanaPaHan_<A>	;
 
 LEXICON LiitesanaKinPaHan
 LiitesanaPaHan_<A>	;
-[Fkin]kin:kin	Loppu       ;
+[Fkin][Ef]kin:kin	Loppu       ;
 
 LEXICON LiitesanaPaHan
 p<A>[Ef]:p<A>	Loppu ;

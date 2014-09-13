@@ -190,3 +190,7 @@ word:opiskelleensa
    BASEFORM=opiskellut
    NUMBER=singular
    SIJAMUOTO=nimento
+word:vesitilavuus
+ expected:1
+  analysis
+   !POSSIBLE_GEOGRAPHICAL_NAME

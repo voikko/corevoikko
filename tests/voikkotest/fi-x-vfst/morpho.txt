@@ -1512,3 +1512,11 @@ word:mielenterveydellinen
  expected:1
   analysis
    CLASS=laatusana
+word:juoksekin
+ expected:1
+  analysis
+   NEGATIVE=false
+word:vesitilavuus
+ expected:1
+  analysis
+   !POSSIBLE_GEOGRAPHICAL_NAME
