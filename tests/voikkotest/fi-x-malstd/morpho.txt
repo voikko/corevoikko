@@ -881,3 +881,5 @@ word:rikas-
  expected:1
   analysis
    CLASS=nimisana_laatusana
+word:komentajuudesta
+ expected:1

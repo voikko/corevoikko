@@ -751,9 +751,10 @@ combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
   if $index /= 2 or $vasen.($index - 1).lähtöluokka /= nimi_laatusana then
     result $res, accept;
+    result $res, rules nimisana;
   end;
   result $res, rules
-         nimisana, erisnimi, laatusana, lyhennesääntö,
+         erisnimi, laatusana, lyhennesääntö,
          etuliite, nimisana_teonsanasta, inen_johdos_nimisanasta,
          paikannimen_lainen_johdos;
 end;
@@ -1878,6 +1879,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
+  ? $oikea.luokka /= johdin_UUs or $edellinen.luokka /= johdin_jA_kantaja;
 
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
@@ -2622,6 +2624,8 @@ subrule tulostus_v2($tietue):
            + tulostus_teonsanan_attribuutit($tietue);
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);
+  elseif $res.luokka = kieltosana then
+    $res :=+ [tekijä: tulostus_tekijä($tietue)];
   end;
   define $tlen := length($tietue);
   if $tietue.<1, luokka> /= tavuviiva then

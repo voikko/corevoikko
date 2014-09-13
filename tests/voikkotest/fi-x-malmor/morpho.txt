@@ -172,3 +172,11 @@ word:lähdöllä
  expected:1
 word:tarjokkuus
  expected:1
+word:muttet
+ expected:1
+  analysis
+   PERSON=2
+word:kohtauksittain
+ expected:1
+word:kulta-aarre
+ expected:1

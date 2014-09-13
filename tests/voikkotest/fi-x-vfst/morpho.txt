@@ -1484,3 +1484,13 @@ word:kuljeskelee
  expected:1
   analysis
    BASEFORM=kuljeskella
+word:komentajuudesta
+ expected:1
+word:muttet
+ expected:1
+  analysis
+   PERSON=2
+word:kohtauksittain
+ expected:1
+word:kulta-aarre
+ expected:1

@@ -1234,9 +1234,6 @@ define @jatko_vastaukse := @jatko_de + @jatko_te;
 [alku: "ykse", luokka: johdin_Us_ksen, äs: ä, jatko: @jatko_vastaukse, perusmuoto: "ys"];
 [alku: "uks",  luokka: johdin_Us_ksen, äs: a, jatko: @jatko_ks,  perusmuoto: "us"];
 [alku: "yks",  luokka: johdin_Us_ksen, äs: ä, jatko: @jatko_ks,  perusmuoto: "ys"];
-[alku: "uks",  luokka: johdin_Us_ksen, äs: a, jatko: <johdin_ittAin>,  perusmuoto: "uks"];
-[alku: "yks",  luokka: johdin_Us_ksen, äs: ä, jatko: <johdin_ittAin>,  perusmuoto: "yks"];
-
 
 # Juhla => juhlallinen
 [alku: "llinen", luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen", jatko: <liitesana, loppu>];
