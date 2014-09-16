@@ -397,6 +397,7 @@ word_list = [
     (u"pyramidi",        (u"pyramid",     u"pyramiid")),
     (u"päällimmäinen",   (u"päällimmäi",  u"päällimäi", u"päälimäi", u"päälimmäi")),
     (u"päärynä",         ((u"pääryn", u"pääron", u"NimisanaPeruna_ä", u"NimisanaPeruna_aä"), )),
+    (u"rangaistus",      (u"rangaistu",   u"rankaistu")),
     (u"reettori",        (u"reettor",     u"reetor")),
     (u"reunimmainen",    (u"reunimmai",   u"reunimai")),
     (u"romanttinen",     (u"romantti",    u"romanti", u"romantilli")),
