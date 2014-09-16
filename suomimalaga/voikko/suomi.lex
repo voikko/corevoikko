@@ -1050,8 +1050,8 @@ define @jatko_heikko_aste :=
 define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 
 
-[alku: "ttu", luokka: johdin_ttU, äs: a, jatko: @jatko_vahva_aste,  perusmuoto: "ttu"];
-[alku: "tty", luokka: johdin_ttU, äs: ä, jatko: @jatko_vahva_aste,  perusmuoto: "tty"];
+[alku: "ttu", luokka: johdin_ttU, äs: a, jatko: @jatko_vahva_aste - <omistusliite>,  perusmuoto: "ttu"];
+[alku: "tty", luokka: johdin_ttU, äs: ä, jatko: @jatko_vahva_aste - <omistusliite>,  perusmuoto: "tty"];
 [alku: "tu",  luokka: johdin_ttU, äs: a, jatko: @jatko_heikko_aste - <omanto_it, osanto_itA>, perusmuoto: "ttu"];
 [alku: "ty",  luokka: johdin_ttU, äs: ä, jatko: @jatko_heikko_aste - <omanto_it, osanto_itA>, perusmuoto: "tty"];
 
