@@ -693,6 +693,24 @@ def generate_xiljoona (line):
 
 ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 
+
+sukija_additions = {
+    u"LEXICON Sanasto\n":       u"Sukija ;\n",
+    u"LEXICON Joukahainen_p\n": u"SukijaEtuliite ;\n",
+    u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
+    u"LEXICON Omistusliite_a\n":  u"[O2y]s:s      Liitesana_a     ;\n",
+    u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s      Liitesana_ä     ;\n",
+    u"LEXICON Omistusliite_aä\n": u"[O2y]s:s      Liitesana_aä    ;\n"
+}
+
+
+def write_sukija_additions (line, sukija_additions):
+    try:
+        outfile.write (sukija_additions[line])
+    except KeyError:
+        pass
+
+
 # Copy Voikko vocabulary and insert forms that Sukija needs.
 #
 while True:
@@ -705,12 +723,7 @@ while True:
         line = line.replace (u"@D.YS_EI_JATKOA@", u"")
         line = line.replace (u"@C.YS_EI_JATKOA@", u"")
     outfile.write (line)
-    if line == u"LEXICON Sanasto\n":
-        outfile.write (u"Sukija ;\n")
-    if line == u"LEXICON Joukahainen_p\n":
-        outfile.write (u"SukijaEtuliite ;\n")
-    if line == u"LEXICON LukusananErikoisjälkiliite\n":
-        outfile.write (u"SukijaLukusananErikoisjälkiliite ;\n")
+    write_sukija_additions (line, sukija_additions)
 
     generate_from_pattern_1 (line, spelling_pattern_list)
 
