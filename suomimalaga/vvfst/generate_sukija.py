@@ -437,6 +437,7 @@ word_list = [
     (u"ulommainen",      (u"ulommai",      u"uloimmai")),
     (u"upseeri",         (u"upseer",       u"upser", u"upsier")),
     (u"upseeristo",      (u"upseeristo",   u"upsieristo")),
+    (u"viheriöidä",      (u"viheriö",      u"viherjö")),
     (u"vihkiäinen",      (u"vihkiäi",      u"vihkijäi")),
     (u"yhdeksäinen",        (u"yhdeksäi",         u"yheksäi")),
     (u"yhdeksän",           (u"yhdeks",           u"yheks")),
