@@ -1520,3 +1520,7 @@ word:vesitilavuus
  expected:1
   analysis
    !POSSIBLE_GEOGRAPHICAL_NAME
+word:heidänlaisensa
+ expected:1
+  analysis
+   BASEFORM=heidänlainen
