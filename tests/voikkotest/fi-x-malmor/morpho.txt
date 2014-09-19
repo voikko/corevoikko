@@ -194,3 +194,15 @@ word:vesitilavuus
  expected:1
   analysis
    !POSSIBLE_GEOGRAPHICAL_NAME
+word:puhuman
+ expected:2
+  analysis
+   BASEFORM=puhuma
+   CLASS=nimisana
+   PARTICIPLE=agent
+   SIJAMUOTO=omanto
+  analysis
+   BASEFORM=puhua
+   CLASS=teonsana
+   MOOD=MA-infinitive
+   SIJAMUOTO=keinonto
