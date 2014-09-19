@@ -3953,7 +3953,7 @@ s[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:s@D.YS_EI_JATKOA
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
-[Tn5]m<A>isill<A>n:m<A>isill<A><A>n	Liitesana_<A>	;
+[Tn5]m<A>isill<A><A>n:m<A>isill<A><A>n	Liitesana_<A>	;
 
 LEXICON Johdin_Us_ksen
 @D.EI_NIMISANAJOHDOSTA@[Ln][Xp]<U>s[X]<U>@C.JOHDETTAVA_NIMISANAKSI@@C.VAIN_NIMISANA@:@D.EI_NIMISANAJOHDOSTA@<U>@C.JOHDETTAVA_NIMISANAKSI@@C.VAIN_NIMISANA@	NimisanaVastaus_<A>	;
