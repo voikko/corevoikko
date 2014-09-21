@@ -206,3 +206,15 @@ word:puhuman
    CLASS=teonsana
    MOOD=MA-infinitive
    SIJAMUOTO=keinonto
+word:taitaapi
+ expected:1
+  analysis
+   BASEFORM=taitaa
+word:parhaimmat
+ expected:1
+  analysis
+   BASEFORM=hyvä
+word:hänetkin
+ expected:1
+  analysis
+   NUMBER=singular

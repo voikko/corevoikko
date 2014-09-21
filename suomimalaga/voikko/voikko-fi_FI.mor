@@ -2543,7 +2543,7 @@ subrule tulostus_debug_perusmuoto($tietue, $luokka):
 
   # Poistetaan sanan lopusta osat, jotka eivät vaikuta perusmuotoon.
   #
-  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana_s,
+  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana_s, liitesana_pi,
                                       omistusliite, kaksoispiste,
                                       voittoaste, yliaste,
                                       nimitapa_1_pitkä, nimitapa_45>

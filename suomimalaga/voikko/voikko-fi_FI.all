@@ -73,7 +73,7 @@ define @luku_sijasta_muunnostaulu :=
  omanto_iT:   monikko,
  omanto_idän: monikko,
  kohdanto_idät: monikko,
- kohdanto_t: monikko,
+ kohdanto_t: yksikkö,
  osanto_A:    yksikkö,
  osanto_AA:   yksikkö,
  osanto_iA:   monikko,

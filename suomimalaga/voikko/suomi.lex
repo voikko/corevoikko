@@ -117,7 +117,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: ä, jatko: @sijan_jatko];
 
 [alku: "t",     luokka: sijapääte, sija: kohdanto_t, sijamuoto: kohdanto,
-                luku: monikko, äs: aä, jatko: @sijan_jatko];
+                luku: yksikkö, äs: aä, jatko: @sijan_jatko];
 
 
 [alku: "a",     luokka: sijapääte, sija: osanto_A, sijamuoto: osanto,

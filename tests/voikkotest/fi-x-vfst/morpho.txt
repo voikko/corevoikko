@@ -1590,3 +1590,28 @@ word:VI:ssa
   analysis
    BASEFORM=VI
    STRUCTURE==jj:ppp
+word:jaata
+ expected:1
+  analysis
+   BASEFORM=jaa
+word:pantua
+ expected:1
+  analysis
+   BASEFORM=pantu
+word:taitaapi
+ expected:1
+  analysis
+   BASEFORM=taitaa
+word:parhaimmat
+ expected:1
+  analysis
+   BASEFORM=hyvä
+word:syöksee
+ expected:1
+  analysis
+   NEGATIVE=false
+   TENSE=present_simple
+word:hänetkin
+ expected:1
+  analysis
+   NUMBER=singular
