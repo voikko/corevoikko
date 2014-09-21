@@ -1581,3 +1581,12 @@ word:saatellaan
  expected:1
   analysis
    BASEFORM=saatella
+word:ammutti
+ expected:1
+  analysis
+   BASEFORM=ammuttaa
+word:VI:ssa
+ expected:1
+  analysis
+   BASEFORM=VI
+   STRUCTURE==jj:ppp
