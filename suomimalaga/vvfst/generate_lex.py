@@ -356,10 +356,11 @@ def handle_word(word):
 			jatko = get_abbreviation_jatko(word, altform)
 		elif vfst_word_class == u"[Ls]":
 			jatko = get_adverb_jatko(word, altform)
-			for element in word.getElementsByTagName(u"baseform"):
-				wordform = generate_lex_common.tValue(element)
 		else:
 			jatko = jatko.title()
+		if vfst_word_class in [u"[Ls]", u"[Lc]"]:
+			for element in word.getElementsByTagName(u"baseform"):
+				wordform = generate_lex_common.tValue(element)
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype

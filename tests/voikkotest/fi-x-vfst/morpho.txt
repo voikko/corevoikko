@@ -716,6 +716,7 @@ word:lienen
   expected:1
   analysis
     CLASS=teonsana
+    BASEFORM=olla
     MOOD=potential
     NUMBER=singular
     PERSON=1
@@ -1536,3 +1537,15 @@ word:puhuman
    CLASS=teonsana
    MOOD=MA-infinitive
    SIJAMUOTO=keinonto
+word:kalinassa
+ expected:1
+  analysis
+   BASEFORM=kalina
+word:piirteli
+ expected:1
+  analysis
+   BASEFORM=piirrellä
+word:koskapa
+ expected:1
+  analysis
+   BASEFORM=koska

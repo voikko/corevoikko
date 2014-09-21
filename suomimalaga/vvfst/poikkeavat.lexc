@@ -2382,7 +2382,7 @@ LEXICON Poikkeavat_t
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;
 [Lt][Xp]kuulla[X]kuulte[Tn2]:kuulte	Omistusliite_a	;
 [Lt][Xp]kutiaa[X]kutia:kutia Kutiaa ;
-[Lt][Xp]lienee[X]lie:lie Lienee ;
+[Lt][Xp]olla[X]lie:lie Lienee ;
 [Lt][Xp]nähdä[X]nähte[Tn2]:nähte	Omistusliite_ä	;
 [Lt][Xp]olla[X]o:o       Olla ;
 [Lt][Xp]potea[X]po:po       Potea ;
