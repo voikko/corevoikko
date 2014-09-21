@@ -1549,3 +1549,35 @@ word:koskapa
  expected:1
   analysis
    BASEFORM=koska
+word:kannatan
+ expected:1
+  analysis
+   BASEFORM=kannattaa
+word:vaihtelisi
+ expected:1
+  analysis
+   BASEFORM=vaihdella
+word:huhuiltiin
+ expected:1
+  analysis
+   BASEFORM=huhuilla
+word:purrussa
+ expected:1
+  analysis
+   BASEFORM=purtu
+word:lentelivät
+ expected:1
+  analysis
+   BASEFORM=lennellä
+word:kolahti
+ expected:1
+  analysis
+   BASEFORM=kolahtaa
+word:kanneltiin
+ expected:1
+  analysis
+   BASEFORM=kannella
+word:saatellaan
+ expected:1
+  analysis
+   BASEFORM=saatella
