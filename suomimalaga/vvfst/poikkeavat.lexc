@@ -2372,10 +2372,10 @@ LEXICON Poikkeavat_es
 [Les][Xp]Poe[X][Sill][Ny]poehu:poehu	SukunimiLiOlN_a	;
 [Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_w_a	;
 [Les][Xp]Sillitoe[X]sillitoe:sillitoe	SukunimiNalle_s_a	;
-[Les][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	SukunimiLiOlN_a	;
 
 LEXICON Poikkeavat_ee
 [Lee][Xp]Friedrich[X][Sn][Ny]friedrich:friedrich	Liitesana_ä	; ! Estämään tavutus "Friedri-ch[+liitesana]"
+[Lee][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	EtunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t
 [Lt][Xp]kaikaa[X]kaikaa:kaikaa	Liitesana_a	;

@@ -1602,6 +1602,11 @@ word:taitaapi
  expected:1
   analysis
    BASEFORM=taitaa
+   MOOD=indicative
+   NEGATIVE=false
+   NUMBER=singular
+   PERSON=3
+   TENSE=present_simple
 word:parhaimmat
  expected:1
   analysis
@@ -1615,3 +1620,7 @@ word:hänetkin
  expected:1
   analysis
    NUMBER=singular
+word:haltijatar
+ expected:1
+  analysis
+   BASEFORM=haltijatar

@@ -918,7 +918,7 @@ LEXICON NOUN Asema_w
 
 LEXICON NOUN Kulkija
 j:j	<WC>Apila_<A>	;
-j<A>t:j<A>t	NimisanaTytär_<A>	;
+j<A>t[Xp]<A>r[X]:j<A>t	NimisanaTytär_<A>	;
 ?NimisanaOnly	j:j	Johdin_UUs_<A>	;
 
 LEXICON NOUN Apila
@@ -2788,10 +2788,10 @@ e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 
 LEXICON Huutaa_s
-[Tn1][Eb]t<A><A>:t<A><A>	Nimitapa1JatkoPi_<A>	;
+[Tn1][Eb]t<A><A>:t<A><A>	Nimitapa1Jatko_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Ny][Ef]t<A><A>:t<A><A>	Liitesana_<A>	;
+[Tt][Ap][P3][Ny][Ef]t<A><A>:t<A><A>	KertomanY3JatkoPi_<A>	;
 [Tt][Ap][P3][Nm][Ef]t<A>v<A>t:t<A>v<A>t	Liitesana_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
@@ -3156,7 +3156,7 @@ Johdin_lUt_<A>	;
 
 LEXICON Tulla_s
 [Tt][Ap][P3][Ny][Ef]ee:ee	KestämänTekijäpääteY3Liitesana_<A>	;
-[Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
@@ -3913,9 +3913,8 @@ LEXICON Nimitapa1Jatko
 Liitesana_<A>	;
 kse:kse	OlV_<A>	;
 
-LEXICON Nimitapa1JatkoPi
+LEXICON KertomanY3JatkoPi
 LiitesanaPi_<A>	;
-kse:kse	OlV_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	NimisanaLiOlV_<A>	;
