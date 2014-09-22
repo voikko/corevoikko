@@ -279,6 +279,9 @@ static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar
 
 static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen, size_t i, size_t j,
 			        const char * attributeName, map<wstring, wstring> & theMap) {
+	if (analysis->getValue(attributeName)) {
+		return; // already set
+	}
 	size_t sijaLen = i - j - 2;
 	wchar_t * muoto = getAttributeFromMap(theMap, fstOutput + j + 2, sijaLen);
 	if (muoto) {

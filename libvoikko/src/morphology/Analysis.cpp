@@ -50,7 +50,10 @@ void Analysis::addAttribute(const char * key, wchar_t * value) {
 }
 
 void Analysis::removeAttribute(const char * key) {
-	if (attributes.erase(std::string(key)) > 0) {
+	std::map<std::string, wchar_t *>::iterator valueI = attributes.find(std::string(key));
+	if (valueI != attributes.end()) {
+		delete[] valueI->second;
+		attributes.erase(valueI);
 		recreateKeys();
 	}
 }
