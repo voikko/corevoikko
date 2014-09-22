@@ -260,7 +260,7 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	if (context.options->accept_titles_in_gc && StringUtils::isChapterNumber(word->str)) {
 		return DONT_CARE;
 	}
-	if (StringUtils::isInteger(word->str) && tokenBeforeWord->type != TOKEN_WHITESPACE) {
+	if (StringUtils::isInteger(word->str) && tokenBeforeWord && tokenBeforeWord->type != TOKEN_WHITESPACE) {
 		return DONT_CARE;
 	}
 	if (lastPunctuationEndsSentence(separators)) {

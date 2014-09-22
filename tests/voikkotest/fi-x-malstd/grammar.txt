@@ -219,6 +219,8 @@ Kissa oli näet kiivennyt aidalle.
 Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
 Kotonani on n. 15 kissaa.
 Millaisia bändejä festareilla mahtaakaan esiintyä?
+12 kuukautta odotin kesää
+ [code=9, level=0, descr="", stpos=20, len=5, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
