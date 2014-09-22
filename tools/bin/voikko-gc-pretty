@@ -40,10 +40,10 @@ if '--help' in sys.argv:
 emptyLineSeparates = '--empty-line' in sys.argv
 
 def handleParagraph(paragraph):
-	for error in voikko.grammarErrors(paragraph):
+	for error in voikko.grammarErrors(paragraph, u"fi"):
 		print paragraph.encode(ENCODING)
 		errorRange = paragraph[error.startPos : error.startPos + error.errorLen]
-		print (u"E: " + voikko.grammarErrorExplanation(error.errorCode, u"fi") + u" (start=" + str(error.startPos) + u")").encode(ENCODING)
+		print (u"E: " + error.shortDescription + u" (start=" + str(error.startPos) + u")").encode(ENCODING)
 		print (u'E: "' + errorRange + u'"').encode(ENCODING)
 		for suggestion in error.suggestions:
 			print (u'S:  "' + suggestion + u'"').encode(ENCODING)
