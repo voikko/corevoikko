@@ -57,7 +57,8 @@ SANALUOKAT = {
 "huudahdussana": u"partikkeli (huudahdussana)",
 "sidesana": u"partikkeli (konjunktio eli sidesana)",
 "kieltosana": u"partikkeli (kieltosana)",
-"lyhenne": u"lyhenne"
+"lyhenne": u"lyhenne",
+"etuliite": u"etuliite"
 }
 
 SIJAMUODOT = {

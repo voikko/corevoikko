@@ -218,3 +218,23 @@ word:hänetkin
  expected:1
   analysis
    NUMBER=singular
+word:osaamis-
+ expected:1
+  analysis
+   CLASS=etuliite
+   !NUMBER
+   !SIJAMUOTO
+word:aita-
+ expected:1
+  analysis
+   CLASS=etuliite
+   !NUMBER
+   !SIJAMUOTO
+word:-vuotias
+ expected:1
+  analysis
+   CLASS=laatusana
+word:live-
+ expected:1
+  analysis
+   CLASS=etuliite

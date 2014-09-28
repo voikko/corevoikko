@@ -826,7 +826,7 @@ word:Gallen-Kallela-Sirén
     STRUCTURE==ippppp-=ipppppp-=ipppp
 word:-sävellys-
   analysis
-    CLASS=nimisana
+    CLASS=etuliite
     STRUCTURE=-=pppppppp-
 word:ilman
   analysis
@@ -1480,7 +1480,7 @@ word:keskelläkin
 word:rikas-
  expected:1
   analysis
-   CLASS=nimisana_laatusana
+   CLASS=etuliite
 word:kuljeskelee
  expected:1
   analysis
@@ -1624,3 +1624,35 @@ word:haltijatar
  expected:1
   analysis
    BASEFORM=haltijatar
+word:osaamis-
+ expected:1
+  analysis
+   CLASS=etuliite
+   !NUMBER
+   !SIJAMUOTO
+word:aita-
+ expected:1
+  analysis
+   CLASS=etuliite
+   !NUMBER
+   !SIJAMUOTO
+word:Jack-
+ expected:1
+  analysis
+   CLASS=etuliite
+word:avo-
+ expected:1
+  analysis
+   CLASS=etuliite
+word:-vuotias
+ expected:1
+  analysis
+   CLASS=laatusana
+word:XX-
+ expected:1
+  analysis
+   CLASS=etuliite
+word:live-
+ expected:1
+  analysis
+   CLASS=etuliite

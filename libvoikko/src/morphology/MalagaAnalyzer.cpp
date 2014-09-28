@@ -212,6 +212,7 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "kieltosana", L"kieltosana");
 	insertToSymbolMap(symbolMap, "lyhenne", L"lyhenne");
 	insertToSymbolMap(symbolMap, "lukusana", L"lukusana");
+	insertToSymbolMap(symbolMap, "etuliite", L"etuliite");
 	
 	insertToSymbolMap(symbolMap, "yksikk\xc3\xb6", L"singular");
 	insertToSymbolMap(symbolMap, "monikko", L"plural");

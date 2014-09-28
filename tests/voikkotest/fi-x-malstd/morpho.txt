@@ -775,7 +775,7 @@ word:Gallen-Kallela-Sirén
     STRUCTURE==ippppp-=ipppppp-=ipppp
 word:-sävellys-
   analysis
-    CLASS=nimisana
+    CLASS=etuliite
     STRUCTURE=-=pppppppp-
 word:ilman
   analysis
@@ -880,6 +880,6 @@ word:kerrostalo-
 word:rikas-
  expected:1
   analysis
-   CLASS=nimisana_laatusana
+   CLASS=etuliite
 word:komentajuudesta
  expected:1

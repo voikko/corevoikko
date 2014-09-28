@@ -4593,7 +4593,7 @@ LyhenteenTaivutuspääte_<A>	;
 -[Bc]:-	Sanasto_n	;
 -[Bc]:-	Sanasto_p	;
 -[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
--:-	Loppu	;
+-[Bc]:-	Loppu	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;

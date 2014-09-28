@@ -191,6 +191,7 @@ are provided only as information for external applications.
    - kieltosana
    - lyhenne
    - lukusana
+   - etuliite
 
  SIJAMUOTO
  =========

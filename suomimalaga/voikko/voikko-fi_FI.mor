@@ -2253,8 +2253,11 @@ subrule tulostus_luokka($tietue):
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,
                              paikannimi, nimi, kieltosana,
-                             lukusana> then
+                             lukusana, etuliite> then
       return $allomorfi.luokka;
+    end;
+    if $allomorfi.luokka = tavuviiva then
+      return etuliite;
     end;
     if $allomorfi.luokka = lyhenne then
       if $allomorfi.alaluokka = roomalainen then
@@ -2279,7 +2282,7 @@ subrule tulostus_sijamuoto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.luokka = johdin_ittAin then
+    if $allomorfi.luokka in <tavuviiva, johdin_ittAin> then
       return nil;
     end;
     if $allomorfi.sijamuoto /= nil then
@@ -2297,7 +2300,7 @@ subrule tulostus_luku($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.luokka = johdin_ittAin then
+    if $allomorfi.luokka in <tavuviiva, johdin_ittAin> then
       return nil;
     end;
     if $allomorfi.luku /= nil then

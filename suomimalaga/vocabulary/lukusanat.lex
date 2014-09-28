@@ -214,14 +214,14 @@
 # sanaluokkaa ei määritellä, minkä johdosta jälkiliitteiden
 # automaattinen johtaminen ja käyttö yhdyssanan sisäosana on jonkin
 # verran tavallista rajoitetumpaa. (Verbit eivät tunnu toimivan.)
- [perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
- [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
- [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
- [perusmuoto: "luku", alku: "lu", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <luku>, äs: a]; # "kahdeksankymmentäluku"
- [perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
- [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
- [perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
- [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
+ [perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, jluokka: laatusana, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, jluokka: laatusana, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, jluokka: nimisana, lukutyyppi: perusluku, jatko: <autio>, äs: a];
+ [perusmuoto: "luku", alku: "lu", luokka: lukusanan_jälkiliite, jluokka: nimisana, lukutyyppi: perusluku, jatko: <luku>, äs: a]; # "kahdeksankymmentäluku"
+ [perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, jluokka: laatusana, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
+ [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, jluokka: nimisana, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
+ [perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, jluokka: laatusana, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
+ [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, jluokka: laatusana, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
 
 
 # Roomalaiset numerot 2-4, 6-9, 11-40. I, V ja X jäsennetään kirjaimina.

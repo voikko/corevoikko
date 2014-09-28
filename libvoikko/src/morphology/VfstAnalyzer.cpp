@@ -65,6 +65,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	classMap.insert(std::make_pair(L"c", L"sidesana"));
 	classMap.insert(std::make_pair(L"d", L"suhdesana"));
 	classMap.insert(std::make_pair(L"k", L"kieltosana"));
+	classMap.insert(std::make_pair(L"p", L"etuliite"));
 	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
@@ -592,15 +593,21 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						}
 					}
 					else if (fstOutput[j + 1] == L'N') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);
+						const wchar_t * wclass = analysis->getValue("CLASS");
+						if (!wclass || wcscmp(wclass, L"etuliite") != 0) {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'P') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PERSON", personMap);
 					}
 					else if (fstOutput[j + 1] == L'S') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
-						if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
-							analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+						const wchar_t * wclass = analysis->getValue("CLASS");
+						if (!wclass || wcscmp(wclass, L"etuliite") != 0) {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
+							if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
+								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+							}
 						}
 					}
 					else if (fstOutput[j + 1] == L'T') {
@@ -633,6 +640,12 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'I') {
 						addInfoFlag(analysis, fstOutput + (j + 2), fstOutput);
+					}
+					else if (fstOutput[j + 1] == L'B') {
+						if (j >= 5 && fstOutput[j + 2] == L'c' && !analysis->getValue("CLASS") &&
+						    (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+							analysis->addAttribute("CLASS", StringUtils::copy(L"etuliite"));
+						}
 					}
 					break;
 				}
