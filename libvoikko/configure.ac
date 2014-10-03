@@ -36,6 +36,7 @@ AC_CONFIG_MACRO_DIR([m4])
 dnl Checks for programs
 AC_PROG_CXX
 AC_PROG_INSTALL
+AM_PATH_PYTHON
 
 dnl Libtool (new and old)
 AC_LIBTOOL_WIN32_DLL

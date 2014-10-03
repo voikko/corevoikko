@@ -191,7 +191,7 @@ EXTRA_DIST = autocorrect/triecompiler.py
 BUILT_SOURCES = autocorrect/data.hpp
 CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
-	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
+	$(PYTHON) $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
 MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
     morphology/malaga/analysis.cpp \
