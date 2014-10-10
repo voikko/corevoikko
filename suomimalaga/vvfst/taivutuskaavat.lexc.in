@@ -3727,6 +3727,7 @@ ise:ise	Johdin_mA_<A>	;
 is:is	Johdin_tU_tA_<A>	;
 is:is	Johdin_sUt_<A>	;
 isi:isi	Johdin_ja_kulkija_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]isee:isee	LiitesanaVainPi_<A>	;
 
 LEXICON Taitaa
 Huutaa_s_<A>	;
