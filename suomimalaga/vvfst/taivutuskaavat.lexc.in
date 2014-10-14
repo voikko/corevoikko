@@ -2802,6 +2802,7 @@ t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_vA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
 ?Sukija t:t	KertomanTekijäpääteVahva_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]t<A>vi:t<A>vi Liitesana_<A> ;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
@@ -2885,6 +2886,7 @@ LEXICON Kapsaa
 [Tt][Ap][P3][Ny][Ef]<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]<A>vi:<A>vi Liitesana_<A> ;
 
 LEXICON Laskea
 LaskeaLaskeskella_s_<A>	;
@@ -2967,6 +2969,8 @@ e:e	Johdin_nUt_<A>	;
 [Tt][Ap][P3][Nm][Ef]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]evi:evi	Liitesana_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]ee:ee	LiitesanaVainPi_<A> ;
 
 LEXICON Sallia
 <WC>Sallia_w_<A>	;
@@ -3779,6 +3783,7 @@ ke:ke	Johdin_mA_<A>	;
 ke:ke	Johdin_vA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]kevi:kevi Liitesana_<A> ;
 
 LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Ny][Ef]n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@n	Liitesana_<A>	;
