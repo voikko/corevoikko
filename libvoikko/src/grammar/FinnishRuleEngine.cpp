@@ -35,8 +35,6 @@
         #include "autocorrect/AutoCorrect.hpp"
 #endif
 
-using namespace libvoikko::autocorrect;
-
 namespace libvoikko { namespace grammar {
 
 FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
@@ -53,7 +51,7 @@ void FinnishRuleEngine::check(const Paragraph * paragraph) {
 		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
 		// later format revisions. Old implementation is only available to support
 		// v2 dictionary format.
-		AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
+		libvoikko::autocorrect::AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
 #endif
 		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);
