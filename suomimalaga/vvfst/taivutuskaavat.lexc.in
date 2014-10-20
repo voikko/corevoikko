@@ -3880,6 +3880,7 @@ LEXICON Mahtotapa
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P1][Nm][Ef]emme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@emme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P2][Nm][Ef]ette:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ette	Liitesana_<A>	;
 @D.YKSITEKIJÄINEN@[Tm][Ap][P3][Nm][Ef]ev<A>t:@D.YKSITEKIJÄINEN@ev<A>t	Liitesana_<A>	;
+?Sukija e:e SukijaVi_<A> ;
 
 LEXICON Mahtotapa_ttA
 t:t	Mahtotapa_tA_<A>	;
