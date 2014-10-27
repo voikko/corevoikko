@@ -299,7 +299,7 @@ LEXICON SukijaEtuliite
 [Lp]grönlannin:grönlannin EtuliitteenJatko_ellelnelt;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;
 [Lp]havaijin:havaijin EtuliitteenJatko_ellelnelt;
-[Lp]helsinki:helsinki EtuliitteenJatko_ellelnelt;
+[Lp]helsingin:helsingin EtuliitteenJatko_ellelnelt;
 [Lp]himalajan:himalajan EtuliitteenJatko_ellelnelt;
 [Lp]hondurasin:hondurasin EtuliitteenJatko_ellelnelt;
 [Lp]hulluin:hulluin EtuliitteenJatko_ellelnelt;
@@ -398,7 +398,9 @@ LEXICON SukijaEtuliite
 [Lp]sisään:sisään EtuliitteenJatko_ellelnelt;
 [Lp]skotlannin:skotlannin EtuliitteenJatko_ellelnelt;
 [Lp]somalian:somalian EtuliitteenJatko_ellelnelt;
+[Lp]srilankan:srilankan EtuliitteenJatko_ellelnelt;
 [Lp]sub:sub EtuliitteenJatko_ellelnelt;
+[Lp]sulawesin:sulawesin EtuliitteenJatko_ellelnelt;
 [Lp]sumatran:sumatran EtuliitteenJatko_ellelnelt;
 [Lp]sveitsin:sveitsin EtuliitteenJatko_ellelnelt;
 [Lp]syyria:syyria EtuliitteenJatko_ellelnelt;
