@@ -2547,7 +2547,7 @@ Johdin_ja_kantaja_<A>	;
 Johdin_nUt_<A>	;
 Johdin_vA_<A>	;
 Johdin_mA_<A>	;
-?Sukija SukijaVi_<A> ;
+?Sukija SukijaTositapaVi_<A> ;
 
 LEXICON Aavistaa
 <WC>MuistaaMuistella_w_<A>	;
@@ -2681,7 +2681,7 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_nUt_<A>	;
-?Sukija <A>:<A> SukijaVi_<A> ;
+?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 
 LEXICON Loistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
@@ -2804,7 +2804,7 @@ t<A>:t<A>	Johdin_mA_<A>	;
 t<A>:t<A>	Johdin_vA_<A>	;
 t<A>:t<A>	Johdin_nUt_<A>	;
 ?Sukija t:t	KertomanTekijäpääteVahva_<A>	;
-?Sukija t<A>:t<A> SukijaVi_<A> ;
+?Sukija t<A>:t<A> SukijaTositapaVi_<A> ;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
@@ -2858,7 +2858,7 @@ LEXICON Kaivaa_s
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_nUt_<A>	;
-?Sukija <A>:<A>	SukijaVi_<A> ;
+?Sukija <A>:<A>	SukijaTositapaVi_<A> ;
 
 LEXICON Soutaa
 d:d	Huutaa_w_<A>	;
@@ -2889,7 +2889,7 @@ LEXICON Kapsaa
 [Tt][Ap][P3][Ny][Ef]<A><A>:<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
-?Sukija <A>:<A> SukijaVi_<A> ;
+?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 
 LEXICON Laskea
 LaskeaLaskeskella_s_<A>	;
@@ -2928,7 +2928,7 @@ e:e	Johdin_nimitapa1A_<A>	;
 e:e	Johdin_nUt_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaTositapaVi_<A> ;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -2973,7 +2973,7 @@ e:e	Johdin_nUt_<A>	;
 [Tt][Ap][P3][Nm][Ef]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-?Sukija e:e	SukijaVi_<A>;
+?Sukija e:e	SukijaTositapaVi_<A>;
 ?Sukija [Tt][Ap][P3][Ny][Ef]ee:ee	LiitesanaVainPi_<A> ;
 
 LEXICON Sallia
@@ -3041,7 +3041,7 @@ i:i	Johdin_vA_<A>	;
 i:i	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 i:i	Johdin_nUt_<A>	;
-?Sukija i:i SukijaVi_<A> ;
+?Sukija i:i SukijaTositapaVi_<A> ;
 
 LEXICON Kanavoida
 HaravoidaKanavoida_<A>	;
@@ -3143,7 +3143,7 @@ Käskytapa_e_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaTositapaVi_<A> ;
 
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
@@ -3178,7 +3178,7 @@ Johdin_nimitapa2_tAessA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaTositapaVi_<A> ;
 
 LEXICON Tulla_l
 TositavanKestämäXaan_<A>	;
@@ -3249,7 +3249,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
 ee:ee	LiitesanaVainPi_<A>	;
 ?Sukija e:e Ehtotapa_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaTositapaVi_<A> ;
 
 LEXICON Arvailla
 l:l	Johdin_nimitapa1A_<A>	;
@@ -3272,7 +3272,7 @@ Johdin_lUt_<A>	;
 Johdin_U_arvelu_<A>	;
 EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_tU_lA_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaTositapaVi_<A> ;
 
 LEXICON Haravoida
 HaravoidaKanavoida_<A>	;
@@ -3286,7 +3286,7 @@ itsi:itsi	Johdin_ja_kulkija_<A>	;
 ?Sukija its:its     KertomanTekijäpääteHeikko_<A> ;
 ?Sukija its:its     KertomanTekijäpääteVahva_<A> ;
 ?Sukija its:its     Ehtotapa_<A> ;
-?Sukija itse:itse   SukijaVi_<A> ;
+?Sukija itse:itse   SukijaTositapaVi_<A> ;
 
 LEXICON HaravoidaKanavoida
 i:i	Johdin_nimitapa1dA_<A>	;
@@ -3315,7 +3315,7 @@ i[Xp]t<U><A>[X]:i	Kaatua_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittiin Liitesana_<A> ;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittihin Liitesana_<A> ;
 ?Sukija [Ll][Ru]inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
-?Sukija i:i SukijaVi_<A> ;
+?Sukija i:i SukijaTositapaVi_<A> ;
 
 LEXICON Valita
 Johdin_nimitapa1tA_<A>	;
@@ -3337,7 +3337,7 @@ n:n	Johdin_nUt_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
 ?Sukija tse:tse	Ehtotapa_<A>	;
-?Sukija tse:tse	SukijaVi_<A>	;
+?Sukija tse:tse	SukijaTositapaVi_<A>	;
 
 LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
@@ -3425,7 +3425,7 @@ ne:ne	Johdin_vA_<A>	;
 n:n	Ehtotapa_<A>	;
 ne:ne	Käskytapa_y2_<A>	;
 ni:ni	Johdin_ja_kulkija_<A>	;
-?Sukija ne:ne SukijaVi_<A> ;
+?Sukija ne:ne SukijaTositapaVi_<A> ;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -3509,7 +3509,7 @@ s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
-?Sukija <A>:<A> SukijaVi_<A> ;
+?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
@@ -3589,7 +3589,7 @@ Ehtotapa_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 Johdin_Us_ksen_<A>	;
-?Sukija <A>:<A>	SukijaVi_<A> ;
+?Sukija <A>:<A>	SukijaTositapaVi_<A> ;
 
 LEXICON Salata_w
 Tositapa4Tt_<A>	;
@@ -3658,7 +3658,7 @@ Ehtotapa_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
-?Sukija <A>:<A> SukijaVi_<A> ;
+?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 
 LEXICON Kohota
 KohotaKohoilla_w_<A>	;
@@ -3726,7 +3726,7 @@ LEXICON Kihajaa
 <A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny][Ef]<A>j<A><A>:<A>j<A><A>	Liitesana_<A>	;
 [Tt][Ap][P3][Nm][Ef]<A>j<A>v<A>t:<A>j<A>v<A>t	Liitesana_<A>	;
-?Sukija <A>j<A>:<A>j<A> SukijaVi_<A> ;
+?Sukija <A>j<A>:<A>j<A> SukijaTositapaVi_<A> ;
 
 LEXICON Kitistä
 ist:ist	Johdin_nimitapa1A_<A>	;
@@ -3749,7 +3749,7 @@ is:is	Johdin_tU_tA_<A>	;
 is:is	Johdin_sUt_<A>	;
 isi:isi	Johdin_ja_kulkija_<A>	;
 ?Sukija [Tt][Ap][P3][Ny][Ef]isee:isee	LiitesanaVainPi_<A>	;
-?Sukija ise:ise SukijaVi_<A> ;
+?Sukija ise:ise SukijaTositapaVi_<A> ;
 
 LEXICON Taitaa
 Huutaa_s_<A>	;
@@ -3779,7 +3779,7 @@ kse:kse	Johdin_mA_<A>	;
 kse:kse	Johdin_vA_<A>	;
 ksi:ksi	Johdin_ja_kulkija_<A>	;
 ks:ks	Ehtotapa_<A>	;
-?Sukija kse:kse SukijaVi_<A> ;
+?Sukija kse:kse SukijaTositapaVi_<A> ;
 
 LEXICON Nähdä
 [Tt][Ap][P3][Ny][Ef]kee:kee	KestämänTekijäpääteY3Liitesana_<A>	;
@@ -3802,7 +3802,7 @@ ke:ke	Johdin_mA_<A>	;
 ke:ke	Johdin_vA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
-?Sukija ke:ke SukijaVi_<A> ;
+?Sukija ke:ke SukijaTositapaVi_<A> ;
 
 LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Ny][Ef]n:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@n	Liitesana_<A>	;
@@ -3880,7 +3880,7 @@ LEXICON Mahtotapa
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P1][Nm][Ef]emme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@emme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P2][Nm][Ef]ette:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ette	Liitesana_<A>	;
 @D.YKSITEKIJÄINEN@[Tm][Ap][P3][Nm][Ef]ev<A>t:@D.YKSITEKIJÄINEN@ev<A>t	Liitesana_<A>	;
-?Sukija e:e SukijaVi_<A> ;
+?Sukija e:e SukijaMahtotapaVi_<A> ;
 
 LEXICON Mahtotapa_ttA
 t:t	Mahtotapa_tA_<A>	;
@@ -5056,5 +5056,8 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija LEXICON NOUN SukijaAhven
 ?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
 
-?Sukija LEXICON SukijaVi
+?Sukija LEXICON SukijaTositapaVi
 ?Sukija [Tt][Ap][P3][Ny][Ef]vi:vi Liitesana_<A> ;
+
+?Sukija LEXICON SukijaMahtotapaVi
+?Sukija [Tm][Ap][P3][Ny][Ef]vi:vi Liitesana_<A> ;
