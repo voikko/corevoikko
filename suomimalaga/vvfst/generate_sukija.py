@@ -70,12 +70,14 @@ sukijafile = codecs.open (OPTIONS["destdir"] + u"/poikkeavat-sukija.lexc", 'r', 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyåäö]"              # Vovels.
 A = u"[aä]"
+U = u"[uy]"
 
 def makeRePattern (wordClass, word):
     u = u"^\\[%s\\]\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
     u = u.replace ('C', C)
     u = u.replace ('V', V)
     u = u.replace ('A', A)
+    u = u.replace ('U', U)
     return u
 
 
@@ -106,6 +108,7 @@ re_oni = makeRe (u"Ln", u".Coni")
 re_ori = makeRe (u"Ln", u".Cori")
 
 re_OOri = makeRe (u"Ln", u".Cööri")
+re_UUri = makeRe (u"Ln", u"..UUri")
 
 re_adinen = makeRe (u"Ln", u".Cadinen")
 re_odinen = makeRe (u"Ln", u".Codinen")
@@ -168,6 +171,7 @@ spelling_pattern_list = [
   (re_ori, u"or", u"oor", re_ori_x),  # Pehtori   => pehtoori.
 
   (re_OOri,     u"öör",   u"ör"),     # Amatööri => amatöri.
+  (re_UUri,     u"uur",   u"ur"),
 
   (re_adinen,   u"adi",    u"aadi"),
   (re_odinen,   u"odi",    u"oodi"),
