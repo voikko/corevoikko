@@ -877,7 +877,7 @@ LEXICON NOUN Matala
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema
@@ -902,7 +902,7 @@ LEXICON NOUN Asema_s
 <WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 
@@ -947,7 +947,7 @@ LEXICON NOUN Apila_y
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]t<A>:t<A>	Liitesana_<A> ;
+?Sukija [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A> ;
 
 LEXICON NOUN Apila_m
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -978,7 +978,7 @@ LEXICON NOUN Karahka
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Solakka
@@ -1021,7 +1021,7 @@ LEXICON NOUN Solakka_s
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 ! Harhaanjohtava nimi, oikea esimerkkisana "hunaja"
@@ -1046,8 +1046,8 @@ LEXICON NOUN Apaja
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
-?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   <WC>LiOlV_<A> ;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A> <WC>LiOlN_<A>	;
 
 ! Parempi esimerkkisana "pakana"
 LEXICON NOUN Peruna
@@ -1074,7 +1074,7 @@ LEXICON NOUN Peruna
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija <WC>YhteisetMonikonPaikallissijat_<A> ;
 ?Sukija <WC>YhteisetMonikonSijat2_<A> ;
@@ -1110,7 +1110,7 @@ LEXICON NOUN Ainoa
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   Liitesana_<A> ;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   <WC>LiOlV_<A> ;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A> <WC>LiOlN_<A> ;
 ?Sukija ?Yleisnimi [[L]]:[[L]]  <WC>SukijaAinoo_<A> ;
 ?Sukija ?Yleisnimi [[L]][Sn][Ny]:[[L]] <WC>NormaaliYsJatkoOl_<A> ;
@@ -4061,7 +4061,7 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i:<A>i	NimiLaatusanaNainen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
 
@@ -4116,9 +4116,9 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i[Xp]nen[X]:<A>i	NimiLaatusanaNainen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
-?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
-?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	NimiLaatusanaLiOlV_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimiLaatusanaLiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	NimiLaatusanaLiOlN_<A>	;
 
 LEXICON Johdin_mA
 [Ln][Rm]m[Xp]<A>[X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_s_<A>	;
