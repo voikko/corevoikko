@@ -138,6 +138,7 @@ re_tio   = makeRe (u"Ln", u"([^a]i|k)tio") # Traditio, funktio, mutta ei aitio.
 
 re_toninen = makeRe (u"Ll", u".toninen")
 re_iivinen = makeRe (u"Ll", u"Ciivinen")
+re_aalinen = makeRe (u"Ll", u"aalinen")
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
@@ -199,6 +200,7 @@ spelling_pattern_list = [
 
   (re_toninen, u"toni", u"tooni"),
   (re_iivinen, u"iivi", u"ivi"),
+  (re_aalinen, u"aali", u"ali"),
 
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
