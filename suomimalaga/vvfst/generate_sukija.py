@@ -351,6 +351,7 @@ word_list = [
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
     (u"konttori",       (u"konttor",     u"kontoor")),
+    (u"korsteeni",      (u"korsteen",    u"korstein")),
     (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer")),
     (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaTakki_ä", u"NimisanaRisti_ä"),
