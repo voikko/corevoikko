@@ -295,5 +295,5 @@ $(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
 	touch $@
 
 vvfst-sukija-install: vvfst-sukija
-	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
-	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
+	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
