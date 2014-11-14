@@ -4061,9 +4061,9 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 <A>i:<A>i	NimiLaatusanaNainen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
-?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	NimisanaLiOlN_<A>	;
-?Sukija [Sill][Nm]ihi:ihi	NimisanaLiOlN_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   NimiLaatusanaLiOlV_<A> ;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A> NimiLaatusanaLiOlN_<A> ;
+?Sukija [Sill][Nm]ihi:ihi         NimiLaatusanaLiOlN_<A> ;
 
 LEXICON Johdin_sUt
 [Ll][Ru]s[Xp]<U>t[X]@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@:s@C.JOHDETTAVA_LAATUSANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
