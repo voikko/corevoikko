@@ -1656,3 +1656,13 @@ word:live-
  expected:1
   analysis
    CLASS=etuliite
+word:viideksitoista
+ expected:1
+  analysis
+   CLASS=lukusana
+   BASEFORM=viisitoista
+word:kolmehenkisessä
+ expected:1
+  analysis
+   CLASS=laatusana
+   BASEFORM=kolmehenkinen

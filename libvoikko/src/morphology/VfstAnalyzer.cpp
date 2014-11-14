@@ -61,6 +61,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	classMap.insert(std::make_pair(L"a", L"lyhenne"));
 	classMap.insert(std::make_pair(L"s", L"seikkasana"));
 	classMap.insert(std::make_pair(L"u", L"lukusana"));
+	classMap.insert(std::make_pair(L"ur", L"lukusana"));
 	classMap.insert(std::make_pair(L"r", L"asemosana"));
 	classMap.insert(std::make_pair(L"c", L"sidesana"));
 	classMap.insert(std::make_pair(L"d", L"suhdesana"));
@@ -422,6 +423,67 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 }
 
+static wchar_t * parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar_t * baseform) {
+	bool isInXp = false;
+	bool isInXr = false;
+	bool isInTag = false;
+	bool xpPassed = false;
+	size_t baseformPos = 0;
+	
+	for (size_t i = 0; i < fstLen; i++) {
+		if (fstOutput[i] == L'[') {
+			if (i + 2 >= fstLen) {
+				// something wrong with the pattern
+				delete[] baseform;
+				return 0;
+			}
+			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
+				i += 3;
+				isInXp = true;
+			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+				// TODO not needed for numerals?
+				i += 3;
+				isInXr = true;
+			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+				i += 3;
+				xpPassed = false;
+			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Ln]", 4) == 0) {
+				return 0; // give up and return to standard algorithm
+			}
+			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
+				if (isInXp) {
+					isInXp = false;
+					xpPassed = true;
+				}
+				isInXr = false;
+				i += 2;
+			}
+			else {
+				isInTag = true;
+			}
+		}
+		else if (isInXr) {
+			// do nothing
+		}
+		else if (isInTag) {
+			if (fstOutput[i] == L']') {
+				isInTag = false;
+			}
+		}
+		else if (isInXp) {
+			baseform[baseformPos++] = fstOutput[i];
+		}
+		else if (!xpPassed) {
+			baseform[baseformPos++] = fstOutput[i];
+		}
+	}
+	baseform[baseformPos] = L'\0';
+	return baseform;
+}
+
 static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const wchar_t * structure) {
 	wchar_t * baseform = new wchar_t[fstLen + 1];
 	size_t baseformPos = 0;
@@ -451,6 +513,14 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 				i += 3;
 				isInXr = true;
+			}
+			else if (i == 0 && i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Lu]", 4) == 0) {
+				i += 3;
+				// we will try completely different rules here and get back if it does not work out
+				wchar_t * numeralBaseform = parseNumeralBaseform(fstOutput + i + 1, fstLen - i - 1, baseform + baseformPos);
+				if (numeralBaseform) {
+					return numeralBaseform;
+				}
 			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
 				isInXp = false;
