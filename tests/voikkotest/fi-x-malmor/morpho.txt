@@ -238,3 +238,8 @@ word:live-
  expected:1
   analysis
    CLASS=etuliite
+word:etkä
+ expected:1
+  analysis
+   CLASS=kieltosana
+   BASEFORM=ei

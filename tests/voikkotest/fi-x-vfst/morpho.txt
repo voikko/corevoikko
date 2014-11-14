@@ -1666,3 +1666,8 @@ word:kolmehenkisessä
   analysis
    CLASS=laatusana
    BASEFORM=kolmehenkinen
+word:etkä
+ expected:1
+  analysis
+   CLASS=kieltosana
+   BASEFORM=ei
