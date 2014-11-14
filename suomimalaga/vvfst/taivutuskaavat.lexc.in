@@ -938,7 +938,7 @@ LEXICON NOUN Apila_y
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
-[Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Sp][Ny]<A>:<A>	<WC>LiOlAA_<A>	;
 [Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 [[L]][Sill][Ny]:[[L]]	<WC>LiOlN_<A>	;

@@ -1671,3 +1671,11 @@ word:etkä
   analysis
    CLASS=kieltosana
    BASEFORM=ei
+word:sinfoniaansa
+ expected:2
+  analysis
+   SIJAMUOTO=osanto
+   POSSESSIVE=3
+  analysis
+   SIJAMUOTO=sisatulento
+   POSSESSIVE=3
