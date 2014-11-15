@@ -814,7 +814,10 @@ combi_rule yhdysmerkki_etuliitteen_jälkeen ($vasen, $oikea, $sana, $index):
   result $res, accept;
   define $jatko := $vasen.($index - 1).jatko;
   if teonsana in $jatko then
-    result $res, rules nimisana, laatusana, etuliite, erisnimi, teonsana;
+    if nimisana in $jatko or laatusana in $jatko then
+      result $res, rules nimisana, laatusana, erisnimi;
+    end;
+    result $res, rules etuliite, teonsana;
   else
     result $res, rules nimisana, laatusana, etuliite, erisnimi, nimisana_teonsanasta;
   end;

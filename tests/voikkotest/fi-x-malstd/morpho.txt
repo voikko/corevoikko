@@ -887,3 +887,5 @@ word:menikään
  expected:1
   analysis
    NEGATIVE=false
+word:koe-eläin
+ expected:1
