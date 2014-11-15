@@ -1679,3 +1679,12 @@ word:sinfoniaansa
   analysis
    SIJAMUOTO=sisatulento
    POSSESSIVE=3
+word:kuutisensataa
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:menikään
+ expected:1
+  analysis
+   NEGATIVE=false

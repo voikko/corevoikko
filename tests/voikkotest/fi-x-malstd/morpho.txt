@@ -883,3 +883,7 @@ word:rikas-
    CLASS=etuliite
 word:komentajuudesta
  expected:1
+word:menikään
+ expected:1
+  analysis
+   NEGATIVE=false

@@ -168,9 +168,9 @@ Liitesana_a	;
 [Bc][Lu][Xp]sataa[X]sataa:sataa	Loppu	;
 
 LEXICON XKymmentäEiLiitesana
-[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
-[Bc][Lu][Xp]sataa[X]sataa:sataa	Liitesana_a	;
-[Bc][Lu][Xp]tuhatta[X]tuhatta:tuhatta	Liitesana_a	;
+[Bc][Lu][Sn][Ny][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
+[Bc][Lu][Sn][Ny][Xp]sataa[X]sataa:sataa	Liitesana_a	;
+[Bc][Lu][Sn][Ny][Xp]tuhatta[X]tuhatta:tuhatta	Liitesana_a	;
 
 LEXICON LukusanaKymmentäSnNy
 [Bc]kymmentä:kymmentä	LukusanaLiitesana_ä	;
