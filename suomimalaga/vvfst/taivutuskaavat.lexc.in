@@ -2616,7 +2616,9 @@ LEXICON Jättää
 <WC>MuistaaMuistella_s_tt_t_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]tö[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xp]to[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_a	;
-!TODO jätättää
+<A>t[Xp]t<A><A>[X]:<A>t	<WC>MuistaaMuistella_w_<A>	;
+<A>t[Xp]t<A><A>[X]:<A>t	<WC>MuistaaMuistella_s_tt_t_<A>	;
+<A>t:<A>t	Johdin_Us_ksen_<A>	;
 
 LEXICON Hohtaa
 d:d	<WC>MuistaaMuistella_w_<A>	;

@@ -3676,6 +3676,7 @@ jäätyään
 mentyään
 kaunis-
 !hypättynsä
+jätätti
 
 # = poikkeavat asetukset =
 
