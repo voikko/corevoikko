@@ -889,3 +889,5 @@ word:menikään
    NEGATIVE=false
 word:koe-eläin
  expected:1
+word:satojatuhansia
+ expected:1

@@ -1698,3 +1698,5 @@ word:kahdeksisadaksi
  expected:1
   analysis
    BASEFORM=kaksisataa
+word:satojatuhansia
+ expected:1

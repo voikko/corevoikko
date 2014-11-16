@@ -1341,7 +1341,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, rules lukusana_toista, lukusana_sisäkerroin,
                  lukusanan_jälkiliite,
                  nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
-  elseif ($edellinen.alaluokka in <kymmenen, sata>) then
+  elseif ($edellinen.alaluokka = kymmenen) then
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
