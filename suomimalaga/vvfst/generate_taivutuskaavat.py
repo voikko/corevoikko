@@ -204,6 +204,13 @@ for sija in MULTI.keys():
 	
 	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
 	for i in range(len(MULTI_VOWELS)):
+		lexcFile.write(diacritic + u"[Xp]" + MULTI[u"SpNy"][i] + u"[X]" + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+		if MULTI[sija][i].endswith(u"joonien"):
+			altSija = MULTI[sija][i].replace(u"joonien", u"joonain")
+			lexcFile.write(diacritic + tagName + altSija + u":" + diacritic + altSija + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+	
+	lexcFile.write(u"LEXICON " + lexiconName + u"Alut\n")
+	for i in range(len(MULTI_VOWELS)):
 		lexcFile.write(diacritic + u"[Xp]" + MULTI[u"SnNy"][i] + u"[X]" + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
 		if MULTI[sija][i].endswith(u"joonien"):
 			altSija = MULTI[sija][i].replace(u"joonien", u"joonain")

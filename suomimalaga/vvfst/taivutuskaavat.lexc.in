@@ -4835,7 +4835,8 @@ LEXICON LukusanaKymmentäSnNm
 LEXICON LukusanaLiitesana
 Liitesana_<A>	;
 LukusananJälkiliite	;
-[Bc]:	Lukusana	;
+[Bc]:	LukusanaYksiYhdeksän	;
+[Bc][Lu]:	LukusananJatkoKerroin	;
 
 LEXICON JärjestyslukuLiitesanaJl
 JärjestyslukuLiitesana_<A>	;

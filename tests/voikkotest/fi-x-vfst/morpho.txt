@@ -1694,3 +1694,7 @@ word:miljardeista
  expected:1
   analysis
    BASEFORM=miljardi
+word:kahdeksisadaksi
+ expected:1
+  analysis
+   BASEFORM=kaksisataa
