@@ -2386,7 +2386,8 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.luokka in @johdin_nUt then
       return [laatutapa: johdin_nUt];
     end;
-    if $allomorfi.luokka = johdin_tOn and $i less $tlen and $tietue.($tlen - $i).luokka = johdin_mA then
+    if $allomorfi.luokka = johdin_tOn and $i less $tlen and
+       ($tietue.($tlen - $i).luokka = johdin_mA or $tietue.($tlen - $i).johdin_mA = yes) then
       return [laatutapa: johdin_tOn];
     end;
     if $allomorfi.luokka = johdin_mA then

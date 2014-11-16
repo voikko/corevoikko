@@ -1700,3 +1700,7 @@ word:kahdeksisadaksi
    BASEFORM=kaksisataa
 word:satojatuhansia
  expected:1
+word:olemattomien
+ expected:1
+  analysis
+   PARTICIPLE=negation

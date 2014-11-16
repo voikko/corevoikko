@@ -243,3 +243,7 @@ word:etkä
   analysis
    CLASS=kieltosana
    BASEFORM=ei
+word:olemattomien
+ expected:1
+  analysis
+   PARTICIPLE=negation

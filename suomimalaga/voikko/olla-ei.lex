@@ -205,4 +205,4 @@
 [alku: "ällös", luokka: kieltosana, jatko: <loppu>,
                 äs: ä, tapaluokka: käskytapa, tekijä: tekijä_2, luku: yksikkö, tiedot: <murre>];
 
-[alku: "olem", luokka: nimisana, jatko: <asema>, perusmuoto: "olema", äs: a];
+[alku: "olem", luokka: nimisana, jatko: <asema>, perusmuoto: "olema", johdin_mA: yes, äs: a];
