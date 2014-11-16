@@ -1690,3 +1690,7 @@ word:menikään
    NEGATIVE=false
 word:koe-eläin
  expected:1
+word:miljardeista
+ expected:1
+  analysis
+   BASEFORM=miljardi

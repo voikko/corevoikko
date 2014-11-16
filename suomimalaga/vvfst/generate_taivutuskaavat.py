@@ -165,6 +165,7 @@ appendLexicon(lexicon, lexcLines, lexcFile)
 # Generate lexicons for numerals
 
 MULTI = {
+	u"SnNy": [u"kymmenen", u"sata", u"tuhat", u"miljoona", u"miljardi", u"biljoona", u"triljoona", u"kvadriljoona", u"kvintiljoona", u"sekstiljoona", u"septiljoona", u"sentiljoona"],
 	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen", u"miljoonan", u"miljardin", u"biljoonan", u"triljoonan", u"kvadriljoonan", u"kvintiljoonan", u"sekstiljoonan", u"septiljoonan", u"sentiljoonan"],
 	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta", u"miljoonaa", u"miljardia", u"biljoonaa", u"triljoonaa", u"kvadriljoonaa", u"kvintiljoonaa", u"sekstiljoonaa", u"septiljoonaa", u"sentiljoonaa"],
 	u"StrNy": [u"kymmeneksi", u"sadaksi", u"tuhanneksi", u"miljoonaksi", u"miljardiksi", u"biljoonaksi", u"triljoonaksi", u"kvadriljoonaksi", u"kvintiljoonaksi", u"sekstiljoonaksi", u"septiljoonaksi", u"sentiljoonaksi"],
@@ -195,13 +196,15 @@ MULTI = {
 MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a"]
 
 for sija in MULTI.keys():
+	if sija == u"SnNy":
+		continue
 	diacritic = u"@U.LS." + sija.upper() + u"@"
 	lexiconName = u"Lukusana" + sija + u"29"
 	tagName = u"[" + sija.replace(u"N", u"][N") + u"]"
 	
 	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
 	for i in range(len(MULTI_VOWELS)):
-		lexcFile.write(diacritic + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+		lexcFile.write(diacritic + u"[Xp]" + MULTI[u"SnNy"][i] + u"[X]" + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
 		if MULTI[sija][i].endswith(u"joonien"):
 			altSija = MULTI[sija][i].replace(u"joonien", u"joonain")
 			lexcFile.write(diacritic + tagName + altSija + u":" + diacritic + altSija + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
