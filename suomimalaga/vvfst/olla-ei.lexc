@@ -35,7 +35,7 @@ n:n Mahtotapa_ä ;
 Liitesana_ä	;
 
 LEXICON Kieltosana
-[Lk][Xp]älkää[X]äl:äl    Älkää ;
+[Lk][Tk][Xp]ei[X]äl:äl    Älkää ;
 EtuliitteellinenKieltosana	;
 KieltosananEtuliite	;
 
@@ -51,8 +51,8 @@ LEXICON KieltosananEtuliite
 [Xp]mutt[X]mutt:mutt	EtuliitteellinenKieltosanaEiLoppu	;
 
 LEXICON EtuliitteellinenKieltosana
-[Lk][Xp]ei[X]e:e         Ei ;
-'[Lk][Xp]ei[X]e:'e         Ei ;
+[Lk][Tt][Xp]ei[X]e:e         Ei ;
+'[Lk][Tt][Xp]ei[X]e:'e         Ei ;
 
 LEXICON Ei
 [P1][Ny]n:n        KieltosananLiitesana_ä ;
@@ -63,13 +63,13 @@ LEXICON Ei
 [P3][Nm]ivät:ivät  KieltosananLiitesana_ä ;
 
 LEXICON EtuliitteellinenKieltosanaEiLoppu
-[Lk][Xp]ei[X][Bm]e:e         EiLoppu ;
-[Lk][Xp]ei[X][Bm]ei[Fkaan]kaan:eikaan         Loppu ;
-'[Lk][Xp]ei[X]e:'e         EiLoppu ;
+[Lk][Tt][Xp]ei[X][Bm]e:e         EiLoppu ;
+[Lk][Tt][Xp]ei[X][Bm]ei[Fkaan]kaan:eikaan         Loppu ;
+'[Lk][Tt][Xp]ei[X]e:'e         EiLoppu ;
 
 LEXICON EtuliitteellinenKieltosanaEiKoPaHan
-[Lk][Xp]ei[X][Bm]e:e         EiKoPaHan ;
-'[Lk][Xp]ei[X][Bm]e:'e         EiKoPaHan ;
+[Lk][Tt][Xp]ei[X][Bm]e:e         EiKoPaHan ;
+'[Lk][Tt][Xp]ei[X][Bm]e:'e         EiKoPaHan ;
 
 LEXICON EiLoppu
 [P1][Ny]n:n        Loppu ;

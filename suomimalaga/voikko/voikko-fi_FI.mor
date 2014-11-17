@@ -2635,7 +2635,8 @@ subrule tulostus_v2($tietue):
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);
   elseif $res.luokka = kieltosana then
-    $res :=+ [tekijä: tulostus_tekijä($tietue)];
+    $res :=+ [tekijä: tulostus_tekijä($tietue),
+              tapaluokka: tulostus_tapaluokka($tietue)];
   end;
   define $tlen := length($tietue);
   if $tietue.<1, luokka> /= tavuviiva then

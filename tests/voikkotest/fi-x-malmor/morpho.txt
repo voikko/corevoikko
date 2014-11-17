@@ -247,3 +247,10 @@ word:olemattomien
  expected:1
   analysis
    PARTICIPLE=negation
+word:älähän
+ expected:1
+  analysis
+   BASEFORM=ei
+   MOOD=imperative
+   NUMBER=singular
+   PERSON=2

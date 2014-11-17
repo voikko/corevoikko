@@ -1671,6 +1671,9 @@ word:etkä
   analysis
    CLASS=kieltosana
    BASEFORM=ei
+   MOOD=indicative
+   NUMBER=singular
+   PERSON=2
 word:sinfoniaansa
  expected:2
   analysis
@@ -1704,3 +1707,17 @@ word:olemattomien
  expected:1
   analysis
    PARTICIPLE=negation
+word:älähän
+ expected:1
+  analysis
+   BASEFORM=ei
+   MOOD=imperative
+   NUMBER=singular
+   PERSON=2
+word:ettet
+ expected:1
+  analysis
+   BASEFORM=ettei
+   MOOD=indicative
+   NUMBER=singular
+   PERSON=2
