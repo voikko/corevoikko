@@ -4422,6 +4422,7 @@ LiitesanaVainPi_<A>	;
 
 LEXICON LiitesanaVainPi
 pi:pi	Loppu	;
+?Sukija pi:pi LiitesanaEiLoppu_<A> ;
 
 LEXICON LiitesanaEiLoppu
 [Fkaan]k<A><A>n:k<A><A>n	Loppu ;

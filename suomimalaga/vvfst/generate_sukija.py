@@ -293,6 +293,7 @@ word_list = [
     (u"ameba",            (u"ameb",          u"ameeb")),
     (u"amfiteatteri",     (u"amfiteatter",   u"amfiiteaatter", u"amfiteaatter")),
     (u"apassi",           (u"apass",         u"apash")),
+    (u"apteekkari",       (u"apteekkar",     u"apteekar", u"aptekar")),
     (u"arsenikki",        (u"arsenik",       u"arseniik")),
     (u"assistentti",      (u"assistent",     u"asistent")),
     (u"Australia",        (u"Australi",      u"Austraali")),
