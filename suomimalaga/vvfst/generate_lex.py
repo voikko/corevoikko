@@ -279,7 +279,7 @@ def get_adverb_jatko(word, altform):
 def get_abbreviation_jatko(word, wordform):
 	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
 	if wordform.endswith(u".") or u"none" in flags:
-		return u"Loppu"
+		return u"PisteellisenLyhenteenJatko"
 	else:
 		return u"Lyhenne"
 

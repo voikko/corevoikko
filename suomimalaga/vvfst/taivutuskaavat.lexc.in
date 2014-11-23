@@ -4556,8 +4556,11 @@ LEXICON Lyhenne
 LyhenteenTaivutuspääte_<A>	;
 LyhenneIlmanTaivutusta_<A>	;
 
+LEXICON PisteellisenLyhenteenJatko
+[Sn][Ny]:	Loppu	;
+
 LEXICON LyhenneIlmanTaivutusta
-Loppu	;
+[Sn][Ny]:	Loppu	;
 LyhenneIlmanLoppuaTaiTaivutusta_<A>	;
 
 LEXICON LyhenneIlmanLoppua

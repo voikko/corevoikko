@@ -895,3 +895,23 @@ word:-1600-luvun
  expected:1
   analysis
    STRUCTURE=-=qqqq-=ppppp
+word:EU:kin
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:kokoelma-LP
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:j
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
+word:varapj.
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento
