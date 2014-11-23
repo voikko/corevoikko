@@ -208,6 +208,10 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			isAbbr = true;
 			i += 3;
 		}
+		else if (wcsncmp(fstOutput + i, L"[Lu", 3) == 0 && i + 5 < outputLen && StringUtils::isInteger(fstOutput[i + 4])) {
+			isAbbr = true;
+			i += 3;
+		}
 		else if (wcsncmp(fstOutput + i, L"[L", 2) == 0) {
 			isAbbr = false;
 			i += 3;

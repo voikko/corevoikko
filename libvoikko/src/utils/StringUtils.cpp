@@ -177,6 +177,10 @@ bool StringUtils::isInteger(const wchar_t * word) {
 	return true;
 }
 
+bool StringUtils::isInteger(wchar_t character) {
+	return character >= 0x30 && character <= 0x39;
+}
+
 bool StringUtils::isChapterNumber(const wchar_t * word) {
 	bool dotLast = false;
 	for (size_t i = 0; word[i] != L'\0'; i++) {

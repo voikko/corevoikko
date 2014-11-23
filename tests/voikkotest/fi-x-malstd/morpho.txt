@@ -891,3 +891,7 @@ word:koe-eläin
  expected:1
 word:satojatuhansia
  expected:1
+word:-1600-luvun
+ expected:1
+  analysis
+   STRUCTURE=-=qqqq-=ppppp

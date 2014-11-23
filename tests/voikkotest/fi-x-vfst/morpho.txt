@@ -1721,3 +1721,7 @@ word:ettet
    MOOD=indicative
    NUMBER=singular
    PERSON=2
+word:-1600-luvun
+ expected:1
+  analysis
+   STRUCTURE=-=qqqq-=ppppp

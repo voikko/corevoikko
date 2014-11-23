@@ -92,6 +92,11 @@ class StringUtils {
 	static bool isInteger(const wchar_t * word);
 	
 	/**
+	 * Checks if given character is a positive integer.
+	 */
+	static bool isInteger(wchar_t word);
+	
+	/**
 	 * Checks if given null terminated string may be a chapter number (3, 3.4, 3.65.3, ...).
 	 */
 	static bool isChapterNumber(const wchar_t * word);
