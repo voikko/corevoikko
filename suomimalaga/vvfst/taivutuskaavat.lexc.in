@@ -4615,6 +4615,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sall][Ny]%:lle:%:lle	NimisanaLiOlV_<A>	;
 [Sall][Nm]%:ille:%:ille	NimisanaLiOlV_<A>	;
 [Sab][Ny]%:tt<A>:%:tt<A>	NimisanaLiOlV_<A>	;
+[Sn][Ny]%::%:	Liitesana_<A> ;
 
 LEXICON RoomalaisenNumeronJatko
 Loppu	;

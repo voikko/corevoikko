@@ -3668,6 +3668,7 @@ rakastajattarensa
 !juostunsa
 kaunis-
 !hypättynsä
+EU:kin
 
 # = poikkeavat asetukset =
 

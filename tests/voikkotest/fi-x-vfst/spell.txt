@@ -3677,6 +3677,7 @@ mentyään
 kaunis-
 !hypättynsä
 jätätti
+EU:kin
 
 # = poikkeavat asetukset =
 
