@@ -174,21 +174,6 @@ LEXICON SukijaAsemosanaNämä
 LEXICON Sukija
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
-[Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       Liitesana_a ;
-[Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       Omistusliite_a ;
-[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     Liitesana_a ;
-[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
-[Lep][Xp]Kaunisportti[X][Sp][Ny]kaunista[Bm]porttia:kaunistaporttia       PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Ses][Ny]kauniina[Bm]porttina:kauniinaporttina    PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Str][Ny]kauniiksi[Bm]portiksi:kauniiksiportiksi  PaikannimiLiOlI_a ;
-[Lep][Xp]Kaunisportti[X][Sine][Ny]kauniissa[Bm]portissa:kauniissaportissa PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Sela][Ny]kauniista[Bm]portista:kauniistaportista PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Sill][Ny]kauniiseen[Bm]porttii:kauniiseenporttii PaikannimiLiOlN_a ;
-[Lep][Xp]Kaunisportti[X][Sade][Ny]kauniilla[Bm]portilla:kauniillaportilla PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Sabl][Ny]kauniilta[Bm]portilta:kauniiltaportilta PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Sall][Ny]kauniille[Bm]portille:kauniilleportille PaikannimiLiOlV_a ;
-[Lep][Xp]Kaunisportti[X][Sab][Ny]kauniitta[Bm]portitta:kauniittaportitta  PaikannimiLiOlV_a ;
-[Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
 [Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
@@ -250,7 +235,7 @@ LEXICON Sukija
 [Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksihin:väännyksihin Loppu ;
 
-LEXICON SukijaEtuliite
+LEXICON Sukija_p
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
 [Lp]abessinian:abessinian EtuliitteenJatko_ellelnelt;
 [Lp]afganistanin:afganistanin EtuliitteenJatko_ellelnelt;
@@ -451,3 +436,48 @@ LEXICON SukijaEtuliite
 
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
+
+
+LEXICON SukijaPoikkeavat_em
+[Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
+
+
+LEXICON SukijaPoikkeavat_ep
+[Lep][Xp]Isosuo[X][Sn][Ny]iso[Bm]suo:isosuo	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Isosuo[X][Sg][Ny]ison[Bm]suon:isonsuon	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Isosuo[X][Sp][Ny]isoa[Bm]suota:isoasuota	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Ses][Ny]isona[Bm]suona:isonasuona	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Str][Ny]isoksi[Bm]suoksi:isoksisuoksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Isosuo[X][Sine][Ny]isossa[Bm]suossa:isossasuossa	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Sela][Ny]isosta[Bm]suosta:isostasuosta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Sill][Ny]isoon[Bm]suoho:isoonsuoho		PaikannimiLiOlN_a	;
+[Lep][Xp]Isosuo[X][Sade][Ny]isolla[Bm]suolla:isollasuolla	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Sabl][Ny]isolta[Bm]suolta:isoltasuolta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Sall][Ny]isolle[Bm]suolle:isollesuolle	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X][Sab][Ny]isotta[Bm]suotta:isottasuotta	PaikannimiLiOlV_a	;
+[Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       PaikannimiNormaaliYsJatkoOl_a ;
+[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
+[Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     PaikannimiYksikönGenetiivinJatko_a ;
+[Lep][Xp]Kaunisportti[X][Sp][Ny]kaunista[Bm]porttia:kaunistaporttia       PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Ses][Ny]kauniina[Bm]porttina:kauniinaporttina    PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Str][Ny]kauniiksi[Bm]portiksi:kauniiksiportiksi  PaikannimiLiOlI_a ;
+[Lep][Xp]Kaunisportti[X][Sine][Ny]kauniissa[Bm]portissa:kauniissaportissa PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sela][Ny]kauniista[Bm]portista:kauniistaportista PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sill][Ny]kauniiseen[Bm]porttii:kauniiseenporttii PaikannimiLiOlN_a ;
+[Lep][Xp]Kaunisportti[X][Sade][Ny]kauniilla[Bm]portilla:kauniillaportilla PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sabl][Ny]kauniilta[Bm]portilta:kauniiltaportilta PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sall][Ny]kauniille[Bm]portille:kauniilleportille PaikannimiLiOlV_a ;
+[Lep][Xp]Kaunisportti[X][Sab][Ny]kauniitta[Bm]portitta:kauniittaportitta  PaikannimiLiOlV_a ;
+[Lep][Xp]Vanhakirkko[X][Sn][Ny]vanha[Bm]kirkko:vanhakirkko	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Vanhakirkko[X][Sg][Ny]vanhan[Bm]kirkko:vanhankirkko	Omistusliite_a	;
+[Lep][Xp]Vanhakirkko[X][Sg][Ny]vanhan[Bm]kirkon:vanhankirkon	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Vanhakirkko[X][Sp][Ny]vanhaa[Bm]kirkkoa:vanhaakirkkoa  	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Ses][Ny]vanhana[Bm]kirkkona:vanhanakirkkona	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Str][Ny]vanhaksi[Bm]kirkoksi:vanhaksikirkoksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Vanhakirkko[X][Sine][Ny]vanhassa[Bm]kirkossa:vanhassakirkossa	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Sela][Ny]vanhasta[Bm]kirkosta:vanhastakirkosta	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Sill][Ny]vanhaan[Bm]kirkkoo:vanhaankirkkoo	PaikannimiLiOlN_a	;
+[Lep][Xp]Vanhakirkko[X][Sade][Ny]vanhalla[Bm]kirkolla:vanhallakirkolla	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Sabl][Ny]vanhalta[Bm]kirkolta:vanhaltakirkolta	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Sall][Ny]vanhalle[Bm]kirkolle:vanhallekirkolle	PaikannimiLiOlV_a	;
+[Lep][Xp]Vanhakirkko[X][Sab][Ny]vanhatta[Bm]kirkotta:vanhattakirkotta	PaikannimiLiOlV_a	;

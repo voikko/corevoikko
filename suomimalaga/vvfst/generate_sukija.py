@@ -716,7 +716,9 @@ ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 
 sukija_additions = {
     u"LEXICON Sanasto\n":       u"Sukija ;\n",
-    u"LEXICON Joukahainen_p\n": u"SukijaEtuliite ;\n",
+    u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
+    u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
+    u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
     u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
     u"LEXICON Omistusliite_a\n":  u"[O2y]s:s      Liitesana_a     ;\n",
     u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s      Liitesana_ä     ;\n",
