@@ -2289,7 +2289,7 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusikaupunki[X][Sall][Ny]uudelle[Bm]kaupungille:uudellekaupungille	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusikaupunki[X][Sab][Ny]uudetta[Bm]kaupungitta:uudettakaupungitta	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusikirkko[X][Sn][Ny]uusi[Bm]kirkko:uusikirkko	PaikannimiNormaaliYsJatkoOl_a	;
-[Lep][Xp]Uusikirkko[X][Sg][Ny]uuden[Bm]kirkko:uudeknirkko	Omistusliite_a	;
+[Lep][Xp]Uusikirkko[X][Sg][Ny]uuden[Bm]kirkko:uudenkirkko	Omistusliite_a	;
 [Lep][Xp]Uusikirkko[X][Sg][Ny]uuden[Bm]kirkon:uudenkirkon	PaikannimiYksikönGenetiivinJatko_a	;
 [Lep][Xp]Uusikirkko[X][Sp][Ny]uutta[Bm]kirkkoa:uuttakirkkoa	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusikirkko[X][Ses][Ny]uutena[Bm]kirkkona:uutenakirkkona	PaikannimiLiOlV_a	;
