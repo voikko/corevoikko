@@ -171,9 +171,13 @@ SukijaAsemosanaMieMä ;
 LEXICON SukijaAsemosanaNämä
 [Sak][Ny]mät:mät	Liitesana_ä	;
 
-LEXICON Sukija
+
+LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
+
+
+LEXICON Sukija
 [Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
@@ -276,6 +280,7 @@ LEXICON Sukija_p
 [Lp]etiopian:etiopian EtuliitteenJatko_ellelnelt;
 [Lp]euroopan:euroopan EtuliitteenJatko_ellelnelt;
 [Lp]eurooppa:eurooppa EtuliitteenJatko_ellelnelt;
+[Lp]ex-[Bm]:ex- EtuliitteenJatko_ellelnH;
 [Lp]filippiinien:filippiinien EtuliitteenJatko_ellelnelt;
 [Lp]flanderin:flanderin EtuliitteenJatko_ellelnelt;
 [Lp]floridan:floridan EtuliitteenJatko_ellelnelt;
@@ -456,6 +461,18 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isosuo[X][Sabl][Ny]isolta[Bm]suolta:isoltasuolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sall][Ny]isolle[Bm]suolle:isollesuolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sab][Ny]isotta[Bm]suotta:isottasuotta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sn][Ny]iso[Bm]talo:isotalo	PaikannimiNormaaliYsJatkoOl_a	;
+[Lep][Xp]Isotalo[X][Sg][Ny]ison[Bm]talon:isontalon	PaikannimiYksikönGenetiivinJatko_a	;
+[Lep][Xp]Isotalo[X][Sp][Ny]isoa[Bm]taloa:isoataloa	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Ses][Ny]isona[Bm]talona:isonatalona	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Str][Ny]isoksi[Bm]taloksi:isoksitaloksi	PaikannimiLiOlI_a	;
+[Lep][Xp]Isotalo[X][Sine][Ny]isossa[Bm]talossa:isossatalossa	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sela][Ny]isosta[Bm]talosta:isostatalosta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sill][Ny]isoon[Bm]taloo:isoontaloo		PaikannimiLiOlN_a	;
+[Lep][Xp]Isotalo[X][Sade][Ny]isolla[Bm]talolla:isollatalolla	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sabl][Ny]isolta[Bm]talolta:isoltatalolta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sall][Ny]isolle[Bm]talolle:isolletalolle	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X][Sab][Ny]isotta[Bm]talotta:isottatalotta	PaikannimiLiOlV_a	;
 [Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       PaikannimiNormaaliYsJatkoOl_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     PaikannimiYksikönGenetiivinJatko_a ;

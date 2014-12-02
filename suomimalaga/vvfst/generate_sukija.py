@@ -433,6 +433,7 @@ word_list = [
     (u"reettori",        (u"reettor",     u"reetor")),
     (u"reunimmainen",    (u"reunimmai",   u"reunimai")),
     (u"romanttinen",     (u"romantti",    u"romanti", u"romantilli")),
+    (u"saippua",         (u"saippu",      u"saipu")),
     (u"samanlainen",     (u"samanlai",    u"samallai")),
     (u"samojedi",        (u"samojed",     u"samojeed")),
     (u"sampanja",        (u"sampanj",     u"samppanj")),
@@ -735,7 +736,7 @@ ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 
 
 sukija_additions = {
-    u"LEXICON Sanasto\n":       u"Sukija ;\n",
+    u"LEXICON Sanasto\n":       u"Sukija ;\nSukijaSuhdesana ;\n",
     u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
     u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
     u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
