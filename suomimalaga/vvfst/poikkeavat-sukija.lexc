@@ -177,10 +177,20 @@ LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 
 
-LEXICON Sukija
-[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
+LEXICON SukijaSanasto
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
+[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
+[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
+[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
+[Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
+[Lt][Xp]olla[X]o:o SukijaOlla ;
+
+
+LEXICON SukijaPoikkeavat_n
+[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
@@ -197,23 +207,20 @@ LEXICON Sukija
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
-[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
-[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
-[Ln][Xp]kappale[X]kappal[Sg][Nm]te:kappalte NimisanaLiOlN_a ;
+[Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
-[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
-[Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
-[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
+[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
+
+
+LEXICON SukijaAsemosana
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
@@ -224,6 +231,9 @@ LEXICON Sukija
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
 [Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasOmistusliitteet_a	;
+
+
+LEXICON SukijaPoikkeavat_s
 [Ls][Xp]käännyksissä[X]käännyksissä:käännyksissä Loppu ;
 [Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
 [Ls][Xp]miten[X]mitenkäs:mitenkäs      Liitesana_ä ;
@@ -437,6 +447,7 @@ LEXICON Sukija_p
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 [Lp]öölannin:öölannin EtuliitteenJatko_ellelnelt;
 
+
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
 
@@ -504,13 +515,14 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]etäkäyttöinen[X]etä[Bm]käyttöi:etäkäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;
-[Ll][Xp]peilityyni[X]peili[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;
-[Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;
+[Ll][Xp]peilityyni[X]peili[Bm]tyyn:peilityyn LaatusanaSukijaPieni_ä ;
+[Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:rasvatyyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]sisäkäyttöinen[X]sisä[Bm]käyttöi:sisäkäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]sisäviistoinen[X]sisä[Bm]viistoi:sisäviistoi     LaatusanaNainenInen_a ;
+[Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;
 
 
-LEXICON SukijaPoikkeavat_l
+LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
 [Lnl][Xp]kaikenlainen[X]kaikel[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]suurenmoinen[X]suurem[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
@@ -518,7 +530,6 @@ LEXICON SukijaPoikkeavat_l
 
 LEXICON SukijaPoikkeavat_t
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
-[Lt][Xp]olla[X]o:o SukijaOlla ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
 [Lt][Xp]älkää[X]ällös:ällös     Loppu ;
 [Lt][Xp]älkää[X]ällöspä:ällöspä Loppu ;

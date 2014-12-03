@@ -305,6 +305,7 @@ word_list = [
     (u"borssi",           (u"borss",         u"borsh")),
     (u"dervissi",         (u"derviss",       u"dervish", u"dervisch")),
     (u"diadeemi",         (u"diadeem",       u"diadem")),
+    (u"disko",            (u"disko",         u"disco")),
     (u"divaani",          (u"divaan",        u"divan")),
     (u"drakma",           (u"drakm",         u"drakhm")),
     (u"edes",             (u"edes",          u"ees")),
@@ -499,8 +500,8 @@ word_list = [
 ##    (u"moni",  [u"[Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;"]),
 ##    (u"pieni", [u"[Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;"]),
 ##    (u"tyyni", [u"[Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
-##    (u"peilityyni", [u"[Ll][Xp]peilityyni[X]peili[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
-##    (u"rasvatyyni", [u"[Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
+##    (u"peilityyni", [u"[Ll][Xp]peilityyni[X]peili[Bm]tyyn:peilityyn LaatusanaSukijaPieni_ä ;"]),
+##    (u"rasvatyyni", [u"[Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:rasvatyyn LaatusanaSukijaPieni_ä ;"]),
 
     # 39 nuori (3, 3). Tuomi, s. 182, 184.
     #
@@ -733,13 +734,17 @@ ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 
 
 sukija_additions = {
-    u"LEXICON Sanasto\n":       u"Sukija ;\nSukijaSuhdesana ;\n",
-    u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
+    u"LEXICON Asemosana\n":     u"SukijaAsemosana ;\n",
+    u"LEXICON Sanasto\n":       u"SukijaSanasto;\n",
     u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
     u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
     u"LEXICON Sanasto_l\n":     u"SukijaPoikkeavat_l ;\n",
+    u"LEXICON Sanasto_n\n":     u"SukijaPoikkeavat_n ;\n",
     u"LEXICON Sanasto_nl\n":    u"SukijaPoikkeavat_nl ;\n",
+    u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
     u"LEXICON Sanasto_t\n":     u"SukijaPoikkeavat_t ;\n",
+    u"LEXICON Sanasto_s\n":     u"SukijaPoikkeavat_s ;\n",
+    u"LEXICON Suhdesana\n":     u"SukijaSuhdesana ;\n",
     u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
     u"LEXICON Omistusliite_a\n":  u"[O2y]s:s      Liitesana_a     ;\n",
     u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s      Liitesana_ä     ;\n",
