@@ -489,17 +489,18 @@ word_list = [
     (u"yhdeksäs",           (u"yhdeksä",          u"yheksä")),
     (u"ylimmäinen",         (u"ylimmäi",          u"ylimäi")),
 
-    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;",
-                  u"[Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;"]),
-
-    (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
-    (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
-    (u"pieni",   [u"[Ll][Xp]pieni[X]pien[Ses][Ny]nä:piennä NimisanaLiOlV_ä ;"]),
-    (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
-    (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
-    (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
-
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
+
+    # 38 pieni (4, 4). Juoni, moni, pieni, tyyni.
+    #
+    # Nämä ovat tiedostossa poikkeavat-sukija.lexc
+    #
+##    (u"juoni", [u"[Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;"]),
+##    (u"moni",  [u"[Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;"]),
+##    (u"pieni", [u"[Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;"]),
+##    (u"tyyni", [u"[Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
+##    (u"peilityyni", [u"[Ll][Xp]peilityyni[X]peili[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
+##    (u"rasvatyyni", [u"[Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:tyyn LaatusanaSukijaPieni_ä ;"]),
 
     # 39 nuori (3, 3). Tuomi, s. 182, 184.
     #
@@ -515,10 +516,6 @@ word_list = [
     #
 #    (u"hapsi", [u"[Ln][Xp]hapsi[X]has[Ses][Ny]na:hasna NimisanaLiOlV_a ;",
 #                u"[Ln][Xp]hapsi[X]has[Ses][Ny]sa:hassa NimisanaLiOlV_a ;"]),
-
-    # 78 hame
-    #
-    (u"hame",  [u"[Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;"]),
 
     # 79 terve (4, 4). Tuomi s. 142, 143, 146.
     #
@@ -740,6 +737,9 @@ sukija_additions = {
     u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
     u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
     u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
+    u"LEXICON Sanasto_l\n":     u"SukijaPoikkeavat_l ;\n",
+    u"LEXICON Sanasto_nl\n":    u"SukijaPoikkeavat_nl ;\n",
+    u"LEXICON Sanasto_t\n":     u"SukijaPoikkeavat_t ;\n",
     u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
     u"LEXICON Omistusliite_a\n":  u"[O2y]s:s      Liitesana_a     ;\n",
     u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s      Liitesana_ä     ;\n",

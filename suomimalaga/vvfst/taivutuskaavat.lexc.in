@@ -5070,3 +5070,6 @@ LEXICON JärjestyslukuKymmentäSnNm
 
 ?Sukija LEXICON SukijaMahtotapaVi
 ?Sukija [Tm][Ap][P3][Ny][Ef]vi:vi Liitesana_<A> ;
+
+?Sukija LEXICON NOUN SukijaPieni
+?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
