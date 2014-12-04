@@ -242,6 +242,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p>Kissaa on <strong>ruokittava</strong>.</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
 	
+	def testCiteIsJustText(self):
+		result = parseHtml(u"<html><body><p>Kissaa on <cite>ruokittava</cite>.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+	
 	def testUnderlineInducesNoSpace(self):
 		result = parseHtml(u"<html><body><h1>Libre<u>Office</u></h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"LibreOffice")], result)

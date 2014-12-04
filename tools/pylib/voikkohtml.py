@@ -40,7 +40,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return result
 	
 	def isContentTag(self, tag):
-		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p", "caption"]
+		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p", "caption", "blockquote"]
 	
 	def isNotAllowedInHeaderOrParagraph(self, tag):
 		return tag in ["table"]
@@ -53,10 +53,10 @@ class VoikkoHTMLParser(HTMLParser):
 		               "input", "button", "map", "area", "iframe", "base", "font", "noscript", \
 		               "strong", "center", "small", "thead", "tbody", "tfoot", "head", "body", \
 		               "embed", "param", "form", "kbd", "optgroup", "sub", "sup", "frame", "frameset", \
-		               "ins", "label", "applet", "object"]
+		               "ins", "label", "applet", "object", "cite", "wbr", "col", "colgroup"]
 	
 	def isCloseP(self, tag):
-		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6"]
+		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote"]
 	
 	def isTableCell(self, tag):
 		return tag in ["td", "th"]
