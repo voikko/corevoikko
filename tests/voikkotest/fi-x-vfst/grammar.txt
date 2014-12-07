@@ -83,6 +83,7 @@ Olin kotona 20.3., vaikka satoi lunta.
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
 En ollut ollut kotona.
+Voitin lotossa 3 000 000 euroa.
 Talo talo on väärin.
  [code=8, level=0, descr="", stpos=0, len=9, suggs={"Talo"}]
 Hieno eka otsikko

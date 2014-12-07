@@ -199,6 +199,10 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 			i++;
 			continue;
 		}
+		if (SimpleChar::isDigit(sentence->tokens[i].str[0])) {
+			i++;
+			continue;
+		}
 		if (wcscmp(sentence->tokens[i].str, L"ollut") == 0) {
 			// "ollut" is a valid word to be repeated, maybe there are others too
 			i++;
