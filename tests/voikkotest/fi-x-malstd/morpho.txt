@@ -915,3 +915,7 @@ word:varapj.
   analysis
    NUMBER=singular
    SIJAMUOTO=nimento
+word:voitane
+ expected:1
+  analysis
+   NEGATIVE=true

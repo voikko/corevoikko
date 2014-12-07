@@ -744,21 +744,21 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                  äs: aä, jatko: <liitesana, loppu>];
 
 
-[alku: "ttane",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "ttane",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "ttäne",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "ttäne",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "ttaneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "ttaneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: no,
                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "ttäneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "ttäneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: no,
                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "tane",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "tane",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "täne",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "täne",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "taneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "taneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: no,
                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "täneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "täneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: no,
                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 
 
