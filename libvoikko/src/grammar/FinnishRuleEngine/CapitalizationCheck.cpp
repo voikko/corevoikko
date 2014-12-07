@@ -31,6 +31,7 @@
 #include "character/SimpleChar.hpp"
 #include "character/charset.hpp"
 #include "utils/StringUtils.hpp"
+#include "utils/utils.hpp"
 #include <list>
 #include <stack>
 
@@ -279,6 +280,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	    word->tokenlen > 1 && // Single letters are OK in upper case
 	    word->str[1] != L'-' && // A-rapussa etc.
 	    word->str[1] != L':' && // A:n
+	    voikko_casetype(word->str, word->tokenlen) != CT_ALL_UPPER && // KISSA
 	    !word->possibleGeographicalName) {
 		CacheEntry * e = new CacheEntry(1);
 		e->error.setErrorCode(GCERR_WRITE_FIRST_LOWERCASE);
