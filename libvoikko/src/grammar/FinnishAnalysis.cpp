@@ -100,7 +100,8 @@ void FinnishAnalysis::analyseToken(Token * token) {
 			}
 		}
 		
-		if (wclass && wcscmp(L"sidesana", wclass) == 0) {
+		if (wclass && (wcscmp(L"sidesana", wclass) == 0 ||
+		    (wcscmp(L"kieltosana", wclass) == 0 && token->str[token->tokenlen - 1] == L'ä'))) { // "enkä", "etkä", "eikä" = "ja en", ...
 			token->possibleConjunction = true;
 		}
 		else {
