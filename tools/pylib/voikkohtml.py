@@ -230,7 +230,7 @@ USER_AGENT = "WebVoikko language checker - see http://joukahainen.puimula.org/we
 MAX_REDIRECTS = 3
 
 def __checkValidUrl(url):
-	if url.startswith('ftp') or (':/' in url and not url.startswith('http:')):
+	if url.startswith('ftp') or (':/' in url and not (url.startswith('http:') or url.startswith('https:'))):
 		raise HttpException(ERR_FORBIDDEN_SCHEME)
 
 def __getForwardedForHeader(clientIp, clientRequestHeaders):
