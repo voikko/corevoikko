@@ -457,6 +457,19 @@ LEXICON SukijaPoikkeavat_em
 
 
 LEXICON SukijaPoikkeavat_ep
+[Lep][Xp]Isokylä[X][Sn][Ny]iso[Bm]kylä:isokylä	PaikannimiNormaaliYsJatkoOl_ä	;
+[Lep][Xp]Isokylä[X][Sg][Ny]ison[Bm]kylän:isonkylän	PaikannimiYksikönGenetiivinJatko_ä	;
+[Lep][Xp]Isokylä[X][Sp][Ny]isoa[Bm]kylää:isoakylää	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Ses][Ny]isona[Bm]kylänä:isonakylänä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Str][Ny]isoksi[Bm]kyläksi:isoksikyläksi	PaikannimiLiOlI_ä	;
+[Lep][Xp]Isokylä[X][Sine][Ny]isossa[Bm]kylässä:isossakylässä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Sela][Ny]isosta[Bm]kylästä:isostakylästä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Sill][Ny]isoon[Bm]kylää:isoonkylää	PaikannimiLiOlN_ä	;
+[Lep][Xp]Isokylä[X][Sill][Ny]isoon[Bm]kylähä:isoonkylähän	PaikannimiLiOlN_ä	;
+[Lep][Xp]Isokylä[X][Sade][Ny]isolla[Bm]kylällä:isollakylällä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Sabl][Ny]isolta[Bm]kylältä:isoltakylältä	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Sall][Ny]isolle[Bm]kylälle:isollekylälle	PaikannimiLiOlV_ä	;
+[Lep][Xp]Isokylä[X][Sab][Ny]isotta[Bm]kylättä:isottakylättä	PaikannimiLiOlV_ä	;
 [Lep][Xp]Isosuo[X][Sn][Ny]iso[Bm]suo:isosuo	PaikannimiNormaaliYsJatkoOl_a	;
 [Lep][Xp]Isosuo[X][Sg][Ny]ison[Bm]suon:isonsuon	PaikannimiYksikönGenetiivinJatko_a	;
 [Lep][Xp]Isosuo[X][Sp][Ny]isoa[Bm]suota:isoasuota	PaikannimiLiOlV_a	;
@@ -469,6 +482,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isosuo[X][Sabl][Ny]isolta[Bm]suolta:isoltasuolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sall][Ny]isolle[Bm]suolle:isollesuolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sab][Ny]isotta[Bm]suotta:isottasuotta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isosuo[X]iso[Bm]suo:isosuo	Johdin_lAinen_ä	;
 [Lep][Xp]Isotalo[X][Sn][Ny]iso[Bm]talo:isotalo	PaikannimiNormaaliYsJatkoOl_a	;
 [Lep][Xp]Isotalo[X][Sg][Ny]ison[Bm]talon:isontalon	PaikannimiYksikönGenetiivinJatko_a	;
 [Lep][Xp]Isotalo[X][Sp][Ny]isoa[Bm]taloa:isoataloa	PaikannimiLiOlV_a	;
@@ -481,6 +495,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isotalo[X][Sabl][Ny]isolta[Bm]talolta:isoltatalolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X][Sall][Ny]isolle[Bm]talolle:isolletalolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X][Sab][Ny]isotta[Bm]talotta:isottatalotta	PaikannimiLiOlV_a	;
+[Lep][Xp]Isotalo[X]iso[Bm]talo:isotalo	Johdin_lAinen_ä	;
 [Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       PaikannimiNormaaliYsJatkoOl_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     PaikannimiYksikönGenetiivinJatko_a ;
