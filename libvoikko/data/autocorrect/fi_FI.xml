@@ -211,10 +211,6 @@
   <correct>itse kukin</correct>
 </replacement>
 <replacement>
-  <incorrect>itsestään=selvä</incorrect>
-  <correct>itsestään selvä</correct>
-</replacement>
-<replacement>
   <incorrect>iän=kaiken</incorrect>
   <correct>iän kaiken</correct>
 </replacement>
@@ -637,10 +633,6 @@
 <replacement>
   <incorrect>pois päin</incorrect>
   <correct>pois=päin</correct>
-</replacement>
-<replacement>
-  <incorrect>päin vastoin</incorrect>
-  <correct>päin=vastoin</correct>
 </replacement>
 <replacement>
   <incorrect>päälekkäin</incorrect>
