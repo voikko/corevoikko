@@ -40,7 +40,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return result
 	
 	def isContentTag(self, tag):
-		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p", "caption", "blockquote"]
+		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p", "caption"]
 	
 	def isNotAllowedInHeaderOrParagraph(self, tag):
 		return tag in ["table"]

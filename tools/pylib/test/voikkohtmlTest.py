@@ -274,6 +274,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><head></style></head><body><p>kissa</p></body></html>");
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testPWithinBlockquote(self):
+		result = parseHtml(u"<html><body><blockquote><p>Kissa</p></blockquote></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissa")], result)
+	
 	def testUnknownCharacterReferenceIsParseError(self):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 	
