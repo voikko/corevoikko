@@ -3592,6 +3592,7 @@ Ehtotapa_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 Johdin_Us_ksen_<A>	;
 ?Sukija <A>:<A>	SukijaTositapaVi_<A> ;
+?Sukija <A>:<A>	LiitesanaVainPi_<A> ;
 
 LEXICON Salata_w
 Tositapa4Tt_<A>	;
