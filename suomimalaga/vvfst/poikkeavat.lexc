@@ -590,7 +590,7 @@ Summayhdyssanat	;
 [Ln][Xp]matalameri[X][Sab][Nm]matalitta[Bm]merittä:matalittamerittä	NimisanaLiOlV_ä ;
 [Ln][Xp]matalameri[X][Sko][Nm]mataline[Bm]merine:matalinemerine	NimisanaLiOlV_ä ;
 [Ln][Xp]matalameri[X][Sin][Nm]matalin[Bm]merin:matalinmerin		Liitesana_ä;
-[Ln][Xp]meikä[X]meikä[Sn][Ny]meikä:meikä	NimisanaNormaaliYsJatko_ä	;
+[Ln][Xp]meikä[X][Sn][Ny]meikä:meikä	NimisanaNormaaliYsJatko_ä	;
 [Ln][Xp]mustaherukka[X][Sn][Ny]musta[Bm]herukka:mustaherukka	NimisanaNormaaliYsJatko_a ;
 [Ln][Xp]mustaherukka[X][Sn][Ny]mustan[Bm]herukka:mustanherukka       Omistusliite_a ;
 [Ln][Xp]mustaherukka[X][Sg][Ny]mustan[Bm]herukan:mustanherukan	NimisanaYksikönGenetiivinJatko_a ;

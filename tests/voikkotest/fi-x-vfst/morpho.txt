@@ -1749,3 +1749,7 @@ word:voitane
  expected:1
   analysis
    NEGATIVE=true
+word:meikä-r
+ expected:1
+  analysis
+   STRUCTURE==ppppp-=q
