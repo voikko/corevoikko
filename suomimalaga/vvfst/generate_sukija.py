@@ -387,7 +387,7 @@ word_list = [
     (u"lordi",          (u"lord",        u"loord")),
     (u"luterilainen",   (u"luterilai",   u"lutherilai", u"luteerilai")),
     (u"lähimmäinen",    (u"lähimmäi",    u"lähimäi")),
-    (u"maineikas",      (u"maineik",     u"maineek")),
+    (u"maineikas",      (u"maineik",     u"maineek", u"mainek")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"majuri",         (u"majur",       u"majuur")),
     (u"mansetti",       (u"manset",      u"manshet")),

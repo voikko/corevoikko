@@ -265,6 +265,8 @@ voikko-sukija:
 #
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
+#vvfst-sukija: VOIKKO_VARIANT=sukija
+#vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 
 vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija --sukija-ys
 vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
