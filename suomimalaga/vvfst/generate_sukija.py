@@ -313,6 +313,7 @@ word_list = [
     (u"emaloida",         (u"emalo",         u"emaljo")),
     (u"embleemi",         (u"embleem",       u"emblem")),
     (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi")),
+    (u"erilainen",        (u"erilai",        u"erillai", u"erinlai")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
     (u"gentlemanni",      (u"getlemann",     u"gentleman")),
