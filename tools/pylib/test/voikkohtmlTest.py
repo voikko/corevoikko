@@ -97,6 +97,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><table><tr><td><p>kissa</p></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testUnclosedTdIsLikeClosedTd(self):
+		result = parseHtml(u"<html><body><table><tr><th>kissa<td>koira<td>poni</tr></table></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"kissa"), (SEGMENT_TYPE_OTHER, u"koira"), (SEGMENT_TYPE_OTHER, u"poni")], result)
+	
 	def testTdAfterUnclosedTdIsNotError(self):
 		result = parseHtml(u"<html><body><table><tr><td><td><p>kissa</p></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
