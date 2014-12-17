@@ -2931,6 +2931,7 @@ e:e	Johdin_nUt_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija ee:ee SukijaTositapaPi_<A> ;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -3512,6 +3513,7 @@ s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 ?Sukija <A>:<A> SukijaTositapaVi_<A> ;
+?Sukija <A><A>:<A><A> SukijaTositapaPi_<A> ;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
@@ -3662,6 +3664,10 @@ Ehtotapa_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 ?Sukija <A>:<A> SukijaTositapaVi_<A> ;
+?Sukija <A><A>:<A><A> SukijaTositapaPi_<A> ;
+?Sukija [Tt][Ap][P3][Ny][Ef][[L]]:[[L]] Liitesana_<A> ;
+?Sukija [[L]]:[[L]] SukijaTositapaPi_<A> ;
+?Sukija [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
 
 LEXICON Kohota
 KohotaKohoilla_w_<A>	;
@@ -5069,6 +5075,9 @@ LEXICON JärjestyslukuKymmentäSnNm
 
 ?Sukija LEXICON SukijaTositapaVi
 ?Sukija [Tt][Ap][P3][Ny][Ef]vi:vi Liitesana_<A> ;
+
+?Sukija LEXICON SukijaTositapaPi
+?Sukija [Tt][Ap][P3][Ny][Ef]pi:pi Liitesana_<A> ;
 
 ?Sukija LEXICON SukijaMahtotapaVi
 ?Sukija [Tm][Ap][P3][Ny][Ef]evi:evi Liitesana_<A> ;
