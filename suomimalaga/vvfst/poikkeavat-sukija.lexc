@@ -483,7 +483,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isosuo[X][Sabl][Ny]isolta[Bm]suolta:isoltasuolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sall][Ny]isolle[Bm]suolle:isollesuolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isosuo[X][Sab][Ny]isotta[Bm]suotta:isottasuotta	PaikannimiLiOlV_a	;
-[Lep][Xp]Isosuo[X]iso[Bm]suo:isosuo	Johdin_lAinen_ä	;
+[Lep][Xp]Isosuo[X]iso[Bm]suo:isosuo	Johdin_lAinen_a	;
 [Lep][Xp]Isotalo[X][Sn][Ny]iso[Bm]talo:isotalo	PaikannimiNormaaliYsJatkoOl_a	;
 [Lep][Xp]Isotalo[X][Sg][Ny]ison[Bm]talon:isontalon	PaikannimiYksikönGenetiivinJatko_a	;
 [Lep][Xp]Isotalo[X][Sp][Ny]isoa[Bm]taloa:isoataloa	PaikannimiLiOlV_a	;
@@ -496,7 +496,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isotalo[X][Sabl][Ny]isolta[Bm]talolta:isoltatalolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X][Sall][Ny]isolle[Bm]talolle:isolletalolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X][Sab][Ny]isotta[Bm]talotta:isottatalotta	PaikannimiLiOlV_a	;
-[Lep][Xp]Isotalo[X]iso[Bm]talo:isotalo	Johdin_lAinen_ä	;
+[Lep][Xp]Isotalo[X]iso[Bm]talo:isotalo	Johdin_lAinen_a	;
 [Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       PaikannimiNormaaliYsJatkoOl_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     PaikannimiYksikönGenetiivinJatko_a ;
@@ -523,7 +523,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Vanhakirkko[X][Sabl][Ny]vanhalta[Bm]kirkolta:vanhaltakirkolta	PaikannimiLiOlV_a	;
 [Lep][Xp]Vanhakirkko[X][Sall][Ny]vanhalle[Bm]kirkolle:vanhallekirkolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Vanhakirkko[X][Sab][Ny]vanhatta[Bm]kirkotta:vanhattakirkotta	PaikannimiLiOlV_a	;
-
+[Lep][Xp]Vanhakirkko[X]vanha[Bm]kirkko:vanhakirkko Johdin_lAinen_a ;
 
 LEXICON SukijaPoikkeavat_l
 [Ll][Xp]esimuistoinen[X]esi[Bm]muistoi:esimuistoi  LaatusanaNainenInen_a ;
