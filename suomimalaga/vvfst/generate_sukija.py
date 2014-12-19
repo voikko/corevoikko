@@ -42,7 +42,7 @@
 
 # Testing (in directory suomimalaga/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
-# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' | sort >test.out; date
+# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | gawk '{print $2}' |flookup -i sukija.fst | gawk 'length($0) > 0'
@@ -314,6 +314,9 @@ word_list = [
     (u"embleemi",         (u"embleem",       u"emblem")),
     (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi")),
     (u"erilainen",        (u"erilai",        u"erillai", u"erinlai")),
+    (u"erillinen",        (u"erilli",        u"erili")),
+    (u"eriskummallinen",  (u"kummalli",      u"kummali", u"kumalli")),
+    (u"erinäinen",        (u"erinäi",        u"erinnäi")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
     (u"gentlemanni",      (u"getlemann",     u"gentleman")),
