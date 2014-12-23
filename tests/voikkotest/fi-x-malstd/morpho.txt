@@ -925,3 +925,7 @@ word:käymisteitse
    CLASS=seikkasana
    !NUMBER
    !SIJAMUOTO
+word:koskeekaan
+ expected:1
+  analysis
+   NEGATIVE=false

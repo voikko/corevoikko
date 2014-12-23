@@ -503,19 +503,19 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
 [alku: "a",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "e",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "e",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3];
-[alku: "i",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "i",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3];
-[alku: "o",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "o",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "u",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "u",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "y",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "y",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
-[alku: "ä",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "ä",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
-[alku: "ö",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "ö",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
 
 
