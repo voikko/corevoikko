@@ -1763,3 +1763,9 @@ word:-200:sta
   analysis
    CLASS=lukusana
    BASEFORM=-200
+word:käymisteitse
+ expected:1
+  analysis
+   CLASS=seikkasana
+   !NUMBER
+   !SIJAMUOTO

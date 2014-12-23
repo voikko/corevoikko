@@ -2285,11 +2285,11 @@ subrule tulostus_sijamuoto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.luokka in <tavuviiva, johdin_ittAin> then
-      return nil;
-    end;
     if $allomorfi.sijamuoto /= nil then
       return $allomorfi.sijamuoto;
+    end;
+    if $allomorfi.luokka in <tavuviiva, johdin_ittAin, seikkasana> then
+      return nil;
     end;
     if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana, lyhenne,
                              etunimi, sukunimi, paikannimi, nimi, lukusana, nimitapa_45> then
@@ -2303,11 +2303,11 @@ subrule tulostus_luku($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.luokka in <tavuviiva, johdin_ittAin> then
-      return nil;
-    end;
     if $allomorfi.luku /= nil then
       return $allomorfi.luku;
+    end;
+    if $allomorfi.luokka in <tavuviiva, johdin_ittAin, seikkasana> then
+      return nil;
     end;
     if $allomorfi.sija = kerronto_sti then
       return nil;
