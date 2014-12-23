@@ -1753,3 +1753,13 @@ word:meikä-r
  expected:1
   analysis
    STRUCTURE==ppppp-=q
+word:200:sta
+ expected:1
+  analysis
+   CLASS=lukusana
+   BASEFORM=200
+word:-200:sta
+ expected:1
+  analysis
+   CLASS=lukusana
+   BASEFORM=-200

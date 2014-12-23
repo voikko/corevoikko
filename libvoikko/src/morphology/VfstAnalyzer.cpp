@@ -427,19 +427,26 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 }
 
-static wchar_t * parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar_t * baseform) {
+static bool parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar_t * baseform) {
 	bool isInXp = false;
 	bool isInXr = false;
 	bool isInTag = false;
+	bool isInDigitSequence = false;
 	bool xpPassed = false;
 	size_t baseformPos = 0;
 	
 	for (size_t i = 0; i < fstLen; i++) {
+		if (i == 0 && (SimpleChar::isDigit(fstOutput[i]) || fstOutput[i] == L'-')) {
+			isInDigitSequence = true;
+		}
 		if (fstOutput[i] == L'[') {
+			if (isInDigitSequence) {
+				isInDigitSequence = false;
+				xpPassed = true;
+			}
 			if (i + 2 >= fstLen) {
 				// something wrong with the pattern
-				delete[] baseform;
-				return 0;
+				return false;
 			}
 			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
 				i += 3;
@@ -477,7 +484,7 @@ static wchar_t * parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, 
 				isInTag = false;
 			}
 		}
-		else if (isInXp) {
+		else if (isInXp || isInDigitSequence) {
 			baseform[baseformPos++] = fstOutput[i];
 		}
 		else if (!xpPassed) {
@@ -485,7 +492,7 @@ static wchar_t * parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, 
 		}
 	}
 	baseform[baseformPos] = L'\0';
-	return baseform;
+	return true;
 }
 
 static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const wchar_t * structure) {
@@ -499,6 +506,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 	bool isInXp = false;
 	bool isInXr = false;
 	bool isInTag = false;
+	bool classTagSeen = false;
 	
 	for (size_t i = 0; i < fstLen; i++) {
 		if (fstOutput[i] == L'[') {
@@ -518,12 +526,13 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				i += 3;
 				isInXr = true;
 			}
-			else if (i == 0 && i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Lu]", 4) == 0) {
+			else if (!classTagSeen && i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Lu]", 4) == 0) {
 				i += 3;
+				classTagSeen = true;
 				// we will try completely different rules here and get back if it does not work out
-				wchar_t * numeralBaseform = parseNumeralBaseform(fstOutput + i + 1, fstLen - i - 1, baseform + baseformPos);
+				bool numeralBaseform = parseNumeralBaseform(fstOutput + i + 1, fstLen - i - 1, baseform + baseformPos);
 				if (numeralBaseform) {
-					return numeralBaseform;
+					return baseform;
 				}
 			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
@@ -532,6 +541,9 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				i += 2;
 			}
 			else {
+				if (fstOutput[i + 1] == L'L') {
+					classTagSeen = true;
+				}
 				isInTag = true;
 			}
 		}
