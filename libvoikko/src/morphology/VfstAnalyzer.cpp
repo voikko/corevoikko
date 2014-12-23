@@ -680,7 +680,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'N') {
 						const wchar_t * wclass = analysis->getValue("CLASS");
-						if (!wclass || wcscmp(wclass, L"etuliite") != 0) {
+						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
 							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);
 						}
 					}
@@ -689,7 +689,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'S') {
 						const wchar_t * wclass = analysis->getValue("CLASS");
-						if (!wclass || wcscmp(wclass, L"etuliite") != 0) {
+						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
 							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
 							if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
 								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));

@@ -1769,3 +1769,9 @@ word:käymisteitse
    CLASS=seikkasana
    !NUMBER
    !SIJAMUOTO
+word:kissankarvoittain
+ expected:1
+  analysis
+   CLASS=seikkasana
+   !NUMBER
+   !SIJAMUOTO
