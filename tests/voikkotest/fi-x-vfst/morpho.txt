@@ -1796,3 +1796,5 @@ word:asiakastyytyväisyyttä
 word:ratakorkeus
  expected:1
  !POSSIBLE_GEOGRAPHICAL_NAME
+word:esikarsinta
+ expected:1

@@ -157,9 +157,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = etuliite then
     if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules
-        inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos, nimisana_teonsanasta;
+        inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
     elseif nimisana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos, nimisana_teonsanasta;
+      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
     elseif laatusana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos, inen_johdos_nimisanasta;
     end;
@@ -170,6 +170,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
     if teonsana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules teonsana;
+    elseif nimisana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules nimisana_teonsanasta;
     end;
     if teonsanan_johdoksen_etuliite in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules nimisana_teonsanasta;
