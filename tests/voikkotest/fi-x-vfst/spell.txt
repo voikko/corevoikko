@@ -3680,6 +3680,7 @@ jätätti
 EU:kin
 !kissojenkaunis
 kellanvalkoinen
+!pestäkää
 
 # = poikkeavat asetukset =
 
