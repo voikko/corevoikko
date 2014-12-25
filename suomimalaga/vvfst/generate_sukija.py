@@ -335,6 +335,7 @@ word_list = [
     (u"invalidi",         (u"invalid",       u"invaliid")),
     (u"janitsaari",       (u"janitsaar",     u"janitsar", u"janitschar", u"janitschaar", u"janitshaar")),
     (u"juridinen",        (u"juridi",        u"juriidi")),
+    (u"kaanon",           (u"kaanon",        u"kanon")),
     (u"kahdeksainen",        (u"kahdeksai",         u"kaheksai")),
     (u"kahdeksan",           (u"kahdeks",           u"kaheks")),
     (u"kahdeksankymppinen",  (u"kahdeksankymppi",   u"kaheksankymppi")),
@@ -349,7 +350,7 @@ word_list = [
     (u"kamiina",        (u"kamiin",      u"kamin")),
     (u"kampanja",       (u"kampanj",     u"kamppanj")),
     (u"kaneli",         (u"kanel",       u"kaneel")),
-    (u"kanuuna",        (u"kanuun",      u"kanun")),
+    (u"kanuuna",        (u"kanuun",      u"kanun", u"kanoon", u"kanon")),
     (u"kaoottinen",     (u"kaootti",     u"kaaootti", u"kaaotti", u"kaotti")),
     (u"kauan",          ((u"kauaa",      u"kauvaa"),
                          (u"kauan",      u"kauvan"),
@@ -365,6 +366,7 @@ word_list = [
     (u"kerubi",         (u"kerub",       u"keruub", u"kheruub")),
     (u"keskimmäinen",   (u"keskimmäi",   u"keskimäi")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
+    (u"klinikka",       (u"klinik",      u"kliniik")),
     (u"kollega",        (u"kolleg",      u"kolleg")),
     (u"kollegio",       (u"kollegio",    u"kolleegio")),
     (u"koneisto",       (u"koneisto",    u"konehisto")),
@@ -670,8 +672,6 @@ function_list = [
                       u"taittaa",
                       u"palttaa",
                       u"varttaa")),
-     (lambda line, word: outfile.write (line.replace (u"NimisanaVati_ä", u"SukijaNeiti")),
-       (u"neiti")),
 ]
 
 def convert_to_dictionary (word_list):

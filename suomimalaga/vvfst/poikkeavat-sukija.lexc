@@ -215,6 +215,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
+[Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
