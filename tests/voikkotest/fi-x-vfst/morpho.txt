@@ -1779,3 +1779,5 @@ word:koskeekaan
  expected:1
   analysis
    NEGATIVE=false
+word:kissankeltainen
+ expected:1
