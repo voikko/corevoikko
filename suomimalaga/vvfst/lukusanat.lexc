@@ -359,7 +359,7 @@ LukusananErikoisjälkiliite	;
 LEXICON LukusananErikoisjälkiliite
 [Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
-[Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;
+[Bc][Ln][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;
 [Bc][Ln][Xp]luku[X]lu:lu	LukusananJälkiliiteLuku_a	; ! "kahdeksankymmentäluku"
 [Bc][Ll][Xp]tekijäinen[X]tekijäi:tekijäi	LukusananJälkiliiteNainen_ä	;
 [Bc][Ll][Xp]vuotias[X]vuotia:vuotia	LukusananJälkiliiteVieras_a	;

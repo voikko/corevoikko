@@ -1785,3 +1785,7 @@ word:kolmisen
  expected:1
  !NUMBER
  !SIJAMUOTO
+word:hämäräaktiivinen
+ expected:1
+word:asiakastyytyväisyyttä
+ expected:1

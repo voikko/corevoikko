@@ -3679,6 +3679,7 @@ kaunis-
 jätätti
 EU:kin
 !kissojenkaunis
+kellanvalkoinen
 
 # = poikkeavat asetukset =
 
