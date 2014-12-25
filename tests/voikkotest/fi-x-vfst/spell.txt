@@ -3678,6 +3678,7 @@ kaunis-
 !hypättynsä
 jätätti
 EU:kin
+!kissojenkaunis
 
 # = poikkeavat asetukset =
 

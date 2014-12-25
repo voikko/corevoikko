@@ -3669,6 +3669,7 @@ rakastajattarensa
 kaunis-
 !hypättynsä
 EU:kin
+!kissojenkaunis
 
 # = poikkeavat asetukset =
 

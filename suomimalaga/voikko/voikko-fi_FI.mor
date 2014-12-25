@@ -982,7 +982,7 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
       # "kissan+karva", "työhön+otto"
       if $oikea.sijamuoto = omanto then
         result $res,
-               rules nimisana, laatusana, nimisana_teonsanasta, yhdysmerkki_yleisnimen_jälkeen,
+               rules nimisana, nimisana_teonsanasta, yhdysmerkki_yleisnimen_jälkeen,
                      nimisanan_etuliite;
       end;
       if $oikea.sijamuoto = nimentö and $oikea.luku = yksikkö then
@@ -992,7 +992,7 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
         result $res, rules yhdysmerkki_laatusanan_jälkeen;
       end;
       if $oikea.sijamuoto = omanto and $oikea.luku = yksikkö then
-        result $res, rules inen_johdos_nimisanasta;
+        result $res, rules laatusana, inen_johdos_nimisanasta;
       end;
     end;
   end;
