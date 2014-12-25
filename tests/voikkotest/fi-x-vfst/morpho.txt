@@ -1789,3 +1789,6 @@ word:hämäräaktiivinen
  expected:1
 word:asiakastyytyväisyyttä
  expected:1
+word:ratakorkeus
+ expected:1
+ !POSSIBLE_GEOGRAPHICAL_NAME

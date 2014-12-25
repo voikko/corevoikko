@@ -2459,7 +2459,7 @@ subrule tulostus_nimisanan_attribuutit($tietue):
     if $allomorfi.paikannimen_jälkiliite = yes then
       return [paikannimen_jälkiliite: yes];
     end;
-    if $allomorfi.luokka in <nimisana, tavuviiva, johdin_UUs> then
+    if $allomorfi.luokka in <nimisana, nimi_laatusana, tavuviiva, johdin_UUs> then
       return [];
     end;
   end;

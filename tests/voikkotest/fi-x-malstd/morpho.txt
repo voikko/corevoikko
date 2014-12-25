@@ -933,3 +933,6 @@ word:kolmisen
  expected:1
  !NUMBER
  !SIJAMUOTO
+word:ratakorkeus
+ expected:1
+ !POSSIBLE_GEOGRAPHICAL_NAME
