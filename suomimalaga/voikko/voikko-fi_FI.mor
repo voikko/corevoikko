@@ -2437,7 +2437,7 @@ subrule tulostus_kielto($tietue):
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.kielto /= nil then
-      if $tlen greater $i + 1 and $tietue.($tlen - $i).luokka = kertoman_tekijäpääte_vahva then
+      if $tlen greater $i + 1 and $tietue.($tlen - $i).luokka in <kertoman_tekijäpääte_vahva, kestämän_tekijäpääte_heikko> then
         return no;
       end;
       return $allomorfi.kielto;

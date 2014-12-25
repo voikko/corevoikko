@@ -1779,6 +1779,10 @@ word:koskeekaan
  expected:1
   analysis
    NEGATIVE=false
+word:hyppäänkään
+ expected:1
+  analysis
+   NEGATIVE=false
 word:kissankeltainen
  expected:1
 word:kolmisen
