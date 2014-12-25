@@ -1781,3 +1781,7 @@ word:koskeekaan
    NEGATIVE=false
 word:kissankeltainen
  expected:1
+word:kolmisen
+ expected:1
+ !NUMBER
+ !SIJAMUOTO

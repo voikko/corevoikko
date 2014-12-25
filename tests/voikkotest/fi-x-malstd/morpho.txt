@@ -929,3 +929,7 @@ word:koskeekaan
  expected:1
   analysis
    NEGATIVE=false
+word:kolmisen
+ expected:1
+ !NUMBER
+ !SIJAMUOTO
