@@ -151,6 +151,9 @@ Multichar_Symbols
 ! Sanan johtaminen nimisanaksi on kielletty
 @P.EI_NIMISANAJOHDOSTA.ON@ @D.EI_NIMISANAJOHDOSTA@
 
+! Sanan johtaminen nimi-laatusanaksi on kielletty
+@P.EI_NIMI_LAATUSANAJOHDOSTA.ON@ @D.EI_NIMI_LAATUSANAJOHDOSTA@
+
 ! Sana on yksitekijäinen teonsana
 @P.YKSITEKIJÄINEN.ON@ @D.YKSITEKIJÄINEN@
 

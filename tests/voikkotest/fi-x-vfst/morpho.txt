@@ -1798,3 +1798,5 @@ word:ratakorkeus
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:esikarsinta
  expected:1
+word:alikehittynyt
+ expected:1
