@@ -353,7 +353,7 @@ LukusananJälkiliiteEiYhdysmerkkiä	;
 [Bc]-:-	Loppu;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
-[Bc][Bh]@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@:@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_JATKETTAVA.ON@	Sanasto_n	;
+[Bc][Bh]@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_ALKANUT.ON@@P.YS_JATKETTAVA.ON@:@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_ALKANUT.ON@@P.YS_JATKETTAVA.ON@	Sanasto_n	;
 LukusananErikoisjälkiliite	;
 
 LEXICON LukusananErikoisjälkiliite

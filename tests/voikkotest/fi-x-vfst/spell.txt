@@ -3682,6 +3682,7 @@ EU:kin
 kellanvalkoinen
 !pestäkää
 !kertaistan
+!kolmenaisyyspuolue
 
 # = poikkeavat asetukset =
 
