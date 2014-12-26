@@ -1543,6 +1543,8 @@ combi_rule teonsana ($vasen, $oikea, $sana, $index):
     ? tavuviiva in $vasen.($index - 1).jatko;
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
     ? $oikea.tiedot = nil or (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
+  else
+    ? $oikea.tiedot = nil or (not ysj in $oikea.tiedot);
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;

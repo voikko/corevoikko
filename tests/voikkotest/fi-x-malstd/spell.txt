@@ -3670,6 +3670,7 @@ kaunis-
 !hypättynsä
 EU:kin
 !kissojenkaunis
+!kertaistan
 
 # = poikkeavat asetukset =
 

@@ -3681,6 +3681,7 @@ EU:kin
 !kissojenkaunis
 kellanvalkoinen
 !pestäkää
+!kertaistan
 
 # = poikkeavat asetukset =
 
