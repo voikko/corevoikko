@@ -813,7 +813,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			const wchar_t * wclass = analysis->getValue("CLASS");
 			const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
-			if (analysis->getValue("NEGATIVE") && wclass && wcscmp(wclass, L"teonsana") != 0) {
+			const wchar_t * mood = analysis->getValue("MOOD");
+			if (analysis->getValue("NEGATIVE") && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
+			    (mood && wcscmp(mood, L"MINEN-infinitive") == 0)
+			)) {
 				analysis->removeAttribute("NEGATIVE");
 			}
 			if (analysis->getValue("NUMBER") && sijamuoto && wcscmp(sijamuoto, L"kerrontosti") == 0) {

@@ -1804,3 +1804,6 @@ word:ylinouseva
  expected:1
 word:uudelleenmuotoiltu
  expected:1
+word:juoksemisestapa
+ expected:1
+ !NEGATIVE
