@@ -1800,3 +1800,5 @@ word:esikarsinta
  expected:1
 word:alikehittynyt
  expected:1
+word:ylinouseva
+ expected:1
