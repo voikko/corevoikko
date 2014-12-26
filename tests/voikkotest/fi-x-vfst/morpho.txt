@@ -1802,3 +1802,5 @@ word:alikehittynyt
  expected:1
 word:ylinouseva
  expected:1
+word:uudelleenmuotoiltu
+ expected:1
