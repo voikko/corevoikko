@@ -139,6 +139,7 @@ re_tio   = makeRe (u"Ln", u"([^a]i|k)tio") # Traditio, funktio, mutta ei aitio.
 re_toninen = makeRe (u"Ll", u".toninen")
 re_iivinen = makeRe (u"Ll", u"Ciivinen")
 re_aalinen = makeRe (u"Ll", u"aalinen")
+re_geeninen = makeRe (u"Ll", u"geeninen")
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
@@ -201,6 +202,7 @@ spelling_pattern_list = [
   (re_toninen, u"toni", u"tooni"),
   (re_iivinen, u"iivi", u"ivi"),
   (re_aalinen, u"aali", u"ali"),
+  (re_geeninen, u"geeni", u"geni"),
 
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
@@ -309,6 +311,7 @@ word_list = [
     (u"divaani",          (u"divaan",        u"divan")),
     (u"drakma",           (u"drakm",         u"drakhm")),
     (u"edes",             (u"edes",          u"ees")),
+    (u"ekumeeninen",      (u"ekumeeni",      u"ekumeni")),
     (u"emali",            (u"emal",          u"emalj")),
     (u"emaloida",         (u"emalo",         u"emaljo")),
     (u"embleemi",         (u"embleem",       u"emblem")),
@@ -319,11 +322,12 @@ word_list = [
     (u"erinäinen",        (u"erinäi",        u"erinnäi")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
+    (u"galvaaninen",      (u"galvaani",      u"galvani")),
     (u"gentlemanni",      (u"getlemann",     u"gentleman")),
     (u"germaani",         (u"germaan",       u"german")),
+    (u"gregoriaaninen",   (u"gregoriaani",   u"gregoriani")),
     (u"haupitsi",         (u"haupits",       u"haubits")),
     (u"hevonen",          (u"hevo",          u"hevoi")),
-    (u"homogeeninen",     (u"homogeeni",     u"homogeni")),
     (u"humaaninen",       (u"humaani",       u"humani")),
     (u"husaari",          (u"husaar",        u"husar")),
     (u"huumori",          (u"huumor",        u"humor")),
@@ -334,6 +338,7 @@ word_list = [
     (u"insinööri",        (u"insinöör",      u"insinör")),
     (u"invalidi",         (u"invalid",       u"invaliid")),
     (u"janitsaari",       (u"janitsaar",     u"janitsar", u"janitschar", u"janitschaar", u"janitshaar")),
+    (u"juliaaninen",      (u"juliaani",      u"juliani")),
     (u"juridinen",        (u"juridi",        u"juriidi")),
     (u"kaanon",           (u"kaanon",        u"kanon")),
     (u"kahdeksainen",        (u"kahdeksai",         u"kaheksai")),
@@ -401,6 +406,7 @@ word_list = [
     (u"majuri",         (u"majur",       u"majuur")),
     (u"mansetti",       (u"manset",      u"manshet")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
+    (u"mekaaninen",     (u"mekaani",     u"mekani")),
     (u"mieluinen",      (u"mielui",      u"mieluhi")),
     (u"minareetti",     (u"minareet",    u"minaret")),
     (u"modeemi",        (u"modeem",      u"modem")),

@@ -139,6 +139,7 @@ LEXICON SukijaAsemosanaMieMä
 [Sade][Ny]ulla:ulla	Liitesana_a	;
 [Sabl][Ny]ulta:ulta	Liitesana_a	;
 [Sall][Ny]ulle:ulle	Liitesana_a	;
+[Sall][Ny]ullen:ullen	Liitesana_a	;
 
 LEXICON SukijaAsemosanaMie
 [Sn][Ny]e:e	Liitesana_ä	;
@@ -155,13 +156,16 @@ LEXICON SukijaAsemosanaMikä
 [Str][Ny]ksikäs:ksikäs    Loppu ;
 [Sela][Ny]stäkäs:stäkäs   Loppu ;
 [Sill][Ny]hinkäs:hinkäs   Loppu ;
+[Sill][Ny]nnekkä:nnekkä   Liitesana_ä ;
 [Sill][Ny]nnekkäs:nnekkäs Loppu ;
-[Sill][Ny]nnekäs:nnekäs   Loppu ;
-[Sall][Ny]llekäs:llekäs   Loppu ;
-[Sn][Nm]tkäs:tkäs         Loppu ;
+[Sill][Ny]nnekkään:nnekkään Loppu ;
+[Sill][Ny]nnekäs:nnekäs     Loppu ;
+[Sall][Ny]llekäs:llekäs     Loppu ;
+[Sn][Nm]tkäs:tkäs           Loppu ;
 
 LEXICON SukijaAsemosanaMinä
 [Sill][Ny]uhun:uhun	Liitesana_a	;
+[Sall][Ny]ullen:ullen	Liitesana_a	;
 
 LEXICON SukijaAsemosanaMä
 [Sn][Ny]ä:ä	Liitesana_ä	;
@@ -535,6 +539,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]kultainen[X]kullai:kullai LaatusanaNainenInen_a ;
 [Ll][Xp]monenlainen[X]monel[Bm]lai:monellai LaatusanaNainenInen_a ;
+[Ll][Xp]oktaaninen[X]oktani:oktani LaatusanaNainenInen_a ;
 [Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;
 [Ll][Xp]peilityyni[X]peili[Bm]tyyn:peilityyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]rasvatyyni[X]rasva[Bm]tyyn:rasvatyyn LaatusanaSukijaPieni_ä ;

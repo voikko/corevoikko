@@ -2385,6 +2385,7 @@ LEXICON NOUN YhteisetYksikönPaikallissijat
 ?Sukija [Sine][Ny]ss:ss	Loppu ;
 ?Sukija [Sela][Ny]st:st	Loppu ;
 ?Sukija [Sade][Ny]ll:ll	Loppu ;
+?Sukija [Sade][Ny]llen:llen Liitesana_<A> ;
 ?Sukija [Sabl][Ny]lt:lt	Loppu ;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
@@ -2401,6 +2402,7 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 ?Sukija [Sine][Nm]iss:iss	Loppu ;
 ?Sukija [Sela][Nm]ist:ist	Loppu ;
 ?Sukija [Sade][Nm]ill:ill	Loppu ;
+?Sukija [Sade][Ny]illen:illen	Liitesana_<A> ;
 ?Sukija [Sabl][Nm]ilt:ilt	Loppu ;
 
 LEXICON NOUN YhteisetMonikonSijat2
