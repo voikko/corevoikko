@@ -42,7 +42,7 @@ void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence)
 	    ((sentence->tokens + (tokenCount - 2))->isConjunction) &&
 	    (wcscmp((sentence->tokens + (tokenCount - 2))->str, L"vaan") != 0) && // "mitä vaan" ~ "mitä vain"
 	    ((sentence->tokens + (tokenCount - 1))->type == TOKEN_PUNCTUATION) &&
-	    ((sentence->tokens + (tokenCount - 1))->str[0] == L'.')) {
+	    (wcscmp((sentence->tokens + (tokenCount - 1))->str, L".") == 0)) {
 		CacheEntry * e = new CacheEntry(0);
 		e->error.setErrorCode(GCERR_MISPLACED_SIDESANA);
 		e->error.setStartPos((sentence->tokens + (tokenCount - 2))->pos);
