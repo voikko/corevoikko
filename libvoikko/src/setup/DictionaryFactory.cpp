@@ -31,6 +31,7 @@
 #include "porting.h"
 #include <string>
 #include <fstream>
+#include <sstream>
 #include <cstdlib>
 
 #ifdef WIN32
@@ -182,6 +183,23 @@ void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<s
 	}
 }
 
+/**
+ * Split a list of paths, separated by OS specific path separator, and insert the individual
+ * elements into a list.
+ */
+static void splitPathAndAppend(string combinedPath, list<string> & locations) {
+	#ifdef WIN32
+	char pathSeparator = ';';
+	#else
+	char pathSeparator = ':';
+	#endif
+	stringstream pathStream(combinedPath);
+	string pathComponent;
+	while (std::getline(pathStream, pathComponent, pathSeparator)) {
+		locations.push_back(pathComponent);
+	}
+}
+
 list<string> DictionaryFactory::getDefaultLocations() {
 	list<string> locations;
 	
@@ -190,7 +208,7 @@ list<string> DictionaryFactory::getDefaultLocations() {
 	// XXX: Not actually thread safe but will most probably work
 	char * path_from_env = getenv("VOIKKO_DICTIONARY_PATH");
 	if (path_from_env) {
-		locations.push_back(string(path_from_env));
+		splitPathAndAppend(string(path_from_env), locations);
 	}
 
 	#ifdef HAVE_GETPWUID_R
@@ -225,7 +243,7 @@ list<string> DictionaryFactory::getDefaultLocations() {
 		RegCloseKey(hKey);
 		if ((ERROR_SUCCESS == lRet)) {
 			string dirName(buffer);
-			locations.push_back(dirName);
+			splitPathAndAppend(dirName, locations);
 		}
 	}
 	
@@ -239,14 +257,14 @@ list<string> DictionaryFactory::getDefaultLocations() {
 		RegCloseKey(hKey);
 		if ((ERROR_SUCCESS == lRet)) {
 			string dirName(buffer);
-			locations.push_back(dirName);
+			splitPathAndAppend(dirName, locations);
 		}
 	}
 	#endif // WIN32
 	
 	#ifdef DICTIONARY_PATH
 	/* Directory specified on compile time */
-	locations.push_back(DICTIONARY_PATH);
+	splitPathAndAppend(DICTIONARY_PATH, locations);
 	#endif
 	
 	#endif

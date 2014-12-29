@@ -1,3 +1,6 @@
+2014-12-29 Harri Pitkänen <hatapitk@iki.fi>
+	* Add support for specifying multiple default dictionary locations.
+
 2014-08-03 Harri Pitkänen <hatapitk@iki.fi>
 	* New dictionary format 5 for VFST.
 

@@ -118,8 +118,7 @@ A set of available dictionary variants is built by examining the contents of the
 following directories. If a variant exists in more than one location, the first
 occurrence is used and the rest are ignored.
 
-1) Path given as the last argument to voikko_init_with_path, if that function is
-   used to initialize the library.
+1) Path given as the last argument to voikkoInit.
 2) Path specified by the environment variable VOIKKO_DICTIONARY_PATH, if the
    variable is set in the environment of the process initializing the library.
 3) Only on platforms with Unix home directories (Linux, BSD and Mac OS X):
@@ -133,14 +132,16 @@ occurrence is used and the rest are ignored.
 5) Path specified at compile time using --with-dictionary-path (this defaults to
    /usr/lib/voikko).
 
+In 2), 4) and 5) it is possible to specify multiple locations by separating them with
+the OS specific paths separator (; on Windows, : on other operating systems).
+The locations will be processed in the listed order.
+
 To all of the paths above additional path component "/2" is appended at the end.
 This corresponds to the dictionary version and allows multiple versions of the same
-dictionary to be installed simultaneously.
+dictionary to be installed simultaneously. The version number may be other than "2".
 
-Variants are searched from subdirectories whose name start with "mor-". The
-identifier and other dictionary metadata are read from a file "voikko-fi_FI.pro"
-residing in that directory. If the file does not exist or is somehow considered
-invalid, that particular variant is ignored.
+Dictionaries and language variants are searched from files or subdirectories using
+the rules that are specific to each format version.
 
 One of the dictionaries is chosen to be the default dictionary by trying the
 following rules:
