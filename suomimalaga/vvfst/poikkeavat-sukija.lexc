@@ -19,6 +19,9 @@ gas:gas Nuolaista_w_a ;
 kas:kas Nuolaista_s_a ;
 kas:kas Johdin_U_arvelu_a ;
 
+LEXICON SukijaRuoka
+u:u NimisanaYhteisetMonikonPaikallissijat_a ;
+
 LEXICON SukijaHerttua
 NimisanaApila_m_a ;
 
@@ -222,8 +225,10 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
+[Ln][Xp]etätulevaisuus[X]etä[Bm]tulevaisuu:etätulevaisuu NimisanaKalleus_a ;
 
 
 LEXICON SukijaAsemosana
@@ -452,7 +457,7 @@ LEXICON Sukija_p
 [Lp]äänisniemen:äänisniemen EtuliitteenJatko_ellelnelt;
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 [Lp]öölannin:öölannin EtuliitteenJatko_ellelnelt;
-
+[Lp]juutalais:juutalais EtuliitteenJatko_ellelnelt;
 
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
@@ -551,16 +556,37 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]tuollainen[X]tollai:tollai LaatusanaNainenInen_a ;
 [Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]yhdenlainen[X]yhdellai:yhdellai LaatusanaNainenInen_a ;
-
+[Ll][Xp]epähuomaavainen[X]epä[Bm]huomaavai:epähuomaavai LaatusanaNainenInen_a ;
+[Ll][Xp]epäluottavainen[X]epä[Bm]luottavai:epäluottavai LaatusanaNainenInen_a ;
+[Ll][Xp]epäonnistuvainen[X]epä[Bm]onnistuvai:epäonnistuvai LaatusanaNainenInen_a ;
+[Ll][Xp]epätyytyväinen[X]epä[Bm]tyytyväi:epätyytyväi LaatusanaNainenInen_ä ;
+[Ll][Xp]epäuskovainen[X]epä[Bm]uskovai:epäuskovai LaatusanaNainenInen_a ;
+[Ll][Xp]epäyhteneväinen [X]epä[Bm]yhteneväi:epäyhteneväi LaatusanaNainenInen_ä ;
+[Ll][Xp]keltavalkoinen[X]kelta[Bm]valkoi:keltavalkoi LaatusanaNainenInen_a ;
+[Ll][Xp]keltavartinen[X]kelta[Bm]varti:keltavarti LaatusanaNainenInen_a ;
+[Ll][Xp]keltaverinen[X]kelta[Bm]veri:keltaveri LaatusanaNainenInen_ä ;
+[Ll][Xp]omakutoinen[X]oma[Bm]kutoi:omakutoi LaatusanaNainenInen_a ;
+[Ll][Xp]omarahoitteinen[X]oma[Bm]rahoittei:omarahoittei LaatusanaNainenInen_a ;
+[Ll][Xp]omarakenteinen[X]oma[Bm]rakentei:omarakentei LaatusanaNainenInen_a ;
+[Ll][Xp]peräänantavainen[X]perään[Bm]antavai:peräänantavai LaatusanaNainenInen_a ;
+[Ll][Xp]päälletunkevainen[X]päälle[Bm]tunkevai:päälletunkevai LaatusanaNainenInen_a ;
+[Ll][Xp]sinikeltavalkoinen[X]sini[Bm]kelta[Bm]valkoi:sinikeltavalkoi LaatusanaNainenInen_a ;
+[Ll][Xp]tosikristillinen[X]tosi[Bm]kristilli:tosikristilli LaatusanaNainenInen_ä ;
+[Ll][Xp]ylitsevuotavainen[X]ylitse[Bm]vuotavai:ylitsevuotavai LaatusanaNainenInen_a ;
+[Ll][Xp]ylösrakentavainen[X]ylös[Bm]rakentavai:ylösrakentavai LaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_nl
+[Lnl][Xp]ranskalainen[X]franska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
 [Lnl][Xp]kaikenlainen[X]kaikel[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]roomalainen[X]roma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]suurenmoinen[X]suurem[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
 
 
 LEXICON SukijaPoikkeavat_t
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
-[Lt][Xp]älkää[X]ällös:ällös     Loppu ;
-[Lt][Xp]älkää[X]ällöspä:ällöspä Loppu ;
+[Lt][Xp]ei[X]ällös:ällös     Loppu ;
+[Lt][Xp]ei[X]ällöspä:ällöspä Loppu ;

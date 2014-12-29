@@ -3314,8 +3314,8 @@ i:i	Johdin_vA_<A>	;
 i:i	Johdin_nUt_<A>	;
 i[Xp]t<U><A>[X]:i	Kaatua_<A>	;
 ?Sukija i:i Johdin_nimitapa1tA_<A> ;
-?Sukija [Tk][Ap][P3][Ny][Ef]itk<O><O>n:itk<O><O>n   LiitesanaPaHan_<A> ;
-?Sukija [Tk][Ap][P3][Ny][Ef]itk<O>h<O>n:tk<O>h<O>n LiitesanaPaHan_<A> ;
+?Sukija [Tk][Ap][P3][Ny][Ef]itk<O><O>n:itk<O><O>n  LiitesanaKinKoPaHan_<A> ;
+?Sukija [Tk][Ap][P3][Ny][Ef]itk<O>h<O>n:tk<O>h<O>n LiitesanaKinKoPaHan_<A> ;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittiin Liitesana_<A> ;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P4][Ef]ittihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@ittihin Liitesana_<A> ;
 ?Sukija [Ll][Ru]inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:inn@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
@@ -3926,12 +3926,14 @@ LEXICON Käskytapa_y2
 LEXICON Käskytapa_ttA
 [Tk][Ap][P4][Ef]tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
 [Tk][Ap][P4][Et]tt<A>k<O>:tt<A>k<O>	Loppu	;
-?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
+?Sukija [Tk][Ap][P4][Ef]tt<A>k<O><O>n:tt<A>k<O><O>n   LiitesanaKinKoPaHan_<A> ;
+?Sukija [Tk][Ap][P4][Ef]tt<A>k<O>h<O>n:tt<A>k<O>h<O>n LiitesanaKinKoPaHan_<A> ;
 
 LEXICON Käskytapa_tA
 [Tk][Ap][P4][Ef]t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
 [Tk][Ap][P4][Et]t<A>k<O>:t<A>k<O>	Loppu	;
-?Sukija t<A>k<O>h<O>n:t<A>k<O>h<O>n	Loppu	;
+?Sukija [Tk][Ap][P4][Ef]t<A>k<O><O>n:t<A>k<O><O>n   LiitesanaKinKoPaHan_<A> ;
+?Sukija [Tk][Ap][P4][Ef]t<A>k<O>h<O>n:t<A>k<O>h<O>n LiitesanaKinKoPaHan_<A> ;
 
 LEXICON Johdin_nimitapa1dA
 d:d	Johdin_nimitapa1A_<A>	;

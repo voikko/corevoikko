@@ -130,6 +130,8 @@ re_oittaa2 = makeRe (u"Lt", u".Cöittää")
 re_ottaa1 = makeRe (u"Lt", u".Cottaa")
 re_ottaa2 = makeRe (u"Lt", u".Cöttää")
 
+re_isoida = makeRe (u"Lt", u"isoida") # Organisoida => organiseerata.
+
 re_oitin = makeRe (u"Ln", u".Coitin")
 re_aatio = makeRe (u"Ln", u".Caatio")
 re_uutio = makeRe (u"Ln", u".Cuutio")
@@ -147,6 +149,7 @@ re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
 re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
 
 re_eikAs = makeRe (u"Ll", u"eikAs")
+re_8_9 = re.compile (u"\\[Xp\\](ka|y)hdeks")
 
 
 # Words to be excluded.
@@ -158,6 +161,8 @@ re_oni_x = re.compile (u"\\A\[Ln\]\[Xp\](ikoni)\[X\]")
 re_ori_x = re.compile (u"\\A\[Ln\]\[Xp\](hevosori|jalostusori|reettori|siitosori)\[X\]")
 
 re_logia_x = re.compile (u"\\A\[Ln\]\[Xp\](genealogia|trilogia)\[X\]")
+
+re_isoida_x = re.compile (u"\\A\[Lt\]\[Xp\](dramatisoida|karakterisoida)\[X\]")
 
 re_A = re.compile (u"[aou]")
 
@@ -198,6 +203,8 @@ spelling_pattern_list = [
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
+
+  (re_isoida, u"isoida", u"iseerata", u"iso", u"iseer", u"Kanavoida", u"Saneerata", u"Voida", u"Saneerata", re_isoida_x),
 
   (re_toninen, u"toni", u"tooni"),
   (re_iivinen, u"iivi", u"ivi"),
@@ -255,6 +262,12 @@ def write_paahtaa (line, word):
 def write_lahti (line, word):
     write_word (line, word, u"SukijaLahti")
 
+def write_8_9 (line):
+    n = line.index (u"[X]")+3
+    s = line[n:]
+    s = s.replace (u"kahdeks", u"kaheks")
+    s = s.replace (u"yhdeks", u"yheks")
+    outfile.write (u"%s%s" % (line[0:n], s))
 
 def generate_from_pattern_1 (line, pattern_list):
     for x in pattern_list:
@@ -265,6 +278,9 @@ def generate_from_pattern_1 (line, pattern_list):
                 replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
                 replace_and_write (line.replace(x[3],x[4]), x[1], x[2])
+            elif (len(x) == 10 and not x[9].match(line)):
+                s = line.replace(x[1],x[2]).replace(x[5],x[6]).replace(x[7],x[8])
+                replace_and_write (s, x[3], x[4])
 
 
 def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
@@ -341,14 +357,6 @@ word_list = [
     (u"juliaaninen",      (u"juliaani",      u"juliani")),
     (u"juridinen",        (u"juridi",        u"juriidi")),
     (u"kaanon",           (u"kaanon",        u"kanon")),
-    (u"kahdeksainen",        (u"kahdeksai",         u"kaheksai")),
-    (u"kahdeksan",           (u"kahdeks",           u"kaheks")),
-    (u"kahdeksankymppinen",  (u"kahdeksankymppi",   u"kaheksankymppi")),
-    (u"kahdeksankertaistaa", (u"kahdeksankertaist", u"kaheksankertaist")),
-    (u"kahdeksankymmen",     (u"kahdeksankymmen",   u"kaheksankymmen")),
-    (u"kahdeksanlainen",     (u"kahdeksanlai",      u"kaheksanlai")),
-    (u"kahdeksannes",        (u"kahdeksanne",       u"kaheksanne")),
-    (u"kahdeksas",           (u"kahdeksa",          u"kaheksa")),
     (u"kaleeri",        (u"kaleer",      u"kaler")),
     (u"kamari",         (u"kamar",       u"kammar")),
     (u"kameli",         (u"kamel",       u"kameel")),
@@ -399,7 +407,7 @@ word_list = [
     (u"likimmäinen",    (u"likimmäi",    u"likimäi")),
     (u"lineaarinen",    (u"lineaari",    u"lineari")),
     (u"lordi",          (u"lord",        u"loord")),
-    (u"luterilainen",   (u"luterilai",   u"lutherilai", u"luteerilai")),
+    (u"luterilainen",   (u"luterilai",   u"lutherilai", u"luteerilai", u"lutheerilai")),
     (u"lähimmäinen",    (u"lähimmäi",    u"lähimäi")),
     (u"maineikas",      (u"maineik",     u"maineek", u"mainek")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
@@ -411,9 +419,12 @@ word_list = [
     (u"minareetti",     (u"minareet",    u"minaret")),
     (u"modeemi",        (u"modeem",      u"modem")),
     (u"moduuli",        (u"moduul",      u"modul")),
-    (u"mosaiikki",      (u"mosaiik",     u"mosaik")),
-    (u"muhamettilainen", (u"muhamettilai", u"muhammettilai", u"mahomettilai", u"muhamedilai")),
-    (u"musiikki",        (u"musiik",       u"musik")),
+    (u"mosaiikki",      ((u"mosaiik",    u"mosaik"),
+                         (u"mosaiik",    u"mosaik", u"NimisanaTakki_a", u"NimisanaRisti_a"))),
+    (u"muhamettilainen", (u"muhamettilai", u"muhammettilai", u"mahomettilai", u"muhammedilai", u"muhamedilai",
+                          u"muhametilai",  u"muhameedilai",  u"mohametilai",  u"mohammedilai")),
+    (u"musiikki",        ((u"musiik",      u"musik"),
+                          (u"musiik",      u"musik", u"NimisanaTakki_a", u"NimisanaRisti_a"))),
     (u"naiivi",          (u"naiiv",        u"naiv")),
     (u"naiivinen",       (u"naiivi",       u"naivi")),
     (u"nonaggressio",    (u"nonaggressio", u"nonagressio")),
@@ -428,7 +439,7 @@ word_list = [
     (u"pasuuna",         (u"pasuun",      u"pasun")),
     (u"pataljoona",      (u"pataljoon",   u"pataljon")),
     (u"patriisi",        (u"patriis",     u"patris")),
-    (u"patruuna",        (u"patruun",     u"patrun")),
+    (u"patruuna",        (u"patruun",     u"patrun", u"patroon", u"patron")),
     (u"perimmäinen",     (u"perimmäi",    u"perimäi")),
     (u"persoona",        (u"persoon",     u"person")),
     (u"piispa",          (u"piisp",       u"pisp")),
@@ -452,6 +463,7 @@ word_list = [
     (u"pyramidi",        (u"pyramid",     u"pyramiid")),
     (u"päällimmäinen",   (u"päällimmäi",  u"päällimäi", u"päälimäi", u"päälimmäi")),
     (u"päärynä",         ((u"pääryn", u"pääron", u"NimisanaPeruna_ä", u"NimisanaPeruna_aä"), )),
+    (u"rakuuna",         (u"rakuun",      u"rakun")),
     (u"rangaistus",      (u"rangaistu",   u"rankaistu")),
     (u"reettori",        (u"reettor",     u"reetor")),
     (u"reunimmainen",    (u"reunimmai",   u"reunimai")),
@@ -497,12 +509,11 @@ word_list = [
     (u"Toscana",         (u"toscan",       u"toskan")),
     (u"toteemi",         (u"toteem",       u"totem")),
     (u"torpedo",         (u"torpedo",      u"torpeedo")),
-    (u"Traakia",         (u"Traaki",       u"Traki")),
+    (u"Traakia",         (u"traaki",       u"traki")),
     (u"traakialainen",   (u"traakialai",   u"trakialai")),
     (u"tussi",           (u"tuss",         u"tush")),
     (u"tällainen",       ((u"tällai",      u"tällai", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
-                          (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
-                          (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_a"))),
+                          (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_aä"))),
     (u"ulommainen",      (u"ulommai",      u"uloimmai")),
     (u"upseeri",         (u"upseer",       u"upser", u"upsier")),
     (u"upseeristo",      (u"upseeristo",   u"upsieristo")),
@@ -510,14 +521,6 @@ word_list = [
     (u"viheriöidä",      (u"viheriö",      u"viherjö")),
     (u"vihkiäinen",      (u"vihkiäi",      u"vihkijäi")),
     (u"visiiri",         (u"visiir",       u"visir")),
-    (u"yhdeksäinen",        (u"yhdeksäi",         u"yheksäi")),
-    (u"yhdeksän",           (u"yhdeks",           u"yheks")),
-    (u"yhdeksänkymppinen",  (u"yhdeksänkymppi",   u"yheksänkymppi")),
-    (u"yhdeksänkertaistaa", (u"yhdeksänkertaist", u"yheksänkertaist")),
-    (u"yhdeksänkymmen",     (u"yhdeksänkymmen",   u"yheksänkymmen")),
-    (u"yhdeksänlainen",     (u"yhdeksänlai",      u"yheksänlai")),
-    (u"yhdeksännes",        (u"yhdeksänne",       u"yheksänne")),
-    (u"yhdeksäs",           (u"yhdeksä",          u"yheksä")),
     (u"ylimmäinen",         (u"ylimmäi",          u"ylimäi")),
 
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
@@ -808,6 +811,8 @@ while True:
     generate_from_pattern_2 (line, re_aatio, u"aatio", (u"atio", u"atsio"), (u"atsion", u"atsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_uutio, u"uutio", (u"utio", u"utsio"), (u"utsion", u"utsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
 
+    if re_8_9.search (line):
+        write_8_9 (line)
 
     r = base_form_re.search (line)
     if r:
