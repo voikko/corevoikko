@@ -36,6 +36,19 @@ LEXICON SukijaTuta
 [Tn1p]takse:takse SukijaOmistusliite_a_in ;
 [Tn2]ten:ten Liitesana_a ;
 
+LEXICON SukijaKiiru
+[Sg][Ny]hun:hun NimisanaYksikönGenetiivinJatko_a ;
+[Sp][Ny]a:a NimisanaLiOlV_a ;
+[Sp][Ny]uta:uta NimisanaLiOlV_a ;
+[Sn][Nm]t:t Liitesana_a ;
+[Sill][Ny]use:use   NimisanaLiOlN_a ;
+[Sill][Ny]huse:huse NimisanaLiOlN_a ;
+[Sill][Nm]hisi:hisi NimisanaLiOlN_a ;
+NimisanaYhteisetYksikönPaikallissijat_a ;
+NimisanaSukijaYhteisetHMuodot_a ;
+[Ssti]sti:sti     LoppuLiitesana_a ;
+[Ssti]husti:husti LoppuLiitesana_a ;
+
 LEXICON SukijaNeiti
 [Sg][Ny]tin:tin   Liitesana_a ;
 ?NotLaatusana     [Sn][Ny]te:te Omistusliite_ä	;
@@ -192,6 +205,7 @@ LEXICON SukijaSanasto
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
 [Ln][Xp]ioota[X]iot:iot NimisanaKala_a ;
+[Ln][Xp]kiiru[X]kiiruu:kiiruu Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
 [Lt][Xp]olla[X]o:o SukijaOlla ;
@@ -218,6 +232,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
 [Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
@@ -226,6 +241,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
+[Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]etätulevaisuus[X]etä[Bm]tulevaisuu:etätulevaisuu NimisanaKalleus_a ;
@@ -245,9 +261,16 @@ LEXICON SukijaAsemosana
 
 
 LEXICON SukijaPoikkeavat_s
+[Ls][Xp]kiiru[X]kiiruitse:kiiruitse LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiiruimmiten:kiiruimmiten LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiiruimmittan:kiiruimmittain LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiiruisammin:kiiruisammin LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiirus:kiirus LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiirusasti:kiirusasti LoppuLiitesana_a ;
+[Ls][Xp]kiiru[X]kiirusilla:kiirusilla LoppuLiitesana_a ;
 [Ls][Xp]käännyksissä[X]käännyksissä:käännyksissä Loppu ;
 [Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
-[Ls][Xp]miten[X]mitenkäs:mitenkäs      Liitesana_ä ;
+[Ls][Xp]miten[X]mitenkäs:mitenkäs     Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
@@ -388,6 +411,7 @@ LEXICON Sukija_p
 [Lp]pehmyt:pehmyt EtuliitteenJatko_ellelnelt;
 [Lp]pietarin:pietarin EtuliitteenJatko_ellelnelt;
 [Lp]piki:piki EtuliitteenJatko_ellelnelt;
+[Lp]puertoricon:puertoricon EtuliitteenJatko_ellelnelt;
 [Lp]polynesian:polynesian EtuliitteenJatko_ellelnelt;
 [Lp]populaari:populaari EtuliitteenJatko_ellelnelt;
 [Lp]populääri:populääri EtuliitteenJatko_ellelnelt;
@@ -457,7 +481,7 @@ LEXICON Sukija_p
 [Lp]äänisniemen:äänisniemen EtuliitteenJatko_ellelnelt;
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 [Lp]öölannin:öölannin EtuliitteenJatko_ellelnelt;
-[Lp]juutalais:juutalais EtuliitteenJatko_ellelnelt;
+! [Lp]juutalais:juutalais EtuliitteenJatko_ellelnelt;
 
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
@@ -542,6 +566,13 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]jonkinlainen[X]jonkil[Bm]lai:jonkillai LaatusanaNainenInen_a ;
 [Ll][Xp]jonkunlainen[X]jonkul[Bm]lai:jonkullai LaatusanaNainenInen_a ;
 [Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
+[Ll][Xp]kiiru[X]kiiru:kiiru Yliaste_a ;
+[Ll][Xp]kiiruinen[X]kiiruhui:kiiruhui LaatusanaNainenInen_a ;
+[Ll][Xp]kiiruinen[X]kiirui:kiirui LaatusanaNainenInen_a ;
+[Ll][Xp]kiiruisa[X]kiiruis:kiiruis LaatusanaKoira_a ;
+[Ll][Xp]kiirumpi[X]kiiru:kiiru NimiLaatusanaSuurempi_a ;
+[Ll][Xp]kiirumpi[X]kiiruu:kiiruu NimiLaatusanaSuurempi_a ;
+[Ll][Xp]kiirunalainen[X]kiirun[Bm]alai:kiirunalai LaatusanaNainenInen_a ;
 [Ll][Xp]kultainen[X]kullai:kullai LaatusanaNainenInen_a ;
 [Ll][Xp]monenlainen[X]monel[Bm]lai:monellai LaatusanaNainenInen_a ;
 [Ll][Xp]oktaaninen[X]oktani:oktani LaatusanaNainenInen_a ;
@@ -590,3 +621,11 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
 [Lt][Xp]ei[X]ällös:ällös     Loppu ;
 [Lt][Xp]ei[X]ällöspä:ällöspä Loppu ;
+[Lt][Xp]kitistä[X]kit:kit Kihajaa_a ;
+[Lt][Xp]lätistä[X]lät:lät Kihajaa_ä ;
+[Lt][Xp]nitistä[X]nit:nit Kihajaa_a ;
+[Lt][Xp]pakista[X]pak:pak Kihajaa_a ;
+[Lt][Xp]pamista[X]pam:pam Kihajaa_a ;
+[Lt][Xp]ratista[X]rat:rat Kihajaa_a ;
+[Lt][Xp]ritistä[X]rit:rit Kihajaa_a ;
+[Lt][Xp]vapista[X]vap:vap Kihajaa_a ;

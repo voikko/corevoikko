@@ -220,6 +220,7 @@ LEXICON NOUN Arvelu_s
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Sukija [Sg][Nm]in:in Liitesana_<A> ;
 
 LEXICON NOUN Arvelu_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -261,6 +262,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_mAinen_<A>	;
 ?Paikannimi	k<O>:k<O>	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]k<O>h<O>:k<O>h<O>	<WC>LiOlN_<A>	;
+?Sukija [Sg][Nm]k<O>in:k<O>in Liitesana_<A> ;
 
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
@@ -287,6 +289,10 @@ LEXICON NOUN Kajakki
 k:k	<WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
 
+LEXICON NOUN Konvehti
+t:t	<WC>Paperi_s_<A>	;
+d:d	<WC>Paperi_w_<A>	;
+
 LEXICON NOUN Paperi_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -300,6 +306,7 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Laatusana	i:i	Johdin_Us_<A>		;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]e:e		<WC>MonikonGenetiiviInJatko_<A>	;
 
@@ -3736,7 +3743,11 @@ LEXICON Kihajaa
 <A>j<A>:<A>j<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny][Ef]<A>j<A><A>:<A>j<A><A>	Liitesana_<A>	;
 [Tt][Ap][P3][Nm][Ef]<A>j<A>v<A>t:<A>j<A>v<A>t	Liitesana_<A>	;
+?Sukija <A>j<A><A>:<A>j<A> SukijaTositapaPi_<A> ;
 ?Sukija <A>j<A>:<A>j<A> SukijaTositapaVi_<A> ;
+?Sukija <A>j:<A>j KertomanTekijäpääteHeikko_<A> ;
+?Sukija <A>j:<A>j KertomanTekijäpääteVahva_<A> ;
+?Sukija <A>j<A>:<A>j<A> Ehtotapa_<A> ;
 
 LEXICON Kitistä
 ist:ist	Johdin_nimitapa1A_<A>	;
@@ -5090,3 +5101,21 @@ LEXICON JärjestyslukuKymmentäSnNm
 
 ?Sukija LEXICON NOUN SukijaPieni
 ?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
+
+?Sukija LEXICON SukijaAntautua
+?Sukija <WC>Kaatua_<A> ;
+?Sukija KestämänTekijäpääteHeikko_<A> ;
+?Sukija [Tt][Ap][P3][Ny][Ef][[L]]:[[L]] KestämänTekijäpääteY3Liitesana_<A> ;
+?Sukija [Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t Liitesana_<A> ;
+?Sukija s:s KertomanTekijäpääteHeikko_<A> ;
+?Sukija s:s KertomanTekijäpääteVahva_<A> ;
+?Sukija Ehtotapa_<A> ;
+?Sukija SukijaTositapaVi_<A> ;
+?Sukija SukijaTositapaPi_<A> ;
+?Sukija Johdin_nUt_<A> ;
+?Sukija Johdin_vA_<A> ;
+?Sukija Johdin_mA_<A> ;
+?Sukija Johdin_ttAx_<A> ;
+?Sukija Tositapa4Tt_<A> ;
+?Sukija Käskytapa_<A> ;
+?Sukija Käskytapa_y2_<A> ;

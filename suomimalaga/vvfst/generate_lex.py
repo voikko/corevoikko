@@ -304,7 +304,8 @@ def handle_word(word):
                                         voikko_infclass = u"paperi"
                                 elif voikko_infclass == u"pasuuna":
                                         voikko_infclass = u"peruna"
-                                if voikko_infclass not in [u"haravoida-av2", u"karahka", u"matala", u"paperi", u"peruna"]:
+                                if voikko_infclass not in [u"aavistaa-av1", u"arvelu", u"arvelu-av1", u"haravoida-av2", u"karahka", u"matala",
+                                                           u"paperi", u"paperi-av1", u"peruna"]:
                                         voikko_infclass = None
                                 break
         if voikko_infclass == None:

@@ -43,9 +43,9 @@
 # Testing (in directory suomimalaga/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' >test.out; date
-# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
-# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | less
-# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '>.*[+][?]' | gawk '{print $2}' |flookup -i sukija.fst | gawk 'length($0) > 0'
+# diff test.out ~/Lataukset/vv* | grep '<.*[+][?]' | less
+# diff test.out ~/Lataukset/vv* | grep '>.*[+][?]' | less
+# diff test.out ~/Lataukset/vv* | grep '>.*[+][?]' | gawk '{print $2}' |flookup -i sukija.fst | gawk 'length($0) > 0'
 # cp test.out ~/Lataukset/vvfst-sukija-testi.out
 
 # Style- ja usage-lippujen arvot suoraan Joukahaisesta:
@@ -150,6 +150,8 @@ re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNIC
 
 re_eikAs = makeRe (u"Ll", u"eikAs")
 re_8_9 = re.compile (u"\\[Xp\\](ka|y)hdeks")
+re_tautua1 = makeRe (u"Lt", u"tautua")
+re_tautua2 = makeRe (u"Lt", u"täytyä")
 
 
 # Words to be excluded.
@@ -203,6 +205,9 @@ spelling_pattern_list = [
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
+
+  (re_tautua1, u"tau", u"tau", u"Kaatua", u"SukijaAntautua"),
+  (re_tautua2, u"täy", u"täy", u"Kaatua", u"SukijaAntautua"),
 
   (re_isoida, u"isoida", u"iseerata", u"iso", u"iseer", u"Kanavoida", u"Saneerata", u"Voida", u"Saneerata", re_isoida_x),
 
@@ -331,7 +336,7 @@ word_list = [
     (u"emali",            (u"emal",          u"emalj")),
     (u"emaloida",         (u"emalo",         u"emaljo")),
     (u"embleemi",         (u"embleem",       u"emblem")),
-    (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi")),
+    (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi", u"ensinmäi")),
     (u"erilainen",        (u"erilai",        u"erillai", u"erinlai")),
     (u"erillinen",        (u"erilli",        u"erili")),
     (u"eriskummallinen",  (u"kummalli",      u"kummali", u"kumalli")),
@@ -388,7 +393,7 @@ word_list = [
     (u"korsteeni",      (u"korsteen",    u"korstein")),
     (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer")),
-    (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaTakki_ä", u"NimisanaRisti_ä"),
+    (u"kritiikki",      ((u"kritiik",    u"kritik", u"NimisanaKajakki_ä", u"NimisanaRisti_ä"),
                          (u"kritiik",    u"kriitiik"))),
     (u"kriitikko",      (u"kriitik",     u"kriitiik", u"kritiik")),
     (u"kulttuuri",      (u"kulttuur",    u"kultuur", "kulttur")),
@@ -424,7 +429,7 @@ word_list = [
     (u"muhamettilainen", (u"muhamettilai", u"muhammettilai", u"mahomettilai", u"muhammedilai", u"muhamedilai",
                           u"muhametilai",  u"muhameedilai",  u"mohametilai",  u"mohammedilai")),
     (u"musiikki",        ((u"musiik",      u"musik"),
-                          (u"musiik",      u"musik", u"NimisanaTakki_a", u"NimisanaRisti_a"))),
+                          (u"musiik",      u"musik", u"NimisanaKajakki_a", u"NimisanaPaperi_a"))),
     (u"naiivi",          (u"naiiv",        u"naiv")),
     (u"naiivinen",       (u"naiivi",       u"naivi")),
     (u"nonaggressio",    (u"nonaggressio", u"nonagressio")),
@@ -477,11 +482,11 @@ word_list = [
     (u"sapatti",         (u"sapat",       u"sabat")),
     (u"sapeli",          (u"sapel",       u"sapeel")),
     (u"satraappi",       ((u"satraap",    u"satrap"),
-                          (u"satraap",    u"satraap", u"NimisanaKeppi_a", u"NimisanaRisti_a"),
-                          (u"satraap",    u"satrap",  u"NimisanaKeppi_a", u"NimisanaRisti_a"))),
+                          (u"satraap",    u"satraap", u"NimisanaSinappi_a", u"NimisanaPaperi_a"),
+                          (u"satraap",    u"satrap",  u"NimisanaSinappi_a", u"NimisanaPaperi_a"))),
     (u"seminaari",       (u"seminaar",    u"seminar")),
-    (u"senaatti",        ((u"senaat",     u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a"),
-                          (u"senaat",     u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a"))),
+    (u"senaatti",        ((u"senaat",     u"senaat", u"NimisanaSalaatti_a", u"NimisanaPaperi_a"),
+                          (u"senaat",     u"senat",  u"NimisanaSalaatti_a", u"NimisanaPaperi_a"))),
     (u"senaattori",      (u"senaattor",   u"senaator")),
     (u"serafi",          (u"seraf",       u"seraaf")),
     (u"shampanja",       (u"shampanj",    u"shamppanj")),
@@ -498,6 +503,8 @@ word_list = [
     (u"stationaarinen",  ((u"stationaari", u"stationääri", u"LaatusanaNainenInen_a ", u"LaatusanaNainenInen_ä"),
                           (u"stationaari", u"stationari"))),
     (u"sulhanen",        (u"sulha",        u"sulhai")),
+    (u"sydämistyä",      ((u"sydämisty",   u"sydämmisty"),
+                          (u"sydämisty",   u"sydämmysty"))),
     (u"synagoga",        (u"synagog",      u"synagoog")),
     (u"taimmainen",      (u"taimmai",      u"takimai", u"taemmai", u"taaemmai")),
     (u"talismaani",      (u"talismaan",    u"talisman")),
@@ -777,9 +784,12 @@ sukija_additions = {
     u"LEXICON Sanasto_s\n":     u"SukijaPoikkeavat_s ;\n",
     u"LEXICON Suhdesana\n":     u"SukijaSuhdesana ;\n",
     u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
-    u"LEXICON Omistusliite_a\n":  u"[O2y]s:s      Liitesana_a     ;\n",
-    u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s      Liitesana_ä     ;\n",
-    u"LEXICON Omistusliite_aä\n": u"[O2y]s:s      Liitesana_aä    ;\n"
+    u"LEXICON Omistusliite_a\n":  u"[O2y]s:s Liitesana_a  ;\n",
+    u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s Liitesana_ä  ;\n",
+    u"LEXICON Omistusliite_aä\n": u"[O2y]s:s Liitesana_aä ;\n"
+#   u"LEXICON Omistusliite_a\n":  u"[O1y]in:in Liitesana_a  ;\n[O2y]s:s Liitesana_a  ;\n",
+#   u"LEXICON Omistusliite_ä\n":  u"[O1y]in:in Liitesana_ä  ;\n[O2y]s:s Liitesana_ä  ;\n",
+#   u"LEXICON Omistusliite_aä\n": u"[O1y]in:in Liitesana_aä ;\n[O2y]s:s Liitesana_aä ;\n"
 }
 
 
