@@ -124,6 +124,8 @@ re_grafinen = makeRe (u"Ll", u"grafinen")
 re_logia    = makeRe (u"Ln", u"logia")
 re_loginen  = makeRe (u"Ll", u"loginen")
 
+re_torio = makeRe (u"Ln", u"torio")
+
 re_oittaa1 = makeRe (u"Lt", u".Coittaa")
 re_oittaa2 = makeRe (u"Lt", u".Cöittää")
 
@@ -195,6 +197,8 @@ spelling_pattern_list = [
   (re_grafinen, u"grafi",  u"graafi"),
   (re_logia,    u"logi",   u"loogi", re_logia_x),
   (re_loginen,  u"logi",   u"loogi"),
+
+  (re_torio, u"torio", u"toorio"),
 
   (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
   (re_oittaa1, u"o",   u"ot",  u"Kirjoittaa", u"Alittaa"),
@@ -383,6 +387,7 @@ word_list = [
     (u"kenraali",       (u"kenraal",     u"kenral")),
     (u"kerubi",         (u"kerub",       u"keruub", u"kheruub")),
     (u"keskimmäinen",   (u"keskimmäi",   u"keskimäi")),
+    (u"kiirastorstai",  (u"torsta",      u"tuorsta")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
     (u"klinikka",       (u"klinik",      u"kliniik")),
     (u"kollega",        (u"kolleg",      u"kolleg")),
@@ -401,7 +406,6 @@ word_list = [
     (u"kurtiini",       (u"kurtiin",     u"kurtin")),
     (u"kuvernööri",     (u"kuvernöör",   u"kuvernör")),
     (u"Kööpenhamina",   (u"kööpenhamin", u"köpenhamin")),
-    (u"laboratorio",    (u"laboratorio", u"laboratoorio")),
     (u"lauantai",       (u"lauanta",     u"lauvanta")),
     (u"lauantaisin",    (u"lauantaisin", u"lauvantaisin")),
     (u"leegio",         (u"leegio",      u"legio")),
@@ -516,6 +520,7 @@ word_list = [
     (u"Toscana",         (u"toscan",       u"toskan")),
     (u"toteemi",         (u"toteem",       u"totem")),
     (u"torpedo",         (u"torpedo",      u"torpeedo")),
+    (u"torstai",         (u"torsta",       u"tuorsta")),
     (u"Traakia",         (u"traaki",       u"traki")),
     (u"traakialainen",   (u"traakialai",   u"trakialai")),
     (u"tussi",           (u"tuss",         u"tush")),

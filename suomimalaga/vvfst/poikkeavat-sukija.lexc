@@ -308,6 +308,7 @@ LEXICON Sukija_p
 [Lp]belizen:belizen EtuliitteenJatko_ellelnelt;
 [Lp]berliinin:berliinin EtuliitteenJatko_ellelnelt;
 [Lp]bernin:bernin EtuliitteenJatko_ellelnelt;
+[Lp]borneon:borneon EtuliitteenJatko_ellelnelt;
 [Lp]bostonin:bostonin EtuliitteenJatko_ellelnelt;
 [Lp]brasilian:brasilian EtuliitteenJatko_ellelnelt;
 [Lp]bretagnen:bretagnen EtuliitteenJatko_ellelnelt;
@@ -329,6 +330,7 @@ LEXICON Sukija_p
 [Lp]gabonin:gabonin EtuliitteenJatko_ellelnelt;
 [Lp]gotlannin:gotlannin EtuliitteenJatko_ellelnelt;
 [Lp]grönlannin:grönlannin EtuliitteenJatko_ellelnelt;
+[Lp]haitin:haitin EtuliitteenJatko_ellelnelt;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;
 [Lp]havaijin:havaijin EtuliitteenJatko_ellelnelt;
 [Lp]helsinki:helsinki EtuliitteenJatko_ellelnelt;
@@ -411,12 +413,12 @@ LEXICON Sukija_p
 [Lp]pehmyt:pehmyt EtuliitteenJatko_ellelnelt;
 [Lp]pietarin:pietarin EtuliitteenJatko_ellelnelt;
 [Lp]piki:piki EtuliitteenJatko_ellelnelt;
-[Lp]puertoricon:puertoricon EtuliitteenJatko_ellelnelt;
 [Lp]polynesian:polynesian EtuliitteenJatko_ellelnelt;
 [Lp]populaari:populaari EtuliitteenJatko_ellelnelt;
 [Lp]populääri:populääri EtuliitteenJatko_ellelnelt;
 [Lp]primaari:primaari EtuliitteenJatko_ellelnelt;
 [Lp]primääri:primääri EtuliitteenJatko_ellelnelt;
+[Lp]puertoricon:puertoricon EtuliitteenJatko_ellelnelt;
 [Lp]puolitoista:puolitoista EtuliitteenJatko_ellelnelt;
 [Lp]pyreneiden:pyreneiden EtuliitteenJatko_ellelnelt;
 [Lp]pyreneitten:pyreneitten EtuliitteenJatko_ellelnelt;
