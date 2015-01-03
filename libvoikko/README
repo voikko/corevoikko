@@ -123,6 +123,7 @@ occurrence is used and the rest are ignored.
    variable is set in the environment of the process initializing the library.
 3) Only on platforms with Unix home directories (Linux, BSD and Mac OS X):
    a) from directory $HOME/.voikko
+      i) Only on Mac OS X: from directory $HOME/Library/Spelling/voikko
    b) from directory /etc/voikko
 4) Only on Windows:
    a) Directory specified by the registry key
@@ -135,6 +136,10 @@ occurrence is used and the rest are ignored.
 In 2), 4) and 5) it is possible to specify multiple locations by separating them with
 the OS specific paths separator (; on Windows, : on other operating systems).
 The locations will be processed in the listed order.
+
+Locations 2) to 5) are not used if the library is configured with --disable-external-dicts
+Using this option is recommended if dictionaries are distributed with the library
+and support for experimental dictionary formats is enabled.
 
 To all of the paths above additional path component "/2" is appended at the end.
 This corresponds to the dictionary version and allows multiple versions of the same
@@ -182,7 +187,7 @@ from rule 1:
 Authors
 =======
 
-2006 - 2014 Harri Pitkänen (hatapitk@iki.fi)
+2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), slightly simplified version

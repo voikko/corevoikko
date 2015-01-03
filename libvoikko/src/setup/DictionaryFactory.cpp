@@ -222,6 +222,12 @@ list<string> DictionaryFactory::getDefaultLocations() {
 			string pwdPath(pwd.pw_dir);
 			pwdPath.append("/.voikko");
 			locations.push_back(pwdPath);
+			
+			#ifdef __APPLE__
+			string osxUserLibPath(pwd.pw_dir);
+			osxUserLibPath.append("/Library/Spelling/voikko");
+			locations.push_back(osxUserLibPath);
+			#endif
 		}
 		delete[] pwdBuf;
 	}
@@ -267,7 +273,7 @@ list<string> DictionaryFactory::getDefaultLocations() {
 	splitPathAndAppend(DICTIONARY_PATH, locations);
 	#endif
 	
-	#endif
+	#endif // DISABLE_EXTDICTS
 	
 	return locations;
 }
