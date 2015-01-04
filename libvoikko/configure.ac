@@ -48,10 +48,22 @@ dnl Compiler features
 AC_LANG_CPLUSPLUS
 AC_C_CONST
 
+# Prepare platform specific setups (sets $host_os a.o.):
+AC_CANONICAL_HOST
+
 # FIXME: the following is wrong (it should be possible to change this when running make)
 if test ${prefix} = "NONE"
 then
-	DICTIONARY_PATH=${ac_default_prefix}/lib/voikko
+    case $host_os in
+      darwin* )
+        # Add /Library/Spelling/voikko when on macosx:
+        DICTIONARY_PATH=${ac_default_prefix}/lib/voikko:/Library/Spelling/voikko
+        ;;
+      *)
+        #Default Case
+        DICTIONARY_PATH=${ac_default_prefix}/lib/voikko
+        ;;
+    esac
 else
 	DICTIONARY_PATH=${prefix}/lib/voikko
 fi
