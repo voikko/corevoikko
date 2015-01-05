@@ -49,11 +49,11 @@
 
 
 [alku: "liene", luokka: teonsana, jatko: <lienee>, perusmuoto: "olla", äs: ä,
-                tapaluokka: ehtotapa];
+                tapaluokka: mahtotapa];
 [alku: "lie",   luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
-                äs: ä, tapaluokka: ehtotapa];
+                äs: ä, tapaluokka: mahtotapa];
 [alku: "liene", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
-                äs: ä, tapaluokka: ehtotapa];
+                äs: ä, tapaluokka: mahtotapa];
 
 [alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];
 

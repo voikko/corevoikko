@@ -226,6 +226,7 @@ Millaisia bändejä festareilla mahtaakaan esiintyä?
  [code=9, level=0, descr="", stpos=20, len=5, suggs={}]
 Minun KISSANI on harmaa.
 Marsuani ei juoksuteta eikä valvoteta öisin.
+Marsuani ei juoksuteta, kävi miten kävi.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

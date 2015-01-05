@@ -674,6 +674,7 @@ word:lienen
     CLASS=teonsana
     NUMBER=singular
     PERSON=1
+    MOOD=potential
 word:älkööt
   expected:1
   analysis

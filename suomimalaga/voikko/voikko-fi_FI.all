@@ -3218,7 +3218,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (lienee in $tietue.jatko) then
     choose $i in <taivutus ($tietue, "", @kestämän_tekijäpääte,
-                            [tapaluokka: ehtotapa, aikamuoto: kestämä])>;
+                            [tapaluokka: mahtotapa, aikamuoto: kestämä])>;
     result $i.alku, $i - alku;
 
 

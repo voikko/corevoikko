@@ -67,6 +67,11 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 				// "siinä missä" voi erottaa lauseita ilman pilkkua. TODO: siistimpi toteutus
 				foundVerbInCurrentClause = false;
 			}
+			else if (i + 2 < sentence->tokenCount && wcsncmp(token->str, L"k\u00e4vi", 4) == 0 &&
+			         wcsncmp((sentence->tokens + (i + 2))->str, L"miten", 5) == 0) {
+				// "kävi miten kävi" ei vaadi pilkkua. TODO: siistimpi toteutus
+				foundVerbInCurrentClause = false;
+			}
 			else if (token->isMainVerb) {
 				if (foundVerbInCurrentClause) {
 					// Suppress this error if generic repeating word check applies here

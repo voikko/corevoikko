@@ -1581,6 +1581,7 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
     );
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  if $edellinen.tapaluokka = mahtotapa and $oikea.luokka in @kestämän_tekijäpääte then $oikea.tapaluokka := mahtotapa; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   result $res, accept;
   if (liitesana in $oikea.jatko) then
