@@ -351,13 +351,13 @@ class VoikkoHtmlTest(TestCase):
 	
 	def testFollowRedirects(self):
 		t = self.startRedirectServer(3400)
-		self.assertEquals(u"hirvi", getHtmlSafely("http://localhost:3400/1"))
+		self.assertEquals(u"hirvi", getHtmlSafely("http://localhost:3400/1")[1])
 		self.assertThreadExitsNormally(t)
 	
 	def testMaxRedirectsIsReached(self):
 		t = self.startRedirectNServer(3400, 4, 4)
 		try:
-			getHtmlSafely("http://localhost:3400/1")
+			getHtmlSafely("http://localhost:3400/1")[1]
 		except HttpException, e:
 			self.failUnless(ERR_TOO_MANY_REDIRECTS in e.parameter)
 			self.assertThreadExitsNormally(t)
@@ -371,7 +371,7 @@ class VoikkoHtmlTest(TestCase):
 			slf.end_headers()
 		t = self.startServer(3400, getFunct, 1)
 		try:
-			getHtmlSafely("http://localhost:3400/")
+			getHtmlSafely("http://localhost:3400/")[1]
 		except HttpException, e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			self.assertThreadExitsNormally(t)
@@ -385,7 +385,7 @@ class VoikkoHtmlTest(TestCase):
 			slf.wfile.write("kissa")
 		t = self.startServer(3400, getFunct, 1)
 		try:
-			getHtmlSafely("http://localhost:3400/")
+			getHtmlSafely("http://localhost:3400/")[1]
 		except HttpException, e:
 			self.failUnless(ERR_NOT_FOUND in e.parameter)
 			self.assertThreadExitsNormally(t)
@@ -399,52 +399,54 @@ class VoikkoHtmlTest(TestCase):
 			slf.end_headers()
 			slf.wfile.write("kissa")
 		t = self.startServer(3400, getFunct, 1)
-		html = getHtmlSafely("http://localhost:3400/", "93.35.124.35", ["X-Something: sfsf\n", "X-Forwarded-For: 123.123.123.123\n"])
+		html = getHtmlSafely("http://localhost:3400/", "93.35.124.35", ["X-Something: sfsf\n", "X-Forwarded-For: 123.123.123.123\n"])[1]
 		self.assertEquals(u"kissa", html)
 		self.assertThreadExitsNormally(t)
 	
 	def testGetHtmlSafely(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")
-		self.assertEquals(u"kissa", getHtmlSafely("http://localhost:3400"))
+		(contentType, content) = getHtmlSafely("http://localhost:3400")
+		self.assertEquals("text/html; charset=UTF-8", contentType)
+		self.assertEquals(u"kissa", content)
 		self.assertThreadExitsNormally(t)
 	
 	def testSchemeIsOptional(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")
-		self.assertEquals(u"kissa", getHtmlSafely("127.0.0.1:3400"))
+		self.assertEquals(u"kissa", getHtmlSafely("127.0.0.1:3400")[1])
 		self.assertThreadExitsNormally(t)
 	
 	def testUtf8EncodingFromContentType(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('UTF-8'))
-		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400")[1])
 		self.assertThreadExitsNormally(t)
 	
 	def testLatin1EncodingFromContentType(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=ISO-8859-1", u"täti".encode('ISO-8859-1'))
-		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400")[1])
 		self.assertThreadExitsNormally(t)
 	
 	def testLatin1EncodingFromMetaTag(self):
 		response = u'<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">\n</head><body>täti</body></html>'
 		t = self.startNormalServer(3400, 200, "text/html", response.encode('ISO-8859-1'))
-		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400")[1])
 	
 	def testLatin1EncodingFromMetaTagAlternateOrder(self):
 		response = u'<html>\n<head>\n<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">\n</head><body>täti</body></html>'
 		t = self.startNormalServer(3400, 200, "text/html", response.encode('ISO-8859-1'))
-		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400")[1])
 	
 	def testLatin1EncodingFromMetaTagSingleQuoteBeforeHtml(self):
 		response = u'\'<html>\n<head>\n<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">\n</head><body>täti</body></html>'
 		t = self.startNormalServer(3400, 200, "text/html", response.encode('ISO-8859-1'))
-		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400")[1])
 	
 	def testUtf8ContentIsParsedIfNoEncodingSpecified(self):
 		t = self.startNormalServer(3400, 200, "text/html", u"täti".encode('UTF-8'))
-		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400")[1])
 	
 	def testLatin1ContentIsParsedIfNoEncodingSpecified(self):
 		t = self.startNormalServer(3400, 200, "text/html", u"täti".encode('ISO-8859-1'))
-		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400")[1])
 	
 	def testEncodingMismatchIsError(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
