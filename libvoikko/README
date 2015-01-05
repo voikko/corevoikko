@@ -130,8 +130,11 @@ occurrence is used and the rest are ignored.
       HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath.
    b) Directory specified by the registry key
       HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
-5) Path specified at compile time using --with-dictionary-path (this defaults to
-   /usr/lib/voikko).
+5) Path specified at compile time:
+   a) If --with-dictionary-path is used, it specifies the full path.
+   b) Else if operating system is Mac OS X and --prefix is not used, the path is
+      ${ac_default_prefix}/lib/voikko:/Library/Spelling/voikko
+   c) else the path is ${prefix}/lib/voikko
 
 In 2), 4) and 5) it is possible to specify multiple locations by separating them with
 the OS specific paths separator (; on Windows, : on other operating systems).
