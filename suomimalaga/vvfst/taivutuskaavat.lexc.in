@@ -167,6 +167,7 @@ LEXICON NOUN Valo_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Sukija <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -307,8 +308,8 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Laatusana	i:i	Johdin_Us_<A>		;
-?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
-?Sukija [Sg][Nm]e:e		<WC>MonikonGenetiiviInJatko_<A>	;
+?Sukija [Sill][Ny]ihi:ihi <WC>LiOlN_<A> ;
+?Sukija i:i <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	<WC>MonikonNominatiivinJatko_<A>	;
@@ -425,6 +426,7 @@ LEXICON NOUN Risti_Siisti_s
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
+?Sukija i:i <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	<WC>MonikonNominatiivinJatko_<A>	;
@@ -741,6 +743,7 @@ LEXICON NOUN Koira
 LEXICON NOUN Jumala
 <WC>Koira_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Juhta
 t:t	<WC>Koira_s_<A>	;
@@ -826,6 +829,7 @@ LEXICON NOUN Koira_s
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+?Sukija <A>:<A> <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Pitkä
 [Sn][Ny]tk<A>:tk<A>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -5119,3 +5123,9 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija Tositapa4Tt_<A> ;
 ?Sukija Käskytapa_<A> ;
 ?Sukija Käskytapa_y2_<A> ;
+
+?Sukija LEXICON NOUN SukijaLOiMonikko
+?Sukija l<O>:l<O> <WC>YhteisetMonikonSijat2_<A> ;
+?Sukija l<O>:l<O> <WC>YhteisetMonikonPaikallissijat_<A> ;
+?Sukija [Sp][Nm]l<O>ita:l<O>ita   <WC>LiOlV_<A> ;
+?Sukija [Sill][Nm]l<O>ihi:l<O>ihi <WC>LiOlN_<A> ;
