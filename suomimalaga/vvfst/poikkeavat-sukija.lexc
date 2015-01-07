@@ -272,8 +272,13 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
 [Ls][Xp]miten[X]mitenkäs:mitenkäs     Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
+[Ls][Xp]niin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
+[Ls][Xp]niinkuin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
+[Ls][Xp]sensijaan[X]sen[Bm]sijaan:sensijaan Liitesana_a ;
+[Ls][Xp]sentähden[X]sen[Bm]tähden:sentähden Liitesana_ä ;
+[Ls][Xp]senvuoksi[X]sen[Bm]vuoksi:senvuoksi Liitesana_a ;
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä OlV_ä ;
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;

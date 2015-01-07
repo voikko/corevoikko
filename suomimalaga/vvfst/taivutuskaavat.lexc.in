@@ -797,6 +797,8 @@ LEXICON NOUN Ikä
 k:k	<WC>Koira_s_<A>	;
 <WC>Koira_w_yksikkö_<A>	;
 ':'	<WC>Koira_w_monikko_<A>	;
+?Sukija j:j <WC>Koira_w_yksikkö_<A> ;
+?Sukija j:j <WC>Koira_w_monikko_<A> ;
 
 LEXICON NOUN Koira_w
 <WC>Koira_w_yksikkö_<A>	;
@@ -4482,6 +4484,8 @@ LiitesanaKinKoPaHan_<A>	;
 LEXICON KieltosananLiitesana
 LiitesanaKoPaHan_<A>	;
 k<A>:k<A>	Loppu	;
+?Sukija k<A>:k<A> LiitesanaKoPaHan_<A> ;
+?Sukija [Fkaan]k<A><A>n:k<A><A>n Loppu ;
 
 LEXICON LiitesanaKoPaHan
 LiitesanaPaHan_<A>	;
