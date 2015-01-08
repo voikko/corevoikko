@@ -307,7 +307,8 @@ def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
 #
 word_list = [
     (u"aarteisto",        (u"aarteisto",     u"aartehisto")),
-    (u"Abessinia",        (u"Abessini",      u"Abessiini", u"Abyssini", "Abyssiini")),
+    (u"Abessinia",        (u"abessini",      u"abessiini", u"abyssini", "abyssiini")),
+    (u"Afganistan",       (u"afganistan",    u"afghanistan")),
     (u"agaave",           (u"agaave",        u"agave")),
     (u"aggressiivinen",   (u"aggressiivi",   u"agressiivi", u"agressivi", u"akressiivi")),
     (u"aggressio",        (u"aggressio",     u"agressio")),
@@ -533,7 +534,8 @@ word_list = [
     (u"viheriöidä",      (u"viheriö",      u"viherjö")),
     (u"vihkiäinen",      (u"vihkiäi",      u"vihkijäi")),
     (u"visiiri",         (u"visiir",       u"visir")),
-    (u"ylimmäinen",         (u"ylimmäi",          u"ylimäi")),
+    (u"Väisänen",        (u"väisä",        u"wäisä")),
+    (u"ylimmäinen",      (u"ylimmäi",      u"ylimäi")),
 
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
 

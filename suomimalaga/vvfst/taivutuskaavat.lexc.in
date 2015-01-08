@@ -569,6 +569,7 @@ LEXICON NOUN Lovi_s
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]e:e		<WC>MonikonGenetiiviInJatko_<A>	;
+?Sukija i:i <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Lovi_w
 [Sn][Nm]et:et	<WC>MonikonNominatiivinJatko_<A>	;
@@ -1445,6 +1446,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Paikannimi	e:e	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+?Sukija i:i <WC>SukijaLOiMonikko_<A> ;
 
 LEXICON NOUN Niemi
 <WC>Lumi_<A>	;
@@ -3916,6 +3918,7 @@ t:t	Mahtotapa_tA_<A>	;
 LEXICON Mahtotapa_tA
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Et]t<A>ne:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>ne	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ef]t<A>neen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>neen	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4][Ef]t<A>nee:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>nee	Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tm][Ap][P4]t<A>nehen:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>nehen	Liitesana_<A>	;
 
 LEXICON Käskytapa_0
