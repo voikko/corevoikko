@@ -32,6 +32,7 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
+#include <cassert>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -154,6 +155,17 @@ static void createDefaultStructure(size_t charsMissing, bool & defaultTitleCase,
 	}
 }
 
+static inline void decreaseCharsMissing(size_t & charsMissing, size_t charsSeen, size_t charsFromDefault) {
+	if (charsSeen - charsFromDefault <= charsMissing) {
+		charsMissing -= (charsSeen - charsFromDefault);
+	}
+	else {
+		// lexicon error: something wrong with fstOutput
+		assert(false);
+		charsMissing = 0;
+	}
+}
+
 static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	wchar_t * structure = new wchar_t[wlen * 2 + 1];
 	structure[0] = L'=';
@@ -171,7 +183,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			}
 			if (charsSeen > charsFromDefault) {
 				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
-				charsMissing -= (charsSeen - charsFromDefault);
+				decreaseCharsMissing(charsMissing, charsSeen, charsFromDefault);
 			}
 			if (i != 1 && i + 5 < outputLen && structurePos > 0 && structure[structurePos - 1] != L'=') {
 				structure[structurePos++] = L'=';
@@ -231,7 +243,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 		else if (fstOutput[i] == L'-') {
 			if (charsSeen > charsFromDefault) {
 				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
-				charsMissing -= (charsSeen - charsFromDefault);
+				decreaseCharsMissing(charsMissing, charsSeen, charsFromDefault);
 				structure[structurePos++] = L'-';
 				charsSeen = 0;
 				charsFromDefault = 0;
@@ -255,7 +267,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			if (isAbbr) {
 				if (charsSeen > charsFromDefault) {
 					createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
-					charsMissing -= (charsSeen - charsFromDefault);
+					decreaseCharsMissing(charsMissing, charsSeen, charsFromDefault);
 					charsSeen = 0;
 					charsFromDefault = 0;
 				}
