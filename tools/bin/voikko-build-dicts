@@ -104,9 +104,9 @@ allDicts.append(d)
 d = Voikkodict()
 d.idSuffix = u"-laaketiede"
 d.variant = u"medicine"
-d.nameFi = u"suomi (matematiikan, fysiikan, kemian ja lääketieteen sanastot)"
+d.nameFi = u"suomi (matematiikan, fysiikan, kemian, biologian, maantieteen, geologian ja lääketieteen sanastot)"
 d.nameEn = u"Finnish (medical vocabulary)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science"'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science,nature"'
 allDicts.append(d)
 
 d = Voikkodict()
