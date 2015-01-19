@@ -256,19 +256,19 @@ TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
 voikko-sukija:
 	make voikko VANHAT_MUODOT=yes SUKIJAN_MUODOT=yes \
 		GENLEX_OPTS='--style=dialect,foreign,incorrect --min-frequency=10 \
-		--extra-usage=sukija,it,medicine,science,education,orgname' \
+		--extra-usage=sukija,it,medicine,science,education,orgname,nature' \
 		EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex" VOIKKO_DEBUG=yes
 
 
 # Rules for creating vvfst morphology for Sukija indexer. See file
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
-vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
+vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,it,medicine,nature,orgname,science --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 #vvfst-sukija: VOIKKO_VARIANT=sukija
 #vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 
-vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija --sukija-ys
+vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,it,medicine,nature,orgname,science --sukija --sukija-ys
 vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/poikkeavat-sukija.lexc
