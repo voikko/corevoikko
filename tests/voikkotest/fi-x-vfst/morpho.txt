@@ -718,9 +718,18 @@ word:lienen
     CLASS=teonsana
     BASEFORM=olla
     MOOD=potential
+    NEGATIVE=false
     NUMBER=singular
     PERSON=1
     TENSE=present_simple
+word:liene
+  expected:1
+  analysis
+    CLASS=teonsana
+    !NUMBER
+    !PERSON
+    MOOD=potential
+    NEGATIVE=true
 word:älkööt
   expected:1
   analysis
