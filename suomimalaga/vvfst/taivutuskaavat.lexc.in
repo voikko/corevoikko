@@ -3974,10 +3974,12 @@ LEXICON Johdin_nimitapa2
 LEXICON Johdin_nimitapa2_AessA
 [Tn2]<A>ess<A>:<A>ess<A>	LaatusanaLiOlV_<A>	;
 Johdin_nimitapa2_<A>	;
+?Sukija [Tn2]<A>iss<A>:<A>iss<A>	LaatusanaLiOlV_<A>	;
 
 LEXICON Johdin_nimitapa2_tAessA
 [Tn2]t<A>ess<A>:t<A>ess<A>	LaatusanaLiOlV_<A>	;
 Nimitapa3_tAmAn_<A>	;
+?Sukija [Tn2]t<A>iss<A>:t<A>iss<A>	LaatusanaLiOlV_<A>	;
 
 LEXICON Nimitapa3_tAmAn
 [Tn3]t<A>m<A>n:t<A>m<A>n	Liitesana_<A>	;
@@ -4057,6 +4059,7 @@ t:t	Johdin_tAvA_<A>	;
 
 LEXICON Johdin_nimitapa2_ttA
 [Tn2]tt<A>ess<A>:tt<A>ess<A>	Liitesana_<A>	;
+?Sukija [Tn2]tt<A>iss<A>:tt<A>iss<A>	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
