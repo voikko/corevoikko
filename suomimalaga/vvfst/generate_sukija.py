@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2014 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2015 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
 # Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
@@ -315,6 +315,8 @@ word_list = [
     (u"aikainen",         (u"aikai",         u"aikahi")),
     (u"ainainen",         (u"ainai",         u"ainahi")),
     (u"aineisto",         (u"aineisto",      u"ainehisto")),
+    (u"akateemikko",      (u"akateemik",     u"akatemik")),
+    (u"akateeminen",      (u"akateemi",      u"akatemi")),
     (u"aksiomi",          (u"aksiom",        u"aksioom")),
     (u"aksiooma",         (u"aksioom",       u"aksiom")),
     (u"alamainen",        (u"alamai",        u"alammai")),
@@ -536,6 +538,7 @@ word_list = [
     (u"vihkiäinen",      (u"vihkiäi",      u"vihkijäi")),
     (u"visiiri",         (u"visiir",       u"visir")),
     (u"Väisänen",        (u"väisä",        u"wäisä")),
+    (u"ylhäällä",        (u"ylhää",        u"ylähä")),
     (u"ylimmäinen",      (u"ylimmäi",      u"ylimäi")),
 
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),

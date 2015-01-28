@@ -283,7 +283,9 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksihin:väännyksihin Loppu ;
-
+[Ls][Xp]ylöspäin[X]ylähältäkin[Bm]päin:ylähältäkinpäin Loppu_ä ;
+[Ls][Xp]ylöspäin[X]ylähältäkään[Bm]päin:ylähältäkäänpäin Loppu_ä ;
+[Ls][Xp]ylöspäin[X]ylähältä[Bm]päin:ylähältäpäin LoppuLiitesana_ä ;
 
 LEXICON Sukija_p
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
