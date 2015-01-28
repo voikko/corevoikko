@@ -375,6 +375,7 @@ word_list = [
     (u"kaneli",         (u"kanel",       u"kaneel")),
     (u"kanuuna",        (u"kanuun",      u"kanun", u"kanoon", u"kanon")),
     (u"kaoottinen",     (u"kaootti",     u"kaaootti", u"kaaotti", u"kaotti")),
+    (u"kapteeni",       (u"kapteen",     u"kaptein")),
     (u"kauan",          ((u"kauaa",      u"kauvaa"),
                          (u"kauan",      u"kauvan"),
                          (u"kauemmin",   u"kauvemmin"),
