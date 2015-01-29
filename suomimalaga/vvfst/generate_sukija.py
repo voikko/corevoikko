@@ -310,6 +310,8 @@ word_list = [
     (u"Abessinia",        (u"abessini",      u"abessiini", u"abyssini", "abyssiini")),
     (u"Afganistan",       (u"afganistan",    u"afghanistan")),
     (u"agaave",           (u"agaave",        u"agave")),
+    (u"aggregaatio",      (u"aggregaatio",   u"agregaatio")),
+    (u"aggregaatti",      (u"aggregaat",     u"agregaat")),
     (u"aggressiivinen",   (u"aggressiivi",   u"agressiivi", u"agressivi", u"akressiivi")),
     (u"aggressio",        (u"aggressio",     u"agressio")),
     (u"aikainen",         (u"aikai",         u"aikahi")),
