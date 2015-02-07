@@ -134,6 +134,8 @@ sija;
   kerronto_sti;  # Hilpeä+sti, valkoise+sti.
   tulento_s;     # Kaua+s, sivumma+s.
 
+  ei_kaksoispisteen_jälkeen; # ei käytetä taivutuksessa kaksoispisteen jälkeen
+
 luku;
   yksikkö;
   monikko;

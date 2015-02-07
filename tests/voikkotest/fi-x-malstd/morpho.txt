@@ -952,3 +952,9 @@ word:ratakorkeus
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:esikarsinta
  expected:1
+word:kpl:in
+ expected:2
+  analysis
+   SIJAMUOTO=omanto
+  analysis
+   SIJAMUOTO=keinonto

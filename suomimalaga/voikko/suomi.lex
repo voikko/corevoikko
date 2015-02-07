@@ -76,9 +76,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
 
 
-[alku: "en",    luokka: sijapääte, sija: omanto_en, sijamuoto: omanto,
+[alku: "en",    luokka: sijapääte, sija: omanto_en, sijamuoto: omanto, ei_kaksoispisteen_jälkeen: yes,
                 luku: monikko, äs: aä, jatko: @sijan_jatko + @yhdyssana];
-[alku: "e",     luokka: sijapääte, sija: omanto_en, sijamuoto: omanto,
+[alku: "e",     luokka: sijapääte, sija: omanto_en, sijamuoto: omanto, ei_kaksoispisteen_jälkeen: yes,
                 luku: monikko, äs: aä, jatko: <omistusliite>];
 
 [alku: "ien",   luokka: sijapääte, sija: omanto_ien, sijamuoto: omanto,

@@ -286,7 +286,7 @@ Ab:ltä
 !esim.:ssä
 §:ssä
 DVD:nsä
-DVD:än
+DVD:ään
 !tee-n.
 
 # = sijamuodot =
@@ -3393,7 +3393,7 @@ luovempia
 !jälkimäinen
 Nieminen-Mäkynen
 IV:ttä
-II:en
+!2:en
 CD:itä
 DVD:istä
 I:hin

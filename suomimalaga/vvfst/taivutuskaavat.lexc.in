@@ -4609,7 +4609,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sn][Nm]%:t:%:t	Liitesana_<A>	;
 [Sg][Ny]%::%:	NimisanaLiOlN_<A>	;
 [Sg][Ny]%:<A>:%:<A>	NimisanaLiOlN_<A>	;
-[Sg][Ny]%:i:%:i	NimisanaLiOlN_<A>	;
+[Sg][Nm]%:i:%:i	NimisanaLiOlN_<A>	;
 [Sg][Nm]%:ide:%:ide	NimisanaLiOlN_<A>	;
 [Sg][Nm]%:ie:%:ie	NimisanaLiOlN_<A>	;
 [Sp][Ny]%:<A><A>:%:<A><A>	NimisanaLiOlAA_<A>	;
@@ -4628,16 +4628,13 @@ LEXICON LyhenteenTaivutuspääte
 [Sela][Nm]%:ist<A>:%:ist<A>	NimisanaLiOlV_<A>	;
 [Sill][Ny]%:see:%:see	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:ee:%:ee	NimisanaLiOlN_<A>	;
-[Sill][Ny]%:e:%:e	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:ii:%:ii	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:<A><A>:%:<A><A>	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:<O><O>:%:<O><O>	NimisanaLiOlN_<A>   ;
-[Sill][Ny]%:<O>:%:<O>	NimisanaLiOlN_<A>   ;
 [Sill][Ny]%:he:%:he	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:h<A>:%:h<A>	NimisanaLiOlN_<A>	;
 [Sill][Ny]%:h<O>:%:h<O>	NimisanaLiOlN_<A>   ;
 [Sill][Ny]%:h<U>:%:h<U>	NimisanaLiOlN_<A>	;
-[Sill][Ny]%:<U>:%:<U> NimisanaLiOlN_<A>       ;
 [Sill][Ny]%:hi:%:hi	NimisanaLiOlN_<A>	;
 [Sill][Nm]%:ihi:%:ihi	NimisanaLiOlN_<A>	;
 [Sade][Ny]%:ll<A>:%:ll<A>	NimisanaLiOlV_<A>	;
@@ -4647,6 +4644,7 @@ LEXICON LyhenteenTaivutuspääte
 [Sall][Ny]%:lle:%:lle	NimisanaLiOlV_<A>	;
 [Sall][Nm]%:ille:%:ille	NimisanaLiOlV_<A>	;
 [Sab][Ny]%:tt<A>:%:tt<A>	NimisanaLiOlV_<A>	;
+[Sin][Nm]%:i:%:i	NimisanaLiOlN_<A>	;
 [Sn][Ny]%::%:	Liitesana_<A> ;
 
 LEXICON RoomalaisenNumeronJatko

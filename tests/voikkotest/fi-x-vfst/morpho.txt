@@ -1823,3 +1823,9 @@ word:hätäistään
    SIJAMUOTO=osanto
    NUMBER=singular
    CLASS=nimisana
+word:kpl:in
+ expected:2
+  analysis
+   SIJAMUOTO=omanto
+  analysis
+   SIJAMUOTO=keinonto
