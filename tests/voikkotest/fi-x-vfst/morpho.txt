@@ -1831,3 +1831,7 @@ word:kpl:in
    SIJAMUOTO=keinonto
 word:arktis-alpiininen
  expected:1
+word:III-divisioona
+ expected:1
+  analysis
+   STRUCTURE==jjj-=pppppppppp
