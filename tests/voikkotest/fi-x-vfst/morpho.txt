@@ -1835,3 +1835,5 @@ word:III-divisioona
  expected:1
   analysis
    STRUCTURE==jjj-=pppppppppp
+word:EU-laitos
+ expected:1
