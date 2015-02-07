@@ -1633,7 +1633,6 @@ LEXICON NOUN NainenYsJatko
 
 LEXICON LaatusanaNainenInen
 @D.INEN_KIELLETTY@@C.INEN_VAADITTU@:@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
-s-@C.INEN_VAADITTU@@P.YS_ALKANUT.ON@[Bc]:s-@C.INEN_VAADITTU@@P.YS_ALKANUT.ON@	Yleisnimet	;
 s-@D.YS_EI_JATKOA@@C.INEN_VAADITTU@@R.LAINEN@[Bc]:s-@D.YS_EI_JATKOA@@C.INEN_VAADITTU@@R.LAINEN@	Sanasto_ep	;
 s@D.YS_EI_JATKOA@[Bc]@P.YS_ALKANUT.ON@:s@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nl	;
 
@@ -4608,7 +4607,6 @@ LEXICON LyhenneIlmanLoppuaTaiTaivutusta
 LEXICON LyhenteenTaivutuspääte
 [Sn][Nm]%:t:%:t	Liitesana_<A>	;
 [Sg][Ny]%::%:	NimisanaLiOlN_<A>	;
-[Sg][Ny]%:<A>:%:<A>	NimisanaLiOlN_<A>	;
 [Sg][Nm]%:i:%:i	NimisanaLiOlN_<A>	;
 [Sg][Nm]%:ide:%:ide	NimisanaLiOlN_<A>	;
 [Sg][Nm]%:ie:%:ie	NimisanaLiOlN_<A>	;

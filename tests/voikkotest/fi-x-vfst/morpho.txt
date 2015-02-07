@@ -1829,3 +1829,5 @@ word:kpl:in
    SIJAMUOTO=omanto
   analysis
    SIJAMUOTO=keinonto
+word:arktis-alpiininen
+ expected:1
