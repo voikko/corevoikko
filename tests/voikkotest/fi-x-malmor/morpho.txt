@@ -254,3 +254,10 @@ word:älähän
    MOOD=imperative
    NUMBER=singular
    PERSON=2
+word:hätäistään
+ expected:1
+  analysis
+   POSSESSIVE=3
+   SIJAMUOTO=osanto
+   NUMBER=singular
+   CLASS=nimisana

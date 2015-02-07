@@ -2249,13 +2249,18 @@ end;
 
 subrule tulostus_luokka($tietue):
   define $tlen := length($tietue);
+  define $omistusliite := no;
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.jluokka /= nil then
       return $allomorfi.jluokka;
     end;
     if $allomorfi.luokka in @johtimet_laatusana_nimisanasta then
-      return laatusana;
+      if $omistusliite then
+        return nimisana;
+      else
+        return laatusana;
+      end;
     end;
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
@@ -2281,6 +2286,9 @@ subrule tulostus_luokka($tietue):
     end;
     if $allomorfi.luokka = johdin_lAinen then
       return laatusana;
+    end;
+    if $allomorfi.luokka = omistusliite then
+      $omistusliite := yes;
     end;
   end;
   return nil;

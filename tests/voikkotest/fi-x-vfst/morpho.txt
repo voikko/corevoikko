@@ -1816,3 +1816,10 @@ word:uudelleenmuotoiltu
 word:juoksemisestapa
  expected:1
  !NEGATIVE
+word:hätäistään
+ expected:1
+  analysis
+   POSSESSIVE=3
+   SIJAMUOTO=osanto
+   NUMBER=singular
+   CLASS=nimisana
