@@ -1868,3 +1868,11 @@ word:mennyllä
  expected:1
   analysis
    PARTICIPLE=past_passive
+word:viisi-
+ expected:1
+  analysis
+   CLASS=etuliite
+   BASEFORM=viisi-
+   STRUCTURE==ppppp-
+   !NUMBER
+   !SIJAMUOTO

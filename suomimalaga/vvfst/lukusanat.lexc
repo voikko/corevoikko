@@ -345,12 +345,12 @@ LEXICON JärjestyslukuToista
 
 LEXICON YhdysmerkkiJaLukusananJälkiliite
 -:-	LukusananJälkiliiteEiYhdysmerkkiä	;
-[Bc]-:-	Loppu;
+-[Bc]:-	Loppu;
 
 LEXICON LukusananJälkiliite
 LukusananJälkiliiteEiYhdysmerkkiä	;
 @P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
-[Bc]-:-	Loppu;
+-[Bc]:-	Loppu;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
 [Bc][Bh]@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_ALKANUT.ON@@P.YS_JATKETTAVA.ON@:@P.YS_EI_GENETIIVIALKUA.ON@@P.YS_ALKANUT.ON@@P.YS_JATKETTAVA.ON@	Sanasto_n	;

@@ -503,7 +503,7 @@ static bool parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar
 		else if (isInXp || isInDigitSequence) {
 			baseform[baseformPos++] = fstOutput[i];
 		}
-		else if (!xpPassed) {
+		else if (!xpPassed || fstOutput[i] == L'-') {
 			baseform[baseformPos++] = fstOutput[i];
 		}
 	}
