@@ -1861,3 +1861,6 @@ word:voipi
  expected:1
   analysis
    NEGATIVE=false
+word:väylänopeus
+ expected:1
+ !POSSIBLE_GEOGRAPHICAL_NAME
