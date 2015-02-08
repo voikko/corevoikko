@@ -1837,6 +1837,16 @@ word:III-divisioona
    STRUCTURE==jjj-=pppppppppp
 word:EU-laitos
  expected:1
+word:Kissalaitos
+ expected:2
+  analysis
+   STRUCTURE==ppppp=pppppp
+  analysis
+   STRUCTURE==ipppp=pppppp
+word:-kissalaitos
+ expected:1
+  analysis
+   STRUCTURE=-=ppppp=pppppp
 word:kymmenennen
  expected:1
   analysis

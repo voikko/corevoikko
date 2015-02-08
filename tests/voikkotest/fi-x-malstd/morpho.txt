@@ -958,3 +958,13 @@ word:kpl:in
    SIJAMUOTO=omanto
   analysis
    SIJAMUOTO=keinonto
+word:Kissalaitos
+ expected:2
+  analysis
+   STRUCTURE==ppppp=pppppp
+  analysis
+   STRUCTURE==ipppp=pppppp
+word:-kissalaitos
+ expected:1
+  analysis
+   STRUCTURE=-=ppppp=pppppp

@@ -628,6 +628,9 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 	if (fstLen < 13) {
 		return;
 	}
+	if (fstOutput[0] == L'-') {
+		return;
+	}
 	if (wcsncmp(fstOutput, L"[La]", 4) == 0) {
 		return;
 	}

@@ -424,7 +424,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   end;
   result $res, rules nimisanan_sijapääte, nimisanan_johdos;
   
-  if $oikea.erisnimen_pääte = yes and $edellinen.luokka /= tavuviiva then
+  if $oikea.erisnimen_pääte = yes and $vasen.(1).luokka /= tavuviiva then
     $res := $vasen + <$oikea + [alku: $sana, luokka: nimi]>;
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
