@@ -1854,3 +1854,10 @@ word:kymmenennen
    CLASS=lukusana
    NUMBER=singular
    SIJAMUOTO=omanto
+word:suosituimmuusaseman
+ expected:1
+ !COMPARISON
+word:voipi
+ expected:1
+  analysis
+   NEGATIVE=false

@@ -738,7 +738,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "POSSESSIVE", possessiveMap);
 					}
 					else if (fstOutput[j + 1] == L'C') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "COMPARISON", comparisonMap);
+						if (!analysis->getValue("CLASS")) {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "COMPARISON", comparisonMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'E') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);

@@ -4447,7 +4447,7 @@ Liitesana_<A>	;
 LiitesanaVainPi_<A>	;
 
 LEXICON LiitesanaVainPi
-pi:pi	Loppu	;
+[Ef]pi:pi	Loppu	;
 ?Sukija pi:pi LiitesanaEiLoppu_<A> ;
 
 LEXICON LiitesanaEiLoppu
