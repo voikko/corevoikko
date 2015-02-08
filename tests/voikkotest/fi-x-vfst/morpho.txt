@@ -1864,6 +1864,9 @@ word:voipi
 word:väylänopeus
  expected:1
  !POSSIBLE_GEOGRAPHICAL_NAME
+word:pieniniemisyys
+ expected:1
+ !POSSIBLE_GEOGRAPHICAL_NAME
 word:mennyllä
  expected:1
   analysis
