@@ -1837,3 +1837,10 @@ word:III-divisioona
    STRUCTURE==jjj-=pppppppppp
 word:EU-laitos
  expected:1
+word:kymmenennen
+ expected:1
+  analysis
+   BASEFORM=kymmenes
+   CLASS=lukusana
+   NUMBER=singular
+   SIJAMUOTO=omanto

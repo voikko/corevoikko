@@ -237,6 +237,8 @@ for sija in MULTI.keys():
 		numeralLines.append(diacritic + u":" + diacritic + u"\tOlI_<A>\t;")
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
+MULTI_ORDINAL_BASES = [u"kymmenes", u"sadas", u"tuhannes", u"miljoonas", u"miljardis"]
+
 MULTI_ORDINALS = {
 	u"SgNy": [u"kymmenennen", u"sadannen", u"tuhannennen", u"miljoonannen", u"miljardinnen"],
 	u"SpNy": [u"kymmenettä", u"sadannetta", u"tuhannetta", u"miljoonannetta", u"miljardinnetta"],
@@ -267,13 +269,14 @@ MULTI_ORDINALS = {
 for sija in MULTI_ORDINALS.keys():
 	diacritic = u"@U.LS." + sija.upper() + u"@"
 	lexiconName = u"Järjestysluku" + sija + u"39"
+	tagName = u"[" + sija.replace(u"N", u"][N") + u"]"
 	
 	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
-	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][0] + u":" + diacritic + MULTI_ORDINALS[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][1] + u":" + diacritic + MULTI_ORDINALS[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][2] + u":" + diacritic + MULTI_ORDINALS[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][3] + u":" + diacritic + MULTI_ORDINALS[sija][3] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][4] + u":" + diacritic + MULTI_ORDINALS[sija][4] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[0] + u"[X]" + tagName + MULTI_ORDINALS[sija][0] + u":" + diacritic + MULTI_ORDINALS[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[1] + u"[X]" + tagName + MULTI_ORDINALS[sija][1] + u":" + diacritic + MULTI_ORDINALS[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[2] + u"[X]" + tagName + MULTI_ORDINALS[sija][2] + u":" + diacritic + MULTI_ORDINALS[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[3] + u"[X]" + tagName + MULTI_ORDINALS[sija][3] + u":" + diacritic + MULTI_ORDINALS[sija][3] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[4] + u"[X]" + tagName + MULTI_ORDINALS[sija][4] + u":" + diacritic + MULTI_ORDINALS[sija][4] + u"\t" + lexiconName + u"_a\t;\n")
 	
 	numeralLines = []
 	if sija in [u"SgNy", u"SgNm"]:
