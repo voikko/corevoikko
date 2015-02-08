@@ -261,3 +261,7 @@ word:hätäistään
    SIJAMUOTO=osanto
    NUMBER=singular
    CLASS=nimisana
+word:mennyllä
+ expected:1
+  analysis
+   PARTICIPLE=past_passive
