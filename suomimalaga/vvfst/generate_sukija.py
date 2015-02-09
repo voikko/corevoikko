@@ -144,6 +144,7 @@ re_toninen = makeRe (u"Ll", u".toninen")
 re_iivinen = makeRe (u"Ll", u"Ciivinen")
 re_aalinen = makeRe (u"Ll", u"aalinen")
 re_geeninen = makeRe (u"Ll", u"geeninen")
+re_oittainen = makeRe (u"Ll", u"oittainen")
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
@@ -219,6 +220,7 @@ spelling_pattern_list = [
   (re_iivinen, u"iivi", u"ivi"),
   (re_aalinen, u"aali", u"ali"),
   (re_geeninen, u"geeni", u"geni"),
+  (re_oittainen, u"oittai", u"ottai"),
 
   (re_nuolaista, u"Nuolaista_"),
   (re_rangaista, u"Rangaista_"),
@@ -538,6 +540,7 @@ word_list = [
     (u"vasemmisto",      (u"vasemmisto",   u"vasemisto")),
     (u"viheriöidä",      (u"viheriö",      u"viherjö")),
     (u"vihkiäinen",      (u"vihkiäi",      u"vihkijäi")),
+    (u"vinottainen",     (u"vinottai",     u"vinoittai")),
     (u"visiiri",         (u"visiir",       u"visir")),
     (u"Väisänen",        (u"väisä",        u"wäisä")),
     (u"ylhäällä",        (u"ylhää",        u"ylähä")),
