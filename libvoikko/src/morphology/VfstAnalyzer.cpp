@@ -431,7 +431,7 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	}
 	else {
 		const wchar_t * mood = analysis->getValue("MOOD");
-		if ((!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0)) &&
+		if ((!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0 && wcscmp(mood, L"MA-infinitive") != 0)) &&
 		    (!className || wcscmp(className, L"teonsana") == 0)) {
 			if (wcsncmp(outputPosition, L"ra", 2) == 0) {
 				analysis->addAttribute("REQUIRE_FOLLOWING_VERB", StringUtils::copy(L"A-infinitive"));

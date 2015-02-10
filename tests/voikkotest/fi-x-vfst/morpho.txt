@@ -1884,3 +1884,5 @@ word:kissavanhempiaan
   analysis
    CLASS=nimisana
    !COMPARISON
+word:ryhtymättä
+ !REQUIRE_FOLLOWING_VERB
