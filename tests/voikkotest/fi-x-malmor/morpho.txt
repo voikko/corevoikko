@@ -272,3 +272,8 @@ word:kissavanhempiaan
    !COMPARISON
 word:ryhtymättä
  !REQUIRE_FOLLOWING_VERB
+word:kahdenkeskistä
+ expected:1
+  analysis
+   CLASS=laatusana
+   BASEFORM=kahdenkeskinen

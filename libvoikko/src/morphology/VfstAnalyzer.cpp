@@ -477,7 +477,7 @@ static bool parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar
 				i += 3;
 				xpPassed = false;
 			}
-			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Ln]", 4) == 0) {
+			else if (i + 6 < fstLen && (wcsncmp(fstOutput + i, L"[Ln]", 4) == 0 || wcsncmp(fstOutput + i, L"[Ll]", 4) == 0)) {
 				return 0; // give up and return to standard algorithm
 			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
