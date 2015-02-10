@@ -265,3 +265,8 @@ word:mennyllä
  expected:1
   analysis
    PARTICIPLE=past_passive
+word:kissavanhempiaan
+ expected:1
+  analysis
+   CLASS=nimisana
+   !COMPARISON

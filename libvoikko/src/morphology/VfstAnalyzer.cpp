@@ -851,6 +851,9 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 					analysis->addAttribute("COMPARISON", StringUtils::copy(L"positive"));
 				}
 			}
+			else if (wclass && (wcscmp(wclass, L"nimisana") == 0)) {
+				analysis->removeAttribute("COMPARISON");
+			}
 			analysisList->push_back(analysis);
 			duplicateOrgName(analysis, analysisList);
 			wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);

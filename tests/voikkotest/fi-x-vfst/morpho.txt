@@ -1879,3 +1879,8 @@ word:viisi-
    STRUCTURE==ppppp-
    !NUMBER
    !SIJAMUOTO
+word:kissavanhempiaan
+ expected:1
+  analysis
+   CLASS=nimisana
+   !COMPARISON
