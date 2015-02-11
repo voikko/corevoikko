@@ -277,3 +277,12 @@ word:kahdenkeskistä
   analysis
    CLASS=laatusana
    BASEFORM=kahdenkeskinen
+word:liene
+  expected:1
+  analysis
+    CLASS=teonsana
+    !NUMBER
+    !PERSON
+    MOOD=potential
+    NEGATIVE=true
+    TENSE=present_simple

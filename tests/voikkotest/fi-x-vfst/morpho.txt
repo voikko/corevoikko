@@ -730,6 +730,7 @@ word:liene
     !PERSON
     MOOD=potential
     NEGATIVE=true
+    TENSE=present_simple
 word:älkööt
   expected:1
   analysis

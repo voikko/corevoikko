@@ -676,14 +676,6 @@ word:lienen
     PERSON=1
     MOOD=potential
     NEGATIVE=false
-word:liene
-  expected:1
-  analysis
-    CLASS=teonsana
-    !NUMBER
-    !PERSON
-    MOOD=potential
-    NEGATIVE=true
 word:älkööt
   expected:1
   analysis

@@ -53,7 +53,7 @@
 [alku: "lie",   luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: mahtotapa];
 [alku: "liene", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
-                äs: ä, tapaluokka: mahtotapa, kielto: yes];
+                äs: ä, tapaluokka: mahtotapa, kielto: yes, aikamuoto: kestämä];
 
 [alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];
 
