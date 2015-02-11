@@ -473,12 +473,15 @@ static bool parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar
 				i += 3;
 				isInXr = true;
 			}
+			else if (i + 4 == fstLen && wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+				return false; // incomplete numeral is really a prefix
+			}
 			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
 				i += 3;
 				xpPassed = false;
 			}
 			else if (i + 6 < fstLen && (wcsncmp(fstOutput + i, L"[Ln]", 4) == 0 || wcsncmp(fstOutput + i, L"[Ll]", 4) == 0)) {
-				return 0; // give up and return to standard algorithm
+				return false; // give up and return to standard algorithm
 			}
 			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
 				if (isInXp) {

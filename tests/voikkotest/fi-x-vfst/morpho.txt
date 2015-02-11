@@ -1892,3 +1892,8 @@ word:kahdenkeskistä
   analysis
    CLASS=laatusana
    BASEFORM=kahdenkeskinen
+word:kolmen-
+ expected:1
+  analysis
+   CLASS=etuliite
+   BASEFORM=kolmen-
