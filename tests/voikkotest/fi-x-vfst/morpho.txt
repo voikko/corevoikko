@@ -1897,3 +1897,8 @@ word:kolmen-
   analysis
    CLASS=etuliite
    BASEFORM=kolmen-
+word:nopeustutkassa
+ analysis
+  BASEFORM=nopeustutka
+  #WORDBASES=+nope(nopea)+us(+us)+tutka(tutka)
+  WORDIDS=+nope(w509676)+us+tutka(w516202)

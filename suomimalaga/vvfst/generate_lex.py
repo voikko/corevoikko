@@ -339,7 +339,7 @@ def handle_word(word):
 	# Construct debug information
 	debug_info = u""
 	if OPTIONS["sourceid"]:
-		debug_info = u'[Xs]%s[X]' % word.getAttribute("id")[1:]
+		debug_info = u'[Xs]%s[X]' % word.getAttribute("id")[1:].replace(u"0", u"%0")
 	
 	infoFlags = get_info_flags(word)
 	

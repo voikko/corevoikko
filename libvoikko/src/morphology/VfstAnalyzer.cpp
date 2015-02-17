@@ -693,6 +693,81 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 	}
 }
 
+void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
+	wchar_t * wordIds = new wchar_t[2 * fstLen + 1];
+	wchar_t * xsBuffer = new wchar_t[fstLen];
+	size_t idpos = 0;
+	size_t xspos = 0;
+	bool inXs = false;
+	bool inXOther = false;
+	bool inContent = false;
+	bool inTag = false;
+	for (size_t i = 0; i + 3 < fstLen; i++) {
+		if (fstOutput[i] == L'[') {
+			if (fstOutput[i + 1] == L'L') {
+				inContent = false;
+				inTag = true;
+				if (xspos > 0) {
+					wordIds[idpos++] = L'(';
+					wordIds[idpos++] = L'w';
+					wcsncpy(wordIds + idpos, xsBuffer, xspos);
+					idpos += xspos;
+					wordIds[idpos++] = L')';
+					xspos = 0;
+				}
+			}
+			else if (fstOutput[i + 1] == L'X') {
+				if (fstOutput[i + 2] == L's') {
+					inXs = true;
+					xspos = 0;
+					i += 3;
+				}
+				else if (fstOutput[i + 2] == L']') {
+					inXs = false;
+					inXOther = false;
+					i += 2;
+				}
+				else {
+					inXOther = true;
+					i += 3;
+				}
+			}
+			else {
+				inTag = true;
+			}
+		}
+		else if (fstOutput[i] == L']') {
+			inTag = false;
+		}
+		else {
+			if (inTag || inXOther) {
+				// do nothing
+			}
+			else if (inXs) {
+				xsBuffer[xspos++] = fstOutput[i];
+			}
+			else {
+				if (!inContent) {
+					wordIds[idpos++] = L'+';
+					inContent = true;
+				}
+				wordIds[idpos++] = fstOutput[i];
+			}
+		}
+	}
+	if (xspos > 0) {
+		wordIds[idpos++] = L'(';
+		wordIds[idpos++] = L'w';
+		wcsncpy(wordIds + idpos, xsBuffer, xspos);
+		idpos += xspos;
+		wordIds[idpos++] = L')';
+		xspos = 0;
+	}
+	wordIds[idpos] = L'\0';
+	delete[] xsBuffer;
+	analysis->addAttribute("WORDIDS", wordIds);
+}
+
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
@@ -846,6 +921,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			Analysis * analysis = new Analysis();
 			wchar_t * structure = parseStructure(fstOutput, wlen);
 			parseBasicAttributes(analysis, fstOutput, fstLen);
+			parseDebugAttributes(analysis, fstOutput, fstLen);
 			fixStructure(structure, fstOutput, fstLen);
 			analysis->addAttribute("STRUCTURE", structure);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
