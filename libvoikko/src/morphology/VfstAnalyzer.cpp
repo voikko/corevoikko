@@ -239,6 +239,13 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			}
 			i += 2;
 		}
+		else if (wcsncmp(fstOutput + i, L"[Xs", 3) == 0) {
+			i += 4;
+			while (fstOutput[i] != L'[') {
+				i++;
+			}
+			i += 2;
+		}
 		else if (fstOutput[i] == L'[') {
 			while (fstOutput[i] != L']') {
 				i++;
@@ -542,6 +549,10 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				hyphensInLatestXp = 0;
 			}
 			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+				i += 3;
+				isInXr = true;
+			}
+			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xs]", 4) == 0) {
 				i += 3;
 				isInXr = true;
 			}

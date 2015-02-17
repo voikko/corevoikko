@@ -339,7 +339,7 @@ def handle_word(word):
 	# Construct debug information
 	debug_info = u""
 	if OPTIONS["sourceid"]:
-		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
+		debug_info = u'[Xs]%s[X]' % word.getAttribute("id")[1:]
 	
 	infoFlags = get_info_flags(word)
 	
@@ -397,8 +397,8 @@ def handle_word(word):
 			entry = u'[Lp]%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
 			        % (rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
-			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
-			        % (vfst_word_class, wordform, rakenne, infoFlags,
+			entry = u'%s[Xp]%s[X]%s%s%s%s%s:%s%s %s%s_%s ;' \
+			        % (vfst_word_class, wordform, debug_info, rakenne, infoFlags,
 			        alkuWithTags, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	

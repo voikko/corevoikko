@@ -28,6 +28,7 @@ Multichar_Symbols
 ! Merkkijonoparametrit
 [Xp]  ! perusmuoto
 [Xr]  ! rakenne
+[Xs]  ! sourceid
 [X]   ! parametrin päätemerkki
 
 ! Sijamuodot
