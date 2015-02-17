@@ -169,6 +169,7 @@ word:olen
  analysis
   PERSON=1
   TENSE=present_simple
+  !WORDIDS
 word:juokset
  analysis
   PERSON=2

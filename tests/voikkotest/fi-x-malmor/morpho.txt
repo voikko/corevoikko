@@ -25,6 +25,7 @@ word:juoksin
 word:olen
  analysis
   TENSE=present_simple
+  !WORDIDS
 word:juokseva
  analysis
   PARTICIPLE=present_active

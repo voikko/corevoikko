@@ -702,6 +702,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	bool inXOther = false;
 	bool inContent = false;
 	bool inTag = false;
+	bool anyXs = false;
 	for (size_t i = 0; i + 3 < fstLen; i++) {
 		if (fstOutput[i] == L'[') {
 			if (fstOutput[i + 1] == L'L') {
@@ -719,6 +720,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 			else if (fstOutput[i + 1] == L'X') {
 				if (fstOutput[i + 2] == L's') {
 					inXs = true;
+					anyXs = true;
 					xspos = 0;
 					i += 3;
 				}
@@ -765,7 +767,12 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	}
 	wordIds[idpos] = L'\0';
 	delete[] xsBuffer;
-	analysis->addAttribute("WORDIDS", wordIds);
+	if (anyXs) {
+		analysis->addAttribute("WORDIDS", wordIds);
+	}
+	else {
+		delete[] wordIds;
+	}
 }
 
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
