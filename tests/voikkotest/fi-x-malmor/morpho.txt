@@ -287,3 +287,8 @@ word:liene
     MOOD=potential
     NEGATIVE=true
     TENSE=present_simple
+word:akveduktien
+ expected:1
+ analysis
+  WORDIDS=+akvedukti(w500022)
+  WORDBASES=+akvedukti(akvedukti)

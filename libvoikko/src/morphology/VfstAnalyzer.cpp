@@ -700,6 +700,8 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	wchar_t * xpBuffer = new wchar_t[fstLen];
 	size_t idpos = 0;
 	size_t basepos = 0;
+	size_t idposLast = 0;
+	size_t baseposLast = 0;
 	size_t xppos = 0;
 	size_t xspos = 0;
 	bool inXs = false;
@@ -786,12 +788,27 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 				if (!inContent) {
 					wordIds[idpos++] = L'+';
 					wordBases[basepos++] = L'+';
+					idposLast = idpos;
+					baseposLast = basepos;
 					inContent = true;
 				}
 				wordIds[idpos++] = fstOutput[i];
 				wordBases[basepos++] = fstOutput[i];
 			}
 		}
+	}
+	if (xppos > 0) {
+		basepos = baseposLast;
+		wcsncpy(wordBases + basepos, xpBuffer, xppos);
+		basepos += xppos;
+		idpos = idposLast;
+		wcsncpy(wordIds + idpos, xpBuffer, xppos);
+		idpos += xppos;
+		wordBases[basepos++] = L'(';
+		wcsncpy(wordBases + basepos, xpBuffer, xppos);
+		basepos += xppos;
+		wordBases[basepos++] = L')';
+		xppos = 0;
 	}
 	if (xspos > 0) {
 		wordIds[idpos++] = L'(';
@@ -800,13 +817,6 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 		idpos += xspos;
 		wordIds[idpos++] = L')';
 		xspos = 0;
-	}
-	if (xppos > 0) {
-		wordBases[basepos++] = L'(';
-		wcsncpy(wordBases + basepos, xpBuffer, xppos);
-		basepos += xppos;
-		wordBases[basepos++] = L')';
-		xppos = 0;
 	}
 	wordIds[idpos] = L'\0';
 	wordBases[basepos] = L'\0';
