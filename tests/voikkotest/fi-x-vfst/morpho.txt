@@ -114,6 +114,8 @@ word:hei
  expected:1
  analysis
   CLASS=huudahdussana
+  WORDIDS=+hei(w534446)
+  WORDBASES=+hei(hei)
 word:eli
  analysis
   CLASS=sidesana
@@ -1920,3 +1922,8 @@ word:kissattomat
  analysis
   WORDIDS=+kissa(w505527)+ton
   WORDBASES=+kissa(kissa)+ton(+ton)
+word:etätyö
+ expected:1
+ analysis
+  WORDIDS=+etä(w534827)+työ(w516336)
+  WORDBASES=+etä+työ(työ)

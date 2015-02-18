@@ -379,7 +379,7 @@ def handle_word(word):
 		(rakenne, alkuWithTags) = get_structure(altform, vfst_word_class, alku)
 		
 		if vfst_word_class == u"[Lh]":
-			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, rakenne, alkuWithTags, alku)
+			entry = u'%s[Xp]%s[X]%s%s%s:%s # ;' % (vfst_word_class, wordform, debug_info, rakenne, alkuWithTags, alku)
 			vocabularyFile.write(entry + u"\n")
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
@@ -394,8 +394,8 @@ def handle_word(word):
 			jatko = u"NainenInen"
 		
 		if vfst_word_class == u"[Lp]":
-			entry = u'[Lp]%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
-			        % (rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
+			entry = u'[Lp]%s%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
+			        % (debug_info, rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, debug_info, rakenne, infoFlags,

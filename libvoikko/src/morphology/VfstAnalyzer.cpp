@@ -711,7 +711,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	bool inContent = false;
 	bool inTag = false;
 	bool anyXs = false;
-	for (size_t i = 0; i + 3 < fstLen; i++) {
+	for (size_t i = 0; i + 2 < fstLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[L", 2) == 0 || wcsncmp(fstOutput + i, L"-[B", 3) == 0) {
 			inContent = false;
 			inTag = true;
