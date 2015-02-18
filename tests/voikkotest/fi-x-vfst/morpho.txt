@@ -1927,3 +1927,8 @@ word:etätyö
  analysis
   WORDIDS=+etä(w534827)+työ(w516336)
   WORDBASES=+etä+työ(työ)
+word:aktivoidumme
+ expected:1
+ analysis
+  WORDIDS=+aktivoi(w500008)+tua
+  WORDBASES=+aktivoi(aktivoida)+tua(+tua)

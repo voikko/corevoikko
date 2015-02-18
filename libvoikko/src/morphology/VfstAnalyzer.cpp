@@ -693,6 +693,25 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 	}
 }
 
+static void debugContentEnd(wchar_t * wordIds, wchar_t * wordBases, wchar_t * xsBuffer, wchar_t * xpBuffer,
+                            size_t & idpos, size_t & xspos, size_t & basepos, size_t & xppos) {
+	if (xspos > 0) {
+		wordIds[idpos++] = L'(';
+		wordIds[idpos++] = L'w';
+		wcsncpy(wordIds + idpos, xsBuffer, xspos);
+		idpos += xspos;
+		wordIds[idpos++] = L')';
+		xspos = 0;
+	}
+	if (xppos > 0) {
+		wordBases[basepos++] = L'(';
+		wcsncpy(wordBases + basepos, xpBuffer, xppos);
+		basepos += xppos;
+		wordBases[basepos++] = L')';
+		xppos = 0;
+	}
+}
+
 void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	wchar_t * wordIds = new wchar_t[2 * fstLen + 1];
 	wchar_t * wordBases = new wchar_t[2 * fstLen + 1];
@@ -715,21 +734,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 		if (wcsncmp(fstOutput + i, L"[L", 2) == 0 || wcsncmp(fstOutput + i, L"-[B", 3) == 0) {
 			inContent = false;
 			inTag = true;
-			if (xspos > 0) {
-				wordIds[idpos++] = L'(';
-				wordIds[idpos++] = L'w';
-				wcsncpy(wordIds + idpos, xsBuffer, xspos);
-				idpos += xspos;
-				wordIds[idpos++] = L')';
-				xspos = 0;
-			}
-			if (xppos > 0) {
-				wordBases[basepos++] = L'(';
-				wcsncpy(wordBases + basepos, xpBuffer, xppos);
-				basepos += xppos;
-				wordBases[basepos++] = L')';
-				xppos = 0;
-			}
+			debugContentEnd(wordIds, wordBases, xsBuffer, xpBuffer, idpos, xspos, basepos, xppos);
 			if (fstOutput[i] == L'-') {
 				wordIds[idpos++] = L'+';
 				wordIds[idpos++] = L'-';
@@ -753,6 +758,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 				}
 				else if (fstOutput[i + 2] == L'j') {
 					if (inContent) {
+						debugContentEnd(wordIds, wordBases, xsBuffer, xpBuffer, idpos, xspos, basepos, xppos);
 						idposLast = idpos;
 						baseposLast = basepos;
 					}
