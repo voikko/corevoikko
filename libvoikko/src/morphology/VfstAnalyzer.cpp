@@ -712,27 +712,34 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	bool inTag = false;
 	bool anyXs = false;
 	for (size_t i = 0; i + 3 < fstLen; i++) {
-		if (fstOutput[i] == L'[') {
-			if (fstOutput[i + 1] == L'L') {
-				inContent = false;
-				inTag = true;
-				if (xspos > 0) {
-					wordIds[idpos++] = L'(';
-					wordIds[idpos++] = L'w';
-					wcsncpy(wordIds + idpos, xsBuffer, xspos);
-					idpos += xspos;
-					wordIds[idpos++] = L')';
-					xspos = 0;
-				}
-				if (xppos > 0) {
-					wordBases[basepos++] = L'(';
-					wcsncpy(wordBases + basepos, xpBuffer, xppos);
-					basepos += xppos;
-					wordBases[basepos++] = L')';
-					xppos = 0;
-				}
+		if (wcsncmp(fstOutput + i, L"[L", 2) == 0 || wcsncmp(fstOutput + i, L"-[B", 3) == 0) {
+			inContent = false;
+			inTag = true;
+			if (xspos > 0) {
+				wordIds[idpos++] = L'(';
+				wordIds[idpos++] = L'w';
+				wcsncpy(wordIds + idpos, xsBuffer, xspos);
+				idpos += xspos;
+				wordIds[idpos++] = L')';
+				xspos = 0;
 			}
-			else if (fstOutput[i + 1] == L'X') {
+			if (xppos > 0) {
+				wordBases[basepos++] = L'(';
+				wcsncpy(wordBases + basepos, xpBuffer, xppos);
+				basepos += xppos;
+				wordBases[basepos++] = L')';
+				xppos = 0;
+			}
+			if (fstOutput[i] == L'-') {
+				wordIds[idpos++] = L'+';
+				wordIds[idpos++] = L'-';
+				wordBases[basepos++] = L'+';
+				wordBases[basepos++] = L'-';
+				i++;
+			}
+		}
+		else if (fstOutput[i] == L'[') {
+			if (fstOutput[i + 1] == L'X') {
 				if (fstOutput[i + 2] == L's') {
 					inXs = true;
 					anyXs = true;

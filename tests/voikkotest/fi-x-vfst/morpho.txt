@@ -17,6 +17,8 @@ word:kissa
 word:kuorma-auto
  analysis
   STRUCTURE==pppppp-=pppp
+  WORDIDS=+kuorma(w506469)+-+auto(w500567)
+  WORDBASES=+kuorma(kuorma)+-+auto(auto)
 word:koirra
  expected:0
 word:EU
