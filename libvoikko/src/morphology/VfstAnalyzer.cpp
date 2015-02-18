@@ -745,6 +745,10 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 					i += 3;
 				}
 				else if (fstOutput[i + 2] == L'j') {
+					if (inContent) {
+						idposLast = idpos;
+						baseposLast = basepos;
+					}
 					inXj = true;
 					xppos = 0;
 					i += 3;

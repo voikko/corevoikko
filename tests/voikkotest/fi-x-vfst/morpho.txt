@@ -1908,3 +1908,8 @@ word:akveduktien
  analysis
   WORDIDS=+akvedukti(w500022)
   WORDBASES=+akvedukti(akvedukti)
+word:historiallinen
+ expected:1
+ analysis
+  WORDIDS=+historia(w502636)+lli+nen
+  WORDBASES=+historia(historia)+lli+nen(+nen)
