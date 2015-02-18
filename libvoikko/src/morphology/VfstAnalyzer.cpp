@@ -232,7 +232,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			isAbbr = false;
 			i += 3;
 		}
-		else if (wcsncmp(fstOutput + i, L"[Xp", 3) == 0) {
+		else if (wcsncmp(fstOutput + i, L"[Xp", 3) == 0 || wcsncmp(fstOutput + i, L"[Xj", 3) == 0) {
 			i += 4;
 			while (fstOutput[i] != L'[') {
 				i++;
@@ -471,7 +471,7 @@ static bool parseNumeralBaseform(const wchar_t * fstOutput, size_t fstLen, wchar
 				// something wrong with the pattern
 				return false;
 			}
-			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
+			if (i + 6 < fstLen && (wcsncmp(fstOutput + i, L"[Xp]", 4) == 0 || wcsncmp(fstOutput + i, L"[Xj]", 4) == 0)) {
 				i += 3;
 				isInXp = true;
 			}
@@ -541,7 +541,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				delete[] baseform;
 				return 0;
 			}
-			if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xp]", 4) == 0) {
+			if (i + 6 < fstLen && (wcsncmp(fstOutput + i, L"[Xp]", 4) == 0 || wcsncmp(fstOutput + i, L"[Xj]", 4) == 0)) {
 				i += 3;
 				isInXp = true;
 				latestXpStartInFst = i + 1;
@@ -695,10 +695,16 @@ void VfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> *
 
 void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	wchar_t * wordIds = new wchar_t[2 * fstLen + 1];
+	wchar_t * wordBases = new wchar_t[2 * fstLen + 1];
 	wchar_t * xsBuffer = new wchar_t[fstLen];
+	wchar_t * xpBuffer = new wchar_t[fstLen];
 	size_t idpos = 0;
+	size_t basepos = 0;
+	size_t xppos = 0;
 	size_t xspos = 0;
 	bool inXs = false;
+	bool inXp = false;
+	bool inXj = false;
 	bool inXOther = false;
 	bool inContent = false;
 	bool inTag = false;
@@ -716,6 +722,13 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 					wordIds[idpos++] = L')';
 					xspos = 0;
 				}
+				if (xppos > 0) {
+					wordBases[basepos++] = L'(';
+					wcsncpy(wordBases + basepos, xpBuffer, xppos);
+					basepos += xppos;
+					wordBases[basepos++] = L')';
+					xppos = 0;
+				}
 			}
 			else if (fstOutput[i + 1] == L'X') {
 				if (fstOutput[i + 2] == L's') {
@@ -724,8 +737,20 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 					xspos = 0;
 					i += 3;
 				}
+				else if (fstOutput[i + 2] == L'p') {
+					inXp = true;
+					xppos = 0;
+					i += 3;
+				}
+				else if (fstOutput[i + 2] == L'j') {
+					inXj = true;
+					xppos = 0;
+					i += 3;
+				}
 				else if (fstOutput[i + 2] == L']') {
 					inXs = false;
+					inXp = false;
+					inXj = false;
 					inXOther = false;
 					i += 2;
 				}
@@ -748,12 +773,23 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 			else if (inXs) {
 				xsBuffer[xspos++] = fstOutput[i];
 			}
+			else if (inXp) {
+				xpBuffer[xppos++] = fstOutput[i];
+			}
+			else if (inXj) {
+				if (xppos == 0) {
+					xpBuffer[xppos++] = L'+';
+				}
+				xpBuffer[xppos++] = fstOutput[i];
+			}
 			else {
 				if (!inContent) {
 					wordIds[idpos++] = L'+';
+					wordBases[basepos++] = L'+';
 					inContent = true;
 				}
 				wordIds[idpos++] = fstOutput[i];
+				wordBases[basepos++] = fstOutput[i];
 			}
 		}
 	}
@@ -765,14 +801,24 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 		wordIds[idpos++] = L')';
 		xspos = 0;
 	}
+	if (xppos > 0) {
+		wordBases[basepos++] = L'(';
+		wcsncpy(wordBases + basepos, xpBuffer, xppos);
+		basepos += xppos;
+		wordBases[basepos++] = L')';
+		xppos = 0;
+	}
 	wordIds[idpos] = L'\0';
+	wordBases[basepos] = L'\0';
 	delete[] xsBuffer;
+	delete[] xpBuffer;
 	if (anyXs) {
 		analysis->addAttribute("WORDIDS", wordIds);
 	}
 	else {
 		delete[] wordIds;
 	}
+	analysis->addAttribute("WORDBASES", wordBases);
 }
 
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
