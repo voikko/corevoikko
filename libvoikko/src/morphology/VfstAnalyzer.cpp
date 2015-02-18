@@ -803,11 +803,12 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	}
 	if (xppos > 0) {
 		basepos = baseposLast;
-		wcsncpy(wordBases + basepos, xpBuffer, xppos);
-		basepos += xppos;
+		int plus = (basepos > 0 && xpBuffer[0] == L'+' && wordBases[basepos - 1] == L'+') ? 1 : 0;
+		wcsncpy(wordBases + basepos - plus, xpBuffer, xppos);
+		basepos += (xppos - plus);
 		idpos = idposLast;
-		wcsncpy(wordIds + idpos, xpBuffer, xppos);
-		idpos += xppos;
+		wcsncpy(wordIds + idpos - plus, xpBuffer, xppos);
+		idpos += (xppos - plus);
 		wordBases[basepos++] = L'(';
 		wcsncpy(wordBases + basepos, xpBuffer, xppos);
 		basepos += xppos;

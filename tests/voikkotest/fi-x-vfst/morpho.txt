@@ -1913,3 +1913,8 @@ word:historiallinen
  analysis
   WORDIDS=+historia(w502636)+lli+nen
   WORDBASES=+historia(historia)+lli+nen(+nen)
+word:kissattomat
+ expected:1
+ analysis
+  WORDIDS=+kissa(w505527)+ton
+  WORDBASES=+kissa(kissa)+ton(+ton)

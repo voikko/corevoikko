@@ -297,3 +297,8 @@ word:historiallinen
  analysis
   WORDIDS=+historia(w502636)+llinen
   WORDBASES=+historia(historia)+llinen(+llinen)
+word:kissattomat
+ expected:1
+ analysis
+  WORDIDS=+kissa(w505527)+ton
+  WORDBASES=+kissa(kissa)+ton(+ton)
