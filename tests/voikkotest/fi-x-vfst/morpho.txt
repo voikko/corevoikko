@@ -1907,6 +1907,13 @@ word:nopeustutkassa
   BASEFORM=nopeustutka
   WORDBASES=+nope(nopea)+us(+us)+tutka(tutka)
   WORDIDS=+nope(w509676)+us+tutka(w516202)
+word:pikilappu
+ expected:1
+ analysis
+  WORDIDS=+pikilappu(w507165)
+  WORDBASES=+pikilappu(piki=lappu)
+  BASEFORM=pikilappu
+  STRUCTURE==pppp=ppppp
 word:akveduktien
  expected:1
  analysis

@@ -347,7 +347,8 @@ def handle_word(word):
 	singlePartForms = []
 	multiPartForms = []
 	for altform in altforms:
-		wordform = altform.replace(u'|', u'').replace(u'=', u'')
+		outputBaseform = altform.replace(u'|', u'')
+		wordform = outputBaseform.replace(u'=', u'')
 		if len(altform) == len(wordform.replace(u'-', u'')):
 			singlePartForms.append(altform)
 		else:
@@ -362,6 +363,7 @@ def handle_word(word):
 		if vfst_word_class in [u"[Ls]", u"[Lc]", u"[Lh]"]:
 			for element in word.getElementsByTagName(u"baseform"):
 				wordform = generate_lex_common.tValue(element)
+				outputBaseform = wordform.replace(u'|', u'')
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
@@ -379,7 +381,7 @@ def handle_word(word):
 		(rakenne, alkuWithTags) = get_structure(altform, vfst_word_class, alku)
 		
 		if vfst_word_class == u"[Lh]":
-			entry = u'%s[Xp]%s[X]%s%s%s:%s # ;' % (vfst_word_class, wordform, debug_info, rakenne, alkuWithTags, alku)
+			entry = u'%s[Xp]%s[X]%s%s%s:%s # ;' % (vfst_word_class, outputBaseform, debug_info, rakenne, alkuWithTags, alku)
 			vocabularyFile.write(entry + u"\n")
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
@@ -398,7 +400,7 @@ def handle_word(word):
 			        % (debug_info, rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s%s:%s%s %s%s_%s ;' \
-			        % (vfst_word_class, wordform, debug_info, rakenne, infoFlags,
+			        % (vfst_word_class, outputBaseform, debug_info, rakenne, infoFlags,
 			        alkuWithTags, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	

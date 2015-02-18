@@ -617,7 +617,9 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 	if (latestXpStartInFst != 0) {
 		baseformPos = latestXpStartInBaseform;
 		for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
-			baseform[baseformPos++] = fstOutput[i];
+			if (fstOutput[i] != L'=') {
+				baseform[baseformPos++] = fstOutput[i];
+			}
 		}
 	}
 	
@@ -816,12 +818,17 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	}
 	if (xppos > 0) {
 		basepos = baseposLast;
-		int plus = (basepos > 0 && xpBuffer[0] == L'+' && wordBases[basepos - 1] == L'+') ? 1 : 0;
-		wcsncpy(wordBases + basepos - plus, xpBuffer, xppos);
-		basepos += (xppos - plus);
 		idpos = idposLast;
-		wcsncpy(wordIds + idpos - plus, xpBuffer, xppos);
-		idpos += (xppos - plus);
+		int plus = (basepos > 0 && xpBuffer[0] == L'+' && wordBases[basepos - 1] == L'+') ? 1 : 0;
+		basepos -= plus;
+		idpos -= plus;
+		for (size_t i = 0; i < xppos; i++) {
+			wchar_t c = xpBuffer[i];
+			if (c != L'=') {
+				wordBases[basepos++] = c;
+				wordIds[idpos++] = c;
+			}
+		}
 		wordBases[basepos++] = L'(';
 		wcsncpy(wordBases + basepos, xpBuffer, xppos);
 		basepos += xppos;
