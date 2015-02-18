@@ -1932,3 +1932,8 @@ word:aktivoidumme
  analysis
   WORDIDS=+aktivoi(w500008)+tua
   WORDBASES=+aktivoi(aktivoida)+tua(+tua)
+word:juoksija
+ expected:1
+ analysis
+  WORDIDS=+juoksi(w503986)+ja
+  WORDBASES=+juoksi(juosta)+ja(+ja)

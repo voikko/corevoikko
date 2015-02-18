@@ -730,7 +730,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 	bool inContent = false;
 	bool inTag = false;
 	bool anyXs = false;
-	for (size_t i = 0; i + 2 < fstLen; i++) {
+	for (size_t i = 0; i < fstLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[L", 2) == 0 || wcsncmp(fstOutput + i, L"-[B", 3) == 0) {
 			inContent = false;
 			inTag = true;
@@ -743,7 +743,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 				i++;
 			}
 		}
-		else if (fstOutput[i] == L'[') {
+		else if (fstOutput[i] == L'[' && i + 2 < fstLen) {
 			if (fstOutput[i + 1] == L'X') {
 				if (fstOutput[i + 2] == L's') {
 					inXs = true;
