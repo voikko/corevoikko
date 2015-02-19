@@ -12,13 +12,16 @@ define Lengthening a "[[L]]" -> a a ,
                    u "[[L]]" -> u u ,
                    y "[[L]]" -> y y ;
 
-define HV  e "[[HV]]" -> e h e ,
+define HV  a "[[HV]]" -> a h a ,
+           e "[[HV]]" -> e h e ,
+           i "[[HV]]" -> i h i ,
+           ä "[[HV]]" -> ä h ä ,
            é "[[HV]]" -> é h e ,
            y "[[HV]]" -> y h y ,
            u "[[HV]]" -> u h u ,
            ö "[[HV]]" -> ö h ö ,
            o "[[HV]]" -> o h o ;
-                   
+
 set flag-is-epsilon ON
 regex Lexicon .o. ItoE .o. Lengthening .o. HV;
 invert net

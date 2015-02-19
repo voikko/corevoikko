@@ -55,6 +55,11 @@ VVFST_BINDIST=$(VVFST_BUILDDIR)/index.txt $(VVFST_BUILDDIR)/mor.vfst
 VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a s c
 VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))
 
+VVFST_TAIVUTUSKAAVAT_OPTS=
+ifeq "$(VANHAT_MUODOT)" "yes"
+	VVFST_TAIVUTUSKAAVAT_OPTS=--vanhat
+endif
+
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex seikkasanat.lex \
@@ -214,7 +219,7 @@ $(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/
 	touch $@
 
 $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
-	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
+	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) $(VVFST_TAIVUTUSKAAVAT_OPTS) --destdir=$(VVFST_BUILDDIR)
 
 $(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp $(VVFST_LEXC)
 	cat vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) $(VVFST_LEXC) > $@

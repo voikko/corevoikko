@@ -2216,7 +2216,7 @@ LEXICON NOUN Vieras_w
 [Sg][Nm]st:st	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
-?Sukija [Ses][Ny]sn<A>:sn<A> <WC>LiOlV_<A>	;
+?Vanha [Ses][Ny]sn<A>:sn<A> <WC>LiOlV_<A>	;
 
 LEXICON NOUN Vieras_s
 ?NotLaatusana	[[L]][Sn][Ny]:[[L]]	Omistusliite_<A>	;
@@ -2237,7 +2237,7 @@ LEXICON NOUN Vieras_s
 ?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
 ?Paikannimi	[[L]]:[[L]]	Johdin_lAinen_<A>	;
 ?Sukija ?NotLaatusana [[H]][Sn][Ny]h<A>:[[H]] Omistusliite_<A>	;
-?Sukija [[H]][Sn][Nm]t:[[H]]t	<WC>MonikonNominatiivinJatko_<A>	;
+?Vanha [[HV]][Sn][Nm]t:[[HV]]t	<WC>MonikonNominatiivinJatko_<A>	;
 ?Sukija [[H]][Sg][Ny]n:[[H]]n <WC>YksikönGenetiivinJatko_<A>	;
 ?Sukija [[H]][Ses][Ny]n<A>:[[H]]n<A>	<WC>LiOlV_<A>	;
 ?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	

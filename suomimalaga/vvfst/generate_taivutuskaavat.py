@@ -150,6 +150,11 @@ while True:
 			line_orig = line_orig[7:]
 		else:
 			continue
+	if line_orig.startswith(u'?Vanha'):
+		if OPTIONS["vanhat"] or OPTIONS["sukija"]:
+			line_orig = line_orig[6:]
+		else:
+			continue
 	line = stripWhitespaceAndComments(line_orig)
 	if line.startswith(u'LEXICON '):
 		if lexicon != u"":
