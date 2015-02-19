@@ -6,3 +6,5 @@ vierahana
 vierahansa
 katkee
 katkeen
+asemata
+turpooja

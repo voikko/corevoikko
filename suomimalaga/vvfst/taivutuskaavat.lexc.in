@@ -910,7 +910,7 @@ LEXICON NOUN Asema_s
 <WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
-?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
+?Vanha [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 
@@ -3720,6 +3720,7 @@ Kohota_w_<A>	;
 LEXICON KohotaKohoilla_s
 Kohota_s_<A>	;
 il[Xj]l<A>[X]:il	Arvailla_<A>	;
+?Vanha <O>:<O>	Johdin_ja_kantaja_<A>	;
 
 LEXICON Kohota_w
 Katketa_w_<A>	;
