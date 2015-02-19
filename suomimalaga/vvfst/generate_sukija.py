@@ -86,10 +86,10 @@ def makeRe (wordClass, word):
 
 
 def replace (s, old, new):
-    u = s.replace (old + u":", new + u":")
-    u = u.replace (old + u" ", new + u" ")
+    u = s.replace (old + u":",  new + u":")
+    u = u.replace (old + u" ",  new + u" ")
     u = u.replace (old + u"\t", new + u"\t")
-    u = u.replace (old + u"@", new + u"@")
+    u = u.replace (old + u"@",  new + u"@")
     return u
 
 
@@ -308,15 +308,17 @@ def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
 #    (u"", (u"", u"")),
 #
 word_list = [
-    (u"aarteisto",        (u"aarteisto",     u"aartehisto")),
-    (u"Abessinia",        (u"abessini",      u"abessiini", u"abyssini", "abyssiini")),
-    (u"Afganistan",       (u"afganistan",    u"afghanistan")),
-    (u"agaave",           (u"agaave",        u"agave")),
-    (u"aggregaatio",      (u"aggregaatio",   u"agregaatio")),
-    (u"aggregaatti",      (u"aggregaat",     u"agregaat")),
-    (u"aggressiivinen",   (u"aggressiivi",   u"agressiivi", u"agressivi", u"akressiivi")),
-    (u"aggressio",        (u"aggressio",     u"agressio")),
-    (u"aikainen",         (u"aikai",         u"aikahi")),
+    (u"aarteisto",        (u"aarteisto",   u"aartehisto")),
+    (u"Abessinia",        (u"abessini",    u"abessiini", u"abyssini", "abyssiini")),
+    (u"Afganistan",       (u"afganistan",  u"afghanistan")),
+    (u"agaave",           (u"agaave",      u"agave")),
+    (u"aggregaatio",      (u"aggregaatio", u"agregaatio")),
+    (u"ag=gregaatti",     (u"ag[Bm]gregaat:aggregaat",     u"ag[Bm]regaat:agregaat")),
+    (u"ag=gressiivinen",  (u"ag[Bm]gressiivi:aggressiivi", u"ag[Bm]ressiivi:agressiivi",
+                                                           u"ag[Bm]ressivi:agressivi",
+                                                           u"ag[Bm]gressivi:aggressivi",
+                                                           u"ak[Bm]ressiivi:akressiivi")),
+    (u"ag=gressio",       (u"ag[Bm]gressio:aggressio", u"ag[Bm]ressio:agressio")),
     (u"ainainen",         (u"ainai",         u"ainahi")),
     (u"aineisto",         (u"aineisto",      u"ainehisto")),
     (u"aivoitus",         (u"aivoitu",       u"aivotu")),
@@ -329,7 +331,8 @@ word_list = [
     (u"alkali",           (u"alkal",         u"alkaal")),
     (u"alkovi",           (u"alkov",         u"alkoov")),
     (u"ameba",            (u"ameb",          u"ameeb")),
-    (u"amfiteatteri",     (u"amfiteatter",   u"amfiiteaatter", u"amfiteaatter")),
+    (u"amfi=teatteri",    (u"amfi[Bm]teatter:amfiteatter", u"amfii[Bm]teaatter:amfiiteaatter",
+                                                           u"amfi[Bm]teaatter:amfiteaatter")),
     (u"apassi",           (u"apass",         u"apash")),
     (u"apteekkari",       (u"apteekkar",     u"apteekar", u"aptekar")),
     (u"arsenikki",        (u"arsenik",       u"arseniik")),
@@ -354,7 +357,7 @@ word_list = [
     (u"ensimmäinen",      (u"ensimmäi",      u"ensimäi", u"ensinmäi")),
     (u"erilainen",        (u"erilai",        u"erillai", u"erinlai")),
     (u"erillinen",        (u"erilli",        u"erili")),
-    (u"eriskummallinen",  (u"kummalli",      u"kummali", u"kumalli")),
+    (u"eris=kummallinen", (u"kummalli",      u"kummali", u"kumalli")),
     (u"erinäinen",        (u"erinäi",        u"erinnäi")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
@@ -400,7 +403,7 @@ word_list = [
     (u"kenraali",       (u"kenraal",     u"kenral")),
     (u"kerubi",         (u"kerub",       u"keruub", u"kheruub")),
     (u"keskimmäinen",   (u"keskimmäi",   u"keskimäi")),
-    (u"kiirastorstai",  (u"torsta",      u"tuorsta")),
+    (u"kiiras=torstai", (u"torsta",      u"tuorsta")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
     (u"klinikka",       (u"klinik",      u"kliniik")),
     (u"kollega",        (u"kolleg",      u"kolleg")),
@@ -418,7 +421,7 @@ word_list = [
     (u"kuriiri",        (u"kuriir",      u"kurier")),
     (u"kurtiini",       (u"kurtiin",     u"kurtin")),
     (u"kuvernööri",     (u"kuvernöör",   u"kuvernör")),
-    (u"Kööpenhamina",   (u"kööpenhamin", u"köpenhamin")),
+    (u"Kööpen=hamina",  (u"kööpen[Bm]hamin:kööpenhamin", u"köpen[Bm]hamin:köpenhamin")),
     (u"laitimmainen",   (u"laitimmai",   u"laitimai")),
     (u"lauantai",       (u"lauanta",     u"lauvanta")),
     (u"lauantaisin",    (u"lauantaisin", u"lauvantaisin")),
@@ -453,7 +456,7 @@ word_list = [
                           (u"musiik",      u"musik", u"NimisanaKajakki_a", u"NimisanaPaperi_a"))),
     (u"naiivi",          (u"naiiv",        u"naiv")),
     (u"naiivinen",       (u"naiivi",       u"naivi")),
-    (u"nonaggressio",    (u"nonaggressio", u"nonagressio")),
+    (u"non=ag=gressio",  (u"non[Bm]ag[Bm]gressio:nonaggressio", u"non[Bm]ag[Bm]ressio:nonagressio")),
     (u"Nubia",           (u"nubi",        u"nuubi")),
     (u"odottaa",         (u"odot",        u"oot")),
     (u"ottomaani",       (u"ottomaan",    u"ottoman")),
@@ -498,7 +501,7 @@ word_list = [
     (u"reunimmainen",    (u"reunimmai",   u"reunimai")),
     (u"romanttinen",     (u"romantti",    u"romanti", u"romantilli")),
     (u"saippua",         (u"saippu",      u"saipu")),
-    (u"samanlainen",     (u"samanlai",    u"samallai")),
+    (u"saman=lainen",    (u"saman[Bm]lai:samanlai", u"samal[Bm]lai:samallai")),
     (u"samojedi",        (u"samojed",     u"samojeed")),
     (u"sampanja",        (u"sampanj",     u"samppanj")),
     (u"sankaruus",       (u"sankaruu",    u"sankariu")),
@@ -518,7 +521,7 @@ word_list = [
     (u"sikari",          (u"sikar",       u"sikaar")),
     (u"sitten",          (u"sitten",      u"sitte")),
     (u"sitruuna",        (u"sitruun",     u"sitrun", u"sitroon", u"sitron")),
-    (u"sitäpaitsi",      (u"paitsi",      u"paitse")),
+    (u"sitä=paitsi",     (u"paitsi",      u"paitse")),
     (u"siviili",         (u"siviil",      u"sivil")),
     (u"slaavilainen",    (u"slaavilai",   u"slavilai")),
     (u"soolo",           (u"soolo",       u"solo")),
