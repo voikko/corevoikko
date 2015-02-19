@@ -2236,10 +2236,10 @@ LEXICON NOUN Vieras_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
 ?Paikannimi	[[L]]:[[L]]	Johdin_lAinen_<A>	;
-?Sukija ?NotLaatusana [[H]][Sn][Ny]h<A>:[[H]] Omistusliite_<A>	;
+?Vanha ?NotLaatusana [[HV]][Sn][Ny]h<A>:[[HV]] Omistusliite_<A>	;
 ?Vanha [[HV]][Sn][Nm]t:[[HV]]t	<WC>MonikonNominatiivinJatko_<A>	;
-?Sukija [[H]][Sg][Ny]n:[[H]]n <WC>YksikönGenetiivinJatko_<A>	;
-?Sukija [[H]][Ses][Ny]n<A>:[[H]]n<A>	<WC>LiOlV_<A>	;
+?Vanha [[HV]][Sg][Ny]n:[[HV]]n <WC>YksikönGenetiivinJatko_<A>	;
+?Vanha [[HV]][Ses][Ny]n<A>:[[HV]]n<A>	<WC>LiOlV_<A>	;
 ?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	
 ?Sukija [[H]][Sill][Ny]se:[[H]]se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
@@ -3674,9 +3674,9 @@ Ehtotapa_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 ?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 ?Sukija <A><A>:<A><A> SukijaTositapaPi_<A> ;
-?Sukija [Tt][Ap][P3][Ny][Ef][[L]]:[[L]] Liitesana_<A> ;
+?Vanha [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] Liitesana_<A> ;
 ?Sukija [[L]]:[[L]] SukijaTositapaPi_<A> ;
-?Sukija [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
+?Vanha [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
 
 LEXICON Kohota
 KohotaKohoilla_w_<A>	;
