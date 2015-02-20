@@ -3684,6 +3684,7 @@ kellanvalkoinen
 !kertaistan
 !kolmenaisyyspuolue
 !xl-
+Bogotáhan
 
 # = poikkeavat asetukset =
 

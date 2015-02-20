@@ -170,6 +170,7 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'poika', u'-', [(None,u'(.*po)ikA',u'poika')]),
 	(u'matala', u'-', [(None,u'(.*C)A',u'matala')]),
 	(u'asema', u'sw',  [(None,u'(.*)A',u'asema'),
+			(u'tt',u'(.*t)tA',u'opotta'),
 			(u'nt',u'(.*n)tA',u'emäntä')]),
 	(u'kulkija', u'-', [(None,u'(.*i)jA',u'kulkija'),
 			(None,u'(.*)A',u'apila')]),
@@ -397,7 +398,8 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			   (u'ng',u'(.*n)gAistA',u'rangaista')]),
 	(u'mennä', u'-', [(None,u'(.*n)nA',u'mennä')]),
 	(u'purra', u'-', [(None,u'(.*r)rA',u'purra')]),
-	(u'katsella', u'ws', [(None,u'(.*el)lA',u'katsella'),
+	(u'katsella', u'ws', [(None,u'(.*Ael)lA',u'arvailla'),
+			(None,u'(.*el)lA',u'katsella'),
 			(None,u'(.*eil)lA',u'katsella'),
 			(None,u'(.*Vil)lA',u'arvailla'),
 			(None,u'(.*il)lA',u'katsella'),
@@ -412,7 +414,6 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'p',u'(.*p)ellA',u'tapella'),
 			(u'd',u'(.*)dellA',u'kohdella'),
 			(u'>k',u'(.*)ellA',u'nakella')]),
-	(u'arvailla', u'-', [(None,u'(.*Vi)llA',u'arvailla')]),
 	(u'haravoida', u'ws', [(u't',u'(.*O)idA',u'haravoida')]),
 	(u'valita', u'-', [(None,u'(.*i)tA',u'valita')]),
 	(u'saneerata', u'-', [(None,u'(.*C)AtA',u'saneerata')]),
@@ -495,7 +496,7 @@ def compileClassmapREs(inputClassmap):
 		ruleList = []
 		for inputRule in joClass[2]:
 			pattern = inputRule[1]
-			pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
+			pattern = pattern.replace(u'V', u'(?:a|á|e|i|o|u|y|ä|ö|é)')
 			pattern = pattern.replace(u'C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š|ž)')
 			pattern = pattern.replace(u'A', u'(?:a|ä)')
 			pattern = pattern.replace(u'O', u'(?:o|ö)')

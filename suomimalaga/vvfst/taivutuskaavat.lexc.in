@@ -898,6 +898,10 @@ t:t	<WC>Asema_s_<A>	;
 n:n	<WC>Asema_w_<A>	;
 ?Nimisana	t<A>:t<A>	Johdin_inen_vain_lipulla_<A>	;
 
+LEXICON NOUN Opotta
+t:t	<WC>Asema_s_<A>	;
+<WC>Asema_w_<A>	;
+
 LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;

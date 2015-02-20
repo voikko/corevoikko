@@ -354,6 +354,10 @@ def handle_word(word):
 		else:
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
+		if alku == None:
+			errorstr = u"ERROR: VFST class not found for (%s, %s)\n" % (wordform, voikko_infclass)
+			sys.stderr.write(errorstr.encode(u"UTF-8"))
+			sys.exit(1)
 		if vfst_word_class == u"[La]":
 			jatko = get_abbreviation_jatko(word, altform)
 		elif vfst_word_class == u"[Ls]":

@@ -8,3 +8,5 @@ katkee
 katkeen
 asemata
 turpooja
+opotta
+opotan
