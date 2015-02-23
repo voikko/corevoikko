@@ -238,3 +238,28 @@ def get_options():
 		elif name == "--sukija-ys":
 			options["sukija-ys"] = True
 	return options
+
+# Strip whitespace and comments from LEXC input file
+def stripWhitespaceAndComments(line):
+	if u"!" in line:
+		line = line[0:line.find(u"!")]
+	return line.strip()
+
+# Filter LEXC input according to options
+def filterVfstInput(line_orig, OPTIONS):
+	if line_orig.startswith(u'?Sukija'):
+		if OPTIONS["sukija"]:
+			line_orig = line_orig[7:]
+		else:
+			return None
+	if line_orig.startswith(u'?Murre'):
+		if "dialect" in OPTIONS["style"] or OPTIONS["sukija"]:
+			line_orig = line_orig[6:]
+		else:
+			return None
+	if line_orig.startswith(u'?Vanha'):
+		if OPTIONS["vanhat"] or OPTIONS["sukija"]:
+			line_orig = line_orig[6:]
+		else:
+			return None
+	return stripWhitespaceAndComments(line_orig)

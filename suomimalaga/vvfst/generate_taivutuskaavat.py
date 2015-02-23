@@ -26,11 +26,6 @@ import codecs
 from string import rfind
 
 
-def stripWhitespaceAndComments(line):
-	if u"!" in line:
-		line = line[0:line.find(u"!")]
-	return line.strip()
-
 def addDiacritics(line):
 	if u"[Nm]" in line or (u"[Sn][Ny]" in line and u"Omistusliite" in line):
 		middle = line.find(u":")
@@ -145,17 +140,9 @@ while True:
 	linecount = linecount + 1
 	if line_orig == u'':
 		break
-	if line_orig.startswith(u'?Sukija'):
-		if OPTIONS["sukija"]:
-			line_orig = line_orig[7:]
-		else:
-			continue
-	if line_orig.startswith(u'?Vanha'):
-		if OPTIONS["vanhat"] or OPTIONS["sukija"]:
-			line_orig = line_orig[6:]
-		else:
-			continue
-	line = stripWhitespaceAndComments(line_orig)
+	line = generate_lex_common.filterVfstInput(line_orig, OPTIONS)
+	if line is None:
+		continue
 	if line.startswith(u'LEXICON '):
 		if lexicon != u"":
 			appendLexicon(lexicon, lexcLines, lexcFile)
