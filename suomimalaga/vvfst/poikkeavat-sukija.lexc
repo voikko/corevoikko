@@ -145,21 +145,7 @@ LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
 [Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;
 
 LEXICON SukijaAsemosanaMieMä
-[Sg][Ny]un:un	Liitesana_a	;
-[Sak][Ny]ut:ut	Liitesana_a	;
-[Str][Ny]uksi:uksi	Liitesana_a	;
-[Ses][Ny]una:una	Liitesana_a	;
-[Sine][Ny]ussa:ussa	Liitesana_a	;
-[Sela][Ny]usta:usta	Liitesana_a	;
-[Sill][Ny]uhun:uhun	Liitesana_a	;
-[Sade][Ny]ulla:ulla	Liitesana_a	;
-[Sabl][Ny]ulta:ulta	Liitesana_a	;
-[Sall][Ny]ulle:ulle	Liitesana_a	;
-[Sall][Ny]ullen:ullen	Liitesana_a	;
-
-LEXICON SukijaAsemosanaMie
-[Sn][Ny]e:e	Liitesana_ä	;
-SukijaAsemosanaMieMä ;
+[Sall][Ny]ullen:ullen Liitesana_a ;
 
 LEXICON SukijaAsemosanaMikä
 [Sn][Ny]käs:käs   Loppu ;
@@ -180,16 +166,11 @@ LEXICON SukijaAsemosanaMikä
 [Sn][Nm]tkäs:tkäs           Loppu ;
 
 LEXICON SukijaAsemosanaMinä
-[Sill][Ny]uhun:uhun	Liitesana_a	;
-[Sall][Ny]ullen:ullen	Liitesana_a	;
-
-LEXICON SukijaAsemosanaMä
-[Sn][Ny]ä:ä	Liitesana_ä	;
-[Sp][Ny]ua:ua	Liitesana_a	;
-SukijaAsemosanaMieMä ;
+[Sill][Ny]uhun:uhun   Liitesana_a ;
+[Sall][Ny]ullen:ullen Liitesana_a ;
 
 LEXICON SukijaAsemosanaNämä
-[Sak][Ny]mät:mät	Liitesana_ä	;
+[Sak][Ny]mät:mät Liitesana_ä ;
 
 
 LEXICON SukijaSuhdesana
@@ -248,16 +229,16 @@ LEXICON SukijaPoikkeavat_n
 
 
 LEXICON SukijaAsemosana
-[Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi	;
-[Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMie ;
-[Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä	;
+[Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
+[Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
+[Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
 [Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
-[Lr][Xp]mä[X]m:m        SukijaAsemosanaMä ;
+[Lr][Xp]mä[X]m:m        SukijaAsemosanaMieMä ;
 [Lr][Xp]nämä[X]nä:nä    SukijaAsemosanaNämä ;
-[Lr][Xp]sie[X]si:si     SukijaAsemosanaMie ;
+[Lr][Xp]sie[X]si:si     SukijaAsemosanaMieMä ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
-[Lr][Xp]sä[X]s:s        SukijaAsemosanaMä ;
-[Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasOmistusliitteet_a	;
+[Lr][Xp]sä[X]s:s        SukijaAsemosanaMieMä ;
+[Lr][Xp]mones[X]mone:mone JärjestyslukuKahdeksasOmistusliitteet_a ;
 
 
 LEXICON SukijaPoikkeavat_s
@@ -490,7 +471,7 @@ LEXICON Sukija_p
 [Lp]äänisniemen:äänisniemen EtuliitteenJatko_ellelnelt;
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 [Lp]öölannin:öölannin EtuliitteenJatko_ellelnelt;
-! [Lp]juutalais:juutalais EtuliitteenJatko_ellelnelt;
+
 
 LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;

@@ -873,6 +873,8 @@ while True:
     line = sukijafile.readline()
     if line == u"":
         break
+    if u"!" in line:
+        line = line[0:line.find(u"!")]
     outfile.write (line)
 sukijafile.close()
 
