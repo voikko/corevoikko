@@ -35,15 +35,16 @@ LEXICON Asemosana
 
 LEXICON AsemosanaMä
 [Sn][Ny]ä:ä	Liitesana_ä	;
+[Sp][Ny]ua:ua	Liitesana_a	;
 AsemosanaMäMie	;
 
 LEXICON AsemosanaMie
 [Sn][Ny]e:e	Liitesana_ä	;
+[Sp][Ny]uta:uta	Liitesana_a	;
 AsemosanaMäMie	;
 
 LEXICON AsemosanaMäMie
 [Sg][Ny]un:un	Liitesana_a	;
-[Sp][Ny]ua:ua	Liitesana_a	;
 [Sak][Ny]ut:ut	Liitesana_a	;
 [Str][Ny]uksi:uksi	Liitesana_a	;
 [Ses][Ny]una:una	Liitesana_a	;
