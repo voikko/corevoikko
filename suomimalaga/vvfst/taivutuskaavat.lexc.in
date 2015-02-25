@@ -2,7 +2,7 @@ LEXICON NOUN Valo
 <WC>Valo_s_<A>	;
 [[L]]:[[L]]	<WC>Valo_sl_<A>	;
 <WC>Valo_w_<A>	;
-?Sukija [[H]]:[[H]]	<WC>Valo_sl_<A>	;
+?Sukija [[HV]]:[[HV]]	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Koko
 k<O>:k<O>	<WC>Valo_s_<A>	;
@@ -175,7 +175,7 @@ LEXICON NOUN Arvelu
 <WC>Arvelu_s_<A>	;
 [[L]]:[[L]]	<WC>Arvelu_sl_<A>	;
 <WC>Arvelu_w_<A>	;
-?Sukija [[H]]:[[H]]	<WC>Arvelu_sl_<A>	;
+?Sukija [[HV]]:[[HV]]	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Alanko
 k<O>:k<O>	<WC>Arvelu_s_<A>	;
@@ -342,7 +342,7 @@ LEXICON NOUN Autio
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
-?Sukija [[H]][Sill][Ny]:[[H]]	<WC>LiOlN_<A>	;
+?Sukija [[HV]][Sill][Ny]:[[HV]]	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
@@ -2258,12 +2258,12 @@ LEXICON NOUN Vieras_s
 ?Vanha [[HV]][Sg][Ny]n:[[HV]]n <WC>YksikönGenetiivinJatko_<A>	;
 ?Vanha [[HV]][Ses][Ny]n<A>:[[HV]]n<A>	<WC>LiOlV_<A>	;
 ?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	
-?Sukija [[H]][Sill][Ny]se:[[H]]se	<WC>LiOlN_<A>	;
+?Sukija [[HV]][Sill][Ny]se:[[HV]]se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
-?Sukija ?Nimisana	[[H]]:[[H]]	Johdin_tOn_<A>	;
+?Sukija ?Nimisana	[[HV]]:[[HV]]	Johdin_tOn_<A>	;
 ?Sukija ?Nimisana	h:h Johdin_inen_vain_lipulla_<A> ;
-?Sukija ?Laatusana [[H]]:[[H]] Voittoaste_<A> ;
+?Sukija ?Laatusana [[HV]]:[[HV]] Voittoaste_<A> ;
 ?Vanha <WC>SukijaYhteisetHMuodot_<A> ;
 
 LEXICON NOUN Ruis
@@ -2459,7 +2459,7 @@ OlVL_<A>	;
 
 LEXICON OlVL
 [[L]][O3]n:[[L]]n	Liitesana_<A>	;
-?Sukija [[H]][O3]n:[[H]]n	Liitesana_<A>	;
+?Sukija [[HV]][O3]n:[[HV]]n	Liitesana_<A>	;
 
 LEXICON NOUN LiOlI
 Liitesana_<A>	;
@@ -5098,9 +5098,9 @@ LEXICON JärjestyslukuKymmentäSnNm
 
 ?Sukija LEXICON NOUN SukijaVapaa
 ?Sukija <WC>SukijaYhteisetHMuodot_<A> ;
-?Sukija [[H]][Sg][Ny]n:[[H]]n        <WC>YksikönGenetiivinJatko_<A> ;
-?Sukija [[H]][Ses][Ny]n<A>:[[H]]n<A> <WC>LiOlV_<A> ;
-?Sukija [[H]][Sill][Ny]se:[[H]]se    <WC>LiOlN_<A> ;
+?Sukija [[HV]][Sg][Ny]n:[[HV]]n        <WC>YksikönGenetiivinJatko_<A> ;
+?Sukija [[HV]][Ses][Ny]n<A>:[[HV]]n<A> <WC>LiOlV_<A> ;
+?Sukija [[HV]][Sill][Ny]se:[[HV]]se    <WC>LiOlN_<A> ;
 ?Sukija [Sill][Nm]hisi:hisi          <WC>LiOlN_<A> ;
 ?Sukija [Sill][Nm]isihi:isihi        <WC>LiOlN_<A> ;
 ?Sukija ?Laatusana                   SukijaHYliaste_<A> ;
