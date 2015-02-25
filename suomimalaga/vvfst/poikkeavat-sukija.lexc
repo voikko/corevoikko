@@ -45,7 +45,7 @@ LEXICON SukijaKiiru
 [Sill][Ny]huse:huse NimisanaLiOlN_a ;
 [Sill][Nm]hisi:hisi NimisanaLiOlN_a ;
 NimisanaYhteisetYksikönPaikallissijat_a ;
-NimisanaSukijaYhteisetHMuodot_a ;
+NimisanaYhteisetHTaivutusmuodot_a ;
 [Ssti]sti:sti     LoppuLiitesana_a ;
 [Ssti]husti:husti LoppuLiitesana_a ;
 
@@ -80,7 +80,7 @@ LEXICON SukijaOri
 [Sill][Nm]ihi:ihi     NimisanaLiOlN_a ;
 [Sill][Nm]isii:isii   NimisanaLiOlN_a ;
 [Sill][Nm]hisi:hisi   NimisanaLiOlN_a ;
-NimisanaSukijaYhteisetHMuodot_a ;
+NimisanaYhteisetHTaivutusmuodot_a ;
 
 LEXICON SukijaUrosYksikkö
 Omistusliite_a ;
