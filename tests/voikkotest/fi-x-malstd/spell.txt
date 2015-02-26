@@ -1484,7 +1484,9 @@ Pitkäsen-Pokkisen
 Pitkäs-Pokkinen
 Ford-Lada
 !Cayon
-Cayyn
+!Cayyn
+sprayhin
+sprayhyn
 kylmemmällä
 varmempaa
 vertahyytävämmässä
