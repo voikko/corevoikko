@@ -1149,6 +1149,48 @@ end: rules
 end: class
 
 
+# Kotus 21 spray
+class: 21
+sm-class: spray
+match-word: ay
+consonant-gradation: -
+group: t
+transform-group: e
+note: äännettäessä sana päättyy -ei
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	hin	s
+illatiivi		0	hyn	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	iden	s
+partitiivi_mon	0	ita	s
+translatiivi_mon	0	iksi	w	ps=f
+translatiivi_mon	0	ikse	w	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	w
+elatiivi_mon	0	ista	w
+illatiivi_mon	0	ihin	s
+adessiivi_mon	0	illa	w
+ablatiivi_mon	0	ilta	w
+allatiivi_mon	0	ille	w
+abessiivi_mon	0	itta	w	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 22 parfait
 class: 22
 sm-class: parfait
