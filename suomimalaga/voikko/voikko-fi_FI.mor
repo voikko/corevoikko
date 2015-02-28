@@ -2388,6 +2388,9 @@ subrule tulostus_vertailu($tietue):
     if $allomorfi.luokka in <voittoaste, yliaste> then
       return $allomorfi.luokka;
     end;
+    if $allomorfi.luokka = nimisana then
+      return perusaste;
+    end;
   end;
   return perusaste;
 end;

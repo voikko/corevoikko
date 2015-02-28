@@ -1946,3 +1946,7 @@ word:juoksija
   WORDBASES=+juoksi(juosta)+ja(+ja)
 word:-kentällisessä
  expected:1
+word:suurempikokoinen
+ expected:1
+ analysis
+  COMPARISON=positive

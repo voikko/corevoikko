@@ -304,3 +304,7 @@ word:kissattomat
   WORDBASES=+kissa(kissa)+ton(+ton)
 word:-kentällisessä
  expected:1
+word:suurempikokoinen
+ expected:1
+ analysis
+  COMPARISON=positive
