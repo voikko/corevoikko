@@ -1944,3 +1944,5 @@ word:juoksija
  analysis
   WORDIDS=+juoksi(w503986)+ja
   WORDBASES=+juoksi(juosta)+ja(+ja)
+word:-kentällisessä
+ expected:1

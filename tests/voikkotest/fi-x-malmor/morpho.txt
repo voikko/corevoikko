@@ -302,3 +302,5 @@ word:kissattomat
  analysis
   WORDIDS=+kissa(w505527)+ton
   WORDBASES=+kissa(kissa)+ton(+ton)
+word:-kentällisessä
+ expected:1
