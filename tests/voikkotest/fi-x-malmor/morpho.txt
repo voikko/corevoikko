@@ -310,3 +310,5 @@ word:suurempikokoinen
   COMPARISON=positive
 word:sadasosasekunti
  expected:1
+word:merkittävyyskriteeri
+ expected:1
