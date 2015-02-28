@@ -366,7 +366,7 @@ LEXICON LukusananErikoisjälkiliite
 
 LEXICON LukusananJälkiliiteJl
 [Bc][Ll][Xp]luokkalainen[X]luokkalai:luokkalai	LukusananJälkiliiteNainen_a	;
-[Bc][Ln][Xp]osa[X]os:os	LukusananJälkiliiteKoira_a	;
+[Bc][Ln][Xp]osa[X]os@P.YS_EI_JATKOA.ON@:os@P.YS_EI_JATKOA.ON@	LukusananJälkiliiteKoira_a	;
 LukusananJälkiliite	;
 
 LEXICON RoomalainenNumero

@@ -308,3 +308,5 @@ word:suurempikokoinen
  expected:1
  analysis
   COMPARISON=positive
+word:sadasosasekunti
+ expected:1
