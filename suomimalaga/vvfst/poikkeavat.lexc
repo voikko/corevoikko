@@ -25,7 +25,6 @@ Summayhdyssanat	;
 [Ln][Xp]auer[X]auer:auer	NimisanaTaival_w_a	;
 [Ln][Xp]auer[X]auter:auter	NimisanaTaival_s_a	;
 [Ln][Xp]agaave[X]agaave[Sg][Nm]itt:agaaveitt	NimisanaMonikonGenetiiviEnJatko_a	;
-[Ln][Xp]cow[X]cow[Bc]:cow	Boy	;
 [Ln][Xp]enkeli[X]enkel[Sg][Nm]t:enkelt	NimisanaMonikonGenetiiviEnJatko_ä	;
 [Ln][Xp]haaksi[X]haa:haa	NimisanaKaksi_a	;
 [Ln][Xp]harteet[X]harte:harte	Harteet	;
@@ -1331,7 +1330,6 @@ Summayhdyssanat	;
 [Ln][Xp]pitkäthousut[X][Sab][Nm]pitkittä[Bm]housuitta:pitkittähousuitta	NimisanaLiOlV_a ;
 [Ln][Xp]pitkäthousut[X][Sko][Nm]pitkine[Bm]housuine:pitkinehousuine	NimisanaLiOlV_a ;
 [Ln][Xp]pitkäthousut[X][Sin][Nm]pitkin[Bm]housuin:pitkinhousuin	Liitesana_a;
-[Ln][Xp]play[X]play[Bc]:play	Boy	;
 [Ln][Xp]plus[X][Sn][Ny]plus:plus	Liitesana_a	;
 [Ln][Xp]plus[X][Sn][Ny]plus-:plus-	Loppu	;
 [Ln][Xp]puolikuu[X][Sn][Ny]puoli[Bm]kuu:puolikuu	NimisanaNormaaliYsJatkoOl_a	;
@@ -2075,21 +2073,6 @@ NimisanaYhteisetMonikonPaikallissijat_a	;
 Johdin_mAinen_a	;
 u:u	Johdin_tOn_a	;
 Johdin_inen_vain_lipulla_a	;
-
-LEXICON Boy
-[Ln][Xp]boy[X][Sn][Ny]boy:boy	NimisanaNormaaliYsJatkoOl_a	;
-[Ln][Xp]boy[X][Sg][Ny]boyn:boyn	NimisanaYksikönGenetiivinJatko_a	;
-[Ln][Xp]boy[X][Sp][Ny]boyta:boyta	NimisanaLiOlV_a	;
-[Ln][Xp]boy[X][Ses][Ny]boyna:boyna	NimisanaLiOlV_a	;
-[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetYksikönPaikallissijat_a	;
-[Ln][Xp]boy[X][Sill][Ny]boyhi:boyhi	NimisanaLiOlN_a	;
-[Ln][Xp]boy[X][Sn][Nm]boyt:boyt	Liitesana_a	;
-[Ln][Xp]boy[X][Sg][Nm]boyitt:boyitt	NimisanaMonikonGenetiiviEnJatko_a	;
-[Ln][Xp]boy[X][Sg][Nm]boyid:boyid	NimisanaMonikonGenetiiviEnJatko_a	;
-[Ln][Xp]boy[X][Sp][Nm]boyita:boyita	NimisanaLiOlV_a	;
-[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonSijat2_a	;
-[Ln][Xp]boy[X]boy:boy	NimisanaYhteisetMonikonPaikallissijat_a	;
-[Ln][Xp]boy[X][Sill][Nm]boyihi:boyihi	NimisanaLiOlN_a	;
 
 LEXICON Tiu
 [Sn][Ny]:	NimisanaNormaaliYsJatkoOl_a	;
