@@ -1152,11 +1152,11 @@ end: class
 # Kotus 21 spray
 class: 21
 sm-class: spray
-match-word: ay
+match-word: [ao]y
 consonant-gradation: -
 group: t
 transform-group: e
-note: äännettäessä sana päättyy -ei
+note: äännettäessä sana päättyy -ei/-oi
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w
