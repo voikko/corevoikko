@@ -26,8 +26,8 @@ l:l                     Ehtotapa_a ;   # Minä olisin, sinä olisit, jne.
 l:l                     Käskytapa_a ;
 l[Tk][Ap][P3][Ny]koon[Fkin]kin:lkoonkin	Loppu	;
 lko:lko                 Loppu ;        # Kielteinen käsky: (älkää) olko.
-[Tt][Ap][P4]llaan:llaan Liitesana_a ;  # Ollaan.
-[Tt][Ai][P4]ltiin:ltiin Liitesana_a ;  # Oltiin.
+[Tt][Ap][P4][Ef]llaan:llaan Liitesana_a ;  # Ollaan.
+[Tt][Ai][P4][Ef]ltiin:ltiin Liitesana_a ;  # Oltiin.
 
 
 LEXICON Lienee

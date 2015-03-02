@@ -1017,7 +1017,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
 			const wchar_t * mood = analysis->getValue("MOOD");
 			if (analysis->getValue("NEGATIVE") && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
-			    (mood && wcscmp(mood, L"MINEN-infinitive") == 0)
+			    (mood && (wcscmp(mood, L"MINEN-infinitive") == 0 || wcscmp(mood, L"E-infinitive") == 0))
 			)) {
 				analysis->removeAttribute("NEGATIVE");
 			}

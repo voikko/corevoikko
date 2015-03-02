@@ -312,3 +312,6 @@ word:sadasosasekunti
  expected:1
 word:merkittävyyskriteeri
  expected:1
+word:yllättäenkin
+ expected:1
+ !NEGATIVE
