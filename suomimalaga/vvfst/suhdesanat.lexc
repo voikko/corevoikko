@@ -11,7 +11,7 @@ LEXICON Suhdesana
 [Ld][Xp]kanssa[X]kanssa:kanssa	LoppuLiitesanaOlV_a	;
 [Ld][Xp]kautta[X]kautta:kautta	LoppuLiitesanaOlV_a	;
 [Ld][Xp]kera[X]kera:kera	Loppu	;
-[Ld][Xp]kanssa[X]keralla:keralla	LoppuOlV_a	;
+[Ld][Xp]kera[X]keralla:keralla	LoppuOlV_a	;
 [Ld][Xp]kera[X]keralle:keralle	Liitesana_a	;
 [Ld][Xp]keskuudessa[X]keskuude:keskuude	SisäpaikallissijatSsaSta_a	;
 [Ld][Xp]keskuudessa[X]keskuute[Sill][Ny]e:keskuutee	NimisanaLiOlN_a	;

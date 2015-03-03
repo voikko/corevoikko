@@ -8,7 +8,7 @@ LEXICON Asemosana
 [Lr][Xp]jompikumpi[X]jom:jom	AsemosanaJompikumpi	;
 [Lr][Xp]ken[X]ke:ke	AsemosanaKen	;
 [Lr][Xp]kuka[X]ku:ku	AsemosanaKuka	;
-[Lr][Xp]kuka[X]kukas:kukas	Loppu	;
+[Lr][Xp]kuka[X]kukas[Sn][Ny]:kukas	Loppu	;
 [Lr][Xp]kukaan[X]k:k	AsemosanaKukaan	;
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;

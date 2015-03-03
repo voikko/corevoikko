@@ -56,11 +56,11 @@
  [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppp"];
- [perusmuoto: "kultanen", alku: "kultasemme", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
- [perusmuoto: "kultanen", alku: "kultaseni", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
- [perusmuoto: "kultanen", alku: "kultasenne", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
- [perusmuoto: "kultanen", alku: "kultasensa", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
- [perusmuoto: "kultanen", alku: "kultasesi", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kultanen", alku: "kultasemme", luokka: nimisana, omistusliite: omistusliite_1p, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kultanen", alku: "kultaseni", luokka: nimisana, omistusliite: omistusliite_1s, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kultanen", alku: "kultasenne", luokka: nimisana, omistusliite: omistusliite_2p, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kultanen", alku: "kultasensa", luokka: nimisana, omistusliite: omistusliite_3, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kultanen", alku: "kultasesi", luokka: nimisana, omistusliite: omistusliite_2s, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "nukke", alku: "nukk", luokka: nimisana, jatko: <omanto_ien>, äs: a];
