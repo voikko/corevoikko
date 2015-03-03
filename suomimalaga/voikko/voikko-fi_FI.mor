@@ -2456,8 +2456,12 @@ subrule tulostus_kielto($tietue):
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.kielto /= nil then
-      if $tlen greater $i + 1 and $tietue.($tlen - $i).luokka in <kertoman_tekijäpääte_vahva, kestämän_tekijäpääte_heikko> then
-        return no;
+      if $tlen greater $i then
+        define $edellinen := $tietue.($tlen - $i);
+        if $edellinen.luokka in <kertoman_tekijäpääte_vahva, kestämän_tekijäpääte_heikko> or
+          ($edellinen.luokka = teonsana and $edellinen.tapaluokka = tositapa and $edellinen.aikamuoto = kestämä and $allomorfi.kielto = yes) then
+          return no;
+        end;
       end;
       return $allomorfi.kielto;
     end;

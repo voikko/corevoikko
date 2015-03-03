@@ -315,3 +315,19 @@ word:merkittävyyskriteeri
 word:yllättäenkin
  expected:1
  !NEGATIVE
+word:oletkaan
+ expected:1
+ analysis
+  NEGATIVE=false
+word:olemmekaan
+ expected:1
+ analysis
+  NEGATIVE=false
+word:saakaan
+ expected:2
+ analysis
+  MOOD=indicative
+  NEGATIVE=both
+ analysis
+  MOOD=imperative
+  NEGATIVE=true
