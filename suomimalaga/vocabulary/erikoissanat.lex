@@ -385,8 +385,8 @@ define @loppu := <liitesana, loppu>;
  [perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
  [perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 #[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sijamuoto: vajanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
- [perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
- [perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sijamuoto: nimentö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, luku: monikko, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, luku: monikko, sijamuoto: nimentö, jatko: @loppu, äs: ä];
 
 ######################################################
 

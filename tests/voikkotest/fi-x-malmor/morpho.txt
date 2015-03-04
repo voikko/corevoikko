@@ -331,3 +331,11 @@ word:saakaan
  analysis
   MOOD=imperative
   NEGATIVE=true
+word:mitkään
+ expected:1
+ analysis
+  NUMBER=plural
+word:olkoonkin
+ expected:1
+ analysis
+  NEGATIVE=false
