@@ -345,3 +345,8 @@ word:kolmesti
   CLASS=lukusana
   SIJAMUOTO=kerrontosti
   !COMPARISON
+word:kuutisensataa
+ expected:1
+  analysis
+   NUMBER=singular
+   SIJAMUOTO=nimento

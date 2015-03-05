@@ -132,22 +132,22 @@
  [perusmuoto: "yhdeksisen", alku: "yhdeksisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
  [perusmuoto: "kymmenisen", alku: "kymmenisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
 
- [perusmuoto: "parisenkymmentä", alku: "parisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
- [perusmuoto: "kolmisenkymmentä", alku: "kolmisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
- [perusmuoto: "nelisenkymmentä", alku: "nelisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
- [perusmuoto: "viitisenkymmentä", alku: "viitisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
- [perusmuoto: "kuutisenkymmentä", alku: "kuutisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
- [perusmuoto: "seitsemisenkymmentä", alku: "seitsemisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
- [perusmuoto: "kahdeksisenkymmentä", alku: "kahdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
- [perusmuoto: "yhdeksisenkymmentä", alku: "yhdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppppp=pppppppp"];
- [perusmuoto: "parisensataa", alku: "parisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
- [perusmuoto: "kolmisensataa", alku: "kolmisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
- [perusmuoto: "nelisensataa", alku: "nelisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
- [perusmuoto: "viitisensataa", alku: "viitisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
- [perusmuoto: "kuutisensataa", alku: "kuutisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
- [perusmuoto: "seitsemisensataa", alku: "seitsemisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
- [perusmuoto: "kahdeksisensataa", alku: "kahdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
- [perusmuoto: "yhdeksisensataa", alku: "yhdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
+ [perusmuoto: "parisenkymmentä", alku: "parisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "kolmisenkymmentä", alku: "kolmisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "nelisenkymmentä", alku: "nelisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+ [perusmuoto: "viitisenkymmentä", alku: "viitisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "kuutisenkymmentä", alku: "kuutisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "seitsemisenkymmentä", alku: "seitsemisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "kahdeksisenkymmentä", alku: "kahdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppppp=pppppppp"];
+ [perusmuoto: "yhdeksisenkymmentä", alku: "yhdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppppp=pppppppp"];
+ [perusmuoto: "parisensataa", alku: "parisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "kolmisensataa", alku: "kolmisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "nelisensataa", alku: "nelisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+ [perusmuoto: "viitisensataa", alku: "viitisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "kuutisensataa", alku: "kuutisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+ [perusmuoto: "seitsemisensataa", alku: "seitsemisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "kahdeksisensataa", alku: "kahdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=ppppppppppp=ppppp"];
+ [perusmuoto: "yhdeksisensataa", alku: "yhdeksisensataa", luokka: lukusana, alaluokka: erikoisluku, luku: yksikkö, sijamuoto: nimentö, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
  [perusmuoto: "kolmi", alku: "kolmi", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
  [perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
