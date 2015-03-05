@@ -1991,3 +1991,9 @@ word:kolmesti
   CLASS=lukusana
   SIJAMUOTO=kerrontosti
   !COMPARISON
+word:kolmikymmenvuotias
+ expected:1
+ analysis
+  CLASS=laatusana
+  NUMBER=singular
+  SIJAMUOTO=nimento
