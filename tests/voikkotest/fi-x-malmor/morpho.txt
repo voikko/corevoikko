@@ -356,3 +356,12 @@ word:kolmikymmenvuotias
   CLASS=laatusana
   NUMBER=singular
   SIJAMUOTO=nimento
+word:syötyään
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=positive
+  NUMBER=singular
+  PARTICIPLE=past_passive
+  POSSESSIVE=3
+  SIJAMUOTO=osanto
