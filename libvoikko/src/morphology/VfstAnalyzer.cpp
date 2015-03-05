@@ -857,6 +857,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 }
 
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
+	bool convertNimiLaatusanaToLaatusana = false;
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
 			size_t j = i;
@@ -866,7 +867,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					if (fstOutput[j + 1] == L'L') {
 						if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
 							const wchar_t * comp = analysis->getValue("COMPARISON");
-							if (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) {
+							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0))) {
 								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
 							}
 							else {
@@ -891,7 +892,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
 							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
 							if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
-								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+								convertNimiLaatusanaToLaatusana = true;
 							}
 						}
 					}

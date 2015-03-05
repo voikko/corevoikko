@@ -339,3 +339,9 @@ word:olkoonkin
  expected:1
  analysis
   NEGATIVE=false
+word:kolmesti
+ expected:1
+ analysis
+  CLASS=lukusana
+  SIJAMUOTO=kerrontosti
+  !COMPARISON
