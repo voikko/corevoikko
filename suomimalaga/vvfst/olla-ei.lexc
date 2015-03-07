@@ -22,7 +22,7 @@ l:l                 Johdin_tU_lA_a	;
 [Tt][Ai][P2][Nm][Ef]litte:litte Liitesana_a ;  # Te olitte.
 [Tt][Ai][P3][Nm][Ef]livat:livat Liitesana_a ;  # He olivat.
 l:l                     Ehtotapa_a ;   # Minä olisin, sinä olisit, jne.
-[Tk][Ap][P1][Ny][Eb]le:le   Liitesana_a ;  # Ole.
+[Tk][Ap][P2][Ny][Eb]le:le   Liitesana_a ;  # Ole.
 l:l                     Käskytapa_a ;
 l[Tk][Ap][P3][Ny][Ef]koon[Fkin]kin:lkoonkin	Loppu	;
 [Tt][Ap][P4][Ef]llaan:llaan Liitesana_a ;  # Ollaan.
@@ -31,7 +31,7 @@ l[Tk][Ap][P3][Ny][Ef]koon[Fkin]kin:lkoonkin	Loppu	;
 
 LEXICON Lienee
 n:n Mahtotapa_ä ;
-Liitesana_ä	;
+[Tm]:	Liitesana_ä	;
 
 LEXICON Kieltosana
 [Lk][Tk][Xp]ei[X]äl:äl    Älkää ;

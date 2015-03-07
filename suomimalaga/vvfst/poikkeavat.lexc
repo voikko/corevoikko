@@ -2141,11 +2141,11 @@ LEXICON Summayhdyssanat
 [Ln][Xp]laulaja-kitaristi[X]laulaja-[Bm]kitarist:laulaja-kitarist	NimisanaRisti_a	;
 
 LEXICON Poikkeavat_em
-[Lep][Xp]Xinhua[X]xinhu:xinhu	PaikannimiPeruna_a	;
+[Lem][Xp]Xinhua[X]xinhu:xinhu	NimiPeruna_a	;
 
 LEXICON Poikkeavat_ep
 [Lep]:	AluettaTarkentavatYksinäisetEtuliitteet	;
-[Lep][Xp]Bangladesh[X][Sn][Nm]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
+[Lep][Xp]Bangladesh[X][Sn][Ny]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
 [Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokyrö[X][Sp][Ny]isoa[Bm]kyröä:isoakyröä	PaikannimiLiOlV_ä	;
