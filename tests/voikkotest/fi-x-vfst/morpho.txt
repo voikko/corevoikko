@@ -1863,6 +1863,7 @@ word:kymmenennen
 word:suosituimmuusaseman
  expected:1
  !COMPARISON
+ !PARTICIPLE
 word:voipi
  expected:1
   analysis
@@ -2006,3 +2007,12 @@ word:syötyään
   PARTICIPLE=past_passive
   POSSESSIVE=3
   SIJAMUOTO=osanto
+word:kuunneltuamme
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=positive
+  NUMBER=singular
+  SIJAMUOTO=osanto
+  PARTICIPLE=past_passive
+  POSSESSIVE=1p

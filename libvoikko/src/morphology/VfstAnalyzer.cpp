@@ -858,6 +858,7 @@ void VfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_t * fst
 
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	bool convertNimiLaatusanaToLaatusana = false;
+	bool bcPassed = false;
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
 			size_t j = i;
@@ -924,15 +925,19 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);
 					}
 					else if (fstOutput[j + 1] == L'R') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+						if (!bcPassed) {
+							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+						}
 					}
 					else if (fstOutput[j + 1] == L'I') {
 						addInfoFlag(analysis, fstOutput + (j + 2), fstOutput);
 					}
 					else if (fstOutput[j + 1] == L'B') {
-						if (j >= 5 && fstOutput[j + 2] == L'c' && !analysis->getValue("CLASS") &&
-						    (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
-							analysis->addAttribute("CLASS", StringUtils::copy(L"etuliite"));
+						if (j >= 5 && fstOutput[j + 2] == L'c') {
+							if (!analysis->getValue("CLASS") && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+								analysis->addAttribute("CLASS", StringUtils::copy(L"etuliite"));
+							}
+							bcPassed = true;
 						}
 					}
 					break;
@@ -1017,10 +1022,16 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			const wchar_t * wclass = analysis->getValue("CLASS");
 			const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
 			const wchar_t * mood = analysis->getValue("MOOD");
+			const wchar_t * participle = analysis->getValue("PARTICIPLE");
 			if (analysis->getValue("NEGATIVE") && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
 			    (mood && (wcscmp(mood, L"MINEN-infinitive") == 0 || wcscmp(mood, L"E-infinitive") == 0))
 			)) {
 				analysis->removeAttribute("NEGATIVE");
+			}
+			if (participle && wcscmp(participle, L"past_passive") == 0 && (!wclass || wcscmp(participle, L"laatusana") != 0)) {
+				wclass = L"laatusana";
+				analysis->removeAttribute("CLASS");
+				analysis->addAttribute("CLASS", StringUtils::copy(wclass));
 			}
 			if (analysis->getValue("NUMBER") && sijamuoto && wcscmp(sijamuoto, L"kerrontosti") == 0) {
 				analysis->removeAttribute("NUMBER");
