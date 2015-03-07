@@ -378,3 +378,15 @@ word:suosituimmuusaseman
  expected:1
  !COMPARISON
  !PARTICIPLE
+word:saapas
+ expected:3
+ analysis
+  CLASS=nimisana
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NEGATIVE=false
+ analysis
+  CLASS=teonsana
+  MOOD=imperative
+  NEGATIVE=false

@@ -2016,3 +2016,15 @@ word:kuunneltuamme
   SIJAMUOTO=osanto
   PARTICIPLE=past_passive
   POSSESSIVE=1p
+word:saapas
+ expected:3
+ analysis
+  CLASS=nimisana
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NEGATIVE=false
+ analysis
+  CLASS=teonsana
+  MOOD=imperative
+  NEGATIVE=false
