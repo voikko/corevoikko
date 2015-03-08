@@ -2297,10 +2297,10 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusimaa[X][Sabl][Ny]uudelta[Bm]maalta:uudeltamaalta	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Sall][Ny]uudelle[Bm]maalle:uudellemaalle	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Sab][Ny]uudetta[Bm]maatta:uudettamaatta	PaikannimiLiOlV_a	;
-[Lep][Xp]Zürich[X][Sn][Nm]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
+[Lep][Xp]Zürich[X][Sn][Ny]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
 
 LEXICON Poikkeavat_es
-[Les][Xp]Bach[X][Sn][Nm]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
+[Les][Xp]Bach[X][Sn][Ny]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
 [Les][Xp]Brontë[X][Sn][Ny]brontë:brontë	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_a	;
 [Les][Xp]Brontë[X][Sg][Ny]brontën:brontën	SukunimiYksikönGenetiivinJatko_a	;
