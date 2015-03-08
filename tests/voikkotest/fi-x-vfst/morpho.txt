@@ -2028,3 +2028,9 @@ word:saapas
   CLASS=teonsana
   MOOD=imperative
   NEGATIVE=false
+word:XXVII
+ expected:2
+ analysis
+  CLASS=lukusana
+  NUMBER=singular
+  SIJAMUOTO=nimento
