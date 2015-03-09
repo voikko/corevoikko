@@ -927,7 +927,12 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'R') {
 						if (!bcPassed) {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+							const wchar_t * wclass = analysis->getValue("CLASS");
+							// TODO: Checking the end for [Ln] is done to handle -tUAnne ("kuunneltuanne"). This is for compatibility
+							// with Malaga implementation. See VISK § 543 (temporaalirakenne) for correct analysis.
+							if (!wclass || wcscmp(wclass, L"laatusana") == 0 || wcscmp(fstOutput + (fstLen - 4), L"[Ln]") == 0) {
+								parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+							}
 						}
 					}
 					else if (fstOutput[j + 1] == L'I') {

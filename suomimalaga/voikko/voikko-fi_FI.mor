@@ -2408,6 +2408,9 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.laatutapa /= nil then
       return [laatutapa: $allomorfi.laatutapa];
     end;
+    if $allomorfi.jluokka = nimisana then
+      return [];
+    end;
     if $allomorfi.luokka = johdin_vA then
       return [laatutapa: johdin_vA];
     end;
@@ -2427,7 +2430,7 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.luokka in <johdin_ttU, johdin_tU, johdin_dU, johdin_lU, johdin_nU> then
       return [laatutapa: johdin_ttU];
     end;
-    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, teonsana, tavuviiva> then
+    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, teonsana, tavuviiva, johdin_Us, johdin_UUs> then
       return [];
     end;
   end;

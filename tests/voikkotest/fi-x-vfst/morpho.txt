@@ -2043,3 +2043,16 @@ word:romahtamaisillaan
   !SIJAMUOTO
   MOOD=MAINEN-infinitive
   POSSESSIVE=3
+word:tunnettuus
+ expected:1
+ analysis
+  CLASS=nimisana
+  !PARTICIPLE
+word:hallittavuus
+ expected:1
+ analysis
+  !PARTICIPLE
+word:edustavuuden
+ expected:1
+ analysis
+  !PARTICIPLE
