@@ -2034,3 +2034,12 @@ word:XXVII
   CLASS=lukusana
   NUMBER=singular
   SIJAMUOTO=nimento
+word:romahtamaisillaan
+ expected:1
+ analysis
+  CLASS=teonsana
+  !NEGATIVE
+  !NUMBER
+  !SIJAMUOTO
+  MOOD=MAINEN-infinitive
+  POSSESSIVE=3

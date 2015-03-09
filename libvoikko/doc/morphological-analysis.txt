@@ -169,6 +169,8 @@ are provided only as information for external applications.
    - A-infinitive (as in "juosta")
    - E-infinitive (as in "juostessa")
    - MA-infinitive (as in "juoksemassa", "juoksemasta", "juoksemaan" etc.)
+   - MINEN-infinitive (as in "juokseminen")
+   - MAINEN-infinitive (as in "juoksemaisillaan")
 
  CLASS
  =====

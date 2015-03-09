@@ -2310,6 +2310,9 @@ subrule tulostus_sijamuoto($tietue):
     if $allomorfi.alaluokka = erikoisluku then
       return nil;
     end;
+    if $allomorfi.tapaluokka = nimitapa_5 then
+      return nil;
+    end;
     if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana, lyhenne,
                              etunimi, sukunimi, paikannimi, nimi, lukusana, nimitapa_45, lukusanan_jälkiliite> then
       return nimentö;
@@ -2332,6 +2335,9 @@ subrule tulostus_luku($tietue):
       return nil;
     end;
     if $allomorfi.alaluokka = erikoisluku then
+      return nil;
+    end;
+    if $allomorfi.tapaluokka = nimitapa_5 then
       return nil;
     end;
     if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana, lyhenne,
@@ -2627,7 +2633,7 @@ subrule tulostus_teonsanan_attribuutit($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.tapaluokka in <nimitapa_2, nimitapa_3, nimitapa_4> then
+    if $allomorfi.tapaluokka in <nimitapa_2, nimitapa_3, nimitapa_4, nimitapa_5> then
       return [];
     end;
     if $allomorfi.vaatii_tapaluokan /= nil then
