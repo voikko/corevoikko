@@ -3698,6 +3698,7 @@ Ehtotapa_<A>	;
 ?Vanha [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] Liitesana_<A> ;
 ?Sukija [[L]]:[[L]] SukijaTositapaPi_<A> ;
 ?Vanha [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
+?Sukija [[L]]:[[L]] Johdin_mA_<A> ;
 
 LEXICON Kohota
 KohotaKohoilla_w_<A>	;
