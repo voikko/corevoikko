@@ -65,6 +65,11 @@ wchar_t SimpleChar::lower(wchar_t input) {
 		// Ź-Ž
 		return input + 1;
 	}
+	// Latin Extended-B
+	if (input >= 0x01DE && input <= 0x01EE && input % 2 == 0) {
+		// Ǟ-Ǯ
+		return input + 1;
+	}
 	// Cyrillic
 	if (input >= 0x0400 && input <= 0x040F) {
 		// Cyrillic Ѐ-Џ
@@ -116,6 +121,11 @@ wchar_t SimpleChar::upper(wchar_t input) {
 	}
 	if (input >= 0x017A && input <= 0x017E && input % 2 == 0) {
 		// Ź-Ž
+		return input - 1;
+	}
+	// Latin Extended-B
+	if (input >= 0x01DF && input <= 0x01EF && input % 2 == 1) {
+		// ǟ-ǯ
 		return input - 1;
 	}
 	// Cyrillic
