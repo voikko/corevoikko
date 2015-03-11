@@ -2056,3 +2056,13 @@ word:edustavuuden
  expected:1
  analysis
   !PARTICIPLE
+word:ollut
+ expected:2
+ analysis
+  PARTICIPLE=past_active
+  NUMBER=singular
+  SIJAMUOTO=nimento
+ analysis
+  PARTICIPLE=past_passive
+  NUMBER=plural
+  SIJAMUOTO=nimento
