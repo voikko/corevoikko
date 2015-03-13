@@ -2074,3 +2074,13 @@ word:mitään
   NUMBER=singular
   SIJAMUOTO=osanto
   !FOCUS
+word:purrut
+ expected:2
+ analysis
+  BASEFORM=purtu
+ analysis
+  BASEFORM=purrut
+word:kunkin
+ expected:1
+ analysis
+  BASEFORM=kukin

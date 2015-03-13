@@ -8,6 +8,7 @@ LEXICON Asemosana
 [Lr][Xp]jompikumpi[X]jom:jom	AsemosanaJompikumpi	;
 [Lr][Xp]ken[X]ke:ke	AsemosanaKen	;
 [Lr][Xp]kuka[X]ku:ku	AsemosanaKuka	;
+[Lr][Xp]kukin[X]ku:ku	AsemosanaJokinKukin	;
 [Lr][Xp]kuka[X]kukas[Sn][Ny]:kukas	Loppu	;
 [Lr][Xp]kukaan[X]k:k	AsemosanaKukaan	;
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
@@ -160,9 +161,7 @@ AsemosanaJokaKuka	;
 [Sg][Nm]ittenka:ittenka	Loppu	;
 
 LEXICON AsemosanaJokaKuka
-[Sn][Ny][Fkin]kin:kin	Loppu	;
 [Sg][Ny]nka:nka	Loppu	;
-[Sg][Ny][Fkin]nkin:nkin	Loppu	;
 [Sp][Ny]ta:ta	Liitesana_a	;
 [Str][Ny]ksi:ksi	Liitesana_a	;
 [Ses][Ny]na:na	Liitesana_a	;
@@ -174,7 +173,6 @@ LEXICON AsemosanaJokaKuka
 [Sall][Ny]lle:lle	Liitesana_a	;
 [Sall][Ny]lleka:lleka	Loppu	;
 [Sn][Nm]tka:tka	Loppu	;
-[Sn][Nm][Fkin]tkin:tkin	Loppu	;
 [Sg][Nm]iden:iden	Liitesana_a	;
 [Sg][Nm]itten:itten	Liitesana_a	;
 [Sp][Nm]ita:ita	Liitesana_a	;
@@ -188,6 +186,11 @@ LEXICON AsemosanaJokaKuka
 [Sall][Nm]ille:ille	Liitesana_a	;
 [Sall][Nm]illeka:illeka	Loppu	;
 [Sko][Nm]ine:ine	Loppu	;
+
+LEXICON AsemosanaJokinKukin
+[Sn][Ny]kin:kin	Loppu	;
+[Sg][Ny]nkin:nkin	Loppu	;
+[Sn][Nm]tkin:tkin	Loppu	;
 
 LEXICON AsemosanaJoku
 [Sn][Ny]ku:ku	Liitesana_a	;
@@ -218,6 +221,7 @@ LEXICON AsemosanaJoku
 [Sin][Nm]ine[Bm]kuine:inekuine	Liitesana_a	;
 
 LEXICON AsemosanaJokin
+AsemosanaJokinKukin	;
 [Sp][Ny]tain:tain	Liitesana_a	;
 [Ses][Ny]nain:nain	Liitesana_a	;
 [Sine][Ny]ssain:ssain	Liitesana_a	;
