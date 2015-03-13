@@ -14,6 +14,8 @@ LEXICON Asemosana
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
 [Lr][Xp]mikä[X]mi:mi	AsemosanaMikä	;
+[Lr][Xp]mikään[X]mi:mi	AsemosanaMikään	;
+[Lr][Xp]mikin[X]mi:mi	AsemosanaMikin	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
 [Lr][Xp]mones[X]mone:mone	JärjestyslukuKahdeksasEiOmistusliitettä_a	;
 [Lr][Xp]moni[X][Sp][Ny]montaa:montaa	Liitesana_a	;
@@ -383,20 +385,14 @@ LEXICON AsemosanaNuo
 
 LEXICON AsemosanaMikä
 [Sn][Ny]kä:kä	LiitesanaKoPaHan_ä	;
-[Sn][Ny][Fkin]kin:kin	Loppu	;
 [Sn][Ny]kä[Fkin]kin:käkin	Loppu	;
-[Sn][Ny][Fkaan]kään:kään	LiitesanaKoPaHan_ä	;
 [Sg][Ny]nkä:nkä	Liitesana_ä	;
-[Sg][Ny][Fkin]nkin:nkin	Loppu	;
-[Sg][Ny][Fkaan]nkään:nkään	LiitesanaKoPaHan_ä	;
 [Sp][Ny]tä:tä	LiitesanaKoPaHan_ä	;
 [Sp][Ny][Fkin]täkin:täkin	Loppu	;
-[Sp][Ny][Fkaan]tään:tään	LiitesanaKoPaHan_ä	;
 [Sp][Ny]täs:täs	Loppu	;
 [Str][Ny]ksi:ksi	Liitesana_ä	;
 [Str][Ny]ksikä:ksikä	Liitesana_ä	;
 [Ses][Ny]nä:nä	Liitesana_ä	;
-[Ses][Ny][Fkaan]nään:nään	LiitesanaKoPaHan_ä	;
 [Sine][Ny]ssä:ssä	Liitesana_ä	;
 [Sine][Ny]ssään:ssään	Liitesana_ä	;
 [Sela][Ny]stä:stä	Liitesana_ä	;
@@ -407,14 +403,24 @@ LEXICON AsemosanaMikä
 [Sill][Ny]nnekä:nnekä	Liitesana_ä	;
 [Sade][Ny]llä:llä	LiitesanaKoPaHan_ä	;
 [Sade][Ny][Fkin]lläkin:lläkin	LiitesanaKoPaHan_ä	;
-[Sade][Ny][Fkaan]llään:llään	LiitesanaKoPaHan_ä	;
 [Sabl][Ny]ltä:ltä	LiitesanaKoPaHan_ä	;
 [Sabl][Ny][Fkin]ltäkin:ltäkin	LiitesanaKoPaHan_ä	;
-[Sabl][Ny][Fkaan]ltään:ltään	LiitesanaKoPaHan_ä	;
 [Sall][Ny]lle:lle	Liitesana_ä	;
 [Sall][Ny]llekä:llekä	Liitesana_ä	;
 [Sn][Nm]tkä:tkä	Liitesana_ä	;
 [Sn][Nm]tkään:tkään	Liitesana_ä	;
+
+LEXICON AsemosanaMikään
+[Sn][Ny]kään:kään	LiitesanaKoPaHan_ä	;
+[Sg][Ny]nkään:nkään	LiitesanaKoPaHan_ä	;
+[Sp][Ny]tään:tään	LiitesanaKoPaHan_ä	;
+[Ses][Ny]nään:nään	LiitesanaKoPaHan_ä	;
+[Sade][Ny]llään:llään	LiitesanaKoPaHan_ä	;
+[Sabl][Ny]ltään:ltään	LiitesanaKoPaHan_ä	;
+
+LEXICON AsemosanaMikin
+[Sn][Ny]kin:kin	Loppu	;
+[Sg][Ny]nkin:nkin	Loppu	;
 
 LEXICON AsemosanaMuuan
 [Sn][Ny]an:an	Liitesana_a	;

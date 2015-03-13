@@ -2066,3 +2066,11 @@ word:ollut
   PARTICIPLE=past_passive
   NUMBER=plural
   SIJAMUOTO=nimento
+word:mitään
+ expected:1
+ analysis
+  BASEFORM=mikään
+  CLASS=asemosana
+  NUMBER=singular
+  SIJAMUOTO=osanto
+  !FOCUS
