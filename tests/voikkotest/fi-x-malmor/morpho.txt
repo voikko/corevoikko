@@ -428,3 +428,7 @@ word:ollut
   PARTICIPLE=past_passive
   NUMBER=plural
   SIJAMUOTO=nimento
+word:juoksinkaan
+ expected:1
+ analysis
+  NEGATIVE=false

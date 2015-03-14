@@ -2470,7 +2470,7 @@ subrule tulostus_kielto($tietue):
     if $allomorfi.kielto /= nil then
       if $tlen greater $i then
         define $edellinen := $tietue.($tlen - $i);
-        if $edellinen.luokka in <kertoman_tekijäpääte_vahva, kestämän_tekijäpääte_heikko> or
+        if $edellinen.luokka in <kertoman_tekijäpääte_vahva, kertoman_tekijäpääte_heikko, kestämän_tekijäpääte_heikko> or
           ($edellinen.luokka = teonsana and $edellinen.tapaluokka = tositapa and $edellinen.aikamuoto = kestämä and $allomorfi.kielto = yes) then
           return no;
         end;

@@ -2084,3 +2084,7 @@ word:kunkin
  expected:1
  analysis
   BASEFORM=kukin
+word:juoksinkaan
+ expected:1
+ analysis
+  NEGATIVE=false
