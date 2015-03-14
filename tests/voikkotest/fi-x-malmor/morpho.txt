@@ -432,3 +432,11 @@ word:juoksinkaan
  expected:1
  analysis
   NEGATIVE=false
+word:purrut
+ expected:2
+ analysis
+  BASEFORM=purtu
+  PARTICIPLE=past_passive
+ analysis
+  BASEFORM=purrut
+  PARTICIPLE=past_active
