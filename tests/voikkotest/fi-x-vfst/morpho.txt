@@ -2090,3 +2090,8 @@ word:juoksinkaan
  expected:1
  analysis
   NEGATIVE=false
+word:olekaan
+ expected:1
+ analysis
+  NEGATIVE=true
+  MOOD=imperative

@@ -51,7 +51,7 @@
 [perusmuoto: "muuan", alku: "muudatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
- [perusmuoto: "plus", alku: "plus-", luokka: nimisana, jatko: <loppu>, äs: a];
+ [perusmuoto: "plus-", alku: "plus-", luokka: nimisana, rakenne: "=pppp-", jatko: <loppu>, äs: a];
  [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
 [perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
  [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
