@@ -450,3 +450,11 @@ word:olekaan
  analysis
   NEGATIVE=true
   MOOD=imperative
+word:Kanta-
+ expected:2
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ipppp-
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ppppp-

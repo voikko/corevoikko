@@ -232,7 +232,11 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       end;
     end;
     if loppu in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, accept;
+      if $oikea.etuliite = yes then
+        result <[alku: $sana] + $oikea + [luokka: etuliite]>, accept;
+      else
+        result <[alku: $sana] + $oikea>, accept;
+      end;
     end;
     if omistusliite in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules omistusliite;

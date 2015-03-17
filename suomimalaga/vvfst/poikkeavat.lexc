@@ -2144,7 +2144,7 @@ LEXICON Poikkeavat_em
 [Lem][Xp]Xinhua[X]xinhu:xinhu	NimiPeruna_a	;
 
 LEXICON Poikkeavat_ep
-[Lep]:	AluettaTarkentavatYksinäisetEtuliitteet	;
+[Lp]:	AluettaTarkentavatYksinäisetEtuliitteet	;
 [Lep][Xp]Bangladesh[X][Sn][Ny]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
 [Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
@@ -2388,16 +2388,16 @@ LEXICON Poikkeavat_nl
 [Lnl][Xp]ilmi[X][Sn][Ny]ilmi:ilmi	Liitesana_ä	;
 
 LEXICON AluettaTarkentavatYksinäisetEtuliitteet
-[Xp]Etelä[X]etelä[Bc]-:etelä-	Loppu	;
-[Xp]Iso[X]iso[Bc]-:iso-	Loppu	;
-[Xp]Itä[X]itä[Bc]-:itä-	Loppu	;
-[Xp]Kanta[X]kanta[Bc]-:kanta-	Loppu	;
-[Xp]Keski[X]keski[Bc]-:keski-	Loppu	;
-[Xp]Länsi[X]länsi[Bc]-:länsi-	Loppu	;
-[Xp]Pohjois[X]pohjois[Bc]-:pohjois-	Loppu	;
-[Xp]Suur[X]suur[Bc]-:suur-	Loppu	;
-[Xp]Sydän[X]sydän[Bc]-:sydän-	Loppu	;
-[Xp]Uusi[X]uusi[Bc]-:uusi-	Loppu	;
+[Xp]Etelä[X][Xr]i[X]etelä[Bc]-:etelä-	Loppu	;
+[Xp]Iso[X][Xr]i[X]iso[Bc]-:iso-	Loppu	;
+[Xp]Itä[X][Xr]i[X]itä[Bc]-:itä-	Loppu	;
+[Xp]Kanta[X][Xr]i[X]kanta[Bc]-:kanta-	Loppu	;
+[Xp]Keski[X][Xr]i[X]keski[Bc]-:keski-	Loppu	;
+[Xp]Länsi[X][Xr]i[X]länsi[Bc]-:länsi-	Loppu	;
+[Xp]Pohjois[X][Xr]i[X]pohjois[Bc]-:pohjois-	Loppu	;
+[Xp]Suur[X][Xr]i[X]suur[Bc]-:suur-	Loppu	;
+[Xp]Sydän[X][Xr]i[X]sydän[Bc]-:sydän-	Loppu	;
+[Xp]Uusi[X][Xr]i[X]uusi[Bc]-:uusi-	Loppu	;
 
 LEXICON GenetiiviLiitepartikkeliInenAdjektiivi
 [Ll][Xp]kahdenlainen[X]kahdenkaan[Bm]lai:kahdenkaanlai	GenetiiviLiitepartikkeliInenLoppu_a	;
