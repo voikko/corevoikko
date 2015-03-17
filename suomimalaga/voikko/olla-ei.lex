@@ -51,7 +51,7 @@
 [alku: "liene", luokka: teonsana, jatko: <lienee>, perusmuoto: "olla", äs: ä,
                 tapaluokka: mahtotapa];
 [alku: "lie",   luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
-                äs: ä, tapaluokka: mahtotapa];
+                äs: ä, tapaluokka: mahtotapa, kielto: molemmat];
 [alku: "liene", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: mahtotapa, kielto: yes, aikamuoto: kestämä];
 
