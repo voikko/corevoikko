@@ -458,3 +458,5 @@ word:Kanta-
  analysis
   CLASS=etuliite
   STRUCTURE==ppppp-
+word:juoksemattakin
+ !NEGATIVE

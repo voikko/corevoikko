@@ -1030,7 +1030,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			const wchar_t * mood = analysis->getValue("MOOD");
 			const wchar_t * participle = analysis->getValue("PARTICIPLE");
 			if (analysis->getValue("NEGATIVE") && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
-			    (mood && (wcscmp(mood, L"MINEN-infinitive") == 0 || wcscmp(mood, L"E-infinitive") == 0))
+			    (mood && (wcscmp(mood, L"MINEN-infinitive") == 0 || wcscmp(mood, L"E-infinitive") == 0 || wcscmp(mood, L"MA-infinitive") == 0))
 			)) {
 				analysis->removeAttribute("NEGATIVE");
 			}
