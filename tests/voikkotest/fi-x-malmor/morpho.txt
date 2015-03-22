@@ -478,3 +478,7 @@ word:tutaan
   NEGATIVE=false
   MOOD=indicative
   TENSE=present_simple
+word:Itäkissa-Sveitsi
+ expected:1
+ analysis
+  STRUCTURE==ppp=ppppp-=ipppppp # "Itäkissa" ei ole aluetta tarkentava etuliite

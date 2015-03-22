@@ -977,6 +977,9 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 		else if (wcsncmp(fstOutput + j, L"[De]", 4) == 0) {
 			isDe = true;
 		}
+		else if (wcsncmp(fstOutput + j, L"[Ln]", 4) == 0) {
+			isDe = false;
+		}
 		else if (fstOutput[j] == L'-') {
 			hyphenCount++;
 			if (isDe) {
