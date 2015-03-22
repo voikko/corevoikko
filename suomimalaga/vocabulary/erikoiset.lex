@@ -52,7 +52,6 @@
 [perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
  [perusmuoto: "plus-", alku: "plus-", luokka: nimisana, rakenne: "=pppp-", jatko: <loppu>, äs: a];
- [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
 [perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
  [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
  [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
@@ -73,6 +72,6 @@
  [perusmuoto: "länsi-", alku: "länsi-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
  [perusmuoto: "manner-", alku: "manner-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=pppppp-", tiedot: <ei_sukija>];
  [perusmuoto: "pohjois-", alku: "pohjois-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=ppppppp-", tiedot: <ei_sukija>];
- [perusmuoto: "suur-", alku: "suur-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
+ [perusmuoto: "suur-", alku: "suur-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
  [perusmuoto: "sydän-", alku: "sydän-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
  [perusmuoto: "uusi-", alku: "uusi-", luokka: nimisana, etuliite: yes, jatko: <loppu>, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
