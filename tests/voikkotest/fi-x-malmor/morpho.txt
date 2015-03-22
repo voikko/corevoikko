@@ -460,3 +460,21 @@ word:Kanta-
   STRUCTURE==ppppp-
 word:juoksemattakin
  !NEGATIVE
+word:olematta
+ expected:2
+ analysis
+  MOOD=MA-infinitive
+ analysis
+  PARTICIPLE=agent
+word:tuta
+ expected:1
+ analysis
+  MOOD=A-infinitive
+  NEGATIVE=both
+word:tutaan
+ expected:1
+ analysis
+  PERSON=4
+  NEGATIVE=false
+  MOOD=indicative
+  TENSE=present_simple
