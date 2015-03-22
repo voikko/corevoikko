@@ -533,6 +533,8 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 	bool isInXp = false;
 	bool isInXr = false;
 	bool isInTag = false;
+	bool ignoreNextDe = false;
+	bool isDe = false;
 	bool classTagSeen = false;
 	
 	for (size_t i = 0; i < fstLen; i++) {
@@ -571,9 +573,15 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				isInXr = false;
 				i += 2;
 			}
+			else if (wcsncmp(fstOutput + i, L"[De]", 4) == 0) {
+				isDe = !ignoreNextDe;
+				i += 3;
+			}
 			else {
 				if (fstOutput[i + 1] == L'L') {
 					classTagSeen = true;
+					isDe = false;
+					ignoreNextDe = (fstOutput[i + 2] != L'l');
 				}
 				isInTag = true;
 			}
@@ -598,8 +606,27 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 					hyphensInLatestXp--;
 				}
 				else {
+					if (isDe && latestXpStartInFst != 0) {
+						for (size_t j = i; j + 4 < fstLen; j++) {
+							if (wcsncmp(fstOutput + j, L"[Lep]", 5) == 0) {
+								baseformPos = latestXpStartInBaseform;
+								for (size_t i = latestXpStartInFst; i < fstLen && fstOutput[i] != L'['; i++) {
+									if (fstOutput[i] != L'=') {
+										if (i == latestXpStartInFst) {
+											baseform[baseformPos++] = SimpleChar::upper(fstOutput[i]);
+										}
+										else {
+											baseform[baseformPos++] = fstOutput[i];
+										}
+									}
+								}
+								break;
+							}
+						}
+					}
 					latestXpStartInFst = 0;
 				}
+				isDe = false;
 			}
 			while (structurePos < structureLen) {
 				wchar_t patternChar = structure[structurePos];

@@ -2127,3 +2127,15 @@ word:Itäkissa-Sveitsi
  expected:1
  analysis
   STRUCTURE==ppp=ppppp-=ipppppp # "Itäkissa" ei ole aluetta tarkentava etuliite
+word:Uudessa-Seelannissa
+ expected:1
+ analysis
+  BASEFORM=Uusi-Seelanti
+word:Etelä-Pentti
+ expected:1
+ analysis
+  BASEFORM=etelä-Pentti
+  STRUCTURE==ppppp-=ippppp
+word:Pohjois-Suomessa
+ analysis
+  BASEFORM=Pohjois-Suomi
