@@ -37,7 +37,7 @@ individual backends is as follows:
  Backend        License
 ----------------------------------------------------------------
  Malaga         GPL 2+
- HFST           GPL 3+ (GPL 2+ backend and Apache v2 dependency)
+ HFST           MPL 1.1 / GPL 2+ / LGPL 2.1+ (Apache v2 dependency)
  Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
  VFST           MPL 1.1 / GPL 2+ / LGPL 2.1+
 

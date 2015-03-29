@@ -1,3 +1,6 @@
+2015-03-29 Harri Pitkänen <hatapitk@iki.fi>
+	* Tri-licensed the HFST backend with permission from Flammie Pirinen.
+
 2015-01-03 Harri Pitkänen <hatapitk@iki.fi>
 	* Search for dictionares from $HOME/Library/Spelling/voikko on OS X.
 
