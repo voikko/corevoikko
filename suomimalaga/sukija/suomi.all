@@ -1940,6 +1940,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (spray in $tietue.jatko) then
+    choose $i in bébé ($tietue, "");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (parfait in $tietue.jatko) then
     choose $i in parfait ($tietue, "", "'");
     if (value_type($i) = record) then
@@ -10770,16 +10779,16 @@ subrule ammottua ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule kirjoittua ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -10819,16 +10828,16 @@ subrule kirjoittua ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule muistua ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -10868,16 +10877,16 @@ subrule muistua ($tietue, $param01):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule punoa ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -10918,16 +10927,16 @@ subrule punoa ($tietue, $param01, $param02):
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ntA: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_ellA, $johdin_tAUtUA):
   return taivutuskaava ($tietue,
@@ -10970,16 +10979,16 @@ subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $joh
                          johdin_Us_ksen: <<$param04, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
                          johdin_tAUtUA: <<$johdin_tAUtUA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule ammottaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -11022,16 +11031,16 @@ subrule ammottaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_OtellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_tAUtUA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule autioittaa ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -11071,16 +11080,16 @@ subrule autioittaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule heittää ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_ellA):
   return taivutuskaava ($tietue,
@@ -11122,16 +11131,16 @@ subrule heittää ($tietue, $param01, $param02, $param03, $param04, $param05, $j
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_tO_liitto: <<$param04, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule hidastaa ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -11173,16 +11182,16 @@ subrule hidastaa ($tietue, $param01, $param02, $param03):
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param03, <>>>,
                          johdin_ellA: <<$param03, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule hohtaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_ellA):
   return taivutuskaava ($tietue,
@@ -11224,16 +11233,16 @@ subrule hohtaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_tO_leuto: <<$param06, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule kirjoittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -11276,16 +11285,16 @@ subrule kirjoittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $
                          johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_OitellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_tAUtUA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule loistaa ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -11327,16 +11336,16 @@ subrule loistaa ($tietue, $param01, $param02, $param03):
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_O: <<$param03, <>>>,
                          johdin_ellA: <<$param03, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule muistaa ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -11379,16 +11388,16 @@ subrule muistaa ($tietue, $param01, $param02, $param03):
                          johdin_O: <<$param03, <>>>,
                          johdin_ellA: <<$param03, <>>>,
                          johdin_UA: <<$param03, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule voitaa ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_ellA):
   return taivutuskaava ($tietue,
@@ -11429,16 +11438,16 @@ subrule voitaa ($tietue, $param01, $param02, $param03, $param04, $param05, $johd
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule alentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11480,16 +11489,16 @@ subrule alentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule huutaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -11531,16 +11540,16 @@ subrule huutaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$param05, <>>>,
                          johdin_tO_leuto: <<$param07, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule soutaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11581,16 +11590,16 @@ subrule soutaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule jäykentää ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11632,16 +11641,16 @@ subrule jäykentää ($tietue, $param01, $param02, $param03, $param04, $param05,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule puoltaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11681,16 +11690,16 @@ subrule puoltaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule pyörtää ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11731,16 +11740,16 @@ subrule pyörtää ($tietue, $param01, $param02, $param03, $param04, $param05, $
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ella: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule sukeltaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11782,16 +11791,16 @@ subrule sukeltaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule murtaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11833,16 +11842,16 @@ subrule murtaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Os: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule musertaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11884,16 +11893,16 @@ subrule musertaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule sortaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11933,16 +11942,16 @@ subrule sortaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule juontaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -11983,16 +11992,16 @@ subrule juontaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule pahentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -12034,16 +12043,16 @@ subrule pahentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param05, <>>>,
                          johdin_ellA: <<$param05, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule antaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -12084,16 +12093,16 @@ subrule antaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$param06, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule jakaa ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -12133,16 +12142,16 @@ subrule jakaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule kaivaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -12184,16 +12193,16 @@ subrule kaivaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ntA: <<$param03, <>>>,
                          johdin_ellA: <<$param06, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule lappaa ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -12234,16 +12243,16 @@ subrule lappaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ntA: <<$param03, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule haastaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_ellA):
   return taivutuskaava ($tietue,
@@ -12284,16 +12293,16 @@ subrule haastaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule paistaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_ellA):
   return taivutuskaava ($tietue,
@@ -12334,16 +12343,16 @@ subrule paistaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule virkkaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -12383,16 +12392,16 @@ subrule virkkaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kulkija: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule saartaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -12432,16 +12441,16 @@ subrule saartaa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kulkija: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule laskea ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -12483,16 +12492,16 @@ subrule laskea ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_jA_kulkija: <<$param02, <>>>,
                          johdin_ntA: <<$param03, <>>>,
                          johdin_eskellA: <<$param04, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>,
-                         johdin_ttU: <<$param03, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param03, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule tuntea ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -12532,16 +12541,16 @@ subrule tuntea ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param03, <>>>,
                          johdin_jA_kulkija: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>,
-                         johdin_ttU: <<$param03, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param03, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule potea ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -12581,16 +12590,16 @@ subrule potea ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param03, <>>>,
                          johdin_jA_kulkija: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>,
-                         johdin_ttU: <<$param03, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param03, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule lähteä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -12630,16 +12639,16 @@ subrule lähteä ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param03, <>>>,
                          johdin_jA_kulkija: <<$param02, <>>, <$param07, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>,
-                         johdin_ttU: <<$param03, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param03, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule sallia ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -12680,16 +12689,16 @@ subrule sallia ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kulkija: <<$param01, <>>>,
                          johdin_ntA: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule voida ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -12731,16 +12740,16 @@ subrule voida ($tietue, $param01, $param02, $param03):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_myyjä: <<$param01, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule saada ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -12782,16 +12791,16 @@ subrule saada ($tietue, $param01, $param02, $param03):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_myyjä: <<$param01, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule myydä ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -12833,16 +12842,16 @@ subrule myydä ($tietue, $param01, $param02, $param03):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_myyjä: <<$param01, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule juoda ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -12884,16 +12893,16 @@ subrule juoda ($tietue, $param01, $param02, $param03):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_myyjä: <<$param01, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule viedä ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -12935,16 +12944,16 @@ subrule viedä ($tietue, $param01, $param02, $param03):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_myyjä: <<$param01, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule käydä ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -12986,16 +12995,16 @@ subrule käydä ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_vE: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule kalista ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -13036,16 +13045,16 @@ subrule kalista ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
                          johdin_nA: <<$param05, <>>>,
-                         johdin_mA: <<$param03, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_stU_nuolaistu: <<$param01, <>>>,
                          mahtotapa_se_kielto: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
                          johdin_vAinen: <<$param03, <>>>,
-                         johdin_sUt: <<$param01, <>>>]);
+                         johdin_stU_nuolaistu: <<$param01, <>>>,
+                         johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         johdin_sUt: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule nousta ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -13085,16 +13094,16 @@ subrule nousta ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
-                         johdin_mA: <<$param03, <>>>,
-                         johdin_stU_juostu: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
                          mahtotapa_se_kielto: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
                          johdin_vAinen: <<$param03, <>>>,
-                         johdin_sUt: <<$param01, <>>>]);
+                         johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_stU_juostu: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         johdin_sUt: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule nuolaista ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -13135,16 +13144,16 @@ subrule nuolaista ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_jA_kulkija: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_U_arvelu: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          mahtotapa_se_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule rangaista ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10, $param11):
   return taivutuskaava ($tietue,
@@ -13185,16 +13194,16 @@ subrule rangaista ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_jA_kulkija: <<$param09, <>>, <$param10, <ei_voikko>>>,
                          johdin_U_arvelu: <<$param11, <>>, <$param08, <ei_voikko>>>,
-                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          mahtotapa_se_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule seistä ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -13211,12 +13220,12 @@ subrule seistä ($tietue, $param01, $param02):
                          mahtotapa_tA: <<$param01, <>>>,
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_stU_juostu: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         johdin_sUt: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_sUt: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule tulla ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -13256,16 +13265,16 @@ subrule tulla ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
-                         johdin_mA: <<$param03, <>>>,
                          johdin_lUt: <<$param01, <>>>,
-                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         mahtotapa_le_kielto: <<$param01, <>>>,
-                         johdin_tU_lU_oltu: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_vAinen: <<$param03, <>>>,
+                         johdin_mA: <<$param03, <>>>,
+                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_tU_lU_oltu: <<$param01, <>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule purra ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -13306,16 +13315,16 @@ subrule purra ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
                          johdin_ntA: <<$param03, <>>>,
-                         mahtotapa_re_kielto: <<$param01, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         mahtotapa_re_kielto: <<$param01, <>>>,
+                         tositavan_kestämä_rAAn_kielto: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_tU_rU: <<$param01, <>>>,
                          johdin_rUt: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>,
-                         tositavan_kestämä_rAAn_kielto: <<$param01, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule mennä ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -13355,16 +13364,16 @@ subrule mennä ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
-                         johdin_mA: <<$param03, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         johdin_nUt: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         tositavan_kestämä_nAAn_kielto: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_tU_nU: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_vAinen: <<$param03, <>>>,
+                         tositavan_kestämä_nAAn_kielto: <<$param01, <>>>,
+                         johdin_mA: <<$param03, <>>>,
+                         johdin_tU_nU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_nUt: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule ilotella ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -13405,16 +13414,16 @@ subrule ilotella ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_jA_kulkija: <<$param09, <>>, <$param10, <ei_voikko>>>,
                          johdin_U_arvelu: <<$param07, <>>, <$param08, <ei_voikko>>>,
-                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_lUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>]);
+                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule katsella ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -13455,16 +13464,16 @@ subrule katsella ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param05, <>>>,
                          johdin_U_arvelu: <<$param04, <>>>,
-                         johdin_mA: <<$param03, <>>>,
                          johdin_lUt: <<$param01, <>>>,
-                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         johdin_tU_lU_katseltu: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         mahtotapa_le_kielto: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_vAinen: <<$param03, <>>>,
+                         johdin_mA: <<$param03, <>>>,
+                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_tU_lU_katseltu: <<$param01, <>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule kilvoitella ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -13505,16 +13514,16 @@ subrule kilvoitella ($tietue, $param01, $param02, $param03, $param04, $param05, 
                          käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_jA_kulkija: <<$param09, <>>, <$param10, <ei_voikko>>>,
                          johdin_U_arvelu: <<$param07, <>>, <$param08, <>>>,
-                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_lUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>]);
+                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule arvailla ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -13555,16 +13564,16 @@ subrule arvailla ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_jA_kulkija: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_U_arvelu: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_lUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>]);
+                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         tositavan_kestämä_lAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tU_lU_katseltu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule haravoida ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -13618,21 +13627,21 @@ subrule haravoida ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param08, <>>>,
                          johdin_nti: <<$param01, <>>>,
-                         johdin_mA_saama: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>, <$param04, <>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param04, <>>>,
                          johdin_mA: <<$param04, <>>>,
+                         johdin_tU_dU: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
                          johdin_ttAvA: <<$param01, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param01, <ei_voikko>>>,
-                         johdin_tU_dU: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param04, <>>, <$param05, <ei_voikko>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         johdin_mA_saama: <<$param01, <>>>,
+                         johdin_ttU: <<$param01, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param04, <>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param04, <>>>]);
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule valita ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -13673,16 +13682,16 @@ subrule valita ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param06, <>>>,
                          johdin_ntA: <<$param01, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param04, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param04, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param04, <>>>]);
 end;
 subrule juosta ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -13723,17 +13732,17 @@ subrule juosta ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param05, <>>>,
-                         johdin_mA: <<$param03, <>>>,
-                         johdin_stU_juostu: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
-                         johdin_nUt: <<$param01, <ei_voikko>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
                          mahtotapa_se_kielto: <<$param01, <>>>,
                          johdin_vA: <<$param03, <>>>,
                          johdin_vAinen: <<$param03, <>>>,
-                         johdin_sUt: <<$param01, <>>>]);
+                         johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_stU_juostu: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         johdin_nUt: <<$param01, <ei_voikko>>>,
+                         johdin_sUt: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule nähdä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -13773,16 +13782,16 @@ subrule nähdä ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param07, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
                          johdin_tU_dU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
-                         johdin_nUt: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
                          käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_nUt: <<$param01, <>>>,
+                         tositavan_kestämä_dAAn_kielto: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule aleta ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -13822,16 +13831,16 @@ subrule aleta ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param06, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param04, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param04, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param04, <>>>]);
 end;
 subrule kevetä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -13871,16 +13880,16 @@ subrule kevetä ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param07, <>>, <$param08, <>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule salata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_illA):
   return taivutuskaava ($tietue,
@@ -13923,16 +13932,16 @@ subrule salata ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param03, <>>>,
                          johdin_Us_ksen: <<$param06, <>>>,
                          johdin_illA: <<$johdin_illA, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param04, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param04, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param04, <>>>]);
 end;
 subrule katketa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -13973,16 +13982,16 @@ subrule katketa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule kutiaa ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -14003,9 +14012,9 @@ subrule kutiaa ($tietue, $param01):
                          ehtotapa: <<$param01, <>>>,
                          käskytapa_y2: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param01, <>>>,
-                         johdin_mA: <<$param01, <>>>,
                          johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_vAinen: <<$param01, <>>>,
+                         johdin_mA: <<$param01, <>>>]);
 end;
 subrule selvitä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -14046,16 +14055,16 @@ subrule selvitä ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
@@ -14098,16 +14107,16 @@ subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ntA: <<$param01, <>>>,
                          johdin_illA: <<$johdin_illA, <>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_illA):
   return taivutuskaava ($tietue,
@@ -14151,16 +14160,16 @@ subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_Us_ksen: <<$param01, <>>>,
                          johdin_ntA: <<$param01, <>>>,
                          johdin_illA: <<$johdin_illA, <>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule haluta ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
@@ -14202,16 +14211,16 @@ subrule haluta ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_illA: <<$johdin_illA, <>>>,
+                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param05, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param05, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param05, <>>>]);
 end;
 subrule hyljätä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09):
   return taivutuskaava ($tietue,
@@ -14252,16 +14261,16 @@ subrule hyljätä ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param03, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param04, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param04, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param04, <>>>]);
 end;
 subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
@@ -14304,16 +14313,16 @@ subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_jA_kantaja: <<$param03, <>>>,
                          johdin_Us_ksen: <<$param07, <>>>,
                          johdin_illA: <<$johdin_illA, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
                          johdin_mA: <<$param03, <>>>,
+                         käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param04, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
                          johdin_nUt: <<$param04, <>>>,
-                         käskytapa: <<$param02, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_ttU: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param04, <>>>]);
 end;
 subrule kihistä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -14355,16 +14364,16 @@ subrule kihistä ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param06, <>>>,
                          johdin_nA: <<$param07, <>>>,
-                         johdin_mA: <<$param04, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_stU_nuolaistu: <<$param01, <>>>,
                          mahtotapa_se_kielto: <<$param01, <>>>,
                          johdin_vA: <<$param04, <>>>,
                          johdin_vAinen: <<$param04, <>>>,
-                         johdin_sUt: <<$param01, <>>>]);
+                         johdin_stU_nuolaistu: <<$param01, <>>>,
+                         johdin_mA: <<$param04, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         johdin_sUt: <<$param01, <>>>,
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 subrule kääntää ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09):
   return taivutuskaava ($tietue,
@@ -14407,16 +14416,16 @@ subrule kääntää ($tietue, $param01, $param02, $param03, $param04, $param05, 
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Os: <<$param08, <>>>,
                          johdin_nnellA: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
                          johdin_ttAvA: <<$param04, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param04, <>>, <$param02, <ei_voikko>>>,
-                         johdin_ttU: <<$param04, <>>, <$param02, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param04, <>>>,
                          johdin_nUt: <<$param01, <>>, <$param05, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param04, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule rakentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09):
   return taivutuskaava ($tietue,
@@ -14459,16 +14468,16 @@ subrule rakentaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param08, <>>>,
                          johdin_nnellA: <<$param02, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
                          johdin_ttAvA: <<$param04, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param04, <>>, <$param02, <ei_voikko>>>,
-                         johdin_ttU: <<$param04, <>>, <$param02, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param04, <>>>,
                          johdin_nUt: <<$param01, <>>, <$param05, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param03, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param04, <>>, <$param02, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>]);
 end;
 subrule taitaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -14508,16 +14517,16 @@ subrule taitaa ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_ttA: <<$param02, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
                          johdin_mA: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>,
-                         johdin_ttU: <<$param02, <>>, <$param04, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param03, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
                          johdin_nUt: <<$param01, <>>, <$param03, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>]);
+                         johdin_ttU: <<$param02, <>>, <$param04, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param03, <ei_voikko>>>]);
 end;
 subrule antautua ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -14558,16 +14567,16 @@ subrule antautua ($tietue, $param01, $param02, $param03, $param04, $param05):
                          käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          käskytapa_ttA: <<$param03, <>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>,
-                         johdin_ttU: <<$param03, <>>, <$param02, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param04, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param02, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param04, <ei_voikko>>, <$param02, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         johdin_ttU: <<$param03, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param04, <ei_voikko>>>]);
 end;
 subrule kirjoittautua ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -14608,16 +14617,16 @@ subrule kirjoittautua ($tietue, $param01, $param02, $param03, $param04, $param05
                          käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
                          käskytapa_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
                          johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         johdin_ttU: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
                          tositavan_kestämä_tAAn_kielto: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
                          johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
-                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
-                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
-                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>]);
+                         johdin_ttU: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>]);
 end;
 subrule olla ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -14647,15 +14656,15 @@ subrule olla ($tietue, $param01, $param02, $param03, $param04):
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param04, <>>>,
-                         johdin_mA: <<$param03, <>>>,
                          johdin_lUt: <<$param01, <>>>,
+                         johdin_vA: <<$param03, <>>>,
+                         johdin_vAinen: <<$param03, <>>>,
+                         johdin_mA: <<$param03, <>>>,
                          tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
                          käskytapa: <<$param01, <>>>,
                          johdin_tU_lU_oltu: <<$param01, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>]);
+                         johdin_tAvA: <<$param01, <>>>,
+                         johdin_tAvAinen: <<$param01, <>>>]);
 end;
 
 # $sanatietue1 Sanastosta (tiedostosta *.lex) luettu tietue.

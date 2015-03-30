@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2010, 2014 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2010, 2014-2015 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -775,6 +775,7 @@ askel;
 
 # Vain Suomen kielen perussanakirjassa.
 rosé;
+spray;
 parfait;
 isoäiti;
 nuoripari;
@@ -1088,3 +1089,11 @@ sitlaina; # Sitaattilaina.
 #yksi;
 roomalainen;
 liika;
+kielto;
+molemmat;
+tekijä_4;
+omistusliite_1s;
+omistusliite_1p;
+omistusliite_2s;
+omistusliite_2p;
+omistusliite_3;
