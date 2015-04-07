@@ -193,6 +193,7 @@ LEXICON SukijaSanasto
 
 
 LEXICON SukijaPoikkeavat_n
+[Ln][Xp]aurinko[X]aurinko:aurinko NimisanaSukijaAurinko_a ;
 [Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;

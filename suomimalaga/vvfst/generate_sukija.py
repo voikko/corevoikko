@@ -302,8 +302,8 @@ def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
             replace_and_write (line.replace(s1,s2), string, x)
 
 
-# Old spellings and common spelling errors of words
-# that do not conform to any pattern.
+# Vanhoja kirjoitusasuja ja yleisikä kirjoitusvirheitä,
+# jotka eivät noudata mitään kaavaa.
 #
 #    (u"", (u"", u"")),
 #
@@ -406,7 +406,7 @@ word_list = [
     (u"kiiras=torstai", (u"torsta",      u"tuorsta")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
     (u"klinikka",       (u"klinik",      u"kliniik")),
-    (u"kollega",        (u"kolleg",      u"kolleg")),
+    (u"kollega",        (u"kolleg",      u"kolleeg")),
     (u"kollegio",       (u"kollegio",    u"kolleegio")),
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
@@ -476,6 +476,7 @@ word_list = [
     (u"pioneeri",        (u"pioneer",     u"pioner")),
     (u"pioni",           (u"pion",        u"pioon")),
     (u"pitaali",         (u"pitaal",      u"pital")),
+    (u"plataani",        (u"plataan",     u"platan")),
     (u"plebeiji",        (u"plebeij",     u"plebej")),
     (u"plutoona",        (u"plutoon",     u"pluton")),
     (u"pohjimmainen",    (u"pohjimmai",   u"pohjimai")),
@@ -519,6 +520,7 @@ word_list = [
     (u"shampanja",       (u"shampanj",    u"shamppanj")),
     (u"sihteeri",        (u"sihteer",     u"sihter", u"sihtier")),
     (u"sikari",          (u"sikar",       u"sikaar")),
+    (u"sireeni",         (u"sireen",      u"siren")),
     (u"sitten",          (u"sitten",      u"sitte")),
     (u"sitruuna",        (u"sitruun",     u"sitrun", u"sitroon", u"sitron")),
     (u"sitä=paitsi",     (u"paitsi",      u"paitse")),

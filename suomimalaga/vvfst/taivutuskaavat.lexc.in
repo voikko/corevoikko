@@ -454,6 +454,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
+?Sukija [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -1982,12 +1983,14 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija ?NotLaatusana	[Sn][Ny]ehe:ehe	Omistusliite_<A>	;
 ?Sukija [Sn][Nm]ehet:ehet	<WC>MonikonNominatiivinJatko_<A>	;
 ?Sukija [Sg][Ny]ehen:ehen	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sg][Nm]<U>id:<U>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Ses][Ny]ehen<A>:ehen<A>	<WC>LiOlV_<A>	;
 ?Sukija [Ses][Ny]<U>nn<A>:<U>nn<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]ehese:ehese	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]<U>tt:<U>tt      <WC>MonikonGenetiiviEnJatko_<A> ;
+?Sukija [Sg][Nm]<U>itt:<U>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sill][Nm]eisi:eisi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ehisi:ehisi	<WC>LiOlN_<A>	;
@@ -2005,6 +2008,8 @@ hde:hde	NimisanaYhteisetYksikönPaikallissijat_<A>	;
 [Sp][Nm]ksi<A>:ksi<A>	NimisanaLiOlV_<A>	;
 ks:ks	NimisanaYhteisetMonikonSijat2_<A>	;
 ks:ks	NimisanaYhteisetMonikonPaikallissijat_<A>	;
+?Sukija [Sg][Ny]hen:hen	NimisanaYksikönGenetiivinJatko_<A>	;
+?Sukija he:he	NimisanaYhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Alkeet
 [Sn][Nm]et:et	<WC>MonikonNominatiivinJatko_<A>	;
@@ -3854,12 +3859,14 @@ LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Ny][Ef]t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P1][Nm][Ef]mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@mme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm][Ef]tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tte	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ap][P2][Nm][Ef]tten:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@tten	Liitesana_<A>	;
 
 LEXICON KertomanTekijäpääteHeikko
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Ny][Ef]in:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@in	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Ny][Ef]it:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@it	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P1][Nm][Ef]imme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@imme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Nm][Ef]itte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@itte	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tt][Ai][P2][Nm][Ef]itten:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@itten	Liitesana_<A>	;
 
 LEXICON KestämänTekijäpääteY3Liitesana
 Liitesana_<A>	;
@@ -3954,6 +3961,8 @@ LEXICON Käskytapa
 [Tk][Ap][Et]k<O>:k<O>	Loppu	;
 ?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>t	LiitesanaPaHan_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>tten:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tten	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Eb]:	LiitesanaKinPaHan_<A>	;
@@ -4276,6 +4285,7 @@ LEXICON Johdin_ttU
 [Ll][Rt]tt<U>[Xj][X][Sp][Ny]<A>:tt<U><A>	OlV_<A>	;
 ?Sukija [Ll][Rt]t[Xj]t<U>[X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaHattu_<A>	;
 ?Sukija [Ll][Rt][Sp][Nm]t<U>it<A>:t<U>it<A> NimiLaatusanaLiOlV_<A> ;
+?Sukija [Ll][Rt][Sg][Nm]t<U>itt@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>itt@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 
 ! myydä -> myyty
 LEXICON Johdin_tU_dA
@@ -4704,8 +4714,18 @@ LEXICON LukusanaYksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm1_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm1_<A>	;
 hde:hde	Kerronto_sti_<A>	;
+?Sukija [Sg][Ny]hen:hen	LukusanaSgNy1_<A>	;
+?Sukija [Str][Ny]heksi:heksi	LukusanaStrNy1_<A>	;
+?Sukija [Sine][Ny]hess<A>:hess<A>	LukusanaSineNy1_<A>	;
+?Sukija [Sela][Ny]hest<A>:hest<A>	LukusanaSelaNy1_<A>	;
 ?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
+?Sukija [Sade][Ny]hell<A>:hell<A>	LukusanaSadeNy1_<A>	;
+?Sukija [Sabl][Ny]helt<A>:helt<A>	LukusanaSablNy1_<A>	;
+?Sukija [Sall][Ny]helle:helle	LukusanaSallNy1_<A>	;
+?Sukija [Sab][Ny]hett<A>:hett<A>	LukusanaSabNy1_<A>	;
+?Sukija [Sn][Nm]het:het	LukusanaSnNm_<A>	;
 ?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm1_<A>	;
+?Sukija he:he	Kerronto_sti_<A>	;
 
 LEXICON LukusanaKaksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
@@ -4735,8 +4755,17 @@ LEXICON LukusanaKaksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm29_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm29_<A>	;
 hde:hde	Kerronto_sti_<A>	;
+?Sukija [Sg][Ny]hen:hen	LukusanaSgNy29_<A>	;
+?Sukija [Sine][Ny]hess<A>:hess<A>	LukusanaSineNy29_<A>	;
+?Sukija [Sela][Ny]hest<A>:hest<A>	LukusanaSelaNy29_<A>	;
 ?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy29_<A>	;
+?Sukija [Sade][Ny]hell<A>:hell<A>	LukusanaSadeNy29_<A>	;
+?Sukija [Sabl][Ny]helt<A>:helt<A>	LukusanaSablNy29_<A>	;
+?Sukija [Sall][Ny]helle:helle	LukusanaSallNy29_<A>	;
+?Sukija [Sab][Ny]hett<A>:hett<A>	LukusanaSabNy29_<A>	;
+?Sukija [Sn][Nm]het:het	LukusanaSnNm29_<A>	;
 ?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm29_<A>	;
+?Sukija he:he	Kerronto_sti_<A>	;
 
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>	;
@@ -5149,4 +5178,9 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija Käskytapa_y2_<A> ;
 
 ?Sukija LEXICON SukijaHYliaste
-h:h Yliaste_<A> ;
+?Sukija h:h Yliaste_<A> ;
+
+?Sukija LEXICON NOUN SukijaAurinko
+?Sukija [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
