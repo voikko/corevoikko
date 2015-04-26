@@ -2262,6 +2262,9 @@ subrule tulostus_luokka($tietue):
     if $allomorfi.jluokka /= nil then
       return $allomorfi.jluokka;
     end;
+    if $allomorfi.luokka = johdin_inen then
+      return laatusana;
+    end;
     if $allomorfi.luokka in @johtimet_laatusana_nimisanasta then
       if $omistusliite then
         return nimisana;

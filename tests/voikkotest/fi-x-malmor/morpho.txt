@@ -261,7 +261,7 @@ word:hätäistään
    POSSESSIVE=3
    SIJAMUOTO=osanto
    NUMBER=singular
-   CLASS=nimisana
+   CLASS=laatusana
 word:mennyllä
  expected:1
   analysis
@@ -482,3 +482,21 @@ word:Itäkissa-Sveitsi
  expected:1
  analysis
   STRUCTURE==ppp=ppppp-=ipppppp # "Itäkissa" ei ole aluetta tarkentava etuliite
+word:heinäisensä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=positive
+  POSSESSIVE=3
+word:heinäisempänsä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=comparative
+  POSSESSIVE=3
+word:heinäisimpänsä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=superlative
+  POSSESSIVE=3

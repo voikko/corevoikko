@@ -1828,7 +1828,7 @@ word:hätäistään
    POSSESSIVE=3
    SIJAMUOTO=osanto
    NUMBER=singular
-   CLASS=nimisana
+   CLASS=laatusana
 word:kpl:in
  expected:2
   analysis
@@ -2139,3 +2139,21 @@ word:Etelä-Pentti
 word:Pohjois-Suomessa
  analysis
   BASEFORM=Pohjois-Suomi
+word:heinäisensä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=positive
+  POSSESSIVE=3
+word:heinäisempänsä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=comparative
+  POSSESSIVE=3
+word:heinäisimpänsä
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=superlative
+  POSSESSIVE=3
