@@ -1,0 +1,6 @@
+LANGUAGE="fi-x-svfst"
+SOURCEDIR=COREVOIKKO + "/tests/testdicts/fi-x-svfst"
+BUILDCMD='make BUILDDIR="%s"' % (BUILDDIR + "/fi-x-svfst")
+INSTALLCMD='make install BUILDDIR="%s" DESTDIR="%s"' % (BUILDDIR + "/fi-x-svfst", INSTALLDIR)
+BASEINSTALLCMD='make install BUILDDIR="%s" DESTDIR="%s"' % (BUILDDIR + "/fi-x-svfst", BASEINSTALLDIR)
+CLEANCMD='make clean BUILDDIR="%s"' % (BUILDDIR + "/fi-x-svfst")

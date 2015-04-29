@@ -1,0 +1,3 @@
+read lexc all.lexc
+compact sigma
+write att BUILDDIR/all.att
