@@ -173,6 +173,7 @@ int main(int argc, char ** argv) {
 
 	string outputFile;
 	string format = "le";
+	bool weights = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args == "-o" && i + 1 < argc) {
@@ -180,6 +181,9 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-f" && i + 1 < argc) {
 			format = string(argv[++i]);
+		}
+		else if (args == "-w") {
+			weights = true;
 		}
 	}
 
@@ -218,18 +222,50 @@ int main(int argc, char ** argv) {
 			uint32_t targetStateOrd = 0;
 			string symInStr;
 			string symOutStr;
+			double weight;
+			bool finalState = false;
+
 			ss >> sourceStateOrd;
-			ss >> targetStateOrd;
-			ss >> symInStr;
-			ss >> symOutStr;
+			if (ss.eof()) {
+				finalState = true;
+			}
+			else {
+				ss >> targetStateOrd;
+				ss >> symInStr;
+				if (weights && !ss.good()) {
+					finalState = true;
+				}
+				else {
+					ss >> symOutStr;
+					if (ss.fail()) {
+						cerr << "ERROR: format error on input line:" << endl;
+						cerr << line << endl;
+						exit(1);
+					}
+					if (weights) {
+						if (ss.eof()) {
+							cerr << "ERROR: missing weight" << endl;
+							cerr << line << endl;
+							exit(1);
+						}
+						ss >> weight;
+						if (ss.fail()) {
+							cerr << "ERROR: unparseable weight" << endl;
+							cerr << line << endl;
+							exit(1);
+						}
+					}
+				}
+			}
 			if (attStateVector.size() < sourceStateOrd) {
 				cerr << "ERROR: invalid source state" << endl;
+				cerr << line << endl;
 				exit(1);
 			}
 			if (attStateVector.size() == sourceStateOrd) {
 				attStateVector.push_back(AttState());
 			}
-			if (line.find("\t") == string::npos) {
+			if (finalState) {
 				finalStateCount++;
 				Transition t;
 				t.symIn = 0xFFFF;
