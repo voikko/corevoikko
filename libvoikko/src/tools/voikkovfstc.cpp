@@ -27,6 +27,7 @@
  *********************************************************************************/
 
 #include "../fst/Transition.hpp"
+#include "../fst/WeightedTransition.hpp"
 #include <cassert>
 #include <string>
 #include <iostream>

@@ -84,6 +84,7 @@ noinst_HEADERS = \
     fst/Configuration.hpp \
     fst/Transducer.hpp \
     fst/Transition.hpp \
+    fst/WeightedTransition.hpp \
     utils/utils.hpp utils/StringUtils.hpp \
     hyphenator/Hyphenator.hpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp \
