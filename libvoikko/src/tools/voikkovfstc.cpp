@@ -346,8 +346,10 @@ int main(int argc, char ** argv) {
 	const uint32_t COOKIE2 = swapIf(byteSwap, (uint32_t)0x000351FA);
 	transducerFile.write((char *)&COOKIE1, sizeof(uint32_t));
 	transducerFile.write((char *)&COOKIE2, sizeof(uint32_t));
+	// Do we have weights? 0x00 == unweighted, 0x01 == weighted
+	transducerFile.put(weights ? 0x01 : 0x00);
 	// 8 bytes of reserved space for future format extensions and variants. Must be zero for now.
-	transducerFile.seekp(8, ios_base::cur);
+	transducerFile.seekp(7, ios_base::cur);
 	
 	// Write symbols
 	uint16_t symbolCount = symVector.size();
