@@ -272,6 +272,22 @@
  [perusmuoto: "Uusikirkko", alku: "Uudellekirkolle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ipppppp=ppppppppp"];
  [perusmuoto: "Uusikirkko", alku: "Uudettakirko", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppp"];
 
+# {{{2 Uusikylä
+
+ [perusmuoto: "Uusikylä", alku: "Uusikylä",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ippp=pppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudenkylä",  luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ipppp=pppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudenkylä",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ipppp=ppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uuttakylä",  luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ipppp=pppp"];
+ [perusmuoto: "Uusikylä", alku: "Uutenakylä", luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudeksikylä", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ipppppp=ppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudessakylässä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudestakylästä", luokka: paikannimi, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uuteenkylä", luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ippppp=pppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudellakylällä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä,      rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudeltakylältä", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä,  rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudellekylälle", luokka: paikannimi, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ipppppp=pppppppp"];
+ [perusmuoto: "Uusikylä", alku: "Uudettakylä", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ipppppp=ppppp"];
+
 # {{{2 Uusimaa
 
  [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];

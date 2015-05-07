@@ -19,6 +19,7 @@ LEXICON Poikkeavat_s
 [Ls][Xp]karku[X][Sine][Ny]karussa:karussa	Liitesana_a	;
 [Ls][Xp]karku[X][Sill][Ny]karkuun:karkuun	Liitesana_a	;
 [Ls][Xp]keskessä[X]keske:keske	SisäpaikallissijatVn_ä	;
+[Ls][Xp]kesäteloilla[X]kesä[Bm]teloi:kesäteloi	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]keväämmällä[X]kevääm:kevääm	Keväämmällä	;
 [Ls][Xp]kilpasilla[X]kilpas:kilpas	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]kohme[X]kohmee[Sine][Ny]ssa:kohmeessa	Liitesana_a	;
@@ -51,6 +52,7 @@ LEXICON Poikkeavat_s
 [Ls][Xp]supussa[X][Sill][Ny]suppuun:suppuun	Liitesana_a	;
 [Ls][Xp]syksympänä[X]syksym:syksym	Sivumpana_ä	;
 [Ls][Xp]syrjempänä[X]syrjem:syrjem	Sivumpana_ä	;
+[Ls][Xp]talviteloilla[X]talvi[Bm]teloi:talviteloi	Ulkopaikallissijat_Mon_a	;
 [Ls][Xp]tasa[X]tasa:tasa	Ulkopaikallissijat_Yks_a	;
 [Ls][Xp]tasa[X]tasa:tasa	SisäpaikallissijatVn_a	;
 [Ls][Xp]tekeillä[X]teke:teke	Ulkopaikallissijat_Mon_ä	;
