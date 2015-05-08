@@ -56,6 +56,7 @@
 import codecs
 import getopt
 import re
+import string
 import sys
 from types import *
 sys.path.append("common")
@@ -844,8 +845,11 @@ while True:
     if line == u"":
         break
     line = re.sub (ei_vertm, u"", line)
+    if string.find (line, u"=") >= 0:
+        line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
+        
     if OPTIONS["sukija-ys"]:
-        line = line.replace (u"@P.YS_EI_JATKOA.ON@" , u"")
+        line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
         line = line.replace (u"@D.YS_EI_JATKOA@", u"")
         line = line.replace (u"@C.YS_EI_JATKOA@", u"")
     outfile.write (line)
