@@ -348,7 +348,7 @@ int main(int argc, char ** argv) {
 	transducerFile.write((char *)&COOKIE2, sizeof(uint32_t));
 	// Do we have weights? 0x00 == unweighted, 0x01 == weighted
 	transducerFile.put(weights ? 0x01 : 0x00);
-	// 8 bytes of reserved space for future format extensions and variants. Must be zero for now.
+	// 7 bytes of reserved space for future format extensions and variants. Must be zero for now.
 	transducerFile.seekp(7, ios_base::cur);
 	
 	// Write symbols
@@ -360,11 +360,12 @@ int main(int argc, char ** argv) {
 		transducerFile.put(0);
 	}
 	
-	// Write padding so that transition table starts at 8 byte boundary
+	// Write padding so that transition table starts at 8/16 byte boundary
 	{
-		size_t partial = transducerFile.tellp() % sizeof(Transition);
+		size_t transitionSize = weights ? sizeof(WeightedTransition) : sizeof(Transition);
+		size_t partial = transducerFile.tellp() % transitionSize;
 		if (partial > 0) {
-			transducerFile.seekp(sizeof(Transition) - partial, ios_base::cur);
+			transducerFile.seekp(transitionSize - partial, ios_base::cur);
 		}
 	}
 	
