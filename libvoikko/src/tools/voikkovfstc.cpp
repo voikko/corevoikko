@@ -46,7 +46,7 @@ struct Symbol {
 };
 
 struct AttState {
-	vector<Transition> transitions;
+	vector<WeightedTransition> transitions;
 	vector<uint32_t> targetStateOrds;
 };
 
@@ -74,18 +74,28 @@ static uint32_t swapIf(bool doSwap, uint32_t x) {
 	return doSwap ? swap(x) : x;
 }
 
-static void writeTrans(ofstream & out, bool doSwap, Transition & t) {
-	if (doSwap) {
-		Transition tSwapped;
-		tSwapped.symIn = swap(t.symIn);
-		tSwapped.symOut = swap(t.symOut);
-		uint32_t ts = t.transInfo.targetState;
-		tSwapped.transInfo.targetState = ((ts<<16) & 0x00FF0000) | (ts & 0x0000FF00) | ((ts>>16) & 0x000000FF);
-		tSwapped.transInfo.moreTransitions = t.transInfo.moreTransitions;
-		out.write((char *) &tSwapped, sizeof(Transition));
+static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool weights) {
+	if (weights) {
+		// TODO print weighted transition
 	}
 	else {
-		out.write((char *) &t, sizeof(Transition));
+		Transition tu;
+		tu.symIn = t.symIn; // TODO check for overflow
+		tu.symOut = t.symOut; // TODO check for overflow
+		tu.transInfo.targetState = t.targetState; // TODO check for overflow
+		tu.transInfo.moreTransitions = t.moreTransitions;
+		if (doSwap) {
+			Transition tSwapped;
+			tSwapped.symIn = swap(tu.symIn);
+			tSwapped.symOut = swap(tu.symOut);
+			uint32_t ts = tu.transInfo.targetState;
+			tSwapped.transInfo.targetState = ((ts<<16) & 0x00FF0000) | (ts & 0x0000FF00) | ((ts>>16) & 0x000000FF);
+			tSwapped.transInfo.moreTransitions = tu.transInfo.moreTransitions;
+			out.write((char *) &tSwapped, sizeof(Transition));
+		}
+		else {
+			out.write((char *) &tu, sizeof(Transition));
+		}
 	}
 }
 
@@ -127,12 +137,12 @@ static string convertSymbolNames(string input) {
 	return input;
 }
 
-static void setTarget(Transition & t, vector<uint32_t> & stateOrdinalToOffset, uint32_t targetStateOrdinal) {
+static void setTarget(WeightedTransition & t, vector<uint32_t> & stateOrdinalToOffset, uint32_t targetStateOrdinal) {
 	if (targetStateOrdinal >= stateOrdinalToOffset.size()) {
 		cerr << "ERROR: target state not final or source for another transition: " << targetStateOrdinal << endl;
 		exit(1);
 	}
-	t.transInfo.targetState = stateOrdinalToOffset[targetStateOrdinal];
+	t.targetState = stateOrdinalToOffset[targetStateOrdinal];
 }
 
 struct compareSymbolsForLookupOrder {
@@ -268,9 +278,10 @@ int main(int argc, char ** argv) {
 			}
 			if (finalState) {
 				finalStateCount++;
-				Transition t;
-				t.symIn = 0xFFFF;
+				WeightedTransition t;
+				t.symIn = 0xFFFFFFFF;
 				t.symOut = 0;
+				t.weight = 0; // TODO final weight
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(0);
 			}
@@ -279,9 +290,10 @@ int main(int argc, char ** argv) {
 				symOutStr = convertSymbolNames(symOutStr);
 				ensureSymbolInMap(symInStr, symVector, symMap);
 				ensureSymbolInMap(symOutStr, symVector, symMap);
-				Transition t;
+				WeightedTransition t;
 				t.symIn = symMap[symInStr].code;
 				t.symOut = symMap[symOutStr].code;
+				t.weight = 0; // TODO convert
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
 				transitionCount++;
@@ -303,8 +315,8 @@ int main(int argc, char ** argv) {
 		}
 		sort(oldToNewSym.begin(), oldToNewSym.end());
 		for (vector<AttState>::iterator sIt = attStateVector.begin(); sIt < attStateVector.end(); ++sIt) {
-			for (vector<Transition>::iterator tIt = sIt->transitions.begin(); tIt < sIt->transitions.end(); ++tIt) {
-				if (tIt->symIn != 0xFFFF) {
+			for (vector<WeightedTransition>::iterator tIt = sIt->transitions.begin(); tIt < sIt->transitions.end(); ++tIt) {
+				if (tIt->symIn != 0xFFFFFFFF) {
 					tIt->symIn = oldToNewSym[tIt->symIn].second;
 					tIt->symOut = oldToNewSym[tIt->symOut].second;
 				}
@@ -373,10 +385,10 @@ int main(int argc, char ** argv) {
 	for (vector<AttState>::iterator it = attStateVector.begin(); it < attStateVector.end(); it++) {
 		uint32_t tCount = it->transitions.size();
 		{
-			Transition & t = it->transitions[0];
+			WeightedTransition & t = it->transitions[0];
 			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[0]);
-			t.transInfo.moreTransitions = (tCount > 255 ? 255 : tCount - 1);
-			writeTrans(transducerFile, byteSwap, t);
+			t.moreTransitions = (tCount > 255 ? 255 : tCount - 1);
+			writeTrans(transducerFile, byteSwap, t, weights);
 		}
 		if (tCount > 255) {
 			OverflowCell oc;
@@ -385,10 +397,10 @@ int main(int argc, char ** argv) {
 			writeOverflow(transducerFile, byteSwap, oc);
 		}
 		for (uint32_t ti = 1; ti < tCount; ti++) {
-			Transition & t = it->transitions[ti];
+			WeightedTransition & t = it->transitions[ti];
 			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[ti]);
-			t.transInfo.moreTransitions = 0;
-			writeTrans(transducerFile, byteSwap, t);
+			t.moreTransitions = 0;
+			writeTrans(transducerFile, byteSwap, t, weights);
 		}
 	}
 	
