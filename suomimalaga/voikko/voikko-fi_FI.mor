@@ -1052,15 +1052,15 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
     end;
     if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
         (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
-      if $oikea.sijamuoto = omanto then
-        result $res,
-               rules laatusana, laatusana_teonsanasta, tavuviiva;
-      end;
       if $edellinen.aluetta_tarkentava_etuliite = yes then
         result $res, rules yhdysmerkki_ennen_paikannimea;
       end;
-      if $oikea.sijamuoto = omanto and $oikea.luku = yksikkö then
-        result $res, rules inen_johdos_nimisanasta;
+      if $oikea.sijamuoto = omanto and $edellinen.lähtöluokka /= nimi_laatusana then
+          result $res,
+                 rules laatusana, laatusana_teonsanasta, tavuviiva;
+        if $oikea.luku = yksikkö then
+          result $res, rules inen_johdos_nimisanasta;
+        end;
       end;
     end;
   end;

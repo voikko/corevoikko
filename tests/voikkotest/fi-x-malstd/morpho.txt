@@ -974,3 +974,5 @@ word:sairastumisriski
   CLASS=nimisana
 word:-litraisilla
  expected:1
+word:hullunkurisia
+ expected:1
