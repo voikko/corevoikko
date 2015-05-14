@@ -857,17 +857,17 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 #
 [alku: "massa", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
                 sijamuoto: sisäolento,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
 [alku: "mässä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
                 sijamuoto: sisäolento,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
 [alku: "masta", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
                 sijamuoto: sisäeronto,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
 [alku: "mästä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
                 sijamuoto: sisäeronto,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
 [alku: "maan",  luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisätulento_Vn,
                 luku: yksikkö, sijamuoto: sisätulento, äs: a, jatko: <liitesana, loppu>];
@@ -875,19 +875,14 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
                 luku: yksikkö, sijamuoto: sisätulento, äs: ä, jatko: <liitesana, loppu>];
 
 [alku: "malla", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: ulkopaikallissija_llA,
-                luku: yksikkö, sijamuoto: ulko_olento, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, sijamuoto: ulko_olento, äs: a, jatko: <liitesana, loppu>];
 [alku: "mällä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: ulkopaikallissija_llA,
-                luku: yksikkö, sijamuoto: ulko_olento, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, sijamuoto: ulko_olento, äs: ä, jatko: <liitesana, loppu>];
 
 [alku: "matta", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
-                luku: yksikkö, sijamuoto: vajanto, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, sijamuoto: vajanto, äs: a, jatko: <liitesana, loppu>];
 [alku: "mättä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
-                luku: yksikkö, sijamuoto: vajanto, äs: ä, jatko: <omistusliite, liitesana, loppu>];
-
-[alku: "matta", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
-                luku: yksikkö, sijamuoto: vajanto, äs: a, jatko: <omistusliite, liitesana, loppu>];
-[alku: "mättä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
-                luku: yksikkö, sijamuoto: vajanto, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, sijamuoto: vajanto, äs: ä, jatko: <liitesana, loppu>];
 
 [alku: "man",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
                 luku: yksikkö, sijamuoto: keinonto, äs: a, jatko: <liitesana, loppu>];

@@ -201,6 +201,11 @@ word:juossee
 word:juoksemassa
  analysis
   MOOD=MA-infinitive
+word:juoksemassamme
+ expected:1
+ analysis
+  PARTICIPLE=agent
+  !MOOD
 word:juostakin
  analysis
   MOOD=A-infinitive

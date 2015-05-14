@@ -51,6 +51,11 @@ word:juoksema
 word:juoksematon
  analysis
   PARTICIPLE=negation
+word:juoksemassamme
+ expected:1
+ analysis
+  PARTICIPLE=agent
+  !MOOD
 word:kissani
  analysis
   POSSESSIVE=1s
