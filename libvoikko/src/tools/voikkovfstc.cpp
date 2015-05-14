@@ -99,15 +99,23 @@ static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool
 	}
 }
 
-static void writeOverflow(ofstream & out, bool doSwap, OverflowCell & oc) {
-	if (doSwap) {
-		OverflowCell ocSwapped;
-		ocSwapped.moreTransitions = swap(oc.moreTransitions);
-		ocSwapped.padding = 0;
-		out.write((char *) &ocSwapped, sizeof(OverflowCell));
+static void writeOverflow(ofstream & out, bool doSwap, WeightedOverflowCell & oc, bool weights) {
+	if (weights) {
+		// TODO print weighted overflow cell
 	}
 	else {
-		out.write((char *) &oc, sizeof(OverflowCell));
+		OverflowCell ocu;
+		ocu.moreTransitions = oc.moreTransitions; // TODO check for overflow
+		ocu.padding = 0;
+		if (doSwap) {
+			OverflowCell ocSwapped;
+			ocSwapped.moreTransitions = swap(ocu.moreTransitions);
+			ocSwapped.padding = 0;
+			out.write((char *) &ocSwapped, sizeof(OverflowCell));
+		}
+		else {
+			out.write((char *) &ocu, sizeof(OverflowCell));
+		}
 	}
 }
 
@@ -391,10 +399,10 @@ int main(int argc, char ** argv) {
 			writeTrans(transducerFile, byteSwap, t, weights);
 		}
 		if (tCount > 255) {
-			OverflowCell oc;
+			WeightedOverflowCell oc;
 			oc.moreTransitions = tCount - 1;
 			oc.padding = 0;
-			writeOverflow(transducerFile, byteSwap, oc);
+			writeOverflow(transducerFile, byteSwap, oc, weights);
 		}
 		for (uint32_t ti = 1; ti < tCount; ti++) {
 			WeightedTransition & t = it->transitions[ti];
