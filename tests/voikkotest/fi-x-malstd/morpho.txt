@@ -963,3 +963,8 @@ word:-kissalaitos
 word:väylänopeus
  expected:1
  !POSSIBLE_GEOGRAPHICAL_NAME
+word:VI:t
+ expected:1
+ analysis
+  NUMBER=plural
+  SIJAMUOTO=nimento

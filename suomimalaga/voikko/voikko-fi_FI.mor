@@ -1220,7 +1220,7 @@ combi_rule kaksoispisteen_sijapääte ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = sijapääte;
   # sisätulento_Vn kielletty, koska kaksoispisteellä taivutettaessa pitkä vokaali
   # laitetaan aina näkyviin.
-  ? not $oikea.sija in <keinonto_n, tulento_s, omanto_nkA, sisätulento_Vn>;
+  ? not $oikea.sija in <keinonto_n, tulento_s, omanto_nkA, sisätulento_Vn, kohdanto_t>;
   ? not ei_kaksoispisteen_jälkeen in $oikea;
 
   define $edellinen := $vasen.($index - 1);

@@ -1605,6 +1605,11 @@ word:VI:ssa
   analysis
    BASEFORM=VI
    STRUCTURE==jj:ppp
+word:VI:t
+ expected:1
+ analysis
+  NUMBER=plural
+  SIJAMUOTO=nimento
 word:jaata
  expected:1
   analysis
