@@ -968,3 +968,7 @@ word:VI:t
  analysis
   NUMBER=plural
   SIJAMUOTO=nimento
+word:sairastumisriski
+ expected:1
+ analysis
+  CLASS=nimisana

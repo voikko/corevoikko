@@ -3688,6 +3688,7 @@ kellanvalkoinen
 !xl-
 Bogotáhan
 !mä
+liikkumisvapauden
 
 # = poikkeavat asetukset =
 

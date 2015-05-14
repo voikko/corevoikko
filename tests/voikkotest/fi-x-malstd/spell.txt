@@ -3673,6 +3673,7 @@ kaunis-
 EU:kin
 !kissojenkaunis
 !kertaistan
+liikkumisvapauden
 
 # = poikkeavat asetukset =
 

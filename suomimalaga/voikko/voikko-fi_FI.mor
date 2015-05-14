@@ -618,7 +618,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   define $lähtöluokka := $oikea.luokka;
   define $res := $vasen + <$oikea + [alku: $sana, luokka: laatusana, lähtöluokka: $lähtöluokka]>;
   
-  if $index greater 1 or $oikea.luokka = laatusana then
+  if $oikea.luokka = laatusana or ($index greater 1 and $vasen.($index - 1).luokka /= nimitapa_45) then
     if loppu in $oikea.jatko then
       result $res, accept;
     end;
