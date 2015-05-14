@@ -3674,6 +3674,7 @@ EU:kin
 !kissojenkaunis
 !kertaistan
 liikkumisvapauden
+!buuatulleen
 
 # = poikkeavat asetukset =
 
