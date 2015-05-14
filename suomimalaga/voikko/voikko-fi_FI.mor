@@ -212,7 +212,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = tavuviiva then
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
-                 etuliite, nimisana_teonsanasta, lukusanan_jälkiliite, inen_johdos_nimisanasta,
+                 etuliite, nimisana_teonsanasta, lukusanan_jälkiliite, inen_johdos_nimisanasta_ehdollinen,
                  lukusana;
 
   elseif $oikea.luokka in <nimisana, nimi_laatusana> then
@@ -495,6 +495,23 @@ combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
   ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $edellinen := $vasen.($index - 1);
+  if tavuviiva in $oikea.jatko and $edellinen.luokka /= etuliite then
+    result $res, rules johdin_inen, inen_johdos_nimisanasta;
+  else
+    result $res, rules johdin_inen;
+  end;
+end;
+
+# inen-johdinta edeltävä nimisana
+# sääntö ei voi olla sanan alussa eikä koske sanoja, joille inen-johdin on aina sallittu
+combi_rule inen_johdos_nimisanasta_ehdollinen ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka in <nimisana, nimi_laatusana>;
+  ? johdin_inen in $oikea.jatko;
+  ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot and not inen in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;

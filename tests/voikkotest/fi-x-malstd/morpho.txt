@@ -972,3 +972,5 @@ word:sairastumisriski
  expected:1
  analysis
   CLASS=nimisana
+word:-litraisilla
+ expected:1
