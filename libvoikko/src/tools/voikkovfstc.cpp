@@ -70,13 +70,36 @@ static uint32_t swap(uint32_t x) {
 		(x<<24);
 }
 
+static uint64_t swap(uint64_t x) {
+	return  (x>>56) |
+		((x<<40) & 0x00FF000000000000) |
+		((x<<24) & 0x0000FF0000000000) |
+		((x<< 8) & 0x000000FF00000000) |
+		((x>> 8) & 0x00000000FF000000) |
+		((x>>24) & 0x0000000000FF0000) |
+		((x>>40) & 0x000000000000FF00) |
+		(x<<56);
+}
+
 static uint32_t swapIf(bool doSwap, uint32_t x) {
 	return doSwap ? swap(x) : x;
 }
 
 static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool weights) {
 	if (weights) {
-		// TODO print weighted transition
+		if (doSwap) {
+			WeightedTransition tSwapped;
+			tSwapped.symIn = swap(t.symIn);
+			tSwapped.symOut = swap(t.symOut);
+			tSwapped.targetState = swap(t.targetState);
+			tSwapped.weight = swap(t.weight);
+			tSwapped.moreTransitions = t.moreTransitions;
+			tSwapped.reserved = 0;
+			out.write((char *) &tSwapped, sizeof(WeightedTransition));
+		}
+		else {
+			out.write((char *) &t, sizeof(WeightedTransition));
+		}
 	}
 	else {
 		Transition tu;
@@ -101,7 +124,15 @@ static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool
 
 static void writeOverflow(ofstream & out, bool doSwap, WeightedOverflowCell & oc, bool weights) {
 	if (weights) {
-		// TODO print weighted overflow cell
+		if (doSwap) {
+			WeightedOverflowCell ocSwapped;
+			ocSwapped.moreTransitions = swap(oc.moreTransitions);
+			ocSwapped.padding = 0;
+			out.write((char *) &ocSwapped, sizeof(WeightedOverflowCell));
+		}
+		else {
+			out.write((char *) &oc, sizeof(WeightedOverflowCell));
+		}
 	}
 	else {
 		OverflowCell ocu;
