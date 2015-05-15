@@ -2193,3 +2193,13 @@ word:englantilaistyyppinen
  expected:1
 word:Matti-tyyppinen
  expected:1
+word:lähtivät
+ expected:1
+ analysis
+  TENSE=past_imperfective
+word:kehitellyn
+ expected:1
+ analysis
+  NUMBER=singular
+  PARTICIPLE=past_passive
+  SIJAMUOTO=omanto

@@ -505,3 +505,13 @@ word:heinäisimpänsä
   CLASS=laatusana
   COMPARISON=superlative
   POSSESSIVE=3
+word:lähtivät
+ expected:1
+ analysis
+  TENSE=past_imperfective
+word:kehitellyn
+ expected:1
+ analysis
+  NUMBER=singular
+  PARTICIPLE=past_passive
+  SIJAMUOTO=omanto

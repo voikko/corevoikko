@@ -116,7 +116,7 @@ def appendLexicon(lexiconName, lines, lexcFile):
 		                u"NormaaliYsJatkoOl", u"Luku", u"Valo_w", u"Valo_s", u"Valo_sl", \
 		                u"Koira", u"Koira_w", u"Koira_s", u"MonikonGenetiiviInJatko", \
 		                u"Koira_w_monikko", u"Koira_w_yksikkö", u"Puu", u"Maa_l", u"Maa_s", \
-		                u"OlVLoppu", u"MonikonNominatiivinJatko"]:
+		                u"OlVLoppu", u"MonikonNominatiivinJatko", u"YksikönGenetiivinJatkoEiYs"]:
 			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
 			appendLines(u"Asemosana", realName, lines, lexcFile)
 		if (OPTIONS["sukija"] or OPTIONS["vanhat"]) and realName in [u"YhteisetHTaivutusmuodot"]:
