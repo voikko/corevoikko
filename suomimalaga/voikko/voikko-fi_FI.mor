@@ -412,7 +412,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
       (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
     result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
                        etuliite, paikannimen_lainen_johdos, yhdysmerkki_yleisnimen_jälkeen,
-                       inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
+                       inen_johdos_nimisanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta; # Kieli=poliittinen
   end;
   
   $res := $vasen + <$oikea + [alku: $sana, luokka: nimisana]>;
@@ -609,7 +609,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
-                 nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana, nimisana_laatusanasta;
+                 nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana_ei_nimisanajohdosta, nimisana_laatusanasta;
   end;
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
@@ -771,7 +771,7 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana, $index):
       ($edellinen.luokka /= sijapääte and ($edellinen.luokka /= nimi or tavuviiva in $edellinen.jatko or liitesana in $edellinen.jatko))) then
     result $res, rules
            nimisana, nimisana_laatusanasta,
-           etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana, inen_johdos_nimisanasta;
+           etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta, inen_johdos_nimisanasta;
   end;
 end;
 
@@ -1910,7 +1910,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   if tavuviiva in $oikea.jatko then
     if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
         + @johdin_jA) or $oikea.jluokka in <nimisana, nimi_laatusana> then
-      result $res, rules nimisana, nimisana_teonsanasta, inen_päätteinen_laatusana,
+      result $res, rules nimisana, nimisana_teonsanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          nimisanan_etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else
@@ -1987,7 +1987,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   elseif $oikea.luokka in @johdin_jA then
     result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos;
     if tavuviiva in $oikea.jatko then
-      result $res, rules inen_päätteinen_laatusana, nimisana_laatusanasta;
+      result $res, rules inen_päätteinen_laatusana_ei_nimisanajohdosta, nimisana_laatusanasta;
     end;
   end;
 end;

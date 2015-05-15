@@ -980,3 +980,13 @@ word:aihekokonaisuus
  expected:1
 word:ajantasaisuus
  expected:1
+word:ilmoituskokonaisuus
+ expected:1
+word:juoksijakokonaisuus
+ expected:1
+word:kerrostalokokonaisuus
+ expected:1
+word:turkulaiskokonaisuus
+ expected:1
+word:Matti-kokonaisuus
+ expected:1
