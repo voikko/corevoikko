@@ -994,3 +994,7 @@ word:englantilaistyyppinen
  expected:1
 word:Matti-tyyppinen
  expected:1
+word:miellyttämishaluinen
+ expected:1
+word:tapauskohtainen
+ expected:1

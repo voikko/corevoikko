@@ -2203,3 +2203,7 @@ word:kehitellyn
   NUMBER=singular
   PARTICIPLE=past_passive
   SIJAMUOTO=omanto
+word:miellyttämishaluinen
+ expected:1
+word:tapauskohtainen
+ expected:1
