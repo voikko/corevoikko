@@ -608,7 +608,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
-    result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
+    result $res, rules nimisana, inen_johdos_nimisanasta_ehdollinen, yhdysmerkki_lainen_johdoksen_jälkeen,
                  nimisana_teonsanasta, paikannimen_lainen_johdos, inen_päätteinen_laatusana_ei_nimisanajohdosta, nimisana_laatusanasta;
   end;
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
@@ -757,7 +757,7 @@ combi_rule yhdysmerkki_yleisnimen_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res,
          rules nimisana, erisnimi, laatusana, lyhennesääntö, etuliite,
-	       nimisana_teonsanasta, inen_johdos_nimisanasta;
+	       nimisana_teonsanasta, inen_johdos_nimisanasta_ehdollinen;
 end;
 
 combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana, $index):
@@ -771,7 +771,7 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana, $index):
       ($edellinen.luokka /= sijapääte and ($edellinen.luokka /= nimi or tavuviiva in $edellinen.jatko or liitesana in $edellinen.jatko))) then
     result $res, rules
            nimisana, nimisana_laatusanasta,
-           etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta, inen_johdos_nimisanasta;
+           etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta, inen_johdos_nimisanasta_ehdollinen;
   end;
 end;
 

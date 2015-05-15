@@ -2189,3 +2189,7 @@ word:turkulaiskokonaisuus
  expected:1
 word:Matti-kokonaisuus
  expected:1
+word:englantilaistyyppinen
+ expected:1
+word:Matti-tyyppinen
+ expected:1
