@@ -2207,3 +2207,5 @@ word:miellyttämishaluinen
  expected:1
 word:tapauskohtainen
  expected:1
+word:epävarmuuden
+ expected:1

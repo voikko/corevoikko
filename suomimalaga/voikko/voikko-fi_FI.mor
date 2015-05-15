@@ -415,7 +415,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
                        inen_johdos_nimisanasta, inen_päätteinen_laatusana_ei_nimisanajohdosta; # Kieli=poliittinen
   end;
   
-  $res := $vasen + <$oikea + [alku: $sana, luokka: nimisana]>;
+  $res := $vasen + <$oikea + [alku: $sana, luokka: nimisana, lähtöluokka: $oikea.luokka]>;
   
   if (loppu in $oikea.jatko) then
     result $res, accept;
@@ -1936,7 +1936,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
-  ? $oikea.luokka /= johdin_UUs or $edellinen.luokka /= johdin_jA_kantaja;
+  ? $oikea.luokka /= johdin_UUs or ($edellinen.luokka /= johdin_jA_kantaja and $edellinen.lähtöluokka /= nimi_laatusana);
 
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
