@@ -976,3 +976,7 @@ word:-litraisilla
  expected:1
 word:hullunkurisia
  expected:1
+word:aihekokonaisuus
+ expected:1
+word:ajantasaisuus
+ expected:1
