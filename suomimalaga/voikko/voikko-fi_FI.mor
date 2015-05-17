@@ -1936,7 +1936,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
-  ? $oikea.luokka /= johdin_UUs or ($edellinen.luokka /= johdin_jA_kantaja and $edellinen.lähtöluokka /= nimi_laatusana);
+  ? $oikea.luokka /= johdin_UUs or (not $edellinen.luokka in <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä> and $edellinen.lähtöluokka /= nimi_laatusana);
 
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;

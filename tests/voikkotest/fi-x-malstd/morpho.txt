@@ -1000,3 +1000,7 @@ word:tapauskohtainen
  expected:1
 word:epävarmuuden
  expected:1
+word:asiantuntijuus
+ expected:1
+word:asianmyyjyys
+ expected:1
