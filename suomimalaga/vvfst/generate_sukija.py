@@ -465,6 +465,7 @@ word_list = [
     (u"paitsi",          (u"paitsi",      u"paitse")),
     (u"palkollinen",     (u"palkolli",    u"palkoilli")),
     (u"paneeli",         (u"paneel",      u"panel")),
+    (u"pantomiimi",      (u"pantomiim",   u"pantomim")),
     (u"paraati",         (u"paraat",      u"parat")),
     (u"paratiisi",       (u"paratiis",    u"paratis", u"paradiis", u"paradis")),
     (u"parhaisto",       (u"parhaisto",   u"parahisto")),
