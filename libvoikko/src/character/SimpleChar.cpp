@@ -88,8 +88,8 @@ wchar_t SimpleChar::lower(wchar_t input) {
 		// Cyrillic Ѡ-Ҁ
 		return input + 1;
 	}
-	if (input >= 0x048A && input <= 0x0522 && input % 2 == 0) {
-		// Cyrillic Ҋ-Ԣ
+	if (input >= 0x048A && input <= 0x0526 && input % 2 == 0) {
+		// Cyrillic Ҋ-Ԧ
 		return input + 1;
 	}
 	// TODO: other Unicode character ranges are not yet mapped
@@ -151,8 +151,8 @@ wchar_t SimpleChar::upper(wchar_t input) {
 		// Cyrillic ѡ-ҁ
 		return input - 1;
 	}
-	if (input >= 0x048B && input <= 0x0523 && input % 2 == 1) {
-		// Cyrillic ҋ-ԣ
+	if (input >= 0x048B && input <= 0x0527 && input % 2 == 1) {
+		// Cyrillic ҋ-ԧ
 		return input - 1;
 	}
 	// TODO: other Unicode character ranges are not yet mapped

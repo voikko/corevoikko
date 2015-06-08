@@ -56,13 +56,13 @@ char_type get_char_type(wchar_t c) {
 	if (SimpleChar::isWhitespace(c)) {
 		return CHAR_WHITESPACE;
 	}
-	if ((c >= 0x41 && c <= 0x5A) ||
-	    (c >= 0x61 && c <= 0x7A) ||
-	    (c >= 0xC1 && c <= 0xD6) ||
-	    (c >= 0xD8 && c <= 0xF6) ||
-	    (c >= 0x00F8 && c <= 0x02AF) ||
-	    (c >= 0x0400 && c <= 0x0481) ||
-	    (c >= 0x048A && c <= 0x0523) ||
+	if ((c >= 0x41 && c <= 0x5A) || /* A-Z */
+	    (c >= 0x61 && c <= 0x7A) || /* a-z */
+	    (c >= 0xC1 && c <= 0xD6) || /* À-Ö */
+	    (c >= 0xD8 && c <= 0xF6) || /* Ø-ö */
+	    (c >= 0x00F8 && c <= 0x02AF) || /* ø-ɏ */
+	    (c >= 0x0400 && c <= 0x0481) || /* Ѐ-ҁ - Cyrillic */
+	    (c >= 0x048A && c <= 0x0527) || /* Ҋ-ԧ - Cyrillic + Cyrillic extended */
 	    (c >= 0xFB00 && c <= 0xFB04)) {
 		return CHAR_LETTER;
 	}
