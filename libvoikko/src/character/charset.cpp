@@ -63,6 +63,7 @@ char_type get_char_type(wchar_t c) {
 	    (c >= 0x00F8 && c <= 0x02AF) || /* ø-ɏ */
 	    (c >= 0x0400 && c <= 0x0481) || /* Ѐ-ҁ - Cyrillic */
 	    (c >= 0x048A && c <= 0x0527) || /* Ҋ-ԧ - Cyrillic + Cyrillic extended */
+	    (c >= 0x1400 && c <= 0x15C3) || /* ᐀-ᗃ - Canadian syllabics */
 	    (c >= 0xFB00 && c <= 0xFB04)) {
 		return CHAR_LETTER;
 	}
