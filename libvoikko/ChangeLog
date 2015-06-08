@@ -1,3 +1,6 @@
+2015-06-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Initial support for BCP 47 script subtag.
+
 2015-03-29 Harri Pitkänen <hatapitk@iki.fi>
 	* Tri-licensed the HFST backend with permission from Flammie Pirinen.
 

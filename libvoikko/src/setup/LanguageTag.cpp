@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2015
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -34,11 +34,13 @@ namespace libvoikko { namespace setup {
 
 LanguageTag::LanguageTag() :
 	language(""),
+	script(""),
 	privateUse("") {
 }
 
 LanguageTag::LanguageTag(const LanguageTag & languageTag) :
 	language(languageTag.language),
+	script(languageTag.script),
 	privateUse(languageTag.privateUse) {
 }
 
@@ -56,6 +58,14 @@ void LanguageTag::setLanguage(const string & language) {
 	}
 }
 
+const string & LanguageTag::getScript() const {
+	return script;
+}
+
+void LanguageTag::setScript(const string & script) {
+	this->script = script;
+}
+
 const string & LanguageTag::getPrivateUse() const {
 	return privateUse;
 }
@@ -64,19 +74,36 @@ void LanguageTag::setPrivateUse(const string & privateUse) {
 	this->privateUse = privateUse;
 }
 
+void LanguageTag::setLanguageAndScript(const string & languageAndScript) {
+	size_t splitPos = languageAndScript.find("-");
+	if (splitPos != string::npos) {
+		// TODO: the trailing part is script only if it is four letters long
+		// We don't support other components for now so we just accept is as script anyway.
+		setLanguage(languageAndScript.substr(0, splitPos));
+		setScript(languageAndScript.substr(splitPos + 1));
+	}
+	else {
+		setLanguage(languageAndScript);
+	}
+}
+
 void LanguageTag::setBcp47(const string & bcp) {
 	size_t splitPos = bcp.find("-x-");
 	if (splitPos != string::npos) {
-		setLanguage(bcp.substr(0, splitPos));
+		setLanguageAndScript(bcp.substr(0, splitPos));
 		setPrivateUse(bcp.substr(splitPos + 3));
 	}
 	else {
-		setLanguage(bcp);
+		setLanguageAndScript(bcp);
 	}
 }
 
 string LanguageTag::toBcp47() const {
 	string tag = this->language;
+	if (!this->script.empty()) {
+		tag.append("-");
+		tag.append(this->script);
+	}
 	if (!this->privateUse.empty()) {
 		tag.append("-x-");
 		tag.append(this->privateUse);
@@ -87,6 +114,9 @@ string LanguageTag::toBcp47() const {
 bool operator<(const LanguageTag & l1, const LanguageTag & l2) {
 	if (l1.language != l2.language) {
 		return l1.language < l2.language;
+	}
+	if (l1.script != l2.script) {
+		return l1.script < l2.script;
 	}
 	return l1.privateUse < l2.privateUse;
 }

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2015
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -47,6 +47,9 @@ class LanguageTag {
 		const std::string & getLanguage() const;
 		void setLanguage(const std::string & language);
 		
+		const std::string & getScript() const;
+		void setScript(const std::string & script);
+		
 		const std::string & getPrivateUse() const;
 		void setPrivateUse(const std::string & privateUse);
 		
@@ -54,7 +57,10 @@ class LanguageTag {
 		std::string toBcp47() const;
 	private:
 		std::string language;
+		std::string script;
 		std::string privateUse;
+		
+		void setLanguageAndScript(const std::string & languageAndScript);
 };
 
 } }
