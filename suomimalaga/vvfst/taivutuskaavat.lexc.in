@@ -4033,6 +4033,7 @@ Johdin_nimitapa5_<A>	;
 
 LEXICON Johdin_nimitapa4
 [Tn4]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	Nimitapa4_jatko_<A>	;
+?Sukija [Ln]mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@[Xj]nen[X]:mi@C.JOHDETTAVA_NIMISANAKSI@@C.YS_EI_JATKOA@	Nimitapa4_jatko_<A>	;
 
 LEXICON Nimitapa4_jatko
 NimisanaNainenYhteiset_<A>	;

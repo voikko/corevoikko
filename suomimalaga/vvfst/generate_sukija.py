@@ -847,6 +847,8 @@ while True:
     line = infile.readline()
     if line == u"":
         break
+    if string.find (line, u"[Tn4]mi@") == 0:  # 4. nimitapa (puhu+minen) ei ole teonsanan taivutusmuoto.
+        continue
     line = re.sub (ei_vertm, u"", line)
     if string.find (line, u"=") >= 0:
         line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
