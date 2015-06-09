@@ -28,8 +28,10 @@ compile
 /missing
 /msvc/Debug
 /msvc/Template
+/msvc/x64
 /msvc/*.sdf
 /msvc/*.opensdf
+/msvc/*.suo
 /src/autocorrect/data.hpp
 /src/libvoikko.la
 /src/libvoikko.pc
