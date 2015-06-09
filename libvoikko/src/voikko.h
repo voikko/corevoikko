@@ -336,6 +336,12 @@ void voikko_free_dicts(struct voikko_dict ** dicts);
 const char * voikko_dict_language(const struct voikko_dict * dict);
 
 /**
+ * Get the script for a dictionary.
+ * @return The script for given dictionary or empty string if script is not known
+ */
+const char * voikko_dict_script(const struct voikko_dict * dict);
+
+/**
  * Get the variant identifier for a dictionary.
  * @return The variant identifier for given dictionary.
  */

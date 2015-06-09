@@ -67,6 +67,10 @@ VOIKKOEXPORT const char * voikko_dict_language(const voikko_dict * dict) {
 	return dict->getLanguage().getLanguage().c_str();
 }
 
+VOIKKOEXPORT const char * voikko_dict_script(const voikko_dict * dict) {
+	return dict->getLanguage().getScript().c_str();
+}
+
 VOIKKOEXPORT const char * voikko_dict_variant(const voikko_dict * dict) {
 	const char * variant = dict->getLanguage().getPrivateUse().c_str();
 	if (variant && variant[0] != '\0') {

@@ -270,6 +270,10 @@ static int list_dicts(const char * path) {
 	}
 	for (voikko_dict ** i = dicts; *i; i++) {
 		cout << voikko_dict_language(*i);
+		string script(voikko_dict_script(*i));
+		if (script != "") {
+			cout << "-" << script;
+		}
 		cout << "-x-";
 		cout << voikko_dict_variant(*i);
 		cout << ": ";
