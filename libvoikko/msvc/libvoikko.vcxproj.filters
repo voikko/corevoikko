@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\autocorrect">
+      <UniqueIdentifier>{dce388ee-f3f6-4cdc-ab3d-84fe171dbcfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\character">
+      <UniqueIdentifier>{2ed93bf5-fb7a-42ba-8585-c96c536252d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\compatibility">
+      <UniqueIdentifier>{37e42628-98f1-456f-bc84-b7a82e30a97a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tokenizer">
+      <UniqueIdentifier>{a3513ad6-391b-452f-8ded-90f874540849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\grammar">
+      <UniqueIdentifier>{f2000f39-a4dd-4683-8c32-98cb7d94922a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hyphenator">
+      <UniqueIdentifier>{b94add9d-4aed-4d8f-a451-f90a1a17aaa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\morphology">
+      <UniqueIdentifier>{39fc08d4-5e0f-48ff-9432-efc447085b64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\morphology\malaga">
+      <UniqueIdentifier>{f501bf10-0875-48db-bee8-e69893abc798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sentence">
+      <UniqueIdentifier>{85bfa6bc-387a-4f8c-85e4-0bd15470f763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setup">
+      <UniqueIdentifier>{a9b8187d-7ab7-41e6-b382-674aaf002204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spellchecker">
+      <UniqueIdentifier>{6d8ee838-0205-4666-911d-b98e274016b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\spellchecker\suggestion">
+      <UniqueIdentifier>{bcd36761-58f4-42af-bbb8-c569868914ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utf8">
+      <UniqueIdentifier>{ae517e88-9c04-4cfc-94d7-64c0ebc4ed1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{ce00c306-f8c7-480d-b528-7db7783b61ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\autocorrect\AutoCorrect.cpp">
+      <Filter>Source Files\autocorrect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\character\charset.cpp">
+      <Filter>Source Files\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\character\SimpleChar.cpp">
+      <Filter>Source Files\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\compatibility\interface.cpp">
+      <Filter>Source Files\compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tokenizer\interface.cpp">
+      <Filter>Source Files\tokenizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tokenizer\Tokenizer.cpp">
+      <Filter>Source Files\tokenizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\analysis.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\CacheEntry.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\CapitalizationCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\checks.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\CompoundVerbCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\error.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishAnalysis.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishGrammarChecker.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\GcCache.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\GrammarChecker.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\GrammarCheckerFactory.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\interface.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\MissingVerbCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\NegativeVerbCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\NullGrammarChecker.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\Paragraph.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\ParagraphCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\RuleEngine.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\Sentence.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\SentenceCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\FinnishRuleEngine\SidesanaCheck.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\grammar\VoikkoGrammarError.cpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\hyphenator\AnalyzerToFinnishHyphenatorAdapter.cpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\hyphenator\Hyphenator.cpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\hyphenator\HyphenatorFactory.cpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\hyphenator\interface.cpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\Analysis.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\Analyzer.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\AnalyzerFactory.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\interface.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\MalagaAnalyzer.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\NullAnalyzer.cpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\analysis.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\basic.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\files.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\lexicon.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\libmalaga.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\malaga_files.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\malaga_lib.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\MalagaState.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\patterns.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\pools.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\rules.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\symbols.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\tries.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\morphology\malaga\values.cpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sentence\interface.cpp">
+      <Filter>Source Files\sentence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sentence\Sentence.cpp">
+      <Filter>Source Files\sentence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\BackendProperties.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\Dictionary.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\DictionaryException.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\DictionaryFactory.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\DictionaryLoader.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\interface.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\LanguageTag.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\setup.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\setup\V2DictionaryLoader.cpp">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\AnalyzerToSpellerAdapter.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\FinnishSpellerTweaksWrapper.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\FixedResultSpeller.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\spell.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\Speller.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\SpellerFactory.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\SpellUtils.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\SpellWithPriority.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestions.cpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\SpellerCache.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\Suggestion.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorCaseChange.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorDeleteTwo.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorDeletion.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorFactory.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorInsertion.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorInsertSpecial.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorMultiReplacement.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorNull.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorReplacement.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorReplaceTwo.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorSoftHyphens.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorSplitWord.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorSwap.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionGeneratorVowelChange.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionStatus.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionStrategy.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionStrategyOcr.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\spellchecker\suggestion\SuggestionStrategyTyping.cpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utils\StringUtils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utils\utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\autocorrect\AutoCorrect.hpp">
+      <Filter>Source Files\autocorrect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\autocorrect\TrieNode.hpp">
+      <Filter>Source Files\autocorrect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\character\charset.hpp">
+      <Filter>Source Files\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\character\SimpleChar.hpp">
+      <Filter>Source Files\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tokenizer\Tokenizer.hpp">
+      <Filter>Source Files\tokenizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\analysis.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\CacheEntry.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\CapitalizationCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\checks.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\CompoundVerbCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\error.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishAnalysis.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishGrammarChecker.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\GcCache.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\GrammarChecker.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\GrammarCheckerFactory.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\MissingVerbCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\NegativeVerbCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\NullGrammarChecker.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\Paragraph.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\ParagraphCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\RuleEngine.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\Sentence.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\SentenceCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\FinnishRuleEngine\SidesanaCheck.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\Token.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\grammar\VoikkoGrammarError.hpp">
+      <Filter>Source Files\grammar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\hyphenator\AnalyzerToFinnishHyphenatorAdapter.hpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\hyphenator\Hyphenator.hpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\hyphenator\HyphenatorFactory.hpp">
+      <Filter>Source Files\hyphenator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\Analysis.hpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\Analyzer.hpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\AnalyzerFactory.hpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\MalagaAnalyzer.hpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\NullAnalyzer.hpp">
+      <Filter>Source Files\morphology</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\analysis.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\basic.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\files.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\lexicon.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\libmalaga.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\malaga.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\malaga_files.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\malaga_lib.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\MalagaState.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\patterns.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\pools.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\rule_type.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\rules.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\symbols.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\tries.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\morphology\malaga\values.hpp">
+      <Filter>Source Files\morphology\malaga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sentence\Sentence.hpp">
+      <Filter>Source Files\sentence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\BackendProperties.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\Dictionary.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\DictionaryException.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\DictionaryFactory.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\DictionaryLoader.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\LanguageTag.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\setup.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\setup\V2DictionaryLoader.hpp">
+      <Filter>Source Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\AnalyzerToSpellerAdapter.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\FinnishSpellerTweaksWrapper.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\FixedResultSpeller.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\spell.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\Speller.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\SpellerFactory.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\SpellUtils.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\SpellWithPriority.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestions.hpp">
+      <Filter>Source Files\spellchecker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\SpellerCache.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\Suggestion.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGenerator.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorCaseChange.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorDeleteTwo.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorDeletion.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorFactory.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorInsertion.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorInsertSpecial.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorMultiReplacement.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorNull.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorReplacement.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorReplaceTwo.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorSoftHyphens.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorSplitWord.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorSwap.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionGeneratorVowelChange.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionStatus.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionStrategy.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionStrategyOcr.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionStrategyTyping.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\spellchecker\suggestion\SuggestionType.hpp">
+      <Filter>Source Files\spellchecker\suggestion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utf8\checked.hpp">
+      <Filter>Source Files\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utf8\core.hpp">
+      <Filter>Source Files\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utf8\unchecked.hpp">
+      <Filter>Source Files\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utf8\utf8.hpp">
+      <Filter>Source Files\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\StringUtils.hpp">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\utils.hpp">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
