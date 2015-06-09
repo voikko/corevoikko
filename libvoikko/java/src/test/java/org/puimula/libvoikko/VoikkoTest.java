@@ -82,11 +82,11 @@ public class VoikkoTest {
     
     @Test
     public void dictionaryComparisonWorks() {
-        Dictionary d1 = new Dictionary("fi", "a", "b");
-        Dictionary d2 = new Dictionary("fi", "a", "c");
-        Dictionary d3 = new Dictionary("fi", "c", "b");
-        Dictionary d4 = new Dictionary("fi", "a", "b");
-        Dictionary d5 = new Dictionary("sv", "a", "b");
+        Dictionary d1 = new Dictionary("fi", "", "a", "b");
+        Dictionary d2 = new Dictionary("fi", "", "a", "c");
+        Dictionary d3 = new Dictionary("fi", "", "c", "b");
+        Dictionary d4 = new Dictionary("fi", "", "a", "b");
+        Dictionary d5 = new Dictionary("sv", "", "a", "b");
         assertFalse(d1.equals("kissa"));
         assertFalse("kissa".equals(d1));
         assertFalse(d1.equals(d2));
@@ -100,11 +100,11 @@ public class VoikkoTest {
     
     @Test
     public void dictionaryHashCodeWorks() {
-        Dictionary d1 = new Dictionary("fi", "a", "b");
-        Dictionary d2 = new Dictionary("fi", "a", "c");
-        Dictionary d3 = new Dictionary("fi", "c", "b");
-        Dictionary d4 = new Dictionary("fi", "a", "b");
-        Dictionary d5 = new Dictionary("sv", "a", "b");
+        Dictionary d1 = new Dictionary("fi", "", "a", "b");
+        Dictionary d2 = new Dictionary("fi", "", "a", "c");
+        Dictionary d3 = new Dictionary("fi", "", "c", "b");
+        Dictionary d4 = new Dictionary("fi", "", "a", "b");
+        Dictionary d5 = new Dictionary("sv", "", "a", "b");
         assertTrue(d1.hashCode() != d2.hashCode());
         assertTrue(d1.hashCode() != d3.hashCode());
         assertTrue(d4.hashCode() != d5.hashCode());

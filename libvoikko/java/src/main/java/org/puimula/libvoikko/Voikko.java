@@ -174,6 +174,7 @@ public class Voikko {
         List<Dictionary> dicts = new ArrayList<Dictionary>(pointerArray.length);
         for (Pointer cDict : pointerArray) {
             dicts.add(new Dictionary(lib.voikko_dict_language(cDict).toString(),
+                    lib.voikko_dict_script(cDict).toString(),
                     lib.voikko_dict_variant(cDict).toString(), lib.voikko_dict_description(cDict).toString()));
         }
         lib.voikko_free_dicts(cDicts);

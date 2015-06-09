@@ -60,6 +60,8 @@ interface Libvoikko extends Library {
     
     public abstract ByteArray voikko_dict_language(Pointer dict);
     
+    public abstract ByteArray voikko_dict_script(Pointer dict);
+    
     public abstract ByteArray voikko_dict_variant(Pointer dict);
     
     public abstract ByteArray voikko_dict_description(Pointer dict);

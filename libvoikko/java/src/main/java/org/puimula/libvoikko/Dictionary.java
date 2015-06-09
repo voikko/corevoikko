@@ -34,20 +34,29 @@ package org.puimula.libvoikko;
 public class Dictionary implements Comparable<Dictionary> {
 
     private final String language;
+    private final String script;
     private final String variant;
     private final String description;
 
-    public Dictionary(String language, String variant, String description) {
+    public Dictionary(String language, String script, String variant, String description) {
         this.language = language;
+        this.script = script;
         this.variant = variant;
         this.description = description;
     }
 
     /**
-     * @return the language (everything except the private use part of BCP 47 language tag)
+     * @return the language part of BCP 47 language tag
      */
     public String getLanguage() {
         return language;
+    }
+
+    /**
+     * @return the script part of BCP 47 language tag or empty string if not specified
+     */
+    public String getScript() {
+        return script;
     }
 
     /**
@@ -69,6 +78,10 @@ public class Dictionary implements Comparable<Dictionary> {
         if (cmp != 0) {
             return cmp;
         }
+        cmp = script.compareTo(arg0.getScript());
+        if (cmp != 0) {
+            return cmp;
+        }
         cmp = variant.compareTo(arg0.getVariant());
         if (cmp != 0) {
             return cmp;
@@ -84,6 +97,8 @@ public class Dictionary implements Comparable<Dictionary> {
                 + ((description == null) ? 0 : description.hashCode());
         result = prime * result
                 + ((language == null) ? 0 : language.hashCode());
+        result = prime * result
+                + ((script == null) ? 0 : script.hashCode());
         result = prime * result + ((variant == null) ? 0 : variant.hashCode());
         return result;
     }
@@ -107,6 +122,11 @@ public class Dictionary implements Comparable<Dictionary> {
                 return false;
         } else if (!language.equals(other.language))
             return false;
+        if (script == null) {
+            if (other.script != null)
+                return false;
+        } else if (!script.equals(other.script))
+            return false;
         if (variant == null) {
             if (other.variant != null)
                 return false;
@@ -117,7 +137,7 @@ public class Dictionary implements Comparable<Dictionary> {
 
     @Override
     public String toString() {
-        return "<" + language + "," + variant + "," + description + ">";
+        return "<" + language + "," + script + "," + variant + "," + description + ">";
     }
     
 }
