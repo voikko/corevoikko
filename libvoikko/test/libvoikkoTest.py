@@ -44,11 +44,11 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failIf(self.voikko.spell(u"amifostiini"))
 	
 	def testDictionaryComparisonWorks(self):
-		d1 = Dictionary(u"fi", u"a", u"b")
-		d2 = Dictionary(u"fi", u"a", u"c")
-		d3 = Dictionary(u"fi", u"c", u"b")
-		d4 = Dictionary(u"fi", u"a", u"b")
-		d5 = Dictionary(u"sv", u"a", u"b")
+		d1 = Dictionary(u"fi", u"", u"a", u"b")
+		d2 = Dictionary(u"fi", u"", u"a", u"c")
+		d3 = Dictionary(u"fi", u"", u"c", u"b")
+		d4 = Dictionary(u"fi", u"", u"a", u"b")
+		d5 = Dictionary(u"sv", u"", u"a", u"b")
 		self.assertNotEqual(u"kissa", d1)
 		self.assertNotEqual(d1, u"kissa")
 		self.assertNotEqual(d1, d2)
@@ -60,11 +60,11 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(d4 < d5)
 	
 	def testDictionaryHashCodeWorks(self):
-		d1 = Dictionary(u"fi", u"a", u"b")
-		d2 = Dictionary(u"fi", u"a", u"c")
-		d3 = Dictionary(u"fi", u"c", u"b")
-		d4 = Dictionary(u"fi", u"a", u"b")
-		d5 = Dictionary(u"sv", u"a", u"b")
+		d1 = Dictionary(u"fi", u"", u"a", u"b")
+		d2 = Dictionary(u"fi", u"", u"a", u"c")
+		d3 = Dictionary(u"fi", u"", u"c", u"b")
+		d4 = Dictionary(u"fi", u"", u"a", u"b")
+		d5 = Dictionary(u"sv", u"", u"a", u"b")
 		self.assertNotEqual(hash(d1), hash(d2))
 		self.assertNotEqual(hash(d1), hash(d3))
 		self.assertNotEqual(hash(d4), hash(d5))
@@ -91,6 +91,7 @@ class LibvoikkoTest(unittest.TestCase):
 		theDict = dictsWithCorrectVariant[0]
 		self.assertEqual(info.description, theDict.description)
 		self.assertEqual(u"fi", theDict.language)
+		self.assertEqual(u"", theDict.script)
 	
 	def testInitWithCorrectDictWorks(self):
 		self.voikko.terminate()

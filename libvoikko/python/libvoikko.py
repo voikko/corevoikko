@@ -71,18 +71,21 @@ MAX_ANALYSIS_COUNT = 31
 
 class Dictionary:
 	"""Represents a morphological dictionary."""
-	def __init__(self, language, variant, description):
+	def __init__(self, language, script, variant, description):
 		self.language = language
+		self.script = script
 		self.variant = variant
 		self.description = description
 	
 	def __repr__(self):
-		return u"<" + self.language + u"," + self.variant + u"," + self.description + u">"
+		return u"<" + self.language + u"," + self.script + u"," + self.variant + u"," + self.description + u">"
 	
 	def __lt__(self, other):
 		if not isinstance(other, Dictionary):
 			return False
 		if self.language < other.language:
+			return True
+		if self.script < other.script:
 			return True
 		if self.variant < other.variant:
 			return True
@@ -91,11 +94,12 @@ class Dictionary:
 	def __eq__(self, other):
 		return isinstance(other, Dictionary) and \
 		       self.language == other.language and \
+		       self.script == other.script and \
 		       self.variant == other.variant and \
 		       self.description == other.description
 	
 	def __hash__(self):
-		return hash(self.variant) ^ hash(self.description) ^ hash(self.language)
+		return hash(self.variant) ^ hash(self.description) ^ hash(self.language) ^ hash(self.script)
 
 class Token:
 	"""Represents a token in tokenized natural language text."""
@@ -314,6 +318,8 @@ class Voikko(object):
 		lib.voikko_free_dicts.restype = None
 		lib.voikko_dict_language.argtypes = [c_void_p]
 		lib.voikko_dict_language.restype = c_char_p
+		lib.voikko_dict_script.argtypes = [c_void_p]
+		lib.voikko_dict_script.restype = c_char_p
 		lib.voikko_dict_variant.argtypes = [c_void_p]
 		lib.voikko_dict_variant.restype = c_char_p
 		lib.voikko_dict_description.argtypes = [c_void_p]
@@ -325,9 +331,10 @@ class Voikko(object):
 		while bool(cDicts[i]):
 			cDict = cDicts[i]
 			language = unicode(lib.voikko_dict_language(cDict), "UTF-8")
+			script = unicode(lib.voikko_dict_script(cDict), "UTF-8")
 			variant = unicode(lib.voikko_dict_variant(cDict), "ASCII")
 			description = unicode(lib.voikko_dict_description(cDict), "UTF-8")
-			dicts.append(Dictionary(language, variant, description))
+			dicts.append(Dictionary(language, script, variant, description))
 			i = i + 1
 		lib.voikko_free_dicts(cDicts)
 		return dicts
