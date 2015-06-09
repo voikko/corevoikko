@@ -11,7 +11,7 @@
 
   <groupId>org.puimula.voikko</groupId>
   <artifactId>libvoikko</artifactId>
-  <version>3.7</version>
+  <version>3.8</version>
   <packaging>jar</packaging>
   <name>libvoikko</name>
   <description>Java API for libvoikko, library of free natural language processing tools</description>
@@ -57,16 +57,16 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.sun.jna</groupId>
+      <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
-      <version>3.0.9</version>
+      <version>3.5.2</version>
       <type>jar</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.12</version>
       <type>jar</type>
       <scope>test</scope>
     </dependency>
