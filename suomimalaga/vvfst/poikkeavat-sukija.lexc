@@ -1,6 +1,8 @@
 LEXICON SukijaOlla
 [Tt][Ap][P1][Ny][Ef]on:on     Liitesana_a ;  # Mä oon.
 [Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
+[Tt][Ap][P3][Ny][Ef]mpi:mpi   Liitesana_a ;  # Hän ompi.
+[Tt][Ap][P3][Ny][Ef]npi:npi   Liitesana_a ;  # Hän onpi.
 [Tt][Ap][P2][Nm][Ef]otte:otte Liitesana_a ;  # Te ootte.
 [Tt][Ap][P2][Nm][Ef]otta:otta Liitesana_a ;  # Te ootta.
 [Te][Ap][P1][Ny][Ef]isin:isin Liitesana_a ;  # Mä oisin jne.
@@ -605,6 +607,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]päälletunkevainen[X]päälle[Bm]tunkevai:päälletunkevai LaatusanaNainenInen_a ;
 [Ll][Xp]sinikeltavalkoinen[X]sini[Bm]kelta[Bm]valkoi:sinikeltavalkoi LaatusanaNainenInen_a ;
 [Ll][Xp]tosikristillinen[X]tosi[Bm]kristilli:tosikristilli LaatusanaNainenInen_ä ;
+[Ll][Xp]yksi=toikkoinen[X]yks[Bm]toikkoi:ykstoikkoi LaatusanaNainenInen_a ;
 [Ll][Xp]ylitsevuotavainen[X]ylitse[Bm]vuotavai:ylitsevuotavai LaatusanaNainenInen_a ;
 [Ll][Xp]ylösrakentavainen[X]ylös[Bm]rakentavai:ylösrakentavai LaatusanaNainenInen_a ;
 
