@@ -83,6 +83,15 @@ VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 	return dict->getDescription().c_str();
 }
 
+static string getShortLangForCapabilityFilteredList(LanguageTag langTag) {
+	if (langTag.getScript() == "") {
+		return langTag.getLanguage();
+	}
+	// TODO script should not be appended  if it is not strictly needed,
+	// For now we just trust the dictionary maintainers to do the right thing.
+	return langTag.getLanguage() + "-" + langTag.getScript();
+}
+
 // TODO: implement filtering by capability
 static char ** listSupportedLanguagesForCapability(const char * path, int capability) {
 	list<Dictionary> dictList = path ?
@@ -94,7 +103,7 @@ static char ** listSupportedLanguagesForCapability(const char * path, int capabi
 		if ((capability == CAPABILITY_SPELL && d.getSpellBackend().isAdvertised()) ||
 		    (capability == CAPABILITY_HYPHENATION && d.getHyphenatorBackend().isAdvertised()) ||
 		    (capability == CAPABILITY_GC && d.getGrammarBackend().isAdvertised())) {
-			allLanguages.insert(d.getLanguage().getLanguage());
+			allLanguages.insert(getShortLangForCapabilityFilteredList(d.getLanguage()));
 		}
 	}
 	
