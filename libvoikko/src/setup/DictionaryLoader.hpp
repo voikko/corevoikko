@@ -60,8 +60,6 @@ class DictionaryLoader {
 	 */
 	static bool hasDefaultForLanguage(std::map<std::string, Dictionary> * variants, const std::string & language);
 	
-	static void tagToCanonicalForm(std::string & languageTag);
-	
 	protected:
 	
 	std::list<std::string> getListOfSubentries(const std::string & mainPath);

@@ -44,6 +44,15 @@ LanguageTag::LanguageTag(const LanguageTag & languageTag) :
 	privateUse(languageTag.privateUse) {
 }
 
+static void lowercaseTagPart(string & tagPart) {
+	for (size_t i = 0; i < tagPart.size(); ++i) {
+		char current = tagPart.at(i);
+		if (current >= 65 && current <= 90) {
+			tagPart[i] = current + 32;
+		}
+	}
+}
+
 const string & LanguageTag::getLanguage() const {
 	return language;
 }
@@ -51,11 +60,12 @@ const string & LanguageTag::getLanguage() const {
 void LanguageTag::setLanguage(const string & language) {
 	size_t splitPos = language.find("_");
 	if (splitPos != string::npos) {
-		// if geographical area (such as FI in fi_FI) is given, discard i
+		// if geographical area (such as FI in fi_FI) is given, discard it
 		this->language = language.substr(0, splitPos);
 	} else {
 		this->language = language;
 	}
+	lowercaseTagPart(this->language);
 }
 
 const string & LanguageTag::getScript() const {
@@ -63,7 +73,9 @@ const string & LanguageTag::getScript() const {
 }
 
 void LanguageTag::setScript(const string & script) {
-	this->script = script;
+	if (script.length() == 4) {
+		this->script = script;
+	}
 }
 
 const string & LanguageTag::getPrivateUse() const {
@@ -72,6 +84,11 @@ const string & LanguageTag::getPrivateUse() const {
 
 void LanguageTag::setPrivateUse(const string & privateUse) {
 	this->privateUse = privateUse;
+	for (size_t hyphenPos = this->privateUse.find("-"); hyphenPos != string::npos;
+	     hyphenPos = this->privateUse.find("-")) {
+		this->privateUse.erase(hyphenPos, 1);
+	}
+	lowercaseTagPart(this->privateUse);
 }
 
 void LanguageTag::setLanguageAndScript(const string & languageAndScript) {

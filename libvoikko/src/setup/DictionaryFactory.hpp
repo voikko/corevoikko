@@ -78,8 +78,6 @@ class DictionaryFactory {
 	 * decreasing priority order.
 	 */
 	static std::list<std::string> getDefaultLocations();
-	
-	static LanguageTag parseFromBCP47(const std::string & language);
 };
 
 } }

@@ -47,15 +47,6 @@ namespace libvoikko { namespace setup {
 DictionaryLoader::~DictionaryLoader() {
 }
 
-void DictionaryLoader::tagToCanonicalForm(string & languageTag) {
-	for (size_t i = 0; i < languageTag.size(); ++i) {
-		char current = languageTag.at(i);
-		if (current >= 65 && current <= 90) {
-			languageTag[i] = current + 32;
-		}
-	}
-}
-
 /**
  * Returns true if the given variant map contains a default dictionary for given language.
  */

@@ -95,7 +95,6 @@ Dictionary V2DictionaryLoader::dictionaryFromPath(const string & path) {
 		}
 		else if (line.find("info: Language-Variant: ") == 0) {
 			string variant = line.substr(24);
-			tagToCanonicalForm(variant);
 			language.setPrivateUse(variant);
 		}
 		else if (line.find("info: Description: ") == 0) {
