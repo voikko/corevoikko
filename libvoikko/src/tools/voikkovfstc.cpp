@@ -54,6 +54,10 @@ static uint16_t swap(uint16_t x) {
 	return (x>>8) | (x<<8);
 }
 
+static int16_t swap(int16_t x) {
+	return (x>>8) | (x<<8);
+}
+
 static uint16_t swapIf(bool doSwap, uint16_t x) {
 	return doSwap ? swap(x) : x;
 }

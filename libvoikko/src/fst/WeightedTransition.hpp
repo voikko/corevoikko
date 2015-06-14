@@ -37,7 +37,7 @@ struct WeightedTransition {
 	uint32_t symIn;
 	uint32_t symOut;
 	uint32_t targetState;
-	uint16_t weight;
+	int16_t weight;
 	uint8_t moreTransitions;
 	uint8_t reserved;
 };
