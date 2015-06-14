@@ -11,7 +11,7 @@ $(BUILDDIR)/main.foma: main.foma.in
 $(BUILDDIR)/all.att: all.lexc $(BUILDDIR)/main.foma
 	foma -f $(BUILDDIR)/main.foma
 
-$(BUILDDIR)/spl.vfst: $(BUILDDIR)/all.att
+$(BUILDDIR)/spl.vfst: all.weighted.att
 	cat $^ | sort -n | voikkovfstc -o $@
 
 install: all

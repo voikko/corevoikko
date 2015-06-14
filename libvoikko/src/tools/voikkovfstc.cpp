@@ -36,6 +36,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <cmath>
 
 using namespace libvoikko::fst;
 using namespace std;
@@ -87,6 +88,10 @@ static uint64_t swap(uint64_t x) {
 
 static uint32_t swapIf(bool doSwap, uint32_t x) {
 	return doSwap ? swap(x) : x;
+}
+
+static int16_t probWeightToLog(double probWeight) {
+	return -log(probWeight) * 100.0; // TODO check for overflow
 }
 
 static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool weights) {
@@ -336,7 +341,7 @@ int main(int argc, char ** argv) {
 				WeightedTransition t;
 				t.symIn = symMap[symInStr].code;
 				t.symOut = symMap[symOutStr].code;
-				t.weight = 0; // TODO convert
+				t.weight = probWeightToLog(weight);
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
 				transitionCount++;
