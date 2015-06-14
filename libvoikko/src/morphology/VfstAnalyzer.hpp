@@ -31,7 +31,7 @@
 
 #include "morphology/Analyzer.hpp"
 #include "setup/DictionaryException.hpp"
-#include "fst/Transducer.hpp"
+#include "fst/UnweightedTransducer.hpp"
 #include "fst/Configuration.hpp"
 #include <list>
 #include <string>
@@ -49,7 +49,7 @@ class VfstAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
 	private:
-		fst::Transducer * transducer;
+		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
 		char * outputBuffer;
 		std::map<std::wstring, std::wstring> classMap;

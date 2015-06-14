@@ -31,7 +31,7 @@
 
 #include "spellchecker/Speller.hpp"
 #include "setup/DictionaryException.hpp"
-#include "fst/Transducer.hpp"
+#include "fst/UnweightedTransducer.hpp"
 #include "fst/Configuration.hpp"
 #include <string>
 
@@ -48,7 +48,7 @@ class VfstSpeller : public Speller {
 	private:
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
-		fst::Transducer * transducer;
+		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
 		char * outputBuffer;
 };

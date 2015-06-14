@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2012
+ * Portions created by the Initial Developer are Copyright (C) 2012 - 2015
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -27,61 +27,26 @@
  *********************************************************************************/
 
 
-#ifndef LIBVOIKKO_FST_TRANSDUCER_H
-#define LIBVOIKKO_FST_TRANSDUCER_H
+#ifndef LIBVOIKKO_FST_UNWEIGHTED_TRANSDUCER_H
+#define LIBVOIKKO_FST_UNWEIGHTED_TRANSDUCER_H
 
-#include <cstddef>
-#include <map>
-#include <vector>
-#include <string>
-#include <stdint.h>
-#include "fst/Transition.hpp"
-#include "fst/Configuration.hpp"
+#include "fst/Transducer.hpp"
 
 namespace libvoikko { namespace fst {
 	
-	enum Operation {
-		Operation_P,
-		Operation_C,
-		Operation_U,
-		Operation_R,
-		Operation_D
-	};
-	
-	struct OpFeatureValue {
-		Operation op;
-		uint16_t feature;
-		uint16_t value;
-	};
-	
-	const uint16_t FlagValueNeutral = 0;
-	const uint16_t FlagValueAny = 1;
-	const uint32_t MAX_LOOP_COUNT = 100000;
-	
-	class Transducer {
-		protected:
-			size_t fileLength;
-			void * map;
-			bool byteSwapped;
-			
-			OpFeatureValue getDiacriticOperation(const std::string & symbol, std::map<std::string, uint16_t> & features, std::map<std::string, uint16_t> & values);
-			void * vfstMmap(const char * filePath, size_t & fileLength);
-			void vfstMunmap(void * map, size_t fileLength);
-			bool checkNeedForByteSwapping(const char * filePtr);
+	class UnweightedTransducer : public Transducer {
+		private:
+			Transition * transitionStart;
+			std::map<std::string, uint16_t> stringToSymbol;
+			std::vector<const char *> symbolToString;
+			uint16_t firstMultiChar;
+			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
-			uint16_t flagDiacriticFeatureCount;
-			uint16_t firstNormalChar;
-			std::vector<OpFeatureValue> symbolToDiacritic;
+			UnweightedTransducer(const char * filePath);
 			
-			virtual bool prepare(Configuration * configuration, const char * input, size_t inputLen) const = 0;
+			bool prepare(Configuration * configuration, const char * input, size_t inputLen) const;
 			
-			virtual bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const = 0;
-			
-			uint16_t getFlagDiacriticFeatureCount() const;
-			
-			void terminate();
-			
-			virtual ~Transducer();
+			bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const;
 	};
 } }
 
