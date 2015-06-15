@@ -5,6 +5,7 @@ libvoikko_la_SOURCES = \
     fst/Configuration.cpp \
     fst/Transducer.cpp \
     fst/UnweightedTransducer.cpp \
+    fst/WeightedTransducer.cpp \
     spellchecker/spell.cpp spellchecker/suggestions.cpp \
     spellchecker/Speller.cpp \
     spellchecker/SpellWithPriority.cpp \
@@ -87,6 +88,7 @@ noinst_HEADERS = \
     fst/Transition.hpp \
     fst/WeightedTransition.hpp \
     fst/UnweightedTransducer.hpp \
+    fst/WeightedTransducer.hpp \
     utils/utils.hpp utils/StringUtils.hpp \
     hyphenator/Hyphenator.hpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp \
