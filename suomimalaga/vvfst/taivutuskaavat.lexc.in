@@ -2266,7 +2266,7 @@ LEXICON NOUN Vieras_s
 ?Vanha [[HV]][Sn][Nm]t:[[HV]]t	<WC>MonikonNominatiivinJatko_<A>	;
 ?Vanha [[HV]][Sg][Ny]n:[[HV]]n <WC>YksikönGenetiivinJatko_<A>	;
 ?Vanha [[HV]][Ses][Ny]n<A>:[[HV]]n<A>	<WC>LiOlV_<A>	;
-?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	
+?Sukija [[L]][Sill][Ny]se:[[L]]se	<WC>LiOlN_<A>	;
 ?Sukija [[HV]][Sill][Ny]se:[[HV]]se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
