@@ -68,6 +68,7 @@ namespace libvoikko { namespace fst {
 			void * vfstMmap(const char * filePath, size_t & fileLength);
 			void vfstMunmap(void * map, size_t fileLength);
 			bool checkNeedForByteSwapping(const char * filePtr);
+			bool isWeightedTransducerFile(const char * filePtr);
 		public:
 			uint16_t flagDiacriticFeatureCount;
 			uint16_t firstNormalChar;

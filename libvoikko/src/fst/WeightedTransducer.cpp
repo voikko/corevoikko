@@ -127,6 +127,9 @@ namespace libvoikko { namespace fst {
 			throw setup::DictionaryException("Transducer file could not be read");
 		}
 		byteSwapped = checkNeedForByteSwapping(static_cast<char *>(map));
+		if (!isWeightedTransducerFile(static_cast<char *>(map))) {
+			throw setup::DictionaryException("Expected weighted but got unweighted transducer");
+		}
 		if (byteSwapped) {
 			byteSwapTransducer(map, fileLength);
 		}

@@ -178,6 +178,10 @@ namespace libvoikko { namespace fst {
 		throw setup::DictionaryException("Unknown byte order or file type");
 	}
 	
+	bool Transducer::isWeightedTransducerFile(const char * filePtr) {
+		return filePtr[8] == 0x01;
+	}
+	
 	uint16_t Transducer::getFlagDiacriticFeatureCount() const {
 		return flagDiacriticFeatureCount;
 	}
