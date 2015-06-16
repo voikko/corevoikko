@@ -75,17 +75,6 @@ static uint32_t swap(uint32_t x) {
 		(x<<24);
 }
 
-static uint64_t swap(uint64_t x) {
-	return  (x>>56) |
-		((x<<40) & 0x00FF000000000000) |
-		((x<<24) & 0x0000FF0000000000) |
-		((x<< 8) & 0x000000FF00000000) |
-		((x>> 8) & 0x00000000FF000000) |
-		((x>>24) & 0x0000000000FF0000) |
-		((x>>40) & 0x000000000000FF00) |
-		(x<<56);
-}
-
 static uint32_t swapIf(bool doSwap, uint32_t x) {
 	return doSwap ? swap(x) : x;
 }
@@ -136,6 +125,7 @@ static void writeOverflow(ofstream & out, bool doSwap, WeightedOverflowCell & oc
 		if (doSwap) {
 			WeightedOverflowCell ocSwapped;
 			ocSwapped.moreTransitions = swap(oc.moreTransitions);
+			ocSwapped.shortPadding = 0;
 			ocSwapped.padding = 0;
 			out.write((char *) &ocSwapped, sizeof(WeightedOverflowCell));
 		}
@@ -441,6 +431,7 @@ int main(int argc, char ** argv) {
 		if (tCount > 255) {
 			WeightedOverflowCell oc;
 			oc.moreTransitions = tCount - 1;
+			oc.shortPadding = 0;
 			oc.padding = 0;
 			writeOverflow(transducerFile, byteSwap, oc, weights);
 		}

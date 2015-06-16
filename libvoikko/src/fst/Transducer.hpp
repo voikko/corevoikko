@@ -35,7 +35,6 @@
 #include <vector>
 #include <string>
 #include <stdint.h>
-#include "fst/Transition.hpp"
 #include "fst/Configuration.hpp"
 
 namespace libvoikko { namespace fst {

@@ -31,6 +31,7 @@
 #define LIBVOIKKO_FST_UNWEIGHTED_TRANSDUCER_H
 
 #include "fst/Transducer.hpp"
+#include "fst/Transition.hpp"
 
 namespace libvoikko { namespace fst {
 	

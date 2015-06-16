@@ -31,12 +31,13 @@
 #define LIBVOIKKO_FST_WEIGHTED_TRANSDUCER_H
 
 #include "fst/Transducer.hpp"
+#include "fst/WeightedTransition.hpp"
 
 namespace libvoikko { namespace fst {
 	
 	class WeightedTransducer : public Transducer {
 		private:
-			Transition * transitionStart;
+			WeightedTransition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<const char *> symbolToString;
 			uint16_t firstMultiChar;

@@ -43,7 +43,8 @@ struct WeightedTransition {
 };
 
 struct WeightedOverflowCell {
-	uint64_t moreTransitions;
+	uint32_t moreTransitions;
+	uint32_t shortPadding;
 	uint64_t padding;
 };
 

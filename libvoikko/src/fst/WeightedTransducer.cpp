@@ -56,7 +56,12 @@ using namespace std;
 
 namespace libvoikko { namespace fst {
 	
+	// TODO de-duplicate these
 	static uint16_t swap(uint16_t x) {
+		return (x>>8) | (x<<8);
+	}
+	
+	static int16_t swap(int16_t x) {
 		return (x>>8) | (x<<8);
 	}
 	
@@ -87,9 +92,9 @@ namespace libvoikko { namespace fst {
 		}
 		
 		{
-			size_t padding = sizeof(Transition) - (newMapPtr - newMap) % sizeof(Transition);
-			if (padding < sizeof(Transition)) {
-				// skip padding - transition table starts at next 8 byte boundary
+			size_t padding = sizeof(WeightedTransition) - (newMapPtr - newMap) % sizeof(WeightedTransition);
+			if (padding < sizeof(WeightedTransition)) {
+				// skip padding - transition table starts at next 16 byte boundary
 				oldMapPtr += padding;
 				memset(newMapPtr, 0, padding);
 				newMapPtr += padding;
@@ -99,22 +104,22 @@ namespace libvoikko { namespace fst {
 		bool nextIsOverflow = false;
 		while (newMap + fileLength > newMapPtr) {
 			if (nextIsOverflow) {
-				OverflowCell oc = *reinterpret_cast<OverflowCell *>(oldMapPtr);
+				WeightedOverflowCell oc = *reinterpret_cast<WeightedOverflowCell *>(oldMapPtr);
 				oc.moreTransitions = swap(oc.moreTransitions);
-				memcpy(newMapPtr, &oc, sizeof(OverflowCell));
+				memcpy(newMapPtr, &oc, sizeof(WeightedOverflowCell));
 				nextIsOverflow = false;
 			}
 			else {
-				Transition t = *reinterpret_cast<Transition *>(oldMapPtr);
+				WeightedTransition t = *reinterpret_cast<WeightedTransition *>(oldMapPtr);
 				t.symIn = swap(t.symIn);
 				t.symOut = swap(t.symOut);
-				uint32_t ts = t.transInfo.targetState;
-				t.transInfo.targetState = ((ts<<16) & 0x00FF0000) | (ts & 0x0000FF00) | ((ts>>16) & 0x000000FF);
-				nextIsOverflow = (t.transInfo.moreTransitions == 0xFF);
-				memcpy(newMapPtr, &t, sizeof(Transition));
+				t.targetState = swap(t.targetState);
+				t.weight = swap(t.weight);
+				nextIsOverflow = (t.moreTransitions == 0xFF);
+				memcpy(newMapPtr, &t, sizeof(WeightedTransition));
 			}
-			oldMapPtr += sizeof(Transition);
-			newMapPtr += sizeof(Transition);
+			oldMapPtr += sizeof(WeightedTransition);
+			newMapPtr += sizeof(WeightedTransition);
 		}
 		
 		vfstMunmap(mapPtr, fileLength);
@@ -170,13 +175,13 @@ namespace libvoikko { namespace fst {
 		}
 		flagDiacriticFeatureCount = features.size();
 		{
-			size_t partial = (filePtr - static_cast<char *>(map)) % sizeof(Transition);
+			size_t partial = (filePtr - static_cast<char *>(map)) % sizeof(WeightedTransition);
 			if (partial > 0) {
 				// skip padding - transition table starts at next 8 byte boundary
-				filePtr += (sizeof(Transition) - partial);
+				filePtr += (sizeof(WeightedTransition) - partial);
 			}
 		}
-		transitionStart = reinterpret_cast<Transition *>(filePtr);
+		transitionStart = reinterpret_cast<WeightedTransition *>(filePtr);
 	}
 	
 	bool WeightedTransducer::prepare(Configuration * configuration, const char * input, size_t inputLen) const {
@@ -200,10 +205,10 @@ namespace libvoikko { namespace fst {
 		return true;
 	}
 	
-	static uint32_t getMaxTc(Transition * stateHead) {
-		uint32_t maxTc = stateHead->transInfo.moreTransitions;
+	static uint32_t getMaxTc(WeightedTransition * stateHead) {
+		uint32_t maxTc = stateHead->moreTransitions;
 		if (maxTc == 255) {
-			OverflowCell * oc = reinterpret_cast<OverflowCell *>(stateHead + 1);
+			WeightedOverflowCell * oc = reinterpret_cast<WeightedOverflowCell *>(stateHead + 1);
 			maxTc = oc->moreTransitions + 1;
 		}
 		return maxTc;
@@ -273,8 +278,8 @@ namespace libvoikko { namespace fst {
 	bool WeightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
 		uint32_t loopCounter = 0;
 		while (loopCounter < MAX_LOOP_COUNT) {
-			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
-			Transition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
+			WeightedTransition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
+			WeightedTransition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
 			uint32_t startTransitionIndex = currentTransition - stateHead;
 			uint32_t maxTc = getMaxTc(stateHead);
 			for (uint32_t tc = startTransitionIndex; tc <= maxTc; tc++) {
@@ -317,8 +322,8 @@ namespace libvoikko { namespace fst {
 						(currentTransition->symOut >= firstNormalChar ? currentTransition->symOut : 0);
 					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart;
 					configuration->stackDepth++;
-					configuration->stateIndexStack[configuration->stackDepth] = currentTransition->transInfo.targetState;
-					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition->transInfo.targetState;
+					configuration->stateIndexStack[configuration->stackDepth] = currentTransition->targetState;
+					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition->targetState;
 					if (currentTransition->symIn >= firstNormalChar) {
 						configuration->inputDepth++;
 					}
