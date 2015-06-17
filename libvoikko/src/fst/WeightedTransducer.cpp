@@ -289,7 +289,7 @@ namespace libvoikko { namespace fst {
 					currentTransition++;
 				}
 				// next
-				if (currentTransition->symIn == 0xFFFF) {
+				if (currentTransition->symIn == 0xFFFFFFFF) {
 					// final state
 					if (configuration->inputDepth == configuration->inputLength) {
 						char * outputBufferPos = outputBuffer;
