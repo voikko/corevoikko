@@ -36,6 +36,7 @@
 
 #ifdef HAVE_VFST
 #include "morphology/VfstAnalyzer.hpp"
+#include "morphology/FinnishVfstAnalyzer.hpp"
 #endif
 
 #ifdef HAVE_HFST
@@ -65,6 +66,9 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	#ifdef HAVE_VFST
 	if (morBackend == "vfst") {
 		return new VfstAnalyzer(morPath);
+	}
+	if (morBackend == "finnishVfst") {
+		return new FinnishVfstAnalyzer(morPath);
 	}
 	#endif
 	#ifdef HAVE_HFST

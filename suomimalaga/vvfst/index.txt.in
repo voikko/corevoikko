@@ -7,4 +7,4 @@ SM-Version: SM_VERSION
 SM-Patchinfo: SM_PATCHINFO
 Build-Config: SM_BUILDCONFIG
 Build-Date: SM_BUILDDATE
-Morphology-Backend: vfst
+Morphology-Backend: finnishVfst

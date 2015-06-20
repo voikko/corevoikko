@@ -26,8 +26,8 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_MORPHOLOGY_VFST_ANALYZER
-#define VOIKKO_MORPHOLOGY_VFST_ANALYZER
+#ifndef VOIKKO_MORPHOLOGY_FINNISH_VFST_ANALYZER
+#define VOIKKO_MORPHOLOGY_FINNISH_VFST_ANALYZER
 
 #include "morphology/Analyzer.hpp"
 #include "setup/DictionaryException.hpp"
@@ -39,11 +39,11 @@
 namespace libvoikko { namespace morphology {
 
 /**
- * Morphological analyzer that uses the built in FST implementation to analyze words.
+ * Morphological analyzer that uses the built in FST implementation to analyze Finnish words.
  */
-class VfstAnalyzer : public Analyzer {
+class FinnishVfstAnalyzer : public Analyzer {
 	public:
-		VfstAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
+		FinnishVfstAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
 		std::list<Analysis *> * analyze(const wchar_t * word);
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);
@@ -52,6 +52,21 @@ class VfstAnalyzer : public Analyzer {
 		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
 		char * outputBuffer;
+		std::map<std::wstring, std::wstring> classMap;
+		std::map<std::wstring, std::wstring> sijamuotoMap;
+		std::map<std::wstring, std::wstring> moodMap;
+		std::map<std::wstring, std::wstring> numberMap;
+		std::map<std::wstring, std::wstring> comparisonMap;
+		std::map<std::wstring, std::wstring> personMap;
+		std::map<std::wstring, std::wstring> tenseMap;
+		std::map<std::wstring, std::wstring> focusMap;
+		std::map<std::wstring, std::wstring> possessiveMap;
+		std::map<std::wstring, std::wstring> negativeMap;
+		std::map<std::wstring, std::wstring> participleMap;
+		
+		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
+		void parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
+		void duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList);
 };
 
 } }

@@ -99,6 +99,7 @@ noinst_HEADERS = \
     morphology/AnalyzerFactory.hpp \
     morphology/HfstAnalyzer.hpp \
     morphology/VfstAnalyzer.hpp \
+    morphology/FinnishVfstAnalyzer.hpp \
     morphology/LttoolboxAnalyzer.hpp \
     morphology/NullAnalyzer.hpp \
     morphology/MalagaAnalyzer.hpp \
@@ -227,7 +228,7 @@ VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
-VFST_CPP_FILES=morphology/VfstAnalyzer.cpp spellchecker/VfstSpeller.cpp setup/V5DictionaryLoader.cpp
+VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp spellchecker/VfstSpeller.cpp setup/V5DictionaryLoader.cpp
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)

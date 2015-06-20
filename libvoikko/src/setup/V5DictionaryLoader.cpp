@@ -82,7 +82,7 @@ Dictionary V5DictionaryLoader::dictionaryFromPath(const string & path) {
 	LanguageTag language;
 	language.setLanguage("fi");
 	string description;
-	BackendProperties morBackend("vfst", path, true);
+	BackendProperties morBackend("finnishVfst", path, true);
 	BackendProperties gramMorBackend;
 	BackendProperties grammarBackend("finnish", true);
 	BackendProperties spellBackend("FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)", true);
