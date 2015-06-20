@@ -45,7 +45,8 @@ static const int MAX_ANALYSIS_COUNT = 100;
 
 VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
 	string morFile = directoryName + "/mor.vfst";
-	transducer = new UnweightedTransducer(morFile.c_str());
+	// XXX: could handle different types of transducers
+	transducer = new WeightedTransducer(morFile.c_str());
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
 }
