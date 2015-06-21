@@ -310,7 +310,10 @@ namespace libvoikko { namespace fst {
 						}
 						*outputBufferPos = '\0';
 						configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart + 1;
-						*weight = 1; // TODO calculate weight
+						*weight = currentTransition->weight;
+						for (int i = 0; i < configuration->stackDepth; i++) {
+							*weight += (transitionStart + configuration->currentTransitionStack[i])->weight;
+						}
 						return true;
 					}
 				}

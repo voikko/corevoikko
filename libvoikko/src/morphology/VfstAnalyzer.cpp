@@ -32,7 +32,10 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
+#include <sstream>
+#include <iomanip>
 #include <cwchar>
+#include <cmath>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -63,6 +66,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 	return result;
 }
 
+static double logWeightToProb(int16_t logWeight) {
+	return exp(-0.01 * (double) logWeight);
+}
+
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
@@ -82,9 +89,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			Analysis * analysis = new Analysis();
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
-			wchar_t * weightStr = new wchar_t[7];
-			swprintf(weightStr, 7, L"%d", weight);
-			analysis->addAttribute("WEIGHT", weightStr);
+			stringstream ss;
+			ss << setprecision(9) << logWeightToProb(weight);
+			string weightStr = ss.str();
+			analysis->addAttribute("WEIGHT", StringUtils::ucs4FromUtf8(weightStr.c_str()));
 			analysisList->push_back(analysis);
 		}
 	}

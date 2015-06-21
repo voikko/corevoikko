@@ -3,3 +3,8 @@ expected:1
  analysis
   FSTOUTPUT=kissä
   WEIGHT=1
+word:kissat
+expected:1
+ analysis
+  FSTOUTPUT=kissät
+  WEIGHT∈0.49,0.51

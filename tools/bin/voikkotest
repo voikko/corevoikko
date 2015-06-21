@@ -346,11 +346,17 @@ def suggestion_tests(voikko, testFile):
 		print u" %i failures in %i suggestion tests." % (failcount, testcount)
 		return False
 
+def valuesMatch(expected, actual):
+	if type(expected) is tuple:
+		return float(actual) >= expected[0] and float(actual) <= expected[1]
+	else:
+		return expected == actual
+
 def containsMorphoAnalysis(expectedAnalysis, actualAnalyses):
 	for actualAnalysis in actualAnalyses:
 		match = True
 		for (key, value) in expectedAnalysis.iteritems():
-			if not key in actualAnalysis or actualAnalysis[key] != value:
+			if not key in actualAnalysis or not valuesMatch(value, actualAnalysis[key]):
 				match = False
 				break
 		if match:
@@ -427,12 +433,19 @@ def morpho_tests(voikko, testFile):
 		elif line.startswith(u'analysis'):
 			expectedAnalyses.append(currentExpected)
 			currentExpected = {}
-		else:
+		elif u'=' in line:
 			key = line[:line.find(u'=')]
 			value = line[line.find(u'=')+1:]
 			currentExpected[key] = value
+		elif u'∈' in line:
+			key = line[:line.find(u'∈')]
+			rangeStr = line[line.find(u'∈')+1:].split(u',')
+			currentExpected[key] = (float(rangeStr[0]), float(rangeStr[1]))
+		else:
+			print u"Invalid expectation " + line
+			return False
 	if currentExpected != {}:
-				expectedAnalyses.append(currentExpected)
+		expectedAnalyses.append(currentExpected)
 	error = diffMorphoAnalyses(expectedAnalyses,
 	        expectedAnalysesCount, forbiddenKeys, forbiddenValues, actualAnalyses)
 	if error != None:
