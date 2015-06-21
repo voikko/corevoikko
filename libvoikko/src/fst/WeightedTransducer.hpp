@@ -48,6 +48,8 @@ namespace libvoikko { namespace fst {
 			bool prepare(Configuration * configuration, const char * input, size_t inputLen) const;
 			
 			bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const;
+			
+			bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const;
 	};
 } }
 

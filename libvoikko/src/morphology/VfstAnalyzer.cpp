@@ -32,6 +32,7 @@
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
+#include <cwchar>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -76,10 +77,14 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
 		int analysisCount = 0;
-		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
+		int16_t weight;
+		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE, &weight)) {
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			Analysis * analysis = new Analysis();
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
+			wchar_t * weightStr = new wchar_t[7];
+			swprintf(weightStr, 7, L"%d", weight);
+			analysis->addAttribute("WEIGHT", weightStr);
 			analysisList->push_back(analysis);
 		}
 	}

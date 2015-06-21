@@ -2,3 +2,4 @@ word:kissa
 expected:1
  analysis
   FSTOUTPUT=kissä
+  WEIGHT=1

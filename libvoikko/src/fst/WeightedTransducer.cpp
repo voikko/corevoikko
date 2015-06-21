@@ -276,6 +276,11 @@ namespace libvoikko { namespace fst {
 	}
 	
 	bool WeightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
+		int16_t weight;
+		return next(configuration, outputBuffer, bufferLen, &weight);
+	}
+	
+	bool WeightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const {
 		uint32_t loopCounter = 0;
 		while (loopCounter < MAX_LOOP_COUNT) {
 			WeightedTransition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
@@ -305,6 +310,7 @@ namespace libvoikko { namespace fst {
 						}
 						*outputBufferPos = '\0';
 						configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart + 1;
+						*weight = 1; // TODO calculate weight
 						return true;
 					}
 				}
