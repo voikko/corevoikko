@@ -39,6 +39,7 @@
 #endif
 
 #ifdef HAVE_VFST
+#include "spellchecker/VfstSpeller.hpp"
 #include "spellchecker/VfstSuggestion.hpp"
 #endif
 
@@ -69,7 +70,8 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	#endif
 	#ifdef HAVE_VFST
 	if (backend == "vfst") {
-		return new VfstSuggestion();
+		const VfstSpeller * vfstSpeller = dynamic_cast<VfstSpeller *>(voikkoOptions->speller);
+		return new VfstSuggestion(vfstSpeller->transducer, voikkoOptions->dictionary.getMorBackend().getPath());
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");

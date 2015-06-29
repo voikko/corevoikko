@@ -29,6 +29,8 @@
 #ifndef VOIKKO_SPELLCHECKER_VFST_SUGGESTION
 #define VOIKKO_SPELLCHECKER_VFST_SUGGESTION
 
+#include <string>
+#include "fst/WeightedTransducer.hpp"
 #include "setup/DictionaryException.hpp"
 #include "setup/setup.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
@@ -41,9 +43,13 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class VfstSuggestion : public SuggestionGenerator {
 	public:
-		VfstSuggestion() throw(setup::DictionaryException);
+		VfstSuggestion(const fst::WeightedTransducer * acceptor, const std::string & directoryName) throw(setup::DictionaryException);
 		void generate(SuggestionStatus * s) const;
 		void terminate();
+
+	private:
+		const fst::WeightedTransducer * acceptor;
+		fst::WeightedTransducer * errorModel;
 };
 
 } } }

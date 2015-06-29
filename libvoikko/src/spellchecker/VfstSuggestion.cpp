@@ -35,14 +35,19 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-VfstSuggestion::VfstSuggestion() throw(setup::DictionaryException) { }
+VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const string & directoryName) throw(setup::DictionaryException):
+                acceptor(acceptor) {
+	string errFile = directoryName + "/err.vfst";
+	errorModel = new fst::WeightedTransducer(errFile.c_str());  
+}
 
 void VfstSuggestion::generate(SuggestionStatus * s) const {
 	// TODO
 }
 
 void VfstSuggestion::terminate() {
-	// TODO
+	errorModel->terminate();
+	delete errorModel;
 }
 
 } } }
