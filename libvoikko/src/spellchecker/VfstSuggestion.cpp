@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010 - 2013
+ * Portions created by the Initial Developer are Copyright (C) 2015
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,53 +26,23 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "porting.h"
-#include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
-#include "spellchecker/suggestion/SuggestionGeneratorNull.hpp"
-#include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
-#include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
+#include "spellchecker/VfstSuggestion.hpp"
+#include "utils/StringUtils.hpp"
 #include "setup/setup.hpp"
 
-#ifdef HAVE_HFST
-#include "spellchecker/HfstSuggestion.hpp"
-#include "spellchecker/HfstSpeller.hpp"
-#endif
-
-#ifdef HAVE_VFST
-#include "spellchecker/VfstSuggestion.hpp"
-#endif
-
 using namespace std;
+using namespace libvoikko::utils;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
-	                             voikko_options_t * voikkoOptions,
-	                             SuggestionType suggestionType)
-	                              throw(setup::DictionaryException) {
-	string backend = voikkoOptions->dictionary.getSuggestionBackend().getBackend();
-	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {
-		if (suggestionType == SUGGESTION_TYPE_OCR) {
-			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer, 1500);
-		}
-		else {
-			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer, 590);
-		}
-	} else if (backend == "null") {
-		return new SuggestionGeneratorNull();
-	}
-	#ifdef HAVE_HFST
-	if (backend == "hfst") {
-		const HfstSpeller * hfstSpeller = dynamic_cast<HfstSpeller *>(voikkoOptions->speller);
-		return new HfstSuggestion(hfstSpeller->speller);
-	}
-	#endif
-	#ifdef HAVE_VFST
-	if (backend == "vfst") {
-		return new VfstSuggestion();
-	}
-	#endif
-	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");
+VfstSuggestion::VfstSuggestion() throw(setup::DictionaryException) { }
+
+void VfstSuggestion::generate(SuggestionStatus * s) const {
+	// TODO
+}
+
+void VfstSuggestion::terminate() {
+	// TODO
 }
 
 } } }

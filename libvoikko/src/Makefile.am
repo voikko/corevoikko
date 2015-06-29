@@ -142,6 +142,7 @@ noinst_HEADERS = \
     spellchecker/SpellerFactory.hpp \
     spellchecker/SpellerCache.hpp \
     spellchecker/HfstSuggestion.hpp \
+    spellchecker/VfstSuggestion.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
     spellchecker/suggestion/SuggestionGeneratorFactory.hpp \
@@ -228,7 +229,8 @@ VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
-VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp spellchecker/VfstSpeller.cpp setup/V5DictionaryLoader.cpp
+VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp \
+    spellchecker/VfstSpeller.cpp spellchecker/VfstSuggestion.cpp setup/V5DictionaryLoader.cpp
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
