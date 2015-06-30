@@ -35,17 +35,41 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
+static const int BUFFER_SIZE = 2000;
+
 VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const string & directoryName) throw(setup::DictionaryException):
                 acceptor(acceptor) {
 	string errFile = directoryName + "/err.vfst";
-	errorModel = new fst::WeightedTransducer(errFile.c_str());  
+	errorModel = new fst::WeightedTransducer(errFile.c_str());
+	acceptorConf = new fst::Configuration(acceptor->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	errorModelConf = new fst::Configuration(errorModel->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	acceptorBuffer = new char[BUFFER_SIZE];
+	errorModelBuffer = new char[BUFFER_SIZE];
 }
 
 void VfstSuggestion::generate(SuggestionStatus * s) const {
-	// TODO
+	s->setMaxCost(10000); // TODO
+	size_t wlen = s->getWordLength();
+	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
+	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
+		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE)) {
+			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
+				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE)) {
+					wchar_t * suggestion = StringUtils::ucs4FromUtf8(errorModelBuffer);
+					int weight = 1; // TODO
+					s->addSuggestion(suggestion, weight);
+				}
+			}
+			s->charge();
+		}
+	}
 }
 
 void VfstSuggestion::terminate() {
+	delete[] errorModelBuffer;
+	delete[] acceptorBuffer;
+	delete errorModelConf;
+	delete acceptorConf;
 	errorModel->terminate();
 	delete errorModel;
 }
