@@ -1,3 +1,2 @@
 []
-kisse	kissa
-
+kisse	kissa	kissi

@@ -51,12 +51,14 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 	s->setMaxCost(10000); // TODO
 	size_t wlen = s->getWordLength();
 	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
+	int16_t acceptorWeight;
+	int16_t errorModelWeight;
 	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
-		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE)) {
+		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE, &errorModelWeight)) {
 			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
-				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE)) {
+				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight)) {
 					wchar_t * suggestion = StringUtils::ucs4FromUtf8(errorModelBuffer);
-					int weight = 1; // TODO
+					int weight = acceptorWeight + errorModelWeight;
 					s->addSuggestion(suggestion, weight);
 				}
 			}
