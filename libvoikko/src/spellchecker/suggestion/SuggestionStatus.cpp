@@ -80,6 +80,9 @@ void SuggestionStatus::addSuggestion(const wchar_t * newSuggestion, int priority
 		suggestions[suggestionCount].priority = finalPriority;
 		suggestionCount++;
 	}
+	else {
+		delete[] newSuggestion;
+	}
 }
 
 const Suggestion * SuggestionStatus::getSuggestions() const {

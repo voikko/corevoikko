@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOVFSTC 1 "2015-05-04"
+.TH VOIKKOVFSTC 1 "2015-07-02"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -37,8 +37,9 @@ Specify format for output file. Possible formats are 'be'
 (big endian), 'le' (little endian) or 'native' (use the endianess of
 the host). Default is 'le'.
 .TP
-.B \-w
+.B \-w weight_type
 Produce weighted transducers instead of unweighted transducers. Input must be
-in weighted AT&T format.
+in weighted AT&T format. weight_type must be either 'prob' (probability weights) or 'log'
+(negative logarithm weights).
 .SH AUTHOR
 voikkovfstc and this manual page were written by \%Harri \%Pitk\[:a]nen \%(hatapitk@iki.fi).

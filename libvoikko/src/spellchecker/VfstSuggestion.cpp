@@ -29,6 +29,7 @@
 #include "spellchecker/VfstSuggestion.hpp"
 #include "utils/StringUtils.hpp"
 #include "setup/setup.hpp"
+#include <queue>
 
 using namespace std;
 using namespace libvoikko::utils;
@@ -36,6 +37,16 @@ using namespace libvoikko::utils;
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 static const int BUFFER_SIZE = 2000;
+
+struct WeightedSuggestion {
+
+	wchar_t * suggestion;
+	int weight;
+	
+	bool operator<(const WeightedSuggestion & right) const {
+		return weight > right.weight;
+	}
+};
 
 VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const string & directoryName) throw(setup::DictionaryException):
                 acceptor(acceptor) {
@@ -48,22 +59,28 @@ VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const s
 }
 
 void VfstSuggestion::generate(SuggestionStatus * s) const {
-	s->setMaxCost(1000000); // TODO
+	s->setMaxCost(100); // not actually used
 	size_t wlen = s->getWordLength();
 	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	int16_t acceptorWeight;
 	int16_t errorModelWeight;
+	priority_queue<WeightedSuggestion> queue;
 	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
 		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE, &errorModelWeight)) {
 			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
 				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight)) {
-					wchar_t * suggestion = StringUtils::ucs4FromUtf8(errorModelBuffer);
-					int weight = acceptorWeight + errorModelWeight;
-					s->addSuggestion(suggestion, weight);
+					WeightedSuggestion sugg;
+					sugg.suggestion = StringUtils::ucs4FromUtf8(errorModelBuffer);
+					sugg.weight = acceptorWeight + errorModelWeight;
+					queue.push(sugg);
 				}
 			}
-			s->charge();
 		}
+	}
+	while (!queue.empty()) {
+		WeightedSuggestion sugg = queue.top();
+		queue.pop();
+		s->addSuggestion(sugg.suggestion, sugg.weight);
 	}
 }
 

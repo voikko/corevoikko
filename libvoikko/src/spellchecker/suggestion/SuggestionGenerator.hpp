@@ -37,6 +37,7 @@ class SuggestionGenerator {
 	public:
 		virtual void generate(SuggestionStatus * s) const = 0;
 		virtual ~SuggestionGenerator() {}
+		virtual void terminate() {}
 };
 
 }}}

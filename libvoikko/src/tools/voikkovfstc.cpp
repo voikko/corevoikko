@@ -83,6 +83,10 @@ static int16_t probWeightToLog(double probWeight) {
 	return -log(probWeight) * 100.0; // TODO check for overflow
 }
 
+static int16_t logWeightToLog(double logWeight) {
+	return logWeight * 1000.0; // TODO check for overflow
+}
+
 static void writeTrans(ofstream & out, bool doSwap, WeightedTransition & t, bool weights) {
 	if (weights) {
 		if (doSwap) {
@@ -226,6 +230,7 @@ int main(int argc, char ** argv) {
 	string outputFile;
 	string format = "le";
 	bool weights = false;
+	int16_t(*weightFunc)(double) = 0;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args == "-o" && i + 1 < argc) {
@@ -234,8 +239,19 @@ int main(int argc, char ** argv) {
 		else if (args == "-f" && i + 1 < argc) {
 			format = string(argv[++i]);
 		}
-		else if (args == "-w") {
+		else if (args == "-w" && i + 1 < argc) {
 			weights = true;
+			string weightType(argv[++i]);
+			if (weightType == "prob") {
+				weightFunc = probWeightToLog;
+			}
+			else if (weightType == "log") {
+				weightFunc = logWeightToLog;
+			}
+			else {
+				cerr << "ERROR: unknown weight type";
+				exit(1);
+			}
 		}
 	}
 
@@ -334,7 +350,7 @@ int main(int argc, char ** argv) {
 				WeightedTransition t;
 				t.symIn = symMap[symInStr].code;
 				t.symOut = symMap[symOutStr].code;
-				t.weight = probWeightToLog(weight);
+				t.weight = weightFunc(weight);
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
 				transitionCount++;

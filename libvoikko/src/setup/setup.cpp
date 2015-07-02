@@ -239,6 +239,7 @@ VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	delete handle->grammarChecker;
 	handle->hyphenator->terminate();
 	delete handle->hyphenator;
+	handle->suggestionGenerator->terminate();
 	delete handle->suggestionGenerator;
 	handle->speller->terminate();
 	delete handle->speller;
