@@ -35,7 +35,6 @@
 #include <vector>
 #include <string>
 #include <stdint.h>
-#include "fst/Configuration.hpp"
 
 namespace libvoikko { namespace fst {
 	
@@ -72,10 +71,6 @@ namespace libvoikko { namespace fst {
 			uint16_t flagDiacriticFeatureCount;
 			uint16_t firstNormalChar;
 			std::vector<OpFeatureValue> symbolToDiacritic;
-			
-			virtual bool prepare(Configuration * configuration, const char * input, size_t inputLen) const = 0;
-			
-			virtual bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const = 0;
 			
 			uint16_t getFlagDiacriticFeatureCount() const;
 			

@@ -43,7 +43,7 @@ static const int BUFFER_SIZE = 2000;
 VfstSpeller::VfstSpeller(const string & directoryName) throw(setup::DictionaryException) {
 	string splFile = directoryName + "/spl.vfst";
 	transducer = new WeightedTransducer(splFile.c_str());
-	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	configuration = new WeightedConfiguration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
 }
  

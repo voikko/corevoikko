@@ -51,7 +51,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	string morFile = directoryName + "/mor.vfst";
 	// XXX: could handle different types of transducers
 	transducer = new WeightedTransducer(morFile.c_str());
-	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	configuration = new WeightedConfiguration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
 }
 

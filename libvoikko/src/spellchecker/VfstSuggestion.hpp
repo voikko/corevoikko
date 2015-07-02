@@ -50,8 +50,8 @@ class VfstSuggestion : public SuggestionGenerator {
 	private:
 		const fst::WeightedTransducer * acceptor;
 		fst::WeightedTransducer * errorModel;
-		fst::Configuration * acceptorConf;
-		fst::Configuration * errorModelConf;
+		fst::WeightedConfiguration * acceptorConf;
+		fst::WeightedConfiguration * errorModelConf;
 		char * acceptorBuffer;
 		char * errorModelBuffer;
 };

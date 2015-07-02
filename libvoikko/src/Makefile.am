@@ -3,6 +3,7 @@ AUTOMAKE_OPTIONS=subdir-objects
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = \
     fst/Configuration.cpp \
+    fst/WeightedConfiguration.cpp \
     fst/Transducer.cpp \
     fst/UnweightedTransducer.cpp \
     fst/WeightedTransducer.cpp \
@@ -84,6 +85,7 @@ libvoikko_la_LDFLAGS = -no-undefined -version-info 14:1:13 @LIBLDFLAGSWIN@
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \
     fst/Configuration.hpp \
+    fst/WeightedConfiguration.hpp \
     fst/Transducer.hpp \
     fst/Transition.hpp \
     fst/WeightedTransition.hpp \

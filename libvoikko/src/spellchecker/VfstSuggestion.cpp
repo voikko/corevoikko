@@ -41,14 +41,14 @@ VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const s
                 acceptor(acceptor) {
 	string errFile = directoryName + "/err.vfst";
 	errorModel = new fst::WeightedTransducer(errFile.c_str());
-	acceptorConf = new fst::Configuration(acceptor->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
-	errorModelConf = new fst::Configuration(errorModel->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	acceptorConf = new fst::WeightedConfiguration(acceptor->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	errorModelConf = new fst::WeightedConfiguration(errorModel->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	acceptorBuffer = new char[BUFFER_SIZE];
 	errorModelBuffer = new char[BUFFER_SIZE];
 }
 
 void VfstSuggestion::generate(SuggestionStatus * s) const {
-	s->setMaxCost(10000); // TODO
+	s->setMaxCost(1000000); // TODO
 	size_t wlen = s->getWordLength();
 	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	int16_t acceptorWeight;

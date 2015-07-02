@@ -32,6 +32,7 @@
 
 #include "fst/Transducer.hpp"
 #include "fst/Transition.hpp"
+#include "fst/Configuration.hpp"
 
 namespace libvoikko { namespace fst {
 	

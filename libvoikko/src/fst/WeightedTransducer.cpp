@@ -184,7 +184,7 @@ namespace libvoikko { namespace fst {
 		transitionStart = reinterpret_cast<WeightedTransition *>(filePtr);
 	}
 	
-	bool WeightedTransducer::prepare(Configuration * configuration, const char * input, size_t inputLen) const {
+	bool WeightedTransducer::prepare(WeightedConfiguration * configuration, const char * input, size_t inputLen) const {
 		configuration->stackDepth = 0;
 		configuration->inputDepth = 0;
 		configuration->stateIndexStack[0] = 0;
@@ -214,21 +214,21 @@ namespace libvoikko { namespace fst {
 		return maxTc;
 	}
 	
-	static bool flagDiacriticCheck(Configuration * configuration, const Transducer * transducer, uint16_t symbol) {
+	static bool flagDiacriticCheck(WeightedConfiguration * configuration, const Transducer * transducer, uint16_t symbol) {
 		uint16_t flagDiacriticFeatureCount = transducer->flagDiacriticFeatureCount;
 		if (!flagDiacriticFeatureCount) {
 			return true;
 		}
 		int stackDepth = configuration->stackDepth;
 		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint16_t);
-		uint16_t * flagValueStack = configuration->flagValueStack;
-		uint16_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
+		uint32_t * flagValueStack = configuration->flagValueStack;
+		uint32_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
 		
 		bool update = false;
 		OpFeatureValue ofv;
 		if (symbol != 0 && symbol < transducer->firstNormalChar) {
 			ofv = transducer->symbolToDiacritic[symbol];
-			uint16_t currentValue = currentFlagArray[ofv.feature];
+			uint32_t currentValue = currentFlagArray[ofv.feature];
 			DEBUG("checking op " << ofv.op << " " << ofv.feature << " " << ofv.value << " current value " << currentValue)
 			switch (ofv.op) {
 				case Operation_P:
@@ -275,12 +275,12 @@ namespace libvoikko { namespace fst {
 		return true;
 	}
 	
-	bool WeightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
+	bool WeightedTransducer::next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen) const {
 		int16_t weight;
 		return next(configuration, outputBuffer, bufferLen, &weight);
 	}
 	
-	bool WeightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const {
+	bool WeightedTransducer::next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const {
 		uint32_t loopCounter = 0;
 		while (loopCounter < MAX_LOOP_COUNT) {
 			WeightedTransition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
@@ -302,7 +302,7 @@ namespace libvoikko { namespace fst {
 							const char * outputSym = symbolToString[configuration->outputSymbolStack[i]];
 							size_t symLen = strlen(outputSym);
 							if ((outputBufferPos - outputBuffer) + symLen + 1 >= bufferLen) {
-								// would overflow the output buffer
+								DEBUG("would overflow the output buffer")
 								return false;
 							}
 							strncpy(outputBufferPos, outputSym, symLen);
@@ -324,7 +324,7 @@ namespace libvoikko { namespace fst {
 					// down
 					DEBUG("down " << tc)
 					if (configuration->stackDepth + 2 == configuration->bufferSize) {
-						// max stack depth reached
+						DEBUG("max stack depth reached")
 						return false;
 					}
 					configuration->outputSymbolStack[configuration->stackDepth] = 
@@ -341,7 +341,7 @@ namespace libvoikko { namespace fst {
 				currentTransition++;
 			}
 			if (configuration->stackDepth == 0) {
-				// end
+				DEBUG("end")
 				return false;
 			}
 			// up

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2012 - 2015
+ * Portions created by the Initial Developer are Copyright (C) 2015
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,32 +26,30 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#ifndef LIBVOIKKO_FST_WEIGHTED_CONFIGURATION_H
+#define LIBVOIKKO_FST_WEIGHTED_CONFIGURATION_H
 
-#ifndef LIBVOIKKO_FST_WEIGHTED_TRANSDUCER_H
-#define LIBVOIKKO_FST_WEIGHTED_TRANSDUCER_H
-
-#include "fst/Transducer.hpp"
-#include "fst/WeightedTransition.hpp"
-#include "fst/WeightedConfiguration.hpp"
+#include <cstddef>
+#include <string>
+#include <stdint.h>
 
 namespace libvoikko { namespace fst {
 	
-	class WeightedTransducer : public Transducer {
-		private:
-			WeightedTransition * transitionStart;
-			std::map<std::string, uint16_t> stringToSymbol;
-			std::vector<const char *> symbolToString;
-			uint16_t firstMultiChar;
-			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
-		public:
-			WeightedTransducer(const char * filePath);
-			
-			bool prepare(WeightedConfiguration * configuration, const char * input, size_t inputLen) const;
-			
-			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen) const;
-			
-			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const;
+	struct WeightedConfiguration {
+		const int bufferSize;
+		int stackDepth;
+		int inputDepth;
+		uint32_t * stateIndexStack;
+		uint32_t * currentTransitionStack;
+		uint32_t * inputSymbolStack;
+		uint32_t * outputSymbolStack;
+		uint32_t * flagValueStack;
+		/** Length of entire input string in characters */
+		int inputLength;
+		WeightedConfiguration(uint32_t flagDiacriticFeatureCount, int bufferSize);
+		~WeightedConfiguration();
 	};
+
 } }
 
 #endif
