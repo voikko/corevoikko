@@ -82,6 +82,7 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 			}
 		}
 	}
+	delete[] wordUtf;
 	
 	priority_queue<WeightedSuggestion> queue;
 	for (map<string, int>::const_iterator it = suggestionWeights.begin(); it != suggestionWeights.end(); ++it) {
