@@ -29,6 +29,7 @@
 #include "spellchecker/VfstSuggestion.hpp"
 #include "utils/StringUtils.hpp"
 #include "setup/setup.hpp"
+#include <map>
 #include <queue>
 
 using namespace std;
@@ -64,19 +65,32 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	int16_t acceptorWeight;
 	int16_t errorModelWeight;
-	priority_queue<WeightedSuggestion> queue;
+	map<string, int> suggestionWeights;
 	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
 		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE, &errorModelWeight)) {
 			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
 				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight)) {
-					WeightedSuggestion sugg;
-					sugg.suggestion = StringUtils::ucs4FromUtf8(errorModelBuffer);
-					sugg.weight = acceptorWeight + errorModelWeight;
-					queue.push(sugg);
+					string suggStr(errorModelBuffer);
+					int weight = acceptorWeight + errorModelWeight;
+					if (suggestionWeights.find(suggStr) != suggestionWeights.end()) {
+						suggestionWeights[suggStr] = min(suggestionWeights[suggStr], weight);
+					}
+					else {
+						suggestionWeights[suggStr] = weight;
+					}
 				}
 			}
 		}
 	}
+	
+	priority_queue<WeightedSuggestion> queue;
+	for (map<string, int>::const_iterator it = suggestionWeights.begin(); it != suggestionWeights.end(); ++it) {
+		WeightedSuggestion sugg;
+		sugg.suggestion = StringUtils::ucs4FromUtf8(it->first.c_str());
+		sugg.weight = it->second;
+		queue.push(sugg);
+	}
+	
 	while (!queue.empty()) {
 		WeightedSuggestion sugg = queue.top();
 		queue.pop();
