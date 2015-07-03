@@ -220,7 +220,7 @@ namespace libvoikko { namespace fst {
 			return true;
 		}
 		int stackDepth = configuration->stackDepth;
-		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint16_t);
+		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint32_t);
 		uint32_t * flagValueStack = configuration->flagValueStack;
 		uint32_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
 		
