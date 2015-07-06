@@ -290,20 +290,33 @@ int main(int argc, char ** argv) {
 			uint32_t targetStateOrd = 0;
 			string symInStr;
 			string symOutStr;
+			string targetOrFinalWeight;
 			double weight;
 			bool finalState = false;
+			bool hasFinalWeight = false;
 
 			ss >> sourceStateOrd;
 			if (ss.eof()) {
 				finalState = true;
 			}
 			else {
-				ss >> targetStateOrd;
-				ss >> symInStr;
-				if (weights && !ss.good()) {
-					finalState = true;
+				if (weights) {
+					ss >> targetOrFinalWeight;
+					istringstream s2(targetOrFinalWeight);
+					if (ss.eof()) {
+						finalState = true;
+						hasFinalWeight = true;
+						s2 >> weight;
+					}
+					else {
+						s2 >> targetStateOrd;
+					}
 				}
 				else {
+					ss >> targetStateOrd;
+				}
+				if (!finalState) {
+					ss >> symInStr;
 					ss >> symOutStr;
 					if (ss.fail()) {
 						cerr << "ERROR: format error on input line:" << endl;
@@ -338,7 +351,7 @@ int main(int argc, char ** argv) {
 				WeightedTransition t;
 				t.symIn = 0xFFFFFFFF;
 				t.symOut = 0;
-				t.weight = 0; // TODO final weight
+				t.weight = (hasFinalWeight ? weightFunc(weight) : 0);
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(0);
 			}
