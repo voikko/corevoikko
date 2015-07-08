@@ -69,7 +69,8 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
 		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE, &errorModelWeight)) {
 			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
-				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight)) {
+				int firstNotReachedPosition;
+				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight, &firstNotReachedPosition)) {
 					string suggStr(errorModelBuffer);
 					int weight = acceptorWeight + errorModelWeight;
 					if (suggestionWeights.find(suggStr) != suggestionWeights.end()) {
@@ -78,6 +79,9 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 					else {
 						suggestionWeights[suggStr] = weight;
 					}
+				}
+				else {
+					errorModel->backtrackToOutputDepth(errorModelConf, firstNotReachedPosition);
 				}
 			}
 		}

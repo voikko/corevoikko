@@ -51,6 +51,11 @@ namespace libvoikko { namespace fst {
 			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen) const;
 			
 			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const;
+			
+			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight,
+			          int * firstNotReachedPosition) const;
+			
+			void backtrackToOutputDepth(WeightedConfiguration * configuration, int depth);
 	};
 } }
 

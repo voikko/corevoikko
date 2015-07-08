@@ -281,7 +281,13 @@ namespace libvoikko { namespace fst {
 	}
 	
 	bool WeightedTransducer::next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const {
+		int firstNotReachedPosition;
+		return next(configuration, outputBuffer, bufferLen, weight, &firstNotReachedPosition);
+	}
+	
+	bool WeightedTransducer::next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight, int * firstNotReachedPosition) const {
 		uint32_t loopCounter = 0;
+		*firstNotReachedPosition = configuration->inputDepth;
 		while (loopCounter < MAX_LOOP_COUNT) {
 			WeightedTransition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
 			WeightedTransition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
@@ -335,6 +341,9 @@ namespace libvoikko { namespace fst {
 					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition->targetState;
 					if (currentTransition->symIn >= firstNormalChar) {
 						configuration->inputDepth++;
+						if (*firstNotReachedPosition < configuration->inputDepth) {
+							*firstNotReachedPosition = configuration->inputDepth;
+						}
 					}
 					goto nextInMainLoop;
 				}
@@ -359,6 +368,28 @@ namespace libvoikko { namespace fst {
 		}
 		DEBUG("maximum number of loops reached")
 		return false;
+	}
+	
+	void WeightedTransducer::backtrackToOutputDepth(WeightedConfiguration * configuration, int depth) {
+		int outputDepth = 0;
+		int stackIndex = 0;
+		while (outputDepth < depth + 1 && stackIndex < configuration->stackDepth) {
+			uint16_t outputSymbol = (transitionStart + configuration->currentTransitionStack[stackIndex])->symOut;
+			if (outputSymbol >= firstNormalChar) {
+				outputDepth++;
+			}
+			stackIndex++;
+		}
+		while (stackIndex + 0 < configuration->stackDepth) {
+			configuration->stackDepth--;
+			{
+				uint16_t previousInputSymbol = (transitionStart + configuration->currentTransitionStack[configuration->stackDepth])->symIn;
+				if (previousInputSymbol >= firstNormalChar) {
+					configuration->inputDepth--;
+				}
+			}
+			configuration->currentTransitionStack[configuration->stackDepth]++;
+		}
 	}
 	
 } }
