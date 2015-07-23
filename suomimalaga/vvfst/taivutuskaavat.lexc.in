@@ -4103,7 +4103,7 @@ LEXICON Johdin_nimitapa3_ttA
 LEXICON Johdin_tAvA
 [Ll][Ra]t<A>v[Xj]<A>[X]@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
 [Ll][Ra]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
-?Sukija [Ra]t<A>@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
+?Sukija [Ra]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	Johdin_tAvA_muodot_<A>	;
 ?Sukija [Ra]t<A>v<A>[Sg][Ny]n:t<A>v<A>n	LaatusanaYsJatko	;
 
 LEXICON Johdin_tAvA_muodot
