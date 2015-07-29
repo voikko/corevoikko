@@ -183,6 +183,19 @@ LEXICON SukijaSuhdesana
 LEXICON SukijaSanasto
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
+[Ln][Xp]asu=analyysi[X]asu[Bm]analyys:asuanalyys NimisanaRisti_aä ;
+[Ln][Xp]asu=koko[X]asu[Bm]ko@P.INEN_SALLITTU.ON@:asuko@P.INEN_SALLITTU.ON@ NimisanaKoko_a ;
+[Ln][Xp]asu=kulttuuri[X]asu[Bm]kulttuur@P.INEN_SALLITTU.ON@:asukulttuur@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
+[Ln][Xp]asu=kuva[X]asu[Bm]kuv:asukuv NimisanaKoira_a ;
+[Ln][Xp]asu=malli[X]asu[Bm]mall@P.INEN_KIELLETTY.ON@:asumall@P.INEN_KIELLETTY.ON@ NimisanaRisti_a ;
+[Ln][Xp]asu=muoto[X]asu[Bm]muo@P.INEN_SALLITTU.ON@:asumuo@P.INEN_SALLITTU.ON@ NimisanaLeuto_a ;
+[Ln][Xp]asu=paketti[X]asu[Bm]paket:asupaket NimisanaSalaatti_a ;
+[Ln][Xp]asu=näyttelijä[X]asu[Bm]näyttelij:asunäyttelij NimisanaApila_ä ;
+[Ln][Xp]asu=rooli=pelaaminen[X]asu[Bm]rooli[Bm]pelaami:asuroolipelaami NimisanaNainen_a ;
+[Ln][Xp]asu=vaihdos[X]asu[Bm]vaihdo:asuvaihdo NimisanaVastaus_a ;
+[Ln][Xp]asu=valikoima[X]asu[Bm]valikoim:asuvalikoim NimisanaAsema_a ;
+[Ln][Xp]asu=valinta[X]asu[Bm]valin:asuvalin NimisanaKanta_a ;
+[Ln][Xp]asu=varasto[X]asu[Bm]varasto:asuvarasto NimisanaArvelu_a ;
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
@@ -282,6 +295,21 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]ympäri[X]ympäritse:ympäritse Omistusliite_ä ;
 
 LEXICON Sukija_p
+[Lp]ajoasu:ajoasu EtuliitteenJatko_ellelnelt;
+[Lp]esiintymisasu:esiintymisasu EtuliitteenJatko_ellelnelt;
+[Lp]juhla-asu:juhla-asu EtuliitteenJatko_ellelnelt;
+[Lp]kieliasu:kieliasu EtuliitteenJatko_ellelnelt;
+[Lp]kirjoitusasu:kirjoitusasu EtuliitteenJatko_ellelnelt;
+[Lp]naamiaisasu:naamiaisasu EtuliitteenJatko_ellelnelt;
+[Lp]palvelusasu:palvelusasu EtuliitteenJatko_ellelnelt;
+[Lp]peliasu:peliasu EtuliitteenJatko_ellelnelt;
+[Lp]pyöräilyasu:pyöräilyasu EtuliitteenJatko_ellelnelt;
+[Lp]työasu:työasu EtuliitteenJatko_ellelnelt;
+[Lp]uima-asu:uima-asu EtuliitteenJatko_ellelnelt;
+[Lp]ulkoiluasu:ulkoiluasu EtuliitteenJatko_ellelnelt;
+[Lp]urheiluasu:urheiluasu EtuliitteenJatko_ellelnelt;
+[Lp]vappuasu:vappuasu EtuliitteenJatko_ellelnelt;
+!!
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
 [Lp]abessinian:abessinian EtuliitteenJatko_ellelnelt;
 [Lp]afganistanin:afganistanin EtuliitteenJatko_ellelnelt;
@@ -296,11 +324,10 @@ LEXICON Sukija_p
 [Lp]anatolian:anatolian EtuliitteenJatko_ellelnelt;
 [Lp]andalusian:andalusian EtuliitteenJatko_ellelnelt;
 [Lp]andien:andien EtuliitteenJatko_ellelnelt;
-[Lp]andien:andien EtuliitteenJatko_ellelnelt;
 [Lp]angolan:angolan EtuliitteenJatko_ellelnelt;
 [Lp]anonyymi:anonyymi EtuliitteenJatko_ellelnelt;
 [Lp]argentiinan:argentiinan EtuliitteenJatko_ellelnelt;
-[Lp]asu:asu EtuliitteenJatko_ellelnelt;
+! [Lp]asu:asu EtuliitteenJatko_ellelnelt;
 [Lp]australian:australian EtuliitteenJatko_ellelnelt;
 [Lp]bahian:bahian EtuliitteenJatko_ellelnelt;
 [Lp]balin:balin EtuliitteenJatko_ellelnelt;
@@ -330,6 +357,7 @@ LEXICON Sukija_p
 [Lp]floridan:floridan EtuliitteenJatko_ellelnelt;
 [Lp]formosan:formosan EtuliitteenJatko_ellelnelt;
 [Lp]gabonin:gabonin EtuliitteenJatko_ellelnelt;
+[Lp]galapagosin:galapagosin EtuliitteenJatko_ellelnelt;
 [Lp]gotlannin:gotlannin EtuliitteenJatko_ellelnelt;
 [Lp]grönlannin:grönlannin EtuliitteenJatko_ellelnelt;
 [Lp]haitin:haitin EtuliitteenJatko_ellelnelt;
@@ -404,6 +432,7 @@ LEXICON Sukija_p
 [Lp]nigerian:nigerian EtuliitteenJatko_ellelnelt;
 [Lp]nightingalen:nightingalen EtuliitteenJatko_ellelnelt;
 [Lp]niilin:niilin EtuliitteenJatko_ellelnelt;
+[Lp]nubian:nubian EtuliitteenJatko_ellelnelt;
 [Lp]ohitse:ohitse EtuliitteenJatko_ellelnelt;
 [Lp]olemassa:olemassa EtuliitteenJatko_ellelnelt;
 [Lp]orientaali:orientaali EtuliitteenJatko_ellelnelt;
@@ -428,6 +457,7 @@ LEXICON Sukija_p
 [Lp]ristiin:ristiin EtuliitteenJatko_ellelnelt;
 [Lp]ruijan:ruijan EtuliitteenJatko_ellelnelt;
 [Lp]sardinian:sardinian EtuliitteenJatko_ellelnelt;
+[Lp]senegalin:senegalin EtuliitteenJatko_ellelnelt;
 [Lp]seychellien:seychellien EtuliitteenJatko_ellelnelt;
 [Lp]siamin:siamin EtuliitteenJatko_ellelnelt;
 [Lp]singaporen:singaporen EtuliitteenJatko_ellelnelt;
