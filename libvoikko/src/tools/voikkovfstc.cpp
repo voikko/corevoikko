@@ -363,7 +363,7 @@ int main(int argc, char ** argv) {
 				WeightedTransition t;
 				t.symIn = symMap[symInStr].code;
 				t.symOut = symMap[symOutStr].code;
-				t.weight = weightFunc(weight);
+				t.weight = (weights ? weightFunc(weight) : 0);
 				attStateVector[sourceStateOrd].transitions.push_back(t);
 				attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
 				transitionCount++;
