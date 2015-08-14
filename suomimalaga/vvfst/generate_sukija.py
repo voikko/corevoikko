@@ -368,6 +368,7 @@ word_list = [
     (u"gentlemanni",      (u"getlemann",     u"gentleman")),
     (u"germaani",         (u"germaan",       u"german")),
     (u"gregoriaaninen",   (u"gregoriaani",   u"gregoriani")),
+    (u"harppuuna",        (u"harppuun",      u"harpuun")),
     (u"haupitsi",         (u"haupits",       u"haubits")),
     (u"hevonen",          (u"hevo",          u"hevoi")),
     (u"humaaninen",       (u"humaani",       u"humani")),
