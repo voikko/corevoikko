@@ -225,6 +225,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
+[Ln][Xp]etätulevaisuus[X]etä[Bm]tulevaisuu:etätulevaisuu NimisanaKalleus_a ;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
@@ -234,6 +235,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
+[Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
@@ -241,7 +243,6 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
-[Ln][Xp]etätulevaisuus[X]etä[Bm]tulevaisuu:etätulevaisuu NimisanaKalleus_a ;
 
 
 LEXICON SukijaAsemosana
@@ -327,7 +328,6 @@ LEXICON Sukija_p
 [Lp]angolan:angolan EtuliitteenJatko_ellelnelt;
 [Lp]anonyymi:anonyymi EtuliitteenJatko_ellelnelt;
 [Lp]argentiinan:argentiinan EtuliitteenJatko_ellelnelt;
-! [Lp]asu:asu EtuliitteenJatko_ellelnelt;
 [Lp]australian:australian EtuliitteenJatko_ellelnelt;
 [Lp]bahian:bahian EtuliitteenJatko_ellelnelt;
 [Lp]balin:balin EtuliitteenJatko_ellelnelt;
@@ -368,10 +368,8 @@ LEXICON Sukija_p
 [Lp]himalajan:himalajan EtuliitteenJatko_ellelnelt;
 [Lp]hondurasin:hondurasin EtuliitteenJatko_ellelnelt;
 [Lp]hulluin:hulluin EtuliitteenJatko_ellelnelt;
-!  [Lp]humal:humal EtuliitteenJatko_ellelnelt;
 [Lp]hyvin:hyvin EtuliitteenJatko_ellelnelt;
 [Lp]iberian:iberian EtuliitteenJatko_ellelnelt;
-!  [Lp]ilki:ilki EtuliitteenJatko_ellelnelt;
 [Lp]intian:intian EtuliitteenJatko_ellelnelt;
 [Lp]irlannin:irlannin EtuliitteenJatko_ellelnelt;
 [Lp]jaavan:jaavan EtuliitteenJatko_ellelnelt;
@@ -421,12 +419,11 @@ LEXICON Sukija_p
 [Lp]mariaanien:mariaanien EtuliitteenJatko_ellelnelt;
 [Lp]marjo:marjo EtuliitteenJatko_ellelnelt;
 [Lp]marshallin:marshallin EtuliitteenJatko_ellelnelt;
-[Lp]mars:mars EtuliitteenJatko_ellelnelt;
 [Lp]meksikon:meksikon EtuliitteenJatko_ellelnelt;
 [Lp]miljoona:miljoona EtuliitteenJatko_ellelnelt;
 [Lp]minkä:minkä EtuliitteenJatko_ellelnelt;
+[Lp]molukkien:molukkien EtuliitteenJatko_ellelnelt;
 [Lp]mongolian:mongolian EtuliitteenJatko_ellelnelt;
-[Lp]muistiin:muistiin EtuliitteenJatko_ellelnelt;
 [Lp]namibian:namibian EtuliitteenJatko_ellelnelt;
 [Lp]navarran:navarran EtuliitteenJatko_ellelnelt;
 [Lp]nigerian:nigerian EtuliitteenJatko_ellelnelt;
@@ -609,6 +606,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]kiirumpi[X]kiiruu:kiiruu NimiLaatusanaSuurempi_a ;
 [Ll][Xp]kiirunalainen[X]kiirun[Bm]alai:kiirunalai LaatusanaNainenInen_a ;
 [Ll][Xp]kultainen[X]kullai:kullai LaatusanaNainenInen_a ;
+[Ll][Xp]muistiin=painuva[X]muistiin[Bm]painuv:muistiinpainuv LaatusanaAsema_a ;
 [Ll][Xp]monenlainen[X]monel[Bm]lai:monellai LaatusanaNainenInen_a ;
 [Ll][Xp]oktaaninen[X]oktani:oktani LaatusanaNainenInen_a ;
 [Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;
@@ -665,3 +663,9 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]ratista[X]rat:rat Kihajaa_a ;
 [Lt][Xp]ritistä[X]rit:rit Kihajaa_a ;
 [Lt][Xp]vapista[X]vap:vap Kihajaa_a ;
+[Lt][Xp]muistiin=kirjata[X]muistiin[Bm]kirj:muistiinkirj Salata_a ;
+!!! [Lt][Xp]muistiin=kirjoittaa[X]muistiin[Bm]kirjo:muistiinkirjo Kirjoittaa_a ;
+[Lt][Xp]muistiin=lukea[X]muistiin[Bm]lu:muistiinlu Hakea_a ;
+!!!  [Lt][Xp]muistiin=merkitä[X]muistiin[Bm]merki:muistiinmerki Valita_ä ;
+[Lt][Xp]muistiin=palauttaa[X]muistiin[Bm]palaut:muistiinpalaut Alittaa_a ;
+!!! [Lt][Xp]muistiin=panna[X]muistiin[Bm]pan:muistiinpan Mennä_a ;
