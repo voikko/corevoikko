@@ -356,6 +356,7 @@ LEXICON Sukija_p
 [Lp]flanderin:flanderin EtuliitteenJatko_ellelnelt;
 [Lp]floridan:floridan EtuliitteenJatko_ellelnelt;
 [Lp]formosan:formosan EtuliitteenJatko_ellelnelt;
+[Lp]färsaarten:färsaarten EtuliitteenJatko_ellelnelt;
 [Lp]gabonin:gabonin EtuliitteenJatko_ellelnelt;
 [Lp]galapagosin:galapagosin EtuliitteenJatko_ellelnelt;
 [Lp]gotlannin:gotlannin EtuliitteenJatko_ellelnelt;
@@ -523,6 +524,7 @@ LEXICON SukijaPoikkeavat_em
 
 
 LEXICON SukijaPoikkeavat_ep
+[Lep][Xp]Fär=saari[X]fäär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
 [Lep][Xp]Isokylä[X][Sn][Ny]iso[Bm]kylä:isokylä	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokylä[X][Sg][Ny]ison[Bm]kylän:isonkylän	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokylä[X][Sp][Ny]isoa[Bm]kylää:isoakylää	PaikannimiLiOlV_ä	;
