@@ -133,6 +133,12 @@ re_oittaa2 = makeRe (u"Lt", u".Cöittää")
 re_ottaa1 = makeRe (u"Lt", u".Cottaa")
 re_ottaa2 = makeRe (u"Lt", u".Cöttää")
 
+re_oitella1 = makeRe (u"Lt", u".Coitella")
+re_oitella2 = makeRe (u"Lt", u".Cöitellä")
+
+re_otella1 = makeRe (u"Lt", u".Cotella")
+re_otella2 = makeRe (u"Lt", u".Cötellä")
+
 re_isoida = makeRe (u"Lt", u"isoida") # Organisoida => organiseerata.
 
 re_oitin = makeRe (u"Ln", u".Coitin")
@@ -203,6 +209,7 @@ spelling_pattern_list = [
   (re_torio, u"torio", u"toorio"),
 
   (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
+
   (re_oittaa1, u"o",   u"ot",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa2, u"ö",   u"öt",  u"Kirjoittaa", u"Alittaa"),
   (re_oittaa1, u"oit", u"ot",  u"Alittaa",    u"Alittaa"),
@@ -211,6 +218,11 @@ spelling_pattern_list = [
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
+
+  (re_oitella1, u"oit", u"ot",  u"Aatella", u"Aatella"),
+  (re_oitella2, u"öit", u"öt",  u"Aatella", u"Aatella"),
+  (re_otella1,  u"ot",  u"oit", u"Aatella", u"Aatella"),
+  (re_otella2,  u"öt",  u"öit", u"Aatella", u"Aatella"),
 
   (re_tautua1, u"tau", u"tau", u"Kaatua", u"SukijaAntautua"),
   (re_tautua2, u"täy", u"täy", u"Kaatua", u"SukijaAntautua"),
