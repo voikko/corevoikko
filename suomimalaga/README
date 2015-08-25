@@ -100,7 +100,9 @@ Variables for tuning the build process
   * SUKIJAN_MUODOT=yes|no
     Include words that exist just for Sukija. Default: no
   * VOIKKO_DEBUG=yes|no
-    Insert debug information into binary allomorph lexicon. Default: no
+    Include information that is not needed by libvoikko but may be needed
+    for debugging or by external applications (full morphological analysis).
+    Default: no
   * VOIKKO_VARIANT=variant
     Set the short name for the language variant of this vocabulary. The
     name should match the regular expression [a-z][a-z0-9_]*
