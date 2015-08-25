@@ -190,6 +190,7 @@ noinst_HEADERS = \
     grammar/FinnishRuleEngine/ParagraphCheck.hpp \
     grammar/FinnishRuleEngine/SentenceCheck.hpp \
     grammar/FinnishRuleEngine/SidesanaCheck.hpp \
+    grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp \
     autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \
@@ -232,7 +233,8 @@ VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
 VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp \
-    spellchecker/VfstSpeller.cpp spellchecker/VfstSuggestion.cpp setup/V5DictionaryLoader.cpp
+    spellchecker/VfstSpeller.cpp spellchecker/VfstSuggestion.cpp setup/V5DictionaryLoader.cpp \
+    grammar/FinnishRuleEngine/VfstAutocorrectCheck.cpp
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
