@@ -84,7 +84,7 @@ Dictionary V5DictionaryLoader::dictionaryFromPath(const string & path) {
 	string description;
 	BackendProperties morBackend("finnishVfst", path, true);
 	BackendProperties gramMorBackend;
-	BackendProperties grammarBackend("finnish", true);
+	BackendProperties grammarBackend("finnishVfst", true);
 	BackendProperties spellBackend("FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)", true);
 	BackendProperties suggestionBackend("FinnishSuggestionStrategy(currentAnalyzer)", true);
 	BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", true);

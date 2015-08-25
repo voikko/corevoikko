@@ -46,7 +46,7 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voi
 	if (grammarBackend == "null") {
 		return new NullGrammarChecker();
 	}
-	if (grammarBackend == "finnish") {
+	if (grammarBackend == "finnish" || grammarBackend == "finnishVfst" ) {
 		return new FinnishGrammarChecker(voikkoOptions);
 	}
 	#ifdef HAVE_VISLCG3

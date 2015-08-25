@@ -48,10 +48,9 @@ FinnishRuleEngine::~FinnishRuleEngine() {
 void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
-		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
-		// later format revisions. Old implementation is only available to support
-		// v2 dictionary format.
-		libvoikko::autocorrect::AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
+		//if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnish") {
+			libvoikko::autocorrect::AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
+		//}
 #endif
 		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);
