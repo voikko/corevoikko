@@ -1,0 +1,14 @@
+<!ELEMENT autocorrect (replacement*)>
+<!ATTLIST autocorrect
+          xml:lang CDATA #IMPLIED>
+
+<!ELEMENT replacement (incorrect, correct, reason?)>
+<!ATTLIST replacement
+          type (required|optional) "required">
+
+<!ELEMENT incorrect (#PCDATA)>
+
+<!ELEMENT correct (#PCDATA)>
+
+<!ELEMENT reason (#PCDATA)>
+
