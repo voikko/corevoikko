@@ -40,11 +40,13 @@ VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukus
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          voikko/voikko-fi_FI.pro.in common/voikkoutils.py \
+         vocabulary/autocorrect/autocorrect.dtd vocabulary/autocorrect/fi.xml \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
          vvfst/taivutuskaavat.lexc.in vvfst/index.txt.in vvfst/filter_lexc.py \
+         vvfst/autocorrect_to_lexc.py vvfst/autocorrect.foma.in \
          vvfst/main.foma.in $(VVFST_LEXC) vvfst/generate_sukija.py vvfst/poikkeavat-sukija.lexc
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
@@ -209,7 +211,7 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 
 
 
-vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/index.txt
+vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/autocorr.vfst $(VVFST_BUILDDIR)/index.txt
 
 $(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
@@ -224,13 +226,25 @@ $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/genera
 $(VVFST_BUILDDIR)/all.lexc: vvfst/filter_lexc.py vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp $(VVFST_LEXC)
 	$(PYTHON) vvfst/filter_lexc.py $(GENLEX_OPTS) $(VVFST_TAIVUTUSKAAVAT_OPTS) vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) $(VVFST_LEXC) > $@
 
+$(VVFST_BUILDDIR)/autocorrect.lexc: vocabulary/autocorrect/fi.xml vvfst/autocorrect_to_lexc.py
+	$(PYTHON) vvfst/autocorrect_to_lexc.py vocabulary/autocorrect/fi.xml $@
+
 $(VVFST_BUILDDIR)/main.foma: vvfst/main.foma.in
+	sed -e "s,VVFST_BUILDDIR,$(VVFST_BUILDDIR)," < $^ > $@
+
+$(VVFST_BUILDDIR)/autocorrect.foma: vvfst/autocorrect.foma.in
 	sed -e "s,VVFST_BUILDDIR,$(VVFST_BUILDDIR)," < $^ > $@
 
 $(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma
 	foma -f $(VVFST_BUILDDIR)/main.foma | grep -v "defined but not used" 2>&1
 
+$(VVFST_BUILDDIR)/autocorrect.att: $(VVFST_BUILDDIR)/autocorrect.lexc $(VVFST_BUILDDIR)/autocorrect.foma
+	foma -f $(VVFST_BUILDDIR)/autocorrect.foma | grep -v "defined but not used" 2>&1
+
 $(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/all.att
+	cat $^ | sort -n | voikkovfstc -o $@
+
+$(VVFST_BUILDDIR)/autocorr.vfst: $(VVFST_BUILDDIR)/autocorrect.att
 	cat $^ | sort -n | voikkovfstc -o $@
 
 VVFST_PRO_SEDSCRIPT="s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \

@@ -35,12 +35,12 @@ outputFile = open(sys.argv[2], "w")
 outputFile.write("LEXICON Root\n")
 
 def formatForLexc(s):
-	return s.replace("=", "").replace(" ", "% ")
+	return s.replace("=", "").replace(" ", "@_SPACE_@")
 
 # Read entries to lexc
 for replacement in autoCorrect.getElementsByTagName("replacement"):
 	incorrect = formatForLexc(replacement.getElementsByTagName("incorrect")[0].firstChild.wholeText)
 	correct = formatForLexc(replacement.getElementsByTagName("correct")[0].firstChild.wholeText)
-	outputFile.write((incorrect + u":" + correct + u" ;\n").encode("UTF-8"))
+	outputFile.write((incorrect + u":" + correct + u"\t#\t;\n").encode("UTF-8"))
 
 outputFile.close()
