@@ -52,7 +52,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
 
-VVFST_BINDIST=$(VVFST_BUILDDIR)/index.txt $(VVFST_BUILDDIR)/mor.vfst
+VVFST_BINDIST=$(VVFST_BUILDDIR)/index.txt $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/autocorr.vfst
 
 VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a s c
 VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))

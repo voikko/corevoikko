@@ -39,6 +39,10 @@
 #ifdef HAVE_MALAGA
         #include "autocorrect/AutoCorrect.hpp"
 #endif
+#ifdef HAVE_VFST
+        #include "grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp"
+#endif
+
 
 namespace libvoikko { namespace grammar {
 
@@ -48,6 +52,12 @@ FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
 	sentenceChecks.push_back(new check::NegativeVerbCheck());
 	sentenceChecks.push_back(new check::CompoundVerbCheck());
 	sentenceChecks.push_back(new check::SidesanaCheck());
+#ifdef HAVE_VFST
+	if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnishVfst") {
+		std::string autocorrFile = voikkoOptions->dictionary.getGrammarBackend().getPath() + "/autocorr.vfst";
+		sentenceChecks.push_back(new check::VfstAutocorrectCheck(autocorrFile));
+	}
+#endif
 }
 
 FinnishRuleEngine::~FinnishRuleEngine() {

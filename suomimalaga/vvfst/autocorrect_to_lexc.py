@@ -32,7 +32,7 @@ xmlFile.close()
 
 # Open the lexc file
 outputFile = open(sys.argv[2], "w")
-outputFile.write("LEXICON Root\n")
+outputFile.write("Multichar_Symbols\n@_SPACE_@\n\nLEXICON Root\n")
 
 def formatForLexc(s):
 	return s.replace("=", "").replace(" ", "@_SPACE_@")

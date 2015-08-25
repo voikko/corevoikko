@@ -29,7 +29,11 @@
 #ifndef VOIKKO_GRAMMAR_CHECK_VFST_AUTOCORRECT_CHECK
 #define VOIKKO_GRAMMAR_CHECK_VFST_AUTOCORRECT_CHECK
 
+#include "setup/DictionaryException.hpp"
 #include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
+#include "fst/UnweightedTransducer.hpp"
+#include "fst/Configuration.hpp"
+#include <string>
 
 namespace libvoikko { namespace grammar { namespace check {
 /**
@@ -37,7 +41,13 @@ namespace libvoikko { namespace grammar { namespace check {
  */
 class VfstAutocorrectCheck : public SentenceCheck {
 	public:
+		VfstAutocorrectCheck(const std::string & fileName) throw(setup::DictionaryException);
+		~VfstAutocorrectCheck();
 		void check(voikko_options_t * options, const Sentence * sentence);
+	private:
+		fst::UnweightedTransducer * transducer;
+		fst::Configuration * configuration;
+
 };
 
 } } }

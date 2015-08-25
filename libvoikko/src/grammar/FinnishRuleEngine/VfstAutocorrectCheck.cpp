@@ -33,6 +33,19 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
+static const int BUFFER_SIZE = 2000;
+
+VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) throw(setup::DictionaryException) {
+	transducer = new fst::UnweightedTransducer(fileName.c_str());
+	configuration = new fst::Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+}
+
+VfstAutocorrectCheck::~VfstAutocorrectCheck() {
+	delete configuration;
+	transducer->terminate();
+	delete transducer;
+}
+
 void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		const Token * token = sentence->tokens + i;
