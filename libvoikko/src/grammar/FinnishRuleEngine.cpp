@@ -31,6 +31,11 @@
 #include "grammar/FinnishRuleEngine.hpp"
 #include "grammar/FinnishRuleEngine/checks.hpp"
 
+#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
+#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
+
 #ifdef HAVE_MALAGA
         #include "autocorrect/AutoCorrect.hpp"
 #endif
@@ -39,13 +44,21 @@ namespace libvoikko { namespace grammar {
 
 FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
 	 voikkoOptions(voikkoOptions) {
+	sentenceChecks.push_back(new check::MissingVerbCheck());
+	sentenceChecks.push_back(new check::NegativeVerbCheck());
+	sentenceChecks.push_back(new check::CompoundVerbCheck());
+	sentenceChecks.push_back(new check::SidesanaCheck());
 }
 
 FinnishRuleEngine::~FinnishRuleEngine() {
-
+	std::list<check::SentenceCheck *>::iterator i = sentenceChecks.begin();
+	for (; i != sentenceChecks.end(); ++i) {
+		delete *i;
+	}
 }
 
 void FinnishRuleEngine::check(const Paragraph * paragraph) {
+	std::list<check::SentenceCheck *>::const_iterator sentenceCheckIt;
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
 		//if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnish") {
@@ -55,10 +68,11 @@ void FinnishRuleEngine::check(const Paragraph * paragraph) {
 		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);
 		gc_repeating_words(voikkoOptions, paragraph->sentences[i]);
-		negativeVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
-		compoundVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
-		sidesanaCheck.check(voikkoOptions, paragraph->sentences[i]);
-		missingVerbCheck.check(voikkoOptions, paragraph->sentences[i]);
+		sentenceCheckIt = sentenceChecks.begin();
+		for (; sentenceCheckIt != sentenceChecks.end(); ++sentenceCheckIt) {
+			(*sentenceCheckIt)->check(voikkoOptions, paragraph->sentences[i]);
+		}
+
 	}
 
 

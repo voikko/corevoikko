@@ -32,13 +32,11 @@
 #include "setup/setup.hpp"
 
 #include "grammar/RuleEngine.hpp"
-
 #include "grammar/FinnishRuleEngine/checks.hpp"
+#include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
 #include "grammar/FinnishRuleEngine/CapitalizationCheck.hpp"
-#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
-#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
-#include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
-#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
+
+#include <list>
 
 namespace libvoikko { namespace grammar {
 
@@ -53,10 +51,7 @@ class FinnishRuleEngine : public RuleEngine {
 
 	private:
 		check::CapitalizationCheck capitalizationCheck;
-		check::NegativeVerbCheck negativeVerbCheck;
-		check::CompoundVerbCheck compoundVerbCheck;
-		check::SidesanaCheck sidesanaCheck;
-		check::MissingVerbCheck missingVerbCheck;
+		std::list<check::SentenceCheck *> sentenceChecks;
 		voikko_options_t * voikkoOptions;
 
 		FinnishRuleEngine(FinnishRuleEngine const & other);
