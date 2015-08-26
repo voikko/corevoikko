@@ -28,30 +28,51 @@
 
 #include "grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp"
 #include "grammar/error.hpp"
+#include "utils/StringUtils.hpp"
+#include <list>
 
 using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
-static const int BUFFER_SIZE = 2000;
+static const int BUFFER_SIZE = 20000;
 
 VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) throw(setup::DictionaryException) {
 	transducer = new fst::UnweightedTransducer(fileName.c_str());
 	configuration = new fst::Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
+	inputBuffer = new char[BUFFER_SIZE + 1];
+	outputBuffer = new char[BUFFER_SIZE + 1];
 }
 
 VfstAutocorrectCheck::~VfstAutocorrectCheck() {
+	delete[] outputBuffer;
+	delete[] inputBuffer;
 	delete configuration;
-	transducer->terminate();
-	delete transducer;
+	if (transducer) {
+		transducer->terminate();
+		delete transducer;
+	}
 }
 
 void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
-	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+	list<size_t> lookupPositions;
+	size_t sentenceLength = 0;
+	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		const Token * token = sentence->tokens + i;
 		if (token->type == TOKEN_WORD) {
-			// TODO something useful with autocorrect transducer
+			lookupPositions.push_back(sentenceLength);
 		}
+		size_t tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
+		                     inputBuffer + sentenceLength, BUFFER_SIZE - sentenceLength);
+		if (tokenUtfLen == BUFFER_SIZE - sentenceLength + 1) {
+			return; // sentence is unreasonably long
+		}
+		sentenceLength += tokenUtfLen;
+	}
+	for (list<size_t>::iterator i = lookupPositions.begin(); i != lookupPositions.end(); ++i) {
+		size_t position = *i;
+		transducer->prepare(configuration, inputBuffer + position, sentenceLength - position);
+		// TODO
 	}
 }
 

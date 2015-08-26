@@ -84,6 +84,22 @@ char * StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen) {
 	}
 }
 
+size_t StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen, char * target, size_t bufferLength) {
+	try {
+		char * utfPtr = target;
+		for (size_t i = 0; i < wlen; i++) {
+			if (bufferLength - (utfPtr - target) <= 7) {
+				return bufferLength + 1;
+			}
+			utfPtr = utf8::append(original[i], utfPtr);
+		}
+		return utfPtr - target;
+	} catch (...) {
+		// invalid codepoint
+		return bufferLength + 1;
+	}
+}
+
 wchar_t * StringUtils::copy(const wchar_t * const original) {
 	size_t len = wcslen(original);
 	wchar_t * copied = new wchar_t[len + 1];

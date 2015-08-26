@@ -47,6 +47,8 @@ class VfstAutocorrectCheck : public SentenceCheck {
 	private:
 		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
+		char * inputBuffer;
+		char * outputBuffer;
 
 };
 
