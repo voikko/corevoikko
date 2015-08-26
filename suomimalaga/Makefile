@@ -283,7 +283,7 @@ voikko-sukija:
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,science --sukija
-vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
+vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/autocorr.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 #vvfst-sukija: VOIKKO_VARIANT=sukija
 #vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 
@@ -309,3 +309,7 @@ $(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
 vvfst-sukija-install: vvfst-sukija
 	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
+
+vvfst-sukija-clean:
+	rm -f $(VVFST_BUILDDIR)/autocorrect.att $(VVFST_BUILDDIR)/autocorrect.foma $(VVFST_BUILDDIR)/autocorrect.lexc
+	rm -f $(VVFST_BUILDDIR)/autocorr.vfst
