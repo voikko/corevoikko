@@ -151,7 +151,7 @@ clean:
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma $(VVFST_BUILDDIR)/mor.vfst
 	rm -f $(VVFST_BUILDDIR)/autocorrect.att $(VVFST_BUILDDIR)/autocorrect.foma $(VVFST_BUILDDIR)/autocorrect.lexc
-	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/index.txt
+	rm -f $(VVFST_BUILDDIR)/autocorr.vfst $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/index.txt
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
 	rm -f $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma*
