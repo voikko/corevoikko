@@ -55,28 +55,34 @@ VfstAutocorrectCheck::~VfstAutocorrectCheck() {
 }
 
 void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
-	list<size_t> lookupPositions;
-	size_t sentenceLength = 0;
+	list<size_t> lookupPositionsUtf;
+	list<size_t> lookupPositionsUcs;
+	size_t sentenceLengthUtf = 0;
+	size_t sentenceLengthUcs = 0;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		const Token * token = sentence->tokens + i;
 		if (token->type == TOKEN_WORD) {
-			lookupPositions.push_back(sentenceLength);
+			lookupPositionsUtf.push_back(sentenceLengthUtf);
+			lookupPositionsUcs.push_back(sentenceLengthUcs);
 		}
 		size_t tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
-		                     inputBuffer + sentenceLength, BUFFER_SIZE - sentenceLength);
-		if (tokenUtfLen == BUFFER_SIZE - sentenceLength + 1) {
+		                     inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf);
+		if (tokenUtfLen == BUFFER_SIZE - sentenceLengthUtf + 1) {
 			return; // sentence is unreasonably long
 		}
-		sentenceLength += tokenUtfLen;
+		sentenceLengthUtf += tokenUtfLen;
+		sentenceLengthUcs += token->tokenlen;
 	}
-	for (list<size_t>::iterator i = lookupPositions.begin(); i != lookupPositions.end(); ++i) {
+	list<size_t>::iterator ucsPositions = lookupPositionsUcs.begin();
+	for (list<size_t>::iterator i = lookupPositionsUtf.begin(); i != lookupPositionsUtf.end(); ++i) {
 		size_t position = *i;
-		transducer->prepare(configuration, inputBuffer + position, sentenceLength - position);
+		size_t ucsPosition = *(ucsPositions++);
+		transducer->prepare(configuration, inputBuffer + position, sentenceLengthUtf - position);
 		size_t prefixLength = 0;
 		if (transducer->nextPrefix(configuration, outputBuffer, BUFFER_SIZE, &prefixLength)) {
 			CacheEntry * e = new CacheEntry(1);
 			e->error.setErrorCode(GCERR_INVALID_SPELLING);
-			e->error.setStartPos(sentence->pos + position);
+			e->error.setStartPos(sentence->pos + ucsPosition);
 			e->error.setErrorLen(prefixLength);
 			e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
 			// TODO options->grammarChecker->cache.appendError(e);
