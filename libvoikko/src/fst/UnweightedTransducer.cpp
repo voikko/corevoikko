@@ -271,6 +271,10 @@ namespace libvoikko { namespace fst {
 	}
 	
 	bool UnweightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
+		return nextPrefix(configuration, outputBuffer, bufferLen, 0);
+	}
+	
+	bool UnweightedTransducer::nextPrefix(Configuration * configuration, char * outputBuffer, size_t bufferLen, size_t * prefixLength) const {
 		uint32_t loopCounter = 0;
 		while (loopCounter < MAX_LOOP_COUNT) {
 			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
@@ -286,7 +290,7 @@ namespace libvoikko { namespace fst {
 				// next
 				if (currentTransition->symIn == 0xFFFF) {
 					// final state
-					if (configuration->inputDepth == configuration->inputLength) {
+					if (configuration->inputDepth == configuration->inputLength || prefixLength) {
 						char * outputBufferPos = outputBuffer;
 						for (int i = 0; i < configuration->stackDepth; i++) {
 							const char * outputSym = symbolToString[configuration->outputSymbolStack[i]];
@@ -300,6 +304,9 @@ namespace libvoikko { namespace fst {
 						}
 						*outputBufferPos = '\0';
 						configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart + 1;
+						if (prefixLength) {
+							*prefixLength = configuration->inputDepth;
+						}
 						return true;
 					}
 				}

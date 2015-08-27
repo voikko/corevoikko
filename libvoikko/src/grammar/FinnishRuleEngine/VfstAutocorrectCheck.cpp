@@ -72,11 +72,12 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 	for (list<size_t>::iterator i = lookupPositions.begin(); i != lookupPositions.end(); ++i) {
 		size_t position = *i;
 		if (transducer->prepare(configuration, inputBuffer + position, sentenceLength - position)) {
-			if (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
+			size_t prefixLength = 0;
+			if (transducer->nextPrefix(configuration, outputBuffer, BUFFER_SIZE, &prefixLength)) {
 				CacheEntry * e = new CacheEntry(1);
 				e->error.setErrorCode(GCERR_INVALID_SPELLING);
 				e->error.setStartPos(sentence->pos + position);
-				e->error.setErrorLen(1); // TODO
+				e->error.setErrorLen(prefixLength);
 				e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
 				options->grammarChecker->cache.appendError(e);
 			}
