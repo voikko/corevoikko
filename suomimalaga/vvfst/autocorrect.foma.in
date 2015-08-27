@@ -3,6 +3,5 @@ define Lexicon;
 
 set flag-is-epsilon ON
 regex Lexicon;
-invert net
 compact sigma
 write att VVFST_BUILDDIR/autocorrect.att

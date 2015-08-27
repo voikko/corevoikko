@@ -176,7 +176,10 @@ static string convertSymbolNames(string input) {
 	if (input == "@0@") {
 		return string("");
 	}
-	if (input == "@_IDENTITY_SYMBOL_@" || input == "@_SPACE_@" || input == "@_UNKNOWN_SYMBOL_@") {
+	else if (input == "@_SPACE_@") {
+		return string(" ");
+	}
+	else if (input == "@_IDENTITY_SYMBOL_@" || input == "@_UNKNOWN_SYMBOL_@") {
 		return string("#"); // these are not supported yet
 	}
 	return input;

@@ -150,11 +150,6 @@ namespace libvoikko { namespace fst {
 		DEBUG("Reading " << symbolCount << " symbols to symbol table");
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
-			/* TODO this does not work yet
-			if (symbol == "@_SPACE_@") {
-				symbol = " ";
-			}
-			*/
 			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
 				firstNormalChar = i;
 			}
@@ -168,6 +163,7 @@ namespace libvoikko { namespace fst {
 				symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
 			}
 		}
+		unknownSymbolOrdinal = symbolCount;
 		flagDiacriticFeatureCount = features.size();
 		{
 			size_t partial = (filePtr - static_cast<char *>(map)) % sizeof(Transition);
@@ -186,18 +182,21 @@ namespace libvoikko { namespace fst {
 		configuration->currentTransitionStack[0] = 0;
 		configuration->inputLength = 0;
 		const char * ip = input;
+		bool allKnown = true;
 		while (ip < input + inputLen) {
 			const char * prevIp = ip;
 			utf8::unchecked::next(ip);
 			std::map<std::string,uint16_t>::const_iterator it = stringToSymbol.find(string(prevIp, ip - prevIp));
 			if (it == stringToSymbol.end()) {
-				// Unknown symbol
-				return false;
+				configuration->inputSymbolStack[configuration->inputLength] = unknownSymbolOrdinal;
+				allKnown = false;
 			}
-			configuration->inputSymbolStack[configuration->inputLength] = it->second;
+			else {
+				configuration->inputSymbolStack[configuration->inputLength] = it->second;
+			}
 			configuration->inputLength++;
 		}
-		return true;
+		return allKnown;
 	}
 	
 	static uint32_t getMaxTc(Transition * stateHead) {

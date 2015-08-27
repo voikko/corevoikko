@@ -42,6 +42,7 @@ namespace libvoikko { namespace fst {
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<const char *> symbolToString;
 			uint16_t firstMultiChar;
+			uint16_t unknownSymbolOrdinal;
 			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
 			UnweightedTransducer(const char * filePath);

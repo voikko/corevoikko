@@ -155,11 +155,6 @@ namespace libvoikko { namespace fst {
 		DEBUG("Reading " << symbolCount << " symbols to symbol table");
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
-			/* TODO this does not work yet
-			if (symbol == "@_SPACE_@") {
-				symbol = " ";
-			}
-			*/
 			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
 				firstNormalChar = i;
 			}
