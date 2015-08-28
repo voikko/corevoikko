@@ -122,6 +122,16 @@ bool VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 		transducer->prepare(configuration, inputBuffer + position, sentenceLengthUtf - position);
 		size_t prefixLength = 0;
 		if (transducer->nextPrefix(configuration, outputBuffer, BUFFER_SIZE, &prefixLength)) {
+			bool endAtBoundary = false;
+			for (vector<size_t>::iterator p = ucsNormalizedPositions.begin(); p != ucsNormalizedPositions.end(); ++p) {
+				if (ucsPosition + prefixLength == *p) {
+					endAtBoundary = true;
+					break;
+				}
+			}
+			if (!endAtBoundary) {
+				continue; // end is not at word boundary
+			}
 			CacheEntry * e = new CacheEntry(1);
 			e->error.setErrorCode(GCERR_INVALID_SPELLING);
 			size_t startPos = sentence->pos + ucsPosition;
