@@ -30,6 +30,7 @@
 #include "grammar/error.hpp"
 #include "utils/StringUtils.hpp"
 #include <list>
+#include <vector>
 
 using namespace std;
 
@@ -57,6 +58,10 @@ VfstAutocorrectCheck::~VfstAutocorrectCheck() {
 void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
 	list<size_t> lookupPositionsUtf;
 	list<size_t> lookupPositionsUcs;
+	vector<size_t> ucsOriginalPositions;
+	vector<size_t> ucsNormalizedPositions;
+	ucsOriginalPositions.push_back(0);
+	ucsNormalizedPositions.push_back(0);
 	size_t sentenceLengthUtf = 0;
 	size_t sentenceLengthUcs = 0;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
@@ -65,13 +70,26 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 			lookupPositionsUtf.push_back(sentenceLengthUtf);
 			lookupPositionsUcs.push_back(sentenceLengthUcs);
 		}
-		size_t tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
-		                     inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf);
-		if (tokenUtfLen == BUFFER_SIZE - sentenceLengthUtf + 1) {
-			return; // sentence is unreasonably long
+		size_t tokenUtfLen;
+		if (token->type == TOKEN_WHITESPACE) {
+			tokenUtfLen = 1;
+			if (sentenceLengthUtf >= BUFFER_SIZE) {
+				return; // sentence is unreasonably long
+			}
+			inputBuffer[sentenceLengthUtf] = ' ';
+			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + 1);
+		}
+		else {
+			tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
+			              inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf);
+			if (tokenUtfLen == BUFFER_SIZE - sentenceLengthUtf + 1) {
+				return; // sentence is unreasonably long
+			}
+			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + token->tokenlen);
 		}
 		sentenceLengthUtf += tokenUtfLen;
 		sentenceLengthUcs += token->tokenlen;
+		ucsOriginalPositions.push_back(sentenceLengthUcs);
 	}
 	list<size_t>::iterator ucsPositions = lookupPositionsUcs.begin();
 	for (list<size_t>::iterator i = lookupPositionsUtf.begin(); i != lookupPositionsUtf.end(); ++i) {
@@ -82,8 +100,21 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 		if (transducer->nextPrefix(configuration, outputBuffer, BUFFER_SIZE, &prefixLength)) {
 			CacheEntry * e = new CacheEntry(1);
 			e->error.setErrorCode(GCERR_INVALID_SPELLING);
-			e->error.setStartPos(sentence->pos + ucsPosition);
-			e->error.setErrorLen(prefixLength);
+			size_t startPos = sentence->pos + ucsPosition;
+			e->error.setStartPos(startPos);
+			size_t lengthCorrection = 0;
+			for (size_t n = 0; n < ucsOriginalPositions.size(); n++) {
+				size_t oPos = ucsOriginalPositions[n];
+				size_t nPos = ucsNormalizedPositions[n];
+				if (oPos <= startPos) {
+					lengthCorrection = oPos - nPos;
+				}
+				if (nPos > startPos + prefixLength) {
+					lengthCorrection = (ucsOriginalPositions[n - 1] - ucsNormalizedPositions[n - 1]) - lengthCorrection;
+					break;
+				}
+			}
+			e->error.setErrorLen(prefixLength + lengthCorrection);
 			e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
 			// TODO options->grammarChecker->cache.appendError(e);
 		}
