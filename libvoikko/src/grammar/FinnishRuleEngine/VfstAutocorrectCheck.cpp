@@ -80,12 +80,14 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + 1);
 		}
 		else {
+			size_t skippedChars = 0;
 			tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
-			              inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf);
+			              inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf,
+			              L"\u00AD", &skippedChars);
 			if (tokenUtfLen == BUFFER_SIZE - sentenceLengthUtf + 1) {
 				return; // sentence is unreasonably long
 			}
-			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + token->tokenlen);
+			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + token->tokenlen - skippedChars);
 		}
 		sentenceLengthUtf += tokenUtfLen;
 		sentenceLengthUcs += token->tokenlen;

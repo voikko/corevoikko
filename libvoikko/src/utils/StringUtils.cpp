@@ -84,10 +84,16 @@ char * StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen) {
 	}
 }
 
-size_t StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen, char * target, size_t bufferLength) {
+size_t StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen, char * target, size_t bufferLength,
+	                         const wchar_t * const charsToSkip, size_t * charsSkipped) {
 	try {
+		*charsSkipped = 0;
 		char * utfPtr = target;
 		for (size_t i = 0; i < wlen; i++) {
+			if (charsToSkip && wcschr(charsToSkip, original[i])) {
+				(*charsSkipped)++;
+				continue;
+			}
 			if (bufferLength - (utfPtr - target) <= 7) {
 				return bufferLength + 1;
 			}

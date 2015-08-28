@@ -55,10 +55,11 @@ class StringUtils {
 	
 	/**
 	 * Converts UCS4 string to UTF-8, writing results to an existing
-	 * buffer.
+	 * buffer and skipping specified characters.
 	 * @return number of bytes used from target buffer. If buffer was too short returns bufferLength + 1
 	 */
-	static size_t utf8FromUcs4(const wchar_t * const original, size_t wlen, char * target, size_t bufferLength);
+	static size_t utf8FromUcs4(const wchar_t * const original, size_t wlen, char * target, size_t bufferLength,
+	                           const wchar_t * const charsToSkip, size_t * charsSkipped);
 	
 	/**
 	 * Makes a copy of a string.
