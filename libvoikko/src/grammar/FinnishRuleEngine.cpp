@@ -71,9 +71,9 @@ void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	std::list<check::SentenceCheck *>::const_iterator sentenceCheckIt;
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
-		//if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnish") {
+		if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnish") {
 			libvoikko::autocorrect::AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
-		//}
+		}
 #endif
 		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);

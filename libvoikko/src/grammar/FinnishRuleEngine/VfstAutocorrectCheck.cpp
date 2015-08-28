@@ -29,6 +29,7 @@
 #include "grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp"
 #include "grammar/error.hpp"
 #include "utils/StringUtils.hpp"
+#include "character/SimpleChar.hpp"
 #include <list>
 #include <vector>
 
@@ -56,6 +57,12 @@ VfstAutocorrectCheck::~VfstAutocorrectCheck() {
 }
 
 void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
+	if (check(options, sentence, false)) {
+		check(options, sentence, true);
+	}
+}
+
+bool VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence, bool lowerFirst) {
 	list<size_t> lookupPositionsUtf;
 	list<size_t> lookupPositionsUcs;
 	vector<size_t> ucsOriginalPositions;
@@ -74,18 +81,29 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 		if (token->type == TOKEN_WHITESPACE) {
 			tokenUtfLen = 1;
 			if (sentenceLengthUtf >= BUFFER_SIZE) {
-				return; // sentence is unreasonably long
+				return false; // sentence is unreasonably long
 			}
 			inputBuffer[sentenceLengthUtf] = ' ';
 			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + 1);
 		}
 		else {
 			size_t skippedChars = 0;
-			tokenUtfLen = utils::StringUtils::utf8FromUcs4(token->str, token->tokenlen,
+			wchar_t * tokenStr;
+			if (lowerFirst && i == 0) {
+				tokenStr = utils::StringUtils::copy(token->str);
+				tokenStr[0] = character::SimpleChar::lower(tokenStr[0]);
+			}
+			else {
+				tokenStr = token->str;
+			}
+			tokenUtfLen = utils::StringUtils::utf8FromUcs4(tokenStr, token->tokenlen,
 			              inputBuffer + sentenceLengthUtf, BUFFER_SIZE - sentenceLengthUtf,
 			              L"\u00AD", &skippedChars);
+			if (lowerFirst && i == 0) {
+				delete[] tokenStr;
+			}
 			if (tokenUtfLen == BUFFER_SIZE - sentenceLengthUtf + 1) {
-				return; // sentence is unreasonably long
+				return false; // sentence is unreasonably long
 			}
 			ucsNormalizedPositions.push_back(ucsNormalizedPositions[i] + token->tokenlen - skippedChars);
 		}
@@ -94,8 +112,12 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 		ucsOriginalPositions.push_back(sentenceLengthUcs);
 	}
 	list<size_t>::iterator ucsPositions = lookupPositionsUcs.begin();
+	bool needLowering = false;
 	for (list<size_t>::iterator i = lookupPositionsUtf.begin(); i != lookupPositionsUtf.end(); ++i) {
 		size_t position = *i;
+		if (lowerFirst && position > 0) {
+			break;
+		}
 		size_t ucsPosition = *(ucsPositions++);
 		transducer->prepare(configuration, inputBuffer + position, sentenceLengthUtf - position);
 		size_t prefixLength = 0;
@@ -117,10 +139,24 @@ void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 				}
 			}
 			e->error.setErrorLen(prefixLength + lengthCorrection);
-			e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
-			// TODO options->grammarChecker->cache.appendError(e);
+			if (lowerFirst) {
+				wchar_t * outputUcs = utils::StringUtils::ucs4FromUtf8(outputBuffer);
+				outputUcs[0] = character::SimpleChar::upper(outputUcs[0]);
+				e->error.getSuggestions()[0] = utils::StringUtils::utf8FromUcs4(outputUcs);
+				delete[] outputUcs;
+			}
+			else {
+				e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
+			}
+			options->grammarChecker->cache.appendError(e);
+		}
+		else {
+			if (!lowerFirst && position == 0 && character::SimpleChar::isUpper(sentence->tokens[0].str[0])) {
+				needLowering = true;
+			}
 		}
 	}
+	return needLowering;
 }
 
 } } }

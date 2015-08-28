@@ -49,6 +49,7 @@ class VfstAutocorrectCheck : public SentenceCheck {
 		fst::Configuration * configuration;
 		char * inputBuffer;
 		char * outputBuffer;
+		bool check(voikko_options_t * options, const Sentence * sentence, bool lowerFirst);
 
 };
 
