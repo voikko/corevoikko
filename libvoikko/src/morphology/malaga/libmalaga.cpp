@@ -23,7 +23,6 @@
 /* Includes. ================================================================*/
 
 #include <cstdio>
-#include <cstdarg>
 #include <cstring>
 #include <cstdlib>
 #include "morphology/malaga/basic.hpp"

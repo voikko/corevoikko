@@ -126,11 +126,6 @@ extern char_t *new_string( string_t string, string_t end );
  * If END != NULL, it marks the end of the string.
  * The result string must be freed after use. */
 
-extern char_t *concat_strings( string_t first_string, ... );
-/* Concatenate a list of strings and return the result string.
- * Must have NULL-terminated list of strings as parameters.
- * The result string must be freed after use. */
-
 /* Text functions. ==========================================================*/
 
 /* A data structure that contains a string that may grow indefinitely. */

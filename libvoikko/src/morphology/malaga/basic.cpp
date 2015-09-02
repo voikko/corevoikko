@@ -24,7 +24,6 @@
 
 #include <cstdio>
 #include <cstdlib>
-#include <cstdarg>
 #include <cstring>
 #include "morphology/malaga/basic.hpp"
 
@@ -289,48 +288,6 @@ new_string( string_t string, string_t end )
     *new_str_p++ = *string++;
   *new_str_p = EOS;
   return new_str;
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t *
-concat_strings( string_t first_string, ... )
-/* Concatenate a list of strings and return the result string.
- * Must have NULL-terminated list of strings as parameters.
- * The result string must be freed after use. */
-{
-  va_list args;
-  size_t length;
-  string_t next_string;
-  char_t *string;
-  char_t *string_p;
-
-  /* Compute length of the result string. */
-  va_start( args, first_string );
-  length = strlen( first_string );
-  for (next_string = va_arg( args, string_t ); 
-       next_string != NULL;
-       next_string = va_arg( args, string_t )) 
-  {
-    length += strlen( next_string ); 
-  }
-  va_end( args );
-
-  /* Concatenate strings. */
-  va_start( args, first_string );
-  string = (char_t *) new_vector( sizeof( char_t ), length + 1 );
-  strcpy( string, first_string );
-  string_p = string + strlen( first_string );
-  for (next_string = va_arg( args, string_t ); 
-       next_string != NULL; 
-       next_string = va_arg( args, string_t )) 
-  {
-    strcpy( string_p, next_string );
-    string_p += strlen( next_string );
-  }
-  va_end( args );
-
-  return string;
 }
 
 }}}

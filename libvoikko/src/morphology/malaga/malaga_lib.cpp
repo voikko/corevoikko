@@ -23,7 +23,6 @@
 /* Includes. ================================================================*/
 
 #include <cstdio>
-#include <cstdarg>
 #include <cstring>
 #include <cstdlib>
 #include "morphology/malaga/basic.hpp"
@@ -43,9 +42,9 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-static const char * const morphology_file = "voikko-fi_FI.mor";
-static const char * const lexicon_file = "voikko-fi_FI.lex";
-static const char * const symbol_file = "voikko-fi_FI.sym";
+static const std::string morphology_file("voikko-fi_FI.mor");
+static const std::string lexicon_file("voikko-fi_FI.lex");
+static const std::string symbol_file("voikko-fi_FI.sym");
 
 /* Functions. ===============================================================*/
 
@@ -83,22 +82,18 @@ binarySuffix() {
 /*---------------------------------------------------------------------------*/
 
 void 
-init_malaga(string_t directoryName, MalagaState * malagaState)
+init_malaga(std::string directoryName, MalagaState * malagaState)
 /* Initialise this module. */
 { 
   /* Init modules. */
-  char * fullSymbolFile = concat_strings(directoryName, pathSeparator(), symbol_file, binarySuffix(), NULL);
-  char * fullLexiconFile = concat_strings(directoryName, pathSeparator(), lexicon_file, binarySuffix(), NULL);
-  char * fullMorphologyFile = concat_strings(directoryName, pathSeparator(), morphology_file, binarySuffix(), NULL);
+  std::string fullSymbolFile = directoryName + pathSeparator() + symbol_file + binarySuffix();
+  std::string fullLexiconFile = directoryName + pathSeparator() + lexicon_file + binarySuffix();
+  std::string fullMorphologyFile = directoryName + pathSeparator() + morphology_file + binarySuffix();
   
   init_values(malagaState);
-  init_symbols(fullSymbolFile, malagaState);
-  init_lexicon(fullLexiconFile, malagaState);
-  init_analysis(fullMorphologyFile, malagaState);
-  
-  free(fullSymbolFile);
-  free(fullLexiconFile);
-  free(fullMorphologyFile);
+  init_symbols(fullSymbolFile.c_str(), malagaState);
+  init_lexicon(fullLexiconFile.c_str(), malagaState);
+  init_analysis(fullMorphologyFile.c_str(), malagaState);
 }
 
 /*---------------------------------------------------------------------------*/

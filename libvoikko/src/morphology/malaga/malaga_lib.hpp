@@ -20,13 +20,15 @@
 
 /* Options for malaga and functions to start and terminate malaga. */
 
+#include <string>
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 class MalagaState;
 
 /* Functions. ===============================================================*/
 
-extern void init_malaga(string_t directoryName, MalagaState * malagaState);
+extern void init_malaga(std::string directoryName, MalagaState * malagaState);
 /* Initialise this module. */
 
 extern void terminate_malaga(MalagaState * malagaState);
