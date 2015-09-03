@@ -28,9 +28,13 @@
 
 #include "spellchecker/HfstSuggestion.hpp"
 #include "utils/StringUtils.hpp"
+#include "utils/utils.hpp"
 #include "setup/setup.hpp"
+#include "character/SimpleChar.hpp"
 
 #include <fstream>
+#include <set>
+#include <string>
 
 #include <ZHfstOspeller.h>
 
@@ -48,10 +52,26 @@ void HfstSuggestion::generate(SuggestionStatus * s) const {
 	s->setMaxCost(s->getMaxSuggestionCount());
 	size_t wlen = s->getWordLength();
 	char * wordUtf8 = StringUtils::utf8FromUcs4(s->getWord(), wlen);
+	set<wstring> allSuggs;
+	bool checkUppercasing = (voikko_casetype(s->getWord(), wlen) == CT_FIRST_UPPER);
 	hfst_ol::CorrectionQueue corrections = speller_->suggest(wordUtf8);
 	while (corrections.size() > 0 && !s->shouldAbort()) {
 		const char * sugUtf8 = corrections.top().first.c_str();
 		wchar_t * sugU4 = StringUtils::ucs4FromUtf8(sugUtf8, strlen(sugUtf8));
+		// HFST speller may return the same suggestion in lower and uppercase form for uppercase words.
+		// If this happens we want to drop the second one as it would lead to duplicate suggestion after
+		// case correction.
+		if (checkUppercasing) {
+			wchar_t * uppercased = StringUtils::copy(sugU4);
+			uppercased[0] = character::SimpleChar::upper(uppercased[0]);
+			pair<set<wstring>::iterator,bool> inserted = allSuggs.insert(wstring(uppercased));
+			delete[] uppercased;
+			if (!inserted.second) {
+				delete[] sugU4;
+				corrections.pop();
+				continue;
+			}
+		}
 		int weight = (int) (1000.0 * corrections.top().second);
 		s->addSuggestion(sugU4, weight + s->getSuggestionCount() + 1);
 		s->charge();
