@@ -1,3 +1,14 @@
+2015-08-28 Harri Pitkänen <hatapitk@iki.fi>
+	* Autocorrect data is read from VFST transducer in format 5
+	  dictionaries.
+
+2015-06-20 Harri Pitkänen <hatapitk@iki.fi>
+	* Add spelling suggestions to simple VFST spellers by using
+	  weighted VFST transducers.
+
+2015-06-16 Harri Pitkänen <hatapitk@iki.fi>
+	* Add support for weighted VFST transducers.
+
 2015-06-08 Harri Pitkänen <hatapitk@iki.fi>
 	* Initial support for BCP 47 script subtag.
 
