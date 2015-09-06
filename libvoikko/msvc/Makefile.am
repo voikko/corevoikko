@@ -1,2 +1,2 @@
-EXTRA_DIST = libvoikko.sln libvoikko.vcproj voikkogc.vcproj voikkohyphenate.vcproj voikkospell.vcproj
+EXTRA_DIST = libvoikko.sln libvoikko.vcxproj voikkogc.vcxproj voikkohyphenate.vcxproj voikkospell.vcxproj
 
