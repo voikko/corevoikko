@@ -144,6 +144,7 @@ noinst_HEADERS = \
     spellchecker/SpellerFactory.hpp \
     spellchecker/SpellerCache.hpp \
     spellchecker/HfstSuggestion.hpp \
+    spellchecker/VfstSpeller.hpp \
     spellchecker/VfstSuggestion.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
