@@ -281,7 +281,11 @@ class Voikko(object):
 		# Ensure that resources are freed before this object is deleted.
 		self.terminate()
 	
-	def __setBoolOption(self, option, value):
+	def setBooleanOption(self, option, value):
+		"""Sets a boolean option to specified value (True or False). This is a low level function
+		available for applications that know about the numerical option codes. The same options can also
+		be set using option specific setter methods.
+		"""
 		result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
 		if result == 0:
 			raise VoikkoException(u"Could not set boolean option " + str(option) + u" to value " + str(value) + u".")
@@ -577,26 +581,26 @@ class Voikko(object):
 		will consider trailing dot of a word to be a part of that word.
 		Default: false
 		"""
-		self.__setBoolOption(0, value)
+		self.setBooleanOption(0, value)
 	
 	def setIgnoreNumbers(self, value):
 		"""Ignore words containing numbers.
 		Default: false
 		"""
-		self.__setBoolOption(1, value)
+		self.setBooleanOption(1, value)
 	
 	def setIgnoreUppercase(self, value):
 		"""Accept words that are written completely in uppercase letters without checking
 		them at all.
 		Default: false
 		"""
-		self.__setBoolOption(3, value)
+		self.setBooleanOption(3, value)
 	
 	def setAcceptFirstUppercase(self, value):
 		"""Accept words even when the first letter is in uppercase (start of sentence etc.)
 		Default: true
 		"""
-		self.__setBoolOption(6, value)
+		self.setBooleanOption(6, value)
 	
 	def setAcceptAllUppercase(self, value):
 		"""Accept words even when all of the letters are in uppercase. Note that this is
@@ -604,13 +608,13 @@ class Voikko(object):
 		checked, only case differences are ignored.
 		Default: true
 		"""
-		self.__setBoolOption(7, value)
+		self.setBooleanOption(7, value)
 	
 	def setIgnoreNonwords(self, value):
 		"""(Spell checking only): Ignore non-words such as URLs and email addresses.
 		Default: true
 		"""
-		self.__setBoolOption(10, value)
+		self.setBooleanOption(10, value)
 	
 	def setAcceptExtraHyphens(self, value):
 		"""(Spell checking only): Allow some extra hyphens in words. This option relaxes
@@ -619,7 +623,7 @@ class Voikko(object):
 		behaviour (if any) of this option is not specified.
 		Default: false
 		"""
-		self.__setBoolOption(11, value)
+		self.setBooleanOption(11, value)
 	
 	def setAcceptMissingHyphens(self, value):
 		"""(Spell checking only): Accept missing hyphens at the start and end of the word.
@@ -629,7 +633,7 @@ class Voikko(object):
 		this option may be used to tell libvoikko to work around this defect.
 		Default: false
 		"""
-		self.__setBoolOption(12, value)
+		self.setBooleanOption(12, value)
 	
 	def setAcceptTitlesInGc(self, value):
 		"""(Grammar checking only): Accept incomplete sentences that could occur in
@@ -638,33 +642,33 @@ class Voikko(object):
 		you are checking title text.
 		Default: false
 		"""
-		self.__setBoolOption(13, value)
+		self.setBooleanOption(13, value)
 	
 	def setAcceptUnfinishedParagraphsInGc(self, value):
 		"""(Grammar checking only): Accept incomplete sentences at the end of the
 		paragraph. These may exist when text is still being written.
 		Default: false
 		"""
-		self.__setBoolOption(14, value)
+		self.setBooleanOption(14, value)
 	
 	def setAcceptBulletedListsInGc(self, value):
 		"""(Grammar checking only): Accept paragraphs if they would be valid within
 		bulleted lists.
 		Default: false
 		"""
-		self.__setBoolOption(16, value)
+		self.setBooleanOption(16, value)
 	
 	def setNoUglyHyphenation(self, value):
 		"""Do not insert hyphenation positions that are considered to be ugly but correct
 		Default: false
 		"""
-		self.__setBoolOption(4, value)
+		self.setBooleanOption(4, value)
 	
 	def setHyphenateUnknownWords(self, value):
 		"""(Hyphenation only): Hyphenate unknown words.
 		Default: true
 		"""
-		self.__setBoolOption(15, value)
+		self.setBooleanOption(15, value)
 	
 	def setMinHyphenatedWordLength(self, value):
 		"""The minimum length for words that may be hyphenated. This limit is also enforced on
@@ -683,8 +687,8 @@ class Voikko(object):
 		Default: SuggestionStrategy.TYPO
 		"""
 		if value == SuggestionStrategy.OCR:
-			self.__setBoolOption(8, True)
+			self.setBooleanOption(8, True)
 		elif value == SuggestionStrategy.TYPO:
-			self.__setBoolOption(8, False)
+			self.setBooleanOption(8, False)
 		else:
 			raise VoikkoException("Invalid suggestion strategy")

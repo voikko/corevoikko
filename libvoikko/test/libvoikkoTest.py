@@ -205,6 +205,12 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setIgnoreDot(True)
 		self.failUnless(self.voikko.spell(u"kissa."))
 	
+	def testSetBooleanOption(self):
+		self.voikko.setBooleanOption(0, False) # This is "ignore dot"
+		self.failIf(self.voikko.spell(u"kissa."))
+		self.voikko.setBooleanOption(0, True)
+		self.failUnless(self.voikko.spell(u"kissa."))
+	
 	def testSetIgnoreNumbers(self):
 		self.voikko.setIgnoreNumbers(False)
 		self.failIf(self.voikko.spell(u"kissa2"))
