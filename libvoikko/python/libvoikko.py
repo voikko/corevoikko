@@ -62,6 +62,14 @@ from ctypes import POINTER
 from ctypes import string_at
 from ctypes import Structure
 import os
+import sys
+
+if sys.version_info < (3,):
+	unicode_str = unicode
+	binary_str = str
+else:
+	unicode_str = str
+	binary_str = bytes
 
 """Maximum number of characters in a valid word"""
 MAX_WORD_CHARS = 255
@@ -175,7 +183,7 @@ def _boolToInt(bool):
 def _anyStringToUtf8(anyString):
 	if not anyString:
 		return None
-	if type(anyString) == unicode:
+	if type(anyString) == unicode_str:
 		return anyString.encode("UTF-8")
 	else:
 		return anyString
@@ -275,7 +283,7 @@ class Voikko(object):
 		self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToUtf8(path))
 		if error.value != None:
 			self.__handle = 0
-			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
+			raise VoikkoException(u"Initialization of Voikko failed: " + unicode_str(error.value, "UTF-8"))
 	
 	def __del__(self):
 		# Ensure that resources are freed before this object is deleted.
@@ -288,7 +296,7 @@ class Voikko(object):
 		"""
 		result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
 		if result == 0:
-			raise VoikkoException(u"Could not set boolean option " + str(option) + u" to value " + str(value) + u".")
+			raise VoikkoException(u"Could not set boolean option " + unicode_str(option) + u" to value " + unicode_str(value) + u".")
 	
 	def __isValidInput(self, text):
 		return u"\0" not in text
@@ -334,10 +342,10 @@ class Voikko(object):
 		i = 0
 		while bool(cDicts[i]):
 			cDict = cDicts[i]
-			language = unicode(lib.voikko_dict_language(cDict), "UTF-8")
-			script = unicode(lib.voikko_dict_script(cDict), "UTF-8")
-			variant = unicode(lib.voikko_dict_variant(cDict), "ASCII")
-			description = unicode(lib.voikko_dict_description(cDict), "UTF-8")
+			language = unicode_str(lib.voikko_dict_language(cDict), "UTF-8")
+			script = unicode_str(lib.voikko_dict_script(cDict), "UTF-8")
+			variant = unicode_str(lib.voikko_dict_variant(cDict), "ASCII")
+			description = unicode_str(lib.voikko_dict_description(cDict), "UTF-8")
 			dicts.append(Dictionary(language, script, variant, description))
 			i = i + 1
 		lib.voikko_free_dicts(cDicts)
@@ -360,7 +368,7 @@ class Voikko(object):
 		cLanguages = lib.voikkoListSupportedSpellingLanguages(path)
 		i = 0
 		while bool(cLanguages[i]):
-			languages.append(unicode(cLanguages[i], "UTF-8"))
+			languages.append(unicode_str(cLanguages[i], "UTF-8"))
 			i = i + 1
 		lib.voikkoFreeCstrArray(cLanguages)
 		return languages
@@ -372,7 +380,7 @@ class Voikko(object):
 		lib.voikkoGetVersion.argtypes = []
 		lib.voikkoGetVersion.restype = c_char_p
 		cVersion = lib.voikkoGetVersion()
-		return unicode(cVersion, "UTF-8")
+		return unicode_str(cVersion, "UTF-8")
 	getVersion = staticmethod(getVersion)
 	
 	def spell(self, word):
@@ -421,10 +429,10 @@ class Voikko(object):
 		if bool(cSuggestions):
 			i = 0
 			while bool(cSuggestions[i]):
-				gError.suggestions.append(unicode(cSuggestions[i], "UTF-8"))
+				gError.suggestions.append(unicode_str(cSuggestions[i], "UTF-8"))
 				i = i + 1
 		cErrorShortDescription = self.__lib.voikkoGetGrammarErrorShortDescription(cGrammarError, _anyStringToUtf8(language))
-		gError.shortDescription = unicode(string_at(cErrorShortDescription), "UTF-8")
+		gError.shortDescription = unicode_str(string_at(cErrorShortDescription), "UTF-8")
 		self.__lib.voikkoFreeErrorMessageCstr(cErrorShortDescription)
 		return gError
 	
@@ -452,7 +460,7 @@ class Voikko(object):
 		if not self.__isValidInput(text):
 			return []
 		
-		textUnicode = unicode(text)
+		textUnicode = unicode_str(text)
 		errorList = []
 		offset = 0
 		for paragraph in textUnicode.split(u"\n"):
@@ -483,7 +491,7 @@ class Voikko(object):
 			while bool(cKeys[j]):
 				key = cKeys[j]
 				value = self.__lib.voikko_mor_analysis_value_ucs4(cAnalysis, key)
-				pAnalysis[unicode(key, 'ASCII')] = value
+				pAnalysis[unicode_str(key, 'ASCII')] = value
 				j = j + 1
 			pAnalysisList.append(pAnalysis)
 			i = i + 1
@@ -506,7 +514,7 @@ class Voikko(object):
 		return tokens
 	
 	def __splitTokens(self, text):
-		uniText = unicode(text)
+		uniText = unicode_str(text)
 		result = []
 		textLen = len(uniText)
 		tokenLen = c_size_t()
@@ -527,7 +535,7 @@ class Voikko(object):
 		if not self.__isValidInput(text):
 			return [Sentence(text, Sentence.NONE)]
 		
-		uniText = unicode(text)
+		uniText = unicode_str(text)
 		result = []
 		textLen = len(uniText)
 		sentenceLen = c_size_t()
@@ -557,7 +565,7 @@ class Voikko(object):
 		cHyphenationPattern = self.__lib.voikkoHyphenateUcs4(self.__handle, word)
 		hyphenationPattern = string_at(cHyphenationPattern)
 		self.__lib.voikkoFreeCstr(cHyphenationPattern)
-		return unicode(hyphenationPattern, 'ASCII')
+		return unicode_str(hyphenationPattern, 'ASCII')
 	
 	def hyphenate(self, word):
 		"""Return the given word in fully hyphenated form."""
