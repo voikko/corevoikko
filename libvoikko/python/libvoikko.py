@@ -188,6 +188,14 @@ def _anyStringToUtf8(anyString):
 	else:
 		return anyString
 
+def _anyStringToPath(anyString):
+	if not anyString:
+		return None
+	if type(anyString) == unicode_str:
+		return anyString.encode(sys.getfilesystemencoding())
+	else:
+		return anyString
+
 class Voikko(object):
 	def __getLib():
 		if os.name == 'nt':
@@ -280,7 +288,7 @@ class Voikko(object):
 		self.__lib.voikkoSetIntegerOption.restype = c_int
 		
 		error = c_char_p()
-		self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToUtf8(path))
+		self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToPath(path))
 		if error.value != None:
 			self.__handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode_str(error.value, "UTF-8"))
@@ -337,7 +345,7 @@ class Voikko(object):
 		lib.voikko_dict_description.argtypes = [c_void_p]
 		lib.voikko_dict_description.restype = c_char_p
 		
-		cDicts = lib.voikko_list_dicts(_anyStringToUtf8(path))
+		cDicts = lib.voikko_list_dicts(_anyStringToPath(path))
 		dicts = []
 		i = 0
 		while bool(cDicts[i]):
@@ -365,7 +373,7 @@ class Voikko(object):
 		lib.voikkoFreeCstrArray.restype = None
 		
 		languages = []
-		cLanguages = lib.voikkoListSupportedSpellingLanguages(path)
+		cLanguages = lib.voikkoListSupportedSpellingLanguages(_anyStringToPath(path))
 		i = 0
 		while bool(cLanguages[i]):
 			languages.append(unicode_str(cLanguages[i], "UTF-8"))
