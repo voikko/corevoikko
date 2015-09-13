@@ -106,9 +106,8 @@ For dictionary format 3 (HFST backend):
  Any valid ZHFST speller with file suffix .zhfst can be used. The name
  of the file is not significant.
  
-Python bindings work with Python version 2.5 or later. To use them with
-Python 3 or later the module file (libvoikko.py) must first be converted
-using the "2to3" utility from Python distribution.
+Python bindings work with Python version 2.7 or later. No conversion is needed
+in order to use the module with Python 3.
 
 
 Search order for dictionary files

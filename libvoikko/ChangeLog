@@ -1,3 +1,9 @@
+2015-09-13 Harri Pitkänen <hatapitk@iki.fi>
+	* Make the Python module single source compatible with Python 3.
+	* Drop support for Python versions 2.5 and 2.6.
+	* API methods accepting path arguments now work with both Unicode
+	  strings and binary strings.
+
 2015-08-28 Harri Pitkänen <hatapitk@iki.fi>
 	* Autocorrect data is read from VFST transducer in format 5
 	  dictionaries.

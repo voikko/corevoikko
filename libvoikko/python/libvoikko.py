@@ -47,8 +47,10 @@ An example session demonstrating the use of this module:
 # the provisions above, a recipient may use your version of this file under
 # the terms of any one of the MPL, the GPL or the LGPL.
 
-# This library requires Python version 2.5 or newer.
+# This library requires Python version 2.7 or newer. It is compatible with
+# Python 3 without modifications.
 
+from __future__ import unicode_literals
 from ctypes import byref
 from ctypes import CDLL
 from ctypes import c_int
@@ -86,7 +88,7 @@ class Dictionary:
 		self.description = description
 	
 	def __repr__(self):
-		return u"<" + self.language + u"," + self.script + u"," + self.variant + u"," + self.description + u">"
+		return "<" + self.language + "," + self.script + "," + self.variant + "," + self.description + ">"
 	
 	def __lt__(self, other):
 		if not isinstance(other, Dictionary):
@@ -124,8 +126,8 @@ class Token:
 		self.tokenType = tokenType
 	
 	def __repr__(self):
-		return (u"<" + self.tokenText + u"," + \
-		       Token._TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
+		return ("<" + self.tokenText + "," + \
+		       Token._TYPE_NAMES[self.tokenType] + ">").encode("UTF-8")
 
 class Sentence:
 	"""Represents a sentence in natural language text."""
@@ -141,8 +143,8 @@ class Sentence:
 		self.nextStartType = nextStartType
 	
 	def __repr__(self):
-		return (u"<" + self.sentenceText + u"," + \
-		       Sentence._TYPE_NAMES[self.nextStartType] + u">").encode("UTF-8")
+		return ("<" + self.sentenceText + "," + \
+		       Sentence._TYPE_NAMES[self.nextStartType] + ">").encode("UTF-8")
 
 class SuggestionStrategy:
 	"""Strategies for generating suggestions for incorrectly spelled words."""
@@ -156,18 +158,18 @@ class GrammarError:
 	"""Grammar error from grammar checker."""
 	
 	def __repr__(self):
-		return u"<" + self.toString() + u">"
+		return "<" + self.toString() + ">"
 	
 	def toString(self):
-		s = u'[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={' \
+		s = '[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={' \
 		    % (self.errorCode, self.startPos, self.errorLen)
 		first = True
 		for suggestion in self.suggestions:
 			if not first:
-				s = s + u','
+				s = s + ','
 				first = False
-			s = s + u'"' + suggestion + u'"'
-		s = s + u"}]"
+			s = s + '"' + suggestion + '"'
+		s = s + "}]"
 		return s
 
 class VoikkoException(Exception):
@@ -291,7 +293,7 @@ class Voikko(object):
 		self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToPath(path))
 		if error.value != None:
 			self.__handle = 0
-			raise VoikkoException(u"Initialization of Voikko failed: " + unicode_str(error.value, "UTF-8"))
+			raise VoikkoException("Initialization of Voikko failed: " + unicode_str(error.value, "UTF-8"))
 	
 	def __del__(self):
 		# Ensure that resources are freed before this object is deleted.
@@ -304,10 +306,10 @@ class Voikko(object):
 		"""
 		result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
 		if result == 0:
-			raise VoikkoException(u"Could not set boolean option " + unicode_str(option) + u" to value " + unicode_str(value) + u".")
+			raise VoikkoException("Could not set boolean option " + unicode_str(option) + " to value " + unicode_str(value) + ".")
 	
 	def __isValidInput(self, text):
-		return u"\0" not in text
+		return "\0" not in text
 	
 	def terminate(self):
 		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
@@ -471,7 +473,7 @@ class Voikko(object):
 		textUnicode = unicode_str(text)
 		errorList = []
 		offset = 0
-		for paragraph in textUnicode.split(u"\n"):
+		for paragraph in textUnicode.split("\n"):
 			errorList = errorList + self.__grammarParagraph(paragraph, offset, language)
 			offset = offset + len(paragraph) + 1
 		return errorList
@@ -512,11 +514,11 @@ class Voikko(object):
 		startIndex = 0
 		tokens = []
 		while True:
-			i = text.find(u"\0", startIndex)
+			i = text.find("\0", startIndex)
 			if i == -1:
 				break
 			tokens = tokens + self.__splitTokens(text[startIndex:i])
-			tokens.append(Token(u"\0", Token.UNKNOWN))
+			tokens.append(Token("\0", Token.UNKNOWN))
 			startIndex = i + 1
 		tokens = tokens + self.__splitTokens(text[startIndex:])
 		return tokens
@@ -578,15 +580,15 @@ class Voikko(object):
 	def hyphenate(self, word):
 		"""Return the given word in fully hyphenated form."""
 		pattern = self.getHyphenationPattern(word)
-		hyphenated = u""
+		hyphenated = ""
 		for i in range(len(pattern)):
 			patternC = pattern[i]
 			if patternC == ' ':
 				hyphenated = hyphenated + word[i]
 			elif patternC == '-':
-				hyphenated = hyphenated + u"-" + word[i]
+				hyphenated = hyphenated + "-" + word[i]
 			elif patternC == '=':
-				hyphenated = hyphenated + u"-"
+				hyphenated = hyphenated + "-"
 		return hyphenated
 	
 	def setIgnoreDot(self, value):

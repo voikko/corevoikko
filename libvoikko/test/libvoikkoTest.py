@@ -86,7 +86,7 @@ class LibvoikkoTest(unittest.TestCase):
 		dataDir.createMorphology(info.variant, info)
 		dicts = Voikko.listDicts(dataDir.getDirectory())
 		dataDir.tearDown()
-		dictsWithCorrectVariant = filter(lambda aDict: aDict.variant == info.variant, dicts)
+		dictsWithCorrectVariant = list(filter(lambda aDict: aDict.variant == info.variant, dicts))
 		self.assertEqual(1, len(dictsWithCorrectVariant))
 		theDict = dictsWithCorrectVariant[0]
 		self.assertEqual(info.description, theDict.description)
