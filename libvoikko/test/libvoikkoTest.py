@@ -77,6 +77,10 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(u"standard", standard.variant,
 		     u"Standard dictionary must be the default in test environment.")
 	
+	def testListSupportedSpellingLanguagesWithoutPath(self):
+		langs = Voikko.listSupportedSpellingLanguages()
+		self.failUnless(u"fi" in langs, u"Finnish dictionary must be present in the test environment")
+	
 	def testListDictsWithPathAndAttributes(self):
 		info = MorphologyInfo()
 		info.variant = u"test-variant-name"

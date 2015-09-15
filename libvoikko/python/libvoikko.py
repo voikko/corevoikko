@@ -362,28 +362,66 @@ class Voikko(object):
 		return dicts
 	listDicts = staticmethod(listDicts)
 	
-	def listSupportedSpellingLanguages(path = None):
-		"""Return a list of language codes representing the languages for which
-		at least one dictionary is available for spell checking.
-		If path is specified, it will be searched first before looking from
-		the standard locations.
-		"""
+	def __libForSupportedLanguages():
 		lib = Voikko.__getLib()
-		lib.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
-		lib.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
 		lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
 		lib.voikkoFreeCstrArray.restype = None
-		
+		return lib
+	__libForSupportedLanguages = staticmethod(__libForSupportedLanguages)
+	
+	def __listSupportedLanguagesForOperation(path, lib, operation):
 		languages = []
-		cLanguages = lib.voikkoListSupportedSpellingLanguages(_anyStringToPath(path))
+		cLanguages = operation(_anyStringToPath(path))
 		i = 0
 		while bool(cLanguages[i]):
 			languages.append(unicode_str(cLanguages[i], "UTF-8"))
 			i = i + 1
 		lib.voikkoFreeCstrArray(cLanguages)
 		return languages
-	listSupportedSpellingLanguages = staticmethod(listSupportedSpellingLanguages)
+	__listSupportedLanguagesForOperation = staticmethod(__listSupportedLanguagesForOperation)
 	
+	def listSupportedSpellingLanguages(path = None):
+		"""Return a list of language codes representing the languages for which
+		at least one dictionary is available for spell checking.
+		If path is specified, it will be searched first before looking from
+		the standard locations.
+		"""
+		lib = Voikko.__libForSupportedLanguages()
+		lib.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
+		lib.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
+		def listOperation(p):
+			return lib.voikkoListSupportedSpellingLanguages(p)
+		return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
+	listSupportedSpellingLanguages = staticmethod(listSupportedSpellingLanguages)
+
+	def listSupportedHyphenationLanguages(path = None):
+		"""Return a list of language codes representing the languages for which
+		at least one dictionary is available for hyphenation.
+		If path is specified, it will be searched first before looking from
+		the standard locations.
+		"""
+		lib = Voikko.__libForSupportedLanguages()
+		lib.voikkoListSupportedHyphenationLanguages.argtypes = [c_char_p]
+		lib.voikkoListSupportedHyphenationLanguages.restype = POINTER(c_char_p)
+		def listOperation(p):
+			return lib.voikkoListSupportedHyphenationLanguages(p)
+		return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
+	listSupportedHyphenationLanguages = staticmethod(listSupportedHyphenationLanguages)
+
+	def listSupportedGrammarCheckingLanguages(path = None):
+		"""Return a list of language codes representing the languages for which
+		at least one dictionary is available for grammar checking.
+		If path is specified, it will be searched first before looking from
+		the standard locations.
+		"""
+		lib = Voikko.__libForSupportedLanguages()
+		lib.voikkoListSupportedGrammarCheckingLanguages.argtypes = [c_char_p]
+		lib.voikkoListSupportedGrammarCheckingLanguages.restype = POINTER(c_char_p)
+		def listOperation(p):
+			return lib.voikkoListSupportedGrammarCheckingLanguages(p)
+		return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
+	listSupportedGrammarCheckingLanguages = staticmethod(listSupportedGrammarCheckingLanguages)
+
 	def getVersion():
 		"""Return the version number of the Voikko library."""
 		lib = Voikko.__getLib()
