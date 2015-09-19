@@ -308,6 +308,15 @@ class Voikko(object):
 		if result == 0:
 			raise VoikkoException("Could not set boolean option " + unicode_str(option) + " to value " + unicode_str(value) + ".")
 	
+	def setIntegerOption(self, option, value):
+		"""Sets a integer option to specified value. This is a low level function
+		available for applications that know about the numerical option codes. The same options can also
+		be set using option specific setter methods.
+		"""
+		result = self.__lib.voikkoSetIntegerOption(self.__handle, option, value)
+		if result == 0:
+			raise VoikkoException("Could not set integer option " + unicode_str(option) + " to value " + unicode_str(value) + ".")
+	
 	def __isValidInput(self, text):
 		return "\0" not in text
 	
@@ -731,12 +740,12 @@ class Voikko(object):
 		individual parts of compound words.
 		Default: 2
 		"""
-		self.__lib.voikkoSetIntegerOption(self.__handle, 9, value)
+		self.setIntegerOption(9, value)
 	
 	def setSpellerCacheSize(self, value):
 		"""Controls the size of in memory cache for spell checking results. 0 is the default size,
 		1 is twice as large as 0 etc. -1 disables the spell checking cache entirely."""
-		self.__lib.voikkoSetIntegerOption(self.__handle, 17, value)
+		self.setIntegerOption(17, value)
 	             
 	def setSuggestionStrategy(self, value):
 		"""Set the suggestion strategy to be used when generating spelling suggestions.
