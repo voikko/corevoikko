@@ -201,10 +201,23 @@ def _anyStringToPath(anyString):
 class Voikko(object):
 	def __getLib():
 		if os.name == 'nt':
-			return CDLL("libvoikko-1.dll")
+			fileName = "libvoikko-1.dll"
 		else:
-			return CDLL("libvoikko.so.1")
+			fileName = "libvoikko.so.1"
+		if Voikko._sharedLibrarySearchPath is not None:
+			try:
+				return CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
+			except:
+				pass
+		return CDLL(fileName)
 	__getLib = staticmethod(__getLib)
+	
+	"""Set the path to a directory that should be used to search for the native library
+	before trying to load it from the default (OS specific) lookup path.
+	"""
+	def setLibrarySearchPath(searchPath):
+		Voikko._sharedLibrarySearchPath = searchPath
+	setLibrarySearchPath = staticmethod(setLibrarySearchPath)
 	
 	"""Represents an instance of Voikko. The instance has state, such as
 	settings related to spell checking and hyphenation, and methods for performing
@@ -757,3 +770,5 @@ class Voikko(object):
 			self.setBooleanOption(8, False)
 		else:
 			raise VoikkoException("Invalid suggestion strategy")
+
+Voikko._sharedLibrarySearchPath = None
