@@ -470,6 +470,7 @@ suurinopeuksinen # adjektiivi + adjektiivista johdettu substantiivin inen-johdos
 !nopeuksinen
 linjaerimielisyys
 tarve-erimielisyys
+vaatimustenmukaisuus
 
 # = etuliitteet =
 []

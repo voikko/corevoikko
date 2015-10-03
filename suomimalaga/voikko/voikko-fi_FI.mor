@@ -1039,8 +1039,12 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_laatusanan_jälkeen;
       end;
-      if $oikea.sijamuoto = omanto and $oikea.luku = yksikkö then
-        result $res, rules laatusana, inen_johdos_nimisanasta;
+      if $oikea.sijamuoto = omanto then
+        if $oikea.luku = yksikkö then
+          result $res, rules laatusana, inen_johdos_nimisanasta;
+        else
+          result $res, rules nimisana_laatusanasta;
+        end;
       end;
     end;
   end;
