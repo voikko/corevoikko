@@ -1691,6 +1691,12 @@ word:kolmehenkisessä
   analysis
    CLASS=laatusana
    BASEFORM=kolmehenkinen
+word:toistasataa
+ expected:1
+  analysis
+   CLASS=lukusana
+   NUMBER=singular
+   SIJAMUOTO=nimento
 word:etkä
  expected:1
   analysis
