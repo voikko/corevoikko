@@ -1703,6 +1703,13 @@ word:parisenkymmentä
    CLASS=lukusana
    NUMBER=singular
    SIJAMUOTO=nimento
+word:kymmeniätuhansia
+ expected:1
+  analysis
+   CLASS=lukusana
+   NUMBER=plural
+   SIJAMUOTO=osanto
+   BASEFORM=kymmenentuhatta
 word:etkä
  expected:1
   analysis

@@ -2604,7 +2604,7 @@ end;
 
 subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
   # Kopioitu Hannu Väisäsen Sukija-versiosta
-  if ($i = 1 and $tietue.$i.alaluokka in <sata, tuhat, miljoona>) then
+  if ($i = 1 and $tietue.$i.alaluokka in <kymmenen, sata, tuhat, miljoona>) then
     return "+" + $tietue.$i.perusmuoto;
   end;
 
