@@ -361,6 +361,12 @@ word:toistasataa
    CLASS=lukusana
    NUMBER=singular
    SIJAMUOTO=nimento
+word:parisenkymmentä
+ expected:1
+  analysis
+   CLASS=lukusana
+   NUMBER=singular
+   SIJAMUOTO=nimento
 word:kolmikymmenvuotias
  expected:1
  analysis

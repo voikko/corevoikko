@@ -215,9 +215,8 @@ LEXICON Erikoisluku
 [Lu][Xp]yhdeksättä[X]yhdeksättä:yhdeksättä	XKymmentäEiLiitesana	;
 
 LEXICON ParisenKymmentä
-Liitesana_a	;
-[Bc][Lu][Xp]kymmentä[X]kymmentä:kymmentä	Loppu	;
-[Bc][Lu][Xp]sataa[X]sataa:sataa	Loppu	;
+[Bc][Sn][Ny][Xp]kymmentä[X]kymmentä:kymmentä	Loppu	;
+[Bc][Sn][Ny][Xp]sataa[X]sataa:sataa	Loppu	;
 
 LEXICON XKymmentäEiLiitesana
 [Bc][Lu][Sn][Ny][Xp]kymmentä[X]kymmentä:kymmentä	Liitesana_ä	;
