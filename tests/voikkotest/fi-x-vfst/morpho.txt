@@ -2236,6 +2236,7 @@ word:kolmenmallisessa
  expected:1
  analysis
   BASEFORM=kolmenmallinen
+  CLASS=laatusana
   COMPARISON=positive
   NUMBER=singular
   SIJAMUOTO=sisaolento

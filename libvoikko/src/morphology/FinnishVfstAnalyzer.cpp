@@ -897,7 +897,8 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					if (fstOutput[j + 1] == L'L') {
 						if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
 							const wchar_t * comp = analysis->getValue("COMPARISON");
-							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0))) {
+							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) ||
+							    wcsncmp(fstOutput, L"[Lu]", 4) == 0) {
 								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
 							}
 							else {
