@@ -534,3 +534,11 @@ word:kehitellyn
   NUMBER=singular
   PARTICIPLE=past_passive
   SIJAMUOTO=omanto
+word:kolmenmallisessa
+ expected:1
+ analysis
+  BASEFORM=kolmenmallinen
+  CLASS=laatusana
+  COMPARISON=positive
+  NUMBER=singular
+  SIJAMUOTO=sisaolento

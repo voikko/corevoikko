@@ -2232,3 +2232,10 @@ word:asiantuntijuus
  expected:1
 word:asianmyyjyys
  expected:1
+word:kolmenmallisessa
+ expected:1
+ analysis
+  BASEFORM=kolmenmallinen
+  COMPARISON=positive
+  NUMBER=singular
+  SIJAMUOTO=sisaolento
