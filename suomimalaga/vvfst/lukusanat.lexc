@@ -348,7 +348,7 @@ LEXICON YhdysmerkkiJaLukusananJälkiliite
 
 LEXICON LukusananJälkiliite
 LukusananJälkiliiteEiYhdysmerkkiä	;
-@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	LaatusanaYsJatko	;
+LukusanaYsJatko	;
 -[Bc]:-	Loppu;
 
 LEXICON LukusananJälkiliiteEiYhdysmerkkiä
