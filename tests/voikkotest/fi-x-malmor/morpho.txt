@@ -556,3 +556,12 @@ word:isovanhemmista
   CLASS=nimisana
  analysis
   CLASS=laatusana
+word:ikäisekseen
+ expected:1
+ analysis
+  BASEFORM=ikäinen
+  CLASS=laatusana
+  COMPARISON=positive
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=tulento

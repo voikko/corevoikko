@@ -2424,6 +2424,16 @@ LEXICON NOUN YhteisetYksikönPaikallissijat
 ?Sukija [Sade][Ny]llen:llen Liitesana_<A> ;
 ?Sukija [Sabl][Ny]lt:lt	Loppu ;
 
+LEXICON Johdin_inen_YhteisetYksikönPaikallissijat
+[Str][Ny]ksi:ksi	Johdin_inen_LiOlI_<A>	;
+[Sine][Ny]ss<A>:ss<A>	Johdin_inen_LiOlV_<A>	;
+[Sela][Ny]st<A>:st<A>	Johdin_inen_LiOlV_<A>	;
+[Sade][Ny]ll<A>:ll<A>	Johdin_inen_LiOlV_<A>	;
+[Sabl][Ny]lt<A>:lt<A>	Johdin_inen_LiOlV_<A>	;
+[Sall][Ny]lle:lle	Johdin_inen_LiOlV_<A>	;
+[Sab][Ny]tt<A>:tt<A>	Johdin_inen_LiOlV_<A>	;
+Kerronto_sti_<A>	;
+
 LEXICON NOUN YhteisetMonikonPaikallissijat
 [Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;
 [Sine][Nm]iss<A>:iss<A>	<WC>LiOlV_<A>	;
@@ -4270,7 +4280,7 @@ LEXICON Johdin_inen_jatko_omistusliite
 s:s	NimiLaatusanaYhteisetMonikonSijat2_<A>	;
 [Sill][Ny]see:see	NimiLaatusanaLiOlN_<A>	;
 [Sill][Nm]sii:sii	NimiLaatusanaLiOlN_<A>	;
-se:se	NimiLaatusanaYhteisetYksikönPaikallissijat_<A>	;
+se:se	Johdin_inen_YhteisetYksikönPaikallissijat_<A>	;
 s:s	NimiLaatusanaYhteisetMonikonPaikallissijat_<A>	;
 se:se	Voittoaste_<A>	;
 s:s	Yliaste_<A>	;
@@ -4282,6 +4292,11 @@ s:s	Johdin_UUs_<A>	;
 LEXICON Johdin_inen_LiOlV
 Liitesana_<A>	;
 OlV_<A>	;
+LaatusananErisnimijatko	;
+
+LEXICON Johdin_inen_LiOlI
+Liitesana_<A>	;
+OlI_<A>	;
 LaatusananErisnimijatko	;
 
 LEXICON Johdin_tOn
