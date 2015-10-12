@@ -2248,3 +2248,9 @@ word:kolmenmallinen
   COMPARISON=positive
   NUMBER=singular
   SIJAMUOTO=nimento
+word:isovanhemmista
+ expected:2
+ analysis
+  CLASS=nimisana
+ analysis
+  CLASS=laatusana
