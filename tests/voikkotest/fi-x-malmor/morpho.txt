@@ -565,3 +565,12 @@ word:ikäisekseen
   NUMBER=singular
   POSSESSIVE=3
   SIJAMUOTO=tulento
+word:tyypillisimmillään
+ expected:1
+ analysis
+  BASEFORM=tyypillinen
+  CLASS=laatusana
+  COMPARISON=superlative
+  NUMBER=plural
+  POSSESSIVE=3
+  SIJAMUOTO=ulkoolento
