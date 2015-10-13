@@ -243,6 +243,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
+[Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
+[Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
 
 
 LEXICON SukijaAsemosana
@@ -520,7 +522,13 @@ LEXICON Sukija_p
 
 
 LEXICON SukijaLukusananErikoisjälkiliite
-[Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi  LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]kohtauksinen[X]kohtauksi:kohtauksi LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]käyttöinen[X]käyttöi:käyttöi       LukusananJälkiliiteNainen_ä ;
+[Bc][Ll][Xp]nopeuksinen[X]nopeuksi:nopeuksi    LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]paisuntainen[X]paisuntai:paisuntai LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]siirtoinen[X]siirtoi:siirtoi       LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]valintainen[X]valintai:valintai    LukusananJälkiliiteNainen_a ;
+[Bc][Ll][Xp]vivahduksinen[X]vivahduksi:vivahduksi LukusananJälkiliiteNainen_a ;
 
 
 LEXICON SukijaPoikkeavat_em

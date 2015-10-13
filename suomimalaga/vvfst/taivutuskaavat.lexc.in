@@ -2433,6 +2433,12 @@ LEXICON Johdin_inen_YhteisetYksikönPaikallissijat
 [Sall][Ny]lle:lle	Johdin_inen_LiOlV_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Johdin_inen_LiOlV_<A>	;
 Kerronto_sti_<A>	;
+?Sukija [Str][Ny]ks:ks	Loppu ;
+?Sukija [Sine][Ny]ss:ss	Loppu ;
+?Sukija [Sela][Ny]st:st	Loppu ;
+?Sukija [Sade][Ny]ll:ll	Loppu ;
+?Sukija [Sade][Ny]llen:llen Liitesana_<A> ;
+?Sukija [Sabl][Ny]lt:lt	Loppu ;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
 [Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;
