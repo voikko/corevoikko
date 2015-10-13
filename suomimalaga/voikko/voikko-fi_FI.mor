@@ -2318,6 +2318,9 @@ subrule tulostus_luokka($tietue):
         return laatusana;
       end;
     end;
+    if $allomorfi.vertailu = yliaste then
+      return laatusana;
+    end;
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,
@@ -2446,6 +2449,9 @@ subrule tulostus_vertailu($tietue):
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.luokka in <voittoaste, yliaste> then
       return $allomorfi.luokka;
+    end;
+    if $allomorfi.vertailu /= nil then
+      return $allomorfi.vertailu;
     end;
     if $allomorfi.luokka = nimisana then
       return perusaste;

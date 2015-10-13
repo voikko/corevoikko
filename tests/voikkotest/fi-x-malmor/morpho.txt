@@ -574,3 +574,12 @@ word:tyypillisimmillään
   NUMBER=plural
   POSSESSIVE=3
   SIJAMUOTO=ulkoolento
+word:parhaakseen
+ expected:1
+ analysis
+  BASEFORM=hyvä
+  CLASS=laatusana
+  COMPARISON=superlative
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=tulento
