@@ -217,7 +217,7 @@ namespace libvoikko { namespace fst {
 		int stackDepth = configuration->stackDepth;
 		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint32_t);
 		uint32_t * flagValueStack = configuration->flagValueStack;
-		uint32_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
+		uint32_t * currentFlagArray = flagValueStack + stackDepth * flagDiacriticFeatureCount;
 		
 		bool update = false;
 		OpFeatureValue ofv;
@@ -262,10 +262,10 @@ namespace libvoikko { namespace fst {
 			DEBUG("allowed")
 		}
 		
-		memcpy(currentFlagArray + diacriticCell, currentFlagArray, diacriticCell);
+		memcpy(currentFlagArray + flagDiacriticFeatureCount, currentFlagArray, diacriticCell);
 		if (update) {
 			DEBUG("updating feature " << ofv.feature << " to " << ofv.value)
-			(currentFlagArray + diacriticCell)[ofv.feature] = ofv.value;
+			(currentFlagArray + flagDiacriticFeatureCount)[ofv.feature] = ofv.value;
 		}
 		return true;
 	}
