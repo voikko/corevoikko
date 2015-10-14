@@ -582,7 +582,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				if (fstOutput[i + 1] == L'L') {
 					classTagSeen = true;
 					isDe = false;
-					ignoreNextDe = (fstOutput[i + 2] != L'l');
+					ignoreNextDe = (i + 3 >= fstLen || (fstOutput[i + 2] != L'l' && wcsncmp(fstOutput + i + 2, L"nl", 2) != 0));
 				}
 				isInTag = true;
 			}
@@ -607,7 +607,9 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 					hyphensInLatestXp--;
 				}
 				else {
-					if (isDe && latestXpStartInFst != 0) {
+					// Compound place name such as "Isolla-Britannialla" needs to have "Isolla" replaced with "Iso". However
+					// "-is" is never replaced with "-nen" ("Pohjois-Suomella").
+					if (isDe && latestXpStartInFst != 0 && wcsncmp(fstOutput + i - 2, L"is", 2) != 0) {
 						for (size_t j = i; j + 4 < fstLen; j++) {
 							if (wcsncmp(fstOutput + j, L"[Lep]", 5) == 0) {
 								baseformPos = latestXpStartInBaseform;

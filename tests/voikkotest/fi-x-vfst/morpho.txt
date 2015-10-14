@@ -2281,3 +2281,10 @@ word:parhaakseen
   NUMBER=singular
   POSSESSIVE=3
   SIJAMUOTO=tulento
+word:Isolla-Britannialla
+ expected:1
+ analysis
+  BASEFORM=Iso-Britannia
+  CLASS=paikannimi
+  NUMBER=singular
+  SIJAMUOTO=ulkoolento
