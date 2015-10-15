@@ -295,7 +295,13 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 		}
 	}
 	createDefaultStructure(charsMissing, defaultTitleCase, structure, structurePos, isAbbr);
-	structure[structurePos] = L'\0';
+	if (structurePos > 2 && structure[structurePos - 1] == L'=' && structure[structurePos - 2] == L'-') {
+		// structure should not end with "-="
+		structure[structurePos - 1] = L'\0';
+	}
+	else {
+		structure[structurePos] = L'\0';
+	}
 	return structure;
 }
 
@@ -890,6 +896,7 @@ void FinnishVfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_
 void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	bool convertNimiLaatusanaToLaatusana = false;
 	bool bcPassed = false;
+	bool normalCharSeen = false;
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
 			size_t j = i;
@@ -971,7 +978,9 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					}
 					else if (fstOutput[j + 1] == L'B') {
 						if (j >= 5 && fstOutput[j + 2] == L'c') {
-							if (!analysis->getValue("CLASS") && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+							// words ending with "-" are prefixes
+							if (!normalCharSeen && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+								analysis->removeAttribute("CLASS");
 								analysis->addAttribute("CLASS", StringUtils::copy(L"etuliite"));
 							}
 							bcPassed = true;
@@ -984,6 +993,9 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 				return;
 			}
 			i = j;
+		}
+		else {
+			normalCharSeen = true;
 		}
 	}
 }
