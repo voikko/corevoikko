@@ -4,6 +4,4 @@
 REPOSITORY=`python -c 'import voikkoutils; print voikkoutils.get_preference("corevoikko")'`
 
 cppcheck --inline-suppr --enable=style,unusedFunction -I $REPOSITORY/libvoikko/src -q $REPOSITORY/libvoikko/src
-# TODO path is guessed based on default repository layout
-cppcheck --inline-suppr --enable=style -q $REPOSITORY/../libreoffice-voikko/src
 
