@@ -1044,8 +1044,9 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 }
 
 list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
+	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
-		return new list<Analysis *>();
+		return analysisList;
 	}
 	
 	wchar_t * wordLowerUcs4 = new wchar_t[wlen];
@@ -1053,8 +1054,10 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 	voikko_set_case(CT_ALL_LOWER, wordLowerUcs4, wlen);
 	char * wordLower = StringUtils::utf8FromUcs4(wordLowerUcs4, wlen);
 	delete[] wordLowerUcs4;
+	if (!wordLower) {
+		return analysisList;
+	}
 	
-	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
 		int analysisCount = 0;
 		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {

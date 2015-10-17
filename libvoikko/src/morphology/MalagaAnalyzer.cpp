@@ -47,16 +47,19 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
 		return new list<Analysis *>();
 	}
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
+	if (!wordUtf8) {
+		return new list<Analysis *>();
+	}
 	list<Analysis *> * result = analyze(wordUtf8);
 	delete[] wordUtf8;
 	return result;
 }
 
 list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
-	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
-		return new list<Analysis *>();
-	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
+	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
+		return analysisList;
+	}
 	try {
 		analyse_item(word, &malagaState);
 		value_t res = first_analysis_result(&malagaState);
