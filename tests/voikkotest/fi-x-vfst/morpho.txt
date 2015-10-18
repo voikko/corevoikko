@@ -2288,3 +2288,6 @@ word:Isolla-Britannialla
   CLASS=paikannimi
   NUMBER=singular
   SIJAMUOTO=ulkoolento
+word:yhteiskuntapoliittinen
+ analysis
+  CLASS=nimisana_laatusana

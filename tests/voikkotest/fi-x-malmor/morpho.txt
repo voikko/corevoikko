@@ -590,3 +590,8 @@ word:Isolla-Britannialla
   CLASS=paikannimi
   NUMBER=singular
   SIJAMUOTO=ulkoolento
+word:yhteiskuntapoliittinen
+ analysis
+  CLASS=nimisana
+ analysis
+  CLASS=laatusana
