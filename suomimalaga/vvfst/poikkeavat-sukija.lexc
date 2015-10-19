@@ -261,6 +261,10 @@ LEXICON SukijaAsemosana
 
 
 LEXICON SukijaPoikkeavat_s
+[Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
+[Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
+[Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
+[Ls][Xp]kaukaalla[X]kaukaan:kaukaan LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruitse:kiiruitse LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruimmiten:kiiruimmiten LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruimmittan:kiiruimmittain LoppuLiitesana_a ;
