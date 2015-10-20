@@ -37,12 +37,8 @@ MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) throw(setup::Dictio
 	initSymbols();
 }
 
-list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word) {
-	return analyze(word, wcslen(word));
-}
-
 list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
-                                           size_t wlen) {
+                                           size_t wlen, bool fullMorphology) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
@@ -50,12 +46,12 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
 	if (!wordUtf8) {
 		return new list<Analysis *>();
 	}
-	list<Analysis *> * result = analyze(wordUtf8);
+	list<Analysis *> * result = analyze(wordUtf8, fullMorphology);
 	delete[] wordUtf8;
 	return result;
 }
 
-list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
+list<Analysis *> * MalagaAnalyzer::analyze(const char * word, bool fullMorphology) {
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
 		return analysisList;
@@ -82,7 +78,9 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_KYSYMYSLIITE], "KYSYMYSLIITE");
 			parseBasicAttribute(analysis, res, symbols[MS_FOCUS], "FOCUS");
 			parseBasicAttribute(analysis, res, symbols[MS_COMPARISON], "COMPARISON");
-			parsePerusmuoto(analysis, res);
+			if (fullMorphology) {
+				parsePerusmuoto(analysis, res);
+			}
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
 			++currentAnalysisCount;

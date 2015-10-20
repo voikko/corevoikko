@@ -43,10 +43,8 @@ class Analyzer {
 		 * Analyzes given word and returns a list of results.
 		 * The results and the list must be deleted after use.
 		 */
-		virtual std::list<Analysis *> * analyze(const wchar_t * word) = 0;
-		virtual std::list<Analysis *> * analyze(const wchar_t * word,
-		                                        size_t wlen) = 0;
-		virtual std::list<Analysis *> * analyze(const char * word) = 0;
+		virtual std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology) = 0;
+		virtual std::list<Analysis *> * analyze(const char * word, bool fullMorphology) = 0;
 		
 		virtual void terminate() = 0;
 		virtual ~Analyzer();

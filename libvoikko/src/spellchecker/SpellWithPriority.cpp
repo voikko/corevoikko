@@ -150,7 +150,7 @@ static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
 
 spellresult SpellWithPriority::spellWithPriority(Analyzer * morAnalyzer,
 	                       const wchar_t * word, size_t len, int * prio) {
-	list<Analysis *> * analyses = morAnalyzer->analyze(word, len);
+	list<Analysis *> * analyses = morAnalyzer->analyze(word, len, false);
 	*prio = 0;
 	
 	if (analyses->empty()) {

@@ -48,22 +48,17 @@ HfstAnalyzer::HfstAnalyzer(const string& s) throw(setup::DictionaryException) {
 
 }
 
-list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word) {
-	return analyze(word, wcslen(word));
-}
-
-list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
-										 size_t wlen) {
+list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool fullMorphology) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
-	list<Analysis *> * result = analyze(wordUtf8);
+	list<Analysis *> * result = analyze(wordUtf8, fullMorphology);
 	delete[] wordUtf8;
 	return result;
 }
 
-list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
+list<Analysis *> * HfstAnalyzer::analyze(const char * word, bool fullMorphology) {
 	//cerr << "HfstAnalyzer::analyze (" << string(word) << ")" << endl;
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
@@ -82,13 +77,12 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
 	while(q.size() > 0) {
 		hfst_ol::StringWeightPair pair = q.top();
 		string analysis = pair.first;
-		string lemma = "";
-		string tags = "";
-		lemma = analysis.substr(0,analysis.find("+"));
-		tags = analysis.substr(analysis.find("+"),analysis.length()-1);
-		//cerr << "  analysis  " << lemma << "/" << tags << endl; 
+		string tags = analysis.substr(analysis.find("+"),analysis.length()-1);
 		Analysis * a = new Analysis();
-		a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
+		if (fullMorphology) {
+			string lemma = analysis.substr(0,analysis.find("+"));
+			a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
+		}
 		a->addAttribute("tags",  StringUtils::ucs4FromUtf8(tags.c_str()));
 		analysisList->push_back(a);
 		q.pop();

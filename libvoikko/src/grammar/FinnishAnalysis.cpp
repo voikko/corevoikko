@@ -74,7 +74,7 @@ void FinnishAnalysis::analyseToken(Token * token) {
 	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
 	                                                   token->tokenlen);
 	morphology::Analyzer * analyzer = voikkoOptions->morAnalyzer;
-	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer);
+	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer, wcslen(wordBuffer), false);
 	delete[] wordBuffer;
 	
 	list<morphology::Analysis *>::const_iterator it = analyses->begin();

@@ -172,7 +172,7 @@ char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 	}
 	size_t utf8Len = strlen(wordUtf8);
 	
-	list<Analysis *> * analyses = analyzer->analyze(wordUtf8);
+	list<Analysis *> * analyses = analyzer->analyze(wordUtf8, false);
 	
 	/* We may have to remove the trailing dot before hyphenation */
 	if (analyses->empty() && ignoreDot && len > 1 &&
@@ -181,7 +181,7 @@ char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 		utf8Len--;
 		*dotRemoved = true;
 		Analyzer::deleteAnalyses(analyses);
-		analyses = analyzer->analyze(wordUtf8);
+		analyses = analyzer->analyze(wordUtf8, false);
 	}
 	else {
 		*dotRemoved = false;

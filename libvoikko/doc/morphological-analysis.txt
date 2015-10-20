@@ -1,4 +1,4 @@
-2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
+2009 - 2015 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
 
  Information provided from attribute maps of Analysis objects
  ============================================================
@@ -24,6 +24,11 @@ same set of keys and same structure for values where possible. This
 document describes the guidelines that implementors of Analyzer
 components are recommended (but not required) to follow when they
 implement this feature.
+
+Some analyzers may produce attributes that are expensive to create
+and are not necessary for linguistic operations performed within
+libvoikko. The analyzers are advised to produce these attributes
+only when parameter "fullMorphology" is set to "true".
 
  Attributes common to all languages
  ==================================
@@ -62,8 +67,16 @@ Analyzer for all languages:
 The following attributes are not currently used within libvoikko but
 they may be useful for external applications:
 
- BASEFORM
- ========
+ FSTOUTPUT (fullMorphology only)
+ ===============================
+  Analyzers that are implemented using finite state transducers can provide
+  the raw transducer output using this attribute.
+
+  Examples:
+   Word: kissalla -> FSTOUTPUT: [Ln][Xp]kissa[X][Xs]505527[X]kissa[Sade][Ny]lla
+
+ BASEFORM (fullMorphology only)
+ ==============================
   Base form of the given word.
 
   Examples:
@@ -230,8 +243,8 @@ are provided only as information for external applications.
    Sana: kissakin  -> FOCUS: kin
    Sana: kissakaan -> FOCUS: kaan
 
- WORDBASES
- =========
+ WORDBASES (fullMorphology only)
+ ===============================
   Sanan osien perusmuodot. Attribuutti ei ole käytössä libvoikon
   sisällä. Attribuutin arvona on sanan perusmuoto, jossa yhdyssanan
   osat ja päätteet on erotettu toisistaan +-merkillä. Lisäksi kunkin
@@ -248,8 +261,8 @@ are provided only as information for external applications.
   on +-merkki:
    Sana: kansalliseepos ->  WORDBASES: +kansa(kansa)+llis(+llinen)+eepos(eepos)
 
- WORDIDS
- =======
+ WORDIDS (fullMorphology only)
+ =============================
   Viittaukset sanan osiin Joukahaisessa. Attribuutti ei ole käytössä
   libvoikon sisällä. Attribuutin arvona on sanan perusmuoto, jossa
   yhdyssanan osat ja päätteet on erotettu toisistaan +-merkillä.

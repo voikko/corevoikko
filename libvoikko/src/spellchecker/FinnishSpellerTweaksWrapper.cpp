@@ -102,7 +102,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 			if (word[i] == L'-') {
 				spellresult leadingResult = spell(word, i);
 				if (leadingResult != SPELL_FAILED) {
-					list<Analysis *> * trailingAnalyses = analyzer->analyze(word + i + 1, wlen - (i + 1));
+					list<Analysis *> * trailingAnalyses = analyzer->analyze(word + i + 1, wlen - (i + 1), false);
 					list<Analysis *>::const_iterator it = trailingAnalyses->begin();
 					bool isTrailingAcceptable = false;
 					while (it != trailingAnalyses->end()) {
@@ -126,7 +126,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 		}
 		
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
-		list<Analysis *> * analyses = analyzer->analyze(buffer);
+		list<Analysis *> * analyses = analyzer->analyze(buffer, wcslen(buffer), false);
 		
 		if (analyses->empty()) {
 			Analyzer::deleteAnalyses(analyses);

@@ -42,7 +42,7 @@ typedef Analysis voikko_mor_analysis;
 VOIKKOEXPORT voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
                                     voikko_options_t * options, const wchar_t * word) {
 	Analyzer * analyzer = options->morAnalyzer;
-	list<Analysis *> * analyses = analyzer->analyze(word);
+	list<Analysis *> * analyses = analyzer->analyze(word, wcslen(word), true);
 	voikko_mor_analysis ** result
 	    = new voikko_mor_analysis*[analyses->size() + 1];
 	list<Analysis *>::const_iterator it = analyses->begin();

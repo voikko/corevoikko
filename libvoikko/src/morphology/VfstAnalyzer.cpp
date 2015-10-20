@@ -55,13 +55,9 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	outputBuffer = new char[BUFFER_SIZE];
 }
 
-list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
-	return analyze(word, wcslen(word));
-}
-
-list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
+list<Analysis *> * VfstAnalyzer::analyze(const char * word, bool fullMorphology) {
 	wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word);
-	list<Analysis *> * result = analyze(wordUcs4);
+	list<Analysis *> * result = analyze(wordUcs4, wcslen(wordUcs4), fullMorphology);
 	delete[] wordUcs4;
 	return result;
 }
@@ -70,7 +66,7 @@ static double logWeightToProb(int16_t logWeight) {
 	return exp(-0.01 * (double) logWeight);
 }
 
-list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
+list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool fullMorphology) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
@@ -86,9 +82,11 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 		int analysisCount = 0;
 		int16_t weight;
 		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE, &weight)) {
-			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			Analysis * analysis = new Analysis();
-			analysis->addAttribute("FSTOUTPUT", fstOutput);
+			if (fullMorphology) {
+				wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
+				analysis->addAttribute("FSTOUTPUT", fstOutput);
+			}
 			stringstream ss;
 			ss << setprecision(9) << logWeightToProb(weight);
 			string weightStr = ss.str();

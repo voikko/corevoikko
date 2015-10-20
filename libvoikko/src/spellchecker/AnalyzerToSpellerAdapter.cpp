@@ -39,7 +39,7 @@ AnalyzerToSpellerAdapter::AnalyzerToSpellerAdapter(Analyzer * analyzer) :
 	analyzer(analyzer) { }
 
 spellresult AnalyzerToSpellerAdapter::spell(const wchar_t * word, size_t wlen) {
-	list<Analysis *> * analyses = analyzer->analyze(word, wlen);
+	list<Analysis *> * analyses = analyzer->analyze(word, wlen, false);
 	
 	if (analyses->empty()) {
 		Analyzer::deleteAnalyses(analyses);

@@ -131,13 +131,9 @@ FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) throw(set
 	participleMap.insert(std::make_pair(L"e", L"negation"));
 }
 
-list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word) {
-	return analyze(word, wcslen(word));
-}
-
-list<Analysis *> * FinnishVfstAnalyzer::analyze(const char * word) {
+list<Analysis *> * FinnishVfstAnalyzer::analyze(const char * word, bool fullMorphology) {
 	wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word);
-	list<Analysis *> * result = analyze(wordUcs4);
+	list<Analysis *> * result = analyze(wordUcs4, wcslen(wordUcs4), fullMorphology);
 	delete[] wordUcs4;
 	return result;
 }
@@ -662,13 +658,9 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 	return baseform;
 }
 
-void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList) {
+void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * fstOutput, std::list<Analysis *> * analysisList) {
 	const wchar_t * oldClass = analysis->getValue("CLASS");
 	if (!oldClass || wcscmp(oldClass, L"nimisana") != 0) {
-		return;
-	}
-	const wchar_t * fstOutput = analysis->getValue("FSTOUTPUT");
-	if (!fstOutput) {
 		return;
 	}
 	size_t fstLen = wcslen(fstOutput);
@@ -1031,7 +1023,7 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 	}
 }
 
-list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
+list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool fullMorphology) {
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return analysisList;
@@ -1058,10 +1050,8 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 			Analysis * analysis = new Analysis();
 			wchar_t * structure = parseStructure(fstOutput, wlen);
 			parseBasicAttributes(analysis, fstOutput, fstLen);
-			parseDebugAttributes(analysis, fstOutput, fstLen);
 			fixStructure(structure, fstOutput, fstLen);
 			analysis->addAttribute("STRUCTURE", structure);
-			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			const wchar_t * wclass = analysis->getValue("CLASS");
 			const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
 			const wchar_t * mood = analysis->getValue("MOOD");
@@ -1088,10 +1078,17 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 				analysis->removeAttribute("COMPARISON");
 			}
 			analysisList->push_back(analysis);
-			duplicateOrgName(analysis, analysisList);
-			wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);
-			if (baseform) {
-				analysis->addAttribute("BASEFORM", baseform);
+			duplicateOrgName(analysis, fstOutput, analysisList);
+			if (fullMorphology) {
+				analysis->addAttribute("FSTOUTPUT", fstOutput);
+				wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);
+				if (baseform) {
+					analysis->addAttribute("BASEFORM", baseform);
+				}
+				parseDebugAttributes(analysis, fstOutput, fstLen);
+			}
+			else {
+				delete[] fstOutput;
 			}
 		}
 	}

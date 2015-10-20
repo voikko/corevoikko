@@ -72,7 +72,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,
 			s->addSuggestion(newsugg, prio);
 			return;
 		case SPELL_CAP_ERROR:
-			list<Analysis *> * analyses = morAnalyzer->analyze(word, wlen);
+			list<Analysis *> * analyses = morAnalyzer->analyze(word, wlen, false);
 			s->charge();
 			if (analyses->empty()) {
 				Analyzer::deleteAnalyses(analyses);

@@ -40,10 +40,8 @@ namespace libvoikko { namespace morphology {
 class NullAnalyzer : public Analyzer {
 	public:
 		NullAnalyzer();
-		std::list<Analysis *> * analyze(const wchar_t * word);
-		std::list<Analysis *> * analyze(const wchar_t * word,
-		                                size_t wlen);
-		std::list<Analysis *> * analyze(const char * word);
+		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology);
+		std::list<Analysis *> * analyze(const char * word, bool fullMorphology);
 		void terminate();
 };
 

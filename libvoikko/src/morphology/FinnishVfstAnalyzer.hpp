@@ -44,9 +44,8 @@ namespace libvoikko { namespace morphology {
 class FinnishVfstAnalyzer : public Analyzer {
 	public:
 		FinnishVfstAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
-		std::list<Analysis *> * analyze(const wchar_t * word);
-		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
-		std::list<Analysis *> * analyze(const char * word);
+		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology);
+		std::list<Analysis *> * analyze(const char * word, bool fullMorphology);
 		void terminate();
 	private:
 		fst::UnweightedTransducer * transducer;
@@ -66,7 +65,7 @@ class FinnishVfstAnalyzer : public Analyzer {
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 		void parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
-		void duplicateOrgName(Analysis * analysis, std::list<Analysis *> * analysisList);
+		void duplicateOrgName(Analysis * analysis, const wchar_t * fstOutput, std::list<Analysis *> * analysisList);
 };
 
 } }

@@ -69,7 +69,7 @@ void HfstAnalysis::analyseToken(Token * token) {
 	const std::string swordBuffer(utils::StringUtils::utf8FromUcs4(wordBuffer));
 	fprintf(stderr, "HfstAnalysis::analyseToken (%ls)\n", wordBuffer);
 
-	token->analyses = analyser->analyze(wordBuffer);
+	token->analyses = analyser->analyze(wordBuffer, wcslen(wordBuffer), false);
 
 	//int num_analyses = 0;
 	//num_analyses = token->analyses->size();	
