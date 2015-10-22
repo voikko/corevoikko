@@ -33,7 +33,7 @@
 #include "utils/StringUtils.hpp"
 #include <cstring>
 
-using namespace std;
+using std::list;
 
 namespace libvoikko { namespace morphology {
 

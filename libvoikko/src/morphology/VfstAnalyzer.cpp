@@ -37,10 +37,14 @@
 #include <cwchar>
 #include <cmath>
 
-using namespace std;
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
 using namespace libvoikko::fst;
+
+using std::list;
+using std::setprecision;
+using std::string;
+using std::stringstream;
 
 namespace libvoikko { namespace morphology {
 

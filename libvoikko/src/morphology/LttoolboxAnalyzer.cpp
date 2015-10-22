@@ -22,7 +22,6 @@
 #include "character/SimpleChar.hpp"
 #include "voikko_defines.h"
 
-using namespace std;
 using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {

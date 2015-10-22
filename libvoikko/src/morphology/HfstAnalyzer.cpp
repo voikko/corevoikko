@@ -33,13 +33,14 @@
 #include <fstream>
 #include <ospell.h>
 
-using namespace std;
 using namespace libvoikko::utils;
+
+using std::string;
+using std::list;
 
 namespace libvoikko { namespace morphology {
 
 HfstAnalyzer::HfstAnalyzer(const string& s) throw(setup::DictionaryException) {
-	cerr << "HfstAnalyzer::HfstAnalyzer: " << s << endl;
 	if(s.find(".zhfst") != std::string::npos) {
 		return;
 	}

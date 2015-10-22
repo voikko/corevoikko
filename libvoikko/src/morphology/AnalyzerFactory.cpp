@@ -47,7 +47,7 @@
 #include "morphology/LttoolboxAnalyzer.hpp"
 #endif
 
-using namespace std;
+using std::string;
 
 namespace libvoikko { namespace morphology {
 

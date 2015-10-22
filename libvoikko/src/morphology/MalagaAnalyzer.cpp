@@ -23,10 +23,13 @@
 #include "character/SimpleChar.hpp"
 #include <cstdlib>
 
-using namespace std;
 using namespace libvoikko::utils;
 using namespace libvoikko::morphology::malaga;
 using namespace libvoikko::character;
+
+using std::string;
+using std::list;
+using std::map;
 
 namespace libvoikko { namespace morphology {
 

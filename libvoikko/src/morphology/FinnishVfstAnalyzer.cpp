@@ -34,10 +34,14 @@
 #include "voikko_defines.h"
 #include <cassert>
 
-using namespace std;
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
 using namespace libvoikko::fst;
+
+using std::string;
+using std::wstring;
+using std::list;
+using std::map;
 
 namespace libvoikko { namespace morphology {
 

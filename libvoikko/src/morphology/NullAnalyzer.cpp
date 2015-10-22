@@ -28,7 +28,7 @@
 
 #include "morphology/NullAnalyzer.hpp"
 
-using namespace std;
+using std::list;
 
 namespace libvoikko { namespace morphology {
 

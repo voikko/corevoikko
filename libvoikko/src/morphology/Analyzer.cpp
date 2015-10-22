@@ -29,7 +29,7 @@
 #include "morphology/Analyzer.hpp"
 #include "morphology/Analysis.hpp"
 
-using namespace std;
+using std::list;
 
 namespace libvoikko { namespace morphology {
 
