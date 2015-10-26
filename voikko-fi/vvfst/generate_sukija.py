@@ -34,13 +34,13 @@
 # This automatic generation will generate some old
 # spellings and spelling errors that do not exist in real life.
 
-# Compiling (in directory suomimalaga):
+# Compiling (in directory voikko-fi):
 # make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/
 
-# Compiling (in directory suomimalaga/vvfst):
+# Compiling (in directory voikko-fi/vvfst):
 # cd ..; make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/; cd vvfst
 
-# Testing (in directory suomimalaga/vvfst):
+# Testing (in directory voikko-fi/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' >test.out; date
 # diff test.out ~/Lataukset/vv* | grep '<.*[+][?]' | less

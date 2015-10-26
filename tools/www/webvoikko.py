@@ -36,7 +36,7 @@ MAX_INPUT_LENGTH = 20000
 MAX_PO_SIZE = 1800
 
 # Suomi-malaga project directory for pofilter
-POFILTER_DICT_DIR = '/home/harri/po-oikoluku/suomimalaga/voikko'
+POFILTER_DICT_DIR = '/home/harri/po-oikoluku/voikko-fi/voikko'
 
 # Colors for background-based hyphenator
 HYPH_COLORS = ['#ffaaaa', '#aaaaff']

@@ -46,7 +46,7 @@ BASE_CORRECT = WORKSPACE + "/base-correct.txt"
 BASE_INFO = WORKSPACE + "/base-info.txt"
 CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
 COMPATIBILITY_DIR = WORKSPACE + "/compatibility"
-SMV = COREVOIKKO + "/suomimalaga"
+SMV = COREVOIKKO + "/voikko-fi"
 
 def _check_hyphens(section, expectedResult, result):
 	failcount = 0

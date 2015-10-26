@@ -17,8 +17,8 @@ VOIKKO_DEBUG=no
 # Include user's configuration
 -include config.mak
 
-# Suomi-malaga version
-SM_VERSION=1.19
+# Version of voikko-fi
+SM_VERSION=2.0
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
@@ -141,8 +141,8 @@ clean:
 	rm -f $(VOIKKO_BUILDDIR)/*_l common/voikkoutils.pyc common/hfconv.pyc
 	rm -f $(VOIKKO_BUILDDIR)/config.inc
 	rm -f common/generate_lex_common.pyc
-	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
-	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
+	rm -f "voikko-fi-$(SM_VERSION).tar.gz"
+	rm -rf "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_ACTUALLY_COPY_FROM_VOIKKO))
@@ -160,17 +160,17 @@ clean:
 
 # Rules for creating the source distribution
 
-dist-gzip: suomi-malaga-$(SM_VERSION).tar.gz
+dist-gzip: voikko-fi-$(SM_VERSION).tar.gz
 
-suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
-	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | gzip -9 > $@
+voikko-fi-$(SM_VERSION).tar.gz: $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(SRCDIST)))
+	tar c --group 0 --owner 0 voikko-fi-$(SM_VERSION) | gzip -9 > $@
 
-dist-bzip2: suomi-malaga-$(SM_VERSION).tar.bz2
+dist-bzip2: voikko-fi-$(SM_VERSION).tar.bz2
 
-suomi-malaga-$(SM_VERSION).tar.bz2: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
-	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | bzip2 -9 > $@
+voikko-fi-$(SM_VERSION).tar.bz2: $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(SRCDIST)))
+	tar c --group 0 --owner 0 voikko-fi-$(SM_VERSION) | bzip2 -9 > $@
 
-$(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
+$(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(SRCDIST))): voikko-fi-$(SM_VERSION)/%: %
 	install -m 644 -D $^ $@
 
 voikko-install: voikko
