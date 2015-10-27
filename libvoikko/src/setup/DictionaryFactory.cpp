@@ -160,6 +160,9 @@ void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<s
  * elements into a list.
  */
 static void splitPathAndAppend(string combinedPath, list<string> & locations) {
+	if (combinedPath == "") {
+		return;
+	}
 	#ifdef WIN32
 	char pathSeparator = ';';
 	#else

@@ -28,7 +28,7 @@
 
 dnl General options for autoconf
 AC_PREREQ(2.60)
-AC_INIT([libvoikko],[3.8],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[4.0],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -51,22 +51,8 @@ AC_C_CONST
 # Prepare platform specific setups (sets $host_os a.o.):
 AC_CANONICAL_HOST
 
-# FIXME: the following is wrong (it should be possible to change this when running make)
-if test ${prefix} = "NONE"
-then
-    case $host_os in
-      darwin* )
-        # Add /Library/Spelling/voikko when on macosx:
-        DICTIONARY_PATH=${ac_default_prefix}/lib/voikko:/Library/Spelling/voikko
-        ;;
-      *)
-        #Default Case
-        DICTIONARY_PATH=${ac_default_prefix}/lib/voikko
-        ;;
-    esac
-else
-	DICTIONARY_PATH=${prefix}/lib/voikko
-fi
+# The default dictionary path is empty (no default locations to search from)
+DICTIONARY_PATH=
 AC_ARG_WITH(dictionary-path,
             AC_HELP_STRING([--with-dictionary-path=PATH],
 	                   [Dictionary path]),
