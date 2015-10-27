@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2012 Harri Pitkänen (hatapitk@iki.fi)
-# Program to generate lexicon files for Suomi-malaga Voikko edition
+# Copyright 2007 - 2015 Harri Pitkänen (hatapitk@iki.fi)
+# Program to generate lexicon files for VFST variant of voikko-fi
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ vocabularyFiles = {}
 for fileSuffix in vocabularyFileSuffixes:
 	vocFile = codecs.open(OPTIONS["destdir"] + u"/joukahainen-" + fileSuffix + u".lexc", 'w', 'UTF-8')
 	vocFile.write(u"! This is automatically generated intermediate lexicon file for\n")
-	vocFile.write(u"! VVFST morphology. The original source data is\n")
+	vocFile.write(u"! VVFST morphology of voikko-fi. The original source data is\n")
 	vocFile.write(u"! distributed under the GNU General Public License, version 2 or\n")
 	vocFile.write(u"! later, as published by the Free Software Foundation. You should\n")
 	vocFile.write(u"! have received the original data, tools and instructions to\n")
