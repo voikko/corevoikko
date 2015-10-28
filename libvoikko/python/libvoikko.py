@@ -69,9 +69,13 @@ import sys
 if sys.version_info < (3,):
 	unicode_str = unicode
 	binary_str = str
+	def repr_conv(s):
+		return s.encode("UTF-8")
 else:
 	unicode_str = str
 	binary_str = bytes
+	def repr_conv(s):
+		return s
 
 """Maximum number of characters in a valid word"""
 MAX_WORD_CHARS = 255
@@ -88,7 +92,7 @@ class Dictionary:
 		self.description = description
 	
 	def __repr__(self):
-		return "<" + self.language + "," + self.script + "," + self.variant + "," + self.description + ">"
+		return repr_conv("<" + self.language + "," + self.script + "," + self.variant + "," + self.description + ">")
 	
 	def __lt__(self, other):
 		if not isinstance(other, Dictionary):
@@ -126,8 +130,8 @@ class Token:
 		self.tokenType = tokenType
 	
 	def __repr__(self):
-		return ("<" + self.tokenText + "," + \
-		       Token._TYPE_NAMES[self.tokenType] + ">").encode("UTF-8")
+		return repr_conv("<" + self.tokenText + "," + \
+		       Token._TYPE_NAMES[self.tokenType] + ">")
 
 class Sentence:
 	"""Represents a sentence in natural language text."""
@@ -143,8 +147,8 @@ class Sentence:
 		self.nextStartType = nextStartType
 	
 	def __repr__(self):
-		return ("<" + self.sentenceText + "," + \
-		       Sentence._TYPE_NAMES[self.nextStartType] + ">").encode("UTF-8")
+		return repr_conv("<" + self.sentenceText + "," + \
+		       Sentence._TYPE_NAMES[self.nextStartType] + ">")
 
 class SuggestionStrategy:
 	"""Strategies for generating suggestions for incorrectly spelled words."""
@@ -158,7 +162,7 @@ class GrammarError:
 	"""Grammar error from grammar checker."""
 	
 	def __repr__(self):
-		return "<" + self.toString() + ">"
+		return repr_conv("<" + self.toString() + ">")
 	
 	def toString(self):
 		s = '[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={' \
