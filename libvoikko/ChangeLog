@@ -1,3 +1,6 @@
+2015-10-28 Harri Pitkänen <hatapitk@iki.fi>
+	* Use Python 3 instead of Python 2 for build tools.
+
 2015-10-27 Harri Pitkänen <hatapitk@iki.fi>
 	* Remove default value for builtin dictionary path. No directories
 	  will be searched for by default unless --with-dictionary-path

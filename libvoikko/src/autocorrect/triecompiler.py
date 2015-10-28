@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2009 - 2012 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +27,6 @@
 #
 # Usage: python triecompiler.py input.xml output.hpp
 
-from __future__ import unicode_literals
 import xml.dom.minidom
 import sys
 
@@ -76,8 +73,7 @@ def cHexCodeForChar(unicodeChar):
 		# These characters cannot be represented as unicode literals in C++
 		return unicodeChar
 	hexCode = hex(ordinal)[2:]
-	# hexCode.rjust(4, "0") is not supported in Python version 2.3
-	return "\\u" + hexCode.rjust(4).replace(" ", "0")
+	return "\\u" + hexCode.rjust(4, "0")
 
 def writeTrieNodes(trie, outputFile):
 	for node in trie.children:
