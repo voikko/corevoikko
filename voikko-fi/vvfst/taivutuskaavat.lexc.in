@@ -237,6 +237,7 @@ LEXICON NOUN Arvelu_w
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Sukija [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -918,6 +919,7 @@ LEXICON NOUN Asema_s
 ?Vanha [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
@@ -1061,6 +1063,7 @@ LEXICON NOUN Apaja
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>   <WC>LiOlV_<A> ;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A> <WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi <WC>LiOlN_<A>	;
 
 ! Parempi esimerkkisana "pakana"
 LEXICON NOUN Peruna
