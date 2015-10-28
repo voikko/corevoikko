@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
-# Copyright 2006 - 2012 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2006 - 2013 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko.
 # This program requires Python and Python interface to libvoikko.
 
@@ -51,8 +50,8 @@ SMV = COREVOIKKO + "/voikko-fi"
 def _check_hyphens(section, expectedResult, result):
 	failcount = 0
 	if expectedResult != result:
-		print u'Hyphenation test failed in section "%s":' % section
-		print u'  Expected "%s", got "%s"' % (expectedResult, result)
+		print('Hyphenation test failed in section "%s":' % section)
+		print('  Expected "%s", got "%s"' % (expectedResult, result))
 		return 1
 	return 0
 
@@ -60,17 +59,17 @@ def _check_gcerrors(inputpara, expresults, results):
 	failcount = 0
 	for i in range(0, len(expresults)):
 		if len(results) - 1 < i:
-			print u'Grammar test failed: less results than expected.'
-			print u'The first paragraph with missing results:'
-			print u' ' + inputpara[i]
+			print('Grammar test failed: less results than expected.')
+			print('The first paragraph with missing results:')
+			print(' ' + inputpara[i])
 			return failcount + 1
 		if expresults[i] != results[i]:
-			print u'Grammar test failed. Input:'
-			print u' ' + inputpara[i]
-			print u'Expected results:'
-			for r in expresults[i]: print u' ' + r
-			print u'Actual results:'
-			for r in results[i]: print u' ' + r
+			print('Grammar test failed. Input:')
+			print(' ' + inputpara[i])
+			print('Expected results:')
+			for r in expresults[i]: print(' ' + r)
+			print('Actual results:')
+			for r in results[i]: print(' ' + r)
 			failcount = failcount + 1
 	return failcount
 
@@ -78,7 +77,7 @@ def _check_gcerrors(inputpara, expresults, results):
 def runCompatibilityTests():
 	assertionFileName = COMPATIBILITY_DIR + "/assertions.txt"
 	if not os.path.isfile(assertionFileName):
-		print u"Warning: compatibility assertions file was not found, not performing any compatibility tests"
+		print("Warning: compatibility assertions file was not found, not performing any compatibility tests")
 		return
 	assertionFile = codecs.open(assertionFileName)
 	index = assertionFile.read()
@@ -90,22 +89,22 @@ def runCompatibilityTests():
 		dictPath = COMPATIBILITY_DIR + "/" + subdir
 		def dictTestFunct(d):
 			return subdir[4:] in d.variant
-		dicts = filter(dictTestFunct, Voikko.listDicts(dictPath))
+		dicts = list(filter(dictTestFunct, Voikko.listDicts(dictPath)))
 		if len(dicts) != 1:
-			sys.stderr.write(u"Found " + `len(dicts)` + u" matching dicts when looking from " + dictPath + u"\n")
+			sys.stderr.write("Found " + repr(len(dicts)) + " matching dicts when looking from " + dictPath + "\n")
 			sys.exit(1)
 		d = dicts[0]
-		v = Voikko(language = d.language + u"-x-" + d.variant, path = dictPath)
-		for line in index.split(u"\n"):
+		v = Voikko(language = d.language + "-x-" + d.variant, path = dictPath)
+		for line in index.split("\n"):
 			if len(line) > 0 and not eval(line):
-				print u"Compatibility test failed: subdir='" + subdir + "', line='" + line + "'"
+				print("Compatibility test failed: subdir='" + subdir + "', line='" + line + "'")
 				sys.exit(1)
 		v.terminate()
 		compatTestCount = compatTestCount + 1
 	if compatTestCount == 0:
-		print u"Warning: compatibility assertions were present but no morphologies were found"
+		print("Warning: compatibility assertions were present but no morphologies were found")
 	else:
-		print u"All " + `compatTestCount` + " compatibility tests were successful."
+		print("All " + repr(compatTestCount) + " compatibility tests were successful.")
 	
 
 # Returns a list of grammar errors.
@@ -123,7 +122,7 @@ def _check_grammar(paragraphlist, params, voikko):
 def shell(cwd, command):
 	res = subprocess.call(command, cwd = cwd, shell = True)
 	if res != 0:
-		sys.stderr.write(u"Shell command '%s' failed, working directory was '%s'\n" % (command, cwd))
+		sys.stderr.write("Shell command '%s' failed, working directory was '%s'\n" % (command, cwd))
 		return False
 	return True
 	
@@ -137,17 +136,17 @@ def update_smv():
 
 def build(configMap):
 	if not shell(configMap["SOURCEDIR"], configMap["BUILDCMD"]):
-		sys.stderr.write(u"Failed to build the dictionary.\n")
+		sys.stderr.write("Failed to build the dictionary.\n")
 		sys.exit(1)
 	if "INSTALLCMD" in configMap:
 		if not shell(configMap["SOURCEDIR"], configMap["INSTALLCMD"]):
-			sys.stderr.write(u"Failed to install the dictionary.\n")
+			sys.stderr.write("Failed to install the dictionary.\n")
 			sys.exit(1)
 
 # Run "make clean"
 def clean_smv():
 	if not shell(SMV, 'make clean'):
-		sys.stderr.write(u'Failed to run "make clean"\n')
+		sys.stderr.write('Failed to run "make clean"\n')
 		sys.exit(1)
 
 # Run the spelling tests
@@ -158,19 +157,19 @@ def spell_tests(voikko, testFile):
 	testcount = 0
 	failcount = 0
 	linecount = 0
-	section = u"(none)"
+	section = "(none)"
 	negativeTest = False
 	while True:
 		line_orig = inputfile.readline()
 		linecount = linecount + 1
-		if line_orig == u'': break
+		if line_orig == '': break
 		line = stripWhitespaceAndComments(line_orig)
-		if line.startswith(u'[') and line.endswith(u']'):
+		if line.startswith('[') and line.endswith(']'):
 			section = line[1:-1]
 			setDefaults(voikko)
 			setOptions(voikko, section)
 			continue
-		if line.startswith(u'!'):
+		if line.startswith('!'):
 			negativeTest = True
 			word = line[1:]
 		else:
@@ -182,18 +181,18 @@ def spell_tests(voikko, testFile):
 		try:
 			wordOk = voikko.spell(word)
 			if (not wordOk and not negativeTest) or (wordOk and negativeTest):
-				print (u'Spelling test failed at line %i, section "%s":\n  %s' \
-					% (linecount, section, line_orig)).encode(ENCODING)
+				print(('Spelling test failed at line %i, section "%s":\n  %s' \
+					% (linecount, section, line_orig)).encode(ENCODING))
 				failcount = failcount + 1
-		except Exception, e:
-			sys.stderr.write((u"Exception while trying to spell word '%s'\n" % word).encode(ENCODING))
+		except Exception as e:
+			sys.stderr.write(("Exception while trying to spell word '%s'\n" % word).encode(ENCODING))
 			raise e
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i spelling tests were successful." % testcount
+		print(" All %i spelling tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i spelling tests failed." % (failcount, testcount)
+		print(" %i out of %i spelling tests failed." % (failcount, testcount))
 		return False
 
 # Run the hyphenator tests
@@ -203,12 +202,12 @@ def hyphen_tests(voikko, testFile):
 	inputfile = codecs.open(testFile, "r", ENCODING)
 	testcount = 0
 	failcount = 0
-	section = u""
+	section = ""
 	while True:
 		line_orig = inputfile.readline()
-		if line_orig == u'': break
+		if line_orig == '': break
 		line = stripWhitespaceAndComments(line_orig)
-		if line.startswith(u'[') and line.endswith(u']'):
+		if line.startswith('[') and line.endswith(']'):
 			section = line[1:-1]
 			continue
 		setDefaults(voikko)
@@ -222,23 +221,23 @@ def hyphen_tests(voikko, testFile):
 		failcount = failcount + _check_hyphens(section, expresult, result)
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i hyphenation tests were successful." % testcount
+		print(" All %i hyphenation tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i hyphenation tests failed." % (failcount, testcount)
+		print(" %i out of %i hyphenation tests failed." % (failcount, testcount))
 		return False
 
 def read_nonempty(inputfile):
 	while True:
 		line = inputfile.readline()
-		if line == u"": return u""
+		if line == "": return ""
 		line = stripWhitespaceAndComments(line)
 		if len(line) > 0: return line
 
 def stripWhitespaceAndComments(line):
-	if line.startswith(u"#"):
-		return u""
-	commentstart = line.find(u" #")
+	if line.startswith("#"):
+		return ""
+	commentstart = line.find(" #")
 	if commentstart != -1: line = line[:commentstart]
 	return line.strip()
 
@@ -249,13 +248,13 @@ def grammar_tests(voikko, testFile):
 	inputfile = codecs.open(testFile, "r", ENCODING)
 	testcount = 0
 	failcount = 0
-	section = u""
+	section = ""
 	inputpara = []
 	expresults = []
 	line = read_nonempty(inputfile)
 	while True:
-		if line == u'': break
-		if line.startswith(u'{') and line.endswith(u'}'):
+		if line == '': break
+		if line.startswith('{') and line.endswith('}'):
 			if len(inputpara) > 0:
 				results = _check_grammar(inputpara, section, voikko)
 				failcount = failcount + _check_gcerrors(inputpara, expresults, results)
@@ -272,8 +271,8 @@ def grammar_tests(voikko, testFile):
 		expresult = []
 		while True:
 			line = read_nonempty(inputfile)
-			if line == u'': break
-			if line[0] != u'[': break
+			if line == '': break
+			if line[0] != '[': break
 			expresult.append(line)
 		expresults.append(expresult)
 	inputfile.close()
@@ -281,10 +280,10 @@ def grammar_tests(voikko, testFile):
 		results = _check_grammar(inputpara, section, voikko)
 		failcount = failcount + _check_gcerrors(inputpara, expresults, results)
 	if failcount == 0:
-		print u" All %i grammar tests were successful." % testcount
+		print(" All %i grammar tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i grammar tests failed." % (failcount, testcount)
+		print(" %i out of %i grammar tests failed." % (failcount, testcount))
 		return False
 
 def setDefaults(voikko):
@@ -299,7 +298,7 @@ def setDefaults(voikko):
 	voikko.setMinHyphenatedWordLength(2)
 
 def setOptions(voikko, section):
-	for option in section.split(u" "):
+	for option in section.split(" "):
 		if len(option) > 0:
 			eval(option)
 
@@ -310,40 +309,40 @@ def suggestion_tests(voikko, testFile):
 	inputfile = codecs.open(testFile, "r", ENCODING)
 	testcount = 0
 	failcount = 0
-	section = u""
+	section = ""
 	while True:
 		line_orig = inputfile.readline()
-		if line_orig == u'': break
+		if line_orig == '': break
 		line = stripWhitespaceAndComments(line_orig)
-		if line.startswith(u'[') and line.endswith(u']'):
+		if line.startswith('[') and line.endswith(']'):
 			section = line[1:-1]
 			continue
-		parts = line.split(u'\t')
+		parts = line.split('\t')
 		if len(parts) < 2: continue
 		testcount = testcount + 1
 		setOptions(voikko, section)
 		suggestions = voikko.suggest(parts[0])
 		setDefaults(voikko)
 		for expresult in parts[1:]:
-			if expresult.startswith(u'!'):
+			if expresult.startswith('!'):
 				if expresult[1:] in suggestions:
-					print u'Suggestion test failed for "%s" in section [%s]: ' \
-					u'"%s" not expected.' % (parts[0], section, expresult[1:])
+					print('Suggestion test failed for "%s" in section [%s]: ' \
+					'"%s" not expected.' % (parts[0], section, expresult[1:]))
 					failcount = failcount + 1
 			else:
 				if not expresult in suggestions:
-					print u'Suggestion test failed for "%s" in section [%s]: ' \
-					u'"%s" expected.' % (parts[0], section, expresult)
+					print('Suggestion test failed for "%s" in section [%s]: ' \
+					'"%s" expected.' % (parts[0], section, expresult))
 					failcount = failcount + 1
 				else:
 					i = suggestions.index(expresult)
 					suggestions = suggestions[i+1:]
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i suggestion tests were successful." % testcount
+		print(" All %i suggestion tests were successful." % testcount)
 		return True
 	else:
-		print u" %i failures in %i suggestion tests." % (failcount, testcount)
+		print(" %i failures in %i suggestion tests." % (failcount, testcount))
 		return False
 
 def valuesMatch(expected, actual):
@@ -355,20 +354,20 @@ def valuesMatch(expected, actual):
 def containsMorphoAnalysis(expectedAnalysis, actualAnalyses):
 	for actualAnalysis in actualAnalyses:
 		match = True
-		for (key, value) in expectedAnalysis.iteritems():
+		for (key, value) in expectedAnalysis.items():
 			if not key in actualAnalysis or not valuesMatch(value, actualAnalysis[key]):
 				match = False
 				break
 		if match:
 			return None
-	return u"Did not produce expected analysis:\n expected=%s\n actual=%s" \
+	return "Did not produce expected analysis:\n expected=%s\n actual=%s" \
 	       % (expectedAnalysis, actualAnalyses)
 
 def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
 	               forbiddenKeys, forbiddenValues, actualAnalyses):
 	if expectedAnalysesCount != None and \
 	   len(actualAnalyses) != expectedAnalysesCount:
-		return u"Expected %i analyses, got %i." % \
+		return "Expected %i analyses, got %i." % \
 		       (expectedAnalysesCount, len(actualAnalyses))
 	for expectedAnalysis in expectedAnalyses:
 		result = containsMorphoAnalysis(expectedAnalysis, actualAnalyses)
@@ -377,11 +376,11 @@ def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
 	for forbiddenKey in forbiddenKeys:
 		for actualAnalysis in actualAnalyses:
 			if forbiddenKey in actualAnalysis:
-				return u"Analysis contained forbidden key %s." % forbiddenKey
+				return "Analysis contained forbidden key %s." % forbiddenKey
 	for forbiddenValue in forbiddenValues:
 		for actualAnalysis in actualAnalyses:
-			if forbiddenValue in actualAnalysis.values():
-				return u"Analysis contained forbidden value %s." % forbiddenValue
+			if forbiddenValue in list(actualAnalysis.values()):
+				return "Analysis contained forbidden value %s." % forbiddenValue
 	return None
 
 # Run morphological analysis tests
@@ -402,20 +401,20 @@ def morpho_tests(voikko, testFile):
 	while True:
 		line_orig = inputfile.readline()
 		linecount = linecount + 1
-		if line_orig == u'':
+		if line_orig == '':
 			break
 		line = stripWhitespaceAndComments(line_orig)
-		if line == u'':
+		if line == '':
 			continue
-		elif line.startswith(u'word:'):
+		elif line.startswith('word:'):
 			testcount = testcount + 1
 			if currentExpected != {}:
 				expectedAnalyses.append(currentExpected)
 			error = diffMorphoAnalyses(expectedAnalyses,
 			        expectedAnalysesCount, forbiddenKeys, forbiddenValues, actualAnalyses)
 			if error != None:
-				print u'Morphological test failed for word "%s":\n%s\n' \
-					% (word, error)
+				print('Morphological test failed for word "%s":\n%s\n' \
+					% (word, error))
 				failcount = failcount + 1
 			word = line[5:]
 			actualAnalyses = voikko.analyze(word)
@@ -424,40 +423,40 @@ def morpho_tests(voikko, testFile):
 			forbiddenValues = []
 			expectedAnalysesCount = None
 			currentExpected = {}
-		elif line.startswith(u'expected:'):
+		elif line.startswith('expected:'):
 			expectedAnalysesCount = int(line[9:])
-		elif line.startswith(u'!='):
+		elif line.startswith('!='):
 			forbiddenValues.append(line[2:])
-		elif line.startswith(u'!'):
+		elif line.startswith('!'):
 			forbiddenKeys.append(line[1:])
-		elif line.startswith(u'analysis'):
+		elif line.startswith('analysis'):
 			expectedAnalyses.append(currentExpected)
 			currentExpected = {}
-		elif u'=' in line:
-			key = line[:line.find(u'=')]
-			value = line[line.find(u'=')+1:]
+		elif '=' in line:
+			key = line[:line.find('=')]
+			value = line[line.find('=')+1:]
 			currentExpected[key] = value
-		elif u'∈' in line:
-			key = line[:line.find(u'∈')]
-			rangeStr = line[line.find(u'∈')+1:].split(u',')
+		elif '∈' in line:
+			key = line[:line.find('∈')]
+			rangeStr = line[line.find('∈')+1:].split(',')
 			currentExpected[key] = (float(rangeStr[0]), float(rangeStr[1]))
 		else:
-			print u"Invalid expectation " + line
+			print("Invalid expectation " + line)
 			return False
 	if currentExpected != {}:
 		expectedAnalyses.append(currentExpected)
 	error = diffMorphoAnalyses(expectedAnalyses,
 	        expectedAnalysesCount, forbiddenKeys, forbiddenValues, actualAnalyses)
 	if error != None:
-		print u'Morphological test failed for word "%s":\n%s\n' \
-			% (word, error)
+		print('Morphological test failed for word "%s":\n%s\n' \
+			% (word, error))
 		failcount = failcount + 1
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i morphological tests were successful." % testcount
+		print(" All %i morphological tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i morphological tests failed." % (failcount, testcount)
+		print(" %i out of %i morphological tests failed." % (failcount, testcount))
 		return False
 
 # Run tokenizer tests
@@ -470,10 +469,10 @@ def tokenizer_tests(voikko, testFile):
 	inputString = None
 	while True:
 		line_orig = inputfile.readline()
-		if line_orig == u'':
+		if line_orig == '':
 			break
 		line = stripWhitespaceAndComments(line_orig)
-		if line == u'':
+		if line == '':
 			continue
 		if inputString is None:
 			inputString = line
@@ -481,19 +480,19 @@ def tokenizer_tests(voikko, testFile):
 			continue
 		# line should contain tokenization results
 		expectedTokens = line
-		actualTokens = unicode(str(voikko.tokens(inputString)), u'UTF-8')
+		actualTokens = repr(voikko.tokens(inputString))
 		inputString = None
 		if expectedTokens != actualTokens:
-			print u"Tokenizer test failed:"
-			print u" Expected " + expectedTokens
-			print u" Actual   " + actualTokens
+			print("Tokenizer test failed:")
+			print(" Expected " + expectedTokens)
+			print(" Actual   " + actualTokens)
 			failcount = failcount + 1
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i tokenizer tests were successful." % testcount
+		print(" All %i tokenizer tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i tokenizer tests failed." % (failcount, testcount)
+		print(" %i out of %i tokenizer tests failed." % (failcount, testcount))
 		return False
 
 # Run sentence tests
@@ -506,10 +505,10 @@ def sentence_tests(voikko, testFile):
 	inputString = None
 	while True:
 		line_orig = inputfile.readline()
-		if line_orig == u'':
+		if line_orig == '':
 			break
 		line = stripWhitespaceAndComments(line_orig)
-		if line == u'':
+		if line == '':
 			continue
 		if inputString is None:
 			inputString = line
@@ -517,19 +516,19 @@ def sentence_tests(voikko, testFile):
 			continue
 		# line should contain sentence splitting results
 		expectedSentences = line
-		actualSentences = unicode(str(voikko.sentences(inputString)), u'UTF-8')
+		actualSentences = repr(voikko.sentences(inputString))
 		inputString = None
 		if expectedSentences != actualSentences:
-			print u"Sentence splitting test failed:"
-			print u" Expected " + expectedSentences
-			print u" Actual   " + actualSentences
+			print("Sentence splitting test failed:")
+			print(" Expected " + expectedSentences)
+			print(" Actual   " + actualSentences)
 			failcount = failcount + 1
 	inputfile.close()
 	if failcount == 0:
-		print u" All %i sentence splitting tests were successful." % testcount
+		print(" All %i sentence splitting tests were successful." % testcount)
 		return True
 	else:
-		print u" %i out of %i sentence splitting tests failed." % (failcount, testcount)
+		print(" %i out of %i sentence splitting tests failed." % (failcount, testcount))
 		return False
 
 # START OF MAIN PROGRAM
@@ -547,7 +546,7 @@ except getopt.GetoptError:
 
 if "--base" in [opt[0] for opt in opts]:
 	if not shell(SMV, 'make voikko-install DESTDIR="%s"' % BASE):
-		sys.stderr.write(u"Failed to create baseline version.\n")
+		sys.stderr.write("Failed to create baseline version.\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('bash -c \'time zcat "%s" | "%s" -j %i -p "%s" | grep "^C:" > "%s"\'' % \
@@ -555,7 +554,7 @@ if "--base" in [opt[0] for opt in opts]:
 	sys.exit(0)
 
 if "--current" in [opt[0] for opt in opts]:
-	CURRENT_TESTMOR = u"fi-x-malstd"
+	CURRENT_TESTMOR = "fi-x-malstd"
 	clean_smv()
 	update_smv()
 	voikko = Voikko(CURRENT_TESTMOR)
@@ -591,29 +590,29 @@ else:
 			continue
 		if os.access(testdir + "/skip.this", os.R_OK):
 			continue
-		print "Starting test suite under", testdir
+		print("Starting test suite under", testdir)
 		configFile = codecs.open(testdir + "/config.txt", "r", ENCODING)
 		configMap = {}
 		while True:
 			line = configFile.readline()
-			if line == u'':
+			if line == '':
 				break
 			line = stripWhitespaceAndComments(line)
-			if line == u'':
+			if line == '':
 				continue
-			separatorPos = line.find(u"=")
+			separatorPos = line.find("=")
 			varName = line[:separatorPos].strip()
 			varExpression = line[separatorPos+1:].strip()
 			varValue = eval(varExpression, globalsMap)
 			configMap[varName] = varValue
 		configFile.close()
 		build(configMap)
-		print " Build complete, starting tests"
+		print(" Build complete, starting tests")
 		languageTag = configMap["LANGUAGE"]
 		try:
 			voikko = Voikko(language=languageTag, path=INSTALLDIR)
 		except VoikkoException as e:
-			print (u"ERROR initializing libvoikko for language '%s' in '%s':" % (languageTag, INSTALLDIR)), e.args
+			print(("ERROR initializing libvoikko for language '%s' in '%s':" % (languageTag, INSTALLDIR)), e.args)
 			sys.exit(1)
 		ok = True
 		ok = spell_tests(voikko, testdir + "/spell.txt") and ok
@@ -625,7 +624,7 @@ else:
 		ok = sentence_tests(voikko, testdir + "/sentence.txt") and ok
 		voikko.terminate()
 		if not ok:
-			print "FAILED!"
+			print("FAILED!")
 			sys.exit(1)
 	
 	runCompatibilityTests()
