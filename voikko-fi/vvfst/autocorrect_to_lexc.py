@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Copyright 2009 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
@@ -21,17 +19,16 @@
 #
 # Usage: python triecompiler.py input.xml output.lexc
 
-from __future__ import unicode_literals
 import xml.dom.minidom
 import sys
 
 # Open the XML file
-xmlFile = open(sys.argv[1], "r")
+xmlFile = open(sys.argv[1], "r", encoding="UTF-8")
 autoCorrect = xml.dom.minidom.parseString(xmlFile.read())
 xmlFile.close()
 
 # Open the lexc file
-outputFile = open(sys.argv[2], "w")
+outputFile = open(sys.argv[2], "w", encoding="UTF-8")
 outputFile.write("Multichar_Symbols\n@_SPACE_@\n\nLEXICON Root\n")
 
 def formatForLexc(s):
@@ -41,6 +38,6 @@ def formatForLexc(s):
 for replacement in autoCorrect.getElementsByTagName("replacement"):
 	incorrect = formatForLexc(replacement.getElementsByTagName("incorrect")[0].firstChild.wholeText)
 	correct = formatForLexc(replacement.getElementsByTagName("correct")[0].firstChild.wholeText)
-	outputFile.write((incorrect + u":" + correct + u"\t#\t;\n").encode("UTF-8"))
+	outputFile.write(incorrect + ":" + correct + "\t#\t;\n")
 
 outputFile.close()

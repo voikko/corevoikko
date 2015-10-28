@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Copyright 2015 Harri Pitkänen (hatapitk@iki.fi)
 # Program for removing comments and optionally disabled entries from
 # LEXC files.
@@ -27,8 +25,8 @@ files = [f for f in sys.argv[1:] if not f.startswith("--")]
 
 OPTIONS = generate_lex_common.get_options()
 
-for line_orig in fileinput.input(files):
-	line = generate_lex_common.filterVfstInput(unicode(line_orig, 'UTF-8'), OPTIONS)
+for line_orig in fileinput.input(files,openhook=fileinput.hook_encoded("UTF-8")):
+	line = generate_lex_common.filterVfstInput(line_orig, OPTIONS)
 	if line is None:
 		continue
-	print line.encode('UTF-8')
+	print(line)

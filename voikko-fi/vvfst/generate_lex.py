@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Copyright 2007 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for VFST variant of voikko-fi
 
@@ -24,7 +22,6 @@ import generate_lex_common
 import voikkoutils
 import xml.dom.minidom
 import codecs
-from string import rfind
 from xml.dom import Node
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
@@ -296,23 +293,22 @@ def handle_word(word):
 	
 	# Get the inflection class. Exactly one inflection class is needed
 	voikko_infclass = None
-        if OPTIONS["sukija"]:
-                for infclass in word.getElementsByTagName("infclass"):
-                        if infclass.getAttribute("type") == "historical":
-                                voikko_infclass = generate_lex_common.tValue(infclass)
-                                if voikko_infclass == u"banaali":   # Banaali taipuu kuten paperi.
-                                        voikko_infclass = u"paperi"
-                                elif voikko_infclass == u"pasuuna":
-                                        voikko_infclass = u"peruna"
-                                if voikko_infclass not in [u"aavistaa-av1", u"arvelu", u"arvelu-av1", u"haravoida-av2", u"karahka", u"matala",
-                                                           u"paperi", u"paperi-av1", u"peruna"]:
-                                        voikko_infclass = None
-                                break
-        if voikko_infclass == None:
-                for infclass in word.getElementsByTagName("infclass"):
-                        if infclass.getAttribute("type") != "historical":
-                                voikko_infclass = generate_lex_common.tValue(infclass)
-                                break
+	if OPTIONS["sukija"]:
+		for infclass in word.getElementsByTagName("infclass"):
+			if infclass.getAttribute("type") == "historical":
+				voikko_infclass = generate_lex_common.tValue(infclass)
+				if voikko_infclass == u"banaali":   # Banaali taipuu kuten paperi.
+					voikko_infclass = u"paperi"
+				elif voikko_infclass == u"pasuuna":
+					voikko_infclass = u"peruna"
+				if voikko_infclass not in [u"aavistaa-av1", u"arvelu", u"arvelu-av1", u"haravoida-av2", u"karahka", u"matala", u"paperi", u"paperi-av1", u"peruna"]:
+					voikko_infclass = None
+				break
+	if voikko_infclass == None:
+		for infclass in word.getElementsByTagName("infclass"):
+			if infclass.getAttribute("type") != "historical":
+				voikko_infclass = generate_lex_common.tValue(infclass)
+				break
 	if voikko_infclass == u"poikkeava": return
 	
 	# Get the word classes
@@ -324,7 +320,7 @@ def handle_word(word):
 	
 	# Get diacritics
 	altforms = generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form")
-	diacritics = reduce(lambda x, y: x + y, get_diacritics(word, altforms, vfst_word_class), u"")
+	diacritics = "".join(get_diacritics(word, altforms, vfst_word_class))
 	
 	# Get forced vowel type
 	if voikko_infclass == None and vfst_word_class != u"[La]":
@@ -412,7 +408,7 @@ def handle_word(word):
 	# then all multi part forms must end with a part contained in the single part set.
 	if singlePartForms:
 		for multiPartForm in multiPartForms:
-			lastPart = multiPartForm[max(rfind(multiPartForm, u"="), rfind(multiPartForm, u"|"), rfind(multiPartForm, u"-")) + 1:]
+			lastPart = multiPartForm[max(multiPartForm.rfind("="), multiPartForm.rfind("|"), multiPartForm.rfind("-")) + 1:]
 			if lastPart not in singlePartForms:
 				sys.stderr.write(u"ERROR: suspicious alternative spelling: %s\n" % multiPartForm)
 				sys.exit(1)

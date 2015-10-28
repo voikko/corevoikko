@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2007 - 2011 Harri Pitkänen (hatapitk@iki.fi)
-# Program to generate lexicon files for Suomi-malaga Voikko edition
+# Copyright 2007 - 2015 Harri Pitkänen (hatapitk@iki.fi)
+# Program to generate lexicon files for voikko-fi Malaga edition
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,9 +22,8 @@ import generate_lex_common
 import voikkoutils
 import xml.dom.minidom
 import codecs
-from string import rfind
 
-flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
+flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + "/flags.txt")
 
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
@@ -66,55 +63,55 @@ def check_usage(word):
 	return False
 
 def get_prefix_jatko(word):
-	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
-	prefixJatko = u""
+	flags = generate_lex_common.get_flags_from_group(word, "compounding")
+	prefixJatko = ""
 	for flag in flags:
-		if flag in [u"eln", u"ell", u"elt", u"eltj"]:
+		if flag in ["eln", "ell", "elt", "eltj"]:
 			if (len(prefixJatko) > 0):
-				prefixJatko = prefixJatko + u" + "
-			prefixJatko = prefixJatko + u"@" + flag
+				prefixJatko = prefixJatko + " + "
+			prefixJatko = prefixJatko + "@" + flag
 	return prefixJatko
 
 def get_adverb_jatko(word):
-	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
-	prefixJatko = u""
+	flags = generate_lex_common.get_flags_from_group(word, "inflection")
+	prefixJatko = ""
 	loppu = True
 	for flag in flags:
-		if flag in [u"liitesana", u"omistusliite"]:
-			prefixJatko = prefixJatko + u", " + flag
-		elif flag == u"ulkopaikallissijat_yks":
-			prefixJatko = prefixJatko + u", ulkopaikallissija_llA"
-		elif flag == u"required":
+		if flag in ["liitesana", "omistusliite"]:
+			prefixJatko = prefixJatko + ", " + flag
+		elif flag == "ulkopaikallissijat_yks":
+			prefixJatko = prefixJatko + ", ulkopaikallissija_llA"
+		elif flag == "required":
 			loppu = False;
 	if loppu:
-		prefixJatko = prefixJatko + u", loppu"
-	if prefixJatko.startswith(u", "):
+		prefixJatko = prefixJatko + ", loppu"
+	if prefixJatko.startswith(", "):
 		prefixJatko = prefixJatko[2:]
 	return prefixJatko
 
 def get_abbreviation_jatko(word, wordform):
-	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
-	if wordform.endswith(u".") or u"none" in flags:
-		return u"loppu"
+	flags = generate_lex_common.get_flags_from_group(word, "inflection")
+	if wordform.endswith(".") or "none" in flags:
+		return "loppu"
 	else:
-		return u"tavuviiva, kaksoispiste, loppu"
+		return "tavuviiva, kaksoispiste, loppu"
 
 def get_additional_attributes(word):
-	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
-	result = u""
-	if u"el_altark" in flags:
-		result = result + u", aluetta_tarkentava_etuliite: yes"
-	if u"geo_suffix" in flags:
-		result = result + u", paikannimen_jälkiliite: yes"
-	if u"org_suffix" in flags:
-		result = result + u", erisnimen_pääte: yes"
-	if u"free_suffix" in flags:
-		result = result + u", vapaa_jälkiosa: yes"
-	flags = generate_lex_common.get_flags_from_group(word, u"grammar")
-	if u"require_following_a" in flags:
-		result = result + u", vaatii_tapaluokan: nimitapa_1"
-	if u"require_following_ma" in flags:
-		result = result + u", vaatii_tapaluokan: nimitapa_3"
+	flags = generate_lex_common.get_flags_from_group(word, "compounding")
+	result = ""
+	if "el_altark" in flags:
+		result = result + ", aluetta_tarkentava_etuliite: yes"
+	if "geo_suffix" in flags:
+		result = result + ", paikannimen_jälkiliite: yes"
+	if "org_suffix" in flags:
+		result = result + ", erisnimen_pääte: yes"
+	if "free_suffix" in flags:
+		result = result + ", vapaa_jälkiosa: yes"
+	flags = generate_lex_common.get_flags_from_group(word, "grammar")
+	if "require_following_a" in flags:
+		result = result + ", vaatii_tapaluokan: nimitapa_1"
+	if "require_following_ma" in flags:
+		result = result + ", vaatii_tapaluokan: nimitapa_3"
 	return result
 
 def handle_word(word):
@@ -134,11 +131,11 @@ def handle_word(word):
 		if infclass.getAttribute("type") != "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
-	if voikko_infclass == u"poikkeava": return
+	if voikko_infclass == "poikkeava": return
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"conjunction", u"adverb"] and voikko_infclass == None:
+	if wordclasses[0] not in ["interjection", "prefix", "abbreviation", "conjunction", "adverb"] and voikko_infclass == None:
 		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
@@ -153,7 +150,7 @@ def handle_word(word):
 	malaga_flags = generate_lex_common.get_malaga_flags(word)
 	
 	# Get forced vowel type
-	if voikko_infclass == None and malaga_word_class != u"lyhenne":
+	if voikko_infclass == None and malaga_word_class != "lyhenne":
 		forced_inflection_vtype = voikkoutils.VOWEL_DEFAULT
 	else:
 		inflectionElement = word.getElementsByTagName("inflection")
@@ -165,29 +162,29 @@ def handle_word(word):
 	# Construct debug information and additional attributes
 	additional_attributes = get_additional_attributes(word)
 	if OPTIONS["sourceid"]:
-		additional_attributes = additional_attributes + u', sourceid: "%s"' % word.getAttribute("id")
+		additional_attributes = additional_attributes + ', sourceid: "%s"' % word.getAttribute("id")
 	
 	# Process all alternative forms
 	singlePartForms = []
 	multiPartForms = []
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
-		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-		if len(altform) == len(wordform.replace(u'-', u'')):
+		wordform = altform.replace('|', '').replace('=', '')
+		if len(altform) == len(wordform.replace('-', '')):
 			singlePartForms.append(altform)
 		else:
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if alku == None:
-			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
+			errorstr = "ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
-			sys.stderr.write(errorstr.encode(u"UTF-8"))
+			sys.stderr.write(errorstr.encode("UTF-8"))
 			sys.exit(1)
-		if malaga_word_class == u"lyhenne":
+		if malaga_word_class == "lyhenne":
 			jatko = get_abbreviation_jatko(word, altform)
-		elif malaga_word_class == u"seikkasana":
+		elif malaga_word_class == "seikkasana":
 			jatko = get_adverb_jatko(word)
-		if malaga_word_class == u"etuliite":
+		if malaga_word_class == "etuliite":
 			vtype = voikkoutils.VOWEL_BOTH
 			malaga_jatko = get_prefix_jatko(word)
 		else:
@@ -195,20 +192,20 @@ def handle_word(word):
 				vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 			else:
 				vtype = forced_inflection_vtype
-			malaga_jatko = u"<" + jatko + u">"
-		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
-		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
-		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
+			malaga_jatko = "<" + jatko + ">"
+		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = 'ä'
+		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = 'a'
+		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = 'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if baseform is None:
 			altBaseform = altform
 		else:
 			altBaseform = baseform
-		if malaga_word_class == u"lyhenne":
-			perusmuotoEntry = u""
+		if malaga_word_class == "lyhenne":
+			perusmuotoEntry = ""
 		else:
-			perusmuotoEntry = u'perusmuoto: "%s", ' % altBaseform
-		entry = u'[%salku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
+			perusmuotoEntry = 'perusmuoto: "%s", ' % altBaseform
+		entry = '[%salku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
 		          % (perusmuotoEntry, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   additional_attributes)
@@ -218,13 +215,13 @@ def handle_word(word):
 	# then all multi part forms must end with a part contained in the single part set.
 	if singlePartForms:
 		for multiPartForm in multiPartForms:
-			lastPart = multiPartForm[max(rfind(multiPartForm, u"="), rfind(multiPartForm, u"|"), rfind(multiPartForm, u"-")) + 1:]
+			lastPart = multiPartForm[max(multiPartForm.rfind("="), multiPartForm.rfind("|"), multiPartForm.rfind("-")) + 1:]
 			if lastPart not in singlePartForms:
-				sys.stderr.write(u"ERROR: suspicious alternative spelling: %s\n" % multiPartForm)
+				sys.stderr.write("ERROR: suspicious alternative spelling: %s\n" % multiPartForm)
 				sys.exit(1)
 
 
-voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
+voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + '/joukahainen.xml', \
                              handle_word, True)
 
 main_vocabulary.close()

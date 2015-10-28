@@ -1,6 +1,6 @@
 
 # Build configuration. See README for more information.
-PYTHON=python
+PYTHON=python3
 VOIKKO_BUILDDIR=voikko
 VVFST_BUILDDIR=vvfst
 DESTDIR=/usr/lib/voikko

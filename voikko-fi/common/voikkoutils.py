@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -203,7 +201,7 @@ def process_wordlist(filename, word_handler, show_progress = False):
 	if filename.endswith(".gz"):
 		listfile = gzip.GzipFile(filename, 'r')
 	else:
-		listfile = open(filename, 'r')
+		listfile = open(filename, 'r', encoding="UTF-8")
 	line = ""
 	while line != '<wordlist xml:lang="fi">\n':
 		line = listfile.readline()

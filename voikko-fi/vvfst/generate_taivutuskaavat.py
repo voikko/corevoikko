@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2012 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2012 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for Suomi-malaga Voikko edition
 
 # This program is free software; you can redistribute it and/or modify
@@ -23,116 +21,115 @@ import hfconv
 import generate_lex_common
 import voikkoutils
 import codecs
-from string import rfind
 
 
 def addDiacritics(line):
-	if u"[Nm]" in line or (u"[Sn][Ny]" in line and u"Omistusliite" in line):
-		middle = line.find(u":")
-		return u"@C.EI_YKS@" + line[0:middle+1] + u"@C.EI_YKS@" + line[middle+1:]
+	if "[Nm]" in line or ("[Sn][Ny]" in line and "Omistusliite" in line):
+		middle = line.find(":")
+		return "@C.EI_YKS@" + line[0:middle+1] + "@C.EI_YKS@" + line[middle+1:]
 	return line
 
 def replacementsFront(line):
-	return addDiacritics(line.replace(u"<A>", u"ä").replace(u"<O>", u"ö").replace(u"<U>", u"y"))
+	return addDiacritics(line.replace("<A>", "ä").replace("<O>", "ö").replace("<U>", "y"))
 
 
 def replacementsBack(line):
-	return addDiacritics(line.replace(u"<A>", u"a").replace(u"<O>", u"o").replace(u"<U>", u"u"))
+	return addDiacritics(line.replace("<A>", "a").replace("<O>", "o").replace("<U>", "u"))
 
 def filterLines(lines, lexiconPrefix):
 	for line in lines:
 		if line.startswith("?Laatusana"):
-			if lexiconPrefix in [u"Laatusana", u"NimiLaatusana"]:
-				yield line[10:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix in ["Laatusana", "NimiLaatusana"]:
+				yield line[10:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?NimiLaatusana"):
-			if lexiconPrefix == u"NimiLaatusana":
-				yield line[14:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "NimiLaatusana":
+				yield line[14:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?NimisanaOnly"):
-			if lexiconPrefix == u"Nimisana":
-				yield line[13:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Nimisana":
+				yield line[13:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Nimisana"):
-			if lexiconPrefix in [u"Nimisana", u"NimiLaatusana"]:
-				yield line[9:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix in ["Nimisana", "NimiLaatusana"]:
+				yield line[9:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?NotLaatusana"):
-			if lexiconPrefix not in [u"Laatusana", u"Asemosana"]:
-				yield line[13:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix not in ["Laatusana", "Asemosana"]:
+				yield line[13:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Paikannimi"):
-			if lexiconPrefix == u"Paikannimi":
-				yield line[11:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Paikannimi":
+				yield line[11:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Sukunimi"):
-			if lexiconPrefix == u"Sukunimi":
-				yield line[9:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Sukunimi":
+				yield line[9:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Etunimi"):
-			if lexiconPrefix == u"Etunimi":
-				yield line[8:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Etunimi":
+				yield line[8:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Nimi"):
-			if lexiconPrefix == u"Nimi":
-				yield line[5:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Nimi":
+				yield line[5:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Erisnimi"):
-			if lexiconPrefix in [u"Sukunimi", u"Etunimi", u"Paikannimi", u"Nimi"]:
-				yield line[9:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix in ["Sukunimi", "Etunimi", "Paikannimi", "Nimi"]:
+				yield line[9:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Yleisnimi"):
-			if lexiconPrefix in [u"Nimisana", u"Laatusana", u"NimiLaatusana"]:
-				yield line[10:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix in ["Nimisana", "Laatusana", "NimiLaatusana"]:
+				yield line[10:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?ErisYleisOnly"):
-			if lexiconPrefix in [u"Nimisana", u"Sukunimi", u"Etunimi", u"Paikannimi", u"Nimi"]:
-				yield line[14:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix in ["Nimisana", "Sukunimi", "Etunimi", "Paikannimi", "Nimi"]:
+				yield line[14:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?Asemosana"):
-			if lexiconPrefix == u"Asemosana":
-				yield line[10:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix == "Asemosana":
+				yield line[10:].replace("<WC>", lexiconPrefix)
 		elif line.startswith("?NotAsemosana"):
-			if lexiconPrefix != u"Asemosana":
-				yield line[13:].replace(u"<WC>", lexiconPrefix)
+			if lexiconPrefix != "Asemosana":
+				yield line[13:].replace("<WC>", lexiconPrefix)
 		else:
-			yield line.replace(u"<WC>", lexiconPrefix)
+			yield line.replace("<WC>", lexiconPrefix)
 
 def appendLines(lexiconPrefix, lexiconName, lines, lexcFile):
-	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_a\n")
+	lexcFile.write("LEXICON " + lexiconPrefix + lexiconName + "_a\n")
 	for line in filterLines(lines, lexiconPrefix):
-		lexcFile.write(replacementsBack(line) + u"\n")
-	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_ä\n")
+		lexcFile.write(replacementsBack(line) + "\n")
+	lexcFile.write("LEXICON " + lexiconPrefix + lexiconName + "_ä\n")
 	for line in filterLines(lines, lexiconPrefix):
-		lexcFile.write(replacementsFront(line) + u"\n")
-	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_aä\n")
+		lexcFile.write(replacementsFront(line) + "\n")
+	lexcFile.write("LEXICON " + lexiconPrefix + lexiconName + "_aä\n")
 	for line in filterLines(lines, lexiconPrefix):
-		lexcFile.write(replacementsBack(line) + u"\n")
-		if u"<A>" in line:
-			lexcFile.write(replacementsFront(line) + u"\n")
+		lexcFile.write(replacementsBack(line) + "\n")
+		if "<A>" in line:
+			lexcFile.write(replacementsFront(line) + "\n")
 
 def appendLexicon(lexiconName, lines, lexcFile):
-	if lexiconName.startswith(u"NOUN "):
+	if lexiconName.startswith("NOUN "):
 		realName = lexiconName[5:]
-		appendLines(u"Nimisana", realName, lines, lexcFile)
-		appendLines(u"Laatusana", realName, lines, lexcFile)
-		appendLines(u"Etunimi", realName, lines, lexcFile)
-		appendLines(u"Sukunimi", realName, lines, lexcFile)
-		appendLines(u"Paikannimi", realName, lines, lexcFile)
-		appendLines(u"Nimi", realName, lines, lexcFile)
-		appendLines(u"NimiLaatusana", realName, lines, lexcFile)
-		if realName in [u"Vieras", u"Vieras_s", u"Vieras_w", u"YhteisetMonikonPaikallissijat", \
-		                u"YhteisetYksikönPaikallissijat", u"LiOlN", u"YhteisetMonikonSijat2", \
-		                u"LiOlI", u"YksikönGenetiivinJatko", u"LiOlV", u"LiOlAA", u"MonikonGenetiiviEnJatko", \
-		                u"NormaaliYsJatko", u"Nainen", u"NainenYhteiset", u"NainenYsJatko", u"Autio", \
-		                u"NormaaliYsJatkoOl", u"Luku", u"Valo_w", u"Valo_s", u"Valo_sl", \
-		                u"Koira", u"Koira_w", u"Koira_s", u"MonikonGenetiiviInJatko", \
-		                u"Koira_w_monikko", u"Koira_w_yksikkö", u"Puu", u"Maa_l", u"Maa_s", \
-		                u"OlVLoppu", u"MonikonNominatiivinJatko", u"YksikönGenetiivinJatkoEiYs"]:
-			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
-			appendLines(u"Asemosana", realName, lines, lexcFile)
-		if (OPTIONS["sukija"] or OPTIONS["vanhat"]) and realName in [u"YhteisetHTaivutusmuodot"]:
-			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
-			appendLines(u"Asemosana", realName, lines, lexcFile)
+		appendLines("Nimisana", realName, lines, lexcFile)
+		appendLines("Laatusana", realName, lines, lexcFile)
+		appendLines("Etunimi", realName, lines, lexcFile)
+		appendLines("Sukunimi", realName, lines, lexcFile)
+		appendLines("Paikannimi", realName, lines, lexcFile)
+		appendLines("Nimi", realName, lines, lexcFile)
+		appendLines("NimiLaatusana", realName, lines, lexcFile)
+		if realName in ["Vieras", "Vieras_s", "Vieras_w", "YhteisetMonikonPaikallissijat", \
+		                "YhteisetYksikönPaikallissijat", "LiOlN", "YhteisetMonikonSijat2", \
+		                "LiOlI", "YksikönGenetiivinJatko", "LiOlV", "LiOlAA", "MonikonGenetiiviEnJatko", \
+		                "NormaaliYsJatko", "Nainen", "NainenYhteiset", "NainenYsJatko", "Autio", \
+		                "NormaaliYsJatkoOl", "Luku", "Valo_w", "Valo_s", "Valo_sl", \
+		                "Koira", "Koira_w", "Koira_s", "MonikonGenetiiviInJatko", \
+		                "Koira_w_monikko", "Koira_w_yksikkö", "Puu", "Maa_l", "Maa_s", \
+		                "OlVLoppu", "MonikonNominatiivinJatko", "YksikönGenetiivinJatkoEiYs"]:
+			appendLines("LukusananJälkiliite", realName, lines, lexcFile)
+			appendLines("Asemosana", realName, lines, lexcFile)
+		if (OPTIONS["sukija"] or OPTIONS["vanhat"]) and realName in ["YhteisetHTaivutusmuodot"]:
+			appendLines("LukusananJälkiliite", realName, lines, lexcFile)
+			appendLines("Asemosana", realName, lines, lexcFile)
 	else:
-		appendLines(u"", lexiconName, lines, lexcFile)
+		appendLines("", lexiconName, lines, lexcFile)
 
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
 
-lexcFile = codecs.open(OPTIONS["destdir"] + u"/" + "taivutuskaavat.lexc", 'w', 'UTF-8')
+lexcFile = codecs.open(OPTIONS["destdir"] + "/" + "taivutuskaavat.lexc", 'w', 'UTF-8')
 
-infile = codecs.open(u"vvfst/taivutuskaavat.lexc.in", "r", "UTF-8")
+infile = codecs.open("vvfst/taivutuskaavat.lexc.in", "r", "UTF-8")
 
-lexicon = u""
+lexicon = ""
 lexcLines = []
 linecount = 0
 while True:
@@ -144,7 +141,7 @@ while True:
 	if line is None:
 		continue
 	if line.startswith(u'LEXICON '):
-		if lexicon != u"":
+		if lexicon != "":
 			appendLexicon(lexicon, lexcLines, lexcFile)
 		lexicon = line[8:]
 		lexcLines = []
@@ -157,137 +154,137 @@ appendLexicon(lexicon, lexcLines, lexcFile)
 # Generate lexicons for numerals
 
 MULTI = {
-	u"SnNy": [u"kymmenen", u"sata", u"tuhat", u"miljoona", u"miljardi", u"biljoona", u"triljoona", u"kvadriljoona", u"kvintiljoona", u"sekstiljoona", u"septiljoona", u"sentiljoona"],
-	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen", u"miljoonan", u"miljardin", u"biljoonan", u"triljoonan", u"kvadriljoonan", u"kvintiljoonan", u"sekstiljoonan", u"septiljoonan", u"sentiljoonan"],
-	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta", u"miljoonaa", u"miljardia", u"biljoonaa", u"triljoonaa", u"kvadriljoonaa", u"kvintiljoonaa", u"sekstiljoonaa", u"septiljoonaa", u"sentiljoonaa"],
-	u"StrNy": [u"kymmeneksi", u"sadaksi", u"tuhanneksi", u"miljoonaksi", u"miljardiksi", u"biljoonaksi", u"triljoonaksi", u"kvadriljoonaksi", u"kvintiljoonaksi", u"sekstiljoonaksi", u"septiljoonaksi", u"sentiljoonaksi"],
-	u"SesNy": [u"kymmenenä", u"satana", u"tuhantena", u"miljoonana", u"miljardina", u"biljoonana", u"triljoonana", u"kvadriljoonana", u"kvintiljoonana", u"sekstiljoonana", u"septiljoonana", u"sentiljoonana"],
-	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa", u"miljoonassa", u"miljardissa", u"biljoonassa", u"triljoonassa", u"kvadriljoonassa", u"kvintiljoonassa", u"sekstiljoonassa", u"septiljoonassa", u"sentiljoonassa"],
-	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta", u"miljoonasta", u"miljardista", u"biljoonasta", u"triljoonasta", u"kvadriljoonasta", u"kvintiljoonasta", u"sekstiljoonasta", u"septiljoonasta", u"sentiljoonasta"],
-	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen", u"miljoonaan", u"miljardiin", u"biljoonaan", u"triljoonaan", u"kvadriljoonaan", u"kvintiljoonaan", u"sekstiljoonaan", u"septiljoonaan", u"sentiljoonaan"],
-	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella", u"miljoonalla", u"miljardilla", u"biljoonalla", u"triljoonalla", u"kvadriljoonalla", u"kvintiljoonalla", u"sekstiljoonalla", u"septiljoonalla", u"sentiljoonalla"],
-	u"SablNy": [u"kymmeneltä", u"sadalta", u"tuhannelta", u"miljoonalta", u"miljardilta", u"biljoonalta", u"triljoonalta", u"kvadriljoonalta", u"kvintiljoonalta", u"sekstiljoonalta", u"septiljoonalta", u"sentiljoonalta"],
-	u"SallNy": [u"kymmenelle", u"sadalle", u"tuhannelle", u"miljoonalle", u"miljardille", u"biljoonalle", u"triljoonalle", u"kvadriljoonalle", u"kvintiljoonalle", u"sekstiljoonalle", u"septiljoonalle", u"sentiljoonalle"],
-	u"SabNy": [u"kymmenettä", u"sadatta", u"tuhannetta", u"miljoonatta", u"miljarditta", u"biljoonatta", u"triljoonatta", u"kvadriljoonatta", u"kvintiljoonatta", u"sekstiljoonatta", u"septiljoonatta", u"sentiljoonatta"],
-	u"SgNm": [u"kymmenien", u"satojen", u"tuhansien", u"miljoonien", u"miljardien", u"biljoonien", u"triljoonien", u"kvadriljoonien", u"kvintiljoonien", u"sekstiljoonien", u"septiljoonien", u"sentiljoonien"],
-	u"SpNm": [u"kymmeniä", u"satoja", u"tuhansia", u"miljoonia", u"miljardeja", u"biljoonia", u"triljoonia", u"kvadriljoonia", u"kvintiljoonia", u"sekstiljoonia", u"septiljoonia", u"sentiljoonia"],
-	u"StrNm": [u"kymmeniksi", u"sadoiksi", u"tuhansiksi", u"miljooniksi", u"miljardeiksi", u"biljooniksi", u"triljooniksi", u"kvadriljooniksi", u"kvintiljooniksi", u"sekstiljooniksi", u"septiljooniksi", u"sentiljooniksi"],
-	u"SesNm": [u"kymmeninä", u"satoina", u"tuhansina", u"miljoonina", u"miljardeina", u"biljoonina", u"triljoonina", u"kvadriljoonina", u"kvintiljoonina", u"sekstiljoonina", u"septiljoonina", u"sentiljoonina"],
-	u"SineNm": [u"kymmenissä", u"sadoissa", u"tuhansissa", u"miljoonissa", u"miljardeissa", u"biljoonissa", u"triljoonissa", u"kvadriljoonissa", u"kvintiljoonissa", u"sekstiljoonissa", u"septiljoonissa", u"sentiljoonissa"],
-	u"SelaNm": [u"kymmenistä", u"sadoista", u"tuhansista", u"miljoonista", u"miljardeista", u"biljoonista", u"triljoonista", u"kvadriljoonista", u"kvintiljoonista", u"sekstiljoonista", u"septiljoonista", u"sentiljoonista"],
-	u"SillNm": [u"kymmeniin", u"satoihin", u"tuhansiin", u"miljooniin", u"miljardeihin", u"biljooniin", u"triljooniin", u"kvadriljooniin", u"kvintiljooniin", u"sekstiljooniin", u"septiljooniin", u"sentiljooniin"],
-	u"SadeNm": [u"kymmenillä", u"sadoilla", u"tuhansilla", u"miljoonilla", u"miljardeilla", u"biljoonilla", u"triljoonilla", u"kvadriljoonilla", u"kvintiljoonilla", u"sekstiljoonilla", u"septiljoonilla", u"sentiljoonilla"],
-	u"SablNm": [u"kymmeniltä", u"sadoilta", u"tuhansilta", u"miljoonilta", u"miljardeilta", u"biljoonilta", u"triljoonilta", u"kvadriljoonilta", u"kvintiljoonilta", u"sekstiljoonilta", u"septiljoonilta", u"sentiljoonilta"],
-	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille", u"miljoonille", u"miljardeille", u"biljoonille", u"triljoonille", u"kvadriljoonille", u"kvintiljoonille", u"sekstiljoonille", u"septiljoonille", u"sentiljoonille"],
-	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta", u"miljoonitta", u"miljardeitta", u"biljoonitta", u"triljoonitta", u"kvadriljoonitta", u"kvintiljoonitta", u"sekstiljoonitta", u"septiljoonitta", u"sentiljoonitta"],
-	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin", u"miljoonin", u"miljardein", u"biljoonin", u"triljoonin", u"kvadriljoonin", u"kvintiljoonin", u"sekstiljoonin", u"septiljoonin", u"sentiljoonin"],
-	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine", u"miljoonine", u"miljardeine", u"biljoonine", u"triljoonine", u"kvadriljoonine", u"kvintiljoonine", u"sekstiljoonine", u"septiljoonine", u"sentiljoonine"],
-	u"SstiNy": [u"kymmenesti", u"sadasti", u"tuhannesti", u"miljoonasti", u"miljardisti", u"biljoonasti", u"triljoonasti", u"kvadriljoonasti", u"kvintiljoonasti", u"sekstiljoonasti", u"septiljoonasti", u"sentiljoonasti"]
+	"SnNy": ["kymmenen", "sata", "tuhat", "miljoona", "miljardi", "biljoona", "triljoona", "kvadriljoona", "kvintiljoona", "sekstiljoona", "septiljoona", "sentiljoona"],
+	"SgNy": ["kymmenen", "sadan", "tuhannen", "miljoonan", "miljardin", "biljoonan", "triljoonan", "kvadriljoonan", "kvintiljoonan", "sekstiljoonan", "septiljoonan", "sentiljoonan"],
+	"SpNy": ["kymmentä", "sataa", "tuhatta", "miljoonaa", "miljardia", "biljoonaa", "triljoonaa", "kvadriljoonaa", "kvintiljoonaa", "sekstiljoonaa", "septiljoonaa", "sentiljoonaa"],
+	"StrNy": ["kymmeneksi", "sadaksi", "tuhanneksi", "miljoonaksi", "miljardiksi", "biljoonaksi", "triljoonaksi", "kvadriljoonaksi", "kvintiljoonaksi", "sekstiljoonaksi", "septiljoonaksi", "sentiljoonaksi"],
+	"SesNy": ["kymmenenä", "satana", "tuhantena", "miljoonana", "miljardina", "biljoonana", "triljoonana", "kvadriljoonana", "kvintiljoonana", "sekstiljoonana", "septiljoonana", "sentiljoonana"],
+	"SineNy": ["kymmenessä", "sadassa", "tuhannessa", "miljoonassa", "miljardissa", "biljoonassa", "triljoonassa", "kvadriljoonassa", "kvintiljoonassa", "sekstiljoonassa", "septiljoonassa", "sentiljoonassa"],
+	"SelaNy": ["kymmenestä", "sadasta", "tuhannesta", "miljoonasta", "miljardista", "biljoonasta", "triljoonasta", "kvadriljoonasta", "kvintiljoonasta", "sekstiljoonasta", "septiljoonasta", "sentiljoonasta"],
+	"SillNy": ["kymmeneen", "sataan", "tuhanteen", "miljoonaan", "miljardiin", "biljoonaan", "triljoonaan", "kvadriljoonaan", "kvintiljoonaan", "sekstiljoonaan", "septiljoonaan", "sentiljoonaan"],
+	"SadeNy": ["kymmenellä", "sadalla", "tuhannella", "miljoonalla", "miljardilla", "biljoonalla", "triljoonalla", "kvadriljoonalla", "kvintiljoonalla", "sekstiljoonalla", "septiljoonalla", "sentiljoonalla"],
+	"SablNy": ["kymmeneltä", "sadalta", "tuhannelta", "miljoonalta", "miljardilta", "biljoonalta", "triljoonalta", "kvadriljoonalta", "kvintiljoonalta", "sekstiljoonalta", "septiljoonalta", "sentiljoonalta"],
+	"SallNy": ["kymmenelle", "sadalle", "tuhannelle", "miljoonalle", "miljardille", "biljoonalle", "triljoonalle", "kvadriljoonalle", "kvintiljoonalle", "sekstiljoonalle", "septiljoonalle", "sentiljoonalle"],
+	"SabNy": ["kymmenettä", "sadatta", "tuhannetta", "miljoonatta", "miljarditta", "biljoonatta", "triljoonatta", "kvadriljoonatta", "kvintiljoonatta", "sekstiljoonatta", "septiljoonatta", "sentiljoonatta"],
+	"SgNm": ["kymmenien", "satojen", "tuhansien", "miljoonien", "miljardien", "biljoonien", "triljoonien", "kvadriljoonien", "kvintiljoonien", "sekstiljoonien", "septiljoonien", "sentiljoonien"],
+	"SpNm": ["kymmeniä", "satoja", "tuhansia", "miljoonia", "miljardeja", "biljoonia", "triljoonia", "kvadriljoonia", "kvintiljoonia", "sekstiljoonia", "septiljoonia", "sentiljoonia"],
+	"StrNm": ["kymmeniksi", "sadoiksi", "tuhansiksi", "miljooniksi", "miljardeiksi", "biljooniksi", "triljooniksi", "kvadriljooniksi", "kvintiljooniksi", "sekstiljooniksi", "septiljooniksi", "sentiljooniksi"],
+	"SesNm": ["kymmeninä", "satoina", "tuhansina", "miljoonina", "miljardeina", "biljoonina", "triljoonina", "kvadriljoonina", "kvintiljoonina", "sekstiljoonina", "septiljoonina", "sentiljoonina"],
+	"SineNm": ["kymmenissä", "sadoissa", "tuhansissa", "miljoonissa", "miljardeissa", "biljoonissa", "triljoonissa", "kvadriljoonissa", "kvintiljoonissa", "sekstiljoonissa", "septiljoonissa", "sentiljoonissa"],
+	"SelaNm": ["kymmenistä", "sadoista", "tuhansista", "miljoonista", "miljardeista", "biljoonista", "triljoonista", "kvadriljoonista", "kvintiljoonista", "sekstiljoonista", "septiljoonista", "sentiljoonista"],
+	"SillNm": ["kymmeniin", "satoihin", "tuhansiin", "miljooniin", "miljardeihin", "biljooniin", "triljooniin", "kvadriljooniin", "kvintiljooniin", "sekstiljooniin", "septiljooniin", "sentiljooniin"],
+	"SadeNm": ["kymmenillä", "sadoilla", "tuhansilla", "miljoonilla", "miljardeilla", "biljoonilla", "triljoonilla", "kvadriljoonilla", "kvintiljoonilla", "sekstiljoonilla", "septiljoonilla", "sentiljoonilla"],
+	"SablNm": ["kymmeniltä", "sadoilta", "tuhansilta", "miljoonilta", "miljardeilta", "biljoonilta", "triljoonilta", "kvadriljoonilta", "kvintiljoonilta", "sekstiljoonilta", "septiljoonilta", "sentiljoonilta"],
+	"SallNm": ["kymmenille", "sadoille", "tuhansille", "miljoonille", "miljardeille", "biljoonille", "triljoonille", "kvadriljoonille", "kvintiljoonille", "sekstiljoonille", "septiljoonille", "sentiljoonille"],
+	"SabNm": ["kymmenittä", "sadoitta", "tuhansitta", "miljoonitta", "miljardeitta", "biljoonitta", "triljoonitta", "kvadriljoonitta", "kvintiljoonitta", "sekstiljoonitta", "septiljoonitta", "sentiljoonitta"],
+	"SinNm": ["kymmenin", "sadoin", "tuhansin", "miljoonin", "miljardein", "biljoonin", "triljoonin", "kvadriljoonin", "kvintiljoonin", "sekstiljoonin", "septiljoonin", "sentiljoonin"],
+	"SkoNm": ["kymmenine", "satoine", "tuhansine", "miljoonine", "miljardeine", "biljoonine", "triljoonine", "kvadriljoonine", "kvintiljoonine", "sekstiljoonine", "septiljoonine", "sentiljoonine"],
+	"SstiNy": ["kymmenesti", "sadasti", "tuhannesti", "miljoonasti", "miljardisti", "biljoonasti", "triljoonasti", "kvadriljoonasti", "kvintiljoonasti", "sekstiljoonasti", "septiljoonasti", "sentiljoonasti"]
 }
 
-MULTI_VOWELS = [u"_ä", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a", u"_a"]
+MULTI_VOWELS = ["_ä", "_a", "_a", "_a", "_a", "_a", "_a", "_a", "_a", "_a", "_a", "_a"]
 
 for sija in MULTI.keys():
-	if sija == u"SnNy":
+	if sija == "SnNy":
 		continue
-	diacritic = u"@U.LS." + sija.upper() + u"@"
-	lexiconName = u"Lukusana" + sija + u"29"
-	tagName = u"[" + sija.replace(u"N", u"][N") + u"]"
+	diacritic = "@U.LS." + sija.upper() + "@"
+	lexiconName = "Lukusana" + sija + "29"
+	tagName = "[" + sija.replace("N", "][N") + "]"
 	
-	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
+	lexcFile.write("LEXICON " + lexiconName + "Kertoimet\n")
 	for i in range(len(MULTI_VOWELS)):
-		lexcFile.write(diacritic + u"[Xp]" + MULTI[u"SpNy"][i] + u"[X]" + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
-		if MULTI[sija][i].endswith(u"joonien"):
-			altSija = MULTI[sija][i].replace(u"joonien", u"joonain")
-			lexcFile.write(diacritic + tagName + altSija + u":" + diacritic + altSija + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+		lexcFile.write(diacritic + "[Xp]" + MULTI["SpNy"][i] + "[X]" + tagName + MULTI[sija][i] + ":" + diacritic + MULTI[sija][i] + "\t" + lexiconName + MULTI_VOWELS[i] + "\t;\n")
+		if MULTI[sija][i].endswith("joonien"):
+			altSija = MULTI[sija][i].replace("joonien", "joonain")
+			lexcFile.write(diacritic + tagName + altSija + ":" + diacritic + altSija + "\t" + lexiconName + MULTI_VOWELS[i] + "\t;\n")
 	
-	lexcFile.write(u"LEXICON " + lexiconName + u"Alut\n")
+	lexcFile.write("LEXICON " + lexiconName + "Alut\n")
 	for i in range(len(MULTI_VOWELS)):
-		lexcFile.write(diacritic + u"[Xp]" + MULTI[u"SnNy"][i] + u"[X]" + tagName + MULTI[sija][i] + u":" + diacritic + MULTI[sija][i] + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
-		if MULTI[sija][i].endswith(u"joonien"):
-			altSija = MULTI[sija][i].replace(u"joonien", u"joonain")
-			lexcFile.write(diacritic + tagName + altSija + u":" + diacritic + altSija + u"\t" + lexiconName + MULTI_VOWELS[i] + u"\t;\n")
+		lexcFile.write(diacritic + "[Xp]" + MULTI["SnNy"][i] + "[X]" + tagName + MULTI[sija][i] + ":" + diacritic + MULTI[sija][i] + "\t" + lexiconName + MULTI_VOWELS[i] + "\t;\n")
+		if MULTI[sija][i].endswith("joonien"):
+			altSija = MULTI[sija][i].replace("joonien", "joonain")
+			lexcFile.write(diacritic + tagName + altSija + ":" + diacritic + altSija + "\t" + lexiconName + MULTI_VOWELS[i] + "\t;\n")
 	
 	numeralLines = []
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLukusanaLiitesana_<A>\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLukusanaToista\t;")
 	if OPTIONS["sukija"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaLukusanaKolmattaYhdeksättä\t;")
-	if sija in [u"SelaNy", u"SelaNm"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
-	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
+		numeralLines.append(diacritic + ":" + diacritic + "\tSukijaLukusanaKolmattaYhdeksättä\t;")
+	if sija in ["SelaNy", "SelaNm"]:
+		numeralLines.append(diacritic + ":" + diacritic + "\tOlV_<A>\t;")
+	appendLines("Lukusana", sija + "29", numeralLines, lexcFile)
 
 	numeralLines = []
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLiitesana_<A>\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLukusanaToista\t;")
 	if OPTIONS["sukija"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaLukusanaKolmattaYhdeksättä\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
-	if sija == u"SelaNm":
-		numeralLines.append(diacritic + u":" + diacritic + u"\tOlV_<A>\t;")
-	if sija == u"StrNm":
-		numeralLines.append(diacritic + u":" + diacritic + u"\tOlI_<A>\t;")
-	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
+		numeralLines.append(diacritic + ":" + diacritic + "\tSukijaLukusanaKolmattaYhdeksättä\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLukusananJälkiliite\t;")
+	if sija == "SelaNm":
+		numeralLines.append(diacritic + ":" + diacritic + "\tOlV_<A>\t;")
+	if sija == "StrNm":
+		numeralLines.append(diacritic + ":" + diacritic + "\tOlI_<A>\t;")
+	appendLines("Lukusana", sija + "1", numeralLines, lexcFile)
 
-MULTI_ORDINAL_BASES = [u"kymmenes", u"sadas", u"tuhannes", u"miljoonas", u"miljardis"]
+MULTI_ORDINAL_BASES = ["kymmenes", "sadas", "tuhannes", "miljoonas", "miljardis"]
 
 MULTI_ORDINALS = {
-	u"SgNy": [u"kymmenennen", u"sadannen", u"tuhannennen", u"miljoonannen", u"miljardinnen"],
-	u"SpNy": [u"kymmenettä", u"sadannetta", u"tuhannetta", u"miljoonannetta", u"miljardinnetta"],
-	u"StrNy": [u"kymmenenneksi", u"sadanneksi", u"tuhannenneksi", u"miljoonanneksi", u"miljardinneksi"],
-	u"SesNy": [u"kymmenentenä", u"sadantena", u"tuhannentena", u"miljoonantena", u"miljardintena"],
-	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa", u"miljoonannessa", u"miljardinnessa"],
-	u"SelaNy": [u"kymmenennestä", u"sadannesta", u"tuhannennesta", u"miljoonannesta", u"miljardinnesta"],
-	u"SillNy": [u"kymmenenteen", u"sadanteen", u"tuhannenteen", u"miljoonanteen", u"miljardinteen"],
-	u"SadeNy": [u"kymmenennellä", u"sadannella", u"tuhannennella", u"miljoonannella", u"miljardinnella"],
-	u"SablNy": [u"kymmenenneltä", u"sadannelta", u"tuhannennelta", u"miljoonannelta", u"miljardinnelta"],
-	u"SallNy": [u"kymmenennelle", u"sadannelle", u"tuhannennelle", u"miljoonannelle", u"miljardinnelle"],
-	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta", u"miljoonannetta", u"miljardinnetta"],
-	u"SgNm": [u"kymmenensien", u"sadansien", u"tuhannensien", u"miljoonansien", u"miljardinsien"],
-	u"SpNm": [u"kymmenensiä", u"sadansia", u"tuhannensia", u"miljoonansia", u"miljardinsia"],
-	u"StrNm": [u"kymmenensiksi", u"sadansiksi", u"tuhannensiksi", u"miljoonansiksi", u"miljardinsiksi"],
-	u"SesNm": [u"kymmenensinä", u"sadansina", u"tuhannensina", u"miljoonansina", u"miljardinsina"],
-	u"SineNm": [u"kymmenensissä", u"sadansissa", u"tuhannensissa", u"miljoonansissa", u"miljardinsissa"],
-	u"SelaNm": [u"kymmenensistä", u"sadansista", u"tuhannensista", u"miljoonansista", u"miljardinsista"],
-	u"SillNm": [u"kymmenensiin", u"sadansiin", u"tuhannensiin", u"miljoonansiin", u"miljardinsiin"],
-	u"SadeNm": [u"kymmenensillä", u"sadansilla", u"tuhannensilla", u"miljoonansilla", u"miljardinsilla"],
-	u"SablNm": [u"kymmenensiltä", u"sadansilta", u"tuhannensilta", u"miljoonansilta", u"miljardinsilta"],
-	u"SallNm": [u"kymmenensille", u"sadansille", u"tuhannensille", u"miljoonansille", u"miljardinsille"],
-	u"SabNm": [u"kymmenensittä", u"sadansitta", u"tuhannensitta", u"miljoonansitta", u"miljardinsitta"],
-	u"SinNm": [u"kymmenensin", u"sadansin", u"tuhannensin", u"miljoonansin", u"miljardinsin"],
-	u"SkoNm": [u"kymmenensine", u"sadansine", u"tuhannensine", u"miljoonansine", u"miljardinsine"]
+	"SgNy": ["kymmenennen", "sadannen", "tuhannennen", "miljoonannen", "miljardinnen"],
+	"SpNy": ["kymmenettä", "sadannetta", "tuhannetta", "miljoonannetta", "miljardinnetta"],
+	"StrNy": ["kymmenenneksi", "sadanneksi", "tuhannenneksi", "miljoonanneksi", "miljardinneksi"],
+	"SesNy": ["kymmenentenä", "sadantena", "tuhannentena", "miljoonantena", "miljardintena"],
+	"SineNy": ["kymmenennessä", "sadannessa", "tuhannennessa", "miljoonannessa", "miljardinnessa"],
+	"SelaNy": ["kymmenennestä", "sadannesta", "tuhannennesta", "miljoonannesta", "miljardinnesta"],
+	"SillNy": ["kymmenenteen", "sadanteen", "tuhannenteen", "miljoonanteen", "miljardinteen"],
+	"SadeNy": ["kymmenennellä", "sadannella", "tuhannennella", "miljoonannella", "miljardinnella"],
+	"SablNy": ["kymmenenneltä", "sadannelta", "tuhannennelta", "miljoonannelta", "miljardinnelta"],
+	"SallNy": ["kymmenennelle", "sadannelle", "tuhannennelle", "miljoonannelle", "miljardinnelle"],
+	"SabNy": ["kymmenennettä", "sadannetta", "tuhannennetta", "miljoonannetta", "miljardinnetta"],
+	"SgNm": ["kymmenensien", "sadansien", "tuhannensien", "miljoonansien", "miljardinsien"],
+	"SpNm": ["kymmenensiä", "sadansia", "tuhannensia", "miljoonansia", "miljardinsia"],
+	"StrNm": ["kymmenensiksi", "sadansiksi", "tuhannensiksi", "miljoonansiksi", "miljardinsiksi"],
+	"SesNm": ["kymmenensinä", "sadansina", "tuhannensina", "miljoonansina", "miljardinsina"],
+	"SineNm": ["kymmenensissä", "sadansissa", "tuhannensissa", "miljoonansissa", "miljardinsissa"],
+	"SelaNm": ["kymmenensistä", "sadansista", "tuhannensista", "miljoonansista", "miljardinsista"],
+	"SillNm": ["kymmenensiin", "sadansiin", "tuhannensiin", "miljoonansiin", "miljardinsiin"],
+	"SadeNm": ["kymmenensillä", "sadansilla", "tuhannensilla", "miljoonansilla", "miljardinsilla"],
+	"SablNm": ["kymmenensiltä", "sadansilta", "tuhannensilta", "miljoonansilta", "miljardinsilta"],
+	"SallNm": ["kymmenensille", "sadansille", "tuhannensille", "miljoonansille", "miljardinsille"],
+	"SabNm": ["kymmenensittä", "sadansitta", "tuhannensitta", "miljoonansitta", "miljardinsitta"],
+	"SinNm": ["kymmenensin", "sadansin", "tuhannensin", "miljoonansin", "miljardinsin"],
+	"SkoNm": ["kymmenensine", "sadansine", "tuhannensine", "miljoonansine", "miljardinsine"]
 }
 
 for sija in MULTI_ORDINALS.keys():
-	diacritic = u"@U.LS." + sija.upper() + u"@"
-	lexiconName = u"Järjestysluku" + sija + u"39"
-	tagName = u"[" + sija.replace(u"N", u"][N") + u"]"
+	diacritic = "@U.LS." + sija.upper() + "@"
+	lexiconName = "Järjestysluku" + sija + "39"
+	tagName = "[" + sija.replace("N", "][N") + "]"
 	
-	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
-	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[0] + u"[X]" + tagName + MULTI_ORDINALS[sija][0] + u":" + diacritic + MULTI_ORDINALS[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[1] + u"[X]" + tagName + MULTI_ORDINALS[sija][1] + u":" + diacritic + MULTI_ORDINALS[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[2] + u"[X]" + tagName + MULTI_ORDINALS[sija][2] + u":" + diacritic + MULTI_ORDINALS[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[3] + u"[X]" + tagName + MULTI_ORDINALS[sija][3] + u":" + diacritic + MULTI_ORDINALS[sija][3] + u"\t" + lexiconName + u"_a\t;\n")
-	lexcFile.write(u"[Bc]" + diacritic + u"[Xp]" + MULTI_ORDINAL_BASES[4] + u"[X]" + tagName + MULTI_ORDINALS[sija][4] + u":" + diacritic + MULTI_ORDINALS[sija][4] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write("LEXICON " + lexiconName + "Kertoimet\n")
+	lexcFile.write("[Bc]" + diacritic + "[Xp]" + MULTI_ORDINAL_BASES[0] + "[X]" + tagName + MULTI_ORDINALS[sija][0] + ":" + diacritic + MULTI_ORDINALS[sija][0] + "\t" + lexiconName + "_ä\t;\n")
+	lexcFile.write("[Bc]" + diacritic + "[Xp]" + MULTI_ORDINAL_BASES[1] + "[X]" + tagName + MULTI_ORDINALS[sija][1] + ":" + diacritic + MULTI_ORDINALS[sija][1] + "\t" + lexiconName + "_a\t;\n")
+	lexcFile.write("[Bc]" + diacritic + "[Xp]" + MULTI_ORDINAL_BASES[2] + "[X]" + tagName + MULTI_ORDINALS[sija][2] + ":" + diacritic + MULTI_ORDINALS[sija][2] + "\t" + lexiconName + "_a\t;\n")
+	lexcFile.write("[Bc]" + diacritic + "[Xp]" + MULTI_ORDINAL_BASES[3] + "[X]" + tagName + MULTI_ORDINALS[sija][3] + ":" + diacritic + MULTI_ORDINALS[sija][3] + "\t" + lexiconName + "_a\t;\n")
+	lexcFile.write("[Bc]" + diacritic + "[Xp]" + MULTI_ORDINAL_BASES[4] + "[X]" + tagName + MULTI_ORDINALS[sija][4] + ":" + diacritic + MULTI_ORDINALS[sija][4] + "\t" + lexiconName + "_a\t;\n")
 	
 	numeralLines = []
-	if sija in [u"SgNy", u"SgNm"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesanaJl_<A>\t;")
+	if sija in ["SgNy", "SgNm"]:
+		numeralLines.append(diacritic + ":" + diacritic + "\tJärjestyslukuLiitesanaJl_<A>\t;")
 	else:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
+		numeralLines.append(diacritic + ":" + diacritic + "\tJärjestyslukuLiitesana_<A>\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tJärjestyslukuToista\t;")
 	if OPTIONS["sukija"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
-	numeralLines.append(lexiconName + u"Kertoimet\t;")
-	appendLines(u"Järjestysluku", sija + u"39", numeralLines, lexcFile)
+		numeralLines.append(diacritic + ":" + diacritic + "\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
+	numeralLines.append(lexiconName + "Kertoimet\t;")
+	appendLines("Järjestysluku", sija + "39", numeralLines, lexcFile)
 	
 	numeralLines = []
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLiitesana_<A>\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tJärjestyslukuToista\t;")
 	if OPTIONS["sukija"]:
-		numeralLines.append(diacritic + u":" + diacritic + u"\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
-	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliiteJl\t;")
-	appendLines(u"Järjestysluku", sija + u"1", numeralLines, lexcFile)
+		numeralLines.append(diacritic + ":" + diacritic + "\tSukijaJärjestyslukuKolmattaYhdeksättä\t;")
+	numeralLines.append(diacritic + ":" + diacritic + "\tLukusananJälkiliiteJl\t;")
+	appendLines("Järjestysluku", sija + "1", numeralLines, lexcFile)
 
 
 lexcFile.close()
