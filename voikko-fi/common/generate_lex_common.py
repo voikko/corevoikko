@@ -27,7 +27,7 @@ import sys
 from xml.dom import Node
 
 # Path to source data directory
-VOCABULARY_DATA = u"vocabulary"
+VOCABULARY_DATA = "vocabulary"
 
 # Vocabulary entries that should be saved to different files
 # (group, name, file)
@@ -39,14 +39,14 @@ SPECIAL_VOCABULARY = [
 	('style', 'foreign', 'vieraskieliset.lex')]
 
 def open_lex(path, filename):
-	file = codecs.open(path + u"/" + filename, 'w', 'UTF-8')
-	file.write(u"# This is automatically generated intermediate lexicon file for\n")
-	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
-	file.write(u"# distributed under the GNU General Public License, version 2 or\n")
-	file.write(u"# later, as published by the Free Software Foundation. You should\n")
-	file.write(u"# have received the original data, tools and instructions to\n")
-	file.write(u"# generate this file (or instructions to obtain them) wherever\n")
-	file.write(u"# you got this file from.\n\n")
+	file = codecs.open(path + "/" + filename, 'w', 'UTF-8')
+	file.write("# This is automatically generated intermediate lexicon file for\n")
+	file.write("# Suomi-malaga Voikko edition. The original source data is\n")
+	file.write("# distributed under the GNU General Public License, version 2 or\n")
+	file.write("# later, as published by the Free Software Foundation. You should\n")
+	file.write("# have received the original data, tools and instructions to\n")
+	file.write("# generate this file (or instructions to obtain them) wherever\n")
+	file.write("# you got this file from.\n\n")
 	return file
 
 def tValue(element):
@@ -61,17 +61,17 @@ def tValues(group, element_name):
 
 # Returns malaga word class for given word in Joukahainen
 def get_malaga_word_class(j_wordclasses):
-	if "pnoun_place" in j_wordclasses: return u"paikannimi"
-	if "pnoun_firstname" in j_wordclasses: return u"etunimi"
-	if "pnoun_lastname" in j_wordclasses: return u"sukunimi"
-	if "pnoun_misc" in j_wordclasses: return u"nimi"
-	if "verb" in j_wordclasses: return u"teonsana"
-	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return u"nimi_laatusana"
-	if "adjective" in j_wordclasses: return u"laatusana"
-	if "noun" in j_wordclasses: return u"nimisana"
-	if "interjection" in j_wordclasses: return u"huudahdussana"
-	if "prefix" in j_wordclasses: return u"etuliite"
-	if "abbreviation" in j_wordclasses: return u"lyhenne"
+	if "pnoun_place" in j_wordclasses: return "paikannimi"
+	if "pnoun_firstname" in j_wordclasses: return "etunimi"
+	if "pnoun_lastname" in j_wordclasses: return "sukunimi"
+	if "pnoun_misc" in j_wordclasses: return "nimi"
+	if "verb" in j_wordclasses: return "teonsana"
+	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return "nimi_laatusana"
+	if "adjective" in j_wordclasses: return "laatusana"
+	if "noun" in j_wordclasses: return "nimisana"
+	if "interjection" in j_wordclasses: return "huudahdussana"
+	if "prefix" in j_wordclasses: return "etuliite"
+	if "abbreviation" in j_wordclasses: return "lyhenne"
 	if "adverb" in j_wordclasses: return "seikkasana"
 	if "conjunction" in j_wordclasses: return "sidesana"
 	return None
@@ -102,25 +102,25 @@ def get_malaga_flags(word):
 				continue
 			if flag.tagName != "flag":
 				continue
-			flagAttribute = flag_attributes[group.tagName + u"/" + tValue(flag)]
+			flagAttribute = flag_attributes[group.tagName + "/" + tValue(flag)]
 			if flagAttribute.malagaFlag != None:
 				malagaFlags.append(flagAttribute.malagaFlag)
-	if len(malagaFlags) == 0: return u""
-	flag_string = u", tiedot: <"
+	if len(malagaFlags) == 0: return ""
+	flag_string = ", tiedot: <"
 	for flag in malagaFlags:
-		flag_string = flag_string + flag + u","
-	flag_string = flag_string[:-1] + u">"
+		flag_string = flag_string + flag + ","
+	flag_string = flag_string[:-1] + ">"
 	return flag_string
 
-flag_attributes = voikkoutils.readFlagAttributes(VOCABULARY_DATA + u"/flags.txt")
+flag_attributes = voikkoutils.readFlagAttributes(VOCABULARY_DATA + "/flags.txt")
 
 def vowel_type(group):
 	vtypes = group.getElementsByTagName("vtype")
 	if len(vtypes) != 1: return voikkoutils.VOWEL_DEFAULT
 	else:
 		vtypes = tValue(vtypes[0])
-		if vtypes == u'a': return voikkoutils.VOWEL_BACK
-		elif vtypes == u'ä': return voikkoutils.VOWEL_FRONT
+		if vtypes == 'a': return voikkoutils.VOWEL_BACK
+		elif vtypes == 'ä': return voikkoutils.VOWEL_FRONT
 		else: return voikkoutils.VOWEL_BOTH
 
 def has_flag(word, flag):
@@ -130,8 +130,8 @@ def has_flag(word, flag):
 # Returns tuple (alku, jatko) for given word in Joukahainen
 def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap):
 	if j_infclass is None:
-		return (wordform, u"loppu")
-	(infclass, gradclass) = (list(j_infclass.split(u'-')) + [None])[:2]
+		return (wordform, "loppu")
+	(infclass, gradclass) = (list(j_infclass.split('-')) + [None])[:2]
 	
 	if gradclass == None: gradtypes = [None]
 	else: gradtypes = [grad[1] for grad in hfconv.grads if grad[2] == gradclass]
@@ -160,26 +160,26 @@ def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap)
 # or hyphenator
 def get_structure(wordform, malaga_word_class):
 	needstructure = False
-	if malaga_word_class in [u'nimi', u'etunimi', u'sukunimi', 'paikannimi']: ispropernoun = True
+	if malaga_word_class in ['nimi', 'etunimi', 'sukunimi', 'paikannimi']: ispropernoun = True
 	else: ispropernoun = False
-	if malaga_word_class == u'lyhenne':
-		i = u"j"
-		p = u"q"
+	if malaga_word_class == 'lyhenne':
+		i = "j"
+		p = "q"
 	else:
-		i = u"i"
-		p = u"p"
-	structstr = u', rakenne: "='
+		i = "i"
+		p = "p"
+	structstr = ', rakenne: "='
 	for idx in range(len(wordform)):
 		c = wordform[idx]
-		if c == u'-':
-			structstr = structstr + u"-="
+		if c == '-':
+			structstr = structstr + "-="
 			needstructure = True
-		elif c == u'|': structstr = structstr
-		elif c == u'=':
-			structstr = structstr + u"="
+		elif c == '|': structstr = structstr
+		elif c == '=':
+			structstr = structstr + "="
 			needstructure = True
-		elif c == u':':
-			structstr = structstr + u":"
+		elif c == ':':
+			structstr = structstr + ":"
 			needstructure = True
 		elif c.isupper():
 			structstr = structstr + i
@@ -189,8 +189,8 @@ def get_structure(wordform, malaga_word_class):
 			structstr = structstr + p
 			if ispropernoun and idx == 0:
 				needstructure = True
-	if needstructure: return structstr + u'"'
-	else: return u""
+	if needstructure: return structstr + '"'
+	else: return ""
 
 # Writes the vocabulary entry to a suitable file
 def write_entry(main_vocabulary,vocabulary_files,word, entry):
@@ -199,10 +199,10 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 		group = word.getElementsByTagName(voc[0])
 		if len(group) == 0: continue
 		if has_flag(group[0], voc[1]):
-			vocabulary_files[voc[2]].write(entry + u"\n")
+			vocabulary_files[voc[2]].write(entry + "\n")
 			special = True
 	if not special:
-		main_vocabulary.write(entry + u"\n")
+		main_vocabulary.write(entry + "\n")
 
 # Parse command line options and return them in a dictionary
 def get_options():
@@ -241,23 +241,23 @@ def get_options():
 
 # Strip whitespace and comments from LEXC input file
 def stripWhitespaceAndComments(line):
-	if u"!" in line:
-		line = line[0:line.find(u"!")]
+	if "!" in line:
+		line = line[0:line.find("!")]
 	return line.strip()
 
 # Filter LEXC input according to options
 def filterVfstInput(line_orig, OPTIONS):
-	if line_orig.startswith(u'?Sukija'):
+	if line_orig.startswith('?Sukija'):
 		if OPTIONS["sukija"]:
 			line_orig = line_orig[7:]
 		else:
 			return None
-	if line_orig.startswith(u'?Murre'):
+	if line_orig.startswith('?Murre'):
 		if "dialect" in OPTIONS["style"] or OPTIONS["sukija"]:
 			line_orig = line_orig[6:]
 		else:
 			return None
-	if line_orig.startswith(u'?Vanha'):
+	if line_orig.startswith('?Vanha'):
 		if OPTIONS["vanhat"] or OPTIONS["sukija"]:
 			line_orig = line_orig[6:]
 		else:

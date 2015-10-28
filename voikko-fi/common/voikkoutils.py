@@ -53,11 +53,11 @@ class FlagAttribute:
 
 ## Remove comments from a given line of text.
 def removeComments(line):
-	comment_start = line.find(u'#')
+	comment_start = line.find('#')
 	if comment_start == -1:
 		return line
 	if comment_start == 0:
-		return u''
+		return ''
 	return line[:comment_start]
 
 def readFlagAttributes(filename):
@@ -72,20 +72,20 @@ def readFlagAttributes(filename):
 		line = removeComments(line).strip()
 		if len(line) > 0:
 			f = FlagAttribute()
-			endind = line.find(u' ')
+			endind = line.find(' ')
 			f.joukahainen = int(line[:endind])
 			line = line[endind:].strip()
-			endind = line.find(u'/')
+			endind = line.find('/')
 			f.xmlGroup = line[:endind]
 			line = line[endind + 1:]
-			endind = line.find(u' ')
+			endind = line.find(' ')
 			f.xmlFlag = line[:endind]
 			line = line[endind:].strip()
-			endind = line.find(u' ')
-			if line[:endind] != u'-': f.malagaFlag = line[:endind]
+			endind = line.find(' ')
+			if line[:endind] != '-': f.malagaFlag = line[:endind]
 			line = line[endind:].strip()
 			if len(line) > 0: f.description = line
-			flags[f.xmlGroup + u'/' + f.xmlFlag] = f
+			flags[f.xmlGroup + '/' + f.xmlFlag] = f
 	inputfile.close()
 	return flags
 
@@ -94,9 +94,9 @@ def readFlagAttributes(filename):
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
 def _simple_vowel_type(word):
 	word = word.lower()
-	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
-	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
-	last_y = word.rfind(u'y')
+	last_back = max(word.rfind('a'), word.rfind('o'), word.rfind('å'), word.rfind('u'))
+	last_ord_front = max(word.rfind('ä'), word.rfind('ö'))
+	last_y = word.rfind('y')
 	if last_back > -1 and max(last_ord_front, last_y) == -1:
 		return VOWEL_BACK
 	if last_back == -1 and max(last_ord_front, last_y) > -1:
@@ -115,12 +115,12 @@ def _simple_vowel_type(word):
 # on the trailing part and the whole word, and the union of accepted vowel types is returned.
 def get_wordform_infl_vowel_type(wordform):
 	# Search for last '=' or '-', check the trailing part using recursion
-	startind = max(wordform.rfind(u'='), wordform.rfind(u'-'))
+	startind = max(wordform.rfind('='), wordform.rfind('-'))
 	if startind == len(wordform) - 1: return VOWEL_BOTH # Not allowed
 	if startind != -1: return get_wordform_infl_vowel_type(wordform[startind+1:])
 	
 	# Search for first '|', check the trailing part using recursion
-	startind = wordform.find(u'|')
+	startind = wordform.find('|')
 	if startind == len(wordform) - 1: return VOWEL_BOTH # Not allowed
 	vtype_whole = _simple_vowel_type(wordform)
 	if startind == -1: return vtype_whole
@@ -129,7 +129,7 @@ def get_wordform_infl_vowel_type(wordform):
 	else: return VOWEL_BOTH
 
 def get_preference(prefname):
-	u'Returns the value of given preference'
+	'Returns the value of given preference'
 	try:
 		import voikko_dev_prefs
 		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
@@ -159,7 +159,7 @@ def get_preference(prefname):
 
 ## Returns True, if given character is a consonant, otherwise retuns False.
 def is_consonant(letter):
-	if letter.lower() in u'qwrtpsdfghjklzxcvbnm':
+	if letter.lower() in 'qwrtpsdfghjklzxcvbnm':
 		return True
 	else:
 		return False
@@ -168,9 +168,9 @@ def is_consonant(letter):
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
 def vowel_type(word):
 	word = word.lower()
-	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
-	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
-	last_y = word.rfind(u'y')
+	last_back = max(word.rfind('a'), word.rfind('o'), word.rfind('å'), word.rfind('u'))
+	last_ord_front = max(word.rfind('ä'), word.rfind('ö'))
+	last_y = word.rfind('y')
 	if last_back > -1 and max(last_ord_front, last_y) == -1:
 		return VOWEL_BACK
 	if last_back == -1 and max(last_ord_front, last_y) > -1:
@@ -186,11 +186,11 @@ def vowel_type(word):
 
 ## Expands capital letters to useful character classes for regular expressions
 def capital_char_regexp(pattern):
-	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö|é|è|á|ó|â)')
-	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z|š|ž)')
-	pattern = pattern.replace('A', u'(?:a|ä)')
-	pattern = pattern.replace('O', u'(?:o|ö)')
-	pattern = pattern.replace('U', u'(?:u|y)')
+	pattern = pattern.replace('V', '(?:a|e|i|o|u|y|ä|ö|é|è|á|ó|â)')
+	pattern = pattern.replace('C', '(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z|š|ž)')
+	pattern = pattern.replace('A', '(?:a|ä)')
+	pattern = pattern.replace('O', '(?:o|ö)')
+	pattern = pattern.replace('U', '(?:u|y)')
 	return pattern
 
 ## Reads the word list in XML format specified by filename. If the name ends
