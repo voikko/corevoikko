@@ -76,6 +76,6 @@ while True:
 sys.stdout.write("\n")
 listfile.close()
 main_vocabulary.close()
-for (name, file) in vocabulary_files.iteritems():
+for (name, file) in vocabulary_files.items():
 	file.close()
 

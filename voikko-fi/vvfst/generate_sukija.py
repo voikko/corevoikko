@@ -56,7 +56,6 @@
 import codecs
 import getopt
 import re
-import string
 import sys
 from types import *
 sys.path.append("common")
@@ -792,17 +791,17 @@ def error (line):
 
 def write_list (line, key, data):
     for x in data:
-        if type(x) == UnicodeType:
+        if type(x) == str:
             outfile.write (x + u"\n")
         else:
             error (line)
 
 
 def write_tuple (line, key, g):
-     if type(g[0]) == UnicodeType:
+     if type(g[0]) == str:
          for i in range (1, len(g)):
              replace_and_write (line, g[0], g[i])
-     elif type(g[0]) == TupleType:
+     elif type(g[0]) == tuple:
          for i in range (0, len(g)):
              if (len(g[i]) == 2):
                  replace_and_write (line, g[i][0], g[i][1])
@@ -820,13 +819,13 @@ base_form_re = re.compile (u"\\[Xp\\]([^[]+)\\[X\\]", re.UNICODE)
 def generate_word (r, line, sukija_dictionary):
     try:
         g = sukija_dictionary[r.group(1)]
-        if type(g) == ListType:
+        if type(g) == list:
             write_list (line, r.group(1), g)
-	elif type(g) == TupleType:
+        elif type(g) == tuple:
             write_tuple (line, r.group(1), g)
-	elif type(g) == LambdaType:
+        elif type(g) == LambdaType:
             g (line, r.group(1))
-	else:
+        else:
             error (line)
     except KeyError:  # It is not an error if a word is not in sukija_dictionary.
         pass
@@ -892,10 +891,10 @@ while True:
     line = infile.readline()
     if line == u"":
         break
-    if string.find (line, u"[Tn4]mi@") == 0:  # 4. nimitapa (puhu+minen) ei ole teonsanan taivutusmuoto.
+    if line.find (u"[Tn4]mi@") == 0:  # 4. nimitapa (puhu+minen) ei ole teonsanan taivutusmuoto.
         continue
     line = re.sub (ei_vertm, u"", line)
-    if string.find (line, u"=") >= 0:
+    if line.find (u"=") >= 0:
         line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
         
     if OPTIONS["sukija-ys"]:
