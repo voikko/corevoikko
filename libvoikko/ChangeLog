@@ -12,6 +12,12 @@
 	* API methods accepting path arguments now work with both Unicode
 	  strings and binary strings.
 
+2015-10-31 Harri Pitkänen <hatapitk@iki.fi>
+	* Disable malaga backend by default.
+	* Enable VFST backend and build tools by default.
+	* Add separate option --enable-experimental-vfst for experimental
+	  features related to VFST format.
+
 2015-08-28 Harri Pitkänen <hatapitk@iki.fi>
 	* Autocorrect data is read from VFST transducer in format 5
 	  dictionaries.

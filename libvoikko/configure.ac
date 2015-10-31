@@ -95,10 +95,10 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE(
 ])
 
 dnl Build tools
-buildtools="no"
-AC_ARG_ENABLE(buildtools, AC_HELP_STRING([--enable-buildtools],
-        [enable voikkovfstc (EXPERIMENTAL!)]),
-        [buildtools=${enableval}], [buildtools=no])
+buildtools="yes"
+AC_ARG_ENABLE(buildtools, AC_HELP_STRING([--disable-buildtools],
+        [disable voikkovfstc)]),
+        [buildtools=${enableval}], [buildtools=yes])
 AM_CONDITIONAL([HAVE_BUILDTOOLS], [test x$buildtools = xyes])
 
 dnl Test tools
@@ -109,11 +109,11 @@ AC_ARG_ENABLE(testtools, AC_HELP_STRING([--disable-testtools],
 AM_CONDITIONAL([HAVE_TESTTOOLS], [test x$testtools = xyes])
 	
 dnl Malaga support
-malaga="yes"
+malaga="no"
 AH_TEMPLATE(HAVE_MALAGA, [Have MALAGA])
-AC_ARG_ENABLE(malaga, AC_HELP_STRING([--disable-malaga],
-	[disable Malaga morphology backend (EXPERIMENTAL!)]),
-	[malaga=${enableval}], [malaga=yes])
+AC_ARG_ENABLE(malaga, AC_HELP_STRING([--enable-malaga],
+	[enable Malaga morphology backend (dictionary version 2)]),
+	[malaga=${enableval}], [malaga=no])
 if test x$malaga = xyes; then
 	AC_DEFINE(HAVE_MALAGA, 1)
 fi
@@ -150,14 +150,27 @@ AM_CONDITIONAL([HAVE_VISLCG3], [test x$cg3 = xyes])
 
 
 dnl VFST support
+vfst="yes"
 AH_TEMPLATE(HAVE_VFST, [Have VFST])
-AC_ARG_ENABLE(vfst, AC_HELP_STRING([--enable-vfst],
-	[enable VFST morphology backend (EXPERIMENTAL!)]),
-	[vfst=${enableval}], [vfst=no])
+AC_ARG_ENABLE(vfst, AC_HELP_STRING([--disable-vfst],
+	[disable VFST morphology backend]),
+	[vfst=${enableval}], [vfst=yes])
 if test x$vfst = xyes; then
 	AC_DEFINE(HAVE_VFST, 1)
 fi
 AM_CONDITIONAL([HAVE_VFST], [test x$vfst = xyes])
+
+
+dnl support for experimental parts of VFST format
+expvfst="no"
+AH_TEMPLATE(HAVE_EXPERIMENTAL_VFST, [Have experimental VFST])
+AC_ARG_ENABLE(expvfst, AC_HELP_STRING([--enable-expvfst],
+	[enable EXPERIMENTAL features of VFST morphology backend]),
+	[expvfst=${enableval}], [expvfst=no])
+if test x$expvfst = xyes; then
+	AC_DEFINE(HAVE_EXPERIMENTAL_VFST, 1)
+fi
+AM_CONDITIONAL([HAVE_EXPERIMENTAL_VFST], [test x$expvfst = xyes])
 
 dnl Lttoolbox support
 AH_TEMPLATE(HAVE_LTTOOLBOX, [Have Lttoolbox])
@@ -206,3 +219,16 @@ CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
 
 AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile java/Makefile msvc/Makefile test/Makefile cs/Makefile cl/Makefile src/libvoikko.pc])
 AC_OUTPUT
+
+cat <<EOF
+
+Libvoikko was configured with the following options
+  * VFST support:                   $vfst
+  *   Experimental VFST features:   $expvfst
+  * HFST support:                   $hfst
+  * Malaga support:                 $malaga
+  * Experimental VISLCG3 support:   $cg3
+  * Experimental Lttoolbox support: $lttoolbox
+  * Morphology compilers:           $buildtools
+  * Simple client programs:         $testtools
+EOF
