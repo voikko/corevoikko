@@ -210,10 +210,10 @@ indexFile.write(u"</table>")
 
 runCmd('make clean')
 runCmd('make dist-gzip SM_VERSION=snapshot')
-runCmd('cp suomi-malaga-snapshot.tar.gz ' + WORK_DIR)
+runCmd('cp voikko-fi-snapshot.tar.gz ' + WORK_DIR)
 runCmd('make clean SM_VERSION=snapshot')
 indexFile.write(u"<h2>Lähdekoodi</h2>")
-indexFile.write(u"<p><a href='suomi-malaga-snapshot.tar.gz'>suomi-malaga-snapshot.tar.gz</a></p>")
+indexFile.write(u"<p><a href='voikko-fi-snapshot.tar.gz'>voikko-fi-snapshot.tar.gz</a></p>")
 
 # === Finalisation ===
 
