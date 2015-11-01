@@ -1,3 +1,12 @@
+2015-11-01 Harri Pitkänen <hatapitk@iki.fi>
+	* Enable HFST backend by default.
+
+2015-10-31 Harri Pitkänen <hatapitk@iki.fi>
+	* Disable malaga backend by default.
+	* Enable VFST backend and build tools by default.
+	* Add separate option --enable-experimental-vfst for experimental
+	  features related to VFST format.
+
 2015-10-28 Harri Pitkänen <hatapitk@iki.fi>
 	* Use Python 3 instead of Python 2 for build tools.
 
@@ -11,12 +20,6 @@
 	* Drop support for Python versions 2.5 and 2.6.
 	* API methods accepting path arguments now work with both Unicode
 	  strings and binary strings.
-
-2015-10-31 Harri Pitkänen <hatapitk@iki.fi>
-	* Disable malaga backend by default.
-	* Enable VFST backend and build tools by default.
-	* Add separate option --enable-experimental-vfst for experimental
-	  features related to VFST format.
 
 2015-08-28 Harri Pitkänen <hatapitk@iki.fi>
 	* Autocorrect data is read from VFST transducer in format 5

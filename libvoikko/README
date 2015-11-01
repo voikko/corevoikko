@@ -4,10 +4,12 @@ General information
 This is libvoikko, library of free natural language processing tools
 The library is written in C++. The library supports multiple backends:
 
+- VFST: Finite state transducer format used for Finnish morphology
+  and as an experimental language independent backend.
 - Malaga: Left associative grammar for describing the morphology of
-Finnish language.
+  Finnish language.
 - HFST: Supports ZHFST speller archives for various languages.
-- Experimental backends: Lttoolbox and VFST.
+- Experimental Lttoolbox backend.
 
 Libvoikko provides spell checking, hyphenation, grammar checking and
 morphological analysis for Finnish language. Only spell checking is
@@ -25,21 +27,18 @@ work in the real world.
 License
 =======
 
-This library is released under the GPL, version 2 or later. Parts of the
-build system are available only under GPL version 3 or later but that
-does not affect binary distribution.
+The core library and backends that are enabled by default are available
+under MPL 1.1 / GPL 2+ / LGPL 2.1+ tri-license.
 
-Additionally a subset of the library is available under MPL 1.1 / GPL 2+ /
-LGPL 2.1+ tri-license. The tri-license covers those parts that cannot
-be configured away in the autotools build systems. Licensing status for
-individual backends is as follows:
+Malaga and Lttoolbox backends are available only under GPL version 2
+or later.
 
  Backend        License
 ----------------------------------------------------------------
- Malaga         GPL 2+
- HFST           MPL 1.1 / GPL 2+ / LGPL 2.1+ (Apache v2 dependency)
- Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
  VFST           MPL 1.1 / GPL 2+ / LGPL 2.1+
+ HFST           MPL 1.1 / GPL 2+ / LGPL 2.1+ (Apache v2 dependency)
+ Malaga         GPL 2+
+ Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
 
 
 Features
@@ -47,7 +46,7 @@ Features
 
  - Spell checking using compound word and derivation rule system that is
    largely compatible with widely used proprietary Finnish spell checkers
-   (Soikko, MS Word).
+   such as the one used in MS Word.
  - Spelling suggestions that are generated to catch most probable typing
    errors.
  - Special spelling suggestion mode that can be used to correct errors
@@ -67,7 +66,7 @@ Documentation for using the library can be found from header file voikko.h.
 Build requirements
 ==================
 
-C++ compiler (GCC or clang) and Python (version 2.6 or later)
+C++ compiler (GCC or clang) and Python (version 3.0 or later)
 must be available in order to build this library. Pkg-config is needed
 for build configuration.
 
@@ -79,12 +78,14 @@ Build configuration
 ===================
 
 See ./configure --help for a list of available configuration options.
-The default configuration will enable all stable backends and will result
-in a library that supports stable dictionary formats. This is the recommended
-configuration for builds that are made available to end users.
+The default configuration enables those backends that are recommended for
+typical use: VFST for Finnish and HFST for other languages.
 
-You can enable certain experimental backends or disable stable backends. Such
-configurations will not necessarily work with all dictionaries and the dictionary
+Disabling the default backends is safe if you do not need to use the dictionary
+formats supported by them.
+
+You can also enable certain experimental backends. Such configurations will
+not necessarily work with all dictionaries and the dictionary
 formats may change without notice. Thus these options should generally be used
 in developer builds only. If you need to use them in a released build we
 strongly recommend that you disable external dictionary loading with
@@ -106,6 +107,10 @@ For dictionary format 3 (HFST backend):
  Any valid ZHFST speller with file suffix .zhfst can be used. The name
  of the file is not significant.
  
+For dictionary format 5 (Finnish VFST backend):
+
+ Valid VFST dictionaries can be built from voikko-fi version 2.0 or later.
+
 Python bindings work with Python version 2.7 or later. No conversion is needed
 in order to use the module with Python 3.
 

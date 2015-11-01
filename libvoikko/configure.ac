@@ -29,6 +29,9 @@
 dnl General options for autoconf
 AC_PREREQ(2.60)
 AC_INIT([libvoikko],[4.0],[hatapitk@iki.fi])
+
+LT_PREREQ([2.2.6])
+
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -40,7 +43,7 @@ AM_PATH_PYTHON([3])
 
 dnl Libtool (new and old)
 AC_LIBTOOL_WIN32_DLL
-ifdef([LT_INIT], [LT_INIT], [AC_PROG_LIBTOOL])
+LT_INIT
 
 AM_MAINTAINER_MODE
 
@@ -120,10 +123,11 @@ fi
 AM_CONDITIONAL([HAVE_MALAGA], [test x$malaga = xyes])
 
 dnl HFST support
+hfst="yes"
 AH_TEMPLATE(HAVE_HFST, [Have HFST])
-AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
-	[enable HFST morphology backend]),
-	[hfst=${enableval}], [hfst=no])
+AC_ARG_ENABLE(hfst, AC_HELP_STRING([--disable-hfst],
+	[disable HFST morphology backend]),
+	[hfst=${enableval}], [hfst=yes])
 dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
 dnl AC_PROVIDE_IFELSE doesn't work on mac?
 AS_IF([test x$hfst = xyes], [
