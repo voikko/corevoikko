@@ -18,7 +18,7 @@ $(BUILDDIR)/err.vfst: err.weighted.att
 	cat $^ | sort -n | voikkovfstc -w prob -o $@
 
 install: all
-	install -m 755 -d $(DESTDIR)/2/mor-svfst
-	install -m 644 $(BUILDDIR)/spl.vfst voikko-fi_FI.pro $(DESTDIR)/2/mor-svfst
-	install -m 644 $(BUILDDIR)/spl.vfst $(DESTDIR)/2/mor-svfst/mor.vfst
-	install -m 644 $(BUILDDIR)/err.vfst $(DESTDIR)/2/mor-svfst/err.vfst
+	install -m 755 -d $(DESTDIR)/5/mor-svfst
+	install -m 644 $(BUILDDIR)/spl.vfst index.txt $(DESTDIR)/5/mor-svfst
+	install -m 644 $(BUILDDIR)/spl.vfst $(DESTDIR)/5/mor-svfst/mor.vfst
+	install -m 644 $(BUILDDIR)/err.vfst $(DESTDIR)/5/mor-svfst/err.vfst

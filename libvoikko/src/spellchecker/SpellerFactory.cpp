@@ -36,7 +36,7 @@
 #include "spellchecker/HfstSpeller.hpp"
 #endif
 
-#ifdef HAVE_VFST
+#ifdef HAVE_EXPERIMENTAL_VFST
 #include "spellchecker/VfstSpeller.hpp"
 #endif
 
@@ -65,7 +65,7 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 		return new HfstSpeller(dictionary.getMorBackend().getPath());
 	}
 	#endif
-	#ifdef HAVE_VFST
+	#ifdef HAVE_EXPERIMENTAL_VFST
 	if (spellBackend == "vfst") {
 		return new VfstSpeller(dictionary.getMorBackend().getPath());
 	}

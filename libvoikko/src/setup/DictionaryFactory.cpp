@@ -147,7 +147,9 @@ void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<s
 	#ifdef HAVE_HFST
 		loaders.push_back(new V3DictionaryLoader());
 	#endif
-	loaders.push_back(new V2DictionaryLoader());
+	#ifdef HAVE_MALAGA
+		loaders.push_back(new V2DictionaryLoader());
+	#endif
 	
 	for (list<DictionaryLoader*>::iterator i = loaders.begin(); i != loaders.end(); ++i) {
 		(*i)->addVariantsFromPath(path, variants);

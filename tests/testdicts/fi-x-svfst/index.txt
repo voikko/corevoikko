@@ -1,0 +1,7 @@
+Voikko-Dictionary-Format: 5
+Language: fi-x-svfst
+Description: Integration test dictionary for simple VFST dictionary backend
+Morphology-Backend: vfst
+Speller-Backend: vfst
+Suggestion-Backend: vfst
+Grammar-Backend: null

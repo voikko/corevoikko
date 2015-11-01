@@ -38,7 +38,7 @@
 #include "spellchecker/HfstSpeller.hpp"
 #endif
 
-#ifdef HAVE_VFST
+#ifdef HAVE_EXPERIMENTAL_VFST
 #include "spellchecker/VfstSpeller.hpp"
 #include "spellchecker/VfstSuggestion.hpp"
 #endif
@@ -68,9 +68,12 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 		return new HfstSuggestion(hfstSpeller->speller);
 	}
 	#endif
-	#ifdef HAVE_VFST
+	#ifdef HAVE_EXPERIMENTAL_VFST
 	if (backend == "vfst") {
 		const VfstSpeller * vfstSpeller = dynamic_cast<VfstSpeller *>(voikkoOptions->speller);
+		if (!vfstSpeller) {
+			throw setup::DictionaryException("VFST suggestion generator works only with VFST speller");
+		}
 		return new VfstSuggestion(vfstSpeller->transducer, voikkoOptions->dictionary.getMorBackend().getPath());
 	}
 	#endif

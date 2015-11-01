@@ -108,6 +108,9 @@ Dictionary V5DictionaryLoader::dictionaryFromPath(const string & path) {
 		else if (line.find("Hyphenator-Backend: ") == 0) {
 			hyphenatorBackend = BackendProperties(line.substr(20), true);
 		}
+		else if (line.find("Grammar-Backend: ") == 0) {
+			grammarBackend = BackendProperties(line.substr(17), true);
+		}
 	}
 	file.close();
 	return Dictionary(morBackend, gramMorBackend, grammarBackend, spellBackend, suggestionBackend,

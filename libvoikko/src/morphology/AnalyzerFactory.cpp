@@ -63,10 +63,12 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 		return new MalagaAnalyzer(morPath);
 	}
 	#endif
-	#ifdef HAVE_VFST
+	#ifdef HAVE_EXPERIMENTAL_VFST
 	if (morBackend == "vfst") {
 		return new VfstAnalyzer(morPath);
 	}
+	#endif
+	#ifdef HAVE_VFST
 	if (morBackend == "finnishVfst") {
 		return new FinnishVfstAnalyzer(morPath);
 	}
