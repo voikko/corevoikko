@@ -46,6 +46,7 @@ BASE_INFO = WORKSPACE + "/base-info.txt"
 CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
 COMPATIBILITY_DIR = WORKSPACE + "/compatibility"
 SMV = COREVOIKKO + "/voikko-fi"
+CURRENT_TESTMOR = "fi-x-vfstd"
 
 def _check_hyphens(section, expectedResult, result):
 	failcount = 0
@@ -549,12 +550,11 @@ if "--base" in [opt[0] for opt in opts]:
 		sys.stderr.write("Failed to create baseline version.\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('bash -c \'time zcat "%s" | "%s" -j %i -p "%s" | grep "^C:" > "%s"\'' % \
-	          (WORDLIST, SPELLCMD, THREADS, BASE, BASE_CORRECT))
+	os.system('bash -c \'time zcat "%s" | "%s" -d %s -j %i -p "%s" | grep "^C:" > "%s"\'' % \
+	          (WORDLIST, SPELLCMD, CURRENT_TESTMOR, THREADS, BASE, BASE_CORRECT))
 	sys.exit(0)
 
 if "--current" in [opt[0] for opt in opts]:
-	CURRENT_TESTMOR = "fi-x-malstd"
 	clean_smv()
 	update_smv()
 	voikko = Voikko(CURRENT_TESTMOR)
