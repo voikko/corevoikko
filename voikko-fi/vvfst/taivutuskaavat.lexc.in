@@ -1425,6 +1425,7 @@ LEXICON NOUN Parfait
 ':'	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	':'	Johdin_tOn_<A>	;
 ?Nimisana	':'	Johdin_inen_vain_lipulla_<A>	;
+?Paikannimi	':'	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;

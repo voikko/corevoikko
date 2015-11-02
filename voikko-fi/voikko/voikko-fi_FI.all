@@ -1088,6 +1088,7 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_hVn,
                                           "'", "") +
                                 [johdin_tOn:      "'",
+                                 johdin_lAinen:   "'",
                                  johdin_inen:     "'",
 				 liitesana:       "'"] +
                                 monikko7 ("'", "'", "'",
