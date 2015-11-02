@@ -420,6 +420,7 @@ word_list = [
                          (u"kauimmin",   u"kauvimmin"))),
     (u"kauempi",        (u"kaue",        u"kauve")),
     (u"kaukainen",      (u"kaukai",      u"kaukahi")),
+##  (u"kaukainen",      (u"kaukai",      u"kaukahi", u"kauka")),
     (u"Kaukasia",       (u"kaukasi",     u"kaukaasi")),
     (u"kaunoinen",      (u"kaunoi",      u"kaunohi")),
     (u"katolilainen",   (u"katolilai",   u"katoolilai")),
