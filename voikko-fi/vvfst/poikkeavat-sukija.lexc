@@ -283,6 +283,8 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]sensijaan[X]sen[Bm]sijaan:sensijaan Liitesana_a ;
 [Ls][Xp]sentähden[X]sen[Bm]tähden:sentähden Liitesana_ä ;
 [Ls][Xp]senvuoksi[X]sen[Bm]vuoksi:senvuoksi Liitesana_a ;
+[Ls][Xp]sydän[X]sydämitse:sydämitse Liitesana_a ;
+[Ls][Xp]sydän[X]sydämmitse:sydämmitse Liitesana_a ;
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä OlV_ä ;
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;
