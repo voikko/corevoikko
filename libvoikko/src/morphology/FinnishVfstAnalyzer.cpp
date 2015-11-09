@@ -307,7 +307,7 @@ static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar
 	return StringUtils::copy((*mapIterator).second.c_str());
 }
 
-static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen, size_t i, size_t j,
+static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t i, size_t j,
 			        const char * attributeName, map<wstring, wstring> & theMap) {
 	if (analysis->getValue(attributeName)) {
 		return; // already set
@@ -904,22 +904,22 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 							}
 						}
 						else {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "CLASS", classMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "CLASS", classMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'N') {
 						const wchar_t * wclass = analysis->getValue("CLASS");
 						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "NUMBER", numberMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'P') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PERSON", personMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, "PERSON", personMap);
 					}
 					else if (fstOutput[j + 1] == L'S') {
 						const wchar_t * wclass = analysis->getValue("CLASS");
 						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "SIJAMUOTO", sijamuotoMap);
 							if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
 								convertNimiLaatusanaToLaatusana = true;
 							}
@@ -927,30 +927,30 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					}
 					else if (fstOutput[j + 1] == L'T') {
 						if (!analysis->getValue("CLASS")) {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "MOOD", moodMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "MOOD", moodMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'A') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "TENSE", tenseMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, "TENSE", tenseMap);
 					}
 					else if (fstOutput[j + 1] == L'F') {
 						if (wcsncmp(fstOutput + (j + 2), L"ko", 2) == 0) {
 							analysis->addAttribute("KYSYMYSLIITE", StringUtils::copy(L"true"));
 						}
 						else {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "FOCUS", focusMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "FOCUS", focusMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'O') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "POSSESSIVE", possessiveMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, "POSSESSIVE", possessiveMap);
 					}
 					else if (fstOutput[j + 1] == L'C') {
 						if (!analysis->getValue("CLASS")) {
-							parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "COMPARISON", comparisonMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, "COMPARISON", comparisonMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'E') {
-						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, "NEGATIVE", negativeMap);
 					}
 					else if (fstOutput[j + 1] == L'R') {
 						if (!bcPassed) {
@@ -958,7 +958,7 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 							// TODO: Checking the end for [Ln] is done to handle -tUAnne ("kuunneltuanne"). This is for compatibility
 							// with Malaga implementation. See VISK § 543 (temporaalirakenne) for correct analysis.
 							if (!wclass || wcscmp(wclass, L"laatusana") == 0 || wcscmp(fstOutput + (fstLen - 4), L"[Ln]") == 0) {
-								parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PARTICIPLE", participleMap);
+								parseBasicAttribute(analysis, fstOutput, i, j, "PARTICIPLE", participleMap);
 							}
 						}
 					}
