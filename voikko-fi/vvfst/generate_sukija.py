@@ -314,7 +314,7 @@ def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
             replace_and_write (line.replace(s1,s2), string, x)
 
 
-# Vanhoja kirjoitusasuja ja yleisikä kirjoitusvirheitä,
+# Vanhoja kirjoitusasuja ja yleisiä kirjoitusvirheitä,
 # jotka eivät noudata mitään kaavaa.
 #
 #    (u"", (u"", u"")),
@@ -347,6 +347,7 @@ word_list = [
                                                            u"amfi[Bm]teaatter:amfiteaatter")),
     (u"apassi",           (u"apass",         u"apash")),
     (u"apteekkari",       (u"apteekkar",     u"apteekar", u"aptekar")),
+    (u"aristoteelinen",   (u"aristoteeli",   u"aristoteli")),
     (u"arsenikki",        (u"arsenik",       u"arseniik")),
     (u"assistentti",      (u"assistent",     u"asistent")),
     (u"at=tribuutti",     (u"at[Bm]tribuut:attribuut", u"at[Bm]ribuut:atribuut")),
