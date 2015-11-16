@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright 2008 - 2015 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2008 - 2012 Harri Pitkänen (hatapitk@iki.fi)
 # Script for automating the build of multiple dictionary variants for
 # Voikko. This script should be run in the main directory of
 # Suomi-malaga source package.
@@ -42,10 +42,10 @@ def indexHeader(indexFile):
 	indexFile.write(u"table {border-collapse:collapse;}")
 	indexFile.write(u"table td {border:1px solid black;}")
 	indexFile.write(u"</style></head>")
-	indexFile.write(u"<body><h1>Voikon sanaston testiversioita (sanastoformaatti 5)</h1>")
+	indexFile.write(u"<body><h1>Voikon sanaston testiversioita</h1>")
 	indexFile.write(u"<p>Tämä sivu ja sivulla olevat Voikon sanaston testiversiot ")
 	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
-	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä. Sanastoformaatti 5 toimii libvoikon version 4.0 ja uudempien kanssa.</p>")
+	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä.</p>")
 
 def indexDict(indexFile, dict):
 	indexFile.write(u"<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")
@@ -133,7 +133,7 @@ d.nameEn = u"Finnish, very extensive vocabulary (with additional information nee
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,nature,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10 --sourceid" EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
-WORK_DIR = "build-v5"
+WORK_DIR = "build"
 
 INDEX_FILE_NAME = WORK_DIR + "/index.html"
 
@@ -150,13 +150,13 @@ DICT_DIR_PREFIX="dict"
 
 for dict in allDicts:
 	runCmd('make clean')
-	runCmd('make vvfst-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX
+	runCmd('make voikko-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX
 	                                       + dict.idSuffix + '" '
 	       + dict.smOptions
 	       + ' VOIKKO_VARIANT=' + dict.variant
 	       + ' VOIKKO_DESCRIPTION="' + dict.nameFi + '"'
 	       + ' SM_PATCHINFO="Development snapshot"')
-	p = Popen("cat vvfst/joukahainen-*.lexc | grep '^[[]' | wc -l",
+	p = Popen("grep '^[[]perusmuoto:' voikko/joukahainen.lex | wc -l",
 	          shell = True, stdout = PIPE, close_fds = True)
 	(out, err) = p.communicate()
 	dict.wordRecords = int(out)
@@ -166,9 +166,10 @@ for dict in allDicts:
 OXT_TEMPLATE_DIR="oxt-template"
 OXT_PACKAGE_DIR="oxt"
 DICT_FILES_TO_COPY=[
-	'autocorr.vfst',
-	'index.txt'
-	'mor.vfst'
+	'voikko-fi_FI.lex_l',
+	'voikko-fi_FI.mor_l',
+	'voikko-fi_FI.sym_l',
+	'voikko-fi_FI.pro'
 ]
 OXT_DESCRIPTION="description.xml"
 

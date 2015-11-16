@@ -7,6 +7,7 @@ libvoikko/cs/libvoikko.tests/test-results
 libvoikko/cs/libvoikko/bin
 libvoikko/cs/test-results
 voikko-fi/build
+voikko-fi/build-v5
 voikko-fi/voikko/config.inc
 voikko-fi/voikko/erikoiset.lex
 voikko-fi/voikko/erikoissanat.lex
