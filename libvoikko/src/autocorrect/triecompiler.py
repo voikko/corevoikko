@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 # Copyright 2009 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
