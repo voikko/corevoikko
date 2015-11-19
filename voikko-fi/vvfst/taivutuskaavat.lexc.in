@@ -3951,7 +3951,7 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P1][Nm][Ef]isimme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isimme	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P2][Nm][Ef]isitte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@isitte	Liitesana_<A>	;
 @D.YKSITEKIJÄINEN@[Te][Ap][P3][Nm][Ef]isiv<A>t:@D.YKSITEKIJÄINEN@isiv<A>t	Liitesana_<A>	;
-?Sukija [Te][Ap][P3][Ny]is:is	Liitesana_<A>	;
+?Murre [Te][Ap][P3][Ny][Eb]is:is	Liitesana_<A>	;
 
 LEXICON Ehtotapa_ttA
 t:t	Ehtotapa_tA_<A>	;
