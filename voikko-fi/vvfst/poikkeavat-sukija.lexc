@@ -17,24 +17,6 @@
 ! Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 ! 02110-1301, USA.
 
-LEXICON SukijaOlla
-[Tt][Ap][P1][Ny][Ef]on:on     Liitesana_a ;  # Mä oon.
-[Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
-[Tt][Ap][P3][Ny][Ef]mpi:mpi   Liitesana_a ;  # Hän ompi.
-[Tt][Ap][P3][Ny][Ef]npi:npi   Liitesana_a ;  # Hän onpi.
-[Tt][Ap][P2][Nm][Ef]otte:otte Liitesana_a ;  # Te ootte.
-[Tt][Ap][P2][Nm][Ef]otta:otta Liitesana_a ;  # Te ootta.
-[Te][Ap][P1][Ny][Ef]isin:isin Liitesana_a ;  # Mä oisin jne.
-[Te][Ap][P2][Ny][Ef]isit:isit Liitesana_a ;
-[Te][Ap][P3][Ny][Eb]isi:isi   Liitesana_a ;
-[Te][Ap][P3][Ny][Eb]is:is     Liitesana_a ;
-[Te][Ap][P1][Nm][Ef]isimme:isimme Liitesana_a ;
-[Te][Ap][P2][Nm][Ef]isitte:isitte Liitesana_a ;
-[Te][Ap][P3][Nm][Ef]isivat:isivat Liitesana_a ;
-[Te][Ap][P3][Nm][Ef]isvat:isvat   Liitesana_a ;
-o:o       Loppu ;   # Ei oo.
-llos:llos Loppu ;   # Ollos huoleton.
-
 LEXICON SukijaRangaista_a
 gas:gas Nuolaista_w_a ;
 kas:kas Nuolaista_s_a ;
@@ -223,7 +205,6 @@ LEXICON SukijaSanasto
 [Ln][Xp]kiiru[X]kiiruu:kiiruu Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
-[Lt][Xp]olla[X]o:o SukijaOlla ;
 
 
 LEXICON SukijaPoikkeavat_n

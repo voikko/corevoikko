@@ -47,7 +47,22 @@ l:l                     Käskytapa_a ;
 l[Tk][Ap][P3][Ny][Ef]koon[Fkin]kin:lkoonkin	Loppu	;
 [Tt][Ap][P4][Ef]llaan:llaan Liitesana_a ;  # Ollaan.
 [Tt][Ai][P4][Ef]ltiin:ltiin Liitesana_a ;  # Oltiin.
-
+?Murre [Tt][Ap][P1][Ny][Ef]on:on     Liitesana_a ;  # Mä oon.
+?Murre [Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
+?Murre [Tt][Ap][P3][Ny][Ef]mpi:mpi   Liitesana_a ;  # Hän ompi.
+?Murre [Tt][Ap][P3][Ny][Ef]npi:npi   Liitesana_a ;  # Hän onpi.
+?Murre [Tt][Ap][P2][Nm][Ef]otte:otte Liitesana_a ;  # Te ootte.
+?Murre [Tt][Ap][P2][Nm][Ef]otta:otta Liitesana_a ;  # Te ootta.
+?Murre [Te][Ap][P1][Ny][Ef]isin:isin Liitesana_a ;  # Mä oisin jne.
+?Murre [Te][Ap][P2][Ny][Ef]isit:isit Liitesana_a ;
+?Murre [Te][Ap][P3][Ny][Eb]isi:isi   Liitesana_a ;
+?Murre [Te][Ap][P3][Ny][Eb]is:is     Liitesana_a ;
+?Murre [Te][Ap][P1][Nm][Ef]isimme:isimme Liitesana_a ;
+?Murre [Te][Ap][P2][Nm][Ef]isitte:isitte Liitesana_a ;
+?Murre [Te][Ap][P3][Nm][Ef]isivat:isivat Liitesana_a ;
+?Murre [Te][Ap][P3][Nm][Ef]isvat:isvat   Liitesana_a ;
+?Murre o:o       Loppu ;   # Ei oo.
+?Murre llos:llos Loppu ;   # Ollos huoleton.
 
 LEXICON Lienee
 n:n Mahtotapa_ä ;
