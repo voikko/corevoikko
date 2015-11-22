@@ -3697,6 +3697,7 @@ Bogotáhan
 liikkumisvapauden
 !buuatulleen
 seisty
+seisköön
 
 # = poikkeavat asetukset =
 
