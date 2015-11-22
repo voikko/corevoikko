@@ -2135,7 +2135,7 @@ LEXICON NOUN Vieras
 <WC>Vieras_s_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
-?Sukija ?Laatusana	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	HYliaste_<A>	;
 
 LEXICON NOUN Antelias
 <WC>Vieras_w_<A>	;
@@ -2169,71 +2169,71 @@ r<A>:r<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	t<A>:t<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	t<A>:t<A>	HYliaste_<A>	;
 
 LEXICON NOUN Allas
 l<A>:l<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	t<A>:t<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	t<A>:t<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	t<A>:t<A>	HYliaste_<A>	;
 
 LEXICON NOUN Hammas
 m<A>:m<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	p<A>:p<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	p<A>:p<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	p<A>:p<A>	HYliaste_<A>	;
 
 LEXICON NOUN Kinnas
 n<A>:n<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	t<A>:t<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	t<A>:t<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	t<A>:t<A>	HYliaste_<A>	;
 
 LEXICON NOUN Varas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	h<A>:h<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	h<A>:h<A>	HYliaste_<A>	;
 
 LEXICON NOUN Saapas
 <A>:<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	p<A>:p<A>	Yliaste_<A>	;
 ?Laatusana	p<A>:p<A>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	p<A>:p<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	p<A>:p<A>	HYliaste_<A>	;
 
 LEXICON NOUN Ratas
 <A>:<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	t<A>:t<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	t<A>:t<A>	HYliaste_<A>	;
 
 LEXICON NOUN Varvas
 v<A>:v<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	p<A>:p<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	p<A>:p<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	p<A>:p<A>	HYliaste_<A>	;
 
 LEXICON NOUN Kangas
 g<A>:g<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
-?Sukija ?Laatusana	k<A>:k<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	k<A>:k<A>	HYliaste_<A>	;
 
 LEXICON NOUN Ahdas
 d<A>:d<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	t<A>:t<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	t<A>:t<A>	HYliaste_<A>	;
 
 LEXICON NOUN Vilkas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 ?Laatusana	k<A>:k<A>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	k<A>:k<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	k<A>:k<A>	HYliaste_<A>	;
 
 LEXICON NOUN Avokas
 <WC>Iäkäs_<A>	;
@@ -2243,7 +2243,7 @@ LEXICON NOUN Iäkäs
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 ?Laatusana	k<U>:k<U>	Johdin_Us_<A>	;
-?Sukija ?Laatusana	k<A>:k<A>	SukijaHYliaste_<A>	;
+?Vanha ?Laatusana	k<A>:k<A>	HYliaste_<A>	;
 
 LEXICON NOUN Kaunis
 i:i	<WC>Vieras_w_<A>	;
@@ -5211,7 +5211,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija i<A>:i<A> <WC>Apila_y_<A> ;
 ?Sukija i<O>:i<O> <WC>Apila_m_<A> ;
 ?Sukija ?Laatusana i<A>:i<A> Voittoaste_<A> ;
-?Sukija ?Laatusana e:e SukijaHYliaste_<A> ;
+?Sukija ?Laatusana e:e HYliaste_<A> ;
 
 ?Sukija LEXICON NOUN SukijaAinoo
 ?Sukija [Sg][Ny]n:n         <WC>YksikönGenetiivinJatko_<A> ;
@@ -5228,7 +5228,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija [[HV]][Sill][Ny]se:[[HV]]se    <WC>LiOlN_<A> ;
 ?Sukija [Sill][Nm]hisi:hisi          <WC>LiOlN_<A> ;
 ?Sukija [Sill][Nm]isihi:isihi        <WC>LiOlN_<A> ;
-?Sukija ?Laatusana                   SukijaHYliaste_<A> ;
+?Sukija ?Laatusana                   HYliaste_<A> ;
 
 ?Sukija LEXICON NOUN SukijaLahti
 ?Sukija [Sp][Ny]t<A>:t<A> <WC>LiOlV_<A> ;
@@ -5269,8 +5269,8 @@ LEXICON TositapaPi
 ?Sukija Käskytapa_<A> ;
 ?Sukija Käskytapa_y2_<A> ;
 
-?Sukija LEXICON SukijaHYliaste
-?Sukija h:h Yliaste_<A> ;
+LEXICON HYliaste
+h:h	Yliaste_<A> ;
 
 ?Sukija LEXICON NOUN SukijaAurinko
 ?Sukija [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
