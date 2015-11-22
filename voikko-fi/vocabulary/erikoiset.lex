@@ -52,7 +52,7 @@
 [perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
  [perusmuoto: "plus-", alku: "plus-", luokka: nimisana, rakenne: "=pppp-", jatko: <loppu>, äs: a];
-[perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+ [perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
  [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
  [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
  [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
