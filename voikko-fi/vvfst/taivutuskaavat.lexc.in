@@ -3362,10 +3362,10 @@ itsi:itsi	Johdin_ja_kulkija_<A>	;
 ?Sukija itse:itse   Johdin_mA_<A> ;
 ?Sukija itse:itse   Johdin_vA_<A> ;
 ?Sukija itse:itse   Käskytapa_y2_<A> ;
-?Sukija itse:itse   KestämänTekijäpääteHeikko_<A> ;
-?Sukija [Tt][Ap][P3][Ny][Ef]itsee:itsee KestämänTekijäpääteY3Liitesana_<A> ;
-?Sukija its:its     KertomanTekijäpääteHeikko_<A> ;
-?Sukija its:its     KertomanTekijäpääteVahva_<A> ;
+?Murre itse:itse   KestämänTekijäpääteHeikko_<A> ;
+?Murre [Tt][Ap][P3][Ny][Ef]itsee:itsee KestämänTekijäpääteY3Liitesana_<A> ;
+?Murre its:its     KertomanTekijäpääteHeikko_<A> ;
+?Murre its:its     KertomanTekijäpääteVahva_<A> ;
 ?Sukija its:its     Ehtotapa_<A> ;
 ?Sukija itse:itse   SukijaTositapaVi_<A> ;
 
