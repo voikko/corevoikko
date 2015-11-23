@@ -1494,6 +1494,8 @@ LEXICON NOUN Pieni
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
@@ -1517,6 +1519,7 @@ me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	me:me	Johdin_tOn_<A>	;
 ?Nimisana	m:m	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	mi:mi	Johdin_mAinen_<A>	;
 ?Paikannimi	me:me	Johdin_lAinen_<A>	;
 ?Sukija [Sill][Ny]mehe:mehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
@@ -3999,7 +4002,7 @@ e:e	Käskytapa_y2_<A>	;
 
 LEXICON Käskytapa
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P1][Nm][Ef]k<A><A>mme:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>mme	LiitesanaPaHan_<A>	;
-@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>	LiitesanaKinPaHan_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>tte:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tte	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
 @D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm][Ef]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	LiitesanaPaHan_<A>	;

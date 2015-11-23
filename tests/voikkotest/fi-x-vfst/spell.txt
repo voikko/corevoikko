@@ -3698,6 +3698,10 @@ liikkumisvapauden
 !buuatulleen
 seisty
 seisköön
+monijuonisen
+juonimainen
+niemimäinen
+pitäkääkin
 
 # = poikkeavat asetukset =
 
