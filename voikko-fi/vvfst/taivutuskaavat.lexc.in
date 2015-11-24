@@ -1077,6 +1077,7 @@ LEXICON NOUN Apaja
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;

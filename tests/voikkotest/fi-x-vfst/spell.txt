@@ -3702,6 +3702,8 @@ monijuonisen
 juonimainen
 niemimäinen
 pitäkääkin
+kaukokäyttöinen
+paukkajalaisia
 
 # = poikkeavat asetukset =
 
