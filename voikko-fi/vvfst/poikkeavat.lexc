@@ -1714,7 +1714,7 @@ Summayhdyssanat	;
 [Ln][Xp]suorakulma[X][Sin][Nm]suorin[Bm]kulmin:suorinkulmin		Liitesana_a;
 [Ln][Xp]rokokoo[X]rokoko:rokoko	NimisanaMaa_s_a	;
 [Ln][Xp]rokokoo[X]rokokoo:rokokoo	NimisanaMaa_l_a	;
-[Ln][Xp]rokokoo[X][Sill][Ny]rokokoihi:rokokoihi	NimisanaLiOlN_a	;
+[Ln][Xp]rokokoo[X][Sill][Ny]rokokooho:rokokooho	NimisanaLiOlN_a	;
 [Ln][Xp]sankari[X][Sg][Nm]sankart:sankart		NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]sisä[X]sisä:sisä	SisäpaikallissijatVn_ä	;
 [Ln][Xp]sisä[X]sisä:sisä	Ulkopaikallissijat_Yks_ä	;

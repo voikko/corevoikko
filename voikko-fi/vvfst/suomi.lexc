@@ -159,7 +159,7 @@ EtuliitteenJatko_ell2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_ell2
-[Bh]:	EtuliitteenJatko_ellH	;
+[Bh]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	EtuliitteenJatko_ellH	;
 
 LEXICON EtuliitteenJatko_ellH
 [Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;

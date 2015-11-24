@@ -3704,6 +3704,8 @@ niemimäinen
 pitäkääkin
 kaukokäyttöinen
 paukkajalaisia
+eritiheyksinen
+rokokoohon
 
 # = poikkeavat asetukset =
 
