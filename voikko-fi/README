@@ -23,30 +23,36 @@ and usage instructions for distribution packagers.
 Build and installation
 ----------------------
 
-Building Suomi-malaga for from this package requires malaga, python
+Building voikko-fi for from this package requires foma, libvoikko, python
 and make. No configuration is required: to build the code for Voikko,
 you only need to run
-    make voikko
+    make vvfst
 Installation can be done by running
-    make voikko-install DESTDIR=/usr/lib/voikko
+    make vvfst-install DESTDIR=/usr/lib/voikko
 (Replace /usr/lib/voikko with the directory you want to install the
 files to. Installing to ~/.voikko will cause libvoikko to use this
-version of Suomi-malaga only for the user who does the installation.)
+version of voikko-fi only for the user who does the installation.)
 Building the code for Sukija can be done by running
     make sukija
 
 Supported Make targets
 ----------------------
 
+- vvfst
+  Builds the binary files for Finnish dictionary (libvoikko format version 5)
 - sukija
   Builds the binary files needed by text indexer Sukija.
 - voikko
-  Builds the binary files needed by libvoikko.
+  DEPRECATED: Builds the binary files for Finnish dictionary (libvoikko format version 2)
 - voikko-sukija
   Builds the binary files needed by libvoikko with a big
   dictionary that can be used by Sukija.
+- vvfst-install DESTDIR=/usr/lib/voikko
+  Installs the version 5 binary files needed by libvoikko to the directory
+  specified by DESTDIR. DESTDIR is optional and defaults to
+  /usr/lib/voikko
 - voikko-install DESTDIR=/usr/lib/voikko
-  Installs the binary files needed by libvoikko to the directory
+  DEPRECATED: Installs the version 2 binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
   /usr/lib/voikko
 - dist-gzip
@@ -64,11 +70,21 @@ Supported Make targets
 Variables for tuning the build process
 --------------------------------------
 
-- make voikko:
-  * VOIKKO_BUILDDIR=path/to/directory
+- make vvfst:
+  * VVFST_BUILDDIR=path/to/directory
     Specifies the directory where build files are written to while building
     for Voikko.
-    Default: voikko (build within source directory)
+    Default: vvfst (build within source directory)
+  * VVFST_BASEFORMS=yes|no
+    Include information needed for generating BASEFORM attribute. Setting this
+    to "no" will result in a smaller dictionary file. Note that BASEFORM attribute
+    will still be produced but its values will likely be incorrect. This option
+    should only be disabled for application specific (embedded) dictionaries
+    that are known to be used only for spell checking, grammar checking or
+    hyphenation.
+    Default: yes
+
+- options common for "make vvfst" and "make voikko":
   * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
     Sets options string for generate_lex.py.
     Available options for generate_lex.py are
@@ -92,19 +108,8 @@ Variables for tuning the build process
       Insert word identifiers from Joukahainen to lexicon and return them
       during morphological analysis. This option has no effect unless
       VOIKKO_DEBUG=yes is set. By default source ids are not preserved.
-  * EXTRA_LEX="path/to/file1.lex path/to/file2.lex ..."
-    Adds extra malaga lexicon files to the vocabulary. By default, no extra
-    lexicons are added.
-  * VANHAHKOT_MUODOT=yes|no
-    See voikko/doc/liput.txt. Default: yes
   * VANHAT_MUODOT=yes|no
     See voikko/doc/liput.txt. Default: no
-  * SUKIJAN_MUODOT=yes|no
-    Include words that exist just for Sukija. Default: no
-  * VOIKKO_DEBUG=yes|no
-    Include information that is not needed by libvoikko but may be needed
-    for debugging or by external applications (full morphological analysis).
-    Default: no
   * VOIKKO_VARIANT=variant
     Set the short name for the language variant of this vocabulary. The
     name should match the regular expression [a-z][a-z0-9_]*
@@ -116,6 +121,22 @@ Variables for tuning the build process
     versions, describe any modifications made to the released version here.
     It may be best to change this directly in the Makefile.
 
+- make voikko:
+  * VOIKKO_BUILDDIR=path/to/directory
+    Specifies the directory where build files are written to while building
+    for Voikko.
+    Default: voikko (build within source directory)
+  * EXTRA_LEX="path/to/file1.lex path/to/file2.lex ..."
+    Adds extra malaga lexicon files to the vocabulary. By default, no extra
+    lexicons are added.
+  * VANHAHKOT_MUODOT=yes|no
+    See voikko/doc/liput.txt. Default: yes
+  * SUKIJAN_MUODOT=yes|no
+    Include words that exist just for Sukija. Default: no
+  * VOIKKO_DEBUG=yes|no
+    Include information that is not needed by libvoikko but may be needed
+    for debugging or by external applications (full morphological analysis).
+    Default: no
 
 Copyright and license information
 ---------------------------------
