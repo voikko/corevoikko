@@ -207,7 +207,7 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 # Parse command line options and return them in a dictionary
 def get_options():
 	try:
-		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "sourceid", "vanhat", "sukija", "sukija-ys"]
+		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "no-baseform", "sourceid", "vanhat", "sukija", "sukija-ys"]
 		(opts, args) = getopt.getopt(sys.argv[1:], "", optlist)
 	except getopt.GetoptError:
 		sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
@@ -218,6 +218,7 @@ def get_options():
 	           "sourceid": False,
 	           "vanhat": False,
 	           "destdir": None,
+	           "no-baseform": False,
 		   "sukija": False,
 		   "sukija-ys": False}
 	for (name, value) in opts:
@@ -229,6 +230,8 @@ def get_options():
 			options["style"] = value.split(",")
 		elif name == "--destdir":
 			options["destdir"] = value
+		elif name == "--no-baseform":
+			options["no-baseform"] = True
 		elif name == "--sourceid":
 			options["sourceid"] = True
 		elif name == "--vanhat":

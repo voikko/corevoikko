@@ -13,6 +13,7 @@ VANHAHKOT_MUODOT=yes
 VANHAT_MUODOT=no
 SUKIJAN_MUODOT=no
 VOIKKO_DEBUG=no
+VVFST_BASEFORMS=yes
 
 # Include user's configuration
 -include config.mak
@@ -60,6 +61,9 @@ VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_G
 VVFST_TAIVUTUSKAAVAT_OPTS=
 ifeq "$(VANHAT_MUODOT)" "yes"
 	VVFST_TAIVUTUSKAAVAT_OPTS=--vanhat
+endif
+ifeq "$(VVFST_BASEFORMS)" "no"
+	GENLEX_OPTS+=--no-baseform
 endif
 
 # Shared files needed in Voikko

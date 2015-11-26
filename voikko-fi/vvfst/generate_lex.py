@@ -380,8 +380,13 @@ def handle_word(word):
 		alku = alku.lower()
 		(rakenne, alkuWithTags) = get_structure(altform, vfst_word_class, alku)
 		
+		if OPTIONS["no-baseform"]:
+			outputBaseform = ""
+		else:
+			outputBaseform = "[Xp]" + outputBaseform + "[X]"
+		
 		if vfst_word_class == u"[Lh]":
-			entry = u'%s[Xp]%s[X]%s%s%s:%s # ;' % (vfst_word_class, outputBaseform, debug_info, rakenne, alkuWithTags, alku)
+			entry = u'%s%s%s%s%s:%s # ;' % (vfst_word_class, outputBaseform, debug_info, rakenne, alkuWithTags, alku)
 			vocabularyFile.write(entry + u"\n")
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
@@ -399,7 +404,7 @@ def handle_word(word):
 			entry = u'[Lp]%s%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
 			        % (debug_info, rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
-			entry = u'%s[Xp]%s[X]%s%s%s%s%s:%s%s %s%s_%s ;' \
+			entry = u'%s%s%s%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, outputBaseform, debug_info, rakenne, infoFlags,
 			        alkuWithTags, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
