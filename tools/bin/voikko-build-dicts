@@ -4,7 +4,7 @@
 # Copyright 2008 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 # Script for automating the build of multiple dictionary variants for
 # Voikko. This script should be run in the main directory of
-# Suomi-malaga source package.
+# voikko-fi source package.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -42,10 +42,10 @@ def indexHeader(indexFile):
 	indexFile.write(u"table {border-collapse:collapse;}")
 	indexFile.write(u"table td {border:1px solid black;}")
 	indexFile.write(u"</style></head>")
-	indexFile.write(u"<body><h1>Voikon sanaston testiversioita (sanastoformaatti 5)</h1>")
+	indexFile.write(u"<body><h1>Voikon sanaston testiversioita (sanastoformaatin versio 5)</h1>")
 	indexFile.write(u"<p>Tämä sivu ja sivulla olevat Voikon sanaston testiversiot ")
 	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
-	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä. Sanastoformaatti 5 toimii libvoikon version 4.0 ja uudempien kanssa.</p>")
+	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä. <strong>Sanastoformaatti 5 toimii libvoikon version 4.0 ja uudempien kanssa.</strong></p>")
 
 def indexDict(indexFile, dict):
 	indexFile.write(u"<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")

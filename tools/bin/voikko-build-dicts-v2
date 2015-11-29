@@ -36,16 +36,18 @@ def runCmd(cmd):
 		exit(1)
 
 def indexHeader(indexFile):
-	indexFile.write(u"<html><head><title>Voikon sanaston testiversioita</title>")
+	indexFile.write(u"<html><head><title>Voikon sanaston testiversioita (sanastoformaatin versio 2)</title>")
 	indexFile.write(u"<style type='text/css'>")
 	indexFile.write(u".small {font-size:0.8em; font-style:italic;}")
 	indexFile.write(u"table {border-collapse:collapse;}")
 	indexFile.write(u"table td {border:1px solid black;}")
 	indexFile.write(u"</style></head>")
-	indexFile.write(u"<body><h1>Voikon sanaston testiversioita</h1>")
+	indexFile.write(u"<body><h1>Voikon sanaston testiversioita (sanastoformaatin versio 2)</h1>")
 	indexFile.write(u"<p>Tämä sivu ja sivulla olevat Voikon sanaston testiversiot ")
-	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
-	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä.</p>")
+	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts-v2</kbd>.</p>")
+	indexFile.write(u"<p>Näitä sanastoja voi käyttää libvoikon versioilla 2.2 ja uudemmilla. ")
+	indexFile.write(u"Libvoikon versiosta 4.0 lähtien on suositeltavaa käyttää ")
+	indexFile.write(u"<a href='/htp/testing/voikko-snapshot-v5/'>sanastoformaatin 5 mukaisia sanastoja</a>.</p>")
 
 def indexDict(indexFile, dict):
 	indexFile.write(u"<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")
