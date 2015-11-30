@@ -37,7 +37,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
-static const int BUFFER_SIZE = 20000;
+static const size_t BUFFER_SIZE = 20000;
 
 VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) throw(setup::DictionaryException) {
 	transducer = new fst::UnweightedTransducer(fileName.c_str());
