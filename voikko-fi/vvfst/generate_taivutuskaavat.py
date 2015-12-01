@@ -135,12 +135,12 @@ linecount = 0
 while True:
 	line_orig = infile.readline()
 	linecount = linecount + 1
-	if line_orig == u'':
+	if line_orig == '':
 		break
 	line = generate_lex_common.filterVfstInput(line_orig, OPTIONS)
 	if line is None:
 		continue
-	if line.startswith(u'LEXICON '):
+	if line.startswith('LEXICON '):
 		if lexicon != "":
 			appendLexicon(lexicon, lexcLines, lexcFile)
 		lexicon = line[8:]
