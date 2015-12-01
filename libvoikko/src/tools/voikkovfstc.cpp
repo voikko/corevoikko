@@ -374,9 +374,9 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	cerr << "Symbols: " << symVector.size() << endl;
-	cerr << "Transitions: " << transitionCount << endl;
-	cerr << "Final states: " << finalStateCount << endl;
+	cout << "Symbols: " << symVector.size() << endl;
+	cout << "Transitions: " << transitionCount << endl;
+	cout << "Final states: " << finalStateCount << endl;
 	
 	// reorder symbols for faster lookup
 	{
@@ -421,7 +421,7 @@ int main(int argc, char ** argv) {
 		}
 	}
 	// TODO check that currentOffset is not too large
-	cerr << "Overflow cells: " << overflowCells << endl;
+	cout << "Overflow cells: " << overflowCells << endl;
 	
 	ofstream transducerFile(outputFile.c_str(), ios::out | ios::binary);
 	
