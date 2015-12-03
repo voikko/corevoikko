@@ -251,6 +251,7 @@ int main(int argc, char ** argv) {
 	}
 	
 	setlocale(LC_ALL, "");
+	wcout.imbue(locale(""));
 	while (fgetws(line, MAX_PARAGRAPH_LENGTH, stdin)) {
 		lineNumber++;
 		size_t lineLen = wcslen(line);

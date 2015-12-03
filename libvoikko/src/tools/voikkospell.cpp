@@ -485,6 +485,7 @@ int main(int argc, char ** argv) {
 	
 	// Use stdout in wide character mode and stderr in narrow character mode.
 	setlocale(LC_ALL, "");
+	wcout.imbue(locale(""));
 	fwide(stdout, 1);
 	fwide(stderr, -1);
 	initThreads();

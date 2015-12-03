@@ -159,6 +159,7 @@ int main(int argc, char ** argv) {
 	}
 	
 	setlocale(LC_ALL, "");
+	wcout.imbue(locale(""));
 	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
 		size_t lineLen = wcslen(line);
 		if (lineLen == 0) {
