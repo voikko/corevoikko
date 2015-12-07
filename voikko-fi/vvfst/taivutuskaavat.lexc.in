@@ -4726,7 +4726,7 @@ LyhenteenTaivutuspääte_<A>	;
 
 LEXICON LyhenneIlmanLoppuaTaiTaivutusta
 -[Bc]:-	Loppu	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_n	;
+-[Bc]@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@	Sanasto_n	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nl	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_p	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_SALLITTU.ON@	Sanasto_l	;

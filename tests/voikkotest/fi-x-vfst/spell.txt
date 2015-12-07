@@ -3706,6 +3706,7 @@ kaukokäyttöinen
 paukkajalaisia
 eritiheyksinen
 rokokoohon
+n-alkuinen
 
 # = poikkeavat asetukset =
 
