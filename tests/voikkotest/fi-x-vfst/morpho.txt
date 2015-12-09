@@ -2315,3 +2315,8 @@ word:Keski-
  analysis
   CLASS=etuliite
   STRUCTURE==ppppp-
+word:METSÄLUOTEIS-
+ expected:1
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ppppp=ppppppp-
