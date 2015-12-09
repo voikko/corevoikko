@@ -2291,3 +2291,11 @@ word:Isolla-Britannialla
 word:yhteiskuntapoliittinen
  analysis
   CLASS=nimisana_laatusana
+word:ollaksemme
+ expected:1
+ analysis
+  BASEFORM=olla
+  CLASS=teonsana
+  MOOD=A-infinitive
+  NEGATIVE=both
+  POSSESSIVE=1p

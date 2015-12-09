@@ -20,7 +20,7 @@
 
 LEXICON Olla
 ll:ll        Johdin_nimitapa1A_a ;     # Olla.
-[Tn1p]llakse:llakse Omistusliite_a ;  # Ollakseni, ollaksesi, jne.
+?Sukija [Tn1p]llakse:llakse Omistusliite_a ;  # Ollakseni, ollaksesi, jne.
 [Tn2]ll:ll          Johdin_nimitapa2_a ;
 l:l                 Johdin_nimitapa2_tAessA_a	;
 l:l                 Johdin_lUt_a ;

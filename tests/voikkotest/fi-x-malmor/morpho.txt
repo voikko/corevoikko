@@ -595,3 +595,11 @@ word:yhteiskuntapoliittinen
   CLASS=nimisana
  analysis
   CLASS=laatusana
+word:ollaksemme
+ expected:1
+ analysis
+  BASEFORM=olla
+  CLASS=teonsana
+  MOOD=A-infinitive
+  NEGATIVE=both
+  POSSESSIVE=1p
