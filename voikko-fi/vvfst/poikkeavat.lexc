@@ -2425,10 +2425,10 @@ LEXICON AluettaTarkentavatYksinäisetEtuliitteet
 [Xp]Iso[X][Xr]i[X]iso[Bc]-:iso-	Loppu	;
 [Xp]Itä[X][Xr]i[X]itä[Bc]-:itä-	Loppu	;
 [Xp]Kanta[X][Xr]i[X]kanta[Bc]-:kanta-	Loppu	;
-[Xp]Keski[X][Xr]i[X]keski[Bc]-:keski-	Loppu	;
+[Xp]keski[X]keski[Bc]-:keski-	Loppu	;
 [Xp]Länsi[X][Xr]i[X]länsi[Bc]-:länsi-	Loppu	;
 [Xp]Pohjois[X][Xr]i[X]pohjois[Bc]-:pohjois-	Loppu	;
-[Xp]Suur[X][Xr]i[X]suur[Bc]-:suur-	Loppu	;
+[Xp]suur[X]suur[Bc]-:suur-	Loppu	;
 [Xp]Sydän[X][Xr]i[X]sydän[Bc]-:sydän-	Loppu	;
 [Xp]Uusi[X][Xr]i[X]uusi[Bc]-:uusi-	Loppu	;
 

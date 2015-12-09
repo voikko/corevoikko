@@ -987,8 +987,8 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen) {
 	bool isDe = false;
 	size_t hyphenCount = 0;
-	for (size_t j = 0; j + 3 < fstLen; j++) {
-		if (wcsncmp(fstOutput + j, L"[Dg]", 4) == 0) {
+	for (size_t j = 0; j < fstLen; j++) {
+		if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[Dg]", 4) == 0) {
 			size_t hyphensInStructure = 0;
 			for (size_t i = 0; structure[i]; i++) {
 				if (structure[i] == L'i') {
@@ -1001,26 +1001,30 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 				}
 			}
 		}
-		else if (wcsncmp(fstOutput + j, L"[De]", 4) == 0) {
+		else if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[De]", 4) == 0) {
 			isDe = true;
 		}
-		else if (wcsncmp(fstOutput + j, L"[Ln]", 4) == 0) {
+		else if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[Ln]", 4) == 0) {
 			isDe = false;
 		}
 		else if (fstOutput[j] == L'-') {
 			hyphenCount++;
 			if (isDe) {
+				bool toUpper = (j == fstLen - 1);
 				j++;
-				while (j + 4 < fstLen) {
+				while (!toUpper && j + 4 < fstLen) {
 					if (wcsncmp(fstOutput + j, L"[Lep]", 5) == 0) {
-						for (size_t i = 0; structure[i]; i++) {
-							if (structure[i] == L'i' || structure[i] == L'p') {
-								structure[i] = L'i';
-								return;
-							}
-						}
+						toUpper = true;
 					}
 					j++;
+				}
+				if (toUpper) {
+					for (size_t i = 0; structure[i]; i++) {
+						if (structure[i] == L'i' || structure[i] == L'p') {
+							structure[i] = L'i';
+							return;
+						}
+					}
 				}
 			}
 		}

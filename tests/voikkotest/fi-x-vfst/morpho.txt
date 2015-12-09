@@ -2299,3 +2299,19 @@ word:ollaksemme
   MOOD=A-infinitive
   NEGATIVE=both
   POSSESSIVE=1p
+word:Lounais-
+ expected:2
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ipppppp-
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ppppppp-
+word:Keski-
+ expected:2
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ipppp-
+ analysis
+  CLASS=etuliite
+  STRUCTURE==ppppp-
