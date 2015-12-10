@@ -2167,6 +2167,7 @@ LEXICON Poikkeavat_em
 LEXICON Poikkeavat_ep
 [Lp]:	AluettaTarkentavatYksinäisetEtuliitteet	;
 [Lep][Xp]Bangladesh[X][Sn][Ny]bangladesh:bangladesh	Liitesana_a	; ! Estämään tavutus "Banglade-sh[+liitesana]"
+[Lep][Xp]Bangladesh[X][Sn][Ny]bangladesh:bangladesh	PaikannimiYsJatko	; ! Estämään tavutus "Banglade-sh-..."
 [Lep][Xp]Isokyrö[X][Sn][Ny]iso[Bm]kyrö:isokyrö	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokyrö[X][Sg][Ny]ison[Bm]kyrön:isonkyrön	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokyrö[X][Sp][Ny]isoa[Bm]kyröä:isoakyröä	PaikannimiLiOlV_ä	;
@@ -2332,9 +2333,11 @@ LEXICON Poikkeavat_ep
 [Lep][Xp]Uusimaa[X][Sall][Ny]uudelle[Bm]maalle:uudellemaalle	PaikannimiLiOlV_a	;
 [Lep][Xp]Uusimaa[X][Sab][Ny]uudetta[Bm]maatta:uudettamaatta	PaikannimiLiOlV_a	;
 [Lep][Xp]Zürich[X][Sn][Ny]zürich:zürich	Liitesana_ä	; ! Estämään tavutus "Züri-ch[+liitesana]"
+[Lep][Xp]Zürich[X][Sn][Ny]zürich:zürich	PaikannimiYsJatko	; ! Estämään tavutus "Züri-ch-..."
 
 LEXICON Poikkeavat_es
 [Les][Xp]Bach[X][Sn][Ny]bach:bach	Liitesana_a	; ! Estämään tavutus "Ba-ch[+liitesana]"
+[Les][Xp]Bach[X][Sn][Ny]bach:bach	SukunimiYsJatko	; ! Estämään tavutus "Ba-ch-..."
 [Les][Xp]Brontë[X][Sn][Ny]brontë:brontë	SukunimiNormaaliYsJatkoOl_a	;
 [Les][Xp]Brontë[X][Sn][Nm]brontët:brontët	Liitesana_a	;
 [Les][Xp]Brontë[X][Sg][Ny]brontën:brontën	SukunimiYksikönGenetiivinJatko_a	;
@@ -2392,6 +2395,7 @@ LEXICON Poikkeavat_es
 
 LEXICON Poikkeavat_ee
 [Lee][Xp]Friedrich[X][Sn][Ny]friedrich:friedrich	Liitesana_ä	; ! Estämään tavutus "Friedri-ch[+liitesana]"
+[Lee][Xp]Friedrich[X][Sn][Ny]friedrich:friedrich	EtunimiYsJatko	; ! Estämään tavutus "Friedri-ch-..."
 [Lee][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	EtunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t

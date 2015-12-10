@@ -37,6 +37,7 @@ demokraattiosavaltio	de-mo-kraat-ti-osa-val-tio
 kissa/koira     kis-sa/koi-ra
 hatapitk@iki.fi hatapitk@iki.fi
 23.5.2014       23.5.2014
+Bach-trumpetti	Bach-trum-pet-ti
 
 [voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(False)]
 elävä           e-lä-vä
