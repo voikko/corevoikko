@@ -2112,6 +2112,7 @@ LEXICON Oboe
 NimisanaYhteisetYksikönPaikallissijat_a	;
 [Sill][Ny]e:e	NimisanaLiOlN_a	;
 [Sn][Nm]t:t	Liitesana_a	;
+[Sg][Nm]id:id	NimisanaMonikonGenetiiviEnJatko_a	;
 [Sg][Nm]itt:itt	NimisanaMonikonGenetiiviEnJatko_a	;
 [Sp][Nm]ita:ita	NimisanaLiOlV_a	;
 NimisanaYhteisetMonikonSijat2_a	;

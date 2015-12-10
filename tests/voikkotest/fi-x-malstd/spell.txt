@@ -3682,6 +3682,9 @@ EU:kin
 liikkumisvapauden
 !buuatulleen
 n-alkuinen
+!hallintopitäjäään
+hallintopitäjänsä
+oboeiden
 
 # = poikkeavat asetukset =
 

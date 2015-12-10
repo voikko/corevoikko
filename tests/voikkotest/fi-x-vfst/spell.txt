@@ -3707,6 +3707,9 @@ paukkajalaisia
 eritiheyksinen
 rokokoohon
 n-alkuinen
+!hallintopitäjäään
+hallintopitäjänsä
+oboeiden
 
 # = poikkeavat asetukset =
 
