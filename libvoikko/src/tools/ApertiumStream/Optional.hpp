@@ -24,6 +24,8 @@ public:
   ~Optional();
   const OptionalType &operator*() const;
   OptionalType &operator*();
+  const OptionalType *operator->() const;
+  OptionalType *operator->();
   operator bool() const;
 
 private:
@@ -79,6 +81,20 @@ const OptionalType &Optional<OptionalType>::operator*() const {
 template <typename OptionalType>
 OptionalType &Optional<OptionalType>::operator*() {
   return const_cast<OptionalType &>(*static_cast<const Optional &>(*this));
+}
+
+template <typename OptionalType>
+const OptionalType *Optional<OptionalType>::operator->() const {
+  if (TheOptionalTypePointer == NULL)
+    throw OptionalException();
+
+  return TheOptionalTypePointer;
+}
+
+template <typename OptionalType>
+OptionalType *Optional<OptionalType>::operator->() {
+  return const_cast<OptionalType *>(
+      static_cast<const Optional &>(*this).operator->());
 }
 
 template <typename OptionalType> Optional<OptionalType>::operator bool() const {

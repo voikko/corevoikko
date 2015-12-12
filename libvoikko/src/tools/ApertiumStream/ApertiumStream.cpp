@@ -14,7 +14,7 @@ namespace Apertium {
 ApertiumStream::ApertiumStream(std::wistream &CharacterStream_)
     : TheCharacterStream(CharacterStream_) {}
 
-LexicalUnit ApertiumStream::getTheNextLexicalUnit() {
+Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
   LexicalUnit TheLexicalUnit;
 
   std::wstring Lemma;
@@ -299,7 +299,7 @@ LexicalUnit ApertiumStream::getTheNextLexicalUnit() {
     }
   }
 
-  return TheLexicalUnit;
+  return Optional<LexicalUnit>();
 }
 
 void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,

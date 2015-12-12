@@ -351,7 +351,7 @@ int main(int argc, char ** argv) {
 	cache_size = 0;
 	bool list_dicts_requested = false;
 	bool list_capabilities_requested = false;
-  bool apertiumStream = false;
+  bool ApertiumStream = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args.find("-c") == 0) {
@@ -475,7 +475,7 @@ int main(int argc, char ** argv) {
 			continue;
 		}
     else if (args == "--apertium-stream") {
-      apertiumStream = true;
+      ApertiumStream = true;
     }
 		else if (args == "-p" || args == "-d" || args == "-j") {
 			i++;
@@ -495,27 +495,31 @@ int main(int argc, char ** argv) {
 	fwide(stdout, 1);
 	fwide(stderr, -1);
 	initThreads();
-	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
-		size_t lineLen = wcslen(line);
-		if (lineLen == 0) {
-			continue;
-		}
-		if (line[lineLen - 1] == L'\n') {
-			line[lineLen - 1] = L'\0';
-			lineLen--;
-		}
-		if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
-			cerr << "E: Too long word" << endl;
-			continue;
-		}
-    if (apertiumStream) {
-      wistringstream lineStream(line);
-      handleWord(Apertium::ApertiumStream(lineStream).getTheNextLexicalUnit().TheSurfaceForm.c_str());
+
+  if (ApertiumStream) {
+    Apertium::ApertiumStream ApertiumStream_(std::wcin);
+
+    while (Apertium::Optional<Apertium::LexicalUnit> LexicalUnit_ =
+               ApertiumStream_.getTheNextLexicalUnit()) {
+      handleWord(LexicalUnit_->TheSurfaceForm.c_str());
     }
-    else {
+  } else {
+    while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
+      size_t lineLen = wcslen(line);
+      if (lineLen == 0) {
+        continue;
+      }
+      if (line[lineLen - 1] == L'\n') {
+        line[lineLen - 1] = L'\0';
+        lineLen--;
+      }
+      if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
+        cerr << "E: Too long word" << endl;
+        continue;
+      }
       handleWord(line);
     }
-	}
+  }
 	finishProcessing();
 	int error = ferror(stdin);
 	if (error) {

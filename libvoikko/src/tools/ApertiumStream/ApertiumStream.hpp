@@ -21,7 +21,7 @@ public:
   class UnexpectedCharacter;
   class UnexpectedLemma;
   ApertiumStream(std::wistream &CharacterStream_);
-  LexicalUnit getTheNextLexicalUnit();
+  Optional<LexicalUnit> getTheNextLexicalUnit();
 
 private:
   void appendCharacter(LexicalUnit &LexicalUnit_, std::wstring &Lemma,
