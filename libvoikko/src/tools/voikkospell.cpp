@@ -44,6 +44,8 @@
   #include <pthread.h>
 #endif
 
+#include "ApertiumStream/ApertiumStream.hpp"
+
 using namespace std;
 
 
@@ -349,6 +351,7 @@ int main(int argc, char ** argv) {
 	cache_size = 0;
 	bool list_dicts_requested = false;
 	bool list_capabilities_requested = false;
+  bool apertiumStream = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args.find("-c") == 0) {
@@ -471,6 +474,9 @@ int main(int argc, char ** argv) {
 		else if (args.find("-c") == 0) {
 			continue;
 		}
+    else if (args == "--apertium-stream") {
+      apertiumStream = true;
+    }
 		else if (args == "-p" || args == "-d" || args == "-j") {
 			i++;
 			continue;
@@ -502,7 +508,13 @@ int main(int argc, char ** argv) {
 			cerr << "E: Too long word" << endl;
 			continue;
 		}
-		handleWord(line);
+    if (apertiumStream) {
+      wistringstream lineStream(line);
+      handleWord(Apertium::ApertiumStream(lineStream).getTheNextLexicalUnit().TheSurfaceForm.c_str());
+    }
+    else {
+      handleWord(line);
+    }
 	}
 	finishProcessing();
 	int error = ferror(stdin);
