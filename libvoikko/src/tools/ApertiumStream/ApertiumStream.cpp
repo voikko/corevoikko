@@ -12,7 +12,7 @@
 
 namespace Apertium {
 ApertiumStream::ApertiumStream(std::wistream &CharacterStream_)
-    : TheCharacterStream(CharacterStream_) {}
+    : TheCharacterStream(CharacterStream_), TheLineNumber(1) {}
 
 Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
   bool IsEscaped = false;
@@ -41,21 +41,33 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L'$':
           break;
         default:
-          throw;
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_ << L"' following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '[' expected to follow ']' or '$'";
+          throw UnexpectedReservedCharacter(getWhat(Message));
         }
       }
 
       ThePreviousReservedCharacter.set(Character_);
       break;
     case L']':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
-        throw;
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_
+                << L"', ']' expected to follow '['";
+        throw UnexpectedReservedCharacter(getWhat(Message));
+      }
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       default:
-        throw;
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', ']' expected to follow '['";
+        throw UnexpectedReservedCharacter(getWhat(Message));
       }
 
       ThePreviousReservedCharacter.set(Character_);
@@ -70,36 +82,71 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L'$':
           break;
         default:
-          throw;
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_ << L"' following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '^' expected to follow '[', ']', or '$'";
+          throw UnexpectedReservedCharacter(getWhat(Message));
         }
       }
 
       ThePreviousReservedCharacter.set(Character_);
       break;
     case L'/':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
-        throw;
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_
+                << L"', '/' expected to follow '[', to follow '>' immediately, "
+                   L"or to follow '^' or '#' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
+      }
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         continue;
       case L'^':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_
+                  << L"' immediately following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '/' expected to follow '[', to follow '>' "
+                     L"immediately, or to follow '^' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       case L'>':
-        if (!ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_
+                  << L"' not immediately following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '/' expected to follow '[', to follow '>' "
+                     L"immediately, or to follow '^' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       case L'#':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_
+                  << L"' immediately following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '/' expected to follow '[', to follow '>' "
+                     L"immediately, or to follow '^' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       default:
-        throw;
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '/' expected to follow '[', to follow '>' "
+                   L"immediately, or to follow '^' or '#' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
       }
 
       TheLexicalUnit.TheAnalyses.push_back(Analysis());
@@ -115,14 +162,27 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L']':
           continue;
         case L'/':
-          if (!ThePreviousReservedCharacter.isPreviousCharacter)
-            throw;
+          if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+            std::wstringstream Message;
+            Message
+                << L"unexpected '" << Character_
+                << L"' not immediately following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '*' expected to follow '[', ']', or '$' or to follow "
+                   L"'/' immediately";
+            throw UnexpectedReservedCharacter(getWhat(Message));
+          }
 
           break;
         case L'$':
           continue;
         default:
-          throw;
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_ << L"' following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '*' expected to follow '[', ']', or '$' or to follow "
+                     L"'/' immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
         }
 
         ThePreviousReservedCharacter.set(Character_);
@@ -130,29 +190,61 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'<':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
-        throw;
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_
+                << L"', '<' expected to follow '[', to follow '>' immediately, "
+                   L"or to follow '/' or '+' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
+      }
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         continue;
       case L'/':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_ << L"' immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '<' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '/' or '+' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       case L'>':
-        if (!ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_
+              << L"' not immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '<' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '/' or '+' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       case L'+':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_ << L"' immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '<' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '/' or '+' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       default:
-        throw;
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '<' expected to follow '[', to follow '>' immediately, "
+                   L"or to follow '/' or '+' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
       }
 
       ThePreviousReservedCharacter.set(Character_);
@@ -161,19 +253,38 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
           Tag());
       break;
     case L'>':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
-        throw;
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"', '>' expected to "
+                                                    L"follow '[' or to follow "
+                                                    L"'<' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
+      }
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         continue;
       case L'<':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_
+                  << L"' immediately following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '>' expected to "
+                     L"follow '[' or to follow "
+                     L"'<' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       default:
-        throw;
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '>' expected to "
+                   L"follow '[' or to follow "
+                   L"'<' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
       }
 
       ThePreviousReservedCharacter.set(Character_);
@@ -186,14 +297,27 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L']':
           continue;
         case L'>':
-          if (!ThePreviousReservedCharacter.isPreviousCharacter)
-            throw;
+          if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+            std::wstringstream Message;
+            Message
+                << L"unexpected '" << Character_
+                << L"' not immediately following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '#' expected to follow '[', ']', or '$' or to follow "
+                   L"'>' immediately";
+            throw UnexpectedReservedCharacter(getWhat(Message));
+          }
 
           break;
         case L'$':
           continue;
         default:
-          throw;
+          std::wstringstream Message;
+          Message << L"unexpected '" << Character_ << L"' following '"
+                  << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                  << L"', '#' expected to follow '[', ']', or '$' or to follow "
+                     L"'>' immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
         }
 
         ThePreviousReservedCharacter.set(Character_);
@@ -208,13 +332,28 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L']':
           continue;
         case L'>':
-          if (!ThePreviousReservedCharacter.isPreviousCharacter)
-            throw;
+          if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+            std::wstringstream Message;
+            Message
+                << L"unexpected '" << Character_
+                << L"' not immediately following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '+' expected to follow '[', ']', or '$', to follow '>' "
+                   L"immediately, or to follow '#' not immediately";
+            throw UnexpectedReservedCharacter(getWhat(Message));
+          }
 
           break;
         case L'#':
-          if (ThePreviousReservedCharacter.isPreviousCharacter)
-            throw;
+          if (ThePreviousReservedCharacter.isPreviousCharacter) {
+            std::wstringstream Message;
+            Message
+                << L"unexpected '" << Character_ << L"' immediately following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '+' expected to follow '[', ']', or '$', to follow '>' "
+                   L"immediately, or to follow '#' not immediately";
+            throw UnexpectedReservedCharacter(getWhat(Message));
+          }
 
           break;
         case L'$':
@@ -230,32 +369,64 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'$':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
-        throw;
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_
+                << L"', '$' expected to follow '[', to follow '>' immediately, "
+                   L"or to follow '*' or '#' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
+      }
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         continue;
       case L'*':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_ << L"' immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '$' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '*' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         if (Lemma != TheLexicalUnit.TheSurfaceForm)
           throw;
 
         break;
       case L'>':
-        if (!ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (!ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_
+              << L"' not immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '$' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '*' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       case L'#':
-        if (ThePreviousReservedCharacter.isPreviousCharacter)
-          throw;
+        if (ThePreviousReservedCharacter.isPreviousCharacter) {
+          std::wstringstream Message;
+          Message
+              << L"unexpected '" << Character_ << L"' immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"', '$' expected to follow '[', to follow '>' immediately, "
+                 L"or to follow '*' or '#' not immediately";
+          throw UnexpectedReservedCharacter(getWhat(Message));
+        }
 
         break;
       default:
-        throw;
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"', '$' expected to follow '[', to follow '>' immediately, "
+                   L"or to follow '*' or '#' not immediately";
+        throw UnexpectedReservedCharacter(getWhat(Message));
       }
 
       ThePreviousReservedCharacter.set(Character_);
@@ -272,7 +443,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         case L'$':
           break;
         default:
-          throw;
+          std::wstringstream Message;
+          Message
+              << L"unexpected '\\n', '\\n' expected to follow '[', ']', or '$'";
+          throw UnexpectedReservedCharacter(getWhat(Message));
         }
       }
 
@@ -342,10 +516,11 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
   ThePreviousReservedCharacter.isPreviousCharacter = false;
 }
 
-std::wstring ApertiumStream::getWhat(std::wstring Message) {
+std::wstring ApertiumStream::getWhat(const std::wstringstream &Message) {
   std::wstringstream What;
-  What << TheLineNumber << L":" << TheLine.size() << L": " << Message << L'\n'
-       << TheLine << L'\n' << std::wstring(TheLine.size() - 1, L' ') << L"^\n";
+  What << TheLineNumber << L":" << TheLine.size() << L": " << Message.str()
+       << L'\n' << TheLine << L'\n' << std::wstring(TheLine.size() - 1, L' ')
+       << L'^';
   return What.str();
 }
 
@@ -370,10 +545,9 @@ const char *ApertiumStream::Exception::what() const throw() { return What; }
       ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw() {}
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
-APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedCharacter)
+APERTIUM_STREAM_EXCEPTION(UnexpectedReservedCharacter)
 APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
+APERTIUM_STREAM_EXCEPTION(UnexpectedUnreservedCharacter)
 
 #undef APERTIUM_STREAM_EXCEPTION
 }

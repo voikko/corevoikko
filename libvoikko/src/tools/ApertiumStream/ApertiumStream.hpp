@@ -8,6 +8,7 @@
 #include <cstddef>
 #include <exception>
 #include <istream>
+#include <sstream>
 #include <string>
 
 namespace Apertium {
@@ -15,17 +16,16 @@ class ApertiumStream {
 public:
   class Exception;
   class UnexpectedEndOfFile;
-  class UnexpectedPreviousReservedCharacter;
-  class UnexpectedPreviousCharacter;
-  class UnexpectedCharacter;
+  class UnexpectedReservedCharacter;
   class UnexpectedLemma;
+  class UnexpectedUnreservedCharacter;
   ApertiumStream(std::wistream &CharacterStream_);
   Optional<LexicalUnit> getTheNextLexicalUnit();
 
 private:
   void appendCharacter(LexicalUnit &LexicalUnit_, std::wstring &Lemma,
                        const wchar_t &Character_);
-  std::wstring getWhat(std::wstring Message);
+  std::wstring getWhat(const std::wstringstream &Message);
   std::wistream &TheCharacterStream;
   class PreviousReservedCharacter{
   public:
@@ -56,10 +56,9 @@ protected:
   };
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
-APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedCharacter)
+APERTIUM_STREAM_EXCEPTION(UnexpectedReservedCharacter)
 APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
+APERTIUM_STREAM_EXCEPTION(UnexpectedUnreservedCharacter)
 
 #undef APERTIUM_STREAM_EXCEPTION
 }
