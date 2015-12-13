@@ -4,7 +4,5 @@
 #include "Tag.hpp"
 
 namespace Apertium {
-Tag::operator std::wstring &() {
-  return TheTag;
-}
+Tag::operator std::wstring &() { return TheTag; }
 }

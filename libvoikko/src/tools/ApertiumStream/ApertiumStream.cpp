@@ -351,9 +351,7 @@ ApertiumStream::Exception::Exception(const std::wstringstream &What)
 
 ApertiumStream::Exception::~Exception() throw() {}
 
-const char *ApertiumStream::Exception::what() const throw() {
-  return What;
-}
+const char *ApertiumStream::Exception::what() const throw() { return What; }
 
 #define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_HEAD_NAME)         \
   ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME::                        \

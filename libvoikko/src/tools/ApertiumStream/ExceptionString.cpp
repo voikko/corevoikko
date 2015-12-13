@@ -32,11 +32,7 @@ ExceptionString &ExceptionString::operator=(ExceptionString ExceptionString_) {
   return *this;
 }
 
-ExceptionString::~ExceptionString() {
-  delete TheString;
-}
+ExceptionString::~ExceptionString() { delete TheString; }
 
-ExceptionString::operator const char *() const {
-  return TheString;
-}
+ExceptionString::operator const char *() const { return TheString; }
 }

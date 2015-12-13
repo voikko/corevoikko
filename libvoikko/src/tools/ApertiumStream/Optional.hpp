@@ -59,7 +59,7 @@ Optional<OptionalType>::Optional(const Optional &Optional_) {
 
 template <typename OptionalType>
 Optional<OptionalType> &Optional<OptionalType>::operator=(Optional Optional_) {
-  swap(*this,Optional_);
+  swap(*this, Optional_);
   return *this;
 }
 
@@ -80,7 +80,8 @@ const OptionalType &Optional<OptionalType>::operator*() const {
 
 template <typename OptionalType>
 OptionalType &Optional<OptionalType>::operator*() {
-  return const_cast<OptionalType &>(*static_cast<const Optional &>(*this));
+  return const_cast<OptionalType &>(
+      static_cast<const Optional &>(*this).operator*());
 }
 
 template <typename OptionalType>

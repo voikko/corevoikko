@@ -13,6 +13,7 @@ public:
   ExceptionString &operator=(ExceptionString ExceptionString_);
   ~ExceptionString();
   operator const char *() const;
+
 private:
   char *TheString;
   std::size_t TheSize;

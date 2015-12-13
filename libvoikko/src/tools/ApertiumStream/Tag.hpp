@@ -8,6 +8,7 @@ namespace Apertium {
 class Tag {
 public:
   operator std::wstring &();
+
 private:
   std::wstring TheTag;
 };
