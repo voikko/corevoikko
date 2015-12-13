@@ -22,9 +22,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
   bool IsEscaped = false;
 
   while (!TheCharacterStream.eof()) {
-    ++ColumnNumber;
-
     const wchar_t Character_ = TheCharacterStream.get();
+    TheLine += Character_;
 
     if (IsEscaped) {
       appendCharacter(TheLexicalUnit, Lemma, Character_);
@@ -37,12 +36,12 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       IsEscaped = true;
       break;
     case L'[':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         ThePreviousReservedCharacter.set(Character_);
         break;
       }
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L']':
         ThePreviousReservedCharacter.set(Character_);
         break;
@@ -55,10 +54,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L']':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_)
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
         throw;
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         ThePreviousReservedCharacter.set(Character_);
         break;
@@ -67,12 +66,12 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       }
       break;
     case L'^':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         ThePreviousReservedCharacter.set(Character_);
         break;
       }
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       case L']':
@@ -86,10 +85,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'/':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_)
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
         throw;
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       case L'^':
@@ -118,8 +117,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       TheLexicalUnit.TheAnalyses.back().TheMorphemes.push_back(Morpheme());
       break;
     case L'*':
-      if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-        switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
           break;
         case L']':
@@ -139,10 +138,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'<':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_)
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
         throw;
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       case L'/':
@@ -170,10 +169,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
           Tag());
       break;
     case L'>':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_)
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
         throw;
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       case L'<':
@@ -188,8 +187,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'#':
-      if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-        switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
           break;
         case L']':
@@ -209,8 +208,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'+':
-      if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-        switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
           break;
         case L']':
@@ -237,10 +236,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       TheLexicalUnit.TheAnalyses.back().TheMorphemes.push_back(Morpheme());
       break;
     case L'$':
-      if (!ThePreviousReservedCharacter.PreviousReservedCharacter_)
+      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
         throw;
 
-      switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
         break;
       case L'*':
@@ -267,8 +266,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       break;
     case L'\n':
-      if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-        switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
           break;
         case L']':
@@ -280,16 +279,16 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         }
       }
 
-      ++LineNumber;
-      ColumnNumber = 0;
+      ++TheLineNumber;
+      TheLine.clear();
       break;
     default:
       appendCharacter(TheLexicalUnit, Lemma, Character_);
     }
   }
 
-  if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-    switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+  if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+    switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
     case L']':
       break;
     case L'$':
@@ -305,8 +304,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
                                      std::wstring &Lemma,
                                      const wchar_t &Character_) {
-  if (ThePreviousReservedCharacter.PreviousReservedCharacter_) {
-    switch (*ThePreviousReservedCharacter.PreviousReservedCharacter_) {
+  if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+    switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
     case L'[':
       break;
     case L']':
@@ -346,7 +345,19 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
   ThePreviousReservedCharacter.isPreviousCharacter = false;
 }
 
-ApertiumStream::Exception::Exception(const std::wstringstream &What)
+std::wstring ApertiumStream::getWhat(std::wstring Message) {
+  std::wstringstream What;
+  What << TheLineNumber << L":" << TheLine.size() << L": " << Message << L'\n'
+       << TheLine << L'\n' << std::wstring(TheLine.size() - 1, L' ') << L"^\n";
+  return What.str();
+}
+
+void ApertiumStream::PreviousReservedCharacter::set(const wchar_t &Character_) {
+  ThePreviousReservedCharacter = Character_;
+  isPreviousCharacter = true;
+}
+
+ApertiumStream::Exception::Exception(const std::wstring &What)
     : What(What) {}
 
 ApertiumStream::Exception::~Exception() throw() {}
@@ -355,9 +366,8 @@ const char *ApertiumStream::Exception::what() const throw() { return What; }
 
 #define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_HEAD_NAME)         \
   ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME::                        \
-      APERTIUM_STREAM_EXCEPTION_HEAD_NAME(                                     \
-          const std::wstringstream &WhatReference)                             \
-      : ApertiumStream::Exception(WhatReference) {}                            \
+      APERTIUM_STREAM_EXCEPTION_HEAD_NAME(const std::wstring &What)            \
+      : ApertiumStream::Exception(What) {}                                     \
                                                                                \
   ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME::                        \
       ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw() {}

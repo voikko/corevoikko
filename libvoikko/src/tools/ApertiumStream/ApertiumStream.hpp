@@ -8,7 +8,6 @@
 #include <cstddef>
 #include <exception>
 #include <istream>
-#include <sstream>
 #include <string>
 
 namespace Apertium {
@@ -26,23 +25,21 @@ public:
 private:
   void appendCharacter(LexicalUnit &LexicalUnit_, std::wstring &Lemma,
                        const wchar_t &Character_);
+  std::wstring getWhat(std::wstring Message);
   std::wistream &TheCharacterStream;
-  class {
+  class PreviousReservedCharacter{
   public:
-    Optional<wchar_t> PreviousReservedCharacter_;
+    void set(const wchar_t &Character_);
+    Optional<wchar_t> ThePreviousReservedCharacter;
     bool isPreviousCharacter;
-    void set(const wchar_t &Character_) {
-      PreviousReservedCharacter_ = Character_;
-      isPreviousCharacter = true;
-    }
   } ThePreviousReservedCharacter;
-  std::size_t LineNumber;
-  std::size_t ColumnNumber;
+  std::size_t TheLineNumber;
+  std::wstring TheLine;
 };
 
 class ApertiumStream::Exception : public std::exception {
 public:
-  Exception(const std::wstringstream &What);
+  Exception(const std::wstring &What);
   ~Exception() throw();
   const char *what() const throw();
 
@@ -54,8 +51,7 @@ protected:
   class ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME                    \
       : public ApertiumStream::Exception {                                     \
   public:                                                                      \
-    APERTIUM_STREAM_EXCEPTION_HEAD_NAME(                                       \
-        const std::wstringstream &WhatReference);                              \
+    APERTIUM_STREAM_EXCEPTION_HEAD_NAME(const std::wstring &What);             \
     ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw();                            \
   };
 

@@ -2,13 +2,13 @@
 #define EXCEPTIONSTRING_HPP
 
 #include <cstddef>
-#include <sstream>
+#include <string>
 
 namespace Apertium {
 class ExceptionString {
 public:
   friend void swap(ExceptionString &A, ExceptionString &B);
-  ExceptionString(const std::wstringstream &What);
+  ExceptionString(const std::wstring &What);
   ExceptionString(const ExceptionString &ExceptionString_);
   ExceptionString &operator=(ExceptionString ExceptionString_);
   ~ExceptionString();

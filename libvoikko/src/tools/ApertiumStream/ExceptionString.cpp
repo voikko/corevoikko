@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
-#include <sstream>
+#include <string>
 #include <utility>
 
 namespace Apertium {
@@ -14,11 +14,11 @@ void swap(ExceptionString &A, ExceptionString &B) {
   swap(A.TheSize, B.TheSize);
 }
 
-ExceptionString::ExceptionString(const std::wstringstream &What) {
-  std::size_t WhatSize = MB_LEN_MAX * What.str().size();
+ExceptionString::ExceptionString(const std::wstring &What) {
+  std::size_t WhatSize = MB_LEN_MAX * What.size();
   TheSize = WhatSize + 1;
   TheString = new char[TheSize];
-  std::wcstombs(TheString, What.str().c_str(), WhatSize);
+  std::wcstombs(TheString, What.c_str(), WhatSize);
 }
 
 ExceptionString::ExceptionString(const ExceptionString &ExceptionString_) {
