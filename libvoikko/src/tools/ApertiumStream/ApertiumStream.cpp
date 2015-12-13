@@ -15,11 +15,9 @@ ApertiumStream::ApertiumStream(std::wistream &CharacterStream_)
     : TheCharacterStream(CharacterStream_) {}
 
 Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
-  LexicalUnit TheLexicalUnit;
-
-  std::wstring Lemma;
-
   bool IsEscaped = false;
+  LexicalUnit TheLexicalUnit;
+  std::wstring Lemma;
 
   while (!TheCharacterStream.eof()) {
     const wchar_t Character_ = TheCharacterStream.get();
@@ -36,22 +34,18 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       IsEscaped = true;
       break;
     case L'[':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
-        ThePreviousReservedCharacter.set(Character_);
-        break;
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        case L']':
+          break;
+        case L'$':
+          break;
+        default:
+          throw;
+        }
       }
 
-      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
-      case L']':
-        ThePreviousReservedCharacter.set(Character_);
-        break;
-      case L'$':
-        ThePreviousReservedCharacter.set(Character_);
-        break;
-      default:
-        throw;
-      }
-
+      ThePreviousReservedCharacter.set(Character_);
       break;
     case L']':
       if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
@@ -59,30 +53,28 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
-        ThePreviousReservedCharacter.set(Character_);
         break;
       default:
         throw;
       }
+
+      ThePreviousReservedCharacter.set(Character_);
       break;
     case L'^':
-      if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
-        ThePreviousReservedCharacter.set(Character_);
-        break;
+      if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
+        case L'[':
+          continue;
+        case L']':
+          break;
+        case L'$':
+          break;
+        default:
+          throw;
+        }
       }
 
-      switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
-      case L'[':
-        break;
-      case L']':
-        ThePreviousReservedCharacter.set(Character_);
-        break;
-      case L'$':
-        ThePreviousReservedCharacter.set(Character_);
-      default:
-        throw;
-      }
-
+      ThePreviousReservedCharacter.set(Character_);
       break;
     case L'/':
       if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
@@ -90,24 +82,21 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
-        break;
+        continue;
       case L'^':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       case L'>':
         if (!ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       case L'#':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       default:
         throw;
@@ -115,25 +104,28 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       TheLexicalUnit.TheAnalyses.push_back(Analysis());
       TheLexicalUnit.TheAnalyses.back().TheMorphemes.push_back(Morpheme());
+
+      ThePreviousReservedCharacter.set(Character_);
       break;
     case L'*':
       if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
-          break;
+          continue;
         case L']':
-          break;
+          continue;
         case L'/':
           if (!ThePreviousReservedCharacter.isPreviousCharacter)
             throw;
 
-          ThePreviousReservedCharacter.set(Character_);
           break;
         case L'$':
-          break;
+          continue;
         default:
           throw;
         }
+
+        ThePreviousReservedCharacter.set(Character_);
       }
 
       break;
@@ -143,27 +135,27 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
-        break;
+        continue;
       case L'/':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       case L'>':
         if (!ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
+        break;
       case L'+':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       default:
         throw;
       }
+
+      ThePreviousReservedCharacter.set(Character_);
 
       TheLexicalUnit.TheAnalyses.back().TheMorphemes.back().TheTags.push_back(
           Tag());
@@ -174,36 +166,37 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
-        break;
+        continue;
       case L'<':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        ThePreviousReservedCharacter.set(Character_);
         break;
       default:
         throw;
       }
 
+      ThePreviousReservedCharacter.set(Character_);
       break;
     case L'#':
       if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
-          break;
+          continue;
         case L']':
-          break;
+          continue;
         case L'>':
           if (!ThePreviousReservedCharacter.isPreviousCharacter)
             throw;
 
-          ThePreviousReservedCharacter.set(Character_);
           break;
         case L'$':
-          break;
+          continue;
         default:
           throw;
         }
+
+        ThePreviousReservedCharacter.set(Character_);
       }
 
       break;
@@ -211,29 +204,30 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
       if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         case L'[':
-          break;
+          continue;
         case L']':
-          break;
+          continue;
         case L'>':
           if (!ThePreviousReservedCharacter.isPreviousCharacter)
             throw;
 
-          ThePreviousReservedCharacter.set(Character_);
           break;
         case L'#':
           if (ThePreviousReservedCharacter.isPreviousCharacter)
             throw;
 
-          ThePreviousReservedCharacter.set(Character_);
           break;
         case L'$':
-          break;
+          continue;
         default:
           break;
         }
+
+        ThePreviousReservedCharacter.set(Character_);
+
+        TheLexicalUnit.TheAnalyses.back().TheMorphemes.push_back(Morpheme());
       }
 
-      TheLexicalUnit.TheAnalyses.back().TheMorphemes.push_back(Morpheme());
       break;
     case L'$':
       if (!ThePreviousReservedCharacter.ThePreviousReservedCharacter)
@@ -241,7 +235,7 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
 
       switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
       case L'[':
-        break;
+        continue;
       case L'*':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
@@ -249,21 +243,24 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         if (Lemma != TheLexicalUnit.TheSurfaceForm)
           throw;
 
-        return TheLexicalUnit;
+        break;
       case L'>':
         if (!ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        return TheLexicalUnit;
+        break;
       case L'#':
         if (ThePreviousReservedCharacter.isPreviousCharacter)
           throw;
 
-        return TheLexicalUnit;
+        break;
       default:
         throw;
       }
 
+      ThePreviousReservedCharacter.set(Character_);
+
+      return TheLexicalUnit;
       break;
     case L'\n':
       if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
