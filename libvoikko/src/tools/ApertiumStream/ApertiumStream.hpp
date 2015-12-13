@@ -16,9 +16,10 @@ class ApertiumStream {
 public:
   class Exception;
   class UnexpectedEndOfFile;
+  class UnexpectedPreviousReservedCharacter;
   class UnexpectedReservedCharacter;
-  class UnexpectedLemma;
   class UnexpectedUnreservedCharacter;
+  class UnexpectedLemma;
   ApertiumStream(std::wistream &CharacterStream_);
   Optional<LexicalUnit> getTheNextLexicalUnit();
 
@@ -56,9 +57,10 @@ protected:
   };
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
+APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)
 APERTIUM_STREAM_EXCEPTION(UnexpectedReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 APERTIUM_STREAM_EXCEPTION(UnexpectedUnreservedCharacter)
+APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 
 #undef APERTIUM_STREAM_EXCEPTION
 }

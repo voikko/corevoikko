@@ -391,8 +391,12 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
           throw UnexpectedReservedCharacter(getWhat(Message));
         }
 
-        if (Lemma != TheLexicalUnit.TheSurfaceForm)
-          throw;
+        if (Lemma != TheLexicalUnit.TheSurfaceForm) {
+          std::wstringstream Message;
+          Message << L"unexpected lemma '" << Lemma << L"', expected '"
+                  << TheLexicalUnit.TheSurfaceForm << L"'";
+          throw UnexpectedLemma(getWhat(Message));
+        }
 
         break;
       case L'>':
@@ -465,7 +469,10 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
     case L'$':
       break;
     default:
-      throw;
+      std::wstringstream Message;
+      Message << L"unexpected end-of-file, end-of-file expected to follow ']' "
+                 L"or '$'";
+      throw UnexpectedEndOfFile(getWhat(Message));
     }
   }
 
@@ -497,7 +504,13 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
           .push_back(Character_);
       break;
     case L'>':
-      throw;
+      {
+        std::wstringstream Message;
+        Message << L"unexpected '" << Character_ << L"' immediately following '"
+                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+                << L"'";
+        throw UnexpectedUnreservedCharacter(getWhat(Message));
+    }
     case L'#':
       LexicalUnit_.TheAnalyses.back().TheMorphemes.back().TheLemma.push_back(
           Character_);
@@ -509,7 +522,11 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
     case L'$':
       break;
     default:
-      throw;
+      std::wstringstream Message;
+      Message << L"unexpected previous reserved or special character '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"'";
+      throw UnexpectedPreviousReservedCharacter(getWhat(Message));
     }
   }
 
@@ -545,9 +562,10 @@ const char *ApertiumStream::Exception::what() const throw() { return What; }
       ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw() {}
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
+APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)
 APERTIUM_STREAM_EXCEPTION(UnexpectedReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 APERTIUM_STREAM_EXCEPTION(UnexpectedUnreservedCharacter)
+APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 
 #undef APERTIUM_STREAM_EXCEPTION
 }
