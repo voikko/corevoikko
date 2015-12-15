@@ -19,16 +19,16 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
   std::wstring Lemma;
 
   while (true) {
-    TheLine.push_back(TheCharacterStream.get());
+    const wchar_t Character_ = TheCharacterStream.get();
 
     if (TheCharacterStream.eof())
       break;
 
-    const wchar_t &Character_ = *TheLine.rbegin();
+    TheLine.push_back(Character_);
 
     switch (Character_) {
-    case L'\\':
-      TheLine.push_back(TheCharacterStream.get());
+    case L'\\': {
+      const wchar_t Character_ = TheCharacterStream.get();
 
       if (TheCharacterStream.eof()) {
         std::wstringstream Message;
@@ -37,8 +37,9 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
         throw UnexpectedEndOfFile(getWhat(Message));
       }
 
-      appendCharacter(TheLexicalUnit, Lemma, *TheLine.rbegin());
-      break;
+      TheLine.push_back(Character_);
+      appendCharacter(TheLexicalUnit, Lemma, Character_);
+    } break;
     case L'[':
       if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
         switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
