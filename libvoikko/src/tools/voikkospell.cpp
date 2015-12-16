@@ -44,7 +44,7 @@
   #include <pthread.h>
 #endif
 
-#include "ApertiumStream/ApertiumStream.hpp"
+#include "Apertium/Stream.hpp"
 
 using namespace std;
 
@@ -497,7 +497,7 @@ int main(int argc, char ** argv) {
 	initThreads();
 
   if (ApertiumStream) {
-    Apertium::ApertiumStream ApertiumStream_(std::wcin);
+    Apertium::Stream ApertiumStream_(std::wcin);
 
     while (Apertium::Optional<Apertium::LexicalUnit> LexicalUnit_ =
                ApertiumStream_.getTheNextLexicalUnit()) {
