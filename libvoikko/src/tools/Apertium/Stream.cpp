@@ -1,4 +1,4 @@
-#include "ApertiumStream.hpp"
+#include "Stream.hpp"
 
 #include "Analysis.hpp"
 #include "LexicalUnit.hpp"
@@ -11,10 +11,10 @@
 #include <string>
 
 namespace Apertium {
-ApertiumStream::ApertiumStream(std::wistream &CharacterStream_)
+Stream::Stream(std::wistream &CharacterStream_)
     : TheCharacterStream(CharacterStream_), TheLineNumber(1) {}
 
-Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
+Optional<LexicalUnit> Stream::getTheNextLexicalUnit() {
   LexicalUnit TheLexicalUnit;
   std::wstring Lemma;
 
@@ -492,9 +492,8 @@ Optional<LexicalUnit> ApertiumStream::getTheNextLexicalUnit() {
   return Optional<LexicalUnit>();
 }
 
-void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
-                                     std::wstring &Lemma,
-                                     const wchar_t &Character_) {
+void Stream::appendCharacter(LexicalUnit &LexicalUnit_, std::wstring &Lemma,
+                             const wchar_t &Character_) {
   if (ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
     switch (*ThePreviousReservedCharacter.ThePreviousReservedCharacter) {
     case L'[':
@@ -516,13 +515,12 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
           LexicalUnit_.TheAnalyses.back().TheMorphemes.back().TheTags.back())
           .push_back(Character_);
       break;
-    case L'>':
-      {
-        std::wstringstream Message;
-        Message << L"unexpected '" << Character_ << L"' immediately following '"
-                << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
-                << L"'";
-        throw UnexpectedUnreservedCharacter(getWhat(Message));
+    case L'>': {
+      std::wstringstream Message;
+      Message << L"unexpected '" << Character_ << L"' immediately following '"
+              << *ThePreviousReservedCharacter.ThePreviousReservedCharacter
+              << L"'";
+      throw UnexpectedUnreservedCharacter(getWhat(Message));
     }
     case L'#':
       LexicalUnit_.TheAnalyses.back().TheMorphemes.back().TheLemma.push_back(
@@ -546,7 +544,7 @@ void ApertiumStream::appendCharacter(LexicalUnit &LexicalUnit_,
   ThePreviousReservedCharacter.isPreviousCharacter = false;
 }
 
-std::wstring ApertiumStream::getWhat(const std::wstringstream &Message) {
+std::wstring Stream::getWhat(const std::wstringstream &Message) {
   std::wstringstream What;
   What << TheLineNumber << L":" << TheLine.size() << L": " << Message.str()
        << L'\n' << TheLine << L'\n' << std::wstring(TheLine.size() - 1, L' ')
@@ -554,25 +552,24 @@ std::wstring ApertiumStream::getWhat(const std::wstringstream &Message) {
   return What.str();
 }
 
-void ApertiumStream::PreviousReservedCharacter::set(const wchar_t &Character_) {
+void Stream::PreviousReservedCharacter::set(const wchar_t &Character_) {
   ThePreviousReservedCharacter = Character_;
   isPreviousCharacter = true;
 }
 
-ApertiumStream::Exception::Exception(const std::wstring &What)
-    : What(What) {}
+Stream::Exception::Exception(const std::wstring &What) : What(What) {}
 
-ApertiumStream::Exception::~Exception() throw() {}
+Stream::Exception::~Exception() throw() {}
 
-const char *ApertiumStream::Exception::what() const throw() { return What; }
+const char *Stream::Exception::what() const throw() { return What; }
 
-#define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_HEAD_NAME)         \
-  ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME::                        \
-      APERTIUM_STREAM_EXCEPTION_HEAD_NAME(const std::wstring &What)            \
-      : ApertiumStream::Exception(What) {}                                     \
+#define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_NAME)              \
+  Stream::APERTIUM_STREAM_EXCEPTION_NAME::APERTIUM_STREAM_EXCEPTION_NAME(      \
+      const std::wstring &What)                                                \
+      : Stream::Exception(What) {}                                             \
                                                                                \
-  ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME::                        \
-      ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw() {}
+  Stream::APERTIUM_STREAM_EXCEPTION_NAME::                                     \
+      ~APERTIUM_STREAM_EXCEPTION_NAME() throw() {}
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
 APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)

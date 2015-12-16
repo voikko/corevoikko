@@ -1,5 +1,5 @@
-#ifndef APERTIUM_STREAM_HPP
-#define APERTIUM_STREAM_HPP
+#ifndef STREAM_HPP
+#define STREAM_HPP
 
 #include "ExceptionString.hpp"
 #include "LexicalUnit.hpp"
@@ -12,7 +12,7 @@
 #include <string>
 
 namespace Apertium {
-class ApertiumStream {
+class Stream {
 public:
   class Exception;
   class UnexpectedEndOfFile;
@@ -20,7 +20,7 @@ public:
   class UnexpectedReservedCharacter;
   class UnexpectedUnreservedCharacter;
   class UnexpectedLemma;
-  ApertiumStream(std::wistream &CharacterStream_);
+  Stream(std::wistream &CharacterStream_);
   Optional<LexicalUnit> getTheNextLexicalUnit();
 
 private:
@@ -28,7 +28,7 @@ private:
                        const wchar_t &Character_);
   std::wstring getWhat(const std::wstringstream &Message);
   std::wistream &TheCharacterStream;
-  class PreviousReservedCharacter{
+  class PreviousReservedCharacter {
   public:
     void set(const wchar_t &Character_);
     Optional<wchar_t> ThePreviousReservedCharacter;
@@ -38,7 +38,7 @@ private:
   std::wstring TheLine;
 };
 
-class ApertiumStream::Exception : public std::exception {
+class Stream::Exception : public std::exception {
 public:
   Exception(const std::wstring &What);
   ~Exception() throw();
@@ -48,12 +48,11 @@ protected:
   ExceptionString What;
 };
 
-#define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_HEAD_NAME)         \
-  class ApertiumStream::APERTIUM_STREAM_EXCEPTION_HEAD_NAME                    \
-      : public ApertiumStream::Exception {                                     \
+#define APERTIUM_STREAM_EXCEPTION(APERTIUM_STREAM_EXCEPTION_NAME)              \
+  class Stream::APERTIUM_STREAM_EXCEPTION_NAME : public Stream::Exception {    \
   public:                                                                      \
-    APERTIUM_STREAM_EXCEPTION_HEAD_NAME(const std::wstring &What);             \
-    ~APERTIUM_STREAM_EXCEPTION_HEAD_NAME() throw();                            \
+    APERTIUM_STREAM_EXCEPTION_NAME(const std::wstring &What);                  \
+    ~APERTIUM_STREAM_EXCEPTION_NAME() throw();                                 \
   };
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
@@ -65,4 +64,4 @@ APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 #undef APERTIUM_STREAM_EXCEPTION
 }
 
-#endif // APERTIUM_STREAM_HPP
+#endif // STREAM_HPP
