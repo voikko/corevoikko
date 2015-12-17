@@ -45,6 +45,7 @@
 #endif
 
 #include "Apertium/Stream.hpp"
+#include "Apertium/StreamType.hpp"
 
 using namespace std;
 
@@ -62,6 +63,7 @@ static bool oneLineOutput = false;
 static char wordSeparator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
 static int threadCount = 1;
+static bool ApertiumStream = false;
 
 struct speller_t {
 	VoikkoHandle * handle;
@@ -98,7 +100,31 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 		return;
 	}
 	
-	if (oneLineOutput) {
+  if (ApertiumStream) {
+    out << L'^';
+
+    if (result) {
+      out << word << L'/' << word << L'$';
+      return;
+    }
+
+    out << L'*' << word;
+    wchar_t **Suggestions = voikkoSuggestUcs4(handle, word);
+
+    if (Suggestions != NULL) {
+      for (std::size_t SuggestionIndex = 0;
+           Suggestions[SuggestionIndex] != NULL; ++SuggestionIndex) {
+        out << L'/' << Suggestions[SuggestionIndex];
+      }
+
+      voikko_free_suggest_ucs4(Suggestions);
+    }
+
+    out << L'$';
+    return;
+  }
+
+  if (oneLineOutput) {
 		out << word;
 		if (!result) {
 			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
@@ -351,7 +377,6 @@ int main(int argc, char ** argv) {
 	cache_size = 0;
 	bool list_dicts_requested = false;
 	bool list_capabilities_requested = false;
-  bool ApertiumStream = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args.find("-c") == 0) {
@@ -499,9 +524,14 @@ int main(int argc, char ** argv) {
   if (ApertiumStream) {
     Apertium::Stream ApertiumStream_(std::wcin);
 
-    while (Apertium::Optional<Apertium::LexicalUnit> LexicalUnit_ =
-               ApertiumStream_.getTheNextLexicalUnit()) {
-      handleWord(LexicalUnit_->TheSurfaceForm.c_str());
+    while (true) {
+      Apertium::StreamType StreamType_ = ApertiumStream_.getTheNextStreamType();
+      std::wcout << StreamType_.TheString;
+
+      if (StreamType_.TheLexicalUnit)
+        handleWord(StreamType_.TheLexicalUnit->TheSurfaceForm.c_str());
+      else
+        break;
     }
   } else {
     while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
