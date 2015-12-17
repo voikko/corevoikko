@@ -2,8 +2,8 @@
 #define STREAM_HPP
 
 #include "ExceptionString.hpp"
-#include "LexicalUnit.hpp"
 #include "Optional.hpp"
+#include "StreamType.hpp"
 
 #include <cstddef>
 #include <exception>
@@ -16,24 +16,26 @@ class Stream {
 public:
   class Exception;
   class UnexpectedEndOfFile;
-  class UnexpectedPreviousReservedCharacter;
-  class UnexpectedReservedCharacter;
-  class UnexpectedUnreservedCharacter;
+  class UnexpectedPreviousCase;
+  class UnexpectedCase;
+  class UnexpectedCharacter;
   class UnexpectedLemma;
   Stream(std::wistream &CharacterStream_);
-  Optional<LexicalUnit> getTheNextLexicalUnit();
+  StreamType getTheNextStreamType();
 
 private:
-  void appendCharacter(LexicalUnit &LexicalUnit_, std::wstring &Lemma,
+  void appendCharacter(StreamType &StreamType_, std::wstring &Lemma,
                        const wchar_t &Character_);
+  StreamType getEndOfFile(StreamType &StreamType_, std::wstring &Lemma,
+                          const wchar_t &Character_);
   std::wstring getWhat(const std::wstringstream &Message);
   std::wistream &TheCharacterStream;
-  class PreviousReservedCharacter {
+  class PreviousCase {
   public:
     void set(const wchar_t &Character_);
-    Optional<wchar_t> ThePreviousReservedCharacter;
+    Optional<wchar_t> ThePreviousCase;
     bool isPreviousCharacter;
-  } ThePreviousReservedCharacter;
+  } ThePreviousCase;
   std::size_t TheLineNumber;
   std::wstring TheLine;
 };
@@ -56,9 +58,9 @@ protected:
   };
 
 APERTIUM_STREAM_EXCEPTION(UnexpectedEndOfFile)
-APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedReservedCharacter)
-APERTIUM_STREAM_EXCEPTION(UnexpectedUnreservedCharacter)
+APERTIUM_STREAM_EXCEPTION(UnexpectedPreviousCase)
+APERTIUM_STREAM_EXCEPTION(UnexpectedCase)
+APERTIUM_STREAM_EXCEPTION(UnexpectedCharacter)
 APERTIUM_STREAM_EXCEPTION(UnexpectedLemma)
 
 #undef APERTIUM_STREAM_EXCEPTION

@@ -1,8 +1,7 @@
-#include <ostream>
-#include <string>
-
 #include "Tag.hpp"
 
+#include <string>
+
 namespace Apertium {
-Tag::operator std::wstring &() { return TheTag; }
+Tag::operator std::wstring() const { return L"<" + TheTag + L">"; }
 }

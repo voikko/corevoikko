@@ -3,7 +3,6 @@
 
 #include "Morpheme.hpp"
 
-#include <ostream>
 #include <string>
 #include <vector>
 

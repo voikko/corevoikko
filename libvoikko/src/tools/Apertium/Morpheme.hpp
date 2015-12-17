@@ -3,7 +3,6 @@
 
 #include "Tag.hpp"
 
-#include <ostream>
 #include <string>
 #include <vector>
 
