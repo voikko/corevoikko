@@ -3,5 +3,5 @@
 #include <string>
 
 namespace Apertium {
-Tag::operator std::wstring() const { return L"<" + TheTag + L">"; }
+Tag::operator std::wstring() const { return L'<' + TheTag + L'>'; }
 }

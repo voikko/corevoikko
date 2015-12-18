@@ -9,6 +9,7 @@
 namespace Apertium {
 class Analysis {
 public:
+  operator std::wstring() const;
   std::vector<Morpheme> TheMorphemes;
 };
 }

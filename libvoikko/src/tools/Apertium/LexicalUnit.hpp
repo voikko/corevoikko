@@ -10,6 +10,7 @@
 namespace Apertium {
 class LexicalUnit {
 public:
+  operator std::wstring() const;
   std::wstring TheSurfaceForm;
   std::vector<Analysis> TheAnalyses;
 };

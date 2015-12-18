@@ -24,7 +24,7 @@ StreamType Stream::getTheNextStreamType() {
     if (TheCharacterStream.eof())
       break;
 
-    TheLine.push_back(Character_);
+    TheLine += Character_;
 
     switch (Character_) {
     case L'\\': {
@@ -38,7 +38,7 @@ StreamType Stream::getTheNextStreamType() {
         throw UnexpectedEndOfFile(getWhat(Message));
       }
 
-      TheLine.push_back(Character_);
+      TheLine += Character_;
       appendCharacter(TheStreamType, Lemma, Character_);
     } break;
     case L'[':
@@ -519,26 +519,26 @@ void Stream::appendCharacter(StreamType &StreamType_, std::wstring &Lemma,
   if (ThePreviousCase.ThePreviousCase) {
     switch (*ThePreviousCase.ThePreviousCase) {
     case L'[':
-      StreamType_.TheString.push_back(Character_);
+      StreamType_.TheString += Character_;
       break;
     case L']':
-      StreamType_.TheString.push_back(Character_);
+      StreamType_.TheString += Character_;
       break;
     case L'^':
-      StreamType_.TheLexicalUnit->TheSurfaceForm.push_back(Character_);
+      StreamType_.TheLexicalUnit->TheSurfaceForm += Character_;
       break;
     case L'/':
       StreamType_.TheLexicalUnit->TheAnalyses.back().TheMorphemes.back().TheLemma.push_back(
           Character_);
       break;
     case L'*':
-      Lemma.push_back(Character_);
+      Lemma += Character_;
       break;
     case L'<':
       StreamType_.TheLexicalUnit->TheAnalyses.back()
           .TheMorphemes.back()
           .TheTags.back()
-          .TheTag.push_back(Character_);
+          .TheTag += Character_;
       break;
     case L'>': {
       std::wstringstream Message;
@@ -556,7 +556,7 @@ void Stream::appendCharacter(StreamType &StreamType_, std::wstring &Lemma,
           Character_);
       break;
     case L'$':
-      StreamType_.TheString.push_back(Character_);
+      StreamType_.TheString += Character_;
       break;
     default:
       std::wstringstream Message;
@@ -566,7 +566,7 @@ void Stream::appendCharacter(StreamType &StreamType_, std::wstring &Lemma,
       throw UnexpectedPreviousCase(getWhat(Message));
     }
   } else
-    StreamType_.TheString.push_back(Character_);
+    StreamType_.TheString += Character_;
 
   ThePreviousCase.isPreviousCharacter = false;
 }
@@ -579,7 +579,7 @@ StreamType Stream::getEndOfFile(StreamType &StreamType_, std::wstring &Lemma,
     const wchar_t Character_ = TheCharacterStream.get();
 
     if (!TheCharacterStream.eof()) {
-      TheLine.push_back(Character_);
+      TheLine += Character_;
       appendCharacter(StreamType_, Lemma, Character_);
       std::wstringstream Message;
       Message << L"unexpected '" << Character_
