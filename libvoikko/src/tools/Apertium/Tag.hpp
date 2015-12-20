@@ -6,7 +6,6 @@
 namespace Apertium {
 class Tag {
 public:
-  operator std::wstring() const;
   std::wstring TheTag;
 };
 }

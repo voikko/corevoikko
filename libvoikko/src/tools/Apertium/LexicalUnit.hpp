@@ -3,14 +3,12 @@
 
 #include "Analysis.hpp"
 
-#include <ostream>
 #include <string>
 #include <vector>
 
 namespace Apertium {
 class LexicalUnit {
 public:
-  operator std::wstring() const;
   std::wstring TheSurfaceForm;
   std::vector<Analysis> TheAnalyses;
 };

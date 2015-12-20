@@ -20,13 +20,9 @@ TOOLCXXFLAGS = $(AM_CXXFLAGS)
 TOOLLDADD = ../libvoikko.la
 
 voikkospell_SOURCES = voikkospell.cpp \
-		      Apertium/Analysis.cpp \
 		      Apertium/ExceptionString.cpp \
-		      Apertium/LexicalUnit.cpp \
-		      Apertium/Morpheme.cpp \
 		      Apertium/OptionalException.cpp \
-		      Apertium/Stream.cpp \
-		      Apertium/Tag.cpp
+		      Apertium/Stream.cpp
 voikkospell_CXXFLAGS = $(TOOLCXXFLAGS)
 voikkospell_LDADD = $(TOOLLDADD)
 
