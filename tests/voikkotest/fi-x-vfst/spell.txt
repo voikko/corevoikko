@@ -3710,6 +3710,7 @@ n-alkuinen
 !hallintopitäjäään
 hallintopitäjänsä
 oboeiden
+EU-johtoinen
 
 # = poikkeavat asetukset =
 
