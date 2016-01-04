@@ -695,11 +695,12 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]ylösrakentavainen[X]ylös[Bm]rakentavai:ylösrakentavai LaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_nl
-[Lnl][Xp]ranskalainen[X]franska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
+[Lnl][Xp]isonlainen[X]isollai:isollai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]kaikenlainen[X]kaikel[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]ranskalainen[X]franska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]roomalainen[X]roma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]suurenmoinen[X]suurem[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
 
