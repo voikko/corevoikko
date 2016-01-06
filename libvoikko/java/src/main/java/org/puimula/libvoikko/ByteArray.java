@@ -29,6 +29,7 @@
 package org.puimula.libvoikko;
 
 import java.nio.charset.Charset;
+import java.nio.ByteBuffer;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
@@ -64,6 +65,22 @@ public class ByteArray extends PointerType {
         byte[] stringBytes = string.getBytes(UTF8);
         byte[] allBytes = new byte[stringBytes.length + 1];
         System.arraycopy(stringBytes, 0, allBytes, 0, stringBytes.length);
+        return allBytes;
+    }
+
+    /**
+     * Java-to-native string mapping (using direct ByteBuffer)
+     * @param string
+     * @return native string
+     */
+    public static ByteBuffer s2bb(String string) {
+        if (string == null) {
+            return null;
+        }
+        byte[] stringBytes = string.getBytes(UTF8);
+        ByteBuffer allBytes = ByteBuffer.allocateDirect(stringBytes.length + 1);
+        allBytes.position(0);
+        allBytes.put(stringBytes);
         return allBytes;
     }
 

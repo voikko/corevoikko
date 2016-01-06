@@ -30,6 +30,7 @@ package org.puimula.libvoikko;
 
 import static org.puimula.libvoikko.ByteArray.n2s;
 import static org.puimula.libvoikko.ByteArray.s2n;
+import static org.puimula.libvoikko.ByteArray.s2bb;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -327,13 +328,14 @@ public class Voikko {
     private List<Token> tokensNonNull(String text) {
         Libvoikko lib = getLib();
         List<Token> result = new ArrayList<Token>();
-        byte[] textBytes = s2n(text);
+        ByteBuffer textBytes = s2bb(text);
         int bytesStart = 0;
         int textStart = 0;
-        int bytesLen = textBytes.length - 1;
+        int bytesLen = textBytes.capacity() - 1;
         SizeTByReference tokenLenByRef = new SizeTByReference();
         while (bytesLen > 0) {
-            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, ByteBuffer.wrap(textBytes, bytesStart, bytesLen), new SizeT(bytesLen), tokenLenByRef);
+            textBytes.position(bytesStart);
+            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new SizeT(bytesLen), tokenLenByRef);
             int tokenLen = tokenLenByRef.getValue().intValue();
             TokenType tokenType = TokenType.values()[tokenTypeInt];
             String tokenText = text.substring(textStart, textStart + tokenLen);

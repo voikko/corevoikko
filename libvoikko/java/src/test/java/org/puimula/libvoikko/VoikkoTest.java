@@ -466,8 +466,7 @@ public class VoikkoTest {
     public void tokenizationWorksForHugeParagraphs() {
         final String seedSentence = "Kissa on 29 vuotta vanha... Onhan se silloin vanha. ";
         final int tokensInSeed = 20;
-        // TODO there is still something wrong, we should do much better...
-        final int repeats = 1000;
+        final int repeats = 10000;
         StringBuilder hugeParagraph = new StringBuilder(seedSentence.length() * repeats);
         for (int i = 0; i < repeats; i++) {
             hugeParagraph.append(seedSentence);
