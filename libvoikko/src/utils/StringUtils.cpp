@@ -28,6 +28,7 @@
 
 #include "utils/StringUtils.hpp"
 #include "utf8/utf8.hpp"
+#include <algorithm>
 #include <cstring>
 #include <cstdlib>
 #include <cwchar>
@@ -37,11 +38,10 @@ namespace libvoikko { namespace utils {
 wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {
 	return ucs4FromUtf8(original, strlen(original));
 }
-	
-wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCount) {
+
+static wchar_t * doUcs4FromUtf8(const char * const original, size_t chars) {
 	wchar_t * ucs4Buffer = 0;
 	try {
-		size_t chars = utf8::distance(original, original + byteCount);
 		ucs4Buffer = new wchar_t[chars + 1];
 		const char * origPtr = original;
 		for (size_t i = 0; i < chars; i++) {
@@ -52,8 +52,29 @@ wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCoun
 		ucs4Buffer[chars] = L'\0';
 		return ucs4Buffer;
 	} catch (...) {
-		// invalid UTF-8 sequence or not enough memory
+		// not enough memory
 		delete[] ucs4Buffer;
+		return 0;
+	}
+}
+
+wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCount) {
+	try {
+		size_t chars = utf8::distance(original, original + byteCount);
+		return doUcs4FromUtf8(original, chars);
+	} catch (...) {
+		// invalid UTF-8 sequence
+		return 0;
+	}
+}
+
+wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCount, size_t maxChars) {
+	try {
+		size_t maxDist = std::min(byteCount, maxChars * 6 + 1);
+		size_t chars = std::min(static_cast<size_t>(utf8::distance(original, original + maxDist)), maxChars);
+		return doUcs4FromUtf8(original, chars);
+	} catch (...) {
+		// invalid UTF-8 sequence
 		return 0;
 	}
 }

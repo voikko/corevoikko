@@ -39,14 +39,34 @@ VOIKKOEXPORT enum voikko_token_type voikkoNextTokenUcs4(voikko_options_t * optio
 	return Tokenizer::nextToken(options, text, textlen, tokenlen);
 }
 
-VOIKKOEXPORT enum voikko_token_type voikkoNextTokenCstr(voikko_options_t * options, const char * text, size_t textlen,
-                                                           size_t * tokenlen) {
-	if (text == 0) return TOKEN_NONE;
-	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
-	if (text_ucs4 == 0) return TOKEN_NONE;
+static enum voikko_token_type doVoikkoNextTokenCstr(voikko_options_t * options, const char * text, size_t textlen,
+                                                           size_t * tokenlen, size_t maxChars) {
+	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen, maxChars);
+	if (text_ucs4 == 0) {
+		return TOKEN_NONE;
+	}
 	voikko_token_type result =
 		voikkoNextTokenUcs4(options, text_ucs4, wcslen(text_ucs4), tokenlen);
 	delete[] text_ucs4;
+	return result;
+}
+
+VOIKKOEXPORT enum voikko_token_type voikkoNextTokenCstr(voikko_options_t * options, const char * text, size_t textlen,
+                                                           size_t * tokenlen) {
+	if (text == 0) return TOKEN_NONE;
+	// Converting the entire text to UCS4 will lead to textlen^2 execution times for typical use where this
+	// function is called repeatedly and tokens are short. We can avoid this by attempting to convert
+	// only the beginning of the text first and see if that is enough.
+	size_t maxChars = 50;
+	*tokenlen = 0;
+	voikko_token_type result;
+	while (true) {
+		result = doVoikkoNextTokenCstr(options, text, textlen, tokenlen, maxChars);
+		if (result == TOKEN_NONE || *tokenlen + 5 < maxChars) {
+			break;
+		}
+		maxChars *= 2;
+	}
 	return result;
 }
 

@@ -34,6 +34,7 @@ import static org.puimula.libvoikko.ByteArray.s2n;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.nio.ByteBuffer;
 
 import org.puimula.libvoikko.Libvoikko.VoikkoGrammarError;
 import org.puimula.libvoikko.Libvoikko.VoikkoHandle;
@@ -327,17 +328,20 @@ public class Voikko {
         Libvoikko lib = getLib();
         List<Token> result = new ArrayList<Token>();
         byte[] textBytes = s2n(text);
-        int textLen = textBytes.length - 1;
+        int bytesStart = 0;
+        int textStart = 0;
+        int bytesLen = textBytes.length - 1;
         SizeTByReference tokenLenByRef = new SizeTByReference();
-        while (textLen > 0) {
-            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new SizeT(textLen), tokenLenByRef);
+        while (bytesLen > 0) {
+            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, ByteBuffer.wrap(textBytes, bytesStart, bytesLen), new SizeT(bytesLen), tokenLenByRef);
             int tokenLen = tokenLenByRef.getValue().intValue();
             TokenType tokenType = TokenType.values()[tokenTypeInt];
-            String tokenText = text.substring(0, tokenLen);
+            String tokenText = text.substring(textStart, textStart + tokenLen);
             result.add(new Token(tokenType, tokenText));
-            text = text.substring(tokenLen);
-            textBytes = s2n(text);
-            textLen = textBytes.length - 1;
+            textStart += tokenText.length();
+            int tokenBytes = s2n(tokenText).length - 1;
+            bytesStart += tokenBytes;
+            bytesLen -= tokenBytes;
         }
         return result;
     }

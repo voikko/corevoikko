@@ -46,6 +46,12 @@ class StringUtils {
 	static wchar_t * ucs4FromUtf8(const char * const original, size_t byteCount);
 	
 	/**
+	 * As above but return at most maxChars (in UCS4) from the input
+	 * in case it is longer.
+	 */
+	static wchar_t * ucs4FromUtf8(const char * const original, size_t byteCount, size_t maxChars);
+	
+	/**
 	 * Creates an UTF-8 string from a null terminated UCS4 string.
 	 * Returns a null pointer if memory allocation fails or input
 	 * string contains invalid codepoints.

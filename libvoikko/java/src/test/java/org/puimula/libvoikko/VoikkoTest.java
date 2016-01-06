@@ -42,7 +42,7 @@ import org.junit.Test;
 
 public class VoikkoTest {
 
-    private static final int DEPRECATED_MAX_ANALYSIS_COUNT = 31;
+    private static final int DEPRECATED_MAX_ANALYSIS_COUNT = 100; // for Finnish VFST backend
     private static final int DEPRECATED_MAX_WORD_CHARS = 255;
     private Voikko voikko;
 
@@ -448,7 +448,7 @@ public class VoikkoTest {
     }
     
     @Test
-    public void OverLongWordsAreNotAnalyzed() {
+    public void overLongWordsAreNotAnalyzed() {
         // This tests backend specific deprecated functionality.
         StringBuilder complexWord = new StringBuilder();
         for (int i = 0; i < 25; i++) {
@@ -460,6 +460,20 @@ public class VoikkoTest {
         complexWord.append("kuraattori");
         assertTrue(complexWord.length() > DEPRECATED_MAX_WORD_CHARS);
         assertEquals(0, voikko.analyze(complexWord.toString()).size());
+    }
+    
+    @Test
+    public void tokenizationWorksForHugeParagraphs() {
+        final String seedSentence = "Kissa on 29 vuotta vanha... Onhan se silloin vanha. ";
+        final int tokensInSeed = 20;
+        // TODO there is still something wrong, we should do much better...
+        final int repeats = 1000;
+        StringBuilder hugeParagraph = new StringBuilder(seedSentence.length() * repeats);
+        for (int i = 0; i < repeats; i++) {
+            hugeParagraph.append(seedSentence);
+        }
+        List<Token> tokens = voikko.tokens(hugeParagraph.toString());
+        assertEquals(tokensInSeed * repeats, tokens.size());
     }
     
     @Test
