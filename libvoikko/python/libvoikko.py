@@ -206,6 +206,8 @@ class Voikko(object):
 	def __getLib():
 		if os.name == 'nt':
 			fileName = "libvoikko-1.dll"
+		elif sys.platform == 'darwin':
+			fileName = "libvoikko.1.dylib"
 		else:
 			fileName = "libvoikko.so.1"
 		if Voikko._sharedLibrarySearchPath is not None:
