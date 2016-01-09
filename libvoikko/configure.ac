@@ -236,3 +236,18 @@ Libvoikko was configured with the following options
   * Morphology compilers:           $buildtools
   * Simple client programs:         $testtools
 EOF
+if test x$DICTIONARY_PATH = x; then
+cat <<EOF
+  * Fallback dictionary path:       (none)
+  NOTE!  As of libvoikko 4.0 NO HARDCODED FALLBACK DICTIONARY PATH
+  NOTE!  IS USED unless one is specified using --with-dictionary-path.
+  NOTE!  If you intend to use libvoikko for writing aids in
+  NOTE!  end user applications we strongly suggest adding the following:
+  NOTE!  OS X: --with-dictionary-path=/usr/lib/voikko:/Library/Spelling/voikko
+  NOTE!  Linux: --with-dictionary-path=/usr/lib/voikko
+EOF
+else
+cat <<EOF
+  * Fallback dictionary path:       $DICTIONARY_PATH
+EOF
+fi
