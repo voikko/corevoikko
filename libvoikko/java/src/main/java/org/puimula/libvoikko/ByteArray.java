@@ -78,7 +78,7 @@ public class ByteArray extends PointerType {
             return null;
         }
         byte[] stringBytes = string.getBytes(UTF8);
-        ByteBuffer allBytes = ByteBuffer.allocateDirect(stringBytes.length + 1);
+        ByteBuffer allBytes = ByteBuffer.allocateDirect(stringBytes.length);
         allBytes.position(0);
         allBytes.put(stringBytes);
         return allBytes;

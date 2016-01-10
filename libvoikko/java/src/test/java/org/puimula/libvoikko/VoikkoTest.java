@@ -474,6 +474,13 @@ public class VoikkoTest {
         List<Token> tokens = voikko.tokens(hugeParagraph.toString());
         assertEquals(tokensInSeed * repeats, tokens.size());
     }
+
+    @Test
+    public void tokenizationWorksWithSomeMultibyteCharacters() {
+        final String text = "Kissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \n";
+        List<Token> tokens = voikko.tokens(text);
+        assertEquals(180, tokens.size());
+    }
     
     @Test
     public void embeddedNullsAreNotAccepted() {

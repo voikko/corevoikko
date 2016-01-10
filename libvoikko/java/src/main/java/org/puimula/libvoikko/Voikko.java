@@ -331,7 +331,7 @@ public class Voikko {
         ByteBuffer textBytes = s2bb(text);
         int bytesStart = 0;
         int textStart = 0;
-        int bytesLen = textBytes.capacity() - 1;
+        int bytesLen = textBytes.capacity();
         SizeTByReference tokenLenByRef = new SizeTByReference();
         while (bytesLen > 0) {
             textBytes.position(bytesStart);

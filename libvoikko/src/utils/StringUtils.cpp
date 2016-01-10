@@ -70,8 +70,13 @@ wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCoun
 
 wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCount, size_t maxChars) {
 	try {
-		size_t maxDist = std::min(byteCount, maxChars * 6 + 1);
-		size_t chars = std::min(static_cast<size_t>(utf8::distance(original, original + maxDist)), maxChars);
+		size_t chars;
+		if (maxChars * 6 + 1 < byteCount) {
+			chars = maxChars;
+		}
+		else {
+			chars = std::min(static_cast<size_t>(utf8::distance(original, original + byteCount)), maxChars);
+		}
 		return doUcs4FromUtf8(original, chars);
 	} catch (...) {
 		// invalid UTF-8 sequence
