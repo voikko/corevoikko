@@ -620,8 +620,9 @@ public class Voikko {
      * @param libraryPath
      */
     public static void addLibraryPath(String libraryPath) {
-        NativeLibrary.addSearchPath("voikko", libraryPath);
-        NativeLibrary.addSearchPath("voikko-1", libraryPath);
+        for (String libraryName : LIBRARY_NAMES) {
+	    NativeLibrary.addSearchPath(libraryName, libraryPath);
+        }
     }
 
 }
