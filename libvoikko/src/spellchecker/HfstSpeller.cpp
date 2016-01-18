@@ -27,6 +27,7 @@
  *********************************************************************************/
 
 #include "spellchecker/HfstSpeller.hpp"
+#include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "character/SimpleChar.hpp"
 #include "voikko_defines.h"
@@ -42,7 +43,8 @@ using hfst_ol::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker {
 
-HfstSpeller::HfstSpeller(const string & zhfstFileName) throw(setup::DictionaryException) {
+HfstSpeller::HfstSpeller(const string & zhfstFileName, voikko_options_t * voikkoOptions) throw(setup::DictionaryException) :
+	voikkoOptions(voikkoOptions) {
 	speller = new ZHfstOspeller();
 	try {
 		speller->read_zhfst(zhfstFileName.c_str());
@@ -71,6 +73,16 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 		result = doSpell(modifiedWord, wlen);
 		if (result == SPELL_OK) {
 			result = SPELL_CAP_FIRST;
+		}
+		// This is needed to support VOIKKO_OPT_ACCEPT_ALL_UPPERCASE option
+		if (voikkoOptions->accept_all_uppercase && voikko_casetype(modifiedWord, wlen) == CT_FIRST_UPPER) {
+			for (size_t i = 1; i < wlen; i++) {
+				modifiedWord[i] = SimpleChar::upper(modifiedWord[i]);
+			}
+			result = doSpell(modifiedWord, wlen);
+			if (result == SPELL_OK) {
+				result = SPELL_CAP_ERROR;
+			}
 		}
 		delete[] modifiedWord;
 	}
