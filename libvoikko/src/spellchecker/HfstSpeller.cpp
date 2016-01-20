@@ -75,7 +75,7 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 			result = SPELL_CAP_FIRST;
 		}
 		// This is needed to support VOIKKO_OPT_ACCEPT_ALL_UPPERCASE option
-		if (voikkoOptions->accept_all_uppercase && voikko_casetype(modifiedWord, wlen) == CT_FIRST_UPPER) {
+		else if (voikkoOptions->accept_all_uppercase && voikko_casetype(modifiedWord, wlen) == CT_FIRST_UPPER) {
 			for (size_t i = 1; i < wlen; i++) {
 				modifiedWord[i] = SimpleChar::upper(modifiedWord[i]);
 			}
