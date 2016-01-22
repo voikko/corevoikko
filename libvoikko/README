@@ -132,7 +132,9 @@ occurrence is used and the rest are ignored.
 4) Only on Windows:
    a) Directory specified by the registry key
       HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath.
-   b) Directory specified by the registry key
+   b) User specific local application data directory, usually
+      C:\Documents and Settings\$username\Local Settings\Application Data\voikko
+   c) Directory specified by the registry key
       HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
 5) Path specified at compile time using  --with-dictionary-path
 

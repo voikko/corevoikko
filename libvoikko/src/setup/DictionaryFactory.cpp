@@ -230,6 +230,16 @@ list<string> DictionaryFactory::getDefaultLocations() {
 		}
 	}
 	
+	/* C:\Documents and Settings\$username\Local Settings\Application Data */
+	{
+		char szPath[MAX_PATH];
+		if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, szPath))) {
+			string dirName(szPath);
+			szPath.append("\\voikko");
+			locations.push_back(dirName);
+		}
+	}
+	
 	/* System default dictionary from Windows registry */
 	lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
 		                    0, KEY_QUERY_VALUE, &hKey);

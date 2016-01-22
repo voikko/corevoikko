@@ -1,3 +1,6 @@
+2016-01-22 Harri Pitkänen <hatapitk@iki.fi>
+	* Add user application data folder to dictionary search path on Windows
+
 2015-11-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Enable HFST backend by default.
 
