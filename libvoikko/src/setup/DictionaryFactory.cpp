@@ -36,6 +36,7 @@
 
 #ifdef WIN32
 # include <windows.h>
+# include <shlobj.h>
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 # define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
 # define BUFFER_LENGTH 200
@@ -235,7 +236,7 @@ list<string> DictionaryFactory::getDefaultLocations() {
 		char szPath[MAX_PATH];
 		if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, szPath))) {
 			string dirName(szPath);
-			szPath.append("\\voikko");
+			dirName.append("\\voikko");
 			locations.push_back(dirName);
 		}
 	}
