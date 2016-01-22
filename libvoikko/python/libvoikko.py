@@ -64,6 +64,7 @@ from ctypes import POINTER
 from ctypes import string_at
 from ctypes import Structure
 import os
+import platform
 import sys
 
 if sys.version_info < (3,):
@@ -206,15 +207,31 @@ class Voikko(object):
 	def __getLib():
 		if os.name == 'nt':
 			fileName = "libvoikko-1.dll"
+			if platform.architecture()[0] == "64bit":
+				optionalDependencies = ["libgcc_s_seh-1.dll", "libstdc++-6.dll", "zlib1.dll", "libarchive-13.dll", "libhfstospell-5.dll"]
+			else:
+				optionalDependencies = ["libgcc_s_sjlj-1.dll", "libstdc++-6.dll", "zlib1.dll", "libarchive-13.dll", "libhfstospell-5.dll"]
 		elif sys.platform == 'darwin':
 			fileName = "libvoikko.1.dylib"
+			optionalDependencies = ["libtinyxml2.3.dylib", "libarchive.13.dylib", "libhfstospell.5.dylib"]
 		else:
 			fileName = "libvoikko.so.1"
 		if Voikko._sharedLibrarySearchPath is not None:
 			try:
 				return CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
 			except:
-				pass
+				optDeps = []
+				for optionalDep in optionalDependencies:
+					try:
+						optDeps.append(CDLL(Voikko._sharedLibrarySearchPath + os.sep + optionalDep))
+					except:
+						pass
+				try:
+					cdll = CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
+					cdll.voikkoDeps = optDeps
+					return cdll
+				except:
+					pass
 		return CDLL(fileName)
 	__getLib = staticmethod(__getLib)
 	
