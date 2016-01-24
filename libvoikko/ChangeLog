@@ -1,3 +1,6 @@
+2016-01-24 Harri Pitkänen <hatapitk@iki.fi>
+	* Require compiler capable of supporting the C++11 standard.
+
 2016-01-22 Harri Pitkänen <hatapitk@iki.fi>
 	* Add user application data folder to dictionary search path on Windows
 
