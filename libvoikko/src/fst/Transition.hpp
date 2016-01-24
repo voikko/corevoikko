@@ -34,8 +34,8 @@
 namespace libvoikko { namespace fst {
 
 struct transinfo_t {
-	uint32_t targetState : 24;
-	uint8_t moreTransitions : 8;
+	unsigned int targetState : 24;
+	unsigned int moreTransitions : 8;
 };
 
 struct Transition {
