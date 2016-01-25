@@ -199,7 +199,8 @@ noinst_HEADERS = \
     utf8/utf8.hpp
 
 EXTRA_DIST = autocorrect/triecompiler.py
-BUILT_SOURCES = autocorrect/data.hpp
+
+
 CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
 	$(PYTHON) $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
@@ -239,6 +240,7 @@ VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp \
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
+    BUILT_SOURCES = autocorrect/data.hpp
 else
     EXTRA_DIST += $(MALAGA_CPP_FILES)
 endif
