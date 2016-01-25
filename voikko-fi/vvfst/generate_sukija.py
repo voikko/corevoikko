@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2015 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2016 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
 # Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
@@ -404,17 +404,20 @@ word_list = [
     (u"insinööri",        (u"insinöör",      u"insinör", u"insenjöör")),
     (u"invalidi",         (u"invalid",       u"invaliid")),
     (u"Italia",           (u"Ital",          u"Itaal")),
+    (u"jakaranda",        (u"jakarand",      u"jacarand")),
     (u"janitsaari",       (u"janitsaar",     u"janitsar", u"janitschar", u"janitschaar", u"janitshaar")),
     (u"Japani",           (u"japan",         u"jaappan", u"jaapan")),
     (u"juliaaninen",      (u"juliaani",      u"juliani")),
     (u"juridinen",        (u"juridi",        u"juriidi")),
     (u"kaanon",           (u"kaanon",        u"kanon")),
+    (u"kabbalisti",       (u"kabbalist",     u"kabalist")),
     (u"kaleeri",        (u"kaleer",      u"kaler")),
     (u"kamari",         (u"kamar",       u"kammar")),
     (u"kameli",         (u"kamel",       u"kameel")),
     (u"kamiina",        (u"kamiin",      u"kamin")),
     (u"kampanja",       (u"kampanj",     u"kamppanj")),
     (u"kaneli",         (u"kanel",       u"kaneel")),
+    (u"kannibaali",     (u"kannibaal",   u"kannibal")),
     (u"kanuuna",        (u"kanuun",      u"kanun", u"kanoon", u"kanon")),
     (u"kaoottinen",     (u"kaootti",     u"kaaootti", u"kaaotti", u"kaotti")),
     (u"kapteeni",       (u"kapteen",     u"kaptein")),
@@ -462,6 +465,7 @@ word_list = [
     (u"Kööpen=hamina",  (u"kööpen[Bm]hamin:kööpenhamin", u"köpen[Bm]hamin:köpenhamin")),
     (u"laitimmainen",   (u"laitimmai",   u"laitimai")),
     (u"langobardi",     (u"langobard",   u"longobard")),
+    (u"lankata",        (u"lank",        u"plank")),
     (u"lauantai",       (u"lauanta",     u"lauvanta")),
     (u"lauantaisin",    (u"lauantaisin", u"lauvantaisin")),
     (u"leegio",         (u"leegio",      u"legio")),
@@ -546,6 +550,8 @@ word_list = [
     (u"pudottaa",        (u"pudo",        u"puo")),
     (u"puolimmainen",    (u"puolimmai",   u"puolimai")),
     (u"pyramidi",        (u"pyramid",     u"pyramiid")),
+    (u"Pälk=järvi",      (u"pälk[Bm]järv:pälkjärv", u"pelg[Bm]järv:pelgjärv")),
+    (u"Pälk=saari",      (u"pälk[Bm]saar:pälksaar", u"pelg[Bm]saar:pelgsaar")),
     (u"päällikkö",       (u"päällik",     u"päälik")),
     (u"päällimmäinen",   (u"päällimmäi",  u"päällimäi", u"päälimäi", u"päälimmäi")),
     (u"päärynä",         ((u"pääryn", u"pääron", u"NimisanaPeruna_ä", u"NimisanaPeruna_aä"), )),

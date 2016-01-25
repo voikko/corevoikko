@@ -243,6 +243,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sosiaali=demo=kratia[X]sosiali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
+[Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
+[Ln][Xp]vartija[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
@@ -703,6 +705,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]kaikenlainen[X]kaikel[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]radikaalinen[X]radikali:radikali NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]ranskalainen[X]franska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]roomalainen[X]roma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]suurenmoinen[X]suurem[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
@@ -721,9 +724,7 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]ratista[X]rat:rat Kihajaa_a ;
 [Lt][Xp]ritistä[X]rit:rit Kihajaa_a ;
 [Lt][Xp]vapista[X]vap:vap Kihajaa_a ;
+[Lt][Xp]perkata[X]perk:perk Taata_a ;
 [Lt][Xp]muistiin=kirjata[X]muistiin[Bm]kirj:muistiinkirj Salata_a ;
-!!! [Lt][Xp]muistiin=kirjoittaa[X]muistiin[Bm]kirjo:muistiinkirjo Kirjoittaa_a ;
 [Lt][Xp]muistiin=lukea[X]muistiin[Bm]lu:muistiinlu Hakea_a ;
-!!!  [Lt][Xp]muistiin=merkitä[X]muistiin[Bm]merki:muistiinmerki Valita_ä ;
 [Lt][Xp]muistiin=palauttaa[X]muistiin[Bm]palaut:muistiinpalaut Alittaa_a ;
-!!! [Lt][Xp]muistiin=panna[X]muistiin[Bm]pan:muistiinpan Mennä_a ;
