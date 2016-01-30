@@ -38,6 +38,7 @@ namespace libvoikko { namespace fst {
 	struct Configuration {
 		const int bufferSize;
 		int stackDepth;
+		int flagDepth;
 		int inputDepth;
 		uint32_t * stateIndexStack;
 		uint32_t * currentTransitionStack;
