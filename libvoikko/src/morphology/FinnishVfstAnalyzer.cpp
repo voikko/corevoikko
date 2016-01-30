@@ -178,78 +178,80 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	bool defaultTitleCase = false;
 	bool isAbbr = false;
 	for (size_t i = 0; i + 0 < outputLen; i++) {
-		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0 || wcsncmp(fstOutput + i, L"[Bm]", 4) == 0) {
-			if (i == 1) {
-				structure[structurePos++] = L'=';
-			}
-			if (charsSeen > charsFromDefault) {
-				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
-				decreaseCharsMissing(charsMissing, charsSeen, charsFromDefault);
-			}
-			if (i != 1 && i + 5 < outputLen && structurePos > 0 && structure[structurePos - 1] != L'=') {
-				structure[structurePos++] = L'=';
-			}
-			i += 3;
-			charsSeen = 0;
-			charsFromDefault = 0;
-		}
-		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
-			defaultTitleCase = false;
-			i += 4;
-			while (fstOutput[i] != L'[' && charsMissing) {
-				structure[structurePos++] = fstOutput[i];
-				if (fstOutput[i] != L'=') {
-					charsFromDefault++;
-					if (fstOutput[i] != L'-') {
-						charsMissing--;
-					}
+		if (fstOutput[i] == L'[' && i + 2 < outputLen) {
+			if (wcsncmp(fstOutput + i + 1, L"Bc]", 3) == 0 || wcsncmp(fstOutput + i + 1, L"Bm]", 3) == 0) {
+				if (i == 1) {
+					structure[structurePos++] = L'=';
 				}
-				i++;
+				if (charsSeen > charsFromDefault) {
+					createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
+					decreaseCharsMissing(charsMissing, charsSeen, charsFromDefault);
+				}
+				if (i != 1 && i + 5 < outputLen && structurePos > 0 && structure[structurePos - 1] != L'=') {
+					structure[structurePos++] = L'=';
+				}
+				i += 3;
+				charsSeen = 0;
+				charsFromDefault = 0;
 			}
-			i += 2; // X]
-		}
-		else if (wcsncmp(fstOutput + i, L"[Le", 3) == 0) {
-			defaultTitleCase = true;
-			isAbbr = false;
-			i += 4;
-		}
-		else if (wcsncmp(fstOutput + i, L"[Lnl", 4) == 0) {
-			isAbbr = false;
-			i += 4;
-		}
-		else if (wcsncmp(fstOutput + i, L"[La", 3) == 0) {
-			isAbbr = true;
-			i += 3;
-		}
-		else if (wcsncmp(fstOutput + i, L"[Lu", 3) == 0 && i + 5 < outputLen &&
-			 (fstOutput[i + 3] == L'r' || StringUtils::isInteger(fstOutput[i + 4]))) {
-			isAbbr = true;
-			i += 3;
-			if (fstOutput[i] == L'r') {
-				i++;
+			else if (wcsncmp(fstOutput + i + 1, L"Xr]", 3) == 0) {
+				defaultTitleCase = false;
+				i += 4;
+				while (fstOutput[i] != L'[' && charsMissing) {
+					structure[structurePos++] = fstOutput[i];
+					if (fstOutput[i] != L'=') {
+						charsFromDefault++;
+						if (fstOutput[i] != L'-') {
+							charsMissing--;
+						}
+					}
+					i++;
+				}
+				i += 2; // X]
 			}
-		}
-		else if (wcsncmp(fstOutput + i, L"[L", 2) == 0) {
-			isAbbr = false;
-			i += 3;
-		}
-		else if (wcsncmp(fstOutput + i, L"[Xp", 3) == 0 || wcsncmp(fstOutput + i, L"[Xj", 3) == 0) {
-			i += 4;
-			while (fstOutput[i] != L'[') {
-				i++;
+			else if (wcsncmp(fstOutput + i + 1, L"Le", 2) == 0) {
+				defaultTitleCase = true;
+				isAbbr = false;
+				i += 4;
 			}
-			i += 2;
-		}
-		else if (wcsncmp(fstOutput + i, L"[Xs", 3) == 0) {
-			i += 4;
-			while (fstOutput[i] != L'[') {
-				i++;
+			else if (wcsncmp(fstOutput + i + 1, L"Lnl", 3) == 0) {
+				isAbbr = false;
+				i += 4;
 			}
-			i += 2;
-		}
-		else if (fstOutput[i] == L'[') {
-			while (fstOutput[i] != L']') {
-				i++;
+			else if (wcsncmp(fstOutput + i + 1, L"La", 2) == 0) {
+				isAbbr = true;
+				i += 3;
+			}
+			else if (wcsncmp(fstOutput + i + 1, L"Lu", 2) == 0 && i + 5 < outputLen &&
+				 (fstOutput[i + 3] == L'r' || StringUtils::isInteger(fstOutput[i + 4]))) {
+				isAbbr = true;
+				i += 3;
+				if (fstOutput[i] == L'r') {
+					i++;
+				}
+			}
+			else if (fstOutput[i + 1] == L'L') {
+				isAbbr = false;
+				i += 3;
+			}
+			else if (wcsncmp(fstOutput + i + 1, L"Xp", 2) == 0 || wcsncmp(fstOutput + i + 1, L"Xj", 2) == 0) {
+				i += 4;
+				while (fstOutput[i] != L'[') {
+					i++;
+				}
+				i += 2;
+			}
+			else if (wcsncmp(fstOutput + i + 1, L"Xs", 2) == 0) {
+				i += 4;
+				while (fstOutput[i] != L'[') {
+					i++;
+				}
+				i += 2;
+			}
+			else {
+				while (fstOutput[i] != L']') {
+					i++;
+				}
 			}
 		}
 		else if (fstOutput[i] == L'-') {
