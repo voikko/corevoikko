@@ -335,33 +335,39 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 				// something wrong with the pattern
 				return false;
 			}
-			if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Isf", 3) == 0) {
-				hyphenUnconditionallyAllowed = true;
-				hyphenUnconditionallyAllowedJustSet = true;
-			}
-			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Icu", 3) == 0) {
-				boundaryPassed = false;
-				hyphenUnconditionallyAllowed = true;
-				hyphenRequired = true;
-			}
-			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Ica", 3) == 0) {
-				requiredHyphenMissing = false;
-				endsWithNonIcaNoun = false;
-			}
-			else if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Le", 2) == 0) {
-				startsWithProperNoun = true; // TODO starts?
-				endsWithNonIcaNoun = false;
-			}
-			else if (i + 2 < len && wcsncmp(fstOutput + i + 1, L"Ln", 2) == 0) {
-				endsWithNonIcaNoun = true;
-			}
-			else if (i + 2 < len && wcsncmp(fstOutput + i + 1, L"Dg", 2) == 0) {
-				startsWithProperNoun = false;
+			if (i + 3 < len) {
+				if (fstOutput[i + 1] == L'I') {
+					if (wcsncmp(fstOutput + i + 2, L"sf", 2) == 0) {
+						hyphenUnconditionallyAllowed = true;
+						hyphenUnconditionallyAllowedJustSet = true;
+					}
+					else if (wcsncmp(fstOutput + i + 2, L"cu", 2) == 0) {
+						boundaryPassed = false;
+						hyphenUnconditionallyAllowed = true;
+						hyphenRequired = true;
+					}
+					else if (wcsncmp(fstOutput + i + 2, L"ca", 2) == 0) {
+						requiredHyphenMissing = false;
+						endsWithNonIcaNoun = false;
+					}
+				}
+				else if (fstOutput[i + 1] == L'L') {
+					if (fstOutput[i + 2] == L'e') {
+						startsWithProperNoun = true; // TODO starts?
+						endsWithNonIcaNoun = false;
+					}
+					else if (fstOutput[i + 2] == L'n') {
+						endsWithNonIcaNoun = true;
+					}
+				}
+				else if (wcsncmp(fstOutput + i + 1, L"Dg", 2) == 0) {
+					startsWithProperNoun = false;
+				}
 			}
 			if (fstOutput[i + 1] == L'X') {
 				while (i + 3 < len) {
 					i++;
-					if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
+					if (fstOutput[i] == L'[' && fstOutput[i + 1] == L'X' && fstOutput[i + 2] == L']') {
 						i += 2;
 						break;
 					}
