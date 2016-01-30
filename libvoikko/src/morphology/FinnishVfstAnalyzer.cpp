@@ -997,24 +997,28 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 	bool isDe = false;
 	size_t hyphenCount = 0;
 	for (size_t j = 0; j < fstLen; j++) {
-		if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[Dg]", 4) == 0) {
-			size_t hyphensInStructure = 0;
-			for (size_t i = 0; structure[i]; i++) {
-				if (structure[i] == L'i') {
-					if (hyphensInStructure == hyphenCount) {
-						structure[i] = L'p';
+		if (j + 3 < fstLen && fstOutput[j] == L'[') {
+			if (fstOutput[j + 1] == 'D') {
+				if (fstOutput[j + 2] == 'g') {
+					size_t hyphensInStructure = 0;
+					for (size_t i = 0; structure[i]; i++) {
+						if (structure[i] == L'i') {
+							if (hyphensInStructure == hyphenCount) {
+								structure[i] = L'p';
+							}
+						}
+						else if (structure[i] == L'-') {
+							hyphensInStructure++;
+						}
 					}
 				}
-				else if (structure[i] == L'-') {
-					hyphensInStructure++;
+				else if (fstOutput[j + 2] == 'e') {
+					isDe = true;
 				}
 			}
-		}
-		else if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[De]", 4) == 0) {
-			isDe = true;
-		}
-		else if (j + 3 < fstLen && wcsncmp(fstOutput + j, L"[Ln]", 4) == 0) {
-			isDe = false;
+			else if (wcsncmp(fstOutput + j + 1, L"Ln]", 3) == 0) {
+				isDe = false;
+			}
 		}
 		else if (fstOutput[j] == L'-') {
 			hyphenCount++;
