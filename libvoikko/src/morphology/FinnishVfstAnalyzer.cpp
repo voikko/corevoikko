@@ -179,7 +179,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	bool isAbbr = false;
 	for (size_t i = 0; i + 0 < outputLen; i++) {
 		if (fstOutput[i] == L'[' && i + 2 < outputLen) {
-			if (wcsncmp(fstOutput + i + 1, L"Bc]", 3) == 0 || wcsncmp(fstOutput + i + 1, L"Bm]", 3) == 0) {
+			if (i + 3 < outputLen && fstOutput[i + 1] == L'B' && fstOutput[i + 2] != L'h' && fstOutput[i + 3] == L']') {
 				if (i == 1) {
 					structure[structurePos++] = L'=';
 				}
@@ -194,20 +194,29 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				charsSeen = 0;
 				charsFromDefault = 0;
 			}
-			else if (wcsncmp(fstOutput + i + 1, L"Xr]", 3) == 0) {
-				defaultTitleCase = false;
-				i += 4;
-				while (fstOutput[i] != L'[' && charsMissing) {
-					structure[structurePos++] = fstOutput[i];
-					if (fstOutput[i] != L'=') {
-						charsFromDefault++;
-						if (fstOutput[i] != L'-') {
-							charsMissing--;
+			else if (i + 3 < outputLen && fstOutput[i + 1] == L'X' && fstOutput[i + 3] == L']') {
+				if (fstOutput[i + 2] == L'r') {
+					defaultTitleCase = false;
+					i += 4;
+					while (fstOutput[i] != L'[' && charsMissing) {
+						structure[structurePos++] = fstOutput[i];
+						if (fstOutput[i] != L'=') {
+							charsFromDefault++;
+							if (fstOutput[i] != L'-') {
+								charsMissing--;
+							}
 						}
+						i++;
 					}
-					i++;
+					i += 2; // X]
 				}
-				i += 2; // X]
+				else {
+					i += 4;
+					while (fstOutput[i] != L'[') {
+						i++;
+					}
+					i += 2;
+				}
 			}
 			else if (wcsncmp(fstOutput + i + 1, L"Le", 2) == 0) {
 				defaultTitleCase = true;
@@ -233,20 +242,6 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			else if (fstOutput[i + 1] == L'L') {
 				isAbbr = false;
 				i += 3;
-			}
-			else if (wcsncmp(fstOutput + i + 1, L"Xp", 2) == 0 || wcsncmp(fstOutput + i + 1, L"Xj", 2) == 0) {
-				i += 4;
-				while (fstOutput[i] != L'[') {
-					i++;
-				}
-				i += 2;
-			}
-			else if (wcsncmp(fstOutput + i + 1, L"Xs", 2) == 0) {
-				i += 4;
-				while (fstOutput[i] != L'[') {
-					i++;
-				}
-				i += 2;
 			}
 			else {
 				while (fstOutput[i] != L']') {
