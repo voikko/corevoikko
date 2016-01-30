@@ -54,10 +54,10 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	string backend = voikkoOptions->dictionary.getSuggestionBackend().getBackend();
 	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {
 		if (suggestionType == SUGGESTION_TYPE_OCR) {
-			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer, 1500);
+			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer, 2000);
 		}
 		else {
-			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer, 590);
+			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer, 800);
 		}
 	} else if (backend == "null") {
 		return new SuggestionGeneratorNull();

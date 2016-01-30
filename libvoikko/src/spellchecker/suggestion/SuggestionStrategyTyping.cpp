@@ -92,7 +92,13 @@ static const wchar_t * const REPLACEMENTS_4 =
 
 static const wchar_t * const REPLACEMENTS_5 =
 	L"ao" L"oa" L"ou" L"tl" L"sr"
-	L"ai" L"e\u00e4" L"\u00e4e";
+	L"ai" L"e\u00e4" L"\u00e4e" L"uv" L"vu"
+	L"od" L"do" L"kq" L"pv" L"vp"
+	L"qe" L"eq" L"ad" L"da" L"rs"
+	L"et" L"te" L"ry" L"yr" L"tu"
+	L"ut" L"yi" L"iy" L"uo" L"ip"
+	L"pi" L"o\u00e5" L"hv" L"vh" L"hm"
+	L"mh";
 
 SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer, size_t maxCost) : SuggestionStrategy(maxCost) {
 	primaryGenerators.push_back(
