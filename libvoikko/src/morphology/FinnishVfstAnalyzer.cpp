@@ -218,30 +218,32 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 					i += 2;
 				}
 			}
-			else if (wcsncmp(fstOutput + i + 1, L"Le", 2) == 0) {
-				defaultTitleCase = true;
-				isAbbr = false;
-				i += 4;
-			}
-			else if (wcsncmp(fstOutput + i + 1, L"Lnl", 3) == 0) {
-				isAbbr = false;
-				i += 4;
-			}
-			else if (wcsncmp(fstOutput + i + 1, L"La", 2) == 0) {
-				isAbbr = true;
-				i += 3;
-			}
-			else if (wcsncmp(fstOutput + i + 1, L"Lu", 2) == 0 && i + 5 < outputLen &&
-				 (fstOutput[i + 3] == L'r' || StringUtils::isInteger(fstOutput[i + 4]))) {
-				isAbbr = true;
-				i += 3;
-				if (fstOutput[i] == L'r') {
-					i++;
+			else if (i + 3 < outputLen && fstOutput[i + 1] == L'L') {
+				if (fstOutput[i + 2] == L'e') {
+					defaultTitleCase = true;
+					isAbbr = false;
+					i += 4;
 				}
-			}
-			else if (fstOutput[i + 1] == L'L') {
-				isAbbr = false;
-				i += 3;
+				else if (fstOutput[i + 2] == L'n' && fstOutput[i + 3] == L'l') {
+					isAbbr = false;
+					i += 4;
+				}
+				else if (fstOutput[i + 2] == L'a') {
+					isAbbr = true;
+					i += 3;
+				}
+				else if (fstOutput[i + 2] == L'u' && i + 5 < outputLen &&
+					 (fstOutput[i + 3] == L'r' || StringUtils::isInteger(fstOutput[i + 4]))) {
+					isAbbr = true;
+					i += 3;
+					if (fstOutput[i] == L'r') {
+						i++;
+					}
+				}
+				else {
+					isAbbr = false;
+					i += 3;
+				}
 			}
 			else {
 				while (fstOutput[i] != L']') {
