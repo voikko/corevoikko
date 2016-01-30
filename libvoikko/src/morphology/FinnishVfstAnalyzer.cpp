@@ -545,22 +545,31 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 				delete[] baseform;
 				return 0;
 			}
-			if (i + 6 < fstLen && (wcsncmp(fstOutput + i, L"[Xp]", 4) == 0 || wcsncmp(fstOutput + i, L"[Xj]", 4) == 0)) {
-				i += 3;
-				isInXp = true;
-				latestXpStartInFst = i + 1;
-				latestXpStartInBaseform = baseformPos;
-				hyphensInLatestXp = 0;
+			if (fstOutput[i + 1] == L'X') {
+				if (fstOutput[i + 2] == L']') {
+					isInXp = false;
+					isInXr = false;
+					i += 2;
+				}
+				else if (i + 6 < fstLen && fstOutput[i + 3] == L']') {
+					if (fstOutput[i + 2] == L'p' || fstOutput[i + 2] == L'j') {
+						i += 3;
+						isInXp = true;
+						latestXpStartInFst = i + 1;
+						latestXpStartInBaseform = baseformPos;
+						hyphensInLatestXp = 0;
+					}
+					else if (fstOutput[i + 2] == L'r') {
+						i += 3;
+						isInXr = true;
+					}
+					else if (fstOutput[i + 2] == L's') {
+						i += 3;
+						isInXr = true;
+					}
+				}
 			}
-			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
-				i += 3;
-				isInXr = true;
-			}
-			else if (i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Xs]", 4) == 0) {
-				i += 3;
-				isInXr = true;
-			}
-			else if (!classTagSeen && i + 6 < fstLen && wcsncmp(fstOutput + i, L"[Lu]", 4) == 0) {
+			else if (!classTagSeen && i + 6 < fstLen && wcsncmp(fstOutput + i + 1, L"Lu]", 3) == 0) {
 				i += 3;
 				classTagSeen = true;
 				// we will try completely different rules here and get back if it does not work out
@@ -569,12 +578,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 					return baseform;
 				}
 			}
-			else if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
-				isInXp = false;
-				isInXr = false;
-				i += 2;
-			}
-			else if (wcsncmp(fstOutput + i, L"[De]", 4) == 0) {
+			else if (wcsncmp(fstOutput + i + 1, L"De]", 3) == 0) {
 				isDe = !ignoreNextDe;
 				i += 3;
 			}
