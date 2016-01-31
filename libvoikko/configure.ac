@@ -244,8 +244,8 @@ cat <<EOF
   NOTE!  IS USED unless one is specified using --with-dictionary-path.
   NOTE!  If you intend to use libvoikko for writing aids in
   NOTE!  end user applications we strongly suggest adding the following:
-  NOTE!  OS X: --with-dictionary-path=/usr/lib/voikko:/Library/Spelling/voikko
-  NOTE!  Linux: --with-dictionary-path=/usr/lib/voikko
+  NOTE!  OS X: --with-dictionary-path=/Library/Spelling/voikko:/usr/lib/voikko
+  NOTE!  Linux: --with-dictionary-path=/usr/share/voikko:/usr/lib/voikko
 EOF
 else
 cat <<EOF
