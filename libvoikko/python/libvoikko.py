@@ -216,6 +216,7 @@ class Voikko(object):
 			optionalDependencies = ["libtinyxml2.3.dylib", "libarchive.13.dylib", "libhfstospell.5.dylib"]
 		else:
 			fileName = "libvoikko.so.1"
+			optionalDependencies = []
 		if Voikko._sharedLibrarySearchPath is not None:
 			try:
 				return CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
