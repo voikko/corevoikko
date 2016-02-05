@@ -48,6 +48,7 @@ VOIKKOEXPORT voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
 	list<Analysis *>::const_iterator it = analyses->begin();
 	size_t i = 0;
 	while (it != analyses->end()) {
+		(*it)->seal();
 		result[i++] = *it++;
 	}
 	result[i] = 0;

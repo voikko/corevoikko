@@ -694,6 +694,7 @@ void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * 
 			for (size_t j = i - 4; j >= 4; j--) {
 				if (wcsncmp(fstOutput + j, L"[Bc]", 4) == 0) {
 					Analysis * newAnalysis = new Analysis();
+					analysis->seal();
 					const char ** keys = analysis->getKeys();
 					wchar_t * newStructure = 0;
 					for (const char ** keyPtr = keys; *keyPtr; keyPtr++) {

@@ -46,7 +46,6 @@ Analysis::~Analysis() {
 
 void Analysis::addAttribute(const char * key, wchar_t * value) {
 	attributes.insert(std::make_pair(std::string(key), value));
-	recreateKeys();
 }
 
 void Analysis::removeAttribute(const char * key) {
@@ -54,7 +53,6 @@ void Analysis::removeAttribute(const char * key) {
 	if (valueI != attributes.end()) {
 		delete[] valueI->second;
 		attributes.erase(valueI);
-		recreateKeys();
 	}
 }
 
@@ -78,7 +76,7 @@ void Analysis::deleteKeys() {
 	keys = 0;
 }
 
-void Analysis::recreateKeys() {
+void Analysis::seal() {
 	deleteKeys();
 	keys = new const char*[attributes.size() + 1];
 	std::map<std::string, wchar_t *>::const_iterator it = attributes.begin();

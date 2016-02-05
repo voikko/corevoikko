@@ -56,6 +56,11 @@ class Analysis {
 		void removeAttribute(const char * key);
 		
 		/**
+		 * Seals this analysis for publication through external interface
+		 */
+		void seal();
+		
+		/**
 		 * Returns a null terminated array of strings containing
 		 * the attribute names in this analysis.
 		 */
@@ -71,7 +76,6 @@ class Analysis {
 		Analysis & operator = (const Analysis & other);
 		
 		void deleteKeys();
-		void recreateKeys();
 		const char ** keys;
 		std::map<std::string, wchar_t *> attributes;
 };
