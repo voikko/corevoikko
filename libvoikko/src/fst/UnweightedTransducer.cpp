@@ -146,22 +146,32 @@ namespace libvoikko { namespace fst {
 		std::map<string, uint16_t> values;
 		values[""] = FlagValueNeutral;
 		values["@"] = FlagValueAny;
-		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		DEBUG("Reading " << symbolCount << " symbols to symbol table");
 		for (uint16_t i = 0; i < symbolCount; i++) {
-			string symbol(filePtr);
-			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
-				firstNormalChar = i;
-			}
-			if (firstNormalChar != 0 && firstMultiChar == 0 && symbol[0] == '[') {
-				firstMultiChar = i;
-			}
 			symbolToString.push_back(filePtr);
-			symbolStringLength.push_back(strlen(filePtr));
-			filePtr += (symbol.length() + 1);
-			stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
-			if (firstNormalChar == 0 && i > 0) {
-				symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
+			if (i == 0) {
+				symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
+				symbolStringLength.push_back(0);
+				filePtr += 1;
+			}
+			else {
+				string symbol(filePtr);
+				if (firstNormalChar == 0) {
+					if (symbol[0] == '@') {
+						symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
+					}
+					else {
+						firstNormalChar = i;
+					}
+				}
+				else if (firstMultiChar == 0 && symbol[0] == '[') {
+					firstMultiChar = i;
+				}
+				symbolStringLength.push_back(strlen(filePtr));
+				filePtr += (symbol.length() + 1);
+				if (firstNormalChar > 0 && firstMultiChar == 0) {
+					stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
+				}
 			}
 		}
 		unknownSymbolOrdinal = symbolCount;
