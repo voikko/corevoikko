@@ -168,10 +168,11 @@ namespace libvoikko { namespace fst {
 					firstMultiChar = i;
 				}
 				symbolStringLength.push_back(strlen(filePtr));
-				filePtr += (symbol.length() + 1);
 				if (firstNormalChar > 0 && firstMultiChar == 0) {
-					stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
+					const char * ip = filePtr;
+					stringToSymbol.insert(pair<wchar_t, uint16_t>(utf8::next(ip, ip + symbol.length()), i));
 				}
+				filePtr += (symbol.length() + 1);
 			}
 		}
 		unknownSymbolOrdinal = symbolCount;
@@ -186,19 +187,16 @@ namespace libvoikko { namespace fst {
 		transitionStart = reinterpret_cast<Transition *>(filePtr);
 	}
 	
-	bool UnweightedTransducer::prepare(Configuration * configuration, const char * input, size_t inputLen) const {
+	bool UnweightedTransducer::prepare(Configuration * configuration, const wchar_t * input, size_t inputLen) const {
 		configuration->stackDepth = 0;
 		configuration->flagDepth = 0;
 		configuration->inputDepth = 0;
 		configuration->stateIndexStack[0] = 0;
 		configuration->currentTransitionStack[0] = 0;
 		configuration->inputLength = 0;
-		const char * ip = input;
 		bool allKnown = true;
-		while (ip < input + inputLen) {
-			const char * prevIp = ip;
-			utf8::unchecked::next(ip);
-			std::map<std::string,uint16_t>::const_iterator it = stringToSymbol.find(string(prevIp, ip - prevIp));
+		while ((size_t)configuration->inputLength < inputLen) {
+			std::map<wchar_t,uint16_t>::const_iterator it = stringToSymbol.find(input[configuration->inputLength]);
 			if (it == stringToSymbol.end()) {
 				configuration->inputSymbolStack[configuration->inputLength] = unknownSymbolOrdinal;
 				allKnown = false;

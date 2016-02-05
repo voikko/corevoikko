@@ -40,7 +40,7 @@ namespace libvoikko { namespace fst {
 		static_assert(sizeof(Transition) == 8, "Size of unweighted transition must be 8 bytes");
 		private:
 			Transition * transitionStart;
-			std::map<std::string, uint16_t> stringToSymbol;
+			std::map<wchar_t, uint16_t> stringToSymbol;
 			std::vector<const char *> symbolToString;
 			std::vector<size_t> symbolStringLength;
 			uint16_t firstMultiChar;
@@ -49,7 +49,7 @@ namespace libvoikko { namespace fst {
 		public:
 			UnweightedTransducer(const char * filePath);
 			
-			bool prepare(Configuration * configuration, const char * input, size_t inputLen) const;
+			bool prepare(Configuration * configuration, const wchar_t * input, size_t inputLen) const;
 			
 			bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const;
 			

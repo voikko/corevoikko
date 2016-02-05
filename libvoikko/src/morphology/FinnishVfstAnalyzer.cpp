@@ -1053,13 +1053,8 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 	wchar_t * wordLowerUcs4 = new wchar_t[wlen];
 	memcpy(wordLowerUcs4, word, wlen * sizeof(wchar_t));
 	voikko_set_case(CT_ALL_LOWER, wordLowerUcs4, wlen);
-	char * wordLower = StringUtils::utf8FromUcs4(wordLowerUcs4, wlen);
-	delete[] wordLowerUcs4;
-	if (!wordLower) {
-		return analysisList;
-	}
 	
-	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
+	if (transducer->prepare(configuration, wordLowerUcs4, wlen)) {
 		int analysisCount = 0;
 		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
@@ -1114,7 +1109,7 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 		}
 	}
 	
-	delete[] wordLower;
+	delete[] wordLowerUcs4;
 	return analysisList;
 }
 
