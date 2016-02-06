@@ -219,9 +219,28 @@ struct compareSymbolsForLookupOrder {
 		if (a.text[0] == '[' || a.text[0] == '@') {
 			return a.text.substr(1) < b.text.substr(1);
 		}
-		else {
-			return a.text < b.text;
+		return a.text < b.text;
+	}
+};
+
+struct compareTransitionsForFileOrder {
+	bool operator()(WeightedTransition const & a, WeightedTransition const & b) const {
+		if (a.symIn == b.symIn) {
+			return false;
 		}
+		if (a.symIn == 0) {
+			return true;
+		}
+		if (b.symIn == 0) {
+			return false;
+		}
+		if (a.symIn == 0xFFFFFFFF) {
+			return true;
+		}
+		if (b.symIn == 0xFFFFFFFF) {
+			return false;
+		}
+		return a.symIn < b.symIn;
 	}
 };
 
@@ -457,9 +476,13 @@ int main(int argc, char ** argv) {
 	// Write state transitions
 	for (vector<AttState>::iterator it = attStateVector.begin(); it < attStateVector.end(); it++) {
 		uint32_t tCount = it->transitions.size();
+		for (uint32_t ti = 0; ti < tCount; ti++) {
+			WeightedTransition & t = it->transitions[ti];
+			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[ti]);
+		}
+		sort(it->transitions.begin(), it->transitions.end(), compareTransitionsForFileOrder());
 		{
 			WeightedTransition & t = it->transitions[0];
-			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[0]);
 			t.moreTransitions = (tCount > 255 ? 255 : tCount - 1);
 			writeTrans(transducerFile, byteSwap, t, weights);
 		}
@@ -472,7 +495,6 @@ int main(int argc, char ** argv) {
 		}
 		for (uint32_t ti = 1; ti < tCount; ti++) {
 			WeightedTransition & t = it->transitions[ti];
-			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[ti]);
 			t.moreTransitions = 0;
 			writeTrans(transducerFile, byteSwap, t, weights);
 		}
