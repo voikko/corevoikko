@@ -32,6 +32,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <bitset>
 
 namespace libvoikko { namespace morphology {
 
@@ -76,6 +77,11 @@ class Analysis {
 		void addAttribute(Key key, wchar_t * value);
 		
 		/**
+		 * Adds an attribute to analysis without transferring ownership.
+		 */
+		void addConstAttribute(Key key, const wchar_t * value);
+		
+		/**
 		 * Deletes an attribute from analysis.
 		 */
 		void removeAttribute(Key key);
@@ -115,6 +121,7 @@ class Analysis {
 		void deleteKeys();
 		const char ** keys;
 		std::map<Key, wchar_t *> attributes;
+		std::bitset<21> constAttributes;
 };
 
 } }

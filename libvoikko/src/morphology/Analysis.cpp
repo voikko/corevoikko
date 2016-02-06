@@ -88,7 +88,10 @@ Analysis::~Analysis() {
 	deleteKeys();
 	std::map<Key, wchar_t *>::iterator it = attributes.begin();
 	while (it != attributes.end()) {
-		delete[] it++->second;
+		if (!constAttributes[static_cast<int>(it->first)]) {
+			delete[] it->second;
+		}
+		it++;
 	}
 }
 
@@ -96,10 +99,20 @@ void Analysis::addAttribute(Key key, wchar_t * value) {
 	attributes.insert(std::make_pair(key, value));
 }
 
+void Analysis::addConstAttribute(Key key, const wchar_t * value) {
+	attributes.insert(std::make_pair(key, const_cast<wchar_t *>(value)));
+	constAttributes.set(static_cast<int>(key));
+}
+
 void Analysis::removeAttribute(Key key) {
 	std::map<Key, wchar_t *>::iterator valueI = attributes.find(key);
 	if (valueI != attributes.end()) {
-		delete[] valueI->second;
+		if (constAttributes[static_cast<int>(valueI->first)]) {
+			constAttributes.set(static_cast<int>(valueI->first), false);
+		}
+		else {
+			delete[] valueI->second;
+		}
 		attributes.erase(valueI);
 	}
 }

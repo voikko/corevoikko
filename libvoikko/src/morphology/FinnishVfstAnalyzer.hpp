@@ -51,17 +51,17 @@ class FinnishVfstAnalyzer : public Analyzer {
 		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
 		char * outputBuffer;
-		std::map<std::wstring, std::wstring> classMap;
-		std::map<std::wstring, std::wstring> sijamuotoMap;
-		std::map<std::wstring, std::wstring> moodMap;
-		std::map<std::wstring, std::wstring> numberMap;
-		std::map<std::wstring, std::wstring> comparisonMap;
-		std::map<std::wstring, std::wstring> personMap;
-		std::map<std::wstring, std::wstring> tenseMap;
-		std::map<std::wstring, std::wstring> focusMap;
-		std::map<std::wstring, std::wstring> possessiveMap;
-		std::map<std::wstring, std::wstring> negativeMap;
-		std::map<std::wstring, std::wstring> participleMap;
+		std::map<std::wstring, const wchar_t *> classMap;
+		std::map<std::wstring, const wchar_t *> sijamuotoMap;
+		std::map<std::wstring, const wchar_t *> moodMap;
+		std::map<std::wstring, const wchar_t *> numberMap;
+		std::map<std::wstring, const wchar_t *> comparisonMap;
+		std::map<std::wstring, const wchar_t *> personMap;
+		std::map<std::wstring, const wchar_t *> tenseMap;
+		std::map<std::wstring, const wchar_t *> focusMap;
+		std::map<std::wstring, const wchar_t *> possessiveMap;
+		std::map<std::wstring, const wchar_t *> negativeMap;
+		std::map<std::wstring, const wchar_t *> participleMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 		void parseDebugAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);

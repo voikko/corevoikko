@@ -298,23 +298,23 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	return structure;
 }
 
-static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar_t * keyStart, size_t keyLen) {
-	map<wstring, wstring>::const_iterator mapIterator = theMap.find(wstring(keyStart, keyLen));
+static const wchar_t * getAttributeFromMap(map<wstring, const wchar_t *> & theMap, const wchar_t * keyStart, size_t keyLen) {
+	map<wstring, const wchar_t *>::const_iterator mapIterator = theMap.find(wstring(keyStart, keyLen));
 	if (mapIterator == theMap.end()) {
-		return 0;
+		return nullptr;
 	}
-	return StringUtils::copy((*mapIterator).second.c_str());
+	return mapIterator->second;
 }
 
 static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t i, size_t j,
-			        Analysis::Key key, map<wstring, wstring> & theMap) {
+			        Analysis::Key key, map<wstring, const wchar_t *> & theMap) {
 	if (analysis->getValue(key)) {
 		return; // already set
 	}
 	size_t sijaLen = i - j - 2;
-	wchar_t * muoto = getAttributeFromMap(theMap, fstOutput + j + 2, sijaLen);
+	const wchar_t * muoto = getAttributeFromMap(theMap, fstOutput + j + 2, sijaLen);
 	if (muoto) {
-		analysis->addAttribute(key, muoto);
+		analysis->addConstAttribute(key, muoto);
 	}
 }
 
@@ -434,12 +434,12 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 	const wchar_t * className = analysis->getValue(Analysis::Key::CLASS);
 	if (wcsncmp(outputPosition, L"vj", 2) == 0) {
 		if (outputBuffer[0] != L'-') {
-			analysis->addAttribute(Analysis::Key::MALAGA_VAPAA_JALKIOSA, StringUtils::copy(L"true"));
+			analysis->addConstAttribute(Analysis::Key::MALAGA_VAPAA_JALKIOSA, L"true");
 		}
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
 		if (!wcsstr(outputPosition, L"[Bc]") && !wcsstr(outputPosition, L"[Ll]") && (!className || wcsncmp(className, L"nimisana", 8) == 0)) {
-			analysis->addAttribute(Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME, StringUtils::copy(L"true"));
+			analysis->addConstAttribute(Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME, L"true");
 		}
 	}
 	else {
@@ -447,10 +447,10 @@ static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, con
 		if ((!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0 && wcscmp(mood, L"MA-infinitive") != 0)) &&
 		    (!className || wcscmp(className, L"teonsana") == 0)) {
 			if (wcsncmp(outputPosition, L"ra", 2) == 0) {
-				analysis->addAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, StringUtils::copy(L"A-infinitive"));
+				analysis->addConstAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, L"A-infinitive");
 			}
 			else if (wcsncmp(outputPosition, L"rm", 2) == 0) {
-				analysis->addAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, StringUtils::copy(L"MA-infinitive"));
+				analysis->addConstAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, L"MA-infinitive");
 			}
 		}
 	}
@@ -697,7 +697,7 @@ void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * 
 					wchar_t * newStructure = 0;
 					for (Analysis::Key key : analysis->getInternalKeys()) {
 						if (key == Analysis::Key::CLASS) {
-							newAnalysis->addAttribute(key, StringUtils::copy(L"nimi"));
+							newAnalysis->addConstAttribute(key, L"nimi");
 						}
 						else if (key == Analysis::Key::STRUCTURE) {
 							const wchar_t * oldStructure = analysis->getValue(key);
@@ -904,10 +904,10 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 							const wchar_t * comp = analysis->getValue(Analysis::Key::COMPARISON);
 							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) ||
 							    wcsncmp(fstOutput, L"[Lu]", 4) == 0) {
-								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"laatusana"));
+								analysis->addConstAttribute(Analysis::Key::CLASS, L"laatusana");
 							}
 							else {
-								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"nimisana_laatusana"));
+								analysis->addConstAttribute(Analysis::Key::CLASS, L"nimisana_laatusana");
 							}
 						}
 						else {
@@ -942,7 +942,7 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					}
 					else if (fstOutput[j + 1] == L'F') {
 						if (wcsncmp(fstOutput + (j + 2), L"ko", 2) == 0) {
-							analysis->addAttribute(Analysis::Key::KYSYMYSLIITE, StringUtils::copy(L"true"));
+							analysis->addConstAttribute(Analysis::Key::KYSYMYSLIITE, L"true");
 						}
 						else {
 							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::FOCUS, focusMap);
@@ -975,7 +975,7 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					else if (fstOutput[j + 1] == L'B') {
 						if (j >= 5 && fstOutput[j + 2] == L'c') {
 							if (!analysis->getValue(Analysis::Key::CLASS) && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
-								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"etuliite"));
+								analysis->addConstAttribute(Analysis::Key::CLASS, L"etuliite");
 							}
 							bcPassed = true;
 						}
@@ -1078,14 +1078,14 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 			if (participle && wcscmp(participle, L"past_passive") == 0 && (!wclass || wcscmp(participle, L"laatusana") != 0)) {
 				wclass = L"laatusana";
 				analysis->removeAttribute(Analysis::Key::CLASS);
-				analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(wclass));
+				analysis->addConstAttribute(Analysis::Key::CLASS, wclass);
 			}
 			if (analysis->getValue(Analysis::Key::NUMBER) && sijamuoto && wcscmp(sijamuoto, L"kerrontosti") == 0) {
 				analysis->removeAttribute(Analysis::Key::NUMBER);
 			}
 			if (!analysis->getValue(Analysis::Key::COMPARISON)) {
 				if (wclass && (wcscmp(wclass, L"laatusana") == 0 || wcscmp(wclass, L"nimisana_laatusana") == 0)) {
-					analysis->addAttribute(Analysis::Key::COMPARISON, StringUtils::copy(L"positive"));
+					analysis->addConstAttribute(Analysis::Key::COMPARISON, L"positive");
 				}
 			}
 			else if (wclass && (wcscmp(wclass, L"nimisana") == 0)) {
