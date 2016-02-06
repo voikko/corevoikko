@@ -43,7 +43,7 @@ VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) throw(setup:
 	transducer = new fst::UnweightedTransducer(fileName.c_str());
 	configuration = new fst::Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	inputBuffer = new wchar_t[BUFFER_SIZE + 1];
-	outputBuffer = new char[BUFFER_SIZE + 1];
+	outputBuffer = new wchar_t[BUFFER_SIZE + 1];
 }
 
 VfstAutocorrectCheck::~VfstAutocorrectCheck() {
@@ -156,14 +156,9 @@ bool VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 			}
 			e->error.setErrorLen(prefixLength + lengthCorrection);
 			if (lowerFirst) {
-				wchar_t * outputUcs = utils::StringUtils::ucs4FromUtf8(outputBuffer);
-				outputUcs[0] = character::SimpleChar::upper(outputUcs[0]);
-				e->error.getSuggestions()[0] = utils::StringUtils::utf8FromUcs4(outputUcs);
-				delete[] outputUcs;
+				outputBuffer[0] = character::SimpleChar::upper(outputBuffer[0]);
 			}
-			else {
-				e->error.getSuggestions()[0] = utils::StringUtils::copy(outputBuffer);
-			}
+			e->error.getSuggestions()[0] = utils::StringUtils::utf8FromUcs4(outputBuffer);
 			options->grammarChecker->cache.appendError(e);
 		}
 		else {

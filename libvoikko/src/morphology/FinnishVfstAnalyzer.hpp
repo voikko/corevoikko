@@ -50,7 +50,7 @@ class FinnishVfstAnalyzer : public Analyzer {
 	private:
 		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
-		char * outputBuffer;
+		wchar_t * outputBuffer;
 		std::map<std::wstring, const wchar_t *> classMap;
 		std::map<std::wstring, const wchar_t *> sijamuotoMap;
 		std::map<std::wstring, const wchar_t *> moodMap;

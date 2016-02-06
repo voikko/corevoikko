@@ -52,7 +52,7 @@ FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) throw(set
 	string morFile = directoryName + "/mor.vfst";
 	transducer = new UnweightedTransducer(morFile.c_str());
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
-	outputBuffer = new char[BUFFER_SIZE];
+	outputBuffer = new wchar_t[BUFFER_SIZE];
 	
 	classMap.insert(std::make_pair(L"n", L"nimisana"));
 	classMap.insert(std::make_pair(L"l", L"laatusana"));
@@ -1055,16 +1055,14 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 	if (transducer->prepare(configuration, wordLowerUcs4, wlen)) {
 		int analysisCount = 0;
 		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
-			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
-			size_t fstLen = wcslen(fstOutput);
-			if (!isValidAnalysis(fstOutput, fstLen)) {
-				delete[] fstOutput;
+			size_t fstLen = wcslen(outputBuffer);
+			if (!isValidAnalysis(outputBuffer, fstLen)) {
 				continue;
 			}
 			Analysis * analysis = new Analysis();
-			wchar_t * structure = parseStructure(fstOutput, wlen);
-			parseBasicAttributes(analysis, fstOutput, fstLen);
-			fixStructure(structure, fstOutput, fstLen);
+			wchar_t * structure = parseStructure(outputBuffer, wlen);
+			parseBasicAttributes(analysis, outputBuffer, fstLen);
+			fixStructure(structure, outputBuffer, fstLen);
 			analysis->addAttribute(Analysis::Key::STRUCTURE, structure);
 			const wchar_t * wclass = analysis->getValue(Analysis::Key::CLASS);
 			const wchar_t * sijamuoto = analysis->getValue(Analysis::Key::SIJAMUOTO);
@@ -1092,17 +1090,14 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 				analysis->removeAttribute(Analysis::Key::COMPARISON);
 			}
 			analysisList->push_back(analysis);
-			duplicateOrgName(analysis, fstOutput, analysisList);
+			duplicateOrgName(analysis, outputBuffer, analysisList);
 			if (fullMorphology) {
-				analysis->addAttribute(Analysis::Key::FSTOUTPUT, fstOutput);
-				wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);
+				analysis->addAttribute(Analysis::Key::FSTOUTPUT, StringUtils::copy(outputBuffer));
+				wchar_t * baseform = parseBaseform(outputBuffer, fstLen, structure);
 				if (baseform) {
 					analysis->addAttribute(Analysis::Key::BASEFORM, baseform);
 				}
-				parseDebugAttributes(analysis, fstOutput, fstLen);
-			}
-			else {
-				delete[] fstOutput;
+				parseDebugAttributes(analysis, outputBuffer, fstLen);
 			}
 		}
 	}

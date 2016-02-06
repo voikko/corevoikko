@@ -31,6 +31,7 @@
 #include "fst/Configuration.hpp"
 #include "setup/DictionaryException.hpp"
 #include "utf8/utf8.hpp"
+#include "utils/StringUtils.hpp"
 #include <sys/types.h>
 #include <cstring>
 
@@ -148,7 +149,8 @@ namespace libvoikko { namespace fst {
 		values["@"] = FlagValueAny;
 		DEBUG("Reading " << symbolCount << " symbols to symbol table");
 		for (uint16_t i = 0; i < symbolCount; i++) {
-			symbolToString.push_back(filePtr);
+			wchar_t * ucs4Symbol = utils::StringUtils::ucs4FromUtf8(filePtr);
+			symbolToString.push_back(ucs4Symbol);
 			if (i == 0) {
 				symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 				symbolStringLength.push_back(0);
@@ -167,10 +169,9 @@ namespace libvoikko { namespace fst {
 				else if (firstMultiChar == 0 && symbol[0] == '[') {
 					firstMultiChar = i;
 				}
-				symbolStringLength.push_back(strlen(filePtr));
+				symbolStringLength.push_back(wcslen(ucs4Symbol));
 				if (firstNormalChar > 0 && firstMultiChar == 0) {
-					const char * ip = filePtr;
-					stringToSymbol.insert(pair<wchar_t, uint16_t>(utf8::next(ip, ip + symbol.length()), i));
+					stringToSymbol.insert(pair<wchar_t, uint16_t>(ucs4Symbol[0], i));
 				}
 				filePtr += (symbol.length() + 1);
 			}
@@ -185,6 +186,12 @@ namespace libvoikko { namespace fst {
 			}
 		}
 		transitionStart = reinterpret_cast<Transition *>(filePtr);
+	}
+	
+	UnweightedTransducer::~UnweightedTransducer() {
+		for (wchar_t * s : symbolToString) {
+			delete[] s;
+		}
 	}
 	
 	bool UnweightedTransducer::prepare(Configuration * configuration, const wchar_t * input, size_t inputLen) const {
@@ -276,11 +283,11 @@ namespace libvoikko { namespace fst {
 		return true;
 	}
 	
-	bool UnweightedTransducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
+	bool UnweightedTransducer::next(Configuration * configuration, wchar_t * outputBuffer, size_t bufferLen) const {
 		return nextPrefix(configuration, outputBuffer, bufferLen, 0);
 	}
 	
-	bool UnweightedTransducer::nextPrefix(Configuration * configuration, char * outputBuffer, size_t bufferLen, size_t * prefixLength) const {
+	bool UnweightedTransducer::nextPrefix(Configuration * configuration, wchar_t * outputBuffer, size_t bufferLen, size_t * prefixLength) const {
 		uint32_t loopCounter = 0;
 		while (loopCounter < MAX_LOOP_COUNT) {
 			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
@@ -297,7 +304,7 @@ namespace libvoikko { namespace fst {
 				if (currentTransition->symIn == 0xFFFF) {
 					// final state
 					if (configuration->inputDepth == configuration->inputLength || prefixLength) {
-						char * outputBufferPos = outputBuffer;
+						wchar_t * outputBufferPos = outputBuffer;
 						for (int i = 0; i < configuration->stackDepth; i++) {
 							uint16_t outSymIndex = configuration->outputSymbolStack[i];
 							size_t symLen = symbolStringLength[outSymIndex];
@@ -305,10 +312,10 @@ namespace libvoikko { namespace fst {
 								// would overflow the output buffer
 								return false;
 							}
-							strncpy(outputBufferPos, symbolToString[outSymIndex], symLen);
+							wcsncpy(outputBufferPos, symbolToString[outSymIndex], symLen);
 							outputBufferPos += symLen;
 						}
-						*outputBufferPos = '\0';
+						*outputBufferPos = L'\0';
 						configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart + 1;
 						if (prefixLength) {
 							*prefixLength = configuration->inputDepth;
