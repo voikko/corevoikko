@@ -33,23 +33,71 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
+static constexpr std::array<const char *,21> KEY_TO_STRING {
+	"BASEFORM",
+	"CLASS",
+	"COMPARISON",
+	"FOCUS",
+	"FSTOUTPUT",
+	"KYSYMYSLIITE",
+	"MALAGA_VAPAA_JALKIOSA",
+	"MOOD",
+	"NEGATIVE",
+	"NUMBER",
+	"PARTICIPLE",
+	"PERSON",
+	"POSSESSIVE",
+	"POSSIBLE_GEOGRAPHICAL_NAME",
+	"REQUIRE_FOLLOWING_VERB",
+	"SIJAMUOTO",
+	"STRUCTURE",
+	"TENSE",
+	"WEIGHT",
+	"WORDIDS",
+	"WORDBASES"
+};
+
+static const std::map<std::string, Analysis::Key> STRING_TO_KEY = {
+	{"BASEFORM", Analysis::Key::BASEFORM},
+	{"CLASS", Analysis::Key::CLASS},
+	{"COMPARISON", Analysis::Key::COMPARISON},
+	{"FOCUS", Analysis::Key::FOCUS},
+	{"FSTOUTPUT", Analysis::Key::FSTOUTPUT},
+	{"KYSYMYSLIITE", Analysis::Key::KYSYMYSLIITE},
+	{"MALAGA_VAPAA_JALKIOSA", Analysis::Key::MALAGA_VAPAA_JALKIOSA},
+	{"MOOD", Analysis::Key::MOOD},
+	{"NEGATIVE", Analysis::Key::NEGATIVE},
+	{"NUMBER", Analysis::Key::NUMBER},
+	{"PARTICIPLE", Analysis::Key::PARTICIPLE},
+	{"PERSON", Analysis::Key::PERSON},
+	{"POSSESSIVE", Analysis::Key::POSSESSIVE},
+	{"POSSIBLE_GEOGRAPHICAL_NAME", Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME},
+	{"REQUIRE_FOLLOWING_VERB", Analysis::Key::REQUIRE_FOLLOWING_VERB},
+	{"SIJAMUOTO", Analysis::Key::SIJAMUOTO},
+	{"STRUCTURE", Analysis::Key::STRUCTURE},
+	{"TENSE", Analysis::Key::TENSE},
+	{"WEIGHT", Analysis::Key::WEIGHT},
+	{"WORDIDS", Analysis::Key::WORDIDS},
+	{"WORDBASES", Analysis::Key::WORDBASES}
+};
+
 Analysis::Analysis() : keys(0) {
 }
 
 Analysis::~Analysis() {
 	deleteKeys();
-	std::map<std::string, wchar_t *>::iterator it = attributes.begin();
+	std::map<Key, wchar_t *>::iterator it = attributes.begin();
 	while (it != attributes.end()) {
 		delete[] it++->second;
 	}
 }
 
-void Analysis::addAttribute(const char * key, wchar_t * value) {
-	attributes.insert(std::make_pair(std::string(key), value));
+void Analysis::addAttribute(Key key, wchar_t * value) {
+	attributes.insert(std::make_pair(key, value));
 }
 
-void Analysis::removeAttribute(const char * key) {
-	std::map<std::string, wchar_t *>::iterator valueI = attributes.find(std::string(key));
+void Analysis::removeAttribute(Key key) {
+	std::map<Key, wchar_t *>::iterator valueI = attributes.find(key);
 	if (valueI != attributes.end()) {
 		delete[] valueI->second;
 		attributes.erase(valueI);
@@ -60,14 +108,32 @@ const char ** Analysis::getKeys() const {
 	return const_cast<const char **>(keys);
 }
 
-const wchar_t * Analysis::getValue(const char * key) const {
-	std::map<std::string, wchar_t *>::const_iterator valueI =
-	    attributes.find(std::string(key));
+std::vector<Analysis::Key> Analysis::getInternalKeys() const {
+	std::vector<Analysis::Key> keys;
+	for (auto keyAndValue: attributes) {
+		keys.push_back(keyAndValue.first);
+	}
+	return keys;
+}
+
+const wchar_t * Analysis::getValue(Analysis::Key key) const {
+	std::map<Key, wchar_t *>::const_iterator valueI =
+	    attributes.find(key);
 	if (valueI == attributes.end()) {
-		return 0;
+		return nullptr;
 	}
 	else {
 		return valueI->second;
+	}
+}
+
+const wchar_t * Analysis::getValueS(const char * key) const {
+	std::map<std::string, Analysis::Key>::const_iterator keyI = STRING_TO_KEY.find(std::string(key));
+	if (keyI == STRING_TO_KEY.end()) {
+		return nullptr;
+	}
+	else {
+		return this->getValue(keyI->second);
 	}
 }
 
@@ -79,10 +145,10 @@ void Analysis::deleteKeys() {
 void Analysis::seal() {
 	deleteKeys();
 	keys = new const char*[attributes.size() + 1];
-	std::map<std::string, wchar_t *>::const_iterator it = attributes.begin();
+	std::map<Key, wchar_t *>::const_iterator it = attributes.begin();
 	size_t i = 0;
 	while (it != attributes.end()) {
-		keys[i++] = it++->first.c_str();
+		keys[i++] = KEY_TO_STRING[(int)it++->first];
 	}
 	keys[i] = 0;
 }

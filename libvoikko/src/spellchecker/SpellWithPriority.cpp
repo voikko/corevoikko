@@ -36,7 +36,7 @@ using namespace libvoikko::morphology;
 namespace libvoikko { namespace spellchecker {
 
 static int getPriorityFromNounInflection(const Analysis * analysis) {
-	const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
+	const wchar_t * sijamuoto = analysis->getValue(Analysis::Key::SIJAMUOTO);
 	if (!sijamuoto) {
 		// unknown sijamuoto
 		return 4;
@@ -90,7 +90,7 @@ static int getPriorityFromNounInflection(const Analysis * analysis) {
 }
 
 static int getPriorityFromWordClassAndInflection(const Analysis * analysis) {
-	const wchar_t * wordClass = analysis->getValue("CLASS");
+	const wchar_t * wordClass = analysis->getValue(Analysis::Key::CLASS);
 	if (!wordClass) {
 		// unknown word class
 		return 4;
@@ -141,7 +141,7 @@ static int getPriorityFromSpellResult(spellresult result) {
 static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
                                   const Analysis * analysis) {
 	prio = getPriorityFromWordClassAndInflection(analysis);
-	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	const wchar_t * structure = analysis->getValue(Analysis::Key::STRUCTURE);
 	prio *= getPriorityFromStructure(structure);
 	spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
 	prio *= getPriorityFromSpellResult(result);

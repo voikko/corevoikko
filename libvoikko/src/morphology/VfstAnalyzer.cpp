@@ -89,12 +89,12 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool
 			Analysis * analysis = new Analysis();
 			if (fullMorphology) {
 				wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
-				analysis->addAttribute("FSTOUTPUT", fstOutput);
+				analysis->addAttribute(Analysis::Key::FSTOUTPUT, fstOutput);
 			}
 			stringstream ss;
 			ss << setprecision(9) << logWeightToProb(weight);
 			string weightStr = ss.str();
-			analysis->addAttribute("WEIGHT", StringUtils::ucs4FromUtf8(weightStr.c_str()));
+			analysis->addAttribute(Analysis::Key::WEIGHT, StringUtils::ucs4FromUtf8(weightStr.c_str()));
 			analysisList->push_back(analysis);
 		}
 	}

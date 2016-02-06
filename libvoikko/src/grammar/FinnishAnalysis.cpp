@@ -82,18 +82,18 @@ void FinnishAnalysis::analyseToken(Token * token) {
 	bool verbFollowerTypeSet = false;
 	while (it != analyses->end()) {
 		token->isValidWord = true;
-		const wchar_t * structure = (*it)->getValue("STRUCTURE");
-		const wchar_t * wclass = (*it)->getValue("CLASS");
-		const wchar_t * mood = (*it)->getValue("MOOD");
-		const wchar_t * person = (*it)->getValue("PERSON");
-		const wchar_t * negative = (*it)->getValue("NEGATIVE");
-		const wchar_t * possibleGeographicalName = (*it)->getValue("POSSIBLE_GEOGRAPHICAL_NAME");
-		const wchar_t * requireFollowingVerb = (*it)->getValue("REQUIRE_FOLLOWING_VERB");
+		const wchar_t * structure = (*it)->getValue(morphology::Analysis::Key::STRUCTURE);
+		const wchar_t * wclass = (*it)->getValue(morphology::Analysis::Key::CLASS);
+		const wchar_t * mood = (*it)->getValue(morphology::Analysis::Key::MOOD);
+		const wchar_t * person = (*it)->getValue(morphology::Analysis::Key::PERSON);
+		const wchar_t * negative = (*it)->getValue(morphology::Analysis::Key::NEGATIVE);
+		const wchar_t * possibleGeographicalName = (*it)->getValue(morphology::Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME);
+		const wchar_t * requireFollowingVerb = (*it)->getValue(morphology::Analysis::Key::REQUIRE_FOLLOWING_VERB);
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
 			// Word may start with a capital letter anywhere
 			token->firstLetterLcase = false;
-			const wchar_t * wcase = (*it)->getValue("SIJAMUOTO");
+			const wchar_t * wcase = (*it)->getValue(morphology::Analysis::Key::SIJAMUOTO);
 			if (wclass && wcscmp(L"paikannimi", wclass) == 0 &&
 			    wcase && wcscmp(L"omanto", wcase) == 0) {
 				token->isGeographicalNameInGenitive = true;

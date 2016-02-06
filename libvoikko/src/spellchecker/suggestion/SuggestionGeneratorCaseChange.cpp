@@ -79,7 +79,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,
 				return;
 			}
 			const wchar_t * structure =
-			    (*analyses->begin())->getValue("STRUCTURE");
+			    (*analyses->begin())->getValue(Analysis::Key::STRUCTURE);
 			newsugg = new wchar_t[wlen + 1];
 			wcsncpy(newsugg, word, wlen);
 			newsugg[wlen] = L'\0';

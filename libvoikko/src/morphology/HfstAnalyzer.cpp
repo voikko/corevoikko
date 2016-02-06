@@ -82,9 +82,9 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word, bool fullMorphology)
 		Analysis * a = new Analysis();
 		if (fullMorphology) {
 			string lemma = analysis.substr(0,analysis.find("+"));
-			a->addAttribute("lemma",  StringUtils::ucs4FromUtf8(lemma.c_str()));
+			a->addAttribute(Analysis::Key::BASEFORM,  StringUtils::ucs4FromUtf8(lemma.c_str()));
 		}
-		a->addAttribute("tags",  StringUtils::ucs4FromUtf8(tags.c_str()));
+		a->addAttribute(Analysis::Key::FSTOUTPUT,  StringUtils::ucs4FromUtf8(tags.c_str()));
 		analysisList->push_back(a);
 		q.pop();
 	}

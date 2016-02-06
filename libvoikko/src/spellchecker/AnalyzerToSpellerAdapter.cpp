@@ -49,7 +49,7 @@ spellresult AnalyzerToSpellerAdapter::spell(const wchar_t * word, size_t wlen) {
 	spellresult best_result = SPELL_FAILED;
 	list<Analysis *>::const_iterator it = analyses->begin();
 	while (it != analyses->end()) {
-		const wchar_t * structure = (*it)->getValue("STRUCTURE");
+		const wchar_t * structure = (*it)->getValue(Analysis::Key::STRUCTURE);
 		spellresult result = SpellUtils::matchWordAndAnalysis(word, wlen, structure);
 		if (best_result == SPELL_FAILED || best_result > result) {
 			best_result = result;

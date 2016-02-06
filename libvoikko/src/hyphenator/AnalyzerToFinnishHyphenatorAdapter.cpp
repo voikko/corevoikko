@@ -287,7 +287,7 @@ char * AnalyzerToFinnishHyphenatorAdapter::intersectHyphenations(char ** hyphena
 
 void AnalyzerToFinnishHyphenatorAdapter::interpretAnalysis(const Analysis * analysis,
 	         char * buffer, size_t len) const {
-	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	const wchar_t * structure = analysis->getValue(Analysis::Key::STRUCTURE);
 	const wchar_t * structurePtr = structure;
 	memset(buffer, ' ', len);
 	if (*structurePtr == L'=') {

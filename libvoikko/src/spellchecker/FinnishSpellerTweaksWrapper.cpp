@@ -106,7 +106,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 					list<Analysis *>::const_iterator it = trailingAnalyses->begin();
 					bool isTrailingAcceptable = false;
 					while (it != trailingAnalyses->end()) {
-						const wchar_t * trailingAttr = (*it)->getValue("MALAGA_VAPAA_JALKIOSA");
+						const wchar_t * trailingAttr = (*it)->getValue(Analysis::Key::MALAGA_VAPAA_JALKIOSA);
 						if (trailingAttr != 0 && wcscmp(trailingAttr, L"true") == 0) {
 							isTrailingAcceptable = true;
 							break;
@@ -136,7 +136,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 		
 		list<Analysis *>::const_iterator it = analyses->begin();
 		while (it != analyses->end()) {
-			const wchar_t * structure = (*it)->getValue("STRUCTURE");
+			const wchar_t * structure = (*it)->getValue(Analysis::Key::STRUCTURE);
 			size_t j = 0;
 			size_t i;
 			for (i = 0; i < leading_len; i++) {

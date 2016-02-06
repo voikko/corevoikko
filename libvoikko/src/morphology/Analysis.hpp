@@ -31,6 +31,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
 namespace libvoikko { namespace morphology {
 
@@ -41,6 +42,30 @@ namespace libvoikko { namespace morphology {
  */
 class Analysis {
 	public:
+		enum class Key {
+			BASEFORM,
+			CLASS,
+			COMPARISON,
+			FOCUS,
+			FSTOUTPUT,
+			KYSYMYSLIITE,
+			MALAGA_VAPAA_JALKIOSA,
+			MOOD,
+			NEGATIVE,
+			NUMBER,
+			PARTICIPLE,
+			PERSON,
+			POSSESSIVE,
+			POSSIBLE_GEOGRAPHICAL_NAME,
+			REQUIRE_FOLLOWING_VERB,
+			SIJAMUOTO,
+			STRUCTURE,
+			TENSE,
+			WEIGHT,
+			WORDIDS,
+			WORDBASES
+		};
+		
 		Analysis();
 		~Analysis();
 		
@@ -48,12 +73,12 @@ class Analysis {
 		 * Adds an attribute to analysis. Ownership of value
 		 * is transferred to this object.
 		 */
-		void addAttribute(const char * key, wchar_t * value);
+		void addAttribute(Key key, wchar_t * value);
 		
 		/**
 		 * Deletes an attribute from analysis.
 		 */
-		void removeAttribute(const char * key);
+		void removeAttribute(Key key);
 		
 		/**
 		 * Seals this analysis for publication through external interface
@@ -65,19 +90,31 @@ class Analysis {
 		 * the attribute names in this analysis.
 		 */
 		const char ** getKeys() const;
+		
+		/**
+		 * Returns a list of attribute keys in this analysis.
+		 */
+		std::vector<Key> getInternalKeys() const;
 
 		/**
 		 * Returns the value of given attribute. If no such
 		 * attribute exists, returns null.
 		 */
-		const wchar_t * getValue(const char * key) const;
+		const wchar_t * getValue(Key key) const;
+		
+		/**
+		 * Returns the value of given attribute. If no such
+		 * attribute exists, returns null.
+		 */
+		const wchar_t * getValueS(const char * key) const;
+		
 	private:
 		Analysis(Analysis const & other);
 		Analysis & operator = (const Analysis & other);
 		
 		void deleteKeys();
 		const char ** keys;
-		std::map<std::string, wchar_t *> attributes;
+		std::map<Key, wchar_t *> attributes;
 };
 
 } }

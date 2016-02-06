@@ -307,14 +307,14 @@ static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar
 }
 
 static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t i, size_t j,
-			        const char * attributeName, map<wstring, wstring> & theMap) {
-	if (analysis->getValue(attributeName)) {
+			        Analysis::Key key, map<wstring, wstring> & theMap) {
+	if (analysis->getValue(key)) {
 		return; // already set
 	}
 	size_t sijaLen = i - j - 2;
 	wchar_t * muoto = getAttributeFromMap(theMap, fstOutput + j + 2, sijaLen);
 	if (muoto) {
-		analysis->addAttribute(attributeName, muoto);
+		analysis->addAttribute(key, muoto);
 	}
 }
 
@@ -431,26 +431,26 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 }
 
 static void addInfoFlag(Analysis * analysis, const wchar_t * outputPosition, const wchar_t * outputBuffer) {
-	const wchar_t * className = analysis->getValue("CLASS");
+	const wchar_t * className = analysis->getValue(Analysis::Key::CLASS);
 	if (wcsncmp(outputPosition, L"vj", 2) == 0) {
 		if (outputBuffer[0] != L'-') {
-			analysis->addAttribute("MALAGA_VAPAA_JALKIOSA", StringUtils::copy(L"true"));
+			analysis->addAttribute(Analysis::Key::MALAGA_VAPAA_JALKIOSA, StringUtils::copy(L"true"));
 		}
 	}
 	else if (wcsncmp(outputPosition, L"ca", 2) == 0) {
 		if (!wcsstr(outputPosition, L"[Bc]") && !wcsstr(outputPosition, L"[Ll]") && (!className || wcsncmp(className, L"nimisana", 8) == 0)) {
-			analysis->addAttribute("POSSIBLE_GEOGRAPHICAL_NAME", StringUtils::copy(L"true"));
+			analysis->addAttribute(Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME, StringUtils::copy(L"true"));
 		}
 	}
 	else {
-		const wchar_t * mood = analysis->getValue("MOOD");
+		const wchar_t * mood = analysis->getValue(Analysis::Key::MOOD);
 		if ((!mood || (wcscmp(mood, L"E-infinitive") != 0 && wcscmp(mood, L"MINEN-infinitive") != 0 && wcscmp(mood, L"MA-infinitive") != 0)) &&
 		    (!className || wcscmp(className, L"teonsana") == 0)) {
 			if (wcsncmp(outputPosition, L"ra", 2) == 0) {
-				analysis->addAttribute("REQUIRE_FOLLOWING_VERB", StringUtils::copy(L"A-infinitive"));
+				analysis->addAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, StringUtils::copy(L"A-infinitive"));
 			}
 			else if (wcsncmp(outputPosition, L"rm", 2) == 0) {
-				analysis->addAttribute("REQUIRE_FOLLOWING_VERB", StringUtils::copy(L"MA-infinitive"));
+				analysis->addAttribute(Analysis::Key::REQUIRE_FOLLOWING_VERB, StringUtils::copy(L"MA-infinitive"));
 			}
 		}
 	}
@@ -672,7 +672,7 @@ static wchar_t * parseBaseform(const wchar_t * fstOutput, size_t fstLen, const w
 }
 
 void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * fstOutput, std::list<Analysis *> * analysisList) {
-	const wchar_t * oldClass = analysis->getValue("CLASS");
+	const wchar_t * oldClass = analysis->getValue(Analysis::Key::CLASS);
 	if (!oldClass || wcscmp(oldClass, L"nimisana") != 0) {
 		return;
 	}
@@ -694,15 +694,12 @@ void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * 
 			for (size_t j = i - 4; j >= 4; j--) {
 				if (wcsncmp(fstOutput + j, L"[Bc]", 4) == 0) {
 					Analysis * newAnalysis = new Analysis();
-					analysis->seal();
-					const char ** keys = analysis->getKeys();
 					wchar_t * newStructure = 0;
-					for (const char ** keyPtr = keys; *keyPtr; keyPtr++) {
-						const char * key = *keyPtr;
-						if (strcmp(key, "CLASS") == 0) {
+					for (Analysis::Key key : analysis->getInternalKeys()) {
+						if (key == Analysis::Key::CLASS) {
 							newAnalysis->addAttribute(key, StringUtils::copy(L"nimi"));
 						}
-						else if (strcmp(key, "STRUCTURE") == 0) {
+						else if (key == Analysis::Key::STRUCTURE) {
 							const wchar_t * oldStructure = analysis->getValue(key);
 							size_t structureLen = wcslen(oldStructure);
 							if (structureLen >= 2) {
@@ -711,7 +708,7 @@ void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * 
 								newAnalysis->addAttribute(key, newStructure);
 							}
 						}
-						else if (strcmp(key, "POSSIBLE_GEOGRAPHICAL_NAME") == 0) {
+						else if (key == Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME) {
 							// skip
 						}
 						else {
@@ -721,7 +718,7 @@ void FinnishVfstAnalyzer::duplicateOrgName(Analysis * analysis, const wchar_t * 
 					if (newStructure) {
 						wchar_t * baseform = parseBaseform(fstOutput, fstLen, newStructure);
 						if (baseform) {
-							newAnalysis->addAttribute("BASEFORM", baseform);
+							newAnalysis->addAttribute(Analysis::Key::BASEFORM, baseform);
 						}
 					}
 					analysisList->push_back(newAnalysis);
@@ -885,12 +882,12 @@ void FinnishVfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_
 	delete[] xsBuffer;
 	delete[] xpBuffer;
 	if (anyXs) {
-		analysis->addAttribute("WORDIDS", wordIds);
+		analysis->addAttribute(Analysis::Key::WORDIDS, wordIds);
 	}
 	else {
 		delete[] wordIds;
 	}
-	analysis->addAttribute("WORDBASES", wordBases);
+	analysis->addAttribute(Analysis::Key::WORDBASES, wordBases);
 }
 
 void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
@@ -904,71 +901,71 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 				if (fstOutput[j] == L'[') {
 					if (fstOutput[j + 1] == L'L') {
 						if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
-							const wchar_t * comp = analysis->getValue("COMPARISON");
+							const wchar_t * comp = analysis->getValue(Analysis::Key::COMPARISON);
 							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) ||
 							    wcsncmp(fstOutput, L"[Lu]", 4) == 0) {
-								analysis->addAttribute("CLASS", StringUtils::copy(L"laatusana"));
+								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"laatusana"));
 							}
 							else {
-								analysis->addAttribute("CLASS", StringUtils::copy(L"nimisana_laatusana"));
+								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"nimisana_laatusana"));
 							}
 						}
 						else {
-							parseBasicAttribute(analysis, fstOutput, i, j, "CLASS", classMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::CLASS, classMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'N') {
-						const wchar_t * wclass = analysis->getValue("CLASS");
+						const wchar_t * wclass = analysis->getValue(Analysis::Key::CLASS);
 						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
-							parseBasicAttribute(analysis, fstOutput, i, j, "NUMBER", numberMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::NUMBER, numberMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'P') {
-						parseBasicAttribute(analysis, fstOutput, i, j, "PERSON", personMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::PERSON, personMap);
 					}
 					else if (fstOutput[j + 1] == L'S') {
-						const wchar_t * wclass = analysis->getValue("CLASS");
+						const wchar_t * wclass = analysis->getValue(Analysis::Key::CLASS);
 						if (!wclass || (wcscmp(wclass, L"etuliite") != 0 && wcscmp(wclass, L"seikkasana") != 0)) {
-							parseBasicAttribute(analysis, fstOutput, i, j, "SIJAMUOTO", sijamuotoMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::SIJAMUOTO, sijamuotoMap);
 							if (j + 5 < fstLen && wcsncmp(fstOutput + (j + 2), L"sti", 3) == 0) {
 								convertNimiLaatusanaToLaatusana = true;
 							}
 						}
 					}
 					else if (fstOutput[j + 1] == L'T') {
-						if (!analysis->getValue("CLASS")) {
-							parseBasicAttribute(analysis, fstOutput, i, j, "MOOD", moodMap);
+						if (!analysis->getValue(Analysis::Key::CLASS)) {
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::MOOD, moodMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'A') {
-						parseBasicAttribute(analysis, fstOutput, i, j, "TENSE", tenseMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::TENSE, tenseMap);
 					}
 					else if (fstOutput[j + 1] == L'F') {
 						if (wcsncmp(fstOutput + (j + 2), L"ko", 2) == 0) {
-							analysis->addAttribute("KYSYMYSLIITE", StringUtils::copy(L"true"));
+							analysis->addAttribute(Analysis::Key::KYSYMYSLIITE, StringUtils::copy(L"true"));
 						}
 						else {
-							parseBasicAttribute(analysis, fstOutput, i, j, "FOCUS", focusMap);
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::FOCUS, focusMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'O') {
-						parseBasicAttribute(analysis, fstOutput, i, j, "POSSESSIVE", possessiveMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::POSSESSIVE, possessiveMap);
 					}
 					else if (fstOutput[j + 1] == L'C') {
-						if (!analysis->getValue("CLASS")) {
-							parseBasicAttribute(analysis, fstOutput, i, j, "COMPARISON", comparisonMap);
+						if (!analysis->getValue(Analysis::Key::CLASS)) {
+							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::COMPARISON, comparisonMap);
 						}
 					}
 					else if (fstOutput[j + 1] == L'E') {
-						parseBasicAttribute(analysis, fstOutput, i, j, "NEGATIVE", negativeMap);
+						parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::NEGATIVE, negativeMap);
 					}
 					else if (fstOutput[j + 1] == L'R') {
 						if (!bcPassed) {
-							const wchar_t * wclass = analysis->getValue("CLASS");
+							const wchar_t * wclass = analysis->getValue(Analysis::Key::CLASS);
 							// TODO: Checking the end for [Ln] is done to handle -tUAnne ("kuunneltuanne"). This is for compatibility
 							// with Malaga implementation. See VISK § 543 (temporaalirakenne) for correct analysis.
 							if (!wclass || wcscmp(wclass, L"laatusana") == 0 || wcscmp(fstOutput + (fstLen - 4), L"[Ln]") == 0) {
-								parseBasicAttribute(analysis, fstOutput, i, j, "PARTICIPLE", participleMap);
+								parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::PARTICIPLE, participleMap);
 							}
 						}
 					}
@@ -977,8 +974,8 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					}
 					else if (fstOutput[j + 1] == L'B') {
 						if (j >= 5 && fstOutput[j + 2] == L'c') {
-							if (!analysis->getValue("CLASS") && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
-								analysis->addAttribute("CLASS", StringUtils::copy(L"etuliite"));
+							if (!analysis->getValue(Analysis::Key::CLASS) && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+								analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(L"etuliite"));
 							}
 							bcPassed = true;
 						}
@@ -1068,39 +1065,39 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 			wchar_t * structure = parseStructure(fstOutput, wlen);
 			parseBasicAttributes(analysis, fstOutput, fstLen);
 			fixStructure(structure, fstOutput, fstLen);
-			analysis->addAttribute("STRUCTURE", structure);
-			const wchar_t * wclass = analysis->getValue("CLASS");
-			const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
-			const wchar_t * mood = analysis->getValue("MOOD");
-			const wchar_t * participle = analysis->getValue("PARTICIPLE");
-			if (analysis->getValue("NEGATIVE") && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
+			analysis->addAttribute(Analysis::Key::STRUCTURE, structure);
+			const wchar_t * wclass = analysis->getValue(Analysis::Key::CLASS);
+			const wchar_t * sijamuoto = analysis->getValue(Analysis::Key::SIJAMUOTO);
+			const wchar_t * mood = analysis->getValue(Analysis::Key::MOOD);
+			const wchar_t * participle = analysis->getValue(Analysis::Key::PARTICIPLE);
+			if (analysis->getValue(Analysis::Key::NEGATIVE) && ((wclass && wcscmp(wclass, L"teonsana") != 0) ||
 			    (mood && (wcscmp(mood, L"MINEN-infinitive") == 0 || wcscmp(mood, L"E-infinitive") == 0 || wcscmp(mood, L"MA-infinitive") == 0))
 			)) {
-				analysis->removeAttribute("NEGATIVE");
+				analysis->removeAttribute(Analysis::Key::NEGATIVE);
 			}
 			if (participle && wcscmp(participle, L"past_passive") == 0 && (!wclass || wcscmp(participle, L"laatusana") != 0)) {
 				wclass = L"laatusana";
-				analysis->removeAttribute("CLASS");
-				analysis->addAttribute("CLASS", StringUtils::copy(wclass));
+				analysis->removeAttribute(Analysis::Key::CLASS);
+				analysis->addAttribute(Analysis::Key::CLASS, StringUtils::copy(wclass));
 			}
-			if (analysis->getValue("NUMBER") && sijamuoto && wcscmp(sijamuoto, L"kerrontosti") == 0) {
-				analysis->removeAttribute("NUMBER");
+			if (analysis->getValue(Analysis::Key::NUMBER) && sijamuoto && wcscmp(sijamuoto, L"kerrontosti") == 0) {
+				analysis->removeAttribute(Analysis::Key::NUMBER);
 			}
-			if (!analysis->getValue("COMPARISON")) {
+			if (!analysis->getValue(Analysis::Key::COMPARISON)) {
 				if (wclass && (wcscmp(wclass, L"laatusana") == 0 || wcscmp(wclass, L"nimisana_laatusana") == 0)) {
-					analysis->addAttribute("COMPARISON", StringUtils::copy(L"positive"));
+					analysis->addAttribute(Analysis::Key::COMPARISON, StringUtils::copy(L"positive"));
 				}
 			}
 			else if (wclass && (wcscmp(wclass, L"nimisana") == 0)) {
-				analysis->removeAttribute("COMPARISON");
+				analysis->removeAttribute(Analysis::Key::COMPARISON);
 			}
 			analysisList->push_back(analysis);
 			duplicateOrgName(analysis, fstOutput, analysisList);
 			if (fullMorphology) {
-				analysis->addAttribute("FSTOUTPUT", fstOutput);
+				analysis->addAttribute(Analysis::Key::FSTOUTPUT, fstOutput);
 				wchar_t * baseform = parseBaseform(fstOutput, fstLen, structure);
 				if (baseform) {
-					analysis->addAttribute("BASEFORM", baseform);
+					analysis->addAttribute(Analysis::Key::BASEFORM, baseform);
 				}
 				parseDebugAttributes(analysis, fstOutput, fstLen);
 			}

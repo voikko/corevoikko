@@ -66,21 +66,21 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word, bool fullMorpholog
 		while (res && currentAnalysisCount < MAX_ANALYSIS_COUNT) {
 			Analysis * analysis = new Analysis();
 			parseStructure(analysis, res);
-			parseBasicAttribute(analysis, res, symbols[MS_SIJAMUOTO], "SIJAMUOTO");
-			parseBasicAttribute(analysis, res, symbols[MS_CLASS], "CLASS");
-			parseBasicAttribute(analysis, res, symbols[MS_NUMBER], "NUMBER");
-			parseBasicAttribute(analysis, res, symbols[MS_PERSON], "PERSON");
-			parseBasicAttribute(analysis, res, symbols[MS_MOOD], "MOOD");
-			parseBasicAttribute(analysis, res, symbols[MS_VAPAA_JALKIOSA], "MALAGA_VAPAA_JALKIOSA");
-			parseBasicAttribute(analysis, res, symbols[MS_NEGATIVE], "NEGATIVE");
-			parseBasicAttribute(analysis, res, symbols[MS_POSSIBLE_GEOGRAPHICAL_NAME], "POSSIBLE_GEOGRAPHICAL_NAME");
-			parseBasicAttribute(analysis, res, symbols[MS_REQUIRE_FOLLOWING_VERB], "REQUIRE_FOLLOWING_VERB");
-			parseBasicAttribute(analysis, res, symbols[MS_TENSE], "TENSE");
-			parseBasicAttribute(analysis, res, symbols[MS_PARTICIPLE], "PARTICIPLE");
-			parseBasicAttribute(analysis, res, symbols[MS_POSSESSIVE], "POSSESSIVE");
-			parseBasicAttribute(analysis, res, symbols[MS_KYSYMYSLIITE], "KYSYMYSLIITE");
-			parseBasicAttribute(analysis, res, symbols[MS_FOCUS], "FOCUS");
-			parseBasicAttribute(analysis, res, symbols[MS_COMPARISON], "COMPARISON");
+			parseBasicAttribute(analysis, res, symbols[MS_SIJAMUOTO], Analysis::Key::SIJAMUOTO);
+			parseBasicAttribute(analysis, res, symbols[MS_CLASS], Analysis::Key::CLASS);
+			parseBasicAttribute(analysis, res, symbols[MS_NUMBER], Analysis::Key::NUMBER);
+			parseBasicAttribute(analysis, res, symbols[MS_PERSON], Analysis::Key::PERSON);
+			parseBasicAttribute(analysis, res, symbols[MS_MOOD], Analysis::Key::MOOD);
+			parseBasicAttribute(analysis, res, symbols[MS_VAPAA_JALKIOSA], Analysis::Key::MALAGA_VAPAA_JALKIOSA);
+			parseBasicAttribute(analysis, res, symbols[MS_NEGATIVE], Analysis::Key::NEGATIVE);
+			parseBasicAttribute(analysis, res, symbols[MS_POSSIBLE_GEOGRAPHICAL_NAME], Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME);
+			parseBasicAttribute(analysis, res, symbols[MS_REQUIRE_FOLLOWING_VERB], Analysis::Key::REQUIRE_FOLLOWING_VERB);
+			parseBasicAttribute(analysis, res, symbols[MS_TENSE], Analysis::Key::TENSE);
+			parseBasicAttribute(analysis, res, symbols[MS_PARTICIPLE], Analysis::Key::PARTICIPLE);
+			parseBasicAttribute(analysis, res, symbols[MS_POSSESSIVE], Analysis::Key::POSSESSIVE);
+			parseBasicAttribute(analysis, res, symbols[MS_KYSYMYSLIITE], Analysis::Key::KYSYMYSLIITE);
+			parseBasicAttribute(analysis, res, symbols[MS_FOCUS], Analysis::Key::FOCUS);
+			parseBasicAttribute(analysis, res, symbols[MS_COMPARISON], Analysis::Key::COMPARISON);
 			if (fullMorphology) {
 				parsePerusmuoto(analysis, res);
 			}
@@ -268,12 +268,12 @@ void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const
 	value_t structureVal = get_attribute(result, symbols[MS_RAKENNE]);
 	char * value = get_value_string(structureVal);
 	wchar_t * structure = StringUtils::ucs4FromUtf8(value);
-	analysis->addAttribute("STRUCTURE", structure);
+	analysis->addAttribute(Analysis::Key::STRUCTURE, structure);
 	free(value);
 }
 
 void MalagaAnalyzer::parseBasicAttribute(Analysis * &analysis, value_t &result,
-                                         symbol_t symbol, const char * attrName) const {
+                                         symbol_t symbol, Analysis::Key key) const {
 	if (!symbol) {
 		return;
 	}
@@ -293,7 +293,7 @@ void MalagaAnalyzer::parseBasicAttribute(Analysis * &analysis, value_t &result,
 	}
 	const wchar_t * valueName = (*mapIterator).second;
 	if (valueName) {
-		analysis->addAttribute(attrName, StringUtils::copy(valueName));
+		analysis->addAttribute(key, StringUtils::copy(valueName));
 	}
 }
 
@@ -305,19 +305,19 @@ void MalagaAnalyzer::parsePerusmuoto(Analysis * &analysis, value_t &result) cons
 	char * value = get_value_string(perusmuotoVal);
 	wchar_t * perusmuoto = StringUtils::ucs4FromUtf8(value);
 	free(value);
-	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	const wchar_t * structure = analysis->getValue(Analysis::Key::STRUCTURE);
 	wchar_t * baseForm = parseBaseform(perusmuoto, structure);
 	wchar_t * wordIds = parseAttributeFromPerusmuoto(perusmuoto, L's');
 	wchar_t * wordBases = parseAttributeFromPerusmuoto(perusmuoto, L'p');
 	delete[] perusmuoto;
 	if (baseForm) {
-		analysis->addAttribute("BASEFORM", baseForm);
+		analysis->addAttribute(Analysis::Key::BASEFORM, baseForm);
 	}
 	if (wordIds) {
-		analysis->addAttribute("WORDIDS", wordIds);
+		analysis->addAttribute(Analysis::Key::WORDIDS, wordIds);
 	}
 	if (wordBases) {
-		analysis->addAttribute("WORDBASES", wordBases);
+		analysis->addAttribute(Analysis::Key::WORDBASES, wordBases);
 	}
 }
 
