@@ -293,7 +293,7 @@ void MalagaAnalyzer::parseBasicAttribute(Analysis * &analysis, value_t &result,
 	}
 	const wchar_t * valueName = (*mapIterator).second;
 	if (valueName) {
-		analysis->addAttribute(key, StringUtils::copy(valueName));
+		analysis->addConstAttribute(key, valueName);
 	}
 }
 
