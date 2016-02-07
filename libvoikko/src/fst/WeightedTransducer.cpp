@@ -356,6 +356,9 @@ namespace libvoikko { namespace fst {
 					}
 					goto nextInMainLoop;
 				}
+				else if (currentTransition->symIn > configuration->inputSymbolStack[configuration->inputDepth]) {
+					break;
+				}
 				currentTransition++;
 			}
 			if (configuration->stackDepth == 0) {
