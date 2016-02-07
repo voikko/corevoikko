@@ -108,7 +108,7 @@ void Analysis::removeAttribute(Key key) {
 	std::map<Key, wchar_t *>::iterator valueI = attributes.find(key);
 	if (valueI != attributes.end()) {
 		if (constAttributes[static_cast<int>(valueI->first)]) {
-			constAttributes.set(static_cast<int>(valueI->first), false);
+			constAttributes[static_cast<int>(valueI->first)] = false;
 		}
 		else {
 			delete[] valueI->second;
