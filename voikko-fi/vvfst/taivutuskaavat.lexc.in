@@ -1395,7 +1395,7 @@ LEXICON NOUN Rosé
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
-[Sill][Ny][[HV]]:[[HV]]	<WC>LiOlN_<A>	;
+[[HV]][Sill][Ny]:[[HV]]	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -2618,7 +2618,7 @@ Käskytapa_y2_<A>	;
 
 LEXICON Punoa_s
 Johdin_nimitapa1A_<A>	;
-[Tt][Ap][P3][Ny][Ef][[L]]:[[L]]	KestämänTekijäpääteY3Liitesana_<A>	;
+[[L]][Tt][Ap][P3][Ny][Ef]:[[L]]	KestämänTekijäpääteY3Liitesana_<A>	;
 [Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
@@ -2651,7 +2651,7 @@ LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
 Johdin_Us_ksen_<A>	;
-<U>[Xj]<A>[X]:<U>	Punoa_<A>	;
+[Xj]<U><A>[X]<U>:<U>	Punoa_<A>	;
 
 LEXICON Heittää
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
@@ -2663,9 +2663,9 @@ LEXICON Heittää
 LEXICON Muistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ö[Xj][X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö	NimisanaValo_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]o[Xj][X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
-@C.V_SALLITTU@<U>[Xj]<A>[X]:@C.V_SALLITTU@<U>	Punoa_<A>	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xj]ö[X]ö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö	NimisanaValo_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln][Xj]o[X]o:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
+@C.V_SALLITTU@[Xj]<U><A>[X]<U>:@C.V_SALLITTU@<U>	Punoa_<A>	;
 
 LEXICON Inttää
 <WC>MuistaaMuistella_w_<A>	;
@@ -2771,8 +2771,8 @@ KertomanTekijäpääteVahva_<A>	;
 LEXICON Loistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
-o[Xj][X]@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:o@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_a	;
-ö[Xj][X]@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:ö@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_ä	;
+[Xj]o[X]@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]o:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
+[Xj]ö[X]@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö	NimisanaValo_ä	;
 
 LEXICON Puoltaa
 l:l	Huutaa_w_<A>	;
@@ -4122,7 +4122,7 @@ LEXICON Johdin_UUs
 <U>:<U>	Johdin_Us_<A>	;
 
 LEXICON Johdin_U_arvelu
-[Ln]<U>[Xj][X]@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
+[Ln][Xj]<U>[X]@C.JOHDETTAVA_NIMISANAKSI@<U>:@C.JOHDETTAVA_NIMISANAKSI@<U>	NimisanaArvelu_<A>	;
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i[Xj]nen[X]@D.EI_MAINEN@@C.EI_YKS@:m<A>i@D.EI_MAINEN@@C.EI_YKS@	LaatusanaNainen_<A>	;
@@ -4407,10 +4407,10 @@ LEXICON Johdin_tU_nA
 
 ! nuolaista -> nuolaistu
 LEXICON Johdin_tU_tA
-[Ll][Rt]t<U>[Xj][X]@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaValo_<A>	;
+[Ll][Rt]t[Xj]<U>[X]@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>:t@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>	LaatusanaValo_<A>	;
 [Ll][Rt]t<U>[Xj][X][Sp][Ny]<A>:t<U><A>	OlV_<A>	;
 ?Sukija [Ll][Rt]t<U>[Xj][X]@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_<A>	;
-?Sukija [Rt]t<U>@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaValo_<A>	;
+?Sukija [Rt]t@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>:t@D.EI_NIMI_LAATUSANAJOHDOSTA@@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@<U>	LaatusanaValo_<A>	;
 ?Sukija [Rt]t<U>[Sp][Ny]<A>:t<U><A>	OlV_<A>	;
 ?Sukija [Rt]t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_<A>	;
 
@@ -4672,8 +4672,8 @@ LEXICON SisäpaikallissijatSsaSta
 
 LEXICON SisäpaikallissijatVn
 SisäpaikallissijatSsaSta_<A>	;
-[Sill][Ny][[L]]n:[[L]]n	Liitesana_<A>	;
-[Sill][Ny][[L]]:[[L]]	Omistusliite_<A>	;
+[[L]][Sill][Ny]n:[[L]]n	Liitesana_<A>	;
+[[L]][Sill][Ny]:[[L]]	Omistusliite_<A>	;
 
 LEXICON LoppuLiitesanaOsantoTa
 LoppuLiitesana_<A>	;
@@ -5259,7 +5259,7 @@ LEXICON TositapaPi
 ?Sukija LEXICON SukijaAntautua
 ?Sukija <WC>Kaatua_<A> ;
 ?Sukija KestämänTekijäpääteHeikko_<A> ;
-?Sukija [Tt][Ap][P3][Ny][Ef][[L]]:[[L]] KestämänTekijäpääteY3Liitesana_<A> ;
+?Sukija [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] KestämänTekijäpääteY3Liitesana_<A> ;
 ?Sukija [Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t Liitesana_<A> ;
 ?Sukija s:s KertomanTekijäpääteHeikko_<A> ;
 ?Sukija s:s KertomanTekijäpääteVahva_<A> ;

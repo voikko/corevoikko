@@ -13,6 +13,7 @@ define Lengthening a "[[L]]" -> a a ,
                    y "[[L]]" -> y y ;
 
 define HV  a "[[HV]]" -> a h a ,
+           á "[[HV]]" -> á h a ,
            e "[[HV]]" -> e h e ,
            i "[[HV]]" -> i h i ,
            ä "[[HV]]" -> ä h ä ,
