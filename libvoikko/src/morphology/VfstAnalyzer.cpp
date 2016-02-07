@@ -56,7 +56,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	// XXX: could handle different types of transducers
 	transducer = new WeightedTransducer(morFile.c_str());
 	configuration = new WeightedConfiguration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
-	outputBuffer = new char[BUFFER_SIZE];
+	outputBuffer = new wchar_t[BUFFER_SIZE];
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const char * word, bool fullMorphology) {
@@ -78,18 +78,15 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool
 	wchar_t * wordLowerUcs4 = new wchar_t[wlen];
 	memcpy(wordLowerUcs4, word, wlen * sizeof(wchar_t));
 	voikko_set_case(CT_ALL_LOWER, wordLowerUcs4, wlen);
-	char * wordLower = StringUtils::utf8FromUcs4(wordLowerUcs4, wlen);
-	delete[] wordLowerUcs4;
 	
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
+	if (transducer->prepare(configuration, wordLowerUcs4, wlen)) {
 		int analysisCount = 0;
 		int16_t weight;
 		while (++analysisCount < MAX_ANALYSIS_COUNT && transducer->next(configuration, outputBuffer, BUFFER_SIZE, &weight)) {
 			Analysis * analysis = new Analysis();
 			if (fullMorphology) {
-				wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
-				analysis->addAttribute(Analysis::Key::FSTOUTPUT, fstOutput);
+				analysis->addAttribute(Analysis::Key::FSTOUTPUT, StringUtils::copy(outputBuffer));
 			}
 			stringstream ss;
 			ss << setprecision(9) << logWeightToProb(weight);
@@ -99,7 +96,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen, bool
 		}
 	}
 	
-	delete[] wordLower;
+	delete[] wordLowerUcs4;
 	return analysisList;
 }
 

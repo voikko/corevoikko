@@ -55,23 +55,22 @@ VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const s
 	errorModel = new fst::WeightedTransducer(errFile.c_str());
 	acceptorConf = new fst::WeightedConfiguration(acceptor->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	errorModelConf = new fst::WeightedConfiguration(errorModel->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
-	acceptorBuffer = new char[BUFFER_SIZE];
-	errorModelBuffer = new char[BUFFER_SIZE];
+	acceptorBuffer = new wchar_t[BUFFER_SIZE];
+	errorModelBuffer = new wchar_t[BUFFER_SIZE];
 }
 
 void VfstSuggestion::generate(SuggestionStatus * s) const {
 	s->setMaxCost(100); // not actually used
 	size_t wlen = s->getWordLength();
-	char * wordUtf = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	int16_t acceptorWeight;
 	int16_t errorModelWeight;
-	map<string, int> suggestionWeights;
-	if (errorModel->prepare(errorModelConf, wordUtf, wlen)) {
+	map<wstring, int> suggestionWeights;
+	if (errorModel->prepare(errorModelConf, s->getWord(), wlen)) {
 		while (!s->shouldAbort() && errorModel->next(errorModelConf, errorModelBuffer, BUFFER_SIZE, &errorModelWeight)) {
-			if (acceptor->prepare(acceptorConf, errorModelBuffer, strlen(errorModelBuffer))) {
+			if (acceptor->prepare(acceptorConf, errorModelBuffer, wcslen(errorModelBuffer))) {
 				int firstNotReachedPosition;
 				if (acceptor->next(acceptorConf, acceptorBuffer, BUFFER_SIZE, &acceptorWeight, &firstNotReachedPosition)) {
-					string suggStr(errorModelBuffer);
+					wstring suggStr(errorModelBuffer);
 					int weight = acceptorWeight + errorModelWeight;
 					if (suggestionWeights.find(suggStr) != suggestionWeights.end()) {
 						suggestionWeights[suggStr] = min(suggestionWeights[suggStr], weight);
@@ -86,12 +85,11 @@ void VfstSuggestion::generate(SuggestionStatus * s) const {
 			}
 		}
 	}
-	delete[] wordUtf;
 	
 	priority_queue<WeightedSuggestion> queue;
-	for (map<string, int>::const_iterator it = suggestionWeights.begin(); it != suggestionWeights.end(); ++it) {
+	for (map<wstring, int>::const_iterator it = suggestionWeights.begin(); it != suggestionWeights.end(); ++it) {
 		WeightedSuggestion sugg;
-		sugg.suggestion = StringUtils::ucs4FromUtf8(it->first.c_str());
+		sugg.suggestion = StringUtils::copy(it->first.c_str());
 		sugg.weight = it->second;
 		queue.push(sugg);
 	}

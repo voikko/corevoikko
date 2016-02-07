@@ -39,21 +39,22 @@ namespace libvoikko { namespace fst {
 	class WeightedTransducer : public Transducer {
 		private:
 			WeightedTransition * transitionStart;
-			std::map<std::string, uint16_t> stringToSymbol;
-			std::vector<const char *> symbolToString;
+			std::map<wchar_t, uint16_t> stringToSymbol;
+			std::vector<wchar_t *> symbolToString;
 			std::vector<size_t> symbolStringLength;
 			uint16_t firstMultiChar;
 			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
 			WeightedTransducer(const char * filePath);
+			~WeightedTransducer();
 			
-			bool prepare(WeightedConfiguration * configuration, const char * input, size_t inputLen) const;
+			bool prepare(WeightedConfiguration * configuration, const wchar_t * input, size_t inputLen) const;
 			
-			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen) const;
+			bool next(WeightedConfiguration * configuration, wchar_t * outputBuffer, size_t bufferLen) const;
 			
-			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight) const;
+			bool next(WeightedConfiguration * configuration, wchar_t * outputBuffer, size_t bufferLen, int16_t * weight) const;
 			
-			bool next(WeightedConfiguration * configuration, char * outputBuffer, size_t bufferLen, int16_t * weight,
+			bool next(WeightedConfiguration * configuration, wchar_t * outputBuffer, size_t bufferLen, int16_t * weight,
 			          int * firstNotReachedPosition) const;
 			
 			void backtrackToOutputDepth(WeightedConfiguration * configuration, int depth);

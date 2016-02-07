@@ -50,7 +50,7 @@ class VfstAnalyzer : public Analyzer {
 	private:
 		fst::WeightedTransducer * transducer;
 		fst::WeightedConfiguration * configuration;
-		char * outputBuffer;
+		wchar_t * outputBuffer;
 };
 
 } }

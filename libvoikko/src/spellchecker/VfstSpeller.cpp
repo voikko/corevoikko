@@ -44,7 +44,7 @@ VfstSpeller::VfstSpeller(const string & directoryName) throw(setup::DictionaryEx
 	string splFile = directoryName + "/spl.vfst";
 	transducer = new WeightedTransducer(splFile.c_str());
 	configuration = new WeightedConfiguration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
-	outputBuffer = new char[BUFFER_SIZE];
+	outputBuffer = new wchar_t[BUFFER_SIZE];
 }
  
 spellresult VfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
@@ -52,13 +52,11 @@ spellresult VfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 		return SPELL_FAILED;
 	}
 	spellresult result = SPELL_FAILED;
-	char * wordUtf = StringUtils::utf8FromUcs4(word, wlen);
-	if (transducer->prepare(configuration, wordUtf, strlen(wordUtf))) {
+	if (transducer->prepare(configuration, word, wlen)) {
 		if (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			result = SPELL_OK;
 		}
 	}
-	delete[] wordUtf;
 	return result;
 }
  

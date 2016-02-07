@@ -51,7 +51,7 @@ class VfstSpeller : public Speller {
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
 		fst::WeightedConfiguration * configuration;
-		char * outputBuffer;
+		wchar_t * outputBuffer;
 };
 
 } }

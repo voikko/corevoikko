@@ -52,8 +52,8 @@ class VfstSuggestion : public SuggestionGenerator {
 		fst::WeightedTransducer * errorModel;
 		fst::WeightedConfiguration * acceptorConf;
 		fst::WeightedConfiguration * errorModelConf;
-		char * acceptorBuffer;
-		char * errorModelBuffer;
+		wchar_t * acceptorBuffer;
+		wchar_t * errorModelBuffer;
 };
 
 } } }
