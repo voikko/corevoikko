@@ -163,6 +163,7 @@ namespace libvoikko { namespace fst {
 				firstMultiChar = i;
 			}
 			symbolToString.push_back(filePtr);
+			symbolStringLength.push_back(strlen(filePtr));
 			filePtr += (symbol.length() + 1);
 			stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
 			if (firstNormalChar == 0 && i > 0) {
@@ -301,13 +302,13 @@ namespace libvoikko { namespace fst {
 					if (configuration->inputDepth == configuration->inputLength) {
 						char * outputBufferPos = outputBuffer;
 						for (int i = 0; i < configuration->stackDepth; i++) {
-							const char * outputSym = symbolToString[configuration->outputSymbolStack[i]];
-							size_t symLen = strlen(outputSym);
+							uint32_t outSymIndex = configuration->outputSymbolStack[i];
+							size_t symLen = symbolStringLength[outSymIndex];
 							if ((outputBufferPos - outputBuffer) + symLen + 1 >= bufferLen) {
 								DEBUG("would overflow the output buffer")
 								return false;
 							}
-							strncpy(outputBufferPos, outputSym, symLen);
+							strncpy(outputBufferPos, symbolToString[outSymIndex], symLen);
 							outputBufferPos += symLen;
 						}
 						*outputBufferPos = '\0';

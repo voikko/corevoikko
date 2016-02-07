@@ -41,6 +41,7 @@ namespace libvoikko { namespace fst {
 			WeightedTransition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<const char *> symbolToString;
+			std::vector<size_t> symbolStringLength;
 			uint16_t firstMultiChar;
 			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
