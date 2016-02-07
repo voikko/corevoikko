@@ -1545,6 +1545,10 @@ word:heidänlaisensa
  expected:1
   analysis
    BASEFORM=heidänlainen
+word:puhuu
+ expected:1
+  analysis
+    CLASS=teonsana
 word:puhuman
  expected:2
   analysis

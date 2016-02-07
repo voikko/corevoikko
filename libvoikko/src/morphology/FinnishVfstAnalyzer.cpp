@@ -893,6 +893,7 @@ void FinnishVfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_
 void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	bool convertNimiLaatusanaToLaatusana = false;
 	bool bcPassed = false;
+	bool classSet = false;
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
 			size_t j = i;
@@ -900,18 +901,21 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 				j--;
 				if (fstOutput[j] == L'[') {
 					if (fstOutput[j + 1] == L'L') {
-						if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
-							const wchar_t * comp = analysis->getValue(Analysis::Key::COMPARISON);
-							if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) ||
-							    wcsncmp(fstOutput, L"[Lu]", 4) == 0) {
-								analysis->addConstAttribute(Analysis::Key::CLASS, L"laatusana");
+						if (!classSet || fstOutput[j + 2] == L']') { // TODO check for ']' is for compatibility with voikko-fi 2.0
+							if (wcsncmp(fstOutput + (j + 2), L"nl", 2) == 0) {
+								const wchar_t * comp = analysis->getValue(Analysis::Key::COMPARISON);
+								if (convertNimiLaatusanaToLaatusana || (comp && (wcscmp(comp, L"comparative") == 0 || wcscmp(comp, L"superlative") == 0)) ||
+								    wcsncmp(fstOutput, L"[Lu]", 4) == 0) {
+									analysis->addConstAttribute(Analysis::Key::CLASS, L"laatusana");
+								}
+								else {
+									analysis->addConstAttribute(Analysis::Key::CLASS, L"nimisana_laatusana");
+								}
 							}
 							else {
-								analysis->addConstAttribute(Analysis::Key::CLASS, L"nimisana_laatusana");
+								parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::CLASS, classMap);
 							}
-						}
-						else {
-							parseBasicAttribute(analysis, fstOutput, i, j, Analysis::Key::CLASS, classMap);
+							classSet = true;
 						}
 					}
 					else if (fstOutput[j + 1] == L'N') {
@@ -974,8 +978,10 @@ void FinnishVfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_
 					}
 					else if (fstOutput[j + 1] == L'B') {
 						if (j >= 5 && fstOutput[j + 2] == L'c') {
-							if (!analysis->getValue(Analysis::Key::CLASS) && (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
+							if (!classSet && !analysis->getValue(Analysis::Key::CLASS) &&
+							    (fstOutput[j - 1] == L'-' || wcsncmp(fstOutput + (j - 5), L"-[Bh]", 5) == 0)) {
 								analysis->addConstAttribute(Analysis::Key::CLASS, L"etuliite");
+								classSet = true;
 							}
 							bcPassed = true;
 						}
