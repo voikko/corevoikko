@@ -183,6 +183,7 @@ namespace libvoikko { namespace fst {
 	
 	bool WeightedTransducer::prepare(WeightedConfiguration * configuration, const char * input, size_t inputLen) const {
 		configuration->stackDepth = 0;
+		configuration->flagDepth = 0;
 		configuration->inputDepth = 0;
 		configuration->stateIndexStack[0] = 0;
 		configuration->currentTransitionStack[0] = 0;
@@ -213,62 +214,59 @@ namespace libvoikko { namespace fst {
 	
 	static bool flagDiacriticCheck(WeightedConfiguration * configuration, const Transducer * transducer, uint16_t symbol) {
 		uint16_t flagDiacriticFeatureCount = transducer->flagDiacriticFeatureCount;
-		if (!flagDiacriticFeatureCount) {
+		if (!flagDiacriticFeatureCount || symbol == 0 || symbol >= transducer->firstNormalChar) {
 			return true;
 		}
-		int stackDepth = configuration->stackDepth;
 		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint32_t);
 		uint32_t * flagValueStack = configuration->flagValueStack;
-		uint32_t * currentFlagArray = flagValueStack + stackDepth * flagDiacriticFeatureCount;
+		uint32_t * currentFlagArray = flagValueStack + configuration->flagDepth * flagDiacriticFeatureCount;
 		
 		bool update = false;
-		OpFeatureValue ofv;
-		if (symbol != 0 && symbol < transducer->firstNormalChar) {
-			ofv = transducer->symbolToDiacritic[symbol];
-			uint32_t currentValue = currentFlagArray[ofv.feature];
-			DEBUG("checking op " << ofv.op << " " << ofv.feature << " " << ofv.value << " current value " << currentValue)
-			switch (ofv.op) {
-				case Operation_P:
+		OpFeatureValue ofv = transducer->symbolToDiacritic[symbol];
+		uint32_t currentValue = currentFlagArray[ofv.feature];
+		DEBUG("checking op " << ofv.op << " " << ofv.feature << " " << ofv.value << " current value " << currentValue)
+		switch (ofv.op) {
+			case Operation_P:
+				update = true;
+				break;
+			case Operation_C:
+				ofv.value = FlagValueNeutral;
+				update = true;
+				break;
+			case Operation_U:
+				if (currentValue) {
+					if (currentValue != ofv.value) {
+						return false;
+					}
+				}
+				else {
 					update = true;
-					break;
-				case Operation_C:
-					ofv.value = FlagValueNeutral;
-					update = true;
-					break;
-				case Operation_U:
-					if (currentValue) {
-						if (currentValue != ofv.value) {
-							return false;
-						}
-					}
-					else {
-						update = true;
-					}
-					break;
-				case Operation_R:
-					if (ofv.value == FlagValueAny && currentValue == FlagValueNeutral) {
-						return false;
-					}
-					if (ofv.value != FlagValueAny && currentValue != ofv.value) {
-						return false;
-					}
-					break;
-				case Operation_D:
-					if ((ofv.value == FlagValueAny && currentValue != FlagValueNeutral) || currentValue == ofv.value) {
-						return false;
-					}
-					break;
-				default:
-					return false;// this would be an error
-			}
-			DEBUG("allowed")
+				}
+				break;
+			case Operation_R:
+				if (ofv.value == FlagValueAny && currentValue == FlagValueNeutral) {
+					return false;
+				}
+				if (ofv.value != FlagValueAny && currentValue != ofv.value) {
+					return false;
+				}
+				break;
+			case Operation_D:
+				if ((ofv.value == FlagValueAny && currentValue != FlagValueNeutral) || currentValue == ofv.value) {
+					return false;
+				}
+				break;
+			default:
+				return false;// this would be an error
 		}
+		DEBUG("allowed")
 		
 		memcpy(currentFlagArray + flagDiacriticFeatureCount, currentFlagArray, diacriticCell);
 		if (update) {
 			DEBUG("updating feature " << ofv.feature << " to " << ofv.value)
 			(currentFlagArray + flagDiacriticFeatureCount)[ofv.feature] = ofv.value;
 		}
+		configuration->flagDepth++;
 		return true;
 	}
 	
@@ -357,6 +355,9 @@ namespace libvoikko { namespace fst {
 				uint16_t previousInputSymbol = (transitionStart + configuration->currentTransitionStack[configuration->stackDepth])->symIn;
 				if (previousInputSymbol >= firstNormalChar) {
 					configuration->inputDepth--;
+				}
+				else if (flagDiacriticFeatureCount && previousInputSymbol != 0) {
+					configuration->flagDepth--;
 				}
 			}
 			configuration->currentTransitionStack[configuration->stackDepth]++;
