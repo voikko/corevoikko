@@ -214,7 +214,7 @@ namespace libvoikko { namespace fst {
 	
 	static bool flagDiacriticCheck(WeightedConfiguration * configuration, const Transducer * transducer, uint16_t symbol) {
 		uint16_t flagDiacriticFeatureCount = transducer->flagDiacriticFeatureCount;
-		if (!flagDiacriticFeatureCount || symbol == 0 || symbol >= transducer->firstNormalChar) {
+		if (!flagDiacriticFeatureCount || symbol == 0) {
 			return true;
 		}
 		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint32_t);
@@ -318,10 +318,9 @@ namespace libvoikko { namespace fst {
 						return true;
 					}
 				}
-				else if (((configuration->inputDepth < configuration->inputLength &&
+				else if ((configuration->inputDepth < configuration->inputLength &&
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
-					  currentTransition->symIn < firstNormalChar) &&
-					  flagDiacriticCheck(configuration, this, currentTransition->symIn)) {
+					 (currentTransition->symIn < firstNormalChar && flagDiacriticCheck(configuration, this, currentTransition->symIn))) {
 					// down
 					DEBUG("down " << tc)
 					if (configuration->stackDepth + 2 == configuration->bufferSize) {
