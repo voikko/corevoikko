@@ -301,6 +301,7 @@ $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/
 
 $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma
 	foma -f $(VVFST_BUILDDIR)/main-sukija.foma 2>&1 | grep -v "defined but not used"
+	! grep ']]' $@
 
 $(VVFST_BUILDDIR)/main-sukija.foma: $(VVFST_BUILDDIR)/main.foma
 	sed -e 's,/all,/all-sukija,' < $^ > $@
