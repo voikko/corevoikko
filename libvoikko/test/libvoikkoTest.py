@@ -356,6 +356,14 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(len(longWord) > MAX_WORD_CHARS)
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 	
+	def testTokenizationWorksForHugeParagraphs(self):
+		hugeParagraph = "Kissa on 29 vuotta vanha... Onhan se silloin vanha. " * 10000
+		self.assertEqual(10000 * 20, len(self.voikko.tokens(hugeParagraph)))
+	
+	def testTokenizationWorksWithSomeMultibyteCharacters(self):
+		text = u"Kissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \nKissä on 29 vuotta vanha... Onhan se silloin vanha. \n"
+		self.assertEqual(180, len(self.voikko.tokens(text)))
+		
 	def testEmbeddedNullsAreNotAccepted(self):
 		self.failIf(self.voikko.spell(u"kissa\0asdasd"))
 		self.assertEqual(0, len(self.voikko.suggest(u"kisssa\0koira")))

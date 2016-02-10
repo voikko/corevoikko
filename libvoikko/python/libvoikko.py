@@ -51,16 +51,20 @@ An example session demonstrating the use of this module:
 # Python 3 without modifications.
 
 from __future__ import unicode_literals
+from ctypes import addressof
 from ctypes import byref
 from ctypes import CDLL
 from ctypes import c_int
 from ctypes import c_char
 from ctypes import c_char_p
+from ctypes import c_wchar
 from ctypes import c_wchar_p
 from ctypes import c_size_t
 from ctypes import c_void_p
+from ctypes import create_unicode_buffer
 from ctypes import pointer
 from ctypes import POINTER
+from ctypes import sizeof
 from ctypes import string_at
 from ctypes import Structure
 import os
@@ -609,13 +613,15 @@ class Voikko(object):
 	
 	def __splitTokens(self, text):
 		uniText = unicode_str(text)
+		uniTextPtr = create_unicode_buffer(uniText)
+		wcharSize = sizeof(c_wchar)
 		result = []
 		textLen = len(uniText)
 		tokenLen = c_size_t()
 		position = 0
 		while textLen > 0:
 			tokenType = self.__lib.voikkoNextTokenUcs4(self.__handle,
-			            uniText[position:], textLen, byref(tokenLen))
+			            c_wchar_p(addressof(uniTextPtr) + position * wcharSize), textLen, byref(tokenLen))
 			if tokenType == Token.NONE:
 				break
 			tokenText = uniText[position:position+tokenLen.value]
