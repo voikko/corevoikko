@@ -303,6 +303,7 @@ namespace libvoikko { namespace fst {
 			WeightedTransition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
 			uint32_t startTransitionIndex = currentTransition - stateHead;
 			uint32_t maxTc = getMaxTc(stateHead);
+			uint32_t inputSym = (configuration->inputDepth == configuration->inputLength) ? 0 : configuration->inputSymbolStack[configuration->inputDepth];
 			for (uint32_t tc = startTransitionIndex; tc <= maxTc; tc++) {
 				if (tc == 1 && maxTc >= 255) {
 					// skip overflow cell
@@ -333,8 +334,11 @@ namespace libvoikko { namespace fst {
 						return true;
 					}
 				}
-				else if ((configuration->inputDepth < configuration->inputLength &&
-					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
+				else if (inputSym == 0 && currentTransition->symIn >= firstNormalChar) {
+					// only normal transitions left but we don't have any input
+					break;
+				}
+				else if ((configuration->inputDepth < configuration->inputLength && inputSym == currentTransition->symIn) ||
 					 (currentTransition->symIn < firstNormalChar && flagDiacriticCheck(configuration, this, currentTransition->symIn))) {
 					// down
 					DEBUG("down " << tc)
@@ -356,16 +360,16 @@ namespace libvoikko { namespace fst {
 					}
 					goto nextInMainLoop;
 				}
-				else if (currentTransition->symIn > configuration->inputSymbolStack[configuration->inputDepth]) {
+				else if (currentTransition->symIn > inputSym) {
 					break;
 				}
 				else if (tc >= 1 && currentTransition->symIn >= firstNormalChar &&
-				         currentTransition->symIn < configuration->inputSymbolStack[configuration->inputDepth]) {
+				         currentTransition->symIn < inputSym) {
 					uint32_t min = 0;
 					uint32_t max = maxTc - tc;
 					while (min + 1 < max) {
 						uint32_t middle = (min + max) / 2;
-						if ((currentTransition + middle)->symIn < configuration->inputSymbolStack[configuration->inputDepth]) {
+						if ((currentTransition + middle)->symIn < inputSym) {
 							min = middle;
 						}
 						else {
