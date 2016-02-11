@@ -359,6 +359,22 @@ namespace libvoikko { namespace fst {
 				else if (currentTransition->symIn > configuration->inputSymbolStack[configuration->inputDepth]) {
 					break;
 				}
+				else if (tc >= 1 && currentTransition->symIn >= firstNormalChar &&
+				         currentTransition->symIn < configuration->inputSymbolStack[configuration->inputDepth]) {
+					uint32_t min = 0;
+					uint32_t max = maxTc - tc;
+					while (min + 1 < max) {
+						uint32_t middle = (min + max) / 2;
+						if ((currentTransition + middle)->symIn < configuration->inputSymbolStack[configuration->inputDepth]) {
+							min = middle;
+						}
+						else {
+							max = middle;
+						}
+					}
+					tc += min;
+					currentTransition += min;
+				}
 				currentTransition++;
 			}
 			if (configuration->stackDepth == 0) {
