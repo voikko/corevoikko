@@ -241,14 +241,14 @@ def __getForwardedForHeader(clientIp, clientRequestHeaders):
 			break
 	return "X-Forwarded-For: " + previousForwarders + clientIp
 
-def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = []):
+def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = [], maxFileSize = 250000):
 	result = HttpResult()
 	__checkValidUrl(url)
 	urlParts = urlparse(url, u"http")
 	c = pycurl.Curl()
 	c.setopt(pycurl.URL, url)
 	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
-	c.setopt(pycurl.MAXFILESIZE, 250000)
+	c.setopt(pycurl.MAXFILESIZE, maxFileSize)
 	c.setopt(pycurl.TIMEOUT, 10)
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
 	c.setopt(pycurl.HTTPHEADER, [__getForwardedForHeader(clientIp, clientRequestHeaders)])
