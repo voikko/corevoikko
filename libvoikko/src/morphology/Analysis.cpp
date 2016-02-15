@@ -53,8 +53,8 @@ static constexpr std::array<const char *,21> KEY_TO_STRING {
 	"STRUCTURE",
 	"TENSE",
 	"WEIGHT",
-	"WORDIDS",
-	"WORDBASES"
+	"WORDBASES",
+	"WORDIDS"
 };
 
 static const std::map<std::string, Analysis::Key> STRING_TO_KEY = {
@@ -77,8 +77,8 @@ static const std::map<std::string, Analysis::Key> STRING_TO_KEY = {
 	{"STRUCTURE", Analysis::Key::STRUCTURE},
 	{"TENSE", Analysis::Key::TENSE},
 	{"WEIGHT", Analysis::Key::WEIGHT},
-	{"WORDIDS", Analysis::Key::WORDIDS},
-	{"WORDBASES", Analysis::Key::WORDBASES}
+	{"WORDBASES", Analysis::Key::WORDBASES},
+	{"WORDIDS", Analysis::Key::WORDIDS}
 };
 
 Analysis::Analysis() : keys(0) {
@@ -91,7 +91,7 @@ Analysis::~Analysis() {
 		if (!constAttributes[static_cast<int>(it->first)]) {
 			delete[] it->second;
 		}
-		it++;
+		++it;
 	}
 }
 

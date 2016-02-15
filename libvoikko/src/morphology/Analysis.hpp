@@ -63,8 +63,8 @@ class Analysis {
 			STRUCTURE,
 			TENSE,
 			WEIGHT,
-			WORDIDS,
-			WORDBASES
+			WORDBASES,
+			WORDIDS
 		};
 		
 		Analysis();
