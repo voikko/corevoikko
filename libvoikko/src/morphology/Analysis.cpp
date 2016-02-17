@@ -28,12 +28,13 @@
 
 #include "morphology/Analysis.hpp"
 #include "utils/StringUtils.hpp"
+#include <array>
 
 using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-static constexpr std::array<const char *,21> KEY_TO_STRING {
+static const std::array<const char *,21> KEY_TO_STRING { {
 	"BASEFORM",
 	"CLASS",
 	"COMPARISON",
@@ -55,7 +56,7 @@ static constexpr std::array<const char *,21> KEY_TO_STRING {
 	"WEIGHT",
 	"WORDBASES",
 	"WORDIDS"
-};
+} };
 
 static const std::map<std::string, Analysis::Key> STRING_TO_KEY = {
 	{"BASEFORM", Analysis::Key::BASEFORM},
