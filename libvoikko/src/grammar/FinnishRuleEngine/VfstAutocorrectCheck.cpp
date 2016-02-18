@@ -100,7 +100,7 @@ bool VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * se
 				return false; // sentence is unreasonably long
 			}
 			for (size_t i = 0; i < token->tokenlen; i++) {
-				if (wcschr(L"\u00AD", tokenStr[i])) {
+				if (::wcschr(L"\u00AD", tokenStr[i])) {
 					skippedChars++;
 				}
 				else {
