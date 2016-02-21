@@ -34,7 +34,7 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-static const std::array<const char *,21> KEY_TO_STRING { {
+static constexpr std::array<const char *,21> KEY_TO_STRING { {
 	"BASEFORM",
 	"CLASS",
 	"COMPARISON",
