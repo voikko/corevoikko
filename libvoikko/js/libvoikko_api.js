@@ -1,12 +1,13 @@
-var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string'])
-var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string'])
-var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string'])
+var PTR_SIZE = 4;
+var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string']);
+var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
+var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = Module.cwrap('voikkoFreeCstr', null, ['number']);
 
 var mallocPtr = function() {
-	return Module._malloc(4);
-}
+	return Module._malloc(PTR_SIZE);
+};
 
 Module.init = function(lang, path) {
 	var errorPtr = mallocPtr();
@@ -28,12 +29,14 @@ Module.init = function(lang, path) {
 			if (cSuggestions == 0) {
 				return suggestions;
 			}
-			for (var cSuggestion = getValue(cSuggestions, "i32*"); cSuggestion != 0; cSuggestions += 4) {
+			var cSuggestion = getValue(cSuggestions, "i32*");
+			while (cSuggestion != 0) {
 				suggestions.push(UTF8ToString(cSuggestion));
+				cSuggestions += PTR_SIZE;
 				cSuggestion = getValue(cSuggestions, "i32*");
 			}
 			c_freeCstrArray(cSuggestions);
 			return suggestions;
 		}
-	}
-}
+	};
+};
