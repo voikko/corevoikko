@@ -30,6 +30,22 @@ var libvoikko = Libvoikko({
 			assert.strictEqual(voikko.spell("määrä"), true);
 		        assert.strictEqual(voikko.spell("määä"), false);
 		});
+		
+		QUnit.test("suggest", function(assert) {
+			assert.ok(voikko.suggest("koirra").indexOf("koira") >= 0);
+			assert.ok(voikko.suggest("määärä").indexOf("määrä") >= 0);
+			assert.equal(voikko.suggest("lasjkblvankirknaslvethikertvhgn").length, 0);
+		});
+		
+		QUnit.test("suggestReturnsArgumentIfWordIsCorrect", function(assert) {
+			assert.deepEqual(voikko.suggest("koira"), ["koira"])
+		});
+		
+		QUnit.test("analyze", function(assert) {
+			var analysisList = voikko.analyze("kansaneläkehakemus");
+			assert.equal(analysisList.length, 1);
+			assert.equal(analysisList[0]["STRUCTURE"], "=pppppp=ppppp=ppppppp");
+		});
 	}
 });
 
