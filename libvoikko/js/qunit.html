@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tests for JS-libvoikko</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<div id="editor"></div>
+<script type="text/javascript" src="libvoikko.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+<script>
+var libvoikko = Libvoikko({
+	_main : function() {
+		var voikko;
+		
+		QUnit.module("libvoikko", {
+			beforeEach: function() {
+				voikko = libvoikko.init("fi");
+			},
+			afterEach: function() {
+				voikko.terminate();
+				voikko = null;
+			}
+		});
+		
+		QUnit.test("spell", function(assert) {
+			assert.strictEqual(voikko.spell("määrä"), true);
+		        assert.strictEqual(voikko.spell("määä"), false);
+		});
+	}
+});
+
+</script>
+</body>
+</html>

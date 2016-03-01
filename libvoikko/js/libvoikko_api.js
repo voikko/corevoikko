@@ -1,5 +1,6 @@
 var PTR_SIZE = 4;
 var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string']);
+var c_terminate = Module.cwrap('voikkoTerminate', null, ['number']);
 var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
@@ -29,6 +30,13 @@ Module.init = function(lang, path) {
 	}
 	Module._free(errorPtr);
 	return {
+		terminate: function() {
+			if (handle) {
+				c_terminate(handle);
+				handle = null;
+			}
+		},
+		
 		spell: function(word) {
 			return isValidInput(word) && c_spellCstr(handle, word) == 1;
 		},
