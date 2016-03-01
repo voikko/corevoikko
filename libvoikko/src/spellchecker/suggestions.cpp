@@ -50,9 +50,10 @@ wchar_t ** getSuggestions(SuggestionStatus & status, bool addDot) {
 	wchar_t ** suggestions = new wchar_t*[returnedSuggestionCount + 1];
 	for (size_t i = 0; i < returnedSuggestionCount; i++) {
 		size_t sugglen = wcslen(originalSuggestions[i].word);
-		wchar_t * buffer = new wchar_t[sugglen + 1 + (addDot ? 1 : 0)];
+		bool doAddDot = (addDot && originalSuggestions[i].word[sugglen - 1] != L'.');
+		wchar_t * buffer = new wchar_t[sugglen + 1 + (doAddDot ? 1 : 0)];
 		wcsncpy(buffer, originalSuggestions[i].word, sugglen);
-		if (addDot) {
+		if (doAddDot) {
 			buffer[sugglen] = L'.';
 			buffer[sugglen+1] = L'\0';
 		}

@@ -65,9 +65,16 @@ Kissajuokse	Kissa juokse
 jälkäinen	jälkeinen
 TEsti	Testi
 tEsti	testi
+koira	!koira.	koira
+tms	tms.
+tms.	!tms	!tms..	tms.
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
+koira. koira.
+koira	!koira.	koira
+tms	tms.
+tms.	!tms	!tms..	tms.
 
 [voikko.setAcceptAllUppercase(False)]
 TESTI	!TESTI	testi
