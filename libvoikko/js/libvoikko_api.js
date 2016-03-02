@@ -127,7 +127,7 @@ Module.init = function(lang, path) {
 			var lastStart = 0;
 			for (var i = text.indexOf("\0"); i != -1; i = text.indexOf("\0", i + 1)) {
 				allTokens.push.apply(allTokens, tokensNonNull(text.substring(lastStart, i)));
-				allTokens.add({type: "UNKNOWN", text: "\0"});
+				allTokens.push({type: "UNKNOWN", text: "\0"});
 				lastStart = i + 1;
 			}
 			allTokens.push.apply(allTokens, tokensNonNull(text.substring(lastStart)));

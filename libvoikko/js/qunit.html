@@ -61,6 +61,33 @@ var libvoikko = Libvoikko({
 				{type: "WORD", text: "härkä"}
 			]);
 		});
+		
+		QUnit.test("nullCharIsUnknownToken", function(assert) {
+			assert.deepEqual(voikko.tokens("kissa\0koira"), [
+				{type: "WORD", text: "kissa"},
+				{type: "UNKNOWN", text: "\0"},
+				{type: "WORD", text: "koira"}
+			]);
+			assert.deepEqual(voikko.tokens("kissa\0\0koira"), [
+				{type: "WORD", text: "kissa"},
+				{type: "UNKNOWN", text: "\0"},
+				{type: "UNKNOWN", text: "\0"},
+				{type: "WORD", text: "koira"}
+			]);
+			assert.deepEqual(voikko.tokens("kissa\0"), [
+				{type: "WORD", text: "kissa"},
+				{type: "UNKNOWN", text: "\0"}
+			]);
+			assert.deepEqual(voikko.tokens("\0kissa"), [
+				{type: "UNKNOWN", text: "\0"},
+				{type: "WORD", text: "kissa"}
+			]);
+			assert.deepEqual(voikko.tokens("\0"), [
+				{type: "UNKNOWN", text: "\0"}
+			]);
+			assert.equal(voikko.tokens("").length, 0);
+		});
+		
 	}
 });
 
