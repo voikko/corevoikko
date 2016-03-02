@@ -46,6 +46,21 @@ var libvoikko = Libvoikko({
 			assert.equal(analysisList.length, 1);
 			assert.equal(analysisList[0]["STRUCTURE"], "=pppppp=ppppp=ppppppp");
 		});
+		
+		QUnit.test("tokens", function(assert) {
+			var tokens = voikko.tokens("kissa ja koira sekä härkä");
+			assert.deepEqual(tokens, [
+				{type: "WORD", text: "kissa"},
+				{type: "WHITESPACE", text: " "},
+				{type: "WORD", text: "ja"},
+				{type: "WHITESPACE", text: " "},
+				{type: "WORD", text: "koira"},
+				{type: "WHITESPACE", text: " "},
+				{type: "WORD", text: "sekä"},
+				{type: "WHITESPACE", text: " "},
+				{type: "WORD", text: "härkä"}
+			]);
+		});
 	}
 });
 

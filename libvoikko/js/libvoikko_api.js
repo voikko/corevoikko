@@ -5,6 +5,7 @@ var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']
 var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = Module.cwrap('voikkoFreeCstr', null, ['number']);
+var c_nextTokenCstr = Module.cwrap('voikkoNextTokenCstr', 'number', ['number', 'number', 'number', 'number']);
 var c_analyzeWordCstr = Module.cwrap('voikkoAnalyzeWordCstr', 'number', ['number', 'string']);
 var c_freeMorAnalysis = Module.cwrap('voikko_free_mor_analysis', null, ['number']);
 var c_morAnalysisKeys = Module.cwrap('voikko_mor_analysis_keys', 'number', ['number']);
@@ -29,6 +30,34 @@ Module.init = function(lang, path) {
 		throw errorStr;
 	}
 	Module._free(errorPtr);
+	
+	var tokenTypes = ["NONE", "WORD", "PUNCTUATION", "WHITESPACE", "UNKNOWN"];
+	var tokensNonNull = function(text) {
+		var result = [];
+		var textLengthUtf8 = lengthBytesUTF8(text);
+		var textBytes = Module._malloc(textLengthUtf8 + 1);
+		stringToUTF8(text, textBytes, textLengthUtf8 + 1);
+		var bytesStart = 0;
+		var textStart = 0;
+		var bytesLen = textLengthUtf8;
+		var tokenLenByRef = mallocPtr();
+		while (bytesLen > 0) {
+			textBytesPosition = textBytes + bytesStart;
+			var tokenTypeInt = c_nextTokenCstr(handle, textBytesPosition, bytesLen, tokenLenByRef);
+			var tokenLen = getValue(tokenLenByRef, "i32");
+			var tokenType = tokenTypes[tokenTypeInt];
+			var tokenText = text.substring(textStart, textStart + tokenLen);
+			textStart += tokenText.length;
+			var tokenBytes = lengthBytesUTF8(tokenText);
+			result.push({type: tokenType, text: tokenText});
+			bytesStart += tokenBytes;
+			bytesLen -= tokenBytes;
+		}
+		Module._free(tokenLenByRef);
+		Module._free(textBytes);
+		return result;
+	}
+	
 	return {
 		terminate: function() {
 			if (handle) {
@@ -91,6 +120,18 @@ Module.init = function(lang, path) {
 			}
 			c_freeMorAnalysis(cAnalysisList);
 			return analysisList;
+		},
+		
+		tokens: function(text) {
+			var allTokens = [];
+			var lastStart = 0;
+			for (var i = text.indexOf("\0"); i != -1; i = text.indexOf("\0", i + 1)) {
+				allTokens.push.apply(allTokens, tokensNonNull(text.substring(lastStart, i)));
+				allTokens.add({type: "UNKNOWN", text: "\0"});
+				lastStart = i + 1;
+			}
+			allTokens.push.apply(allTokens, tokensNonNull(text.substring(lastStart)));
+			return allTokens;
 		}
 	};
 };
