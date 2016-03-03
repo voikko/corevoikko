@@ -3,6 +3,7 @@ var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string']
 var c_terminate = Module.cwrap('voikkoTerminate', null, ['number']);
 var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
+var c_hyphenateCstr = Module.cwrap('voikkoHyphenateCstr', 'number', ['number', 'string']);
 var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = Module.cwrap('voikkoFreeCstr', null, ['number']);
 var c_nextTokenCstr = Module.cwrap('voikkoNextTokenCstr', 'number', ['number', 'number', 'number', 'number']);
@@ -161,6 +162,21 @@ Module.init = function(lang, path) {
 			Module._free(sentenceLenByRef);
 			Module._free(textBytes);
 			return result;
+		},
+		
+		getHyphenationPattern: function(word) {
+			if (!isValidInput(word)) {
+				// return string of spaces
+				var sb = "";
+				for (var i = 0; i < word.length; i++) {
+					sb += " ";
+				}
+				return sb;
+			}
+			var cPattern = c_hyphenateCstr(handle, word);
+			var pattern = UTF8ToString(cPattern);
+			c_freeCstr(cPattern);
+			return pattern;
 		}
 	};
 };

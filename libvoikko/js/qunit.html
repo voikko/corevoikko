@@ -70,6 +70,13 @@ var libvoikko = Libvoikko({
 			]);
 		});
 		
+		QUnit.test("hyphenationPattern", function(assert) {
+			assert.equal(voikko.getHyphenationPattern("kissa"), "   - ");
+			assert.equal(voikko.getHyphenationPattern("määrä"), "   - ");
+			assert.equal(voikko.getHyphenationPattern("kuorma-auto"), "    - =  - ");
+			assert.equal(voikko.getHyphenationPattern("vaa'an"), "   =  ");
+		});
+		
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
