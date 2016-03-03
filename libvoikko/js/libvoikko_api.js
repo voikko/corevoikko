@@ -6,6 +6,7 @@ var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'stri
 var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = Module.cwrap('voikkoFreeCstr', null, ['number']);
 var c_nextTokenCstr = Module.cwrap('voikkoNextTokenCstr', 'number', ['number', 'number', 'number', 'number']);
+var c_nextSentenceStartCstr = Module.cwrap('voikkoNextSentenceStartCstr', 'number', ['number', 'number', 'number', 'number']);
 var c_analyzeWordCstr = Module.cwrap('voikkoAnalyzeWordCstr', 'number', ['number', 'string']);
 var c_freeMorAnalysis = Module.cwrap('voikko_free_mor_analysis', null, ['number']);
 var c_morAnalysisKeys = Module.cwrap('voikko_mor_analysis_keys', 'number', ['number']);
@@ -32,6 +33,7 @@ Module.init = function(lang, path) {
 	Module._free(errorPtr);
 	
 	var tokenTypes = ["NONE", "WORD", "PUNCTUATION", "WHITESPACE", "UNKNOWN"];
+	var sentenceTypes = ["NONE", "NO_START", "PROBABLE", "POSSIBLE"];
 	var tokensNonNull = function(text) {
 		var result = [];
 		var textLengthUtf8 = lengthBytesUTF8(text);
@@ -42,7 +44,7 @@ Module.init = function(lang, path) {
 		var bytesLen = textLengthUtf8;
 		var tokenLenByRef = mallocPtr();
 		while (bytesLen > 0) {
-			textBytesPosition = textBytes + bytesStart;
+			var textBytesPosition = textBytes + bytesStart;
 			var tokenTypeInt = c_nextTokenCstr(handle, textBytesPosition, bytesLen, tokenLenByRef);
 			var tokenLen = getValue(tokenLenByRef, "i32");
 			var tokenType = tokenTypes[tokenTypeInt];
@@ -132,6 +134,33 @@ Module.init = function(lang, path) {
 			}
 			allTokens.push.apply(allTokens, tokensNonNull(text.substring(lastStart)));
 			return allTokens;
+		},
+		
+		sentences: function(text) {
+			var result = [];
+			if (!isValidInput(text)) {
+				result.push({text: text, nextStartType: "NONE"});
+				return result;
+			}
+			var textLen = lengthBytesUTF8(text);
+			var textBytes = Module._malloc(textLen + 1);
+			var textBytesPtr = textBytes;
+			stringToUTF8(text, textBytes, textLen + 1);
+			var sentenceLenByRef = mallocPtr();
+			while (textLen > 0) {
+				var sentenceTypeInt = c_nextSentenceStartCstr(handle, textBytesPtr, textLen, sentenceLenByRef);
+				var sentenceLen = getValue(sentenceLenByRef, "i32");
+				var sentenceType = sentenceTypes[sentenceTypeInt];
+				var sentenceText = text.substring(0, sentenceLen);
+				result.push({text: sentenceText, nextStartType: sentenceType});
+				text = text.substring(sentenceLen);
+				var sentenceLenBytes = lengthBytesUTF8(sentenceText);
+				textBytesPtr += sentenceLenBytes;
+				textLen -= sentenceLenBytes;
+			}
+			Module._free(sentenceLenByRef);
+			Module._free(textBytes);
+			return result;
 		}
 	};
 };

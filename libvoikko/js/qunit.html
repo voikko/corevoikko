@@ -13,7 +13,7 @@
 <script type="text/javascript" src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
 <script>
 var libvoikko = Libvoikko({
-	_main : function() {
+	onRuntimeInitialized : function() {
 		var voikko;
 		
 		QUnit.module("libvoikko", {
@@ -59,6 +59,14 @@ var libvoikko = Libvoikko({
 				{type: "WORD", text: "sekä"},
 				{type: "WHITESPACE", text: " "},
 				{type: "WORD", text: "härkä"}
+			]);
+		});
+		
+		QUnit.test("sentences", function(assert) {
+			var sentences = voikko.sentences("Kissa ei ole koira. Koira ei ole kissa.");
+			assert.deepEqual(sentences, [
+				{nextStartType: "PROBABLE", text: "Kissa ei ole koira. "},
+				{nextStartType: "NONE", text: "Koira ei ole kissa."}
 			]);
 		});
 		
