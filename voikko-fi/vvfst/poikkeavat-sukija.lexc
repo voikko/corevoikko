@@ -231,6 +231,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
+[Ln][Xp]käviä[X]kävi:kävi NimisanaApila_ä ;
+[Ln][Xp]kävijä[X]kävi:kävi NimisanaApila_ä ;
 [Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;

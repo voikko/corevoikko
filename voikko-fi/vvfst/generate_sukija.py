@@ -352,6 +352,7 @@ word_list = [
     (u"assistentti",      (u"assistent",     u"asistent")),
     (u"at=tribuutti",     (u"at[Bm]tribuut:attribuut", u"at[Bm]ribuut:atribuut")),
     (u"Australia",        (u"Australi",      u"Austraali")),
+    (u"bakteriofagi",     (u"bakteriofag",   u"bakteriofaag")),
     (u"barbaari",         (u"barbaar",       u"barbar")),
     (u"beduiini",         (u"beduiin",       u"beduin")),
     (u"biljardi",         (u"biljard",       u"biljaard")),
