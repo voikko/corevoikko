@@ -84,6 +84,13 @@ var libvoikko = Libvoikko({
 			assert.equal(voikko.hyphenate("vaa'an"), "vaa-an");
 		});
 		
+		QUnit.test("setIgnoreDot", function(assert) {
+			voikko.setIgnoreDot(false);
+			assert.strictEqual(voikko.spell("kissa."), false);
+			voikko.setIgnoreDot(true);
+			assert.strictEqual(voikko.spell("kissa."), true);
+		});
+		
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},

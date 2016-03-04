@@ -1,6 +1,7 @@
 var PTR_SIZE = 4;
 var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string']);
 var c_terminate = Module.cwrap('voikkoTerminate', null, ['number']);
+var c_setBooleanOption = Module.cwrap('voikkoSetBooleanOption', 'number', ['number', 'number', 'number']);
 var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_hyphenateCstr = Module.cwrap('voikkoHyphenateCstr', 'number', ['number', 'string']);
@@ -74,6 +75,17 @@ Module.init = function(lang, path) {
 		var pattern = UTF8ToString(cPattern);
 		c_freeCstr(cPattern);
 		return pattern;
+	};
+	
+	var boolToInt = function(value) {
+		return value ? 1 : 0;
+	};
+	
+	var setBoolOption = function(option, value) {
+		var result = c_setBooleanOption(handle, option, boolToInt(value));
+		if (result == 0) {
+			throw "Could not set boolean option " + option + " to value " + value + ".";
+		}
 	};
 	
 	return {
@@ -196,6 +208,10 @@ Module.init = function(lang, path) {
 				}
 			}
 			return hyphenated;
+		},
+		
+		setIgnoreDot: function(value) {
+			setBoolOption(0, value);
 		}
 	};
 };
