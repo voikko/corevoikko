@@ -61,6 +61,21 @@ Module.init = function(lang, path) {
 		return result;
 	}
 	
+	var getHyphenationPattern = function(word) {
+		if (!isValidInput(word)) {
+			// return string of spaces
+			var sb = "";
+			for (var i = 0; i < word.length; i++) {
+				sb += " ";
+			}
+			return sb;
+		}
+		var cPattern = c_hyphenateCstr(handle, word);
+		var pattern = UTF8ToString(cPattern);
+		c_freeCstr(cPattern);
+		return pattern;
+	};
+	
 	return {
 		terminate: function() {
 			if (handle) {
@@ -164,19 +179,23 @@ Module.init = function(lang, path) {
 			return result;
 		},
 		
-		getHyphenationPattern: function(word) {
-			if (!isValidInput(word)) {
-				// return string of spaces
-				var sb = "";
-				for (var i = 0; i < word.length; i++) {
-					sb += " ";
+		getHyphenationPattern: getHyphenationPattern,
+		
+		hyphenate: function(word) {
+			var pattern = getHyphenationPattern(word);
+			var hyphenated = "";
+			for (var i = 0; i < pattern.length; i++) {
+				var patternC = pattern.charAt(i);
+				if (patternC == ' ') {
+					hyphenated += word.charAt(i);
+				} else if (patternC == '-') {
+					hyphenated += '-';
+					hyphenated += word.charAt(i);
+				} else if (patternC == '=') {
+					hyphenated += '-';
 				}
-				return sb;
 			}
-			var cPattern = c_hyphenateCstr(handle, word);
-			var pattern = UTF8ToString(cPattern);
-			c_freeCstr(cPattern);
-			return pattern;
+			return hyphenated;
 		}
 	};
 };

@@ -77,6 +77,13 @@ var libvoikko = Libvoikko({
 			assert.equal(voikko.getHyphenationPattern("vaa'an"), "   =  ");
 		});
 		
+		QUnit.test("hyphenate", function(assert) {
+			assert.equal(voikko.hyphenate("kissa"), "kis-sa");
+			assert.equal(voikko.hyphenate("määrä"), "mää-rä");
+			assert.equal(voikko.hyphenate("kuorma-auto"), "kuor-ma-au-to");
+			assert.equal(voikko.hyphenate("vaa'an"), "vaa-an");
+		});
+		
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
