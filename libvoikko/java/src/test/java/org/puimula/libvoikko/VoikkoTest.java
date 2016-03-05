@@ -222,6 +222,14 @@ public class VoikkoTest {
         assertEquals(16, errors.get(0).getStartPos());
         assertEquals(11, errors.get(0).getErrorLen());
     }
+
+    @Test
+    public void grammarErrorWithWindowsParagraphSeparator() {
+        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\r\nOlen joten kuten.", "fi");
+        assertEquals(1, errors.size());
+        assertEquals(16, errors.get(0).getStartPos());
+        assertEquals(11, errors.get(0).getErrorLen());
+    }
     
     @Test
     public void analyze() {

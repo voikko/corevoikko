@@ -226,7 +226,7 @@ public class Voikko {
             return errorList;
         }
         int offset = 0;
-        for (String paragraph : text.split("\\r?\\n")) {
+        for (String paragraph : text.replace("\r", "\n").split("\\n")) {
             appendErrorsFromParagraph(errorList, paragraph, offset, language);
             offset += paragraph.length() + 1;
         }
