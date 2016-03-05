@@ -228,6 +228,18 @@ Module.init = function(lang, path) {
 		
 		setAcceptAllUppercase: function(value) {
 			setBoolOption(7, value);
+		},
+		
+		setIgnoreNonwords: function(value) {
+			setBoolOption(10, value);
+		},
+		
+		setAcceptExtraHyphens: function(value) {
+			setBoolOption(11, value);
+		},
+		
+		setAcceptMissingHyphens: function(value) {
+			setBoolOption(12, value);
 		}
 	};
 };

@@ -127,7 +127,29 @@ var libvoikko = Libvoikko({
 			assert.strictEqual(voikko.spell("KISSA"), true);
 			assert.strictEqual(voikko.spell("KAAAA"), false);
 		});
-		
+
+		QUnit.test("ignoreNonwords", function(assert) {
+			voikko.setIgnoreNonwords(false);
+			assert.strictEqual(voikko.spell("hatapitk@iki.fi"), false);
+			voikko.setIgnoreNonwords(true);
+			assert.strictEqual(voikko.spell("hatapitk@iki.fi"), true);
+			assert.strictEqual(voikko.spell("ashdaksd"), false);
+		});
+    
+		QUnit.test("acceptExtraHyphens", function(assert) {
+			voikko.setAcceptExtraHyphens(false);
+			assert.strictEqual(voikko.spell("kerros-talo"), false);
+			voikko.setAcceptExtraHyphens(true);
+			assert.strictEqual(voikko.spell("kerros-talo"), true);
+		});
+    
+		QUnit.test("acceptMissingHyphens", function(assert) {
+			voikko.setAcceptMissingHyphens(false);
+			assert.strictEqual(voikko.spell("sosiaali"), false);
+			voikko.setAcceptMissingHyphens(true);
+			assert.strictEqual(voikko.spell("sosiaali"), true);
+		});
+
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
