@@ -9,6 +9,14 @@ var c_freeCstrArray = Module.cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = Module.cwrap('voikkoFreeCstr', null, ['number']);
 var c_nextTokenCstr = Module.cwrap('voikkoNextTokenCstr', 'number', ['number', 'number', 'number', 'number']);
 var c_nextSentenceStartCstr = Module.cwrap('voikkoNextSentenceStartCstr', 'number', ['number', 'number', 'number', 'number']);
+var c_nextGrammarErrorCstr = Module.cwrap('voikkoNextGrammarErrorCstr', 'number', ['number', 'string', 'number', 'number', 'number']);
+var c_grammarErrorCode = Module.cwrap('voikkoGetGrammarErrorCode', 'number', ['number']);
+var c_grammarErrorStartPos = Module.cwrap('voikkoGetGrammarErrorStartPos', 'number', ['number']);
+var c_grammarErrorLength = Module.cwrap('voikkoGetGrammarErrorLength', 'number', ['number']);
+var c_grammarErrorSuggestions = Module.cwrap('voikkoGetGrammarErrorSuggestions', 'number', ['number']);
+var c_freeGrammarError = Module.cwrap('voikkoFreeGrammarError', null, ['number']);
+var c_grammarErrorShortDescription = Module.cwrap('voikkoGetGrammarErrorShortDescription', 'number', ['number', 'string']);
+var c_freeErrorMessageCstr = Module.cwrap('voikkoFreeErrorMessageCstr', null, ['number']);
 var c_analyzeWordCstr = Module.cwrap('voikkoAnalyzeWordCstr', 'number', ['number', 'string']);
 var c_freeMorAnalysis = Module.cwrap('voikko_free_mor_analysis', null, ['number']);
 var c_morAnalysisKeys = Module.cwrap('voikko_mor_analysis_keys', 'number', ['number']);
@@ -77,6 +85,16 @@ Module.init = function(lang, path) {
 		return pattern;
 	};
 	
+	var extractSuggestions = function(cArrayPtr, targetList) {
+		var cSuggestionsPtr = cArrayPtr;
+		var cSuggestion = getValue(cSuggestionsPtr, "i32*");
+		while (cSuggestion != 0) {
+			targetList.push(UTF8ToString(cSuggestion));
+			cSuggestionsPtr += PTR_SIZE;
+			cSuggestion = getValue(cSuggestionsPtr, "i32*");
+		}
+	}
+	
 	var boolToInt = function(value) {
 		return value ? 1 : 0;
 	};
@@ -85,6 +103,40 @@ Module.init = function(lang, path) {
 		var result = c_setBooleanOption(handle, option, boolToInt(value));
 		if (result == 0) {
 			throw "Could not set boolean option " + option + " to value " + value + ".";
+		}
+	};
+	
+	var getGrammarError = function(cError, offset, language) {
+		var errorCode = c_grammarErrorCode(cError);
+		var startPos = c_grammarErrorStartPos(cError);
+		var errorLength = c_grammarErrorLength(cError);
+		var cSuggestions = c_grammarErrorSuggestions(cError);
+		var suggestions = [];
+		if (cSuggestions) {
+			extractSuggestions(cSuggestions, suggestions);
+		}
+		var cShortDescription = c_grammarErrorShortDescription(cError, language);
+		var shortDescription = UTF8ToString(cShortDescription);
+		c_freeErrorMessageCstr(cShortDescription);
+		return {
+			errorCode: errorCode,
+			startPos: offset + startPos,
+			errorLen: errorLength,
+			suggestions: suggestions,
+			shortDescription: shortDescription
+		};
+	};
+	var appendErrorsFromParagraph = function(errorList, paragraph, offset, language) {
+		var paragraphLen = lengthBytesUTF8(paragraph);
+		var skipErrors = 0;
+		while (true) {
+			var cError = c_nextGrammarErrorCstr(handle, paragraph, paragraphLen, 0, skipErrors);
+			if (!cError) {
+				return;
+			}
+			errorList.push(getGrammarError(cError, offset, language));
+			c_freeGrammarError(cError);
+			skipErrors++;
 		}
 	};
 	
@@ -109,15 +161,24 @@ Module.init = function(lang, path) {
 			if (cSuggestions == 0) {
 				return suggestions;
 			}
-			var cSuggestionsPtr = cSuggestions;
-			var cSuggestion = getValue(cSuggestionsPtr, "i32*");
-			while (cSuggestion != 0) {
-				suggestions.push(UTF8ToString(cSuggestion));
-				cSuggestionsPtr += PTR_SIZE;
-				cSuggestion = getValue(cSuggestionsPtr, "i32*");
-			}
+			extractSuggestions(cSuggestions, suggestions);
 			c_freeCstrArray(cSuggestions);
 			return suggestions;
+		},
+		
+		grammarErrors: function(text, language) {
+			var errorList = [];
+			if (!isValidInput(text)) {
+				return errorList;
+			}
+			var offset = 0;
+			var paragraphs = text.split("\n");
+			for (var i = 0; i < paragraphs.length; i++) {
+				var paragraph = paragraphs[i];
+				appendErrorsFromParagraph(errorList, paragraph, offset, language);
+				offset += paragraph.length + 1;
+			}
+			return errorList;
 		},
 		
 		analyze: function(word) {

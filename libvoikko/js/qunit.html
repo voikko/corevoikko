@@ -41,6 +41,16 @@ var libvoikko = Libvoikko({
 			assert.deepEqual(voikko.suggest("koira"), ["koira"])
 		});
 		
+		QUnit.test("grammarErrorsAndExplanation", function(assert) {
+			assert.deepEqual(voikko.grammarErrors("Minä olen joten kuten kaunis.", "fi"), [{
+				startPos: 10,
+				errorLen: 11,
+				suggestions: ["jotenkuten"],
+				errorCode: 1,
+				shortDescription: "Virheellinen kirjoitusasu"
+			}]);
+		});
+		
 		QUnit.test("analyze", function(assert) {
 			var analysisList = voikko.analyze("kansaneläkehakemus");
 			assert.equal(analysisList.length, 1);
