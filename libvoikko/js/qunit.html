@@ -91,6 +91,43 @@ var libvoikko = Libvoikko({
 			assert.strictEqual(voikko.spell("kissa."), true);
 		});
 		
+		QUnit.test("setIgnoreNumbers", function(assert) {
+			voikko.setIgnoreNumbers(false);
+			assert.strictEqual(voikko.spell("kissa2"), false);
+			voikko.setIgnoreNumbers(true);
+			assert.strictEqual(voikko.spell("kissa2"), true);
+		});
+    
+		QUnit.test("setIgnoreUppercase", function(assert) {
+			voikko.setIgnoreUppercase(false);
+			assert.strictEqual(voikko.spell("KAAAA"), false);
+			voikko.setIgnoreUppercase(true);
+			assert.strictEqual(voikko.spell("KAAAA"), true);
+		});
+    
+		QUnit.test("setAcceptFirstUppercase", function(assert) {
+			voikko.setAcceptFirstUppercase(false);
+			assert.strictEqual(voikko.spell("Kissa"), false);
+			voikko.setAcceptFirstUppercase(true);
+			assert.strictEqual(voikko.spell("Kissa"), true);
+		});
+    
+		QUnit.test("upperCaseScandinavianLetters", function(assert) {
+			assert.strictEqual(voikko.spell("Äiti"), true);
+			assert.strictEqual(voikko.spell("Ääiti"), false);
+			assert.strictEqual(voikko.spell("š"), true);
+			assert.strictEqual(voikko.spell("Š"), true);
+		});
+    
+		QUnit.test("acceptAllUppercase", function(assert) {
+			voikko.setIgnoreUppercase(false);
+			voikko.setAcceptAllUppercase(false);
+			assert.strictEqual(voikko.spell("KISSA"), false);
+			voikko.setAcceptAllUppercase(true);
+			assert.strictEqual(voikko.spell("KISSA"), true);
+			assert.strictEqual(voikko.spell("KAAAA"), false);
+		});
+		
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},

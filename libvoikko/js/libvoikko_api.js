@@ -212,6 +212,22 @@ Module.init = function(lang, path) {
 		
 		setIgnoreDot: function(value) {
 			setBoolOption(0, value);
+		},
+		
+		setIgnoreNumbers: function(value) {
+			setBoolOption(1, value);
+		},
+		
+		setIgnoreUppercase: function(value) {
+			setBoolOption(3, value);
+		},
+		
+		setAcceptFirstUppercase: function(value) {
+			setBoolOption(6, value);
+		},
+		
+		setAcceptAllUppercase: function(value) {
+			setBoolOption(7, value);
 		}
 	};
 };
