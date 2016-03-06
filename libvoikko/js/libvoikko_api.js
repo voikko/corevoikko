@@ -333,6 +333,18 @@ Module.init = function(lang, path) {
 		
 		setMinHyphenatedWordLength: function(value) {
 			setIntegerOption(9, value);
+		},
+		
+		setSuggestionStrategy: function(value) {
+			if (value == "TYPO") {
+				setBoolOption(8, false);
+			}
+			else if (value == "OCR") {
+				setBoolOption(8, true);
+			}
+			else {
+				throw "Unknown suggestion strategy " + value;
+			}
 		}
 	};
 };

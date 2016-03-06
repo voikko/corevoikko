@@ -225,6 +225,14 @@ var libvoikko = Libvoikko({
 			assert.equal(voikko.hyphenate("koira"), "koi-ra");
 		});
 
+		QUnit.test("setSuggestionStrategy", function(assert) {
+			voikko.setSuggestionStrategy("OCR");
+			assert.ok(voikko.suggest("koari").indexOf("koira") == -1);
+			assert.ok(voikko.suggest("koir_").indexOf("koira") >= 0);
+			voikko.setSuggestionStrategy("TYPO");
+			assert.ok(voikko.suggest("koari").indexOf("koira") >= 0);
+		});
+
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
