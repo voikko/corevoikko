@@ -51,6 +51,24 @@ var libvoikko = Libvoikko({
 			}]);
 		});
 		
+		QUnit.test("noGrammarErrorsInEmptyParagraph", function(assert) {
+			assert.deepEqual(voikko.grammarErrors("Olen täi.\n\nOlen täi.", "fi"), []);
+		});
+		
+		QUnit.test("grammarErrorOffsetsInMultipleParagraphs", function(assert) {
+			var errors = voikko.grammarErrors("Olen täi.\n\nOlen joten kuten.", "fi");
+			assert.equal(errors.length, 1);
+			assert.equal(errors[0].startPos, 16);
+			assert.equal(errors[0].errorLen, 11);
+		});
+		
+		QUnit.test("grammarErrorWithWindowsParagraphSeparator", function(assert) {
+			var errors = voikko.grammarErrors("Olen täi.\r\nOlen joten kuten.", "fi");
+			assert.equal(errors.length, 1);
+			assert.equal(errors[0].startPos, 16);
+			assert.equal(errors[0].errorLen, 11);
+		});
+		
 		QUnit.test("analyze", function(assert) {
 			var analysisList = voikko.analyze("kansaneläkehakemus");
 			assert.equal(analysisList.length, 1);

@@ -172,7 +172,7 @@ Module.init = function(lang, path) {
 				return errorList;
 			}
 			var offset = 0;
-			var paragraphs = text.split("\n");
+			var paragraphs = text.replace("\r", "\n").split("\n");
 			for (var i = 0; i < paragraphs.length; i++) {
 				var paragraph = paragraphs[i];
 				appendErrorsFromParagraph(errorList, paragraph, offset, language);
