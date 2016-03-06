@@ -72,6 +72,7 @@ Module.init = function(lang, path) {
 	}
 	
 	var getHyphenationPattern = function(word) {
+		requireValidHandle();
 		if (!isValidInput(word)) {
 			// return string of spaces
 			var sb = "";
@@ -101,6 +102,7 @@ Module.init = function(lang, path) {
 	};
 	
 	var setBoolOption = function(option, value) {
+		requireValidHandle();
 		var result = c_setBooleanOption(handle, option, boolToInt(value));
 		if (result == 0) {
 			throw "Could not set boolean option " + option + " to value " + value + ".";
@@ -108,6 +110,7 @@ Module.init = function(lang, path) {
 	};
 	
 	var setIntegerOption = function(option, value) {
+		requireValidHandle();
 		var result = c_setIntegerOption(handle, option, value);
 		if (result == 0) {
 			throw "Could not set integer option " + option + " to value " + value + ".";
@@ -148,6 +151,12 @@ Module.init = function(lang, path) {
 		}
 	};
 	
+	var requireValidHandle = function() {
+		if (handle == null) {
+			throw "Attempt to use Voikko instance after terminate() was called";
+		}
+	};
+	
 	return {
 		terminate: function() {
 			if (handle) {
@@ -157,10 +166,12 @@ Module.init = function(lang, path) {
 		},
 		
 		spell: function(word) {
+			requireValidHandle();
 			return isValidInput(word) && c_spellCstr(handle, word) == 1;
 		},
 		
 		suggest: function(word) {
+			requireValidHandle();
 			var suggestions = [];
 			if (!isValidInput(word)) {
 				return suggestions;
@@ -175,6 +186,7 @@ Module.init = function(lang, path) {
 		},
 		
 		grammarErrors: function(text, language) {
+			requireValidHandle();
 			var errorList = [];
 			if (!isValidInput(text)) {
 				return errorList;
@@ -190,6 +202,7 @@ Module.init = function(lang, path) {
 		},
 		
 		analyze: function(word) {
+			requireValidHandle();
 			var analysisList = [];
 			if (!isValidInput(word)) {
 				return analysisList;
@@ -222,6 +235,7 @@ Module.init = function(lang, path) {
 		},
 		
 		tokens: function(text) {
+			requireValidHandle();
 			var allTokens = [];
 			var lastStart = 0;
 			for (var i = text.indexOf("\0"); i != -1; i = text.indexOf("\0", i + 1)) {
@@ -234,6 +248,7 @@ Module.init = function(lang, path) {
 		},
 		
 		sentences: function(text) {
+			requireValidHandle();
 			var result = [];
 			if (!isValidInput(text)) {
 				result.push({text: text, nextStartType: "NONE"});
