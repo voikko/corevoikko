@@ -301,6 +301,18 @@ Module.init = function(lang, path) {
 		
 		setAcceptMissingHyphens: function(value) {
 			setBoolOption(12, value);
+		},
+		
+		setAcceptTitlesInGc: function(value) {
+			setBoolOption(13, value);
+		},
+		
+		setAcceptUnfinishedParagraphsInGc: function(value) {
+			setBoolOption(14, value);
+		},
+		
+		setAcceptBulletedListsInGc: function(value) {
+			setBoolOption(16, value);
 		}
 	};
 };

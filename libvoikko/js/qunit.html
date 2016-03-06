@@ -26,6 +26,11 @@ var libvoikko = Libvoikko({
 			}
 		});
 		
+		QUnit.test("spellAfterTerminateThrowsException", function(assert) {
+			voikko.terminate();
+			assert.throws(function() { voikko.spell("kissa"); });
+		});
+	
 		QUnit.test("spell", function(assert) {
 			assert.strictEqual(voikko.spell("määrä"), true);
 		        assert.strictEqual(voikko.spell("määä"), false);
@@ -176,6 +181,27 @@ var libvoikko = Libvoikko({
 			assert.strictEqual(voikko.spell("sosiaali"), false);
 			voikko.setAcceptMissingHyphens(true);
 			assert.strictEqual(voikko.spell("sosiaali"), true);
+		});
+
+		QUnit.test("setAcceptTitlesInGc", function(assert) {
+			voikko.setAcceptTitlesInGc(false);
+			assert.equal(voikko.grammarErrors("Kissa on eläin", "fi").length, 1);
+			voikko.setAcceptTitlesInGc(true);
+			assert.equal(voikko.grammarErrors("Kissa on eläin", "fi").length, 0);
+		});
+
+		QUnit.test("setAcceptUnfinishedParagraphsInGc", function(assert) {
+			voikko.setAcceptUnfinishedParagraphsInGc(false);
+			assert.equal(voikko.grammarErrors("Kissa on ", "fi").length, 1);
+			voikko.setAcceptUnfinishedParagraphsInGc(true);
+			assert.equal(voikko.grammarErrors("Kissa on ", "fi").length, 0);
+		});
+
+		QUnit.test("setAcceptBulletedListsInGc", function(assert) {
+			voikko.setAcceptBulletedListsInGc(false);
+			assert.ok(voikko.grammarErrors("kissa", "fi").length > 0);
+			voikko.setAcceptBulletedListsInGc(true);
+			assert.ok(voikko.grammarErrors("kissa", "fi").length == 0);
 		});
 
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
