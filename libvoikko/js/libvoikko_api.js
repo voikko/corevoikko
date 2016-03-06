@@ -2,6 +2,7 @@ var PTR_SIZE = 4;
 var c_init = Module.cwrap('voikkoInit', 'number', ['number', 'string', 'string']);
 var c_terminate = Module.cwrap('voikkoTerminate', null, ['number']);
 var c_setBooleanOption = Module.cwrap('voikkoSetBooleanOption', 'number', ['number', 'number', 'number']);
+var c_setIntegerOption = Module.cwrap('voikkoSetIntegerOption', 'number', ['number', 'number', 'number']);
 var c_spellCstr = Module.cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = Module.cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_hyphenateCstr = Module.cwrap('voikkoHyphenateCstr', 'number', ['number', 'string']);
@@ -103,6 +104,13 @@ Module.init = function(lang, path) {
 		var result = c_setBooleanOption(handle, option, boolToInt(value));
 		if (result == 0) {
 			throw "Could not set boolean option " + option + " to value " + value + ".";
+		}
+	};
+	
+	var setIntegerOption = function(option, value) {
+		var result = c_setIntegerOption(handle, option, value);
+		if (result == 0) {
+			throw "Could not set integer option " + option + " to value " + value + ".";
 		}
 	};
 	
@@ -313,6 +321,18 @@ Module.init = function(lang, path) {
 		
 		setAcceptBulletedListsInGc: function(value) {
 			setBoolOption(16, value);
+		},
+		
+		setNoUglyHyphenation: function(value) {
+			setBoolOption(4, value);
+		},
+		
+		setHyphenateUnknownWords: function(value) {
+			setBoolOption(15, value);
+		},
+		
+		setMinHyphenatedWordLength: function(value) {
+			setIntegerOption(9, value);
 		}
 	};
 };

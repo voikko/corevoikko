@@ -204,6 +204,27 @@ var libvoikko = Libvoikko({
 			assert.ok(voikko.grammarErrors("kissa", "fi").length == 0);
 		});
 
+		QUnit.test("setNoUglyHyphenation", function(assert) {
+			voikko.setNoUglyHyphenation(false);
+			assert.equal(voikko.hyphenate("iva"), "i-va");
+			voikko.setNoUglyHyphenation(true);
+			assert.equal(voikko.hyphenate("iva"), "iva");
+		});
+
+		QUnit.test("setHyphenateUnknownWordsWorks", function(assert) {
+			voikko.setHyphenateUnknownWords(false);
+			assert.equal(voikko.hyphenate("kirjutepo"), "kirjutepo");
+			voikko.setHyphenateUnknownWords(true);
+			assert.equal(voikko.hyphenate("kirjutepo"), "kir-ju-te-po");
+		});
+
+		QUnit.test("setMinHyphenatedWordLength", function(assert) {
+			voikko.setMinHyphenatedWordLength(6);
+			assert.equal(voikko.hyphenate("koira"), "koira");
+			voikko.setMinHyphenatedWordLength(2);
+			assert.equal(voikko.hyphenate("koira"), "koi-ra");
+		});
+
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
