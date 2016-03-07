@@ -12,8 +12,8 @@
 <script type="text/javascript" src="libvoikko.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
 <script>
-var libvoikko = Libvoikko({
-	onRuntimeInitialized : function() {
+Libvoikko({
+	onLoad : function(libvoikko) {
 		var voikko;
 		
 		QUnit.module("libvoikko", {

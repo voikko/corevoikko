@@ -35,6 +35,12 @@ var isValidInput = function(word) {
 	return word.indexOf('\0') == -1;
 }
 
+Module["onRuntimeInitialized"] = function() {
+	if ("onLoad" in Module) {
+		Module["onLoad"](Module);
+	}
+};
+
 Module["init"] = function(lang, path) {
 	var errorPtr = mallocPtr();
 	var handle = c_init(errorPtr, lang, path);
