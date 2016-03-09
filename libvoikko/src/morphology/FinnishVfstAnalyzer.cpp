@@ -867,7 +867,6 @@ void FinnishVfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_
 		wcsncpy(wordBases + basepos, xpBuffer, xppos);
 		basepos += xppos;
 		wordBases[basepos++] = L')';
-		xppos = 0;
 	}
 	if (xspos > 0) {
 		wordIds[idpos++] = L'(';
@@ -875,7 +874,6 @@ void FinnishVfstAnalyzer::parseDebugAttributes(Analysis * analysis, const wchar_
 		wcsncpy(wordIds + idpos, xsBuffer, xspos);
 		idpos += xspos;
 		wordIds[idpos++] = L')';
-		xspos = 0;
 	}
 	wordIds[idpos] = L'\0';
 	wordBases[basepos] = L'\0';

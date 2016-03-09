@@ -121,7 +121,12 @@ static int getPriorityFromStructure(const wchar_t * structure) {
 			}
 		}
 	}
-	return 1 << (3 * (countParts - 1));
+	if (countParts == 0) {
+		return 1; // won't ever happen with a valid dictionary
+	}
+	else {
+		return 1 << (3 * (countParts - 1));
+	}
 }
 
 static int getPriorityFromSpellResult(spellresult result) {
