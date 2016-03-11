@@ -280,6 +280,20 @@ def get_abbreviation_jatko(word, wordform):
 	else:
 		return "Lyhenne"
 
+def injectBaseformToStructure(baseform, structure):
+	if baseform is None or baseform == "":
+		return structure
+	i = 0
+	# The following requires an incompatible format change but would
+	# make the standard dictionary about 30 % smaller.
+	# while i < len(baseform) and i + 1 < len(structure):
+	#	if baseform[i] != structure[i]:
+	#		break
+	#	i = i + 1
+	if i == 0:
+		return "[Xp]" + baseform + "[X]" + structure
+	return structure[:i] + "[Xp]" + baseform[i:] + "[X]" + structure[i:]
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -382,11 +396,9 @@ def handle_word(word):
 		
 		if OPTIONS["no-baseform"]:
 			outputBaseform = ""
-		else:
-			outputBaseform = "[Xp]" + outputBaseform + "[X]"
 		
 		if vfst_word_class == "[Lh]":
-			entry = '%s%s%s%s%s:%s # ;' % (vfst_word_class, outputBaseform, debug_info, rakenne, alkuWithTags, alku)
+			entry = '%s%s%s%s:%s # ;' % (vfst_word_class, debug_info, rakenne, injectBaseformToStructure(outputBaseform, alkuWithTags), alku)
 			vocabularyFile.write(entry + "\n")
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
@@ -404,9 +416,9 @@ def handle_word(word):
 			entry = '[Lp]%s%s%s%s%s:%s%s EtuliitteenJatko_%s;' \
 			        % (debug_info, rakenne, alkuWithTags, diacritics, infoFlags, alku, diacritics, get_prefix_jatko(word, altform))
 		else:
-			entry = '%s%s%s%s%s%s%s:%s%s %s%s_%s ;' \
-			        % (vfst_word_class, outputBaseform, debug_info, rakenne, infoFlags,
-			        alkuWithTags, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
+			entry = '%s%s%s%s%s%s:%s%s %s%s_%s ;' \
+			        % (vfst_word_class, debug_info, rakenne, infoFlags, injectBaseformToStructure(outputBaseform, alkuWithTags),
+			        diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + "\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms
