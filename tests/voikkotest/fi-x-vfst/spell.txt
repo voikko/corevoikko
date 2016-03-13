@@ -3711,6 +3711,7 @@ n-alkuinen
 hallintopitäjänsä
 oboeiden
 EU-johtoinen
+luoteispuolitse
 
 # = poikkeavat asetukset =
 
