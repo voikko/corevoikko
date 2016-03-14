@@ -73,7 +73,7 @@ A = u"[aä]"
 U = u"[uy]"
 
 def makeRePattern (wordClass, word):
-    u = u"^\\[%s\\]\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
+    u = u"^\\[%s\\](\\[I..\\])?\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
     u = u.replace ('C', C)
     u = u.replace ('V', V)
     u = u.replace ('A', A)
