@@ -453,7 +453,7 @@ word_list = [
     (u"korsteeni",      (u"korsteen",    u"korstein")),
     (u"kortteeri",      (u"kortteer",    u"kortter", u"kortier", u"korttier")),
     (u"kraana",         (u"kraan",       u"kran")),
-    (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer")),
+    (u"kraatteri",      (u"kraatter",    u"kraater", u"krateer", u"krater")),
     (u"kranaatti",      ((u"kranaat",    u"kranat"),
                          (u"kranaat",    u"kranat", u"NimisanaSalaatti_a", u"NimisanaRisti_a"))),
     (u"krenatööri",     (u"krenatöör",   u"krenatör", u"kranatöör", u"kranatör", u"kranatier", u"krenatyör")),
@@ -647,7 +647,9 @@ word_list = [
     (u"Väisänen",        (u"väisä",        u"wäisä")),
     (u"ylhäällä",        (u"ylhää",        u"ylähä")),
     (u"ylimmäinen",      (u"ylimmäi",      u"ylimäi")),
-    (u"öinen",           (u"öi",           u"öilli")),
+    (u"Zarathustra",       (u"zarathustr",     u"zarahustr")),
+    (u"zarathustralainen", (u"zarathustralai", u"zarahustralai")),
+    (u"öinen",             (u"öi",             u"öilli")),
 
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
 
