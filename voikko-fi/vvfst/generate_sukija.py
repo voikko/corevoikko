@@ -35,10 +35,10 @@
 # spellings and spelling errors that do not exist in real life.
 
 # Compiling (in directory voikko-fi):
-# make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/
+# make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
 
 # Compiling (in directory voikko-fi/vvfst):
-# cd ..; make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/; cd vvfst
+# cd ..; make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
 
 # Testing (in directory voikko-fi/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
@@ -199,6 +199,7 @@ spelling_pattern_list = [
   (re_ominen,   u"omi",    u"oomi"),
   (re_oninen,   u"oni",    u"ooni"),
   (re_orinen,   u"ori",    u"oori"),
+########
 
   (re_grafia,   u"grafi",  u"graafi"),
   (re_grafinen, u"grafi",  u"graafi"),
@@ -511,6 +512,7 @@ word_list = [
     (u"non=ag=gressio",  (u"non[Bm]ag[Bm]gressio:nonaggressio", u"non[Bm]ag[Bm]ressio:nonagressio")),
     (u"Nubia",           (u"nubi",        u"nuubi")),
     (u"odottaa",         (u"odot",        u"oot")),
+    (u"oopiumi",         (u"oopium",      u"ooppium")),
     (u"oraakkeli",       (u"oraakkel",    u"oraakel", u"orakel")),
     (u"ottomaani",       (u"ottomaan",    u"ottoman")),
     (u"paitsi",          (u"paitsi",      u"paitse")),
@@ -532,8 +534,10 @@ word_list = [
     (u"perimmäinen",     (u"perimmäi",    u"perimäi")),
     (u"persoona",        (u"persoon",     u"person")),
     (u"piispa",          (u"piisp",       u"pisp")),
-    (u"pioneeri",        (u"pioneer",     u"pioner")),
+    (u"piletti",         (u"pilet",       u"piljet")),
+    (u"pioneeri",        (u"pioneer",     u"pioner", u"pionieer", u"pionier")),
     (u"pioni",           (u"pion",        u"pioon")),
+    (u"pistooli",        (u"pistool",     u"pistol")),
     (u"pitaali",         (u"pitaal",      u"pital")),
     (u"plataani",        (u"plataan",     u"platan")),
     (u"plebeiji",        (u"plebeij",     u"plebej")),
