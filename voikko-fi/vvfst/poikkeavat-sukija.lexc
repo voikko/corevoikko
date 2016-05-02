@@ -197,8 +197,8 @@ LEXICON SukijaSanasto
 [Ln][Xp]asu=valikoima[X]asu[Bm]valikoim:asuvalikoim NimisanaAsema_a ;
 [Ln][Xp]asu=valinta[X]asu[Bm]valin:asuvalin NimisanaKanta_a ;
 [Ln][Xp]asu=varasto[X]asu[Bm]varasto:asuvarasto NimisanaArvelu_a ;
-[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
-[Ln][Xp]herrasneiti[X][Xr]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
+[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
+[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
 [Ln][Xp]ioota[X]iot:iot NimisanaKala_a ;

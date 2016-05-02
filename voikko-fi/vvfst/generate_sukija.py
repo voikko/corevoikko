@@ -35,10 +35,12 @@
 # spellings and spelling errors that do not exist in real life.
 
 # Compiling (in directory voikko-fi):
-# make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
+# make vvfst-sukija DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
+# make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
 
 # Compiling (in directory voikko-fi/vvfst):
-# cd ..; make vvfst-sukija; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
+# cd ..; make vvfst-sukija DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
+# cd ..; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
 
 # Testing (in directory voikko-fi/vvfst):
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
