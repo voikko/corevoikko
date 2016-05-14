@@ -3712,6 +3712,8 @@ hallintopitäjänsä
 oboeiden
 EU-johtoinen
 luoteispuolitse
+halajaa
+halajavat
 
 # = poikkeavat asetukset =
 

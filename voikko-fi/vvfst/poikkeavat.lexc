@@ -2399,6 +2399,7 @@ LEXICON Poikkeavat_ee
 [Lee][Xp]Sokrates[X]sokrate[Sill][Ny]ehe:sokrateehe	EtunimiLiOlN_a	;
 
 LEXICON Poikkeavat_t
+[Lt][Xp]halata[X]halaja:halaja Kutiaa ;
 [Lt][Xp]kaikaa[X]kaikaa:kaikaa	Liitesana_a	;
 [Lt][Xp]kumajaa[X]kumajaa:kumajaa	Liitesana_a	;
 [Lt][Xp]kuulla[X]kuulte[Tn2]:kuulte	Omistusliite_a	;
@@ -2705,6 +2706,7 @@ t:t	KertomanTekijäpääteVahva_a	;
 LEXICON Kutiaa
 KestämänTekijäpääteHeikko_a	;
 [Tt][Ap][P3][Ny]a:a	KestämänTekijäpääteY3Liitesana_a	;
+[Tt][Ap][P3][Nm][Ef]vat:vat	Liitesana_a	;
 Johdin_nimitapa3_a	;
 Johdin_nimitapa45_a	;
 Ehtotapa_a	;
