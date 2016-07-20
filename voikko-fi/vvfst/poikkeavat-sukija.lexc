@@ -245,6 +245,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi[X]oopium:oopium NimisanaKalsium_a ;
 [Ln][Xp]oopiumi[X]ooppium:ooppium NimisanaKalsium_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]polisi[X]polis:polis NimisanaPaperi_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
@@ -331,6 +332,7 @@ LEXICON Sukija_p
 [Lp]afrikka:afrikka EtuliitteenJatko_ellelnelt;
 [Lp]alaston:alaston EtuliitteenJatko_ellelnelt;
 [Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
+[Lp]baijerin:baijerin EtuliitteenJatko_ellelnelt;
 [Lp]eurooppa:eurooppa EtuliitteenJatko_ellelnelt;
 [Lp]ex-[Bm]:ex- EtuliitteenJatko_ellelnH;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;
