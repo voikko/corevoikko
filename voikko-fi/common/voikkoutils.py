@@ -132,8 +132,8 @@ def get_preference(prefname):
 	'Returns the value of given preference'
 	try:
 		import voikko_dev_prefs
-		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
-			return voikko_dev_prefs.svnroot
+		if prefname == 'corevoikko' and hasattr(voikko_dev_prefs, 'corevoikko'):
+			return voikko_dev_prefs.corevoikko
 		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
 			return voikko_dev_prefs.voikkotest_dir
 		if prefname == 'voikkotest_build_options' and hasattr(voikko_dev_prefs, 'voikkotest_build_options'):
@@ -148,10 +148,10 @@ def get_preference(prefname):
 			return voikko_dev_prefs.diffviewcmd
 	except ImportError:
 		pass
-	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
+	if prefname == 'corevoikko': return os.environ['HOME'] + '/git/corevoikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'voikkotest_build_options': return ''
-	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
+	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/git/corevoikko/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
 	if prefname == 'diffviewcmd': return 'diff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'

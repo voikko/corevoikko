@@ -36,8 +36,8 @@ from com.sun.star.connection import NoConnectException
 LOCALE = Locale()
 LOCALE.Language = "fi"
 ENCODING = voikkoutils.get_preference('encoding')
-SVNROOT = voikkoutils.get_preference('svnroot')
-HYPHENTESTS = SVNROOT + "/trunk/tests/ooovoikkotest/hyphen.txt"
+COREVOIKKO = voikkoutils.get_preference('corevoikko')
+HYPHENTESTS = COREVOIKKO + "/tests/ooovoikkotest/hyphen.txt"
 LINE_ENC = getpreferredencoding()
 
 def unoPropertySeq(props):
