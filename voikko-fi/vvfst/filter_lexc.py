@@ -18,15 +18,18 @@
 
 import sys
 sys.path.append("common")
+import codecs
 import fileinput
 import generate_lex_common
 
-files = [f for f in sys.argv[1:] if not f.startswith("--")]
+outputName = sys.argv[1]
+files = [f for f in sys.argv[2:] if not f.startswith("--")]
 
 OPTIONS = generate_lex_common.get_options()
+outputFile = codecs.open(outputName, 'w', 'UTF-8')
 
 for line_orig in fileinput.input(files,openhook=fileinput.hook_encoded("UTF-8")):
 	line = generate_lex_common.filterVfstInput(line_orig, OPTIONS)
 	if line is None:
 		continue
-	print(line)
+	outputFile.write(line + "\n")

@@ -229,7 +229,7 @@ $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/genera
 	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) $(VVFST_TAIVUTUSKAAVAT_OPTS) --destdir=$(VVFST_BUILDDIR)
 
 $(VVFST_BUILDDIR)/all.lexc: vvfst/filter_lexc.py vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp $(VVFST_LEXC)
-	$(PYTHON) vvfst/filter_lexc.py $(GENLEX_OPTS) $(VVFST_TAIVUTUSKAAVAT_OPTS) vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) $(VVFST_LEXC) > $@
+	$(PYTHON) vvfst/filter_lexc.py $@ $(GENLEX_OPTS) $(VVFST_TAIVUTUSKAAVAT_OPTS) vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) $(VVFST_LEXC)
 
 $(VVFST_BUILDDIR)/autocorrect.lexc: vocabulary/autocorrect/fi.xml vvfst/autocorrect_to_lexc.py
 	$(PYTHON) vvfst/autocorrect_to_lexc.py vocabulary/autocorrect/fi.xml $@
