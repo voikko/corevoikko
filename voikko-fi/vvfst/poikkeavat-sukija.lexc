@@ -36,7 +36,7 @@ Omistusliite_a ;
 [O1y]in:in Liitesana_a ;
 
 LEXICON SukijaTuta
-[Tn1p]takse:takse SukijaOmistusliite_a_in ;
+[Tn1]takse:takse SukijaOmistusliite_a_in ;
 [Tn2]ten:ten Liitesana_a ;
 
 LEXICON SukijaKiiru
