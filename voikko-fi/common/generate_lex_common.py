@@ -208,7 +208,7 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 def get_options():
 	try:
 		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "no-baseform", "sourceid", "vanhat", "sukija", "sukija-ys"]
-		(opts, args) = getopt.getopt(sys.argv[1:], "", optlist)
+		(opts, args) = getopt.getopt([f for f in sys.argv[1:] if f.startswith("--")], "", optlist)
 	except getopt.GetoptError:
 		sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
 		sys.exit(1)
