@@ -1867,6 +1867,9 @@ pim<A>:pim<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 pim:pim	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	pim<A>:pim<A>	Voittoaste_<A>	;
 ?Laatusana	pim:pim	Yliaste_<A>	;
+?Sukija [Sg][Nm]mint:mint	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Ny]pim<A>t<A>:pim<A>t<A>	<WC>LiOlAA_<A>	;
+?Sukija [Ses][Ny]minn<A>:minn<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]pim<A>h<A>:pim<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]pimihi:pimihi	<WC>LiOlN_<A>	;
 
@@ -3358,6 +3361,7 @@ Johdin_U_arvelu_<A>	;
 EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_tU_lA_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija e:e Ehtotapa_<A> ;
 
 LEXICON Haravoida
 HaravoidaKanavoida_<A>	;
@@ -3511,6 +3515,7 @@ n:n	Ehtotapa_<A>	;
 ne:ne	Käskytapa_y2_<A>	;
 ni:ni	Johdin_ja_kulkija_<A>	;
 ?Sukija ne:ne SukijaTositapaVi_<A> ;
+?Sukija ne:ne Ehtotapa_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -3660,6 +3665,7 @@ k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 LEXICON SalataSalailla_s
 Salata_s_<A>	;
 il[Xj]l<A>[X]:il	Arvailla_<A>	;
+?Sukija il[Xj]l<A>[X]:el	Arvailla_<A>	;
 
 LEXICON SalataSalailla_w
 Salata_w_<A>	;

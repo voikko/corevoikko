@@ -205,6 +205,7 @@ LEXICON SukijaSanasto
 [Ln][Xp]kiiru[X]kiiruu:kiiruu Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
+[Ln][Xp]peitsi[X]pei[Sp][Ny]tseä:peitseä NimisanaLiOlV_ä ;
 
 
 LEXICON SukijaPoikkeavat_n
@@ -268,6 +269,11 @@ LEXICON SukijaAsemosana
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMieMä ;
 [Lr][Xp]mones[X]mone:mone JärjestyslukuKahdeksasOmistusliitteet_a ;
+[Lr][Xp]muuan[X]muu[Sn][Ny]dan:muudan Liitesana_a ;
+[Lr][Xp]muuan[X]muu[Ses][Ny]danna:muudanna Liitesana_a ;
+[Lr][Xp]muuan[X]muu[Sp][Ny]datta:muudatta  Liitesana_a ;
+[Lr][Xp]muuan[X]muu[Sp][Ny]danta:muudanta  Liitesana_a ;
+[Lr][Xp]muutama[X]muutamasti:muutamasti    Liitesana_a ;
 
 
 LEXICON SukijaPoikkeavat_s
@@ -286,6 +292,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
 [Ls][Xp]miten[X]mitenkäs:mitenkäs     Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
+[Ls][Xp]muuanne[X]muudanne:muudanne LoppuLiitesana_a ;
 [Ls][Xp]niin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
 [Ls][Xp]niinkuin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
