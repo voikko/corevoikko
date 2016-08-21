@@ -84,10 +84,10 @@ end: rules
 end: class
 
 
-# Kotus 3 kallio
+# Kotus 3 kallio, oboe
 class: 3
 sm-class: autio
-match-word: VO
+match-word: (?:VO|oe)
 consonant-gradation: -
 group: t
 transform-group: e
@@ -100,7 +100,7 @@ translatiivi	0	kse	s	ps=r
 essiivi		0	na	s
 inessiivi		0	ssa	s
 elatiivi		0	sta	s
-illatiivi		0	on	s
+illatiivi		([oe])	(1)(1)n	s
 adessiivi		0	lla	s
 ablatiivi		0	lta	s
 allatiivi		0	lle	s

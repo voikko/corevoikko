@@ -830,6 +830,8 @@ luo'on # Kotus 1
 tappiota # Kotus 3
 !tappioa # Kotus 3
 !autioa # Kotus 3
+aaloeta # Kotus 3
+!aaloeeseen # Kotus 3
 glamouriton # Kotus 5
 !glamoureton # Kotus 5
 !poppkissa # Kotus 5
@@ -3638,7 +3640,7 @@ Laitiset-lehti
 !-emiraati
 !loisnokkelin
 kuullunymmärtäminen
-valtioinhallinnon
+!valtioinhallinnon
 tultaman
 !ensimmäistälukuun
 kolmannettoista

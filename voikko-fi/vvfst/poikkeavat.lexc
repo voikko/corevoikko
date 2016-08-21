@@ -1103,7 +1103,6 @@ Summayhdyssanat	;
 [Ln][Xp]nuoripari[X][Sab][Nm]nuoritta[Bm]pareitta:nuorittapareitta	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Sko][Nm]nuorine[Bm]pareine:nuorinepareine	NimisanaLiOlV_a ;
 [Ln][Xp]nuoripari[X][Sin][Nm]nuorin[Bm]parein:nuorinparein		Liitesana_a;
-[Ln][Xp]oboe[X]oboe:oboe	Oboe	;
 [Ln][Xp]omakuva[X][Sn][Ny]oma[Bm]kuva:omakuva	NimisanaNormaaliYsJatkoOl_a	;
 [Ln][Xp]omakuva[X][Sn][Ny]oman[Bm]kuva:omankuva	Omistusliite_a	;
 [Ln][Xp]omakuva[X][Sg][Ny]oman[Bm]kuvan:omankuvan	NimisanaYksikönGenetiivinJatko_a	;
@@ -2103,21 +2102,6 @@ NimisanaYhteisetYksikönPaikallissijat_a	;
 [Sill][Ny]hu:hu	NimisanaLiOlN_a	;
 Johdin_tOn_a	;
 Johdin_mAinen_a	;
-
-LEXICON Oboe
-[Sn][Ny]:	NimisanaNormaaliYsJatkoOl_a	;
-[Sg][Ny]n:n	NimisanaYksikönGenetiivinJatko_a	;
-[Sp][Ny]ta:ta	NimisanaLiOlV_a	;
-[Ses][Ny]na:na	NimisanaLiOlV_a	;
-NimisanaYhteisetYksikönPaikallissijat_a	;
-[Sill][Ny]e:e	NimisanaLiOlN_a	;
-[Sn][Nm]t:t	Liitesana_a	;
-[Sg][Nm]id:id	NimisanaMonikonGenetiiviEnJatko_a	;
-[Sg][Nm]itt:itt	NimisanaMonikonGenetiiviEnJatko_a	;
-[Sp][Nm]ita:ita	NimisanaLiOlV_a	;
-NimisanaYhteisetMonikonSijat2_a	;
-NimisanaYhteisetMonikonPaikallissijat_a	;
-[Sill][Nm]ihi:ihi	NimisanaLiOlN_a	;
 
 LEXICON Uksi
 [Sn][Ny]ksi:ksi	NimisanaNormaaliYsJatko_a	;

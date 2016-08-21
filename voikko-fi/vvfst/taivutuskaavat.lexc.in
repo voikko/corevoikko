@@ -348,7 +348,6 @@ LEXICON NOUN Autio
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
