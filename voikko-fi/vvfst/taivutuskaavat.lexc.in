@@ -363,6 +363,7 @@ LEXICON NOUN Autio
 ?Laatusana	Yliaste_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Sukija [[HV]][Sill][Ny]:[[HV]]	<WC>LiOlN_<A>	;
+?Sukija [Sg][Nm]: <WC>MonikonGenetiiviInJatko_<A>	;
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
