@@ -2324,3 +2324,7 @@ word:METSÄLUOTEIS-
  analysis
   CLASS=etuliite
   STRUCTURE==ppppp=ppppppp-
+word:muuanna
+ expected:1
+ analysis
+  SIJAMUOTO=olento
