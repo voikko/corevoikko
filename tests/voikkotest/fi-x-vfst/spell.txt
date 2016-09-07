@@ -3301,7 +3301,7 @@ show'nsa
 !shownsa
 saartaen
 voipi
-ompi
+!ompi
 !saapiko
 korkeintaan
 pakanoita
