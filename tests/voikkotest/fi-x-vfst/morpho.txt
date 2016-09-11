@@ -2328,3 +2328,26 @@ word:muuanna
  expected:1
  analysis
   SIJAMUOTO=olento
+word:saartaa
+ expected:2
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NEGATIVE=false
+  NUMBER=singular
+  PERSON=3
+ analysis
+  CLASS=teonsana
+  MOOD=A-infinitive
+  NEGATIVE=both
+word:saartavat
+ expected:2
+ analysis
+  CLASS=laatusana
+  COMPARISON=positive
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NEGATIVE=false
+  NUMBER=plural
+  PERSON=3

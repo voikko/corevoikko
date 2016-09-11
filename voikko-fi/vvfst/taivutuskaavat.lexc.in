@@ -2959,6 +2959,8 @@ t:t	KertomanTekijäpääteVahva_<A>	;
 
 LEXICON Saartaa
 t<A>:t<A>	Johdin_nimitapa1A_<A>	;
+[Tt][Ap][P3][Ny][Ef]t<A><A>:t<A><A>	KestämänTekijäpääteY3Liitesana_<A>	;
+[Tt][Ap][P3][Nm][Ef]t<A>v<A>t:t<A>v<A>t	Liitesana_<A>	;
 t<A>:t<A>	Johdin_nimitapa2_<A>	;
 r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
 t<O>:t<O>	KertomanTekijäpääteVahva_<A>	;
