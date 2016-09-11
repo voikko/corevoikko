@@ -19,7 +19,7 @@ VVFST_BASEFORMS=yes
 -include config.mak
 
 # Version of voikko-fi
-SM_VERSION=2.0
+SM_VERSION=2.1
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
