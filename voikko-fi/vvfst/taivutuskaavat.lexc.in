@@ -5212,6 +5212,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija i<A>:i<A> <WC>Apila_y_<A> ;
 ?Sukija i<O>:i<O> <WC>Apila_m_<A> ;
 ?Sukija ?Laatusana i<A>:i<A> Voittoaste_<A> ;
+?Sukija ?Laatusana ee:ee Voittoaste_<A> ;
 ?Sukija ?Laatusana e:e HYliaste_<A> ;
 
 ?Sukija LEXICON NOUN SukijaAinoo
