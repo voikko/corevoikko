@@ -136,7 +136,7 @@ re_A = re.compile (u"[aou]")
 
 re_oitin = makeRe (u"Ln", u".Coitin")
 
-re_aatio = makeRe (u"Ln", u".Caatio")
+re_aatio = makeRe (u"Ln", u"..aatio")
 re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"([^a]i|k)tio") # Traditio, funktio, mutta ei aitio.
