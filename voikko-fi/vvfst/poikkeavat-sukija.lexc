@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2016 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+! Tekijänoikeus © 2006 - 2016 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -197,6 +197,7 @@ LEXICON SukijaSanasto
 [Ln][Xp]asu=valikoima[X]asu[Bm]valikoim:asuvalikoim NimisanaAsema_a ;
 [Ln][Xp]asu=valinta[X]asu[Bm]valin:asuvalin NimisanaKanta_a ;
 [Ln][Xp]asu=varasto[X]asu[Bm]varasto:asuvarasto NimisanaArvelu_a ;
+[Ln][Xp]banni[X]bann:bann NimisanaRisti_a ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
@@ -250,13 +251,16 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]sydän[X]sydämm:sydämm NimisanaUistin_m_ä ;
+[Ln][Xp]sävel[X]sävele:sävele Loppu ;
+[Ln][Xp]sävel[X]sävele[Sg][Nm]id:säveleid NimisanaMonikonGenetiiviEnJatko_ä ;
+[Ln][Xp]sävel[X]sävele[Sg][Nm]itt:säveleitt NimisanaMonikonGenetiiviEnJatko_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]vartija[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
-
+!!![Ln][Xp]pahta[X]pah:pah NimisanaPata_a ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
@@ -672,6 +676,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]etäkäyttöinen[X]etä[Bm]käyttöi:etäkäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]jonkinlainen[X]jonkil[Bm]lai:jonkillai LaatusanaNainenInen_a ;
 [Ll][Xp]jonkunlainen[X]jonkul[Bm]lai:jonkullai LaatusanaNainenInen_a ;
+[Ll][Xp]kaksoistiheyksinen[X]kaksois[Bm]tiheyksi:kaksoistiheyksi LaatusanaNainenInen_a ;
 [Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]kiiru[X]kiiru:kiiru Yliaste_a ;
 [Ll][Xp]kiiruinen[X]kiiruhui:kiiruhui LaatusanaNainenInen_a ;
