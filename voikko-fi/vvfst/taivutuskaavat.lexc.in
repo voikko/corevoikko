@@ -2136,7 +2136,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]isihi:isihi	<WC>LiOlN_<A>	;
 ?Sukija ?Laatusana	he:he	Voittoaste_<A>	;
-?Sukija ?Laatusana	h:h	Yliaste_<A>	;
+?Sukija ?Laatusana		HYliaste_<A>	;
 ?Sukija ?Nimisana	he:he	Johdin_tOn_<A>	;
 ?Sukija ?Nimisana	h:h	Johdin_inen_vain_lipulla_<A>	;
 
@@ -2340,6 +2340,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
 ?Sukija  <WC>YhteisetHTaivutusmuodot_<A> ;
+?Sukija  ?Laatusana hi:hi Voittoaste_<A>	;
 
 LEXICON NOUN Hapsi
 <WC>Lapsi_yhteiset_<A>	;
@@ -5187,6 +5188,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija ?Laatusana	ehi:ehi Voittoaste_<A> ;   
 ?Sukija ?Laatusana	eh:eh   Yliaste_<A>	;
 ?Sukija e:e		<WC>YhteisetHTaivutusmuodot_<A> ;
+?Sukija ih[Ses][Ny][Cs]inn<A>@D.EI_VERTM@:ihinn<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 
 ?Sukija LEXICON NOUN SukijaAltis
 ?Sukija t:t <WC>SukijaKaunis_<A> ;
