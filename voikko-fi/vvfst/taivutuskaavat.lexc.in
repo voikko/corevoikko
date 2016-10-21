@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2015 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+! Tekijänoikeus © 2006 - 2016 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !                 2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
@@ -5188,7 +5188,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija ?Laatusana	ehi:ehi Voittoaste_<A> ;   
 ?Sukija ?Laatusana	eh:eh   Yliaste_<A>	;
 ?Sukija e:e		<WC>YhteisetHTaivutusmuodot_<A> ;
-?Sukija ih[Ses][Ny][Cs]inn<A>@D.EI_VERTM@:ihinn<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+?Sukija ih[Ses][Nm][Cs]inn<A>@D.EI_VERTM@:ihinn<A>@D.EI_VERTM@ NimisanaLiOlV_<A> ;
 
 ?Sukija LEXICON NOUN SukijaAltis
 ?Sukija t:t <WC>SukijaKaunis_<A> ;
