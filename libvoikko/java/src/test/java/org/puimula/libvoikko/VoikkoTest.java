@@ -555,4 +555,16 @@ public class VoikkoTest {
         }
         assertEquals(0, voikko.tokens("").size());
     }
+
+    @Test
+    public void supplementaryCharactersAreUnknownTokens() {
+        // This is actually one Unicode character (UTF-16 high + low surrogate)
+        List<Token> tokens = voikko.tokens("\uDBC0\uDC78");
+        assertEquals(2, tokens.size());
+        assertEquals(TokenType.UNKNOWN, tokens.get(0).getType());
+        assertEquals("\uDBC0", tokens.get(0).getText());
+        assertEquals(TokenType.UNKNOWN, tokens.get(1).getType());
+        assertEquals("\uDC78", tokens.get(1).getText());
+    }
+
 }

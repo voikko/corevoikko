@@ -316,13 +316,24 @@ public class Voikko {
         requireValidHandle();
         List<Token> allTokens = new ArrayList<Token>();
         int lastStart = 0;
-        for (int i = text.indexOf('\0'); i != -1; i = text.indexOf('\0', i + 1)) {
+        for (int i = indexOfSpecialUnknown(text, 0); i != -1; i = indexOfSpecialUnknown(text, i + 1)) {
             allTokens.addAll(tokensNonNull(text.substring(lastStart, i)));
-            allTokens.add(new Token(TokenType.UNKNOWN, "\0"));
+            allTokens.add(new Token(TokenType.UNKNOWN, Character.toString(text.charAt(i))));
             lastStart = i + 1;
         }
         allTokens.addAll(tokensNonNull(text.substring(lastStart)));
         return allTokens;
+    }
+
+    private int indexOfSpecialUnknown(String text, int startFrom) {
+        int len = text.length();
+        for (int i = startFrom; i < len; i++) {
+            int c = text.charAt(i);
+            if (c == 0 || (c >= 0xD800 && c <= 0xDFFF)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private List<Token> tokensNonNull(String text) {
