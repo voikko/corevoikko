@@ -13,11 +13,8 @@ libvoikko 4.0 or later.
 
 For Voikko both morphologies support spell checking, hyphenation
 and grammar checking. Special support is also included for text
-indexer Sukija.
-
-All of the documentation about Finnish morphology is in Finnish (see
-README.fi and subdirectory doc). This README contains only build
-and usage instructions for distribution packagers.
+indexer Sukija. This support includes support for common spelling
+mistakes, old spellings, old inflection types and old or rare words.
 
 
 Build and installation
@@ -32,25 +29,36 @@ Installation can be done by running
 (Replace /usr/lib/voikko with the directory you want to install the
 files to. Installing to ~/.voikko will cause libvoikko to use this
 version of voikko-fi only for the user who does the installation.)
+
 Building the code for Sukija can be done by running
-    make sukija
+    make vfst-sukija
+Installation can be done by running
+    make vvfst-install-sukija DESTDIR=/usr/lib/voikko
+You should install Sukija binaries to the same directory that you
+install Voikko files.
 
 Supported Make targets
 ----------------------
 
 - vvfst
   Builds the binary files for Finnish dictionary (libvoikko format version 5)
+- vvfst-sukija
+  Builds the binary files for Finnish dictionary (libvoikko format version 5)
+  used in Sukija indexer.
 - sukija
-  Builds the binary files needed by text indexer Sukija.
+  DEPRECATED: Builds the binary files needed by text indexer Sukija.
+  You should use target vvfst-sukija.
 - voikko
   DEPRECATED: Builds the binary files for Finnish dictionary (libvoikko format version 2)
 - voikko-sukija
-  Builds the binary files needed by libvoikko with a big
+  DEPRECATED: Builds the binary files needed by libvoikko with a big
   dictionary that can be used by Sukija.
 - vvfst-install DESTDIR=/usr/lib/voikko
   Installs the version 5 binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
   /usr/lib/voikko
+- vvfst-sukija-install DESTDIR=/usr/lib/voikko
+  Like vvfst-install but installs the binary files build by command vvfst-sukija.
 - voikko-install DESTDIR=/usr/lib/voikko
   DEPRECATED: Installs the version 2 binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
