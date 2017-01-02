@@ -2905,7 +2905,6 @@ LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
 <WC>Kaivaa_s_<A>	;
 el[Xj]l<A>[X]:el	Katsella_<A>	;
-!TODO kaivanta
 
 LEXICON Lappaa
 <WC>Kaivaa_w_<A>	;
@@ -2930,7 +2929,6 @@ LEXICON Raataa
 d:d	<WC>Kaivaa_w_<A>	;
 t:t	<WC>Kaivaa_s_<A>	;
 [Xj]dell<A>[X]:	Kohdella_<A>	;
-!TODO raadanta
 
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
