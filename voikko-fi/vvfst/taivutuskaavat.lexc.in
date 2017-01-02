@@ -4351,7 +4351,7 @@ LaatusananErisnimijatko	;
 
 LEXICON Johdin_tOn
 [Ll][Xj]t<O>n[X]t@C.EI_YKS@@C.YS_EI_JATKOA@@C.VAIN_NIMISANA@:t@C.EI_YKS@@C.YS_EI_JATKOA@@C.VAIN_NIMISANA@	LaatusanaOnneton_<A>	; ! yhdyssanojen esto todennäköisesti tarpeeton
-[Ll]lli[Xj]nen[X]@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.YS_EI_JATKOA@@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ; ! TODO yhdyssanat sallittu Malaga-yhteensopivuuden takia, tarkista onko todella tarpeellinen
+[Ll]lli[Xj]nen[X]@C.INEN_VAADITTU@@C.EI_YKS@:lli@C.INEN_VAADITTU@@C.EI_YKS@	LaatusanaNainen_<A>    ;
 llis@C.EI_YKS@:llis@C.EI_YKS@	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnimet	;
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;
