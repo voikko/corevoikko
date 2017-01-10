@@ -5,7 +5,7 @@
 
   <groupId>org.puimula.voikko</groupId>
   <artifactId>libvoikko</artifactId>
-  <version>4.1.1-SNAPSHOT</version>
+  <version>4.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>libvoikko</name>
   <description>Java API for libvoikko, library of free natural language processing tools</description>
@@ -79,6 +79,23 @@
       </plugin>
     </plugins>
   </build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.4</version>
+        <configuration>
+          <sourceFileExcludes>
+            <sourceFileExclude>org/puimula/libvoikko/ByteArray.java</sourceFileExclude>
+            <sourceFileExclude>org/puimula/libvoikko/SizeT.java</sourceFileExclude>
+            <sourceFileExclude>org/puimula/libvoikko/SizeTByReference.java</sourceFileExclude>
+          </sourceFileExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <scm>
     <url>git@github.com:voikko/corevoikko.git</url>

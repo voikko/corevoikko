@@ -58,6 +58,7 @@ public class Token {
     }
 
     /**
+     * @since 4.2
      * @return start offset of token
      */
     public int getStartOffset() {
@@ -65,6 +66,7 @@ public class Token {
     }
 
     /**
+     * @since 4.2
      * @return end offset of token
      */
     public int getEndOffset() {
