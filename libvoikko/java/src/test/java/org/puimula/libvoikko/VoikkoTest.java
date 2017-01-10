@@ -566,5 +566,14 @@ public class VoikkoTest {
         assertEquals(TokenType.UNKNOWN, tokens.get(1).getType());
         assertEquals("\uDC78", tokens.get(1).getText());
     }
+    
+    @Test
+    public void tokenOffsetsAreOK() {
+        final String s = "Ovatko myös ääkköset oikein?";
+        List<Token> tokens = voikko.tokens(s);
+        for (Token t: tokens) {
+             assertEquals(t.getText(), s.substring(t.getStartOffset(), t.getEndOffset()));
+        }
+    }
 
 }

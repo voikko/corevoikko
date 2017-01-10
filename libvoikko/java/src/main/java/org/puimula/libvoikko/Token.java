@@ -35,10 +35,12 @@ public class Token {
 
     private final TokenType type;
     private final String text;
+    private final int startOffset;
     
-    public Token(TokenType type, String text) {
+    public Token(TokenType type, String text, int startOffset) {
         this.type = type;
         this.text = text;
+        this.startOffset = startOffset;
     }
 
     /**
@@ -53,6 +55,20 @@ public class Token {
      */
     public String getText() {
         return text;
+    }
+
+    /**
+     * @return start offset of token
+     */
+    public int getStartOffset() {
+        return startOffset;
+    }
+
+    /**
+     * @return end offset of token
+     */
+    public int getEndOffset() {
+        return startOffset + text.length();
     }
     
 }

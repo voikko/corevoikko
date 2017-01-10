@@ -317,11 +317,11 @@ public class Voikko {
         List<Token> allTokens = new ArrayList<Token>();
         int lastStart = 0;
         for (int i = indexOfSpecialUnknown(text, 0); i != -1; i = indexOfSpecialUnknown(text, i + 1)) {
-            allTokens.addAll(tokensNonNull(text.substring(lastStart, i)));
-            allTokens.add(new Token(TokenType.UNKNOWN, Character.toString(text.charAt(i))));
+            allTokens.addAll(tokensNonNull(text.substring(lastStart, i), lastStart));
+            allTokens.add(new Token(TokenType.UNKNOWN, Character.toString(text.charAt(i)), i));
             lastStart = i + 1;
         }
-        allTokens.addAll(tokensNonNull(text.substring(lastStart)));
+        allTokens.addAll(tokensNonNull(text.substring(lastStart), lastStart));
         return allTokens;
     }
 
@@ -336,7 +336,7 @@ public class Voikko {
         return -1;
     }
 
-    private List<Token> tokensNonNull(String text) {
+    private List<Token> tokensNonNull(String text, int lastStart) {
         Libvoikko lib = getLib();
         List<Token> result = new ArrayList<Token>();
         ByteBuffer textBytes = s2bb(text);
@@ -350,7 +350,7 @@ public class Voikko {
             int tokenLen = tokenLenByRef.getValue().intValue();
             TokenType tokenType = TokenType.values()[tokenTypeInt];
             String tokenText = text.substring(textStart, textStart + tokenLen);
-            result.add(new Token(tokenType, tokenText));
+            result.add(new Token(tokenType, tokenText, lastStart + textStart));
             textStart += tokenText.length();
             int tokenBytes = s2n(tokenText).length - 1;
             bytesStart += tokenBytes;
