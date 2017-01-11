@@ -87,7 +87,7 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 			bool part2Result = spellOk(s, suggestion + w2start, w2len, prio_part);
 			prio_total += prio_part;
 			if (part2Result) {
-				wcsncpy(suggestion, s->getWord(), splitind);
+				wcsncpy(suggestion, part1, splitind);
 				suggestion[splitind] = L' ';
 				s->addSuggestion(suggestion, prio_total);
 			}
