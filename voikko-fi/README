@@ -31,7 +31,7 @@ files to. Installing to ~/.voikko will cause libvoikko to use this
 version of voikko-fi only for the user who does the installation.)
 
 Building the code for Sukija can be done by running
-    make vfst-sukija
+    make vvfst-sukija
 Installation can be done by running
     make vvfst-install-sukija DESTDIR=/usr/lib/voikko
 You should install Sukija binaries to the same directory that you
