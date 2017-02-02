@@ -51,7 +51,7 @@ namespace libvoikko { namespace morphology {
 static const int BUFFER_SIZE = 2000;
 static const int MAX_ANALYSIS_COUNT = 100;
 
-VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+VfstAnalyzer::VfstAnalyzer(const string & directoryName) {
 	string morFile = directoryName + "/mor.vfst";
 	// XXX: could handle different types of transducers
 	transducer = new WeightedTransducer(morFile.c_str());

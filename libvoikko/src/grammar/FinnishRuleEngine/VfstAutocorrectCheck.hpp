@@ -41,7 +41,7 @@ namespace libvoikko { namespace grammar { namespace check {
  */
 class VfstAutocorrectCheck : public SentenceCheck {
 	public:
-		VfstAutocorrectCheck(const std::string & fileName) throw(setup::DictionaryException);
+		VfstAutocorrectCheck(const std::string & fileName);
 		~VfstAutocorrectCheck();
 		void check(voikko_options_t * options, const Sentence * sentence);
 	private:

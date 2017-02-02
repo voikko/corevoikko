@@ -48,8 +48,7 @@ class SuggestionGeneratorFactory {
 		 * @throws DictionaryException if the suggestion generator cannot be initialized.
 		 */
 		static SuggestionGenerator * getSuggestionGenerator(voikko_options_t * voikkoOptions,
-		                            SuggestionType suggestionType)
-		                              throw(setup::DictionaryException);
+		                            SuggestionType suggestionType);
 };
 
 }}}

@@ -40,8 +40,7 @@ using namespace std;
 namespace libvoikko { namespace grammar {
 
 GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
-	                              const setup::Dictionary & dictionary)
-	                              throw(setup::DictionaryException) {
+	                              const setup::Dictionary & dictionary) {
 	string grammarBackend = dictionary.getGrammarBackend().getBackend();
 	if (grammarBackend == "null") {
 		return new NullGrammarChecker();

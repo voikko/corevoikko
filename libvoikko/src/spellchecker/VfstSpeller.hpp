@@ -42,7 +42,7 @@ namespace libvoikko { namespace spellchecker {
  */
 class VfstSpeller : public Speller {
 	public:
-		VfstSpeller(const std::string & directoryName) throw(setup::DictionaryException);
+		VfstSpeller(const std::string & directoryName);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 		

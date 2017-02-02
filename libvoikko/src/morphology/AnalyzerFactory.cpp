@@ -51,8 +51,7 @@ using std::string;
 
 namespace libvoikko { namespace morphology {
 
-Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
-	                              throw(setup::DictionaryException) {
+Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary) {
 	string morBackend = dictionary.getMorBackend().getBackend();
 	string morPath = dictionary.getMorBackend().getPath();
 	if (morBackend == "null") {

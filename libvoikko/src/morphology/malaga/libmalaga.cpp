@@ -44,7 +44,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 /* Functions. ===============================================================*/
 
 void 
-init_libmalaga(string_t project_directory, MalagaState * malagaState) throw(setup::DictionaryException)
+init_libmalaga(string_t project_directory, MalagaState * malagaState)
 /* Initialise this module. */
 { 
   char * project_directory_absolute = absolute_path(project_directory, NULL);
@@ -83,7 +83,7 @@ get_value_string( value_t string )
 /*---------------------------------------------------------------------------*/
 
 void
-analyse_item(string_t item, MalagaState * malagaState) throw(setup::DictionaryException)
+analyse_item(string_t item, MalagaState * malagaState)
 /* Analyse ITEM */
 { 
   char_t * analysis_input = NULL;

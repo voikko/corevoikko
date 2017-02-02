@@ -48,8 +48,7 @@ class HyphenatorFactory {
 		 * @throws DictionaryException if the hyphenator cannot be initialized.
 		 */
 		static Hyphenator * getHyphenator(const voikko_options_t * options,
-		                                  const setup::Dictionary & dictionary)
-		                                 throw(setup::DictionaryException);
+		                                  const setup::Dictionary & dictionary);
 	
 };
 

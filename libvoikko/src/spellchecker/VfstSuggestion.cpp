@@ -49,7 +49,7 @@ struct WeightedSuggestion {
 	}
 };
 
-VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const string & directoryName) throw(setup::DictionaryException):
+VfstSuggestion::VfstSuggestion(const fst::WeightedTransducer * acceptor, const string & directoryName):
                 acceptor(acceptor) {
 	string errFile = directoryName + "/err.vfst";
 	errorModel = new fst::WeightedTransducer(errFile.c_str());

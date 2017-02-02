@@ -39,7 +39,7 @@ namespace libvoikko { namespace grammar { namespace check {
 
 static const size_t BUFFER_SIZE = 20000;
 
-VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) throw(setup::DictionaryException) {
+VfstAutocorrectCheck::VfstAutocorrectCheck(const string & fileName) {
 	transducer = new fst::UnweightedTransducer(fileName.c_str());
 	configuration = new fst::Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	inputBuffer = new wchar_t[BUFFER_SIZE + 1];

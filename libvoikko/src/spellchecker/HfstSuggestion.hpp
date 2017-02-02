@@ -45,7 +45,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class HfstSuggestion : public SuggestionGenerator {
 	public:
-		HfstSuggestion(hfst_ol::ZHfstOspeller * speller) throw(setup::DictionaryException);
+		HfstSuggestion(hfst_ol::ZHfstOspeller * speller);
 		void generate(SuggestionStatus * s) const;
 		void terminate();
 	private:

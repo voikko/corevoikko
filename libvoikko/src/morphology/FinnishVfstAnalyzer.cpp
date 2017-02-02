@@ -48,7 +48,7 @@ namespace libvoikko { namespace morphology {
 static const int BUFFER_SIZE = 2000;
 static const int MAX_ANALYSIS_COUNT = 100;
 
-FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) {
 	string morFile = directoryName + "/mor.vfst";
 	transducer = new UnweightedTransducer(morFile.c_str());
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);

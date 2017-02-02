@@ -104,12 +104,11 @@ list<Dictionary> DictionaryFactory::findAllAvailable(const std::string & path) {
 	return dicts;
 }
 
-Dictionary DictionaryFactory::load(const string & language) throw(DictionaryException) {
+Dictionary DictionaryFactory::load(const string & language) {
 	return load(language, string());
 }
 
-Dictionary DictionaryFactory::load(const string & language, const string & path)
-		throw(DictionaryException) {
+Dictionary DictionaryFactory::load(const string & language, const string & path) {
 	LanguageTag requestedTag;
 	requestedTag.setBcp47(language);
 	

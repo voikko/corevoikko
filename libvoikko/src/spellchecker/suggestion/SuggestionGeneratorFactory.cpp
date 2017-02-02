@@ -49,8 +49,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	                             voikko_options_t * voikkoOptions,
-	                             SuggestionType suggestionType)
-	                              throw(setup::DictionaryException) {
+	                             SuggestionType suggestionType) {
 	string backend = voikkoOptions->dictionary.getSuggestionBackend().getBackend();
 	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {
 		if (suggestionType == SUGGESTION_TYPE_OCR) {

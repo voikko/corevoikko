@@ -34,7 +34,7 @@ DictionaryException::DictionaryException(const char * errorMessage) :
 	errorMessage(errorMessage) {
 }
 
-const char * DictionaryException::what() const throw() {
+const char * DictionaryException::what() const noexcept {
 	return errorMessage;
 }
 

@@ -45,8 +45,7 @@ class AnalyzerFactory {
 		 * The analyzer must be terminated and deleted after use.
 		 * @throws DictionaryException if the analyzer cannot be initialized.
 		 */
-		static Analyzer * getAnalyzer(const setup::Dictionary & dictionary)
-		                              throw(setup::DictionaryException);
+		static Analyzer * getAnalyzer(const setup::Dictionary & dictionary);
 };
 
 } }

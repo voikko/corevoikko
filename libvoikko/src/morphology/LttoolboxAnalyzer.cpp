@@ -26,7 +26,7 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-LttoolboxAnalyzer::LttoolboxAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+LttoolboxAnalyzer::LttoolboxAnalyzer(const string & directoryName) {
 	string fileName = directoryName + "/mor.bin";
 	FILE * transducerFile = fopen(fileName.c_str(), "r");
 	if (!transducerFile) {

@@ -43,7 +43,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class VfstSuggestion : public SuggestionGenerator {
 	public:
-		VfstSuggestion(const fst::WeightedTransducer * acceptor, const std::string & directoryName) throw(setup::DictionaryException);
+		VfstSuggestion(const fst::WeightedTransducer * acceptor, const std::string & directoryName);
 		void generate(SuggestionStatus * s) const;
 		void terminate();
 

@@ -40,7 +40,7 @@ using std::list;
 
 namespace libvoikko { namespace morphology {
 
-HfstAnalyzer::HfstAnalyzer(const string& s) throw(setup::DictionaryException) {
+HfstAnalyzer::HfstAnalyzer(const string& s) {
 	if(s.find(".zhfst") != std::string::npos) {
 		return;
 	}

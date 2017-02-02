@@ -37,7 +37,7 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace hyphenator {
 
-HfstHyphenator::HfstHyphenator(const string & ) throw(setup::DictionaryException) {
+HfstHyphenator::HfstHyphenator(const string & ) {
 }
     
 char * HfstHyphenator::hyphenate(const wchar_t * word,

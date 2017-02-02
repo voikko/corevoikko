@@ -29,7 +29,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 extern void terminate_libmalaga( void );
 /* Terminate this module. */
 
-extern void analyse_item( string_t item ) throw(setup::DictionaryException);
+extern void analyse_item( string_t item );
 /* Analyse ITEM.
  * This function sets "malaga_error". */
 

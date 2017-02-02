@@ -45,7 +45,7 @@ using hfst_ol::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-HfstSuggestion::HfstSuggestion(hfst_ol::ZHfstOspeller * speller) throw(setup::DictionaryException) :
+HfstSuggestion::HfstSuggestion(hfst_ol::ZHfstOspeller * speller) :
 	speller_(speller) { }
 
 void HfstSuggestion::generate(SuggestionStatus * s) const {

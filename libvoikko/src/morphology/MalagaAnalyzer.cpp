@@ -35,7 +35,7 @@ namespace libvoikko { namespace morphology {
 
 static const int MAX_ANALYSIS_COUNT = 31;
 
-MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) {
 	malaga::init_libmalaga(directoryName.c_str(), &malagaState);
 	initSymbols();
 }

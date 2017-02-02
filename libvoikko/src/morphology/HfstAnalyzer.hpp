@@ -42,7 +42,7 @@ namespace libvoikko { namespace morphology {
  */
 class HfstAnalyzer : public Analyzer {
 	public:
-		HfstAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
+		HfstAnalyzer(const std::string & directoryName);
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology);
 		std::list<Analysis *> * analyze(const char * word, bool fullMorphology);
 		void terminate();
