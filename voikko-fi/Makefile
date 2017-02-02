@@ -288,11 +288,13 @@ voikko-sukija:
 # Rules for creating vvfst morphology for Sukija indexer. See file
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
+vvfst-sukija: VOIKKO_VARIANT=sukija
+vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,science --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/autocorr.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
-#vvfst-sukija: VOIKKO_VARIANT=sukija
-#vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 
+vvfst-sukija-ys: VOIKKO_VARIANT=sukija
+vvfst-sukija-ys: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,science --sukija --sukija-ys
 vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst voikko/voikko-fi_FI.pro.in $(VVFST_BUILDDIR)/index.txt
 
@@ -313,6 +315,8 @@ $(VVFST_BUILDDIR)/mor-sukija.vfst: $(VVFST_BUILDDIR)/all-sukija.att
 $(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
 	touch $@
 
+vvfst-sukija-install: VOIKKO_VARIANT=sukija
+vvfst-sukija-install: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
 vvfst-sukija-install: vvfst-sukija
 	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
