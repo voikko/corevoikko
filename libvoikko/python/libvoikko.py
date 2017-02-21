@@ -246,16 +246,21 @@ def _anyStringToPath(anyString):
         return anyString
 
 
-class Voikko(object):
-    """Represents an instance of Voikko. The instance has state, such as
-    settings related to spell checking and hyphenation, and methods for performing
-    various natural language analysis operations. One instance should not be
-    used simultaneously from multiple threads.
+class VoikkoLibrary(CDLL):
     """
-    _sharedLibrarySearchPath = None
+    Represents the low-level Voikko C library.
+
+    Sets the requisite argument types for the library's functions.
+    """
 
     @classmethod
-    def __getLib(cls):
+    def open(cls, path=None):
+        """
+        Open the Voikko C library based on the OS name and architecture, etc.
+
+        :param path: Extra search paths, if any.
+        :return: an instance of VoikkoLibrary
+        """
         if os.name == 'nt':
             fileName = "libvoikko-1.dll"
             if platform.architecture()[0] == "64bit":
@@ -278,10 +283,9 @@ class Voikko(object):
         else:
             fileName = "libvoikko.so.1"
             optionalDependencies = []
-        path = cls._sharedLibrarySearchPath
         if path:
             try:
-                return CDLL(path + os.sep + fileName)
+                return cls(path + os.sep + fileName)
             except:
                 optDeps = []
                 for optionalDep in optionalDependencies:
@@ -290,12 +294,126 @@ class Voikko(object):
                     except:
                         pass
                 try:
-                    cdll = CDLL(path + os.sep + fileName)
+                    cdll = cls(path + os.sep + fileName)
                     cdll.voikkoDeps = optDeps
                     return cdll
                 except:
                     pass
-        return CDLL(fileName)
+        return cls(fileName)
+
+    def __init__(self, filename):
+        super(VoikkoLibrary, self).__init__(filename)
+
+        self.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_char_p]
+        self.voikkoInit.restype = c_void_p
+
+        self.voikkoTerminate.argtypes = [c_void_p]
+        self.voikkoTerminate.restype = None
+
+        self.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
+        self.voikkoSpellUcs4.restype = c_int
+
+        self.voikkoSuggestUcs4.argtypes = [c_void_p, c_wchar_p]
+        self.voikkoSuggestUcs4.restype = POINTER(c_wchar_p)
+
+        self.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
+        self.voikko_free_suggest_ucs4.restype = None
+
+        self.voikkoNextGrammarErrorUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, c_size_t, c_int]
+        self.voikkoNextGrammarErrorUcs4.restype = c_void_p
+
+        self.voikkoGetGrammarErrorCode.argtypes = [c_void_p]
+        self.voikkoGetGrammarErrorCode.restype = c_int
+
+        self.voikkoGetGrammarErrorStartPos.argtypes = [c_void_p]
+        self.voikkoGetGrammarErrorStartPos.restype = c_size_t
+
+        self.voikkoGetGrammarErrorLength.argtypes = [c_void_p]
+        self.voikkoGetGrammarErrorLength.restype = c_size_t
+
+        self.voikkoGetGrammarErrorSuggestions.argtypes = [c_void_p]
+        self.voikkoGetGrammarErrorSuggestions.restype = POINTER(c_char_p)
+
+        self.voikkoFreeGrammarError.argtypes = [c_void_p]
+        self.voikkoFreeGrammarError.restype = None
+
+        self.voikkoGetGrammarErrorShortDescription.argtypes = [c_void_p, c_char_p]
+        self.voikkoGetGrammarErrorShortDescription.restype = POINTER(c_char)
+
+        self.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
+        self.voikkoHyphenateUcs4.restype = POINTER(c_char)
+
+        self.voikkoFreeCstr.argtypes = [POINTER(c_char)]
+        self.voikkoFreeCstr.restype = None
+
+        self.voikkoAnalyzeWordUcs4.argtypes = [c_void_p, c_wchar_p]
+        self.voikkoAnalyzeWordUcs4.restype = POINTER(c_void_p)
+
+        self.voikkoFreeErrorMessageCstr.argtypes = [POINTER(c_char)]
+        self.voikkoFreeErrorMessageCstr.restype = None
+
+        self.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
+        self.voikko_free_mor_analysis.restype = None
+
+        self.voikko_mor_analysis_keys.argtypes = [c_void_p]
+        self.voikko_mor_analysis_keys.restype = POINTER(c_char_p)
+
+        self.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
+        self.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
+
+        self.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, POINTER(c_size_t)]
+        self.voikkoNextTokenUcs4.restype = c_int
+
+        self.voikkoNextSentenceStartUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, POINTER(c_size_t)]
+        self.voikkoNextSentenceStartUcs4.restype = c_int
+
+        self.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
+        self.voikkoSetBooleanOption.restype = c_int
+
+        self.voikkoSetIntegerOption.argtypes = [c_void_p, c_int, c_int]
+        self.voikkoSetIntegerOption.restype = c_int
+
+        self.voikko_list_dicts.argtypes = [c_char_p]
+        self.voikko_list_dicts.restype = POINTER(c_void_p)
+        self.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
+        self.voikko_free_dicts.restype = None
+        self.voikko_dict_language.argtypes = [c_void_p]
+        self.voikko_dict_language.restype = c_char_p
+        self.voikko_dict_script.argtypes = [c_void_p]
+        self.voikko_dict_script.restype = c_char_p
+        self.voikko_dict_variant.argtypes = [c_void_p]
+        self.voikko_dict_variant.restype = c_char_p
+        self.voikko_dict_description.argtypes = [c_void_p]
+        self.voikko_dict_description.restype = c_char_p
+
+        self.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
+        self.voikkoFreeCstrArray.restype = None
+
+        self.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
+        self.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
+
+        self.voikkoListSupportedHyphenationLanguages.argtypes = [c_char_p]
+        self.voikkoListSupportedHyphenationLanguages.restype = POINTER(c_char_p)
+
+        self.voikkoListSupportedGrammarCheckingLanguages.argtypes = [c_char_p]
+        self.voikkoListSupportedGrammarCheckingLanguages.restype = POINTER(c_char_p)
+
+        self.voikkoGetVersion.argtypes = []
+        self.voikkoGetVersion.restype = c_char_p
+
+
+
+class Voikko(object):
+    """Represents an instance of Voikko. The instance has state, such as
+    settings related to spell checking and hyphenation, and methods for performing
+    various natural language analysis operations. One instance should not be
+    used simultaneously from multiple threads.
+    """
+    _sharedLibrarySearchPath = None
+
+    @classmethod
+    def __getLib(cls):
+        return VoikkoLibrary.open(path=cls._sharedLibrarySearchPath)
 
     @classmethod
     def setLibrarySearchPath(cls, searchPath):
@@ -310,77 +428,6 @@ class Voikko(object):
            path      Extra path that will be checked first when looking for linguistic
                      resources."""
         self.__lib = self.__getLib()
-
-        self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_char_p]
-        self.__lib.voikkoInit.restype = c_void_p
-
-        self.__lib.voikkoTerminate.argtypes = [c_void_p]
-        self.__lib.voikkoTerminate.restype = None
-
-        self.__lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
-        self.__lib.voikkoSpellUcs4.restype = c_int
-
-        self.__lib.voikkoSuggestUcs4.argtypes = [c_void_p, c_wchar_p]
-        self.__lib.voikkoSuggestUcs4.restype = POINTER(c_wchar_p)
-
-        self.__lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
-        self.__lib.voikko_free_suggest_ucs4.restype = None
-
-        self.__lib.voikkoNextGrammarErrorUcs4.argtypes = [c_void_p, c_wchar_p,
-                                                          c_size_t, c_size_t, c_int]
-        self.__lib.voikkoNextGrammarErrorUcs4.restype = c_void_p
-
-        self.__lib.voikkoGetGrammarErrorCode.argtypes = [c_void_p]
-        self.__lib.voikkoGetGrammarErrorCode.restype = c_int
-
-        self.__lib.voikkoGetGrammarErrorStartPos.argtypes = [c_void_p]
-        self.__lib.voikkoGetGrammarErrorStartPos.restype = c_size_t
-
-        self.__lib.voikkoGetGrammarErrorLength.argtypes = [c_void_p]
-        self.__lib.voikkoGetGrammarErrorLength.restype = c_size_t
-
-        self.__lib.voikkoGetGrammarErrorSuggestions.argtypes = [c_void_p]
-        self.__lib.voikkoGetGrammarErrorSuggestions.restype = POINTER(c_char_p)
-
-        self.__lib.voikkoFreeGrammarError.argtypes = [c_void_p]
-        self.__lib.voikkoFreeGrammarError.restype = None
-
-        self.__lib.voikkoGetGrammarErrorShortDescription.argtypes = [c_void_p, c_char_p]
-        self.__lib.voikkoGetGrammarErrorShortDescription.restype = POINTER(c_char)
-
-        self.__lib.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
-        self.__lib.voikkoHyphenateUcs4.restype = POINTER(c_char)
-
-        self.__lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
-        self.__lib.voikkoFreeCstr.restype = None
-
-        self.__lib.voikkoAnalyzeWordUcs4.argtypes = [c_void_p, c_wchar_p]
-        self.__lib.voikkoAnalyzeWordUcs4.restype = POINTER(c_void_p)
-
-        self.__lib.voikkoFreeErrorMessageCstr.argtypes = [POINTER(c_char)]
-        self.__lib.voikkoFreeErrorMessageCstr.restype = None
-
-        self.__lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
-        self.__lib.voikko_free_mor_analysis.restype = None
-
-        self.__lib.voikko_mor_analysis_keys.argtypes = [c_void_p]
-        self.__lib.voikko_mor_analysis_keys.restype = POINTER(c_char_p)
-
-        self.__lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
-        self.__lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
-
-        self.__lib.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t,
-                                                   POINTER(c_size_t)]
-        self.__lib.voikkoNextTokenUcs4.restype = c_int
-
-        self.__lib.voikkoNextSentenceStartUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, POINTER(c_size_t)]
-        self.__lib.voikkoNextSentenceStartUcs4.restype = c_int
-
-        self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
-        self.__lib.voikkoSetBooleanOption.restype = c_int
-
-        self.__lib.voikkoSetIntegerOption.argtypes = [c_void_p, c_int, c_int]
-        self.__lib.voikkoSetIntegerOption.restype = c_int
 
         error = c_char_p()
         self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToPath(path))
@@ -440,18 +487,6 @@ class Voikko(object):
         before looking from the standard locations.
         """
         lib = cls.__getLib()
-        lib.voikko_list_dicts.argtypes = [c_char_p]
-        lib.voikko_list_dicts.restype = POINTER(c_void_p)
-        lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
-        lib.voikko_free_dicts.restype = None
-        lib.voikko_dict_language.argtypes = [c_void_p]
-        lib.voikko_dict_language.restype = c_char_p
-        lib.voikko_dict_script.argtypes = [c_void_p]
-        lib.voikko_dict_script.restype = c_char_p
-        lib.voikko_dict_variant.argtypes = [c_void_p]
-        lib.voikko_dict_variant.restype = c_char_p
-        lib.voikko_dict_description.argtypes = [c_void_p]
-        lib.voikko_dict_description.restype = c_char_p
 
         cDicts = lib.voikko_list_dicts(_anyStringToPath(path))
         dicts = []
@@ -466,13 +501,6 @@ class Voikko(object):
             i = i + 1
         lib.voikko_free_dicts(cDicts)
         return dicts
-
-    @classmethod
-    def __libForSupportedLanguages(cls):
-        lib = cls.__getLib()
-        lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
-        lib.voikkoFreeCstrArray.restype = None
-        return lib
 
     @classmethod
     def __listSupportedLanguagesForOperation(cls, path, lib, operation):
@@ -492,9 +520,7 @@ class Voikko(object):
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = cls.__libForSupportedLanguages()
-        lib.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
-        lib.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
+        lib = cls.__getLib()
 
         def listOperation(p):
             return lib.voikkoListSupportedSpellingLanguages(p)
@@ -508,9 +534,7 @@ class Voikko(object):
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = cls.__libForSupportedLanguages()
-        lib.voikkoListSupportedHyphenationLanguages.argtypes = [c_char_p]
-        lib.voikkoListSupportedHyphenationLanguages.restype = POINTER(c_char_p)
+        lib = cls.__getLib()
 
         def listOperation(p):
             return lib.voikkoListSupportedHyphenationLanguages(p)
@@ -524,9 +548,7 @@ class Voikko(object):
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = cls.__libForSupportedLanguages()
-        lib.voikkoListSupportedGrammarCheckingLanguages.argtypes = [c_char_p]
-        lib.voikkoListSupportedGrammarCheckingLanguages.restype = POINTER(c_char_p)
+        lib = cls.__getLib()
 
         def listOperation(p):
             return lib.voikkoListSupportedGrammarCheckingLanguages(p)
@@ -536,10 +558,7 @@ class Voikko(object):
     @classmethod
     def getVersion(cls):
         """Return the version number of the Voikko library."""
-        lib = cls.__getLib()
-        lib.voikkoGetVersion.argtypes = []
-        lib.voikkoGetVersion.restype = c_char_p
-        cVersion = lib.voikkoGetVersion()
+        cVersion = cls.__getLib().voikkoGetVersion()
         return unicode_str(cVersion, "UTF-8")
 
     def spell(self, word):
