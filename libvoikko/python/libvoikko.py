@@ -146,11 +146,15 @@ class Token:
         self.tokenText = tokenText
         self.tokenType = tokenType
 
+    @property
+    def tokenTypeName(self):
+        return self._TYPE_NAMES[self.tokenType]
+
     def __repr__(self):
         return repr_conv(
             "<%s, %s>" % (
                 self.tokenText,
-                self._TYPE_NAMES[self.tokenType],
+                self.tokenTypeName,
             )
         )
 
@@ -168,11 +172,15 @@ class Sentence:
         self.sentenceText = sentenceText
         self.nextStartType = nextStartType
 
+    @property
+    def nextStartTypeName(self):
+        return self._TYPE_NAMES[self.nextStartType]
+
     def __repr__(self):
         return repr_conv(
             "<%s, %s>" % (
                 self.sentenceText,
-                self._TYPE_NAMES[self.nextStartType],
+                self.nextStartTypeName,
             )
         )
 
