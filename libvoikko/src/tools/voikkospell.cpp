@@ -44,6 +44,9 @@
   #include <pthread.h>
 #endif
 
+#include "Apertium/Stream.hpp"
+#include "Apertium/StreamType.hpp"
+
 using namespace std;
 
 
@@ -60,6 +63,7 @@ static bool oneLineOutput = false;
 static char wordSeparator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
 static int threadCount = 1;
+static bool ApertiumStream = false;
 
 struct speller_t {
 	VoikkoHandle * handle;
@@ -96,7 +100,31 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 		return;
 	}
 	
-	if (oneLineOutput) {
+  if (ApertiumStream) {
+    out << L'^';
+
+    if (result) {
+      out << word << L'/' << word << L'$';
+      return;
+    }
+
+    out << L'*' << word;
+    wchar_t **Suggestions = voikkoSuggestUcs4(handle, word);
+
+    if (Suggestions != NULL) {
+      for (std::size_t SuggestionIndex = 0;
+           Suggestions[SuggestionIndex] != NULL; ++SuggestionIndex) {
+        out << L'/' << Suggestions[SuggestionIndex];
+      }
+
+      voikko_free_suggest_ucs4(Suggestions);
+    }
+
+    out << L'$';
+    return;
+  }
+
+  if (oneLineOutput) {
 		out << word;
 		if (!result) {
 			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
@@ -471,6 +499,9 @@ int main(int argc, char ** argv) {
 		else if (args.find("-c") == 0) {
 			continue;
 		}
+    else if (args == "--apertium-stream") {
+      ApertiumStream = true;
+    }
 		else if (args == "-p" || args == "-d" || args == "-j") {
 			i++;
 			continue;
@@ -489,21 +520,36 @@ int main(int argc, char ** argv) {
 	fwide(stdout, 1);
 	fwide(stderr, -1);
 	initThreads();
-	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
-		size_t lineLen = wcslen(line);
-		if (lineLen == 0) {
-			continue;
-		}
-		if (line[lineLen - 1] == L'\n') {
-			line[lineLen - 1] = L'\0';
-			lineLen--;
-		}
-		if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
-			cerr << "E: Too long word" << endl;
-			continue;
-		}
-		handleWord(line);
-	}
+
+  if (ApertiumStream) {
+    Apertium::Stream ApertiumStream_(std::wcin);
+
+    while (true) {
+      Apertium::StreamType StreamType_ = ApertiumStream_.getTheNextStreamType();
+      std::wcout << StreamType_.TheString;
+
+      if (StreamType_.TheLexicalUnit)
+        handleWord(StreamType_.TheLexicalUnit->TheSurfaceForm.c_str());
+      else
+        break;
+    }
+  } else {
+    while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
+      size_t lineLen = wcslen(line);
+      if (lineLen == 0) {
+        continue;
+      }
+      if (line[lineLen - 1] == L'\n') {
+        line[lineLen - 1] = L'\0';
+        lineLen--;
+      }
+      if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
+        cerr << "E: Too long word" << endl;
+        continue;
+      }
+      handleWord(line);
+    }
+  }
 	finishProcessing();
 	int error = ferror(stdin);
 	if (error) {

@@ -1,3 +1,5 @@
+AUTOMAKE_OPTIONS=subdir-objects
+
 dist_man_MANS =
 bin_PROGRAMS =
 EXTRA_DIST =
@@ -17,7 +19,10 @@ endif
 TOOLCXXFLAGS = $(AM_CXXFLAGS)
 TOOLLDADD = ../libvoikko.la
 
-voikkospell_SOURCES = voikkospell.cpp
+voikkospell_SOURCES = voikkospell.cpp \
+		      Apertium/ExceptionString.cpp \
+		      Apertium/OptionalException.cpp \
+		      Apertium/Stream.cpp
 voikkospell_CXXFLAGS = $(TOOLCXXFLAGS)
 voikkospell_LDADD = $(TOOLLDADD)
 
