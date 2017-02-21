@@ -188,21 +188,24 @@ class SuggestionStrategy:
 
 class GrammarError:
     """Grammar error from grammar checker."""
+    def __init__(self, errorCode=0, startPos=0, errorLen=0, shortDescription="", suggestions=()):
+        self.errorCode = errorCode
+        self.startPos = startPos
+        self.errorLen = errorLen
+        self.shortDescription = shortDescription
+        self.suggestions = suggestions
 
     def __repr__(self):
-        return repr_conv("<" + self.toString() + ">")
+        return repr_conv("<%s>" % self)
 
-    def toString(self):
-        s = '[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={' \
-            % (self.errorCode, self.startPos, self.errorLen)
-        first = True
-        for suggestion in self.suggestions:
-            if not first:
-                s = s + ','
-                first = False
-            s = s + '"' + suggestion + '"'
-        s = s + "}]"
-        return s
+    def __str__(self):
+        return '[code=%i, level=0, descr="%s", stpos=%i, len=%i, suggs={%s}]' % (
+            self.errorCode,
+            self.shortDescription,
+            self.startPos,
+            self.errorLen,
+            ', '.join('"%s"' % suggestion for suggestion in self.suggestions)
+        )
 
 
 class VoikkoException(Exception):
@@ -568,22 +571,27 @@ class Voikko(object):
         return pSuggestions
 
     def __getGrammarError(self, cGrammarError, language):
-        gError = GrammarError()
-        gError.errorCode = self.__lib.voikkoGetGrammarErrorCode(cGrammarError)
-        gError.startPos = self.__lib.voikkoGetGrammarErrorStartPos(cGrammarError)
-        gError.errorLen = self.__lib.voikkoGetGrammarErrorLength(cGrammarError)
-        gError.suggestions = []
+        cErrorShortDescription = self.__lib.voikkoGetGrammarErrorShortDescription(
+            cGrammarError,
+            _anyStringToUtf8(language)
+        )
+        shortDescription = unicode_str(string_at(cErrorShortDescription), "UTF-8")
+        self.__lib.voikkoFreeErrorMessageCstr(cErrorShortDescription)
+        suggestions = []
         cSuggestions = self.__lib.voikkoGetGrammarErrorSuggestions(cGrammarError)
         if bool(cSuggestions):
             i = 0
             while bool(cSuggestions[i]):
-                gError.suggestions.append(unicode_str(cSuggestions[i], "UTF-8"))
+                suggestions.append(unicode_str(cSuggestions[i], "UTF-8"))
                 i = i + 1
-        cErrorShortDescription = self.__lib.voikkoGetGrammarErrorShortDescription(
-            cGrammarError, _anyStringToUtf8(language))
-        gError.shortDescription = unicode_str(string_at(cErrorShortDescription), "UTF-8")
-        self.__lib.voikkoFreeErrorMessageCstr(cErrorShortDescription)
-        return gError
+
+        return GrammarError(
+            errorCode=self.__lib.voikkoGetGrammarErrorCode(cGrammarError),
+            startPos=self.__lib.voikkoGetGrammarErrorStartPos(cGrammarError),
+            errorLen=self.__lib.voikkoGetGrammarErrorLength(cGrammarError),
+            shortDescription=shortDescription,
+            suggestions=suggestions,
+        )
 
     def __grammarParagraph(self, paragraph, offset, language):
         paragraphLen = len(paragraph)
