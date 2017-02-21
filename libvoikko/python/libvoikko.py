@@ -78,14 +78,16 @@ if sys.version_info < (3,):
     unicode_str = unicode
     binary_str = str
 
+
     def repr_conv(s):
         return s.encode("UTF-8")
 else:
     unicode_str = str
     binary_str = bytes
 
+
     def repr_conv(s):
-        return s
+        return str(s)
 
 """Maximum number of characters in a valid word"""
 MAX_WORD_CHARS = 255
@@ -118,11 +120,13 @@ class Dictionary:
         return self.description < other.description
 
     def __eq__(self, other):
-        return isinstance(other, Dictionary) and \
-            self.language == other.language and \
-            self.script == other.script and \
-            self.variant == other.variant and \
+        return (
+            isinstance(other, Dictionary) and
+            self.language == other.language and
+            self.script == other.script and
+            self.variant == other.variant and
             self.description == other.description
+        )
 
     def __hash__(self):
         return hash(self.variant) ^ hash(self.description) ^ hash(self.language) ^ hash(self.script)
@@ -143,8 +147,12 @@ class Token:
         self.tokenType = tokenType
 
     def __repr__(self):
-        return repr_conv("<" + self.tokenText + "," +
-                         Token._TYPE_NAMES[self.tokenType] + ">")
+        return repr_conv(
+            "<%s, %s>" % (
+                self.tokenText,
+                self._TYPE_NAMES[self.tokenType],
+            )
+        )
 
 
 class Sentence:
@@ -161,8 +169,12 @@ class Sentence:
         self.nextStartType = nextStartType
 
     def __repr__(self):
-        return repr_conv("<" + self.sentenceText + "," +
-                         Sentence._TYPE_NAMES[self.nextStartType] + ">")
+        return repr_conv(
+            "<%s, %s>" % (
+                self.sentenceText,
+                self._TYPE_NAMES[self.nextStartType],
+            )
+        )
 
 
 class SuggestionStrategy:
@@ -171,7 +183,7 @@ class SuggestionStrategy:
     """Suggestion strategy for correcting human typing errors."""
     OCR = 1
     """Suggestion strategy for correcting errors in text produced by
-	optical character recognition software."""
+    optical character recognition software."""
 
 
 class GrammarError:
@@ -194,12 +206,12 @@ class GrammarError:
 
 
 class VoikkoException(Exception):
-    """Thrown when someting exceptional happens within libvoikko."""
+    """Thrown when something exceptional happens within libvoikko."""
     pass
 
 
-def _boolToInt(bool):
-    if bool:
+def _boolToInt(value):
+    if value:
         return 1
     else:
         return 0
@@ -224,8 +236,15 @@ def _anyStringToPath(anyString):
 
 
 class Voikko(object):
+    """Represents an instance of Voikko. The instance has state, such as
+    settings related to spell checking and hyphenation, and methods for performing
+    various natural language analysis operations. One instance should not be
+    used simultaneously from multiple threads.
+    """
+    _sharedLibrarySearchPath = None
 
-    def __getLib():
+    @classmethod
+    def __getLib(cls):
         if os.name == 'nt':
             fileName = "libvoikko-1.dll"
             if platform.architecture()[0] == "64bit":
@@ -248,44 +267,38 @@ class Voikko(object):
         else:
             fileName = "libvoikko.so.1"
             optionalDependencies = []
-        if Voikko._sharedLibrarySearchPath is not None:
+        path = cls._sharedLibrarySearchPath
+        if path:
             try:
-                return CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
+                return CDLL(path + os.sep + fileName)
             except:
                 optDeps = []
                 for optionalDep in optionalDependencies:
                     try:
-                        optDeps.append(CDLL(Voikko._sharedLibrarySearchPath + os.sep + optionalDep))
+                        optDeps.append(CDLL(path + os.sep + optionalDep))
                     except:
                         pass
                 try:
-                    cdll = CDLL(Voikko._sharedLibrarySearchPath + os.sep + fileName)
+                    cdll = CDLL(path + os.sep + fileName)
                     cdll.voikkoDeps = optDeps
                     return cdll
                 except:
                     pass
         return CDLL(fileName)
-    __getLib = staticmethod(__getLib)
 
-    """Set the path to a directory that should be used to search for the native library
-	before trying to load it from the default (OS specific) lookup path.
-	"""
-    def setLibrarySearchPath(searchPath):
-        Voikko._sharedLibrarySearchPath = searchPath
-    setLibrarySearchPath = staticmethod(setLibrarySearchPath)
-
-    """Represents an instance of Voikko. The instance has state, such as
-	settings related to spell checking and hyphenation, and methods for performing
-	various natural language analysis operations. One instance should not be
-	used simultaneously from multiple threads.
-	"""
+    @classmethod
+    def setLibrarySearchPath(cls, searchPath):
+        """Set the path to a directory that should be used to search for the native library
+        before trying to load it from the default (OS specific) lookup path.
+        """
+        cls._sharedLibrarySearchPath = searchPath
 
     def __init__(self, language, path=None):
         """Creates a new Voikko instance with the following optional parameters:
            language  BCP 47 language tag to be used.
            path      Extra path that will be checked first when looking for linguistic
                      resources."""
-        self.__lib = Voikko.__getLib()
+        self.__lib = self.__getLib()
 
         self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_char_p]
         self.__lib.voikkoInit.restype = c_void_p
@@ -375,12 +388,7 @@ class Voikko(object):
         """
         result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
         if result == 0:
-            raise VoikkoException(
-                "Could not set boolean option " +
-                unicode_str(option) +
-                " to value " +
-                unicode_str(value) +
-                ".")
+            raise VoikkoException("Could not set boolean option %s to value %s" % (option, value))
 
     def setIntegerOption(self, option, value):
         """Sets a integer option to specified value. This is a low level function
@@ -389,12 +397,7 @@ class Voikko(object):
         """
         result = self.__lib.voikkoSetIntegerOption(self.__handle, option, value)
         if result == 0:
-            raise VoikkoException(
-                "Could not set integer option " +
-                unicode_str(option) +
-                " to value " +
-                unicode_str(value) +
-                ".")
+            raise VoikkoException("Could not set integer option %s to value %s" % (option, value))
 
     def __isValidInput(self, text):
         return "\0" not in text
@@ -406,24 +409,26 @@ class Voikko(object):
         may take significant amount of memory and timely object deletion by Python runtime cannot always be
         relied upon.
         """
-        if (self.__handle != 0):
+        if self.__handle:
             self.__lib.voikkoTerminate(self.__handle)
             self.__handle = 0
+
             # Replace __lib with a dummy object that throws exception when any method is called. This ensures
             # that nothing bad happens if methods of a Voikko instance are called after termination.
 
             class DummyLib:
-
-                def __getattr__(obj, name):
+                def __getattr__(self, name):
                     raise VoikkoException("Attempt to use Voikko instance after terminate() was called")
+
             self.__lib = DummyLib()
 
-    def listDicts(path=None):
+    @classmethod
+    def listDicts(cls, path=None):
         """Return a list of Dictionary objects representing the available
         dictionary variants. If path is specified, it will be searched first
         before looking from the standard locations.
         """
-        lib = Voikko.__getLib()
+        lib = cls.__getLib()
         lib.voikko_list_dicts.argtypes = [c_char_p]
         lib.voikko_list_dicts.restype = POINTER(c_void_p)
         lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
@@ -450,16 +455,16 @@ class Voikko(object):
             i = i + 1
         lib.voikko_free_dicts(cDicts)
         return dicts
-    listDicts = staticmethod(listDicts)
 
-    def __libForSupportedLanguages():
-        lib = Voikko.__getLib()
+    @classmethod
+    def __libForSupportedLanguages(cls):
+        lib = cls.__getLib()
         lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
         lib.voikkoFreeCstrArray.restype = None
         return lib
-    __libForSupportedLanguages = staticmethod(__libForSupportedLanguages)
 
-    def __listSupportedLanguagesForOperation(path, lib, operation):
+    @classmethod
+    def __listSupportedLanguagesForOperation(cls, path, lib, operation):
         languages = []
         cLanguages = operation(_anyStringToPath(path))
         i = 0
@@ -468,61 +473,63 @@ class Voikko(object):
             i = i + 1
         lib.voikkoFreeCstrArray(cLanguages)
         return languages
-    __listSupportedLanguagesForOperation = staticmethod(__listSupportedLanguagesForOperation)
 
-    def listSupportedSpellingLanguages(path=None):
+    @classmethod
+    def listSupportedSpellingLanguages(cls, path=None):
         """Return a list of language codes representing the languages for which
         at least one dictionary is available for spell checking.
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = Voikko.__libForSupportedLanguages()
+        lib = cls.__libForSupportedLanguages()
         lib.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
         lib.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
 
         def listOperation(p):
             return lib.voikkoListSupportedSpellingLanguages(p)
-        return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
-    listSupportedSpellingLanguages = staticmethod(listSupportedSpellingLanguages)
 
-    def listSupportedHyphenationLanguages(path=None):
+        return cls.__listSupportedLanguagesForOperation(path, lib, listOperation)
+
+    @classmethod
+    def listSupportedHyphenationLanguages(cls, path=None):
         """Return a list of language codes representing the languages for which
         at least one dictionary is available for hyphenation.
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = Voikko.__libForSupportedLanguages()
+        lib = cls.__libForSupportedLanguages()
         lib.voikkoListSupportedHyphenationLanguages.argtypes = [c_char_p]
         lib.voikkoListSupportedHyphenationLanguages.restype = POINTER(c_char_p)
 
         def listOperation(p):
             return lib.voikkoListSupportedHyphenationLanguages(p)
-        return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
-    listSupportedHyphenationLanguages = staticmethod(listSupportedHyphenationLanguages)
 
-    def listSupportedGrammarCheckingLanguages(path=None):
+        return cls.__listSupportedLanguagesForOperation(path, lib, listOperation)
+
+    @classmethod
+    def listSupportedGrammarCheckingLanguages(cls, path=None):
         """Return a list of language codes representing the languages for which
         at least one dictionary is available for grammar checking.
         If path is specified, it will be searched first before looking from
         the standard locations.
         """
-        lib = Voikko.__libForSupportedLanguages()
+        lib = cls.__libForSupportedLanguages()
         lib.voikkoListSupportedGrammarCheckingLanguages.argtypes = [c_char_p]
         lib.voikkoListSupportedGrammarCheckingLanguages.restype = POINTER(c_char_p)
 
         def listOperation(p):
             return lib.voikkoListSupportedGrammarCheckingLanguages(p)
-        return Voikko.__listSupportedLanguagesForOperation(path, lib, listOperation)
-    listSupportedGrammarCheckingLanguages = staticmethod(listSupportedGrammarCheckingLanguages)
 
-    def getVersion():
+        return cls.__listSupportedLanguagesForOperation(path, lib, listOperation)
+
+    @classmethod
+    def getVersion(cls):
         """Return the version number of the Voikko library."""
-        lib = Voikko.__getLib()
+        lib = cls.__getLib()
         lib.voikkoGetVersion.argtypes = []
         lib.voikkoGetVersion.restype = c_char_p
         cVersion = lib.voikkoGetVersion()
         return unicode_str(cVersion, "UTF-8")
-    getVersion = staticmethod(getVersion)
 
     def spell(self, word):
         """Check the spelling of given word. Return true if the word is correct,
@@ -583,8 +590,13 @@ class Voikko(object):
         skipErrors = 0
         errorList = []
         while True:
-            cError = self.__lib.voikkoNextGrammarErrorUcs4(self.__handle,
-                                                           paragraph, paragraphLen, 0, skipErrors)
+            cError = self.__lib.voikkoNextGrammarErrorUcs4(
+                self.__handle,
+                paragraph,
+                paragraphLen,
+                0,
+                skipErrors,
+            )
             if not bool(cError):
                 return errorList
             gError = self.__getGrammarError(cError, language)
@@ -685,8 +697,12 @@ class Voikko(object):
         sentenceLen = c_size_t()
         position = 0
         while textLen > 0:
-            sentenceType = self.__lib.voikkoNextSentenceStartUcs4(self.__handle,
-                                                                  uniText[position:], textLen, byref(sentenceLen))
+            sentenceType = self.__lib.voikkoNextSentenceStartUcs4(
+                self.__handle,
+                uniText[position:],
+                textLen,
+                byref(sentenceLen),
+            )
             sentenceText = uniText[position:position + sentenceLen.value]
             result.append(Sentence(sentenceText, sentenceType))
             if sentenceType == Sentence.NONE:
@@ -844,5 +860,3 @@ class Voikko(object):
             self.setBooleanOption(8, False)
         else:
             raise VoikkoException("Invalid suggestion strategy")
-
-Voikko._sharedLibrarySearchPath = None
