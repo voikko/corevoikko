@@ -115,10 +115,18 @@ def _check_grammar(paragraphlist, params, voikko):
 	for paragraph in paragraphlist:
 		errorStrings = []
 		for error in voikko.grammarErrors(paragraph, "fi"):
-			errorStrings.append(error.toString())
+			errorStrings.append(_grammar_error_repr(error))
 		paragrapherrors.append(errorStrings)
 	setDefaults(voikko)
 	return paragrapherrors
+
+def _grammar_error_repr(grammar_error):
+	return '[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={%s}]' % (
+	    grammar_error.errorCode,
+	    grammar_error.startPos,
+	    grammar_error.errorLen,
+	    ','.join('"%s"' % suggestion for suggestion in grammar_error.suggestions)
+	)
 
 def shell(cwd, command):
 	res = subprocess.call(command, cwd = cwd, shell = True)
