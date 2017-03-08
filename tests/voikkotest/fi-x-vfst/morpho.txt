@@ -2351,3 +2351,9 @@ word:saartavat
   NEGATIVE=false
   NUMBER=plural
   PERSON=3
+#word:12:12:12
+# expected:1
+# analysis
+#  CLASS=lukusana
+#  BASEFORM=12:12:12
+# STRUCTURE==qq:qq:qq
