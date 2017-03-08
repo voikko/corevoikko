@@ -6,8 +6,6 @@ The library is written in C++. The library supports multiple backends:
 
 - VFST: Finite state transducer format used for Finnish morphology
   and as an experimental language independent backend.
-- Malaga: Left associative grammar for describing the morphology of
-  Finnish language.
 - HFST: Supports ZHFST speller archives for various languages.
 - Experimental Lttoolbox backend.
 
@@ -30,14 +28,12 @@ License
 The core library and backends that are enabled by default are available
 under MPL 1.1 / GPL 2+ / LGPL 2.1+ tri-license.
 
-Malaga and Lttoolbox backends are available only under GPL version 2
-or later.
+Lttoolbox backend is available only under GPL version 2 or later.
 
  Backend        License
 ----------------------------------------------------------------
  VFST           MPL 1.1 / GPL 2+ / LGPL 2.1+
  HFST           MPL 1.1 / GPL 2+ / LGPL 2.1+ (Apache v2 dependency)
- Malaga         GPL 2+
  Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
 
 
@@ -94,13 +90,6 @@ strongly recommend that you disable external dictionary loading with
 
 Runtime requirements
 ====================
-
-For dictionary format 2 (Malaga and experimental backends):
-
- The library needs a version of Suomi-malaga containing a file named
- voikko-fi_FI.pro. The file must start with the following line:
-
- info: Voikko-Dictionary-Format: 2
 
 For dictionary format 3 (HFST backend):
 
@@ -194,9 +183,6 @@ Authors
 
 2006 - 2017 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
-1995 - 2008 Björn Beutel
- * Author of the original LAG implementation (Malaga), slightly simplified version
-   of which has been embedded into libvoikko.
 2006 Nemanja Trifunovic
  * Author of UTF8 utility module.
 2011-2012 Teemu Likonen <tlikonen@iki.fi>

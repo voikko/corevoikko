@@ -32,7 +32,6 @@ compile
 /msvc/*.sdf
 /msvc/*.opensdf
 /msvc/*.suo
-/src/autocorrect/data.hpp
 /src/libvoikko.la
 /src/libvoikko.pc
 /src/tools/voikkogc

@@ -45,7 +45,6 @@
 # include <unistd.h>
 #endif
 
-#include "setup/V2DictionaryLoader.hpp"
 #include "setup/V3DictionaryLoader.hpp"
 #include "setup/V4DictionaryLoader.hpp"
 #include "setup/V5DictionaryLoader.hpp"
@@ -146,9 +145,6 @@ void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<s
         #endif
 	#ifdef HAVE_HFST
 		loaders.push_back(new V3DictionaryLoader());
-	#endif
-	#ifdef HAVE_MALAGA
-		loaders.push_back(new V2DictionaryLoader());
 	#endif
 	
 	for (list<DictionaryLoader*>::iterator i = loaders.begin(); i != loaders.end(); ++i) {

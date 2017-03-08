@@ -36,9 +36,6 @@
 #include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
 #include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
 
-#ifdef HAVE_MALAGA
-        #include "autocorrect/AutoCorrect.hpp"
-#endif
 #ifdef HAVE_VFST
         #include "grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp"
 #endif
@@ -70,11 +67,6 @@ FinnishRuleEngine::~FinnishRuleEngine() {
 void FinnishRuleEngine::check(const Paragraph * paragraph) {
 	std::list<check::SentenceCheck *>::const_iterator sentenceCheckIt;
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
-#ifdef HAVE_MALAGA
-		if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnish") {
-			libvoikko::autocorrect::AutoCorrect::autoCorrect(voikkoOptions, paragraph->sentences[i]);
-		}
-#endif
 		gc_local_punctuation(voikkoOptions, paragraph->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, paragraph->sentences[i]);
 		gc_repeating_words(voikkoOptions, paragraph->sentences[i]);

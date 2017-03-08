@@ -175,7 +175,7 @@ are provided only as information for external applications.
 
  Extensions to MOOD
  ==================
-  Mainly due to structure of Suomi-malaga MOOD is also used to describe
+  Mainly due to structure of voikko-fi MOOD is also used to describe
   some non-finite verb forms. For that purpose the following additional
   attribute values are used:
   

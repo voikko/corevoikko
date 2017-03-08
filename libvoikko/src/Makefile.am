@@ -45,7 +45,6 @@ libvoikko_la_SOURCES = \
     setup/BackendProperties.cpp \
     setup/DictionaryFactory.cpp \
     setup/DictionaryLoader.cpp \
-    setup/V2DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     setup/LanguageTag.cpp \
     hyphenator/interface.cpp \
@@ -104,28 +103,10 @@ noinst_HEADERS = \
     morphology/FinnishVfstAnalyzer.hpp \
     morphology/LttoolboxAnalyzer.hpp \
     morphology/NullAnalyzer.hpp \
-    morphology/MalagaAnalyzer.hpp \
-    morphology/malaga/analysis.hpp \
-    morphology/malaga/malaga_files.hpp \
-    morphology/malaga/patterns.hpp \
-    morphology/malaga/rule_type.hpp \
-    morphology/malaga/tries.hpp \
-    morphology/malaga/basic.hpp \
-    morphology/malaga/lexicon.hpp \
-    morphology/malaga/malaga.hpp \
-    morphology/malaga/pools.hpp \
-    morphology/malaga/files.hpp \
-    morphology/malaga/libmalaga.hpp \
-    morphology/malaga/malaga_lib.hpp \
-    morphology/malaga/rules.hpp \
-    morphology/malaga/symbols.hpp \
-    morphology/malaga/values.hpp \
-    morphology/malaga/MalagaState.hpp \
     setup/setup.hpp setup/Dictionary.hpp \
     setup/BackendProperties.hpp \
     setup/DictionaryFactory.hpp \
     setup/DictionaryLoader.hpp \
-    setup/V2DictionaryLoader.hpp \
     setup/V3DictionaryLoader.hpp \
     setup/V4DictionaryLoader.hpp \
     setup/V5DictionaryLoader.hpp \
@@ -192,35 +173,13 @@ noinst_HEADERS = \
     grammar/FinnishRuleEngine/SentenceCheck.hpp \
     grammar/FinnishRuleEngine/SidesanaCheck.hpp \
     grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp \
-    autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \
     utf8/unchecked.hpp \
     utf8/utf8.hpp
 
-EXTRA_DIST = autocorrect/triecompiler.py
+EXTRA_DIST =
 
-
-CLEANFILES = autocorrect/data.hpp
-autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
-	$(PYTHON) $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
-
-MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
-    morphology/malaga/analysis.cpp \
-    morphology/malaga/files.cpp \
-    morphology/malaga/lexicon.cpp \
-    morphology/malaga/malaga_files.cpp \
-    morphology/malaga/patterns.cpp \
-    morphology/malaga/rules.cpp \
-    morphology/malaga/symbols.cpp \
-    morphology/malaga/basic.cpp \
-    morphology/malaga/libmalaga.cpp \
-    morphology/malaga/malaga_lib.cpp \
-    morphology/malaga/pools.cpp \
-    morphology/malaga/tries.cpp \
-    morphology/malaga/values.cpp \
-    morphology/malaga/MalagaState.cpp \
-    autocorrect/AutoCorrect.cpp
 
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
     spellchecker/HfstSpeller.cpp \
@@ -237,13 +196,6 @@ LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 VFST_CPP_FILES=morphology/VfstAnalyzer.cpp morphology/FinnishVfstAnalyzer.cpp \
     spellchecker/VfstSpeller.cpp spellchecker/VfstSuggestion.cpp setup/V5DictionaryLoader.cpp \
     grammar/FinnishRuleEngine/VfstAutocorrectCheck.cpp
-
-if HAVE_MALAGA
-    libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
-    BUILT_SOURCES = autocorrect/data.hpp
-else
-    EXTRA_DIST += $(MALAGA_CPP_FILES)
-endif
 
 if HAVE_VFST
     libvoikko_la_SOURCES += $(VFST_CPP_FILES)

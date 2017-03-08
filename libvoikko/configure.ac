@@ -112,17 +112,6 @@ AC_ARG_ENABLE(testtools, AC_HELP_STRING([--disable-testtools],
 	[testtools=${enableval}], [testtools=yes])
 AM_CONDITIONAL([HAVE_TESTTOOLS], [test x$testtools = xyes])
 	
-dnl Malaga support
-malaga="no"
-AH_TEMPLATE(HAVE_MALAGA, [Have MALAGA])
-AC_ARG_ENABLE(malaga, AC_HELP_STRING([--enable-malaga],
-	[enable Malaga morphology backend (dictionary version 2)]),
-	[malaga=${enableval}], [malaga=no])
-if test x$malaga = xyes; then
-	AC_DEFINE(HAVE_MALAGA, 1)
-fi
-AM_CONDITIONAL([HAVE_MALAGA], [test x$malaga = xyes])
-
 dnl HFST support
 hfst="yes"
 AH_TEMPLATE(HAVE_HFST, [Have HFST])
@@ -231,7 +220,6 @@ Libvoikko was configured with the following options
   * VFST support:                   $vfst
   *   Experimental VFST features:   $expvfst
   * HFST support:                   $hfst
-  * Malaga support:                 $malaga
   * Experimental VISLCG3 support:   $cg3
   * Experimental Lttoolbox support: $lttoolbox
   * Morphology compilers:           $buildtools

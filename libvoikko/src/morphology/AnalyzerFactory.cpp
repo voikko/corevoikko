@@ -30,10 +30,6 @@
 #include "morphology/NullAnalyzer.hpp"
 #include "porting.h"
 
-#ifdef HAVE_MALAGA
-#include "morphology/MalagaAnalyzer.hpp"
-#endif
-
 #ifdef HAVE_VFST
 #include "morphology/VfstAnalyzer.hpp"
 #include "morphology/FinnishVfstAnalyzer.hpp"
@@ -57,11 +53,6 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary) {
 	if (morBackend == "null") {
 		return new NullAnalyzer();
 	}
-	#ifdef HAVE_MALAGA
-	if (morBackend == "malaga") {
-		return new MalagaAnalyzer(morPath);
-	}
-	#endif
 	#ifdef HAVE_EXPERIMENTAL_VFST
 	if (morBackend == "vfst") {
 		return new VfstAnalyzer(morPath);
