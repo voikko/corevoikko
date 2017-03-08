@@ -152,7 +152,7 @@ class Token:
 
     def __repr__(self):
         return repr_conv(
-            "<%s, %s>" % (
+            "<%s,%s>" % (
                 self.tokenText,
                 self.tokenTypeName,
             )
@@ -178,7 +178,7 @@ class Sentence:
 
     def __repr__(self):
         return repr_conv(
-            "<%s, %s>" % (
+            "<%s,%s>" % (
                 self.sentenceText,
                 self.nextStartTypeName,
             )
@@ -212,7 +212,7 @@ class GrammarError:
             self.shortDescription,
             self.startPos,
             self.errorLen,
-            ', '.join('"%s"' % suggestion for suggestion in self.suggestions)
+            ','.join('"%s"' % suggestion for suggestion in self.suggestions)
         )
 
 
