@@ -121,7 +121,7 @@ def _check_grammar(paragraphlist, params, voikko):
 	return paragrapherrors
 
 def _grammar_error_repr(grammar_error):
-	return '[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={%s}]' % (
+	return '[code=%i, level=0, stpos=%i, len=%i, suggs={%s}]' % (
 	    grammar_error.errorCode,
 	    grammar_error.startPos,
 	    grammar_error.errorLen,

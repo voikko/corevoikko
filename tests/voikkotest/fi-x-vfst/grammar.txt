@@ -1,48 +1,48 @@
 {}
 Kissa ja koira ovat karvaisia.
 Mies on joten kuten selvillä siitä, että hänen on joten kuten palattava kotiinsa.
- [code=1, level=0, descr="", stpos=8, len=11, suggs={"jotenkuten"}]
- [code=1, level=0, descr="", stpos=50, len=11, suggs={"jotenkuten"}]
+ [code=1, level=0, stpos=8, len=11, suggs={"jotenkuten"}]
+ [code=1, level=0, stpos=50, len=11, suggs={"jotenkuten"}]
 Yksi sana on loppujenlopuksi väärin.
- [code=1, level=0, descr="", stpos=13, len=15, suggs={"loppujen lopuksi"}]
+ [code=1, level=0, stpos=13, len=15, suggs={"loppujen lopuksi"}]
 Virheessä voi olla mielinmäärin ä-kirjaimia.
- [code=1, level=0, descr="", stpos=19, len=12, suggs={"mielin määrin"}]
+ [code=1, level=0, stpos=19, len=12, suggs={"mielin määrin"}]
 Se oli joten  kuten.
- [code=1, level=0, descr="", stpos=7, len=12, suggs={"jotenkuten"}]
- [code=2, level=0, descr="", stpos=12, len=2, suggs={" "}]
+ [code=1, level=0, stpos=7, len=12, suggs={"jotenkuten"}]
+ [code=2, level=0, stpos=12, len=2, suggs={" "}]
 Välivirhe  ennen kuin joten kuten tulee toinen virhe.
- [code=2, level=0, descr="", stpos=9, len=2, suggs={" "}]
- [code=1, level=0, descr="", stpos=22, len=11, suggs={"jotenkuten"}]
+ [code=2, level=0, stpos=9, len=2, suggs={" "}]
+ [code=1, level=0, stpos=22, len=11, suggs={"jotenkuten"}]
 Nyt on joten kuten  tehtävä joten kuten hankalampi   virheyhdistelmä.
- [code=1, level=0, descr="", stpos=7, len=11, suggs={"jotenkuten"}]
- [code=2, level=0, descr="", stpos=18, len=2, suggs={" "}]
- [code=1, level=0, descr="", stpos=28, len=11, suggs={"jotenkuten"}]
- [code=2, level=0, descr="", stpos=50, len=3, suggs={" "}]
+ [code=1, level=0, stpos=7, len=11, suggs={"jotenkuten"}]
+ [code=2, level=0, stpos=18, len=2, suggs={" "}]
+ [code=1, level=0, stpos=28, len=11, suggs={"jotenkuten"}]
+ [code=2, level=0, stpos=50, len=3, suggs={" "}]
 Ostaisin auton, mutta se on vaan turhan kallis.
- [code=1, level=0, descr="", stpos=22, len=10, suggs={"se on vain"}]
+ [code=1, level=0, stpos=22, len=10, suggs={"se on vain"}]
 Ostaisin auton, mutta se on turhan kallis.
 Se on vaan niin.
- [code=1, level=0, descr="", stpos=0, len=10, suggs={"Se on vain"}]
+ [code=1, level=0, stpos=0, len=10, suggs={"Se on vain"}]
 Lause , jossa on pilkun edellä turha väli.
- [code=3, level=0, descr="", stpos=5, len=2, suggs={","}]
+ [code=3, level=0, stpos=5, len=2, suggs={","}]
 Lause,, jossa on kaksi peräkkäistä pilkkua.
- [code=4, level=0, descr="", stpos=5, len=2, suggs={","}]
+ [code=4, level=0, stpos=5, len=2, suggs={","}]
 Aurinko paistaa. (Tämä virke on suluissa.)
 Lause., jossa pilkun edellä piste.
- [code=5, level=0, descr="", stpos=5, len=2, suggs={}]
- [code=7, level=0, descr="", stpos=8, len=5, suggs={"Jossa"}]
+ [code=5, level=0, stpos=5, len=2, suggs={}]
+ [code=7, level=0, stpos=8, len=5, suggs={"Jossa"}]
 Lause. , jossa pilkun edellä piste.
- [code=5, level=0, descr="", stpos=6, len=2, suggs={}]
- [code=7, level=0, descr="", stpos=9, len=5, suggs={"Jossa"}]
+ [code=5, level=0, stpos=6, len=2, suggs={}]
+ [code=7, level=0, stpos=9, len=5, suggs={"Jossa"}]
 , pilkku on aivan alussa.
- [code=5, level=0, descr="", stpos=0, len=1, suggs={}]
- [code=7, level=0, descr="", stpos=2, len=6, suggs={"Pilkku"}]
+ [code=5, level=0, stpos=0, len=1, suggs={}]
+ [code=7, level=0, stpos=2, len=6, suggs={"Pilkku"}]
 Käsitellään asiaa. Nyt seuraa jokin sivuhuomautus. – Taas palataan asiaan.
 Äidissä on ä-kirjain, ja se saa olla virkkeen alussa.
 äidissä on ä-kirjain, ja se pitää kirjoittaa isolla virkkeen alussa.
- [code=7, level=0, descr="", stpos=0, len=7, suggs={"Äidissä"}]
+ [code=7, level=0, stpos=0, len=7, suggs={"Äidissä"}]
 Avaimet löytyivät Reetan Taskun pohjalta.
- [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
+ [code=6, level=0, stpos=25, len=6, suggs={"taskun"}]
 "Lause voi olla myös lainausmerkeissä."
 "Lause voi olla myös lainausmerkeissä", kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
@@ -55,19 +55,19 @@ Voinko kirjoittaa pakinan otsikolla "Kissat"? Kukaan ei lukisi sitä.
 »Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
 "Sisäkkäisiäkin lainausmerkkejä voi käyttää, ja ne ”Toimivat Oikein”", kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
- [code=10, level=0, descr="", stpos=37, len=3, suggs={"","}]
+ [code=10, level=0, stpos=37, len=3, suggs={"","}]
 ”Lause voi olla myös lainausmerkeissä.”, kirjoittaa ohjelman tekijä.
- [code=10, level=0, descr="", stpos=37, len=3, suggs={"”,"}]
+ [code=10, level=0, stpos=37, len=3, suggs={"”,"}]
 "Lause voi olla myös lainausmerkeissä?", kirjoittaa ohjelman tekijä.
- [code=10, level=0, descr="", stpos=37, len=3, suggs={"?""}]
+ [code=10, level=0, stpos=37, len=3, suggs={"?""}]
 ”Lause voi olla myös lainausmerkeissä?”, kirjoittaa ohjelman tekijä.
- [code=10, level=0, descr="", stpos=37, len=3, suggs={"?”"}]
+ [code=10, level=0, stpos=37, len=3, suggs={"?”"}]
 "Lause voi olla myös lainausmerkeissä!", kirjoittaa ohjelman tekijä.
- [code=10, level=0, descr="", stpos=37, len=3, suggs={"!""}]
+ [code=10, level=0, stpos=37, len=3, suggs={"!""}]
 “Älä käytä vierasta lainausmerkkiä!” huutaa setä.
- [code=11, level=0, descr="", stpos=0, len=1, suggs={"”"}]
+ [code=11, level=0, stpos=0, len=1, suggs={"”"}]
 “Vieras Lainausmerkki” voi vaikuttaa isojen kirjainten käytöön arvaamattomasti.
- [code=11, level=0, descr="", stpos=0, len=1, suggs={"”"}]
+ [code=11, level=0, stpos=0, len=1, suggs={"”"}]
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Paikka nimeltä Sämpyläjoki voisi olla oikeasti olemassa.
 Hyllyllä on mm. hilloa.
@@ -75,19 +75,19 @@ Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
 Hyllyllä on kahdenlaisia elintarvikkeita: hilloja ja säilykkeitä.
 Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
 Ensimmäinen virke on oikein. toinen virke on väärin.
- [code=7, level=0, descr="", stpos=29, len=6, suggs={"Toinen"}]
+ [code=7, level=0, stpos=29, len=6, suggs={"Toinen"}]
 Ensimmäinen virke on oikein. 2. virke on myös oikein.
 Myös 20.3. satoi lunta.
 Myös 20.3.1984 satoi lunta.
 Olin kotona 20.3., vaikka satoi lunta.
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
- [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
+ [code=8, level=0, stpos=36, len=15, suggs={"toistuu"}]
 En ollut ollut kotona.
 Voitin lotossa 3 000 000 euroa.
 Talo talo on väärin.
- [code=8, level=0, descr="", stpos=0, len=9, suggs={"Talo"}]
+ [code=8, level=0, stpos=0, len=9, suggs={"Talo"}]
 Hieno eka otsikko
- [code=9, level=0, descr="", stpos=10, len=7, suggs={}]
+ [code=9, level=0, stpos=10, len=7, suggs={}]
 Virke päättyy kolmeen pisteeseen...
 Virke päättyy kolmeen pisteeseen... Toinen alkaa sen jälkeen.
 Kolme pistettä voi olla myös yhtä merkkiä… Ja perässä voi olla toinen virke.
@@ -96,14 +96,14 @@ Jospa minä...
 Entä jos...
 Virkkeen perässä voi olla alaviitteen merkki.1 Se on ehkä yläindeksissä, mehän emme sitä voi tietää.
 Minä juoksen. 3 Miestä juoksee.
- [code=6, level=0, descr="", stpos=16, len=6, suggs={"miestä"}]
+ [code=6, level=0, stpos=16, len=6, suggs={"miestä"}]
 VIRKE ON KIRJOITETTU KOKONAAN ISOILLA KIRJAIMILLA.
 ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
 YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.
- [code=6, level=0, descr="", stpos=43, len=5, suggs={"silti"}]
+ [code=6, level=0, stpos=43, len=5, suggs={"silti"}]
 PÄÄTÖS	Jos virkkeessä on sarkainmerkki, voi teksti sisältää vähän mitä tahansa.
 Sarkaimen	jälkeen Jotain sentään tarkistetaan.
- [code=6, level=0, descr="", stpos=18, len=6, suggs={"jotain"}]
+ [code=6, level=0, stpos=18, len=6, suggs={"jotain"}]
 Venäjän keisareita olivat mm. Aleksanteri III ja Iivana VI.
 Pertti K. asuu omakotitalossa.
 Kissa on eläin. Əliyev on nimi.
@@ -113,13 +113,13 @@ Sarkain	loppuu! Alkaa uusi virke.
 Sarkain	Ja	Toinen sarkain.
 Sulkumerkkien sisällä (Kissa ja Koira) voi lukea mitä vaan.
 Sulkumerkkien (siis näiden) jälkeen Ei saa lukea mitä vaan.
- [code=6, level=0, descr="", stpos=36, len=2, suggs={"ei"}]
+ [code=6, level=0, stpos=36, len=2, suggs={"ei"}]
 Sulkumerkkien (siis näiden) Jälkeen ei saa lukea mitä vaan.
- [code=6, level=0, descr="", stpos=28, len=7, suggs={"jälkeen"}]
+ [code=6, level=0, stpos=28, len=7, suggs={"jälkeen"}]
 Jos lainausmerkkien sisällä on ")", ei Tarkistus saa mennä sekaisin (mutta sulkumerkistä lainausmerkeissä ei saa valittaa).
- [code=6, level=0, descr="", stpos=39, len=9, suggs={"tarkistus"}]
+ [code=6, level=0, stpos=39, len=9, suggs={"tarkistus"}]
 Yksinäinen merkki ) lainauksen ulkopuolella aiheuttaa virheen.
- [code=12, level=0, descr="", stpos=18, len=1, suggs={}]
+ [code=12, level=0, stpos=18, len=1, suggs={}]
 Ensimmäinen virke alkaa (loppu suluissa). Toinen virke jatkaa.
 1) Luettelossa voi sulkumerkkiä käyttää näin.
 1.3) Luettelossa voi sulkumerkkiä käyttää näin.
@@ -132,30 +132,30 @@ Sulkumerkkiä voi käyttää 1) luettelossa ja 2) joskus muulloinkin.
 Sulkumerkkiä voi käyttää	a) luettelossa ja	b) joskus muulloinkin.
 Osoite on http://www.puimula.org.
 juokse!
- [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]
+ [code=7, level=0, stpos=0, len=6, suggs={"Juokse"}]
 Tavutusvihje ei estä vir­heen havaitsemista.
 Tavutusvihje ei estä Vir­heen havaitsemista.
- [code=6, level=0, descr="", stpos=21, len=8, suggs={"vir­heen"}]
+ [code=6, level=0, stpos=21, len=8, suggs={"vir­heen"}]
 Tavallinen yhdysmerkki tekee Vir-heen havaitsemisen mahdottomaksi.
 Tavutusvihe toimii jo­ten ku­ten.
- [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
+ [code=1, level=0, stpos=19, len=13, suggs={"jotenkuten"}]
 Tavarat ovat hujanhajan.
- [code=1, level=0, descr="", stpos=13, len=10, suggs={"hujan hajan"}]
+ [code=1, level=0, stpos=13, len=10, suggs={"hujan hajan"}]
 Alkaa yhdestoista tunti.
 Alkaa yhdes tunti.
-[code=1, level=0, descr="", stpos=6, len=5, suggs={"ensimmäinen"}]
+[code=1, level=0, stpos=6, len=5, suggs={"ensimmäinen"}]
 Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 Iso kirjain saa olla myös sanan etuliitteenä. Esimerkiksi B-rapussa on sallittu.
 Ostin maitoa A:n omistamasta kaupasta.
 - Tavallinenkin kappale voi alkaa näin.
 - koira.
 - koira ja Kissa.
- [code=6, level=0, descr="", stpos=11, len=5, suggs={"kissa"}]
+ [code=6, level=0, stpos=11, len=5, suggs={"kissa"}]
 Puolueen koko virallinen nimi on Suomen Keskusta.
 Puolueen epävirallinen nimi on Keskusta.
- [code=6, level=0, descr="", stpos=31, len=8, suggs={"keskusta"}]
+ [code=6, level=0, stpos=31, len=8, suggs={"keskusta"}]
 Järvi on Jyväskylän, Keskusta kaupungin puolella.
- [code=6, level=0, descr="", stpos=21, len=8, suggs={"keskusta"}]
+ [code=6, level=0, stpos=21, len=8, suggs={"keskusta"}]
 Suomen Keskusta on suuri puolue.
 Isolla alkukirjaimella kirjoitetaan Säteilyturvakeskus ja Verohallitus.
 Juoksen kotiin.
@@ -168,20 +168,20 @@ Mietintö voidaan täällä hyväksyä, eikä kaataa sitä pienten yksityiskohti
 Täytyy ostaa lisää maitoa, eikä luopua siitä.
 Älä virheellinensanaaslkdjalk.
 En juoksen kotiin.
- [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
+ [code=13, level=0, stpos=0, len=10, suggs={}]
 En juoksepa kotiin.
- [code=13, level=0, descr="", stpos=0, len=11, suggs={}]
+ [code=13, level=0, stpos=0, len=11, suggs={}]
 Ette ovat siellä.
- [code=13, level=0, descr="", stpos=0, len=9, suggs={}]
+ [code=13, level=0, stpos=0, len=9, suggs={}]
 Älä juoskoot kotiin.
- [code=13, level=0, descr="", stpos=0, len=12, suggs={}]
+ [code=13, level=0, stpos=0, len=12, suggs={}]
 Älä juoksehan kotiin.
- [code=13, level=0, descr="", stpos=0, len=13, suggs={}]
+ [code=13, level=0, stpos=0, len=13, suggs={}]
 Pertti jaksaa tehdä läksyjä.
 Pertti jaksaa tekemään läksyjä.
- [code=14, level=0, descr="", stpos=7, len=15, suggs={}]
+ [code=14, level=0, stpos=7, len=15, suggs={}]
 Pertti ryhtyy tehdä läksyjä.
- [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
+ [code=15, level=0, stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
 Tätä ei käsittääkseni voi näin esittää.
 Pitkänen pystyy uhattaessa muokkaamaan käsityksiään maailmankaikkeuden fysikaalisista ominaisuuksista.
@@ -190,35 +190,35 @@ Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voit
 Keiton onnistumiseen vaikuttaa myös kattilan muoto.
 Kissa juoksee Lahnajärven jäällä.
 Menen kotiin, kunhan.
- [code=16, level=0, descr="", stpos=14, len=6, suggs={}]
+ [code=16, level=0, stpos=14, len=6, suggs={}]
 Talo on kallis mutta. Talossa asuu hiiriä.
- [code=16, level=0, descr="", stpos=15, len=5, suggs={}]
+ [code=16, level=0, stpos=15, len=5, suggs={}]
 Minä juoksema nopeasti.
- [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
+ [code=17, level=0, stpos=0, len=23, suggs={}]
 Minä juoksema nopeasti.
- [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
+ [code=17, level=0, stpos=0, len=23, suggs={}]
 Minun juostessa nopeasti.
- [code=17, level=0, descr="", stpos=0, len=25, suggs={}]
+ [code=17, level=0, stpos=0, len=25, suggs={}]
 Siellä ei juosta nopeasti.
 Siellä juosta nopeasti.
- [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
+ [code=17, level=0, stpos=0, len=23, suggs={}]
 Minä juoksen nopeasti. Sinä juoksema nopeasti. Hän juoksee nopeasti.
- [code=17, level=0, descr="", stpos=23, len=23, suggs={}]
+ [code=17, level=0, stpos=23, len=23, suggs={}]
 Pertti juo mm. mustaa, tulikuumaa kahvia.
 Hyvää joulua!
 Joulua vietetään 24.-26. joulukuuta.
 3.1 Korkokuva ja kallioperä             # Oikein vain otsikoissa
-[code=6, level=0, descr="", stpos=4, len=9, suggs={"korkokuva"}]
-[code=9, level=0, descr="", stpos=17, len=10, suggs={}]
+[code=6, level=0, stpos=4, len=9, suggs={"korkokuva"}]
+[code=9, level=0, stpos=17, len=10, suggs={}]
 Yleensä juoksen nopeasti kipitän.
- [code=18, level=0, descr="", stpos=8, len=24, suggs={}]
+ [code=18, level=0, stpos=8, len=24, suggs={}]
 Kissa on eläin. Yleensä juoksen nopeasti kipitän.
- [code=18, level=0, descr="", stpos=24, len=24, suggs={}]
+ [code=18, level=0, stpos=24, len=24, suggs={}]
 Yleensä juoksen nopeasti tai kipitän vikkelästi.
 Menen kouluun ennen kuin menen kotiin.
 Höpisen saksaa siinä missä enoni puhuu englantia.
 Höpisen saksaa siinä talossa jossa enoni puhuu englantia.
- [code=18, level=0, descr="", stpos=0, len=46, suggs={}]
+ [code=18, level=0, stpos=0, len=46, suggs={}]
 Sitä kirjoitetaan kuten puhuja sopivaksi näkee.
 Suurimmat kosket valjastettiin teollisuuden käyttöön.
 Kissa oli näet kiivennyt aidalle.
@@ -226,7 +226,7 @@ Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
 Kotonani on n. 15 kissaa.
 Millaisia bändejä festareilla mahtaakaan esiintyä?
 12 kuukautta odotin kesää
- [code=9, level=0, descr="", stpos=20, len=5, suggs={}]
+ [code=9, level=0, stpos=20, len=5, suggs={}]
 Minun KISSANI on harmaa.
 Marsuani ei juoksuteta eikä valvoteta öisin.
 Marsuani ei juoksuteta, kävi miten kävi.
@@ -234,7 +234,7 @@ Marsuani ei juoksuteta, kävi miten kävi.
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
- [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
+ [code=6, level=0, stpos=25, len=6, suggs={"taskun"}]
 http://www.puimula.org
 3.1 Korkokuva ja kallioperä
 
@@ -247,9 +247,9 @@ ensimmäinen kohta,
 toinen kohta ja
 kolmas kohta.
 Kuitenkaan virheitä ei sallita Keskellä kappaletta.
-[code=6, level=0, descr="", stpos=31, len=8, suggs={"keskellä"}]
+[code=6, level=0, stpos=31, len=8, suggs={"keskellä"}]
 Myös isot kirjaimet on muistettava. vaikka olisi lista.
-[code=7, level=0, descr="", stpos=36, len=6, suggs={"Vaikka"}]
+[code=7, level=0, stpos=36, len=6, suggs={"Vaikka"}]
 1) Luettelossa voi sulkumerkkiä käyttää näin.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
