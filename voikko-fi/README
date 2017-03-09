@@ -5,13 +5,11 @@ General information
 -------------------
 
 Voikko-fi (previously know as Suomi-malaga) is a description of
-Finnish morphology written for libvoikko. Two different implementations
-built on same linguistic resources are provided. The older one
-supporting dictionary format 2 is based on Malaga (version 7.8 or
-later). The new format uses unweighted VFST format and requires
+Finnish morphology written for libvoikko. The implementation uses
+unweighted VFST format and provides format 5 Finnish dictionary for
 libvoikko 4.0 or later.
 
-For Voikko both morphologies support spell checking, hyphenation
+For Voikko the morphology supports spell checking, hyphenation
 and grammar checking. Special support is also included for text
 indexer Sukija. This support includes support for common spelling
 mistakes, old spellings, old inflection types and old or rare words.
@@ -48,8 +46,6 @@ Supported Make targets
 - sukija
   DEPRECATED: Builds the binary files needed by text indexer Sukija.
   You should use target vvfst-sukija.
-- voikko
-  DEPRECATED: Builds the binary files for Finnish dictionary (libvoikko format version 2)
 - voikko-sukija
   DEPRECATED: Builds the binary files needed by libvoikko with a big
   dictionary that can be used by Sukija.
@@ -59,10 +55,6 @@ Supported Make targets
   /usr/lib/voikko
 - vvfst-sukija-install DESTDIR=/usr/lib/voikko
   Like vvfst-install but installs the binary files build by command vvfst-sukija.
-- voikko-install DESTDIR=/usr/lib/voikko
-  DEPRECATED: Installs the version 2 binary files needed by libvoikko to the directory
-  specified by DESTDIR. DESTDIR is optional and defaults to
-  /usr/lib/voikko
 - dist-gzip
   Builds the full source package.
 - clean
@@ -71,8 +63,6 @@ Supported Make targets
   Updates the XML vocabulary from the nightly snapshot at
   joukahainen.puimula.org. This target requires wget to
   be available.
-- TAGS
-  Builds an Emacs tag table file from the vocabulary database.
 
 
 Variables for tuning the build process
@@ -91,8 +81,6 @@ Variables for tuning the build process
     that are known to be used only for spell checking, grammar checking or
     hyphenation.
     Default: yes
-
-- options common for "make vvfst" and "make voikko":
   * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
     Sets options string for generate_lex.py.
     Available options for generate_lex.py are
@@ -129,23 +117,6 @@ Variables for tuning the build process
     versions, describe any modifications made to the released version here.
     It may be best to change this directly in the Makefile.
 
-- make voikko:
-  * VOIKKO_BUILDDIR=path/to/directory
-    Specifies the directory where build files are written to while building
-    for Voikko.
-    Default: voikko (build within source directory)
-  * EXTRA_LEX="path/to/file1.lex path/to/file2.lex ..."
-    Adds extra malaga lexicon files to the vocabulary. By default, no extra
-    lexicons are added.
-  * VANHAHKOT_MUODOT=yes|no
-    See voikko/doc/liput.txt. Default: yes
-  * SUKIJAN_MUODOT=yes|no
-    Include words that exist just for Sukija. Default: no
-  * VOIKKO_DEBUG=yes|no
-    Include information that is not needed by libvoikko but may be needed
-    for debugging or by external applications (full morphological analysis).
-    Default: no
-
 Copyright and license information
 ---------------------------------
 
@@ -154,6 +125,6 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
-Copyright (©) 2006 - 2016 Hannu Väisänen (Email: Hannu.Vaisanen@uef.fi)
-and 2006 - 2016 Harri Pitkänen (hatapitk@iki.fi). Contributors listed
+Copyright (©) 2006 - 2017 Hannu Väisänen (Email: Hannu.Vaisanen@uef.fi)
+and 2006 - 2017 Harri Pitkänen (hatapitk@iki.fi). Contributors listed
 in file CONTRIBUTORS hold copyrights to the vocabulary data.

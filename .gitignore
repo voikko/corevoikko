@@ -6,26 +6,5 @@ libvoikko/cs/libvoikko.tests/bin
 libvoikko/cs/libvoikko.tests/test-results
 libvoikko/cs/libvoikko/bin
 libvoikko/cs/test-results
-voikko-fi/build
 voikko-fi/build-v5
-voikko-fi/voikko/config.inc
-voikko-fi/voikko/erikoiset.lex
-voikko-fi/voikko/erikoissanat.lex
-voikko-fi/voikko/etuliitteet.lex
-voikko-fi/voikko/huudahdussanat.lex
-voikko-fi/voikko/joukahainen.lex
-voikko-fi/voikko/lainen.lex
-voikko-fi/voikko/lukusanat.lex
-voikko-fi/voikko/lyhenteet.lex
-voikko-fi/voikko/main.lex
-voikko-fi/voikko/mor.inc
-voikko-fi/voikko/poikkeavat.lex
-voikko-fi/voikko/seikkasanat.lex
-voikko-fi/voikko/sidesanat.lex
-voikko-fi/voikko/subrule.inc
-voikko-fi/voikko/suhdesanat.lex
-voikko-fi/voikko/taivutustaydennykset.lex
-voikko-fi/voikko/voikko-fi_FI.*_l
-voikko-fi/voikko/voikko-fi_FI.pro
-voikko-fi/voikko/yhdyssanat.lex
 
