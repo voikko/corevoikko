@@ -105,7 +105,8 @@ Variables for tuning the build process
       during morphological analysis. This option has no effect unless
       VOIKKO_DEBUG=yes is set. By default source ids are not preserved.
   * VANHAT_MUODOT=yes|no
-    See voikko/doc/liput.txt. Default: no
+    Accept word forms that were present in old Finnish but are no longer
+    considered valid in standard Finnish. Default: no
   * VOIKKO_VARIANT=variant
     Set the short name for the language variant of this vocabulary. The
     name should match the regular expression [a-z][a-z0-9_]*

@@ -1,5 +1,5 @@
 # Copyright 2012 - 2015 Harri Pitkänen (hatapitk@iki.fi)
-# Program to generate lexicon files for Suomi-malaga Voikko edition
+# Program to generate lexicon files for voikko-fi
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
