@@ -6,5 +6,5 @@ git stash
 git pull -r
 git stash pop
 make update-vocabulary
-make voikko
+make vvfst
 

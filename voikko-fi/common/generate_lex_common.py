@@ -29,26 +29,6 @@ from xml.dom import Node
 # Path to source data directory
 VOCABULARY_DATA = "vocabulary"
 
-# Vocabulary entries that should be saved to different files
-# (group, name, file)
-SPECIAL_VOCABULARY = [
-	('usage', 'it', 'atk.lex'),
-	('usage', 'medicine', 'laaketiede.lex'),
-	('usage', 'science', 'matluonnontiede.lex'),
-	('usage', 'education', 'kasvatustiede.lex'),
-	('style', 'foreign', 'vieraskieliset.lex')]
-
-def open_lex(path, filename):
-	file = codecs.open(path + "/" + filename, 'w', 'UTF-8')
-	file.write("# This is automatically generated intermediate lexicon file for\n")
-	file.write("# Suomi-malaga Voikko edition. The original source data is\n")
-	file.write("# distributed under the GNU General Public License, version 2 or\n")
-	file.write("# later, as published by the Free Software Foundation. You should\n")
-	file.write("# have received the original data, tools and instructions to\n")
-	file.write("# generate this file (or instructions to obtain them) wherever\n")
-	file.write("# you got this file from.\n\n")
-	return file
-
 def tValue(element):
 	return element.firstChild.wholeText
 
@@ -58,23 +38,6 @@ def tValues(group, element_name):
 	for element in group.getElementsByTagName(element_name):
 		values.append(tValue(element))
 	return values
-
-# Returns malaga word class for given word in Joukahainen
-def get_malaga_word_class(j_wordclasses):
-	if "pnoun_place" in j_wordclasses: return "paikannimi"
-	if "pnoun_firstname" in j_wordclasses: return "etunimi"
-	if "pnoun_lastname" in j_wordclasses: return "sukunimi"
-	if "pnoun_misc" in j_wordclasses: return "nimi"
-	if "verb" in j_wordclasses: return "teonsana"
-	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return "nimi_laatusana"
-	if "adjective" in j_wordclasses: return "laatusana"
-	if "noun" in j_wordclasses: return "nimisana"
-	if "interjection" in j_wordclasses: return "huudahdussana"
-	if "prefix" in j_wordclasses: return "etuliite"
-	if "abbreviation" in j_wordclasses: return "lyhenne"
-	if "adverb" in j_wordclasses: return "seikkasana"
-	if "conjunction" in j_wordclasses: return "sidesana"
-	return None
 
 # Returns flag names from given group for word in Joukahainen
 def get_flags_from_group(word, groupName):
@@ -89,28 +52,6 @@ def get_flags_from_group(word, groupName):
 				continue
 			flags.append(flag.firstChild.wholeText)
 	return flags
-
-# Returns malaga flags for given word in Joukahainen
-def get_malaga_flags(word):
-	global flag_attributes
-	malagaFlags = []
-	for group in word.childNodes:
-		if group.nodeType != Node.ELEMENT_NODE:
-			continue
-		for flag in group.childNodes:
-			if flag.nodeType != Node.ELEMENT_NODE:
-				continue
-			if flag.tagName != "flag":
-				continue
-			flagAttribute = flag_attributes[group.tagName + "/" + tValue(flag)]
-			if flagAttribute.malagaFlag != None:
-				malagaFlags.append(flagAttribute.malagaFlag)
-	if len(malagaFlags) == 0: return ""
-	flag_string = ", tiedot: <"
-	for flag in malagaFlags:
-		flag_string = flag_string + flag + ","
-	flag_string = flag_string[:-1] + ">"
-	return flag_string
 
 flag_attributes = voikkoutils.readFlagAttributes(VOCABULARY_DATA + "/flags.txt")
 
@@ -194,15 +135,7 @@ def get_structure(wordform, malaga_word_class):
 
 # Writes the vocabulary entry to a suitable file
 def write_entry(main_vocabulary,vocabulary_files,word, entry):
-	special = False
-	for voc in SPECIAL_VOCABULARY:
-		group = word.getElementsByTagName(voc[0])
-		if len(group) == 0: continue
-		if has_flag(group[0], voc[1]):
-			vocabulary_files[voc[2]].write(entry + "\n")
-			special = True
-	if not special:
-		main_vocabulary.write(entry + "\n")
+	main_vocabulary.write(entry + "\n")
 
 # Parse command line options and return them in a dictionary
 def get_options():

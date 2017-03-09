@@ -32,9 +32,6 @@ OPTIONS = generate_lex_common.get_options()
 # Inflection class map
 CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 
-# No special vocabularies are built for Voikko
-generate_lex_common.SPECIAL_VOCABULARY = []
-
 vocabularyFileSuffixes = ["ep", "ee", "es", "em", "t", "nl", "l", "n", "h", "p", "a", "s", "c"]
 vocabularyFiles = {}
 for fileSuffix in vocabularyFileSuffixes:
