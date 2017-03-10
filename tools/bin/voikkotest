@@ -134,14 +134,6 @@ def shell(cwd, command):
 		sys.stderr.write("Shell command '%s' failed, working directory was '%s'\n" % (command, cwd))
 		return False
 	return True
-	
-# Ensure that the current version is up to date
-# TODO: deprecated
-def update_smv():
-	options = {"SOURCEDIR": SMV, "BUILDCMD": "make voikko"}
-	if SM_DESTDIR is not None:
-		options["INSTALLCMD"] = 'make voikko-install DESTDIR="%s"' % SM_DESTDIR
-	build(options)
 
 def build(configMap):
 	if not shell(configMap["SOURCEDIR"], configMap["BUILDCMD"]):
@@ -151,12 +143,6 @@ def build(configMap):
 		if not shell(configMap["SOURCEDIR"], configMap["INSTALLCMD"]):
 			sys.stderr.write("Failed to install the dictionary.\n")
 			sys.exit(1)
-
-# Run "make clean"
-def clean_smv():
-	if not shell(SMV, 'make clean'):
-		sys.stderr.write('Failed to run "make clean"\n')
-		sys.exit(1)
 
 # Run the spelling tests
 def spell_tests(voikko, testFile):
@@ -554,17 +540,12 @@ except getopt.GetoptError:
 	sys.exit(1)
 
 if "--base" in [opt[0] for opt in opts]:
-	if not shell(SMV, 'make voikko-install DESTDIR="%s"' % BASE):
-		sys.stderr.write("Failed to create baseline version.\n")
-		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('bash -c \'time zcat "%s" | "%s" -d %s -j %i -p "%s" | grep "^C:" > "%s"\'' % \
 	          (WORDLIST, SPELLCMD, CURRENT_TESTMOR, THREADS, BASE, BASE_CORRECT))
 	sys.exit(0)
 
 if "--current" in [opt[0] for opt in opts]:
-	clean_smv()
-	update_smv()
 	voikko = Voikko(CURRENT_TESTMOR)
 	if not spell_tests(voikko, COREVOIKKO + "/tests/voikkotest/" + CURRENT_TESTMOR + "/spell.txt"):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")

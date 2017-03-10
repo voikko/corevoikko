@@ -21,16 +21,6 @@ VVFST_BASEFORMS=yes
 SM_VERSION=2.2
 SM_BUILDDATE=$(shell date -R -u)
 
-# Source files for Sukija version.
-SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
-           sukija/Makefile sukija/malaga1.png sukija/malaga2.png \
-           sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
-           sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh sukija/ei-sukija.txt \
-           sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/sanat/etuliitteet.lex sukija/sanat/lyhenteet.lex sukija/sanat/atk-lyhenteet.lex \
-           sukija/sukija.py sukija/suomi.all sukija/suomi.sym sukija/suomi.tex \
-           sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro
-
 VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukusanat.lexc \
            vvfst/asemosanat.lexc vvfst/seikkasanat.lexc vvfst/suhdesanat.lexc
 
@@ -40,7 +30,6 @@ SRC_ONLY=ChangeLog CONTRIBUTORS Makefile README COPYING \
          vocabulary/autocorrect/autocorrect.dtd vocabulary/autocorrect/fi.xml \
          vocabulary/joukahainen.xml vocabulary/flags.txt \
          common/hfconv.py common/generate_lex_common.py \
-         $(SUKIJA_SRC) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
          vvfst/taivutuskaavat.lexc.in vvfst/index.txt.in vvfst/filter_lexc.py \
          vvfst/autocorrect_to_lexc.py vvfst/autocorrect.foma.in \
@@ -73,8 +62,6 @@ clean:
 	rm -f common/generate_lex_common.pyc
 	rm -f "voikko-fi-$(SM_VERSION).tar.gz"
 	rm -rf "voikko-fi-$(SM_VERSION)"
-	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
-	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma $(VVFST_BUILDDIR)/mor.vfst
 	rm -f $(VVFST_BUILDDIR)/autocorrect.att $(VVFST_BUILDDIR)/autocorrect.foma $(VVFST_BUILDDIR)/autocorrect.lexc
 	rm -f $(VVFST_BUILDDIR)/autocorr.vfst $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/index.txt
@@ -102,35 +89,6 @@ $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(SRCDIST))): voikko-fi-$(SM_VERS
 update-vocabulary:
 	wget http://joukahainen.puimula.org/sanastot/joukahainen.xml.gz -O - \
 	| gunzip > vocabulary/joukahainen.xml
-
-
-SUKIJA_COPY_FROM_VOCABULARY=\
-erikoisalat/linux-distributions.lex \
-erikoiset.lex \
-erikoissanat.lex \
-lainen.lex \
-lukusanat.lex \
-poikkeavat.lex \
-seikkasanat.lex \
-suhdesanat.lex \
-taivutustaydennykset.lex \
-yhdyssanat.lex
-
-sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
-	$(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML))
-	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
-
-$(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
-	@mkdir -p sukija/voikonsanat/erikoisalat
-	cp $^ $@
-
-$(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py $(SUKIJA_SRC)
-	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
-		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
-	$(PYTHON) sukija/generate_lex.py
-	-@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
-
 
 
 vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/autocorr.vfst $(VVFST_BUILDDIR)/index.txt
@@ -184,15 +142,6 @@ $(VVFST_BUILDDIR)/index.txt: vvfst/index.txt.in
 vvfst-install: vvfst
 	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
-
-
-# Generate a big Voikko dictionary to use in Sukija (according to Harri Pitkänen).
-#
-voikko-sukija:
-	make voikko VANHAT_MUODOT=yes SUKIJAN_MUODOT=yes \
-		GENLEX_OPTS='--style=dialect,foreign,incorrect --min-frequency=10 \
-		--extra-usage=sukija,it,medicine,science,education,orgname,nature' \
-		EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex" VOIKKO_DEBUG=yes
 
 
 # Rules for creating vvfst morphology for Sukija indexer. See file
