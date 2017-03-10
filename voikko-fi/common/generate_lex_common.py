@@ -97,42 +97,6 @@ def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap)
 	return (None, None)
 
 
-# Returns a string describing the structure of a word, if necessary for the spellchecker
-# or hyphenator
-def get_structure(wordform, malaga_word_class):
-	needstructure = False
-	if malaga_word_class in ['nimi', 'etunimi', 'sukunimi', 'paikannimi']: ispropernoun = True
-	else: ispropernoun = False
-	if malaga_word_class == 'lyhenne':
-		i = "j"
-		p = "q"
-	else:
-		i = "i"
-		p = "p"
-	structstr = ', rakenne: "='
-	for idx in range(len(wordform)):
-		c = wordform[idx]
-		if c == '-':
-			structstr = structstr + "-="
-			needstructure = True
-		elif c == '|': structstr = structstr
-		elif c == '=':
-			structstr = structstr + "="
-			needstructure = True
-		elif c == ':':
-			structstr = structstr + ":"
-			needstructure = True
-		elif c.isupper():
-			structstr = structstr + i
-			if not (ispropernoun and idx == 0):
-				needstructure = True
-		else:
-			structstr = structstr + p
-			if ispropernoun and idx == 0:
-				needstructure = True
-	if needstructure: return structstr + '"'
-	else: return ""
-
 # Writes the vocabulary entry to a suitable file
 def write_entry(main_vocabulary,vocabulary_files,word, entry):
 	main_vocabulary.write(entry + "\n")

@@ -43,12 +43,6 @@ Supported Make targets
 - vvfst-sukija
   Builds the binary files for Finnish dictionary (libvoikko format version 5)
   used in Sukija indexer.
-- sukija
-  DEPRECATED: Builds the binary files needed by text indexer Sukija.
-  You should use target vvfst-sukija.
-- voikko-sukija
-  DEPRECATED: Builds the binary files needed by libvoikko with a big
-  dictionary that can be used by Sukija.
 - vvfst-install DESTDIR=/usr/lib/voikko
   Installs the version 5 binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
