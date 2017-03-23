@@ -1,5 +1,5 @@
 
-# Build configuration. See README for more information.
+# Build configuration. See README.md for more information.
 PYTHON=python3
 VVFST_BUILDDIR=vvfst
 DESTDIR=/usr/lib/voikko
@@ -25,7 +25,7 @@ VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukus
            vvfst/asemosanat.lexc vvfst/seikkasanat.lexc vvfst/suhdesanat.lexc
 
 # Files to ship only in the full source package
-SRC_ONLY=ChangeLog CONTRIBUTORS Makefile README COPYING \
+SRC_ONLY=ChangeLog CONTRIBUTORS Makefile README.md COPYING \
          common/voikkoutils.py \
          vocabulary/autocorrect/autocorrect.dtd vocabulary/autocorrect/fi.xml \
          vocabulary/joukahainen.xml vocabulary/flags.txt \
