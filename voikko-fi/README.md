@@ -55,7 +55,7 @@ Supported Make targets
   Installs the version 5 binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
   /usr/lib/voikko
-- vvfst-sukija-install DESTDIR=/usr/lib/voikko  
+- vvfst-install-sukija DESTDIR=/usr/lib/voikko  
   Like vvfst-install but installs the binary files build by command vvfst-sukija.
 - dist-gzip  
   Builds the full source package.

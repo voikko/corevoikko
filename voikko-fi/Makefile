@@ -53,7 +53,7 @@ SUKIJA_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY)
 
-.PHONY: all clean update-vocabulary dist-gzip vvfst vvfst-install vvfst-sukija vvfst-sukija-install
+.PHONY: all clean update-vocabulary dist-gzip vvfst vvfst-install vvfst-sukija vvfst-install-sukija
 
 all: vvfst
 
@@ -174,8 +174,8 @@ $(VVFST_BUILDDIR)/mor-sukija.vfst: $(VVFST_BUILDDIR)/all-sukija.att
 $(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
 	touch $@
 
-vvfst-sukija-install: VOIKKO_VARIANT=sukija
-vvfst-sukija-install: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
-vvfst-sukija-install: vvfst-sukija
+vvfst-install-sukija: VOIKKO_VARIANT=sukija
+vvfst-install-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
+vvfst-install-sukija: vvfst-sukija
 	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)

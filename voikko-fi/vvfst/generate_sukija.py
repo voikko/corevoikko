@@ -835,6 +835,7 @@ def generate_xiljoona (line):
 
 
 ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
+ei_yks = "@P.EI_YKS.ON@"
 
 
 sukija_additions = {
@@ -874,7 +875,10 @@ while True:
         break
     if line.find (u"[Tn4]mi@") == 0:  # 4. nimitapa (puhu+minen) ei ole teonsanan taivutusmuoto.
         continue
-    line = re.sub (ei_vertm, u"", line)
+    line = re.sub (ei_vertm, "", line)
+    if line.find (ei_yks) > 0 and line.startswith ("[L"):
+        if not line.startswith ("[Ln][Xp]lehdes[X]"):
+            line = line.replace (ei_yks, "")
     if line.find (u"=") >= 0:
         line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
     if line.find ("lähtöinen") >= 0:
