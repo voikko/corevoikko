@@ -363,7 +363,7 @@ def handle_word(word):
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if alku == None:
 			errorstr = "ERROR: VFST class not found for (%s, %s)\n" % (wordform, voikko_infclass)
-			sys.stderr.write(errorstr.encode("UTF-8"))
+			sys.stderr.write(errorstr)
 			sys.exit(1)
 		if vfst_word_class == "[La]":
 			jatko = get_abbreviation_jatko(word, altform)
@@ -386,7 +386,7 @@ def handle_word(word):
 			errorstr = "ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(vocabularyFile, {}, word, errorstr)
-			sys.stderr.write(errorstr.encode("UTF-8"))
+			sys.stderr.write(errorstr)
 			sys.exit(1)
 		alku = alku.lower()
 		(rakenne, alkuWithTags) = get_structure(altform, vfst_word_class, alku)
