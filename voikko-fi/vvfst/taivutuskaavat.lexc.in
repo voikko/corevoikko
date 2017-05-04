@@ -2349,6 +2349,7 @@ LEXICON NOUN Hapsi
 LEXICON NOUN Lapsi
 <WC>Lapsi_yhteiset_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]sn<A>:sn<A> <WC>LiOlV_<A>	;
 
 LEXICON NOUN Lapsi_yhteiset
 [Sn][Ny]psi:psi	<WC>NormaaliYsJatko_<A>	;
@@ -2641,6 +2642,7 @@ Johdin_nUt_<A>	;
 Johdin_vA_<A>	;
 Johdin_mA_<A>	;
 ?Sukija SukijaTositapaVi_<A> ;
+?Sukija [[L]]:[[L]] SukijaLiitesanaVainVi_<A> ;
 
 LEXICON Aavistaa
 <WC>MuistaaMuistella_w_<A>	;
@@ -3239,6 +3241,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija ee:ee SukijaLiitesanaVainVi_<A> ;
 
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
@@ -3274,6 +3277,7 @@ e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija ee:ee SukijaLiitesanaVainVi_<A> ;
 
 LEXICON Tulla_l
 TositavanKestämäXaan_<A>	;
@@ -3345,6 +3349,7 @@ Johdin_U_arvelu_<A>	;
 ee:ee	LiitesanaVainPi_<A>	;
 ?Sukija e:e Ehtotapa_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija ee:ee SukijaLiitesanaVainVi_<A> ;
 
 LEXICON Arvailla
 l:l	Johdin_nimitapa1A_<A>	;
@@ -3368,6 +3373,7 @@ Johdin_U_arvelu_<A>	;
 EhtoMahtoKäskytapa_tA_<A>	;
 Johdin_tU_lA_<A>	;
 ?Sukija e:e SukijaTositapaVi_<A> ;
+?Sukija ee:ee SukijaLiitesanaVainVi_<A> ;
 ?Sukija e:e Ehtotapa_<A> ;
 
 LEXICON Haravoida
@@ -3434,6 +3440,7 @@ Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
 ?Sukija tse:tse	Ehtotapa_<A>	;
 ?Sukija tse:tse	SukijaTositapaVi_<A>	;
+?Sukija tsee:tsee SukijaLiitesanaVainVi_<A>	;
 
 LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
@@ -3522,6 +3529,7 @@ n:n	Ehtotapa_<A>	;
 ne:ne	Käskytapa_y2_<A>	;
 ni:ni	Johdin_ja_kulkija_<A>	;
 ?Sukija ne:ne SukijaTositapaVi_<A> ;
+?Sukija nee:nee SukijaTositapaVi_<A> ;
 ?Sukija ne:ne Ehtotapa_<A>	;
 
 LEXICON Selvitä
@@ -3864,6 +3872,7 @@ is:is	Johdin_sUt_<A>	;
 isi:isi	Johdin_ja_kulkija_<A>	;
 ?Murre [Tt][Ap][P3][Ny][Ef]isee:isee	LiitesanaVainPi_<A>	;
 ?Sukija ise:ise SukijaTositapaVi_<A> ;
+?Sukija isee:isee SukijaLiitesanaVainVi_<A> ;
 
 LEXICON Taitaa
 Huutaa_s_<A>	;
@@ -5256,6 +5265,7 @@ LEXICON JärjestyslukuKymmentäSnNm
 
 LEXICON TositapaPi
 [Tt][Ap][P3][Ny][Ef]pi:pi Liitesana_<A> ;
+?Sukija SukijaTositapaVi_<A> ;
 
 ?Sukija LEXICON SukijaMahtotapaVi
 ?Sukija [Tm][Ap][P3][Ny][Ef]evi:evi Liitesana_<A> ;
@@ -5291,3 +5301,6 @@ h:h	Yliaste_<A> ;
 ?Sukija [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+
+?Sukija LEXICON SukijaLiitesanaVainVi
+?Sukija [Ef]vi:vi	Loppu	;
