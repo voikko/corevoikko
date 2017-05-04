@@ -3736,6 +3736,10 @@ LEXICON Lotota
 <O>:<O>	<WC>Katketa_w_<A>	;
 t<O>:t<O>	<WC>Katketa_s_<A>	;
 
+LEXICON Aallota
+l<O>:l<O>	<WC>Katketa_w_<A>	;
+t<O>:t<O>	<WC>Katketa_s_<A>	;
+
 LEXICON Katketa_w
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
