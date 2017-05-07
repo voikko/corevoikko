@@ -363,6 +363,8 @@ LEXICON Sukija_p
 [Lp]kevyt:kevyt EtuliitteenJatko_ellelnelt;
 [Lp]kiinteä:kiinteä EtuliitteenJatko_ellelnelt;
 [Lp]kokoon:kokoon EtuliitteenJatko_ellelnelt;
+[Lp]koloniaali:koloniaali EtuliitteenJatko_ellelnelt;
+[Lp]kolossaali:kolossaali EtuliitteenJatko_ellelnelt;
 [Lp]koraanin:koraanin EtuliitteenJatko_ellelnelt;
 [Lp]laaja:laaja EtuliitteenJatko_ellelnelt;
 [Lp]leveä:leveä EtuliitteenJatko_ellelnelt;
