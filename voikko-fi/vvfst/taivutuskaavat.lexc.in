@@ -4038,6 +4038,7 @@ LEXICON Käskytapa
 ?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>t	LiitesanaPaHan_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>tten:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tten	LiitesanaPaHan_<A>	;
+?Sukija [Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>nkin Loppu ;
 
 LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Eb]:	LiitesanaKinPaHan_<A>	;
