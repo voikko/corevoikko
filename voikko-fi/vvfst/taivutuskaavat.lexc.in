@@ -4034,11 +4034,12 @@ LEXICON Käskytapa
 [Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
 @D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm][Ef]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	LiitesanaPaHan_<A>	;
 [Tk][Ap][Et]k<O>:k<O>	Loppu	;
-?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
-?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
+?Sukija [Tk][Ap][P3][Ny][Ef]k<O>h<O>n:k<O>h<O>n	SukijaLiitesanaPaHanKin_<A>	;
+?Sukija @D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm][Ef]k<O>h<O>t:@D.YKSITEKIJÄINEN@k<O>h<O>t	SukijaLiitesanaPaHanKin_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>t:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>t	LiitesanaPaHan_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Tk][Ap][P2][Nm][Ef]k<A><A>tten:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@k<A><A>tten	LiitesanaPaHan_<A>	;
-?Sukija [Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>nkin Loppu ;
+?Sukija [Tk][Ap][P3][Ny][Ef]k<O><O>n:k<O><O>n SukijaLiitesanaPaHanKin_<A> ;
+?Sukija @D.YKSITEKIJÄINEN@[Tk][Ap][P3][Nm][Ef]k<O><O>t:@D.YKSITEKIJÄINEN@k<O><O>t	SukijaLiitesanaPaHanKin_<A>	;
 
 LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Eb]:	LiitesanaKinPaHan_<A>	;
@@ -5304,4 +5305,8 @@ h:h	Yliaste_<A> ;
 ?Sukija [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 
 ?Sukija LEXICON SukijaLiitesanaVainVi
-?Sukija [Ef]vi:vi	Loppu	;
+?Sukija [Ef]vi:vi Loppu ;
+
+?Sukija LEXICON SukijaLiitesanaPaHanKin
+?Sukija LiitesanaPaHan_<A> ;
+?Sukija [Fkin]kin[Ef]:kin Loppu	;
