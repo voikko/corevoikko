@@ -4551,6 +4551,7 @@ LEXICON Voittoaste
 [Sko][Nm][Cc]mpine@D.EI_VERTM@:mpine@D.EI_VERTM@	NimisanaOlVLoppu_<A>	;
 mm<A>:mm<A>	Kerronto_sti_<A>	;
 mm:mm	Johdin_UUs_<A>	;
+?Sukija [Str][Ny][Cc]mm<A>ks@D.EI_VERTM@:mm<A>ks@D.EI_VERTM@	Loppu ;
 ?Sukija [Sp][Ny][Cc]mp<A>t<A>@D.EI_VERTM@:mp<A>t<A>@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>t<A>@D.EI_VERTM@:mp<A>t<A>@D.EI_VERTM@	NimisanaLiOlN_<A>	;
@@ -4591,6 +4592,7 @@ LEXICON Yliaste
 [Sko][Nm][Cs]impine@D.EI_VERTM@:impine@D.EI_VERTM@	NimisanaOlVLoppu_<A>	;
 [Cs]imm@D.EI_VERTM@@C.YS_EI_JATKOA@:imm@D.EI_VERTM@@C.YS_EI_JATKOA@	Johdin_UUs_<A>	;
 imm<A>:imm<A>	Kerronto_sti_<A>	;
+?Sukija [Str][Ny][Cs]imm<A>ks@D.EI_VERTM@:imm<A>ks@D.EI_VERTM@ Loppu;
 ?Sukija [Sp][Ny][Cs]imp<A>t<A>@D.EI_VERTM@:imp<A>t<A>@D.EI_VERTM@	NimisanaLiOlAA_<A>	;
 ?Sukija [Ses][Ny][Cs]inn<A>@D.EI_VERTM@:inn<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 ?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
