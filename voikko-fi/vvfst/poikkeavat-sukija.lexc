@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2016 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2017 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -571,6 +571,7 @@ LEXICON Sukija_p
 [Lp]tasmanian:tasmanian EtuliitteenJatko_ellelnelt;
 [Lp]teksasin:teksasin EtuliitteenJatko_ellelnelt;
 [Lp]timorin:timorin EtuliitteenJatko_ellelnelt;
+[Lp]tonavan:tonavan EtuliitteenJatko_ellelnelt;
 [Lp]transvaalin:transvaalin EtuliitteenJatko_ellelnelt;
 [Lp]tyynenmeren:tyynenmeren EtuliitteenJatko_ellelnelt;
 [Lp]ugandan:ugandan EtuliitteenJatko_ellelnelt;
@@ -753,3 +754,4 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]muistiin=kirjata[X]muistiin[Bm]kirj:muistiinkirj Salata_a ;
 [Lt][Xp]muistiin=lukea[X]muistiin[Bm]lu:muistiinlu Hakea_a ;
 [Lt][Xp]muistiin=palauttaa[X]muistiin[Bm]palaut:muistiinpalaut Alittaa_a ;
+[Lt][Xp]puoleta[X]puole:puole Aleta_a ;
