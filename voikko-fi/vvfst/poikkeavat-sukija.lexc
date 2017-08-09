@@ -147,6 +147,9 @@ LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
 [Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
 [Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;
 
+LEXICON SukijaAsemosanaHän
+[Sill][Ny]nehen:nehen     Liitesana_ä     ;
+
 LEXICON SukijaAsemosanaMieMä
 [Sall][Ny]ullen:ullen Liitesana_a ;
 
@@ -263,6 +266,7 @@ LEXICON SukijaPoikkeavat_n
 !!![Ln][Xp]pahta[X]pah:pah NimisanaPata_a ;
 
 LEXICON SukijaAsemosana
+[Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
