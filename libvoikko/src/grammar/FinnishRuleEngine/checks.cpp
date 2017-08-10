@@ -203,8 +203,10 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 			i++;
 			continue;
 		}
-		if (wcscmp(sentence->tokens[i].str, L"ollut") == 0) {
-			// "ollut" is a valid word to be repeated, maybe there are others too
+		if (wcscmp(sentence->tokens[i].str, L"ollut") == 0 ||
+		    wcscmp(sentence->tokens[i].str, L"olleet") == 0 ||
+		    wcscmp(sentence->tokens[i].str, L"sill\u00e4") == 0) {
+			// these are valid words to be repeated, maybe there are others too
 			i++;
 			continue;
 		}
