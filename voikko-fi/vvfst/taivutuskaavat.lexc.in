@@ -3544,6 +3544,10 @@ LEXICON Lämmitä
 mi:mi	Haluta_w_<A>	;
 pi:pi	Haluta_s_<A>	;
 
+LEXICON Peitota
+<O>:<O>	Haluta_w_<A>	;
+t<O>:t<O>	Haluta_s_<A>	;
+
 LEXICON Silputa
 <U>:<U>	Haluta_w_<A>	;
 p<U>:p<U>	Haluta_s_<A>	;
