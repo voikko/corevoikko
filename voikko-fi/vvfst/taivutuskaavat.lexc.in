@@ -3532,14 +3532,6 @@ ni:ni	Johdin_ja_kulkija_<A>	;
 ?Sukija nee:nee SukijaTositapaVi_<A> ;
 ?Sukija ne:ne Ehtotapa_<A>	;
 
-LEXICON Selvitä
-i:i	Haluta_w_<A>	;
-i:i	Haluta_s_<A>	;
-
-LEXICON Bingota
-Haluta_w_<A>	;
-Haluta_s_<A>	;
-
 LEXICON Haluta
 Haluta_w_<A>	;
 Haluta_s_<A>	;
