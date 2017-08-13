@@ -818,7 +818,7 @@ end: class
 class: 75
 sm-class: haluta
 rmsfx: tA
-match-word: (?:i|U|gO)tA
+match-word: VtA
 consonant-gradation: ws
 group: t
 transform-group: e
