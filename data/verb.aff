@@ -794,7 +794,7 @@ end: class
 class: 74
 sm-class: kohota
 rmsfx: tA
-match-word: OtA
+match-word: (?:O|U)tA
 consonant-gradation: ws
 group: t
 transform-group: e

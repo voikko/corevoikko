@@ -1024,6 +1024,8 @@ pynttäys # Kotus 73
 !pynttäs # Kotus 73
 tajuaisi # Kotus 74
 tajuisi # Kotus 74
+touhuaisi # Kotus 74
+touhuisi # Kotus 74
 nimeäisi # Kotus 75
 !nimeisi # Kotus 75
 peittoaisi # Kotus 75
