@@ -770,13 +770,11 @@ end: rules
 end: class
 
 
-# FIXME: Kotus sijoittaa myös UtA-loppuisia verbejä luokkaan 74,
-# mutta moderni taivutus on näillä lähes aina luokan 75 mukainen.
 # Kotus 74 katketa (1/2)
 class: 74
 sm-class: katketa
 rmsfx: tA
-match-word: (?:e|O)tA
+match-word: (?:e|O|U)tA
 consonant-gradation: ws
 group: t
 transform-group: e

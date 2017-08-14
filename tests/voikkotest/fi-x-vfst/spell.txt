@@ -1022,6 +1022,8 @@ peljätköön # Kotus 73
 !peljäsi # Kotus 73
 pynttäys # Kotus 73
 !pynttäs # Kotus 73
+tajuaisi # Kotus 74
+tajuisi # Kotus 74
 nimeäisi # Kotus 75
 !nimeisi # Kotus 75
 peittoaisi # Kotus 75
