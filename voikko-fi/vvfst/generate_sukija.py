@@ -834,6 +834,13 @@ def generate_xiljoona (line):
             outfile.write (line.replace (u"iljoonien", u"iljonain"))
 
 
+def write_arvaella (line):
+    if line.startswith("[Lt][Xp]") and line.find ("Arvailla_") > 0:
+        if not line.startswith ("[Lt][Xp]piillä[X]") and not line.startswith ("[Lt][Xp]viillä[X]"):
+            line = line.replace ("il:", ":").replace("il ", " ").replace ("Arvailla_", "SukijaArvaella_")
+            outfile.write (line)
+
+
 ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 ei_yks = "@P.EI_YKS.ON@"
 
@@ -897,7 +904,7 @@ while True:
     generate_from_pattern_2 (line, re_tio,   u"tio",   (u"tsio",),          (u"tsion",  u"tsioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_aatio, u"aatio", (u"atio", u"atsio"), (u"atsion", u"atsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_uutio, u"uutio", (u"utio", u"utsio"), (u"utsion", u"utsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
-
+    write_arvaella (line)
 
     r = base_form_re.search (line)
     if r:

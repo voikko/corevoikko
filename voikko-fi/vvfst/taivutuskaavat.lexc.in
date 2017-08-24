@@ -5312,3 +5312,6 @@ h:h	Yliaste_<A> ;
 ?Sukija LEXICON SukijaLiitesanaPaHanKin
 ?Sukija LiitesanaPaHan_<A> ;
 ?Sukija [Fkin]kin[Ef]:kin Loppu	;
+
+?Sukija LEXICON SukijaArvaella
+?Sukija il[Xj]l<A>[X]:el Arvailla_<A> ;
