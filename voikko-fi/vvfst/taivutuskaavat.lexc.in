@@ -1692,6 +1692,8 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ksii:ksii	<WC>LiOlN_<A>	;
 kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	kse:kse	Voittoaste_<A>		;
+?Laatusana	ks:ks	Yliaste_<A>		;
 ?Nimisana	kse:kse	Johdin_tOn_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	ks:ks	Johdin_inen_vain_lipulla_<A>	;
