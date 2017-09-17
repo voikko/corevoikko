@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Python interface to libvoikko, library of Finnish language tools.
+Python interface to libvoikko, library of language tools.
 This module can be used to perform various natural language analysis
 tasks.
 

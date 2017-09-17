@@ -37,8 +37,6 @@
  *
  * A single handle should not be used simultaneously from multiple threads.
  *
- * Currently Finnish is the only supported language.
- *
  */
 
 #ifndef VOIKKO_VOIKKO_H
@@ -59,9 +57,8 @@ struct VoikkoHandle;
  * to the standard dictionary search path.
  * @param error Will be set to null if initialization completed without error.
  *        Otherwise will be set to a pointer to a string describing the error.
- * @param langcode BCP 47 language tag for the language to be used. Currently this can
- *        only be Finnish with optional private use subtags to specify the dictionary
- *        variant.
+ * @param langcode BCP 47 language tag for the language to be used. Private use
+ *        subtags can be used to specify the dictionary variant.
  * @param path path to a directory from which dictionary files should be searched
  *        first before looking into the standard dictionary locations. If NULL, no
  *        additional search path will be used.

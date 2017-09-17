@@ -4,7 +4,7 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: libvoikko
-Description: Library for Finnish language tools
+Description: Library for language tools
 URL: http://voikko.puimula.org
 Version: @VERSION@
 Libs: -L${libdir} -lvoikko

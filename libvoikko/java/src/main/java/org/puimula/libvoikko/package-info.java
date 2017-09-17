@@ -1,5 +1,5 @@
 /**
- * Java interface to libvoikko, library of Finnish language tools.
+ * Java interface to libvoikko, library of language tools.
  * This module can be used to perform various natural language analysis
  * tasks.
  * In order to use this package you must have the native libvoikko
