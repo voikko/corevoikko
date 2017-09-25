@@ -5317,3 +5317,43 @@ h:h	Yliaste_<A> ;
 
 ?Sukija LEXICON SukijaArvaella
 ?Sukija il[Xj]l<A>[X]:el Arvailla_<A> ;
+
+! Kuten Matala, mutta astevaihtelu.
+?Sukija LEXICON NOUN SukijaMatala_s
+?Sukija [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+?Sukija [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
+?Sukija [Sg][Nm]<O>j:<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
+?Sukija [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
+?Sukija [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
+?Sukija <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija <O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
+?Sukija [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
+?Sukija ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Sukija ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Sukija ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+
+?Sukija LEXICON NOUN SukijaMatala_w
+?Sukija [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
+?Sukija [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
+?Sukija <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Sukija <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
+?Sukija ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija ?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Sukija ?Laatusana	Yliaste_<A>	;
+?Sukija ?Laatusana	Johdin_UUs_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
+
+?Sukija LEXICON NOUN SukijaVihanta
+?Sukija t:t <WC>SukijaMatala_s_<A> ;
+?Sukija n:n <WC>SukijaMatala_w_<A> ;

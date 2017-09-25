@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2016 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2017 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
 # Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
@@ -882,6 +882,8 @@ while True:
         break
     if line.find (u"[Tn4]mi@") == 0:  # 4. nimitapa (puhu+minen) ei ole teonsanan taivutusmuoto.
         continue
+    if line.find ("vihanta[X]") >= 0:
+        line = line.replace ("Emäntä_", "SukijaVihanta_")
     line = re.sub (ei_vertm, "", line)
     if line.find (ei_yks) > 0 and line.startswith ("[L"):
         if not line.startswith ("[Ln][Xp]lehdes[X]"):
