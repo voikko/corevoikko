@@ -3,6 +3,8 @@ EXTRA_DIST = pom.xml \
     src/main/java/org/puimula/libvoikko/Dictionary.java \
     src/main/java/org/puimula/libvoikko/Token.java \
     src/main/java/org/puimula/libvoikko/SentenceStartType.java \
+    src/main/java/org/puimula/libvoikko/SizeTByReference.java \
+    src/main/java/org/puimula/libvoikko/SizeT.java \
     src/main/java/org/puimula/libvoikko/SuggestionStrategy.java \
     src/main/java/org/puimula/libvoikko/VoikkoException.java \
     src/main/java/org/puimula/libvoikko/Analysis.java \
