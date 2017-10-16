@@ -1,4 +1,4 @@
-SUBDIRS = src src/tools java msvc test cs cl
+SUBDIRS = src src/tools java test cs cl
 
 EXTRA_DIST = python/libvoikko.py \
     python/libvoikkoOld.py \
