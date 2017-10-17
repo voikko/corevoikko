@@ -994,6 +994,8 @@ sousi # Kotus 55
 souti # Kotus 55
 häädin # Kotus 55
 !häälin # Kotus 55
+yllettyä # Kotus 55
+!yldettyä # Kotus 55
 !saaretaan # Kotus 57
 !saarettiin # Kotus 57
 saarretaan # Kotus 57
@@ -2102,6 +2104,8 @@ Atte
 Aten
 nukke
 nuken
+Hjerppe
+Hjerpen
 aateliton
 aatehistorioitsija
 pii

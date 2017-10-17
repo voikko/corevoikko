@@ -629,6 +629,10 @@ LEXICON NOUN Nukke
 ke:ke	<WC>Nalle_s_<A>	;
 e:e	<WC>Nalle_w_<A>	;
 
+LEXICON NOUN Hjerppe
+pe:pe	<WC>Nalle_s_<A>	;
+e:e	<WC>Nalle_w_<A>	;
+
 LEXICON NOUN Nalle_w
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
@@ -2958,12 +2962,26 @@ LEXICON Kaivaa_s
 ?Sukija <A>:<A>	SukijaTositapaVi_<A> ;
 
 LEXICON Soutaa
-d:d	Huutaa_w_<A>	;
-del[Xj]l<A>[X]:del	Katsella_w_<A>	;
-Huutaa_s_<A>	;
+d:d	Soutaa_w_<A>	;
+Soutaa_s_<A>	;
 [Xj]dell<A>[X]tel:tel	Katsella_s_<A>	;
-d:d	KertomanTekijäpääteHeikko_<A>	;
+
+LEXICON Yltää
+l:l	Soutaa_w_<A>	;
+Soutaa_s_<A>	;
+
+LEXICON Entää
+n:n	Soutaa_w_<A>	;
+Soutaa_s_<A>	;
+
+LEXICON Soutaa_s
+Huutaa_s_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
+
+LEXICON Soutaa_w
+Huutaa_w_<A>	;
+el[Xj]l<A>[X]:el	Katsella_w_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
 
 LEXICON Saartaa
 t<A>:t<A>	Johdin_nimitapa1A_<A>	;
