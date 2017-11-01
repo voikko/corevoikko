@@ -49,7 +49,7 @@ class HfstAnalyzer : public Analyzer {
 
 		HfstAnalyzer & operator = (const HfstAnalyzer & other);
 	private:
-		hfst_ol::Transducer *t;
+		hfst_ospell::Transducer *t;
 
 		HfstAnalyzer(HfstAnalyzer const & other);
 

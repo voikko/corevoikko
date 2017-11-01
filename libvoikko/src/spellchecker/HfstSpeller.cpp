@@ -39,7 +39,7 @@ using namespace std;
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
 
-using hfst_ol::ZHfstOspeller;
+using hfst_ospell::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker {
 
@@ -49,7 +49,7 @@ HfstSpeller::HfstSpeller(const string & zhfstFileName, voikko_options_t * voikko
 	try {
 		speller->read_zhfst(zhfstFileName.c_str());
 	}
-	catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+	catch (hfst_ospell::ZHfstZipReadingError& zhzre) {
 		throw setup::DictionaryException("Error reading ZHFST speller");
 	}
 }

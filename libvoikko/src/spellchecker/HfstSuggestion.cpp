@@ -41,11 +41,11 @@
 using namespace std;
 using namespace libvoikko::utils;
 
-using hfst_ol::ZHfstOspeller;
+using hfst_ospell::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-HfstSuggestion::HfstSuggestion(hfst_ol::ZHfstOspeller * speller) :
+HfstSuggestion::HfstSuggestion(hfst_ospell::ZHfstOspeller * speller) :
 	speller_(speller) { }
 
 void HfstSuggestion::generate(SuggestionStatus * s) const {
@@ -54,7 +54,7 @@ void HfstSuggestion::generate(SuggestionStatus * s) const {
 	char * wordUtf8 = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	set<wstring> allSuggs;
 	bool checkUppercasing = (voikko_casetype(s->getWord(), wlen) == CT_FIRST_UPPER);
-	hfst_ol::CorrectionQueue corrections = speller_->suggest(wordUtf8);
+	hfst_ospell::CorrectionQueue corrections = speller_->suggest(wordUtf8);
 	while (corrections.size() > 0 && !s->shouldAbort()) {
 		const char * sugUtf8 = corrections.top().first.c_str();
 		wchar_t * sugU4 = StringUtils::ucs4FromUtf8(sugUtf8, strlen(sugUtf8));

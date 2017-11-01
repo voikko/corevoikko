@@ -45,7 +45,7 @@ HfstAnalyzer::HfstAnalyzer(const string& s) {
 		return;
 	}
 	FILE *fd = fopen(s.c_str(), "rb");
-	t = new hfst_ol::Transducer(fd);
+	t = new hfst_ospell::Transducer(fd);
 
 }
 
@@ -73,10 +73,10 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word, bool fullMorphology)
 	std::copy(str.begin(), str.end(), writable);
 	writable[str.size()] = '\0';
 
-	hfst_ol::AnalysisQueue q = t->lookup(writable);
+	hfst_ospell::AnalysisQueue q = t->lookup(writable);
 
 	while(q.size() > 0) {
-		hfst_ol::StringWeightPair pair = q.top();
+		hfst_ospell::StringWeightPair pair = q.top();
 		string analysis = pair.first;
 		string tags = analysis.substr(analysis.find("+"),analysis.length()-1);
 		Analysis * a = new Analysis();

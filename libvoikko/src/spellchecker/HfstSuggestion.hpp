@@ -45,11 +45,11 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class HfstSuggestion : public SuggestionGenerator {
 	public:
-		HfstSuggestion(hfst_ol::ZHfstOspeller * speller);
+		HfstSuggestion(hfst_ospell::ZHfstOspeller * speller);
 		void generate(SuggestionStatus * s) const;
 		void terminate();
 	private:
-		hfst_ol::ZHfstOspeller * speller_;
+		hfst_ospell::ZHfstOspeller * speller_;
 };
 
 } } }

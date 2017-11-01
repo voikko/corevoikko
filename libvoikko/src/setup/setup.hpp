@@ -42,7 +42,7 @@
 #include "setup/Dictionary.hpp"
 
 // TODO proper abstraction
-namespace hfst_ol {
+namespace hfst_ospell {
 	class ZHfstOspeller;
 }
 
@@ -67,7 +67,7 @@ typedef struct {
 	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
 	hyphenator::Hyphenator * hyphenator;
 	setup::Dictionary dictionary;
-	hfst_ol::ZHfstOspeller* hfst;
+	hfst_ospell::ZHfstOspeller* hfst;
 } voikko_options_t;
 
 }
