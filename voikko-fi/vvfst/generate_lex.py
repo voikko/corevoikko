@@ -401,7 +401,7 @@ def handle_word(word):
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
 		
 		# Vowel type in derived verbs
-		if jatko in ["Heittää", "Muistaa", "Juontaa", "Hohtaa", "Murtaa", "Nousta", "Loistaa", "Jättää", "Kihistä"]:
+		if jatko in ["Heittää", "Muistaa", "Juontaa", "Hohtaa", "Murtaa", "Nousta", "Loistaa", "Jättää", "Kihistä", "Kyntää2"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alkuWithTags)
 			if jatko == "Kihistä" and vtype == voikkoutils.VOWEL_FRONT and "y" not in alku and "ä" not in alku and "ö" not in alku and "e" in alku:
 				jatko = "Helistä"
