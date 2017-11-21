@@ -19,6 +19,7 @@
 42      usage/orgname                            -               Ala: organisaatiot ja tuotemerkit
 64      usage/nature                             -               Ala: biologia, maantiede ja geologia
 65      usage/human                              -               Ala: ihmistieteet
+66      usage/private_stat_fi                    -               Organisaatio: stat.fi
 7       compounding/ei_ys                        ei_ys           Ei sallittu yhdyssanan osana
 9       compounding/ei_ysj                       ei_ysj          Ei sallittu yhdyssanan jälkiosana
 8       compounding/ei_ysa                       ei_ysa          Ei sallitti yhdyssanan alkuosana
