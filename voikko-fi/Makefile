@@ -87,7 +87,7 @@ $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(SRCDIST))): voikko-fi-$(SM_VERS
 
 # Vocabulary update
 update-vocabulary:
-	wget http://joukahainen.puimula.org/sanastot/joukahainen.xml.gz -O - \
+	wget https://joukahainen.puimula.org/sanastot/joukahainen.xml.gz -O - \
 	| gunzip > vocabulary/joukahainen.xml
 
 
@@ -96,7 +96,7 @@ vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/autocorr.vfst $(VVFST_BUILDD
 $(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
-		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
+		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: https://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) vvfst/generate_lex.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 	touch $@
 
