@@ -14,12 +14,18 @@ and grammar checking. Special support is also included for text
 indexer Sukija. This support includes support for common spelling
 mistakes, old spellings, old inflection types and old or rare words.
 
+Requirements
+------------
+
+Building voikko-fi from this source code requires foma, libvoikko,
+python (version 3 or later) and GNU make. Optionally to build
+dictionary that can be used in web browsers with js-libvoikko
+Emscripten SDK is required.
 
 Build and installation
 ----------------------
 
-Building voikko-fi for from this package requires foma, libvoikko, python
-and make. No configuration is required: to build the code for Voikko,
+No configuration is required: to build the code for Voikko,
 you only need to run
 
     make vvfst
@@ -57,6 +63,9 @@ Supported Make targets
   /usr/lib/voikko
 - vvfst-install-sukija DESTDIR=/usr/lib/voikko  
   Like vvfst-install but installs the binary files build by command vvfst-sukija.
+- vvfst-install-js-preload-file DESTDIR=/usr/lib/voikko
+  Like vvfst-install but additionally converts the dictionary to Emscripten
+  compatible preload file that can be used with js-libvoikko.
 - dist-gzip  
   Builds the full source package.
 - clean  

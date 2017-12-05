@@ -143,6 +143,11 @@ vvfst-install: vvfst
 	install -m 755 -d $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/5/mor-$(VOIKKO_VARIANT)
 
+vvfst-install-js-preload-file: vvfst-install
+ifndef EMSCRIPTEN
+	$(error EMSCRIPTEN is undefined, please source emsdk_set_env.sh first)
+endif
+	cd $(DESTDIR) && python $(EMSCRIPTEN)/tools/file_packager.py jsdict-$(VOIKKO_VARIANT).data --preload 5 --js-output=jsdict-$(VOIKKO_VARIANT).js
 
 # Rules for creating vvfst morphology for Sukija indexer. See file
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
