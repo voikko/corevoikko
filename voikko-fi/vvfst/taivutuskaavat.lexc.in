@@ -5255,9 +5255,9 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija k:k KertomanTekijäpääteVahva_<A> ;
 
 ?Sukija LEXICON SukijaNuolaista
-?Sukija s:s   Nuolaista_w_<A> ;
-?Sukija s:s   Nuolaista_s_<A> ;
-?Sukija s:s   Johdin_U_arvelu_<A> ;
+?Sukija is:s   Nuolaista_w_<A> ;
+?Sukija is:s   Nuolaista_s_<A> ;
+?Sukija is:s   Johdin_U_arvelu_<A> ;
 
 ?Sukija LEXICON NOUN SukijaKorkeaKorkeeKorkia
 ?Sukija [Sg][Nm]e<O>id:e<O>id   <WC>MonikonGenetiiviEnJatko_<A> ;

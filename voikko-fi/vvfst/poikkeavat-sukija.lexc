@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2017 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2018 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -608,7 +608,7 @@ LEXICON SukijaPoikkeavat_em
 
 
 LEXICON SukijaPoikkeavat_ep
-[Lep][Xp]Fär=saari[X]fäär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
+[Lep][Xp]Fär=saari[X]fär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
 [Lep][Xp]Isokylä[X][Sn][Ny]iso[Bm]kylä:isokylä	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokylä[X][Sg][Ny]ison[Bm]kylän:isonkylän	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokylä[X][Sp][Ny]isoa[Bm]kylää:isoakylää	PaikannimiLiOlV_ä	;
@@ -677,7 +677,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Vanhakirkko[X]vanha[Bm]kirkko:vanhakirkko Johdin_lAinen_a ;
 
 LEXICON SukijaPoikkeavat_l
-[Ll][Xp]aikainen[X]aikahi:aikahi  LaatusanaNainenInen_a ;
+[Ll][Xp]aikainen[X]aikai:aikahi  LaatusanaNainenInen_a ;
 [Ll][Xp]esimuistoinen[X]esi[Bm]muistoi:esimuistoi  LaatusanaNainenInen_a ;
 [Ll][Xp]esivalintainen[X]esi[Bm]valintai:esivalintai  LaatusanaNainenInen_a ;
 [Ll][Xp]etäkäyttöinen[X]etä[Bm]käyttöi:etäkäyttöi     LaatusanaNainenInen_ä ;
@@ -731,14 +731,14 @@ LEXICON SukijaPoikkeavat_l
 
 LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
-[Lnl][Xp]isonlainen[X]isollai:isollai NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]kaikenlainen[X]kaikel[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]isonlainen[X]ison[Bm]lai:isollai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]radikaalinen[X]radikali:radikali NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]ranskalainen[X]franska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]roomalainen[X]roma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]suurenmoinen[X]suurem[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]ranskalainen[X]ranska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]roomalainen[X]rooma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]suurenmoinen[X]suuren[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
 
 
 LEXICON SukijaPoikkeavat_t
@@ -759,3 +759,5 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]muistiin=lukea[X]muistiin[Bm]lu:muistiinlu Hakea_a ;
 [Lt][Xp]muistiin=palauttaa[X]muistiin[Bm]palaut:muistiinpalaut Alittaa_a ;
 [Lt][Xp]puoleta[X]puole:puole Aleta_a ;
+[Lt][Xp]evakuoida[X]evakuo:evako Kanavoida_a ;
+[Lt][Xp]himottaa[X]himo@P.YKSITEKIJÄINEN.ON@:himoi@P.YKSITEKIJÄINEN.ON@ Ammottaa_a ;
