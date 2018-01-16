@@ -97,13 +97,6 @@ def replace (s, old, new):
     return u
 
 
-def replaceX (s, old, new):
-    if new.endswith("n"):
-        return s.replace (old + "[X]", new + "i[X]")
-    else:
-        return s.replace (old + "[X]", new + "[X]")
-
-
 def replace_and_write (line, string1, string2):
     s = replace (line, string1, string2)
     outfile.write (s)
@@ -120,8 +113,6 @@ re_oitella2 = makeRe (u"Lt", u".Köitellä")
 
 re_otella1 = makeRe (u"Lt", u".Kotella")
 re_otella2 = makeRe (u"Lt", u".Kötellä")
-
-re_himottaa = makeRe (u"Lt", u"himottaa")
 
 re_isoida = makeRe (u"Lt", u"isoida") # Organisoida => organiseerata.
 
@@ -145,9 +136,6 @@ re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"([^a]i|k|p)tio") # Traditio, funktio, mutta ei aitio.
 
 spelling_pattern_list = [
-
-  (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
-
   (re_tautua1, u"tau", u"tau", u"Kaatua", u"SukijaAntautua"),
   (re_tautua2, u"täy", u"täy", u"Kaatua", u"SukijaAntautua"),
 
@@ -228,21 +216,12 @@ def write_paahtaa (line, word):
 def write_lahti (line, word):
     write_word (line, word, u"SukijaLahti")
 
-def write_8_9 (line):
-    n = line.index (u"[X]")+3
-    s = line[n:]
-    s = s.replace (u"kahdeks", u"kaheks")
-    s = s.replace (u"yhdeks", u"yheks")
-    outfile.write (u"%s%s" % (line[0:n], s))
-
 
 def generate_from_pattern_1 (line, pattern_list):
     for x in pattern_list:
         if x[0].match(line):
             if (len(x) == 2):
                 outfile.write (line.replace (x[1], u"Sukija" + x[1]))
-            elif (len(x) == 3) or (len(x) == 4 and not x[3].match(line)):
-                replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
                 replace_and_write (line.replace(x[3],x[4]), x[1], x[2])
             elif (len(x) == 10 and not x[9].match(line)):
@@ -253,18 +232,12 @@ def generate_from_pattern_1 (line, pattern_list):
 def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
     if pattern.match (line):
         for x in p1:
-#            s = replaceX (line, string, x)
-#            replace_and_write (s, string, x)
             replace_and_write (line, string, x)
         for x in p2:
-#            s = replaceX (line, string, x)
-#            replace_and_write (s.replace(s1,s2), string, x)
             replace_and_write (line.replace(s1,s2), string, x)
 
 
 word_list = [
-    (u"stationaarinen",  ((u"stationaari", u"stationääri", u"LaatusanaNainenInen_a ", u"LaatusanaNainenInen_ä"),)),
-
     (u"tällainen",       ((u"tällai",      u"tällai", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
                           (u"tällai",      u"tälläi", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_aä"))),
 
