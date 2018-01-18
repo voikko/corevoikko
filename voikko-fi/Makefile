@@ -154,12 +154,12 @@ endif
 #
 vvfst-sukija: VOIKKO_VARIANT=sukija
 vvfst-sukija: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
-vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,science --sukija
+vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,private_stat_fi,science --sukija
 vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/autocorr.vfst  $(VVFST_BUILDDIR)/index.txt
 
 vvfst-sukija-ys: VOIKKO_VARIANT=sukija
 vvfst-sukija-ys: VOIKKO_DESCRIPTION=suomi (perussanasto) Sukija
-vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,science --sukija --sukija-ys
+vvfst-sukija-ys: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=education,human,it,medicine,nature,orgname,private_stat_fi,science --sukija --sukija-ys
 vvfst-sukija-ys: $(VVFST_BUILDDIR)/mor-sukija.vfst  $(VVFST_BUILDDIR)/index.txt
 
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/poikkeavat-sukija.lexc
