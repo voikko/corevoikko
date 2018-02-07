@@ -1,4 +1,4 @@
-! Voikko-fi, suomen kielen muoto-opin kuvaus.
++! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
 ! Tekijänoikeus © 2006 - 2018 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
@@ -234,6 +234,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]karahvi[X]karahv:karafiin NimisanaRisti_aä ;
 [Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
