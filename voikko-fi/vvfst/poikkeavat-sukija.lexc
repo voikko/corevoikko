@@ -234,7 +234,13 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
+[Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
+[Ln][Xp]karafiini[X]karafiin:karahvin NimisanaRisti_aä ;
+[Ln][Xp]karahvi[X]karahv:karahviin NimisanaRisti_aä ;
+[Ln][Xp]karahvi[X]karahv:karahvin NimisanaRisti_aä ;
 [Ln][Xp]karahvi[X]karahv:karafiin NimisanaRisti_aä ;
+[Ln][Xp]karahvi[X]karahv:karafin NimisanaRisti_aä ;
 [Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
@@ -255,6 +261,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
+[Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
+[Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationaarisyy NimisanaKalleus_aä ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationäärisyy NimisanaKalleus_aä ;
