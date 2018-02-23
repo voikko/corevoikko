@@ -259,6 +259,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:oopiumso NimisanaJuhta_a ;
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:ooppiumso NimisanaJuhta_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
+[Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
@@ -721,7 +723,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]tuollainen[X]tuollai:tollai LaatusanaNainenInen_a ;
 [Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]vaivalloinen[X]vaivalloi:vaivaloi LaatusanaNainenInen_a ;
-[Ll][Xp]yhdenlainen[X]yhdenlai:yhdellai LaatusanaNainenInen_a ;
+[Ll][Xp]yhdenlainen[X]yhden[Bm]lai:yhdellai LaatusanaNainenInen_a ;
 [Ll][Xp]kelta=valkoinen[X]kelta[Bm]valkoi:keltavalkoi LaatusanaNainenInen_a ;
 [Ll][Xp]kelta=vartinen[X]kelta[Bm]varti:keltavarti LaatusanaNainenInen_a ;
 [Ll][Xp]kelta=verinen[X]kelta[Bm]veri:keltaveri LaatusanaNainenInen_ä ;
@@ -748,6 +750,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]ranskalainen[X]ranska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]roomalainen[X]rooma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]saman=lainen[X]saman[Bm]lai:samallai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]stationaari[X]stationaar:stationaar NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaari[X]stationaar:stationäär NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaarinen[X]stationaari:stationääri NimiLaatusanaNainenInen_aä ;
