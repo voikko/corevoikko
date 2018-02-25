@@ -215,6 +215,11 @@ class LibvoikkoTest(unittest.TestCase):
         self.assertEqual(u"kuor-ma-au-to", self.voikko.hyphenate(u"kuorma-auto"))
         self.assertEqual(u"vaa-an", self.voikko.hyphenate(u"vaa'an"))
 
+    def testHyphenateWithCustomSeparator(self):
+        self.assertEqual(u"kis&shy;sa", self.voikko.hyphenate(u"kissa", u"&shy;"))
+        self.assertEqual(u"kuor&shy;ma-au&shy;to", self.voikko.hyphenate(u"kuorma-auto", u"&shy;"))
+        self.assertEqual(u"vaa&shy;an", self.voikko.hyphenate(u"vaa'an", u"&shy;"))
+
     def testSetIgnoreDot(self):
         self.voikko.setIgnoreDot(False)
         self.failIf(self.voikko.spell(u"kissa."))

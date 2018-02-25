@@ -762,18 +762,21 @@ class Voikko(object):
         self.__lib.voikkoFreeCstr(cHyphenationPattern)
         return unicode_str(hyphenationPattern, 'ASCII')
 
-    def hyphenate(self, word):
-        """Return the given word in fully hyphenated form."""
+    def hyphenate(self, word, separator = "-"):
+        """Return the given word in fully hyphenated form using the specified syllable separator (default is hyphen)"""
         pattern = self.getHyphenationPattern(word)
         hyphenated = ""
         for i in range(len(pattern)):
             patternC = pattern[i]
-            if patternC == ' ':
+            if patternC == " ":
                 hyphenated = hyphenated + word[i]
-            elif patternC == '-':
-                hyphenated = hyphenated + "-" + word[i]
-            elif patternC == '=':
-                hyphenated = hyphenated + "-"
+            elif patternC == "-":
+                hyphenated = hyphenated + separator + word[i]
+            elif patternC == "=":
+                if word[i] == "-":
+                    hyphenated = hyphenated + "-"
+                else:
+                    hyphenated = hyphenated + separator
         return hyphenated
 
     def setIgnoreDot(self, value):
