@@ -28,24 +28,25 @@
 
 package org.puimula.libvoikko;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+
 /**
  * Test the same stuff as VoikkoTest but with jna.encoding set to something else than UTF-8 
  */
 public class VoikkoJnaLatinTest extends VoikkoTest {
 
     private static final String JNA_ENCODING = "jna.encoding";
-    private String originalJnaEncoding;
+    private static String originalJnaEncoding;
     
-    @Override
-    public void setUp() {
+    @BeforeAll
+    public static void setUpClass() {
         originalJnaEncoding = System.getProperty(JNA_ENCODING);
         System.setProperty(JNA_ENCODING, "iso-8859-1");
-        super.setUp();
     }
 
-    @Override
-    public void tearDown() {
-        super.tearDown();
+    @AfterAll
+    public static void tearDownClass() {
         if (originalJnaEncoding == null) {
             System.clearProperty(JNA_ENCODING);
         } else {

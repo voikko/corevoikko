@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010 - 2011
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2018
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -28,17 +28,17 @@
 
 package org.puimula.libvoikko;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class VoikkoTest {
 
@@ -46,12 +46,12 @@ public class VoikkoTest {
     private static final int DEPRECATED_MAX_WORD_CHARS = 255;
     private Voikko voikko;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         voikko = new Voikko("fi");
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         voikko.terminate();
         // Do garbage collection after every test method. This will make errors
@@ -116,7 +116,7 @@ public class VoikkoTest {
         List<Dictionary> dicts = Voikko.listDicts();
         assertTrue(dicts.size() > 0);
         Dictionary standard = dicts.get(0);
-        assertEquals("Standard dictionary must be the default in test environment.", "standard", standard.getVariant());
+        assertEquals("standard", standard.getVariant(), "Standard dictionary must be the default in test environment.");
     }
     
     //@Test TODO: should work, write test
@@ -205,7 +205,6 @@ public class VoikkoTest {
         assertEquals(10, error.getStartPos());
         assertEquals(11, error.getErrorLen());
         assertEquals(Arrays.asList("jotenkuten"), error.getSuggestions());
-        int code = error.getErrorCode();
         assertEquals("Virheellinen kirjoitusasu", error.getShortDescription());
     }
     
