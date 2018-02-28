@@ -31,6 +31,7 @@
 #include "hyphenator/Hyphenator.hpp"
 #include "porting.h"
 #include <cstdlib>
+#include <sstream>
 
 namespace libvoikko { namespace hyphenator {
 
@@ -62,6 +63,59 @@ VOIKKOEXPORT char * voikkoHyphenateCstr(voikko_options_t * options, const char *
 	char * result = voikkoHyphenateUcs4(options, word_ucs4);
 	delete[] word_ucs4;
 	return result;
+}
+
+VOIKKOEXPORT char * voikkoInsertHyphensCstr(voikko_options_t * options, const char * word,
+                                            const char * hyphen, int allowContextChanges) {
+	if (!word) {
+		return nullptr;
+	}
+
+	// For now we are intentionally omitting UCS4 variant of this function and thus
+	// we perform the necessary initial conversions here.
+	size_t len = strlen(word);
+	if (len > LIBVOIKKO_MAX_WORD_CHARS) {
+		return nullptr;
+	}
+	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
+	if (!word_ucs4) {
+		return nullptr;
+	}
+	wchar_t * hyphen_ucs4 = utils::StringUtils::ucs4FromUtf8(hyphen, strlen(hyphen));
+	if (!hyphen_ucs4) {
+		delete[] word_ucs4;
+		return nullptr;
+	}
+
+	// Create the hyphenated form
+	char * hyphenationPattern = voikkoHyphenateUcs4(options, word_ucs4);
+	if (!hyphenationPattern) {
+		return nullptr;
+	}
+	std::wstringstream hyphenated;
+	size_t patternLen = strlen(hyphenationPattern);
+	for (size_t i = 0; i < patternLen; i++) {
+		char patternC = hyphenationPattern[i];
+		if (patternC == ' ') {
+			hyphenated << word_ucs4[i];
+		}
+		else if (patternC == '-') {
+			hyphenated << hyphen_ucs4 << word_ucs4[i];
+		}
+		else if (patternC == '=') {
+			if (word_ucs4[i] == L'-') {
+				hyphenated << L'-';
+			}
+			else {
+				hyphenated << hyphen_ucs4;
+			}
+		}
+	}
+
+	// Clean up and return the result
+	delete[] hyphen_ucs4;
+	delete[] word_ucs4;
+	return utils::StringUtils::utf8FromUcs4(hyphenated.str().c_str());
 }
 
 VOIKKOEXPORT void voikkoFreeCstr(char * cstr) {

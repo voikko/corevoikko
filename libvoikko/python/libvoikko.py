@@ -343,6 +343,9 @@ class VoikkoLibrary(CDLL):
         self.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
         self.voikkoHyphenateUcs4.restype = POINTER(c_char)
 
+        self.voikkoInsertHyphensCstr.argtypes = [c_void_p, c_char_p, c_char_p, c_int]
+        self.voikkoInsertHyphensCstr.restype = POINTER(c_char)
+
         self.voikkoFreeCstr.argtypes = [POINTER(c_char)]
         self.voikkoFreeCstr.restype = None
 
@@ -764,20 +767,12 @@ class Voikko(object):
 
     def hyphenate(self, word, separator = "-"):
         """Return the given word in fully hyphenated form using the specified syllable separator (default is hyphen)"""
-        pattern = self.getHyphenationPattern(word)
-        hyphenated = ""
-        for i in range(len(pattern)):
-            patternC = pattern[i]
-            if patternC == " ":
-                hyphenated = hyphenated + word[i]
-            elif patternC == "-":
-                hyphenated = hyphenated + separator + word[i]
-            elif patternC == "=":
-                if word[i] == "-":
-                    hyphenated = hyphenated + "-"
-                else:
-                    hyphenated = hyphenated + separator
-        return hyphenated
+        if not self.__isValidInput(word) or not self.__isValidInput(separator):
+            return word
+        cHyphenated = self.__lib.voikkoInsertHyphensCstr(self.__handle, word.encode("UTF-8"), separator.encode("UTF-8"), 0)
+        hyphenated = string_at(cHyphenated)
+        self.__lib.voikkoFreeCstr(cHyphenated)
+        return unicode_str(hyphenated, "UTF-8")
 
     def setIgnoreDot(self, value):
         """Ignore dot at the end of the word (needed for use in some word processors).

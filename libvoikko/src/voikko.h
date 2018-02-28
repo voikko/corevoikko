@@ -158,6 +158,19 @@ char * voikkoHyphenateCstr(struct VoikkoHandle * handle, const char * word);
 char * voikkoHyphenateUcs4(struct VoikkoHandle * handle, const wchar_t * word);
 
 /**
+ * Hyphenates the given word in UTF-8 encoding.
+ * @param handle voikko instance
+ * @param word word to hyphenate
+ * @param hyphen character string to insert at hyphenation positions
+ * @param allowContextChanges boolean parameter that specifies wheter hyphens
+ *        may be inserted even if they alter the word in unhyphenated form.
+ * @return null terminated character string where hyphens are inserted in all
+ *         hyphenation points
+ */
+char * voikkoInsertHyphensCstr(struct VoikkoHandle * handle, const char * word,
+                               const char * hyphen, int allowContextChanges);
+
+/**
  * Frees the memory allocated for spelling suggestions.
  * @param suggest_result spelling suggestions
  */
