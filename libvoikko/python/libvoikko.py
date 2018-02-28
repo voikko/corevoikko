@@ -765,11 +765,12 @@ class Voikko(object):
         self.__lib.voikkoFreeCstr(cHyphenationPattern)
         return unicode_str(hyphenationPattern, 'ASCII')
 
-    def hyphenate(self, word, separator = "-"):
+    def hyphenate(self, word, separator = "-", allowContextChanges = True):
         """Return the given word in fully hyphenated form using the specified syllable separator (default is hyphen)"""
         if not self.__isValidInput(word) or not self.__isValidInput(separator):
             return word
-        cHyphenated = self.__lib.voikkoInsertHyphensCstr(self.__handle, word.encode("UTF-8"), separator.encode("UTF-8"), 0)
+        cHyphenated = self.__lib.voikkoInsertHyphensCstr(
+            self.__handle, word.encode("UTF-8"), separator.encode("UTF-8"), _boolToInt(allowContextChanges))
         hyphenated = string_at(cHyphenated)
         self.__lib.voikkoFreeCstr(cHyphenated)
         return unicode_str(hyphenated, "UTF-8")

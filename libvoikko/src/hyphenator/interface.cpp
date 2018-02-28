@@ -96,11 +96,11 @@ VOIKKOEXPORT char * voikkoInsertHyphensCstr(voikko_options_t * options, const ch
 	size_t patternLen = strlen(hyphenationPattern);
 	for (size_t i = 0; i < patternLen; i++) {
 		char patternC = hyphenationPattern[i];
-		if (patternC == ' ') {
-			hyphenated << word_ucs4[i];
-		}
-		else if (patternC == '-') {
+		if (patternC == '-') {
 			hyphenated << hyphen_ucs4 << word_ucs4[i];
+		}
+		else if (patternC == ' ' || !allowContextChanges) {
+			hyphenated << word_ucs4[i];
 		}
 		else if (patternC == '=') {
 			if (word_ucs4[i] == L'-') {
