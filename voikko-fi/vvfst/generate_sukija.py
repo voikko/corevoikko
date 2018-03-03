@@ -493,7 +493,6 @@ ei_yks = "@P.EI_YKS.ON@"
 
 sukija_additions = {
     u"LEXICON Asemosana\n":     u"SukijaAsemosana ;\n",
-    u"LEXICON Sanasto\n":       u"SukijaSanasto;\n",
     u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
     u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
     u"LEXICON Sanasto_l\n":     u"SukijaPoikkeavat_l ;\n",

@@ -178,13 +178,12 @@ LEXICON SukijaAsemosanaMinä
 LEXICON SukijaAsemosanaNämä
 [Sak][Ny]mät:mät Liitesana_ä ;
 
-
 LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 
-
-LEXICON SukijaSanasto
+LEXICON SukijaPoikkeavat_n
+[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
 [Ln][Xp]asu=analyysi[X]asu[Bm]analyys:asuanalyys NimisanaRisti_aä ;
@@ -200,21 +199,8 @@ LEXICON SukijaSanasto
 [Ln][Xp]asu=valikoima[X]asu[Bm]valikoim:asuvalikoim NimisanaAsema_a ;
 [Ln][Xp]asu=valinta[X]asu[Bm]valin:asuvalin NimisanaKanta_a ;
 [Ln][Xp]asu=varasto[X]asu[Bm]varasto:asuvarasto NimisanaArvelu_a ;
-[Ln][Xp]banni[X]bann:bann NimisanaRisti_a ;
-[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
-[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
-[Ln][Xp]ioota[X]ioot:iot NimisanaKala_a ;
-[Ln][Xp]kiiru[X]kiiru:kiiruu Loppu ;
-[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden   Loppu ;
-[Ln][Xp]neiti[X]nei[Sg][Nm]tten:neitten Loppu ;
-[Ln][Xp]peitsi[X]pei[Sp][Ny]tseä:peitseä NimisanaLiOlV_ä ;
-
-
-LEXICON SukijaPoikkeavat_n
 [Ln][Xp]aurinko[X]aurinko:aurinko NimisanaSukijaAurinko_a ;
-[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
+[Ln][Xp]banni[X]bann:bann NimisanaRisti_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
@@ -231,8 +217,14 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
+[Ln][Xp]harppuuna[X]harppuun:harppun NimisanaPeruna_a ;
+[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
+[Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
+[Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
@@ -242,9 +234,11 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]karahvi[X]karahv:karafiin NimisanaRisti_aä ;
 [Ln][Xp]karahvi[X]karahv:karafin NimisanaRisti_aä ;
 [Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
+[Ln][Xp]kiiru[X]kiiru:kiiruu Loppu ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
+[Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
 [Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
@@ -252,6 +246,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
 [Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
+[Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
+[Ln][Xp]neiti[X]nei[Sg][Nm]tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neitten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Loppu ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]oopiumi[X]oopium:ooppium NimisanaRisti_a ;
 [Ln][Xp]oopiumi=unikko[X]oopiumi[Bm]unik:oopiumunik NimisanaLaatikko_a ;
@@ -259,6 +255,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:oopiumso NimisanaJuhta_a ;
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:ooppiumso NimisanaJuhta_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]peitsi[X]pei[Sp][Ny]tseä:peitseä NimisanaLiOlV_ä ;
 [Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
