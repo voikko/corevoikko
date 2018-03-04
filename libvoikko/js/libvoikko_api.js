@@ -1,7 +1,4 @@
 var PTR_SIZE = 4;
-var c_malloc = Module["_malloc"];
-var c_free = Module["_free"];
-var cwrap = Module["cwrap"];
 var c_init = cwrap('voikkoInit', 'number', ['number', 'string', 'string']);
 var c_terminate = cwrap('voikkoTerminate', null, ['number']);
 var c_setBooleanOption = cwrap('voikkoSetBooleanOption', 'number', ['number', 'number', 'number']);
@@ -28,7 +25,7 @@ var c_morAnalysisValueCstr = cwrap('voikko_mor_analysis_value_cstr', 'number', [
 var c_freeMorAnalysisValueCstr = cwrap('voikko_free_mor_analysis_value_cstr', null, ['number']);
 
 var mallocPtr = function() {
-	return c_malloc(PTR_SIZE);
+	return _malloc(PTR_SIZE);
 };
 
 var isValidInput = function(word) {
@@ -47,17 +44,17 @@ Module["init"] = function(lang, path) {
 	if (!handle) {
 		var errorStrPtr = getValue(errorPtr, "i32*");
 		var errorStr = UTF8ToString(errorStrPtr);
-		c_free(errorPtr);
+		_free(errorPtr);
 		throw errorStr;
 	}
-	c_free(errorPtr);
+	_free(errorPtr);
 	
 	var tokenTypes = ["NONE", "WORD", "PUNCTUATION", "WHITESPACE", "UNKNOWN"];
 	var sentenceTypes = ["NONE", "NO_START", "PROBABLE", "POSSIBLE"];
 	var tokensNonNull = function(text) {
 		var result = [];
 		var textLengthUtf8 = lengthBytesUTF8(text);
-		var textBytes = c_malloc(textLengthUtf8 + 1);
+		var textBytes = _malloc(textLengthUtf8 + 1);
 		stringToUTF8(text, textBytes, textLengthUtf8 + 1);
 		var bytesStart = 0;
 		var textStart = 0;
@@ -75,8 +72,8 @@ Module["init"] = function(lang, path) {
 			bytesStart += tokenBytes;
 			bytesLen -= tokenBytes;
 		}
-		c_free(tokenLenByRef);
-		c_free(textBytes);
+		_free(tokenLenByRef);
+		_free(textBytes);
 		return result;
 	}
 	
@@ -237,7 +234,7 @@ Module["init"] = function(lang, path) {
 				}
 				analysisList.push(analysis);
 				cAnalysisListPtr += PTR_SIZE;
-				var cAnalysis = getValue(cAnalysisListPtr, "i32*");
+				cAnalysis = getValue(cAnalysisListPtr, "i32*");
 			}
 			c_freeMorAnalysis(cAnalysisList);
 			return analysisList;
@@ -264,7 +261,7 @@ Module["init"] = function(lang, path) {
 				return result;
 			}
 			var textLen = lengthBytesUTF8(text);
-			var textBytes = c_malloc(textLen + 1);
+			var textBytes = _malloc(textLen + 1);
 			var textBytesPtr = textBytes;
 			stringToUTF8(text, textBytes, textLen + 1);
 			var sentenceLenByRef = mallocPtr();
@@ -279,8 +276,8 @@ Module["init"] = function(lang, path) {
 				textBytesPtr += sentenceLenBytes;
 				textLen -= sentenceLenBytes;
 			}
-			c_free(sentenceLenByRef);
-			c_free(textBytes);
+			_free(sentenceLenByRef);
+			_free(textBytes);
 			return result;
 		},
 		
