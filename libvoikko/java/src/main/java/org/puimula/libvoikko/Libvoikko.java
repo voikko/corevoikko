@@ -106,6 +106,8 @@ interface Libvoikko extends Library {
 
     public abstract ByteArray voikkoHyphenateCstr(VoikkoHandle handle, byte[] word);
     
+    public abstract ByteArray voikkoInsertHyphensCstr(VoikkoHandle handle, byte[] word, byte[] separator, int allowContextChanges);
+
     public abstract void voikkoFreeCstr(ByteArray cstr);
 
     public abstract int voikkoSetBooleanOption(VoikkoHandle handle, int option, int value);

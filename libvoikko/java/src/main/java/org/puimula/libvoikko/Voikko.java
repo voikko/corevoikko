@@ -415,24 +415,34 @@ public class Voikko {
     }
 
     /**
+     * @deprecated Use the function with explicit separator instead
      * @param word
      * @return the given word in fully hyphenated form.
      */
     public String hyphenate(String word) {
-        String pattern = getHyphenationPattern(word);
-        StringBuilder hyphenated = new StringBuilder();
-        for (int i = 0; i < pattern.length(); i++) {
-            char patternC = pattern.charAt(i);
-            if (patternC == ' ') {
-                hyphenated.append(word.charAt(i));
-            } else if (patternC == '-') {
-                hyphenated.append('-');
-                hyphenated.append(word.charAt(i));
-            } else if (patternC == '=') {
-                hyphenated.append('-');
-            }
+        return hyphenate(word, "-", true);
+    }
+
+    /**
+     * A convenience function that uses getHyphenationPattern and returns the word in
+     * hyphenated form. For example, in order to insert soft hyphens for automatic hyphenation
+     * in HTML text use hyphenate(word, "&shy;", false)
+     * @param word The word to be hypnenated
+     * @param separtor The separator to be inserted at hyphenation point
+     * @param allowContextChanges Whether to allow hyphenation at points where inserting
+     *        the hyphen will lead to other changes in the word
+     * @return the given word in fully hyphenated form.
+     */
+    public String hyphenate(String word, String separator, boolean allowContextChanges) {
+        requireValidHandle();
+        if (!isValidInput(word) || !isValidInput(separator)) {
+            return word;
         }
-        return hyphenated.toString();
+        ByteArray cHyphenated = getLib().voikkoInsertHyphensCstr(
+                handle, s2n(word), s2n(separator), boolToInt(allowContextChanges));
+        String hyphenated = cHyphenated.toString();
+        getLib().voikkoFreeCstr(cHyphenated);
+        return hyphenated;
     }
 
     private static int boolToInt(boolean value) {

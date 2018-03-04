@@ -276,6 +276,14 @@ public class VoikkoTest {
     }
     
     @Test
+    public void testHyphenateWithCustomSeparator() {
+        assertEquals("kis&shy;sa", voikko.hyphenate("kissa", "&shy;", true));
+        assertEquals("kuor&shy;ma-au&shy;to", voikko.hyphenate("kuorma-auto", "&shy;", true));
+        assertEquals("vaa&shy;an", voikko.hyphenate("vaa'an", "&shy;", true));
+        assertEquals("vaa'an", voikko.hyphenate("vaa'an", "&shy;", false));
+    }
+
+    @Test
     public void setIgnoreDot() {
         voikko.setIgnoreDot(false);
         assertFalse(voikko.spell("kissa."));
@@ -377,25 +385,25 @@ public class VoikkoTest {
     @Test
     public void setNoUglyHyphenation() {
         voikko.setNoUglyHyphenation(false);
-        assertEquals("i-va", voikko.hyphenate("iva"));
+        assertEquals("i-va", voikko.hyphenate("iva", "-", true));
         voikko.setNoUglyHyphenation(true);
-        assertEquals("iva", voikko.hyphenate("iva"));
+        assertEquals("iva", voikko.hyphenate("iva", "-", true));
     }
     
     @Test
     public void setHyphenateUnknownWordsWorks() {
         voikko.setHyphenateUnknownWords(false);
-        assertEquals("kirjutepo", voikko.hyphenate("kirjutepo"));
+        assertEquals("kirjutepo", voikko.hyphenate("kirjutepo", "-", true));
         voikko.setHyphenateUnknownWords(true);
-        assertEquals("kir-ju-te-po", voikko.hyphenate("kirjutepo"));
+        assertEquals("kir-ju-te-po", voikko.hyphenate("kirjutepo", "-", true));
     }
     
     @Test
     public void setMinHyphenatedWordLength() {
         voikko.setMinHyphenatedWordLength(6);
-        assertEquals("koira", voikko.hyphenate("koira"));
+        assertEquals("koira", voikko.hyphenate("koira", "-", true));
         voikko.setMinHyphenatedWordLength(2);
-        assertEquals("koi-ra", voikko.hyphenate("koira"));
+        assertEquals("koi-ra", voikko.hyphenate("koira", "-", true));
     }
     
     @Test
@@ -493,7 +501,7 @@ public class VoikkoTest {
     public void embeddedNullsAreNotAccepted() {
         assertFalse(voikko.spell("kissa\0asdasd"));
         assertTrue(voikko.suggest("kisssa\0koira").isEmpty());
-        assertEquals("kissa\0koira", voikko.hyphenate("kissa\0koira"));
+        assertEquals("kissa\0koira", voikko.hyphenate("kissa\0koira", "-", true));
         assertEquals(0, voikko.grammarErrors("kissa\0koira", "fi").size());
         assertEquals(0, voikko.analyze("kissa\0koira").size());
     }
