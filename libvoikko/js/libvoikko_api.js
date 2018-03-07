@@ -6,6 +6,7 @@ var c_setIntegerOption = cwrap('voikkoSetIntegerOption', 'number', ['number', 'n
 var c_spellCstr = cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
 var c_hyphenateCstr = cwrap('voikkoHyphenateCstr', 'number', ['number', 'string']);
+var c_insertHyphensCstr = cwrap('voikkoInsertHyphensCstr', 'number', ['number', 'string', 'string', 'number']);
 var c_freeCstrArray = cwrap('voikkoFreeCstrArray', null, ['number']);
 var c_freeCstr = cwrap('voikkoFreeCstr', null, ['number']);
 var c_nextTokenCstr = cwrap('voikkoNextTokenCstr', 'number', ['number', 'number', 'number', 'number']);
@@ -283,20 +284,20 @@ Module["init"] = function(lang, path) {
 		
 		"getHyphenationPattern": getHyphenationPattern,
 		
-		"hyphenate": function(word) {
-			var pattern = getHyphenationPattern(word);
-			var hyphenated = "";
-			for (var i = 0; i < pattern.length; i++) {
-				var patternC = pattern.charAt(i);
-				if (patternC == ' ') {
-					hyphenated += word.charAt(i);
-				} else if (patternC == '-') {
-					hyphenated += '-';
-					hyphenated += word.charAt(i);
-				} else if (patternC == '=') {
-					hyphenated += '-';
-				}
+		"hyphenate": function(word, separator, allowContextChanges) {
+			if (separator === undefined) {
+				separator = "-";
 			}
+			if (allowContextChanges === undefined) {
+				allowContextChanges = true;
+			}
+			requireValidHandle();
+			if (!isValidInput(word) || !isValidInput(separator)) {
+				return word;
+			}
+			var cHyphenated = c_insertHyphensCstr(handle, word, separator, boolToInt(allowContextChanges));
+			var hyphenated = UTF8ToString(cHyphenated);
+			c_freeCstr(cHyphenated);
 			return hyphenated;
 		},
 		

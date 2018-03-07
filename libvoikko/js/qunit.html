@@ -118,6 +118,13 @@ Libvoikko({
 			assert.equal(voikko.hyphenate("vaa'an"), "vaa-an");
 		});
 		
+		QUnit.test("hyphenateWithCustomSeparator", function(assert) {
+			assert.equal(voikko.hyphenate("kissa", "&shy;", true), "kis&shy;sa");
+			assert.equal(voikko.hyphenate("kuorma-auto", "&shy;", true), "kuor&shy;ma-au&shy;to");
+			assert.equal(voikko.hyphenate("vaa'an", "&shy;", true), "vaa&shy;an");
+			assert.equal(voikko.hyphenate("vaa'an", "&shy;", false), "vaa'an");
+		});
+		
 		QUnit.test("setIgnoreDot", function(assert) {
 			voikko.setIgnoreDot(false);
 			assert.strictEqual(voikko.spell("kissa."), false);
