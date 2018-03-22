@@ -58,15 +58,15 @@ void V3DictionaryLoader::findDictionaries(const string & path) {
 			// TODO implement null hyphenator
 			BackendProperties hyphenatorBackend("AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)", false);
 			
-			hfst_ol::ZHfstOspeller * speller = new hfst_ol::ZHfstOspeller();
+			hfst_ospell::ZHfstOspeller * speller = new hfst_ospell::ZHfstOspeller();
 			try {
 				speller->read_zhfst(fullPath.c_str());
 			}
-			catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+			catch (hfst_ospell::ZHfstZipReadingError& zhzre) {
 				delete speller;
 				continue; // broken dictionary
 			}
-			const hfst_ol::ZHfstOspellerXmlMetadata spellerMetadata = speller->get_metadata();
+			const hfst_ospell::ZHfstOspellerXmlMetadata spellerMetadata = speller->get_metadata();
 			
 			LanguageTag language;
 			language.setBcp47(spellerMetadata.info_.locale_);
