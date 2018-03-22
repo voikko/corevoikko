@@ -121,7 +121,7 @@ AC_ARG_ENABLE(hfst, AC_HELP_STRING([--disable-hfst],
 dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
 dnl AC_PROVIDE_IFELSE doesn't work on mac?
 AS_IF([test x$hfst = xyes], [
-      PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell >= 0.2])
+      PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell >= 0.5])
 	  AC_DEFINE(HAVE_HFST, 1)
 	  CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
 	])
