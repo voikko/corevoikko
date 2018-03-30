@@ -187,6 +187,7 @@ LEXICON NOUN Valo_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Sukija [Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;

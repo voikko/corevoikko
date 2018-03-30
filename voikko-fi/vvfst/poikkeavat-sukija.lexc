@@ -216,6 +216,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
+[Ln][Xp]faarao[X]faarao:farao NimisanaAutio_a ;
+[Ln][Xp]farao[X]farao:faarao NimisanaAutio_a ;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
 [Ln][Xp]harppuuna[X]harppuun:harppun NimisanaPeruna_a ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
@@ -360,6 +362,7 @@ LEXICON Sukija_p
 [Lp]alaston:alaston EtuliitteenJatko_ellelnelt;
 [Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
 [Lp]baijerin:baijerin EtuliitteenJatko_ellelnelt;
+[Lp]dalmatian:dalmatian EtuliitteenJatko_ellelnelt;
 [Lp]eurooppa:eurooppa EtuliitteenJatko_ellelnelt;
 [Lp]ex-[Bm]:ex- EtuliitteenJatko_ellelnH;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;
