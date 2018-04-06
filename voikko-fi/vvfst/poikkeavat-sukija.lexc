@@ -85,6 +85,15 @@ LEXICON SukijaOri
 [Sill][Nm]hisi:hisi   NimisanaLiOlN_a ;
 NimisanaYhteisetHTaivutusmuodot_a ;
 
+LEXICON SukijaOriYhdyssana
+NimisanaRisti_a ;
+[Sg][Nm]iid@D.YS_ALKANUT@:iid@D.YS_ALKANUT@	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sp][Ny]itta@D.YS_ALKANUT@:iitta@D.YS_ALKANUT@	NimisanaLiOlV_a	;
+[Nm]iita@D.YS_ALKANUT@:iita@D.YS_ALKANUT@	NimisanaLiOlV_a	;
+ii@D.YS_ALKANUT@:ii@D.YS_ALKANUT@	SisäpaikallissijatSsaSta_a	;
+ii@D.YS_ALKANUT@:ii@D.YS_ALKANUT@	Ulkopaikallissijat_Yks_a	;
+i:i SukijaOri;
+
 LEXICON SukijaUrosYksikkö
 Omistusliite_a ;
 [Sg][Ny]n:n    NimisanaYksikönGenetiivinJatko_a ;
@@ -278,6 +287,19 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
 !!![Ln][Xp]pahta[X]pah:pah NimisanaPata_a ;
+[Ln][Xp]aasi=ori[X]aasi[Bm]or@D.YS_ALKANUT@:aasior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]hevos=ori[X]hevos[Bm]or:hevosor SukijaOriYhdyssana ;
+[Ln][Xp]isä=ori[X]isä[Bm]or@D.YS_ALKANUT@:isäor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]jalostus=ori[X]jalostus[Bm]or@D.YS_ALKANUT@:jalostusor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]johtaja=ori[X]johtaja[Bm]or@D.YS_ALKANUT@:johtajaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]juoksija=ori[X]juoksija[Bm]or@D.YS_ALKANUT@:juoksijaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kanta=kirja=ori[X]kanta[Bm]kirja[Bm]or@D.YS_ALKANUT@:kantakirjaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kanta=ori[X]kanta[Bm]or@D.YS_ALKANUT@:kantaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kilpa=ori[X]kilpa[Bm]or@D.YS_ALKANUT@:kilpaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]ravuri=ori[X]ravuri[Bm]or@D.YS_ALKANUT@:ravurior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]siitos=ori[X]siitos[Bm]or@D.YS_ALKANUT@:siitosor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]täysi=veri=ori[X]täysi[Bm]veri[Bm]or@D.YS_ALKANUT@:täysiverior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
