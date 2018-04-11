@@ -39,7 +39,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class SuggestionGeneratorMultiReplacement : public SuggestionGenerator {
 	public:
-		SuggestionGeneratorMultiReplacement(const wchar_t * replacements, int replaceCount, morphology::Analyzer * morAnalyzer);
+		explicit SuggestionGeneratorMultiReplacement(const wchar_t * replacements, int replaceCount, morphology::Analyzer * morAnalyzer);
 
 		void generate(SuggestionStatus * s) const;
 

@@ -40,7 +40,7 @@ namespace libvoikko { namespace hyphenator {
  */
 class AnalyzerToFinnishHyphenatorAdapter : public Hyphenator {
 	public:
-		AnalyzerToFinnishHyphenatorAdapter(morphology::Analyzer * analyzer);
+		explicit AnalyzerToFinnishHyphenatorAdapter(morphology::Analyzer * analyzer);
 		char * hyphenate(const wchar_t * word, size_t wlen);
 		void terminate();
 		

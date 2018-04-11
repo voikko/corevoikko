@@ -45,7 +45,7 @@ namespace libvoikko { namespace fst {
 			uint16_t firstMultiChar;
 			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
-			WeightedTransducer(const char * filePath);
+			explicit WeightedTransducer(const char * filePath);
 			~WeightedTransducer();
 			
 			bool prepare(WeightedConfiguration * configuration, const wchar_t * input, size_t inputLen) const;

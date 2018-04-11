@@ -47,7 +47,7 @@ namespace libvoikko { namespace fst {
 			uint16_t unknownSymbolOrdinal;
 			void byteSwapTransducer(void *& mapPtr, size_t fileLength);
 		public:
-			UnweightedTransducer(const char * filePath);
+			explicit UnweightedTransducer(const char * filePath);
 			~UnweightedTransducer();
 			
 			bool prepare(Configuration * configuration, const wchar_t * input, size_t inputLen) const;

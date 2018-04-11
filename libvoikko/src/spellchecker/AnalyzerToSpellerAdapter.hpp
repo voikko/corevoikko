@@ -40,7 +40,7 @@ namespace libvoikko { namespace spellchecker {
  */
 class AnalyzerToSpellerAdapter : public Speller {
 	public:
-		AnalyzerToSpellerAdapter(morphology::Analyzer * analyzer);
+		explicit AnalyzerToSpellerAdapter(morphology::Analyzer * analyzer);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:

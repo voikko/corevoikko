@@ -38,7 +38,7 @@ namespace libvoikko { namespace spellchecker {
  */
 class FixedResultSpeller : public Speller {
 	public:
-		FixedResultSpeller(spellresult result);
+		explicit FixedResultSpeller(spellresult result);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:

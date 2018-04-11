@@ -36,7 +36,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGeneratorInsertSpecial : public SuggestionGenerator {
 	public:
-		SuggestionGeneratorInsertSpecial(morphology::Analyzer * morAnalyzer);
+		explicit SuggestionGeneratorInsertSpecial(morphology::Analyzer * morAnalyzer);
 		void generate(SuggestionStatus * s) const;
 	private:
 		morphology::Analyzer * morAnalyzer;

@@ -37,7 +37,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStrategy : public SuggestionGenerator {
 	public:
-		SuggestionStrategy(size_t maxCost);
+		explicit SuggestionStrategy(size_t maxCost);
 		~SuggestionStrategy();
 		void generate(SuggestionStatus * s) const;
 

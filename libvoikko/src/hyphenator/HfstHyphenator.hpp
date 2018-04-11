@@ -42,7 +42,7 @@ namespace libvoikko { namespace hyphenator {
  */
 class HfstHyphenator : public Hyphenator {
 	public:
-		HfstHyphenator(const std::string & directoryName);
+		explicit HfstHyphenator(const std::string & directoryName);
 		char* hyphenate(const wchar_t* word, size_t wlen);
 		char* hyphenate(const char* word);
 		void setUglyHyphenation(bool ugliness);

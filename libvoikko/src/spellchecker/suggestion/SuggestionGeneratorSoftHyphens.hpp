@@ -36,7 +36,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGeneratorSoftHyphens : public SuggestionGenerator {
 	public:
-		SuggestionGeneratorSoftHyphens(morphology::Analyzer * morAnalyzer);
+		explicit SuggestionGeneratorSoftHyphens(morphology::Analyzer * morAnalyzer);
 		void generate(SuggestionStatus * s) const;
 	
 	private:

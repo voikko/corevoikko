@@ -43,7 +43,7 @@ namespace libvoikko { namespace grammar {
 class FinnishRuleEngine : public RuleEngine {
 
 	public:
-		FinnishRuleEngine(voikko_options_t * voikkoOptions);
+		explicit FinnishRuleEngine(voikko_options_t * voikkoOptions);
 		
 		~FinnishRuleEngine();
 		

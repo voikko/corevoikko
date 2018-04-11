@@ -36,7 +36,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGeneratorCaseChange : public SuggestionGenerator {
 	public:
-		SuggestionGeneratorCaseChange(morphology::Analyzer * morAnalyzer);
+		explicit SuggestionGeneratorCaseChange(morphology::Analyzer * morAnalyzer);
 		void generate(SuggestionStatus * s) const;
 
 		/** Suggests corrections to character case

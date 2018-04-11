@@ -39,7 +39,7 @@ namespace libvoikko { namespace spellchecker {
  */
 class SpellerCache {
 	public:
-		SpellerCache(int sizeParam);
+		explicit SpellerCache(int sizeParam);
 		~SpellerCache();
 		
 		int getSizeParam() const;

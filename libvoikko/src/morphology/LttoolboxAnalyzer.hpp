@@ -32,7 +32,7 @@ namespace libvoikko { namespace morphology {
  */
 class LttoolboxAnalyzer : public Analyzer {
 	public:
-		LttoolboxAnalyzer(const std::string & directoryName);
+		explicit LttoolboxAnalyzer(const std::string & directoryName);
 		std::list<Analysis *> * analyze(const wchar_t * word);
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);

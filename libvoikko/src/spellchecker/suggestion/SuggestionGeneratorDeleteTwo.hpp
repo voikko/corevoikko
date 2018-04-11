@@ -40,7 +40,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class SuggestionGeneratorDeleteTwo : public SuggestionGenerator {
 	public:
-		SuggestionGeneratorDeleteTwo(morphology::Analyzer * morAnalyzer);
+		explicit SuggestionGeneratorDeleteTwo(morphology::Analyzer * morAnalyzer);
 		void generate(SuggestionStatus * s) const;
 	private:
 		morphology::Analyzer * morAnalyzer;
