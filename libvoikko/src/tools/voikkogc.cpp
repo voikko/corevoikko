@@ -246,9 +246,6 @@ int main(int argc, char ** argv) {
 	}
 	
 	wchar_t * line = new wchar_t[MAX_PARAGRAPH_LENGTH + 1];
-	if (!line) {
-		cerr << "E: Out of memory" << endl;
-	}
 	
 	setlocale(LC_ALL, "");
 	wcout.imbue(locale(""));
