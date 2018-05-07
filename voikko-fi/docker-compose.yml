@@ -1,0 +1,9 @@
+version: "2"
+services:
+  devenv:
+    # use the Dockerfile in this directory as a recipe for building this
+    # container
+    build: ./devenv/
+    working_dir: /voikko/
+    volumes:
+      - .:/voikko/
