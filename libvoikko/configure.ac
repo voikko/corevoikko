@@ -27,13 +27,13 @@
 
 
 dnl General options for autoconf
-AC_PREREQ(2.60)
+AC_PREREQ(2.62)
 AC_INIT([libvoikko],[4.1.1],[hatapitk@iki.fi])
 
 LT_PREREQ([2.2.6])
 
 AC_CONFIG_HEADERS(config.h)
-AM_INIT_AUTOMAKE([1.10 foreign])
+AM_INIT_AUTOMAKE([1.11 foreign])
 AC_CONFIG_MACRO_DIR([m4])
 
 dnl Checks for programs
