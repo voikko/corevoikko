@@ -69,6 +69,8 @@ for build configuration.
 Java API is designed to be built as a Maven project. No autotools or Ant
 based build system is available yet.
 
+When building from Git checkout you will need autoconf, automake and pkg-config
+to generate the configure script.
 
 Build configuration
 ===================
