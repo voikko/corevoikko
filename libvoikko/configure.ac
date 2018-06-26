@@ -40,6 +40,8 @@ dnl Checks for programs
 AC_PROG_CXX
 AC_PROG_INSTALL
 AM_PATH_PYTHON([3])
+PKG_PROG_PKG_CONFIG
+m4_pattern_forbid([^PKG_PROG_PKG_CONFIG], [PKG_PROG_PKG_CONFIG was not expanded. You need to install pkg-config to ensure that macros from pkg.m4 are found])
 
 dnl Libtool (new and old)
 AC_LIBTOOL_WIN32_DLL
@@ -122,9 +124,9 @@ dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
 dnl AC_PROVIDE_IFELSE doesn't work on mac?
 AS_IF([test x$hfst = xyes], [
       PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell >= 0.5])
-	  AC_DEFINE(HAVE_HFST, 1)
-	  CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
-	])
+      AC_DEFINE(HAVE_HFST, 1)
+      CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
+     ])
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
 dnl VISLCG3 support
