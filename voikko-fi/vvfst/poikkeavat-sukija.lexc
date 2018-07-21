@@ -780,6 +780,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]ranskalainen[X]ranska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]roomalainen[X]rooma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]saman=lainen[X]saman[Bm]lai:samallai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]semmoinen[X]semmoi:semmo LaatusanaNainenInen_a  ;
 [Lnl][Xp]stationaari[X]stationaar:stationaar NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaari[X]stationaar:stationäär NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaarinen[X]stationaari:stationääri NimiLaatusanaNainenInen_aä ;

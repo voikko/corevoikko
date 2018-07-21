@@ -5319,12 +5319,13 @@ LEXICON TositapaPi
 ?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
 
 ?Sukija LEXICON SukijaAntautua
-?Sukija <WC>Kaatua_<A> ;
 ?Sukija KestämänTekijäpääteHeikko_<A> ;
 ?Sukija [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] KestämänTekijäpääteY3Liitesana_<A> ;
 ?Sukija [Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t Liitesana_<A> ;
 ?Sukija s:s KertomanTekijäpääteHeikko_<A> ;
 ?Sukija s:s KertomanTekijäpääteVahva_<A> ;
+?Sukija KertomanTekijäpääteHeikko_<A> ;
+?Sukija KertomanTekijäpääteVahva_<A> ;
 ?Sukija Ehtotapa_<A> ;
 ?Sukija SukijaTositapaVi_<A> ;
 ?Sukija TositapaPi_<A> ;
@@ -5335,6 +5336,10 @@ LEXICON TositapaPi
 ?Sukija Tositapa4Tt_<A> ;
 ?Sukija Käskytapa_<A> ;
 ?Sukija Käskytapa_y2_<A> ;
+?Sukija t<U>: Johdin_nUt_<A> ;
+?Sukija t<U>: Johdin_vA_<A> ;
+?Sukija t<U>: Johdin_mA_<A> ;
+?Sukija t<U>: Johdin_ttAx_<A> ;
 
 LEXICON HYliaste
 h:h	Yliaste_<A> ;

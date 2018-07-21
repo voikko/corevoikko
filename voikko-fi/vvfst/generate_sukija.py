@@ -102,6 +102,11 @@ def replace_and_write (line, string1, string2):
     outfile.write (s)
 
 
+def replace_and_write_2 (line, string1, string2):
+    s = replace (line, string1, string2)
+    outfile.write (s)
+
+
 re_oittaa1 = makeRe (u"Lt", u".Koittaa")
 re_oittaa2 = makeRe (u"Lt", u".Köittää")
 
@@ -129,6 +134,7 @@ re_isoida_x = re.compile (u"\\A\[Lt\]\[Xp\](dramatisoida|karakterisoida)\[X\]")
 re_A = re.compile (u"[aou]")
 
 re_oitin = makeRe (u"Ln", u".Coitin")
+re_oite  = makeRe (u"Ln", u".Coite")
 
 re_aatio = makeRe (u"Ln", u"..aatio")
 re_uutio = makeRe (u"Ln", u".Cuutio")
@@ -147,6 +153,7 @@ spelling_pattern_list = [
 
 pattern_list_3 = [
   (re_oitin,    "oit:", "oit:", "oit ", "ot ",  "Suodatin",   "Suodatin"),
+  (re_oite,     "oit:", "oit:", "oit ", "ot ",  "Vaate",      "Vaate"),
   (re_oittaa1,  "o:",   "oit:", "o ",   "ot ",  "Kirjoittaa", "Alittaa"),
   (re_oittaa2,  "ö:",   "öit:", "ö ",   "öt ",  "Kirjoittaa", "Alittaa"),
   (re_oittaa1,  "oit:", "oit:", "oit ", "ot ",  "Alittaa",    "Alittaa"),
@@ -165,10 +172,11 @@ pattern_list_3 = [
 def generate_from_pattern_3 (line, pattern_list):
     for x in pattern_list:
         if line.find(x[5]) > 0 and x[0].match(line):
-#            print ("Huuhaa {}".format (line[:-1]))
+#            print ("Huuhaa1 {}".format (line[:-1]))
             s = line.replace (x[5], x[6])
             s = s.replace (x[1], x[2])
             s = s.replace (x[3], x[4])
+#            print ("Huuhaa2 {}".format (s[:-1]))
             outfile.write (s)
 
 
@@ -229,12 +237,42 @@ def generate_from_pattern_1 (line, pattern_list):
                 replace_and_write (s, x[3], x[4])
 
 
+pattern_list_2 = [
+  (re_aatio, [["aatio ", "atio "],
+##              ["aatio ", "atsio "],
+##              ["aatio:", "ation:",   "aatio ", "ation ",   "NimisanaAutio", "NimisanaPaperi"],
+              ["aatio:", "atsio:",   "aatio ", "atsio "],
+              ["aatio:", "atsion:",  "aatio ", "atsion ",  "NimisanaAutio", "NimisanaPaperi"],
+              ["aatio:", "atsioon:", "aatio ", "atsioon ", "NimisanaAutio", "NimisanaPaperi"],
+#              ["aatio",  "atio"],
+#              ["aatio[", "atsioni[",  "aatio:", "atsion:",  "aatio ", "atsion ",  "NimisanaAutio", "NimisanaPaperi"],
+#              ["aatio[", "atsiooni[", "aatio:", "atsioon:", "aatio ", "atsioon ", "NimisanaAutio", "NimisanaPaperi"]
+  ],
+)
+#  (re_uusio, ("uusio:", "usio:", "uusio ", "usio "),
+#             ("uusio:", "
+]
+
+def generate_aatio_etc (line):
+    for p in pattern_list_2:
+        if p[0].match(line):
+ #           print (line)
+            for u in p[1]:
+                s = line
+#                print (len(u), u)
+                for i in range(int(len(u)/2)):
+                    s = s.replace (u[2*i], u[2*i+1])
+#                    print ("YYYYYYY", s[:-1])
+#                print ("XXXXXXX", s)
+                outfile.write (s)
+
+
 def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
     if pattern.match (line):
         for x in p1:
-            replace_and_write (line, string, x)
+            replace_and_write_2 (line, string, x)
         for x in p2:
-            replace_and_write (line.replace(s1,s2), string, x)
+            replace_and_write_2 (line.replace(s1,s2), string, x)
 
 
 word_list = [
@@ -547,10 +585,12 @@ while True:
 
     generate_from_pattern_1 (line, spelling_pattern_list)
 
+    ###                            pattern   string    p1                   p2                       s1                  s2
     generate_from_pattern_2 (line, re_uusio, u"uusio", (u"usio",),          (u"usion",  u"usioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_tio,   u"tio",   (u"tsio",),          (u"tsion",  u"tsioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_aatio, u"aatio", (u"atio", u"atsio"), (u"atsion", u"atsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
     generate_from_pattern_2 (line, re_uutio, u"uutio", (u"utio", u"utsio"), (u"utsion", u"utsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
+#    generate_aatio_etc (line)
 
     generate_from_pattern_3 (line, pattern_list_3)
     write_arvaella (line)
