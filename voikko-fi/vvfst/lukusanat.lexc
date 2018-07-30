@@ -216,6 +216,13 @@ LEXICON Erikoisluku
 [Lu][Xp]puolitoista[X]puolelle[Bm]toista:puolelletoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X]puoletta[Bm]toista:puolettatoista	Liitesana_a	;
 [Lu][Xp]puolitoista[X]puolisen[Bm]toista:puolisentoista	Liitesana_a	;
+[Lu][Xp]kolmisentoista[X]kolmisen[Bm]toista:kolmisentoista	Liitesana_a	;
+[Lu][Xp]nelisentoista[X]nelisen[Bm]toista:nelisentoista	Liitesana_a	;
+[Lu][Xp]viitisentoista[X]viitisen[Bm]toista:viitisentoista	Liitesana_a	;
+[Lu][Xp]kuutisentoista[X]kuutisen[Bm]toista:kuutisentoista	Liitesana_a	;
+[Lu][Xp]seitsemisentoista[X]seitsemisen[Bm]toista:seitsemisentoista	Liitesana_a	;
+[Lu][Xp]kahdeksisentoista[X]kahdeksisen[Bm]toista:kahdeksisentoista	Liitesana_a	;
+[Lu][Xp]yhdeksisentoista[X]yhdeksisen[Bm]toista:yhdeksisentoista	Liitesana_a	;
 [Lu][Xp]parisen[X]parisen:parisen	ParisenKymmentä	;
 [Lu][Xp]kolmisen[X]kolmisen:kolmisen	XKymmentä_a	;
 [Lu][Xp]nelisen[X]nelisen:nelisen	XKymmentä_ä	;
