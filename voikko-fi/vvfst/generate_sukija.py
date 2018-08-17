@@ -119,6 +119,12 @@ re_oitella2 = makeRe (u"Lt", u".Köitellä")
 re_otella1 = makeRe (u"Lt", u".Kotella")
 re_otella2 = makeRe (u"Lt", u".Kötellä")
 
+re_ottua1 = makeRe (u"Lt", u".Kottua")
+re_ottua2 = makeRe (u"Lt", u".Köttyä")
+
+re_oittua1 = makeRe (u"Lt", u".Koittua")
+re_oittua2 = makeRe (u"Lt", u".Köittyä")
+
 re_isoida = makeRe (u"Lt", u"isoida") # Organisoida => organiseerata.
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
@@ -166,6 +172,10 @@ pattern_list_3 = [
   (re_oitella2, "öit:", "öit:", "öit ", "öt ",  "Aatella",    "Aatella"),
   (re_otella1,  "ot:",  "ot:",  "ot ",  "oit ", "Aatella",    "Aatella"),
   (re_otella2,  "öt:",  "öt:",  "öt ",  "öit ", "Aatella",    "Aatella"),
+  (re_ottua1,   "ot:",  "ot:",  "ot ",  "oit ", "Asettua",    "Asettua"),
+  (re_ottua2,   "öt:",  "öt:",  "öt ",  "öit ", "Asettua",    "Asettua"),
+  (re_oittua1,  "oit:", "oit:", "oit ", "ot ",  "Asettua",    "Asettua"),
+  (re_oittua2,  "öit:", "öit:", "öit ", "öt ",  "Asettua",    "Asettua")
 ]
 
 

@@ -2261,6 +2261,7 @@ k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 ?Laatusana	k<U>:k<U>	Johdin_Us_<A>	;
 ?Vanha ?Laatusana	k<A>:k<A>	HYliaste_<A>	;
+?Sukija                 k<U>:k<A>is<U>	Johdin_Us_<A>	;
 
 LEXICON NOUN Kaunis
 i:i	<WC>Vieras_w_<A>	;

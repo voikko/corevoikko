@@ -272,6 +272,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
+[Ln][Xp]posliini[X]posliin@P.INEN_SALLITTU.ON@:porsliin@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
@@ -279,16 +280,13 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationaarisyy NimisanaKalleus_aä ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationäärisyy NimisanaKalleus_aä ;
 [Ln][Xp]sydän[X]sydäm:sydämm NimisanaUistin_m_ä ;
-[Ln][Xp]sävel[X]sävel:sävele Loppu ;
-[Ln][Xp]sävel[X]sävele[Sg][Nm]id:säveleid NimisanaMonikonGenetiiviEnJatko_ä ;
-[Ln][Xp]sävel[X]sävele[Sg][Nm]itt:säveleitt NimisanaMonikonGenetiiviEnJatko_ä ;
+[Ln][Xp]sävel[X]sävel:sävel NimisanaAskel_ä ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]vartija[X]vartij:varti NimisanaApila_a ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
-!!![Ln][Xp]pahta[X]pah:pah NimisanaPata_a ;
 [Ln][Xp]aasi=ori[X]aasi[Bm]or@D.YS_ALKANUT@:aasior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]hevos=ori[X]hevos[Bm]or:hevosor SukijaOriYhdyssana ;
 [Ln][Xp]isä=ori[X]isä[Bm]or@D.YS_ALKANUT@:isäor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
