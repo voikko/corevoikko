@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2017 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2018 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !                 2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
@@ -2753,12 +2753,14 @@ it:it	<WC>MuistaaMuistella_w_<A>	;
 it:it	<WC>MuistaaMuistella_s_tt_t_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
 itt<A><U>[Xj]t<U><A>[X]:itt<A><U>	Kaatua_<A>	;
+?Sukija itt<A><U>[Xj]t<U><A>[X]:tt<A><U>	Kaatua_<A>	;
 
 LEXICON Ammottaa
 t:t	<WC>MuistaaMuistella_w_<A>	;
 t:t	<WC>MuistaaMuistella_s_tt_t_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
 tt<A><U>[Xj]t<U><A>[X]:tt<A><U>	Kaatua_<A>	;
+?Sukija tt<A><U>[Xj]t<U><A>[X]:itt<A><U>	Kaatua_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
