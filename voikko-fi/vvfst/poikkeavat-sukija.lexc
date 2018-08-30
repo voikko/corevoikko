@@ -238,6 +238,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
+! [Ln][Xp]kaivu[X]kaivu:kaivu NimisanaPuu_a ;
+[Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
@@ -249,6 +251,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kiiru[X]kiiru:kiiru SukijaKiiru ;
 [Ln][Xp]kiiru[X]kiiru:kiiruu Loppu ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
+[Ln][Xp]kirjasin[X]kirjasi:kirjaisi NimisanaUistin_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
@@ -273,6 +276,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
 [Ln][Xp]posliini[X]posliin@P.INEN_SALLITTU.ON@:porsliin@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
+[Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
@@ -300,6 +304,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]siitos=ori[X]siitos[Bm]or@D.YS_ALKANUT@:siitosor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]täysi=veri=ori[X]täysi[Bm]veri[Bm]or@D.YS_ALKANUT@:täysiverior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
+[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
@@ -736,6 +742,8 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]kiirumpi[X]kiiru:kiiruu NimiLaatusanaSuurempi_a ;
 [Ll][Xp]kiirunalainen[X]kiirun[Bm]alai:kiirunalai LaatusanaNainenInen_a ;
 [Ll][Xp]kultainen[X]kultai:kullai LaatusanaNainenInen_a ;
+[Ll][Xp]minkä=lainen[X]minkä[Bm]lai:minkäläi LaatusanaNainenInen_aä ;
+[Ll][Xp]minkään=lainen[X]minkään[Bm]lai:minkäänläi LaatusanaNainenInen_aä ;
 [Ll][Xp]muistiin=painuva[X]muistiin[Bm]painuv:muistiinpainuv LaatusanaAsema_a ;
 [Ll][Xp]monen=lainen[X]monen[Bm]lai:monellai LaatusanaNainenInen_a ;
 [Ll][Xp]oktaaninen[X]oktaani:oktani LaatusanaNainenInen_a ;
@@ -758,9 +766,12 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]toisenlainen[X]toisen[Bm]lai:toisellai LaatusanaNainenInen_a ;
 [Ll][Xp]tosi=kristillinen[X]tosi[Bm]kristilli:tosikristilli LaatusanaNainenInen_ä ;
 [Ll][Xp]tuollainen[X]tuollai:tollai LaatusanaNainenInen_a ;
+[Ll][Xp]tuore[X]tuore[Ses][Ny]nna:tuorenna NimisanaLiOlV_a ;
 [Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]vaivalloinen[X]vaivalloi:vaivaloi LaatusanaNainenInen_a ;
 [Ll][Xp]valkoinen[X]valkoi:valko LaatusanaNainenInen_a ;
+[Ll][Xp]vetre[X]vetre:vetre LaatusanaHame_ä ;
+[Ll][Xp]vetre[X]vetre[Ses][Ny]nnä:vetrennä NimisanaLiOlV_ä ;
 [Ll][Xp]yhdenlainen[X]yhden[Bm]lai:yhdellai LaatusanaNainenInen_a ;
 [Ll][Xp]yksi=toikkoinen[X]yksi[Bm]toikkoi:ykstoikkoi LaatusanaNainenInen_a ;
 [Ll][Xp]ylitse=vuotavainen[X]ylitse[Bm]vuotavai:ylitsevuotavai LaatusanaNainenInen_a ;
@@ -772,6 +783,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
 [Lnl][Xp]isonlainen[X]ison[Bm]lai:isollai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
+!!![Lnl][Xp]lainen[X]lai@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:lai@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_ä ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
@@ -779,10 +791,16 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]roomalainen[X]rooma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]saman=lainen[X]saman[Bm]lai:samallai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]semmoinen[X]semmoi:semmo LaatusanaNainenInen_a  ;
+[Lnl][Xp]semmoinen[X]semmoi:senmoi LaatusanaNainenInen_a  ;
 [Lnl][Xp]stationaari[X]stationaar:stationaar NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaari[X]stationaar:stationäär NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaarinen[X]stationaari:stationääri NimiLaatusanaNainenInen_aä ;
 [Lnl][Xp]suurenmoinen[X]suuren[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;
+[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;
+[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;
+[Lnl][Xp]suuri[X]suur[Ses][Ny]na:suurna NimisanaLiOlV_a ;
+[Lnl][Xp]suuri[X]suur[Ses][Ny]ra:suurra NimisanaLiOlV_a ;
 
 
 LEXICON SukijaPoikkeavat_t

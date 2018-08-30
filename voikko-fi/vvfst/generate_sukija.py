@@ -18,37 +18,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
-# This program generates old spellings (e.g. symbooli) and
-# common spelling errors (e.g. kirjottaa) from file "all.lexc".
-#
-# An example: from line
-# [Ln][Xp]symboli[X]symbol@P.INEN_SALLITTU.ON@:symbol@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
-#
-# generate line
-# [Ln][Xp]symboli[X]symbool@P.INEN_SALLITTU.ON@:symbool@P.INEN_SALLITTU.ON@ NimisanaPaperi_a 
-#
-# Shoud I generate these lines also?
-# [Ln][Xp]symbooli[X]symbol@P.INEN_SALLITTU.ON@:symbol@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
-# [Ln][Xp]symbooli[X]symbool@P.INEN_SALLITTU.ON@:symbool@P.INEN_SALLITTU.ON@ NimisanaPaperi_a 
-#
 # This automatic generation will generate some old
 # spellings and spelling errors that do not exist in real life.
-
-# Compiling (in directory voikko-fi):
-# make vvfst-sukija DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
-# make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict/ VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"
-
-# Compiling (in directory voikko-fi/vvfst):
-# cd ..; make vvfst-sukija DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
-# cd ..; make vvfst-sukija-install DESTDIR=~/vvfst/voikkodict VOIKKO_VARIANT=sukija VOIKKO_DESCRIPTION="suomi (Sukija)"; cd vvfst
-
-# Testing (in directory voikko-fi/vvfst):
-# foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
-# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' >test.out; date
-# diff test.out ~/Lataukset/vv* | grep '<.*[+][?]' | less
-# diff test.out ~/Lataukset/vv* | grep '>.*[+][?]' | less
-# diff test.out ~/Lataukset/vv* | grep '>.*[+][?]' | gawk '{print $2}' |flookup -i sukija.fst | gawk 'length($0) > 0'
-# cp test.out ~/Lataukset/vvfst-sukija-testi.out
 
 # Style- ja usage-lippujen arvot suoraan Joukahaisesta:
 # grep -A1 '<style>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
@@ -132,8 +103,8 @@ re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
 
 re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
 
-re_tautua1 = makeRe (u"Lt", u"tautua")
-re_tautua2 = makeRe (u"Lt", u"täytyä")
+re_tautua1 = re.compile ("\\[Lt\\].*tautua.*Kaatua_", re.UNICODE)
+re_tautua2 = re.compile ("\\[Lt\\].*täytyä.*Kaatua_", re.UNICODE)
 
 re_isoida_x = re.compile (u"\\A\[Lt\]\[Xp\](dramatisoida|karakterisoida)\[X\]")
 
@@ -147,53 +118,77 @@ re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"([^a]i|k|p)tio") # Traditio, funktio, mutta ei aitio.
 
-spelling_pattern_list = [
-  (re_tautua1, u"tau", u"tau", u"Kaatua", u"SukijaAntautua"),
-  (re_tautua2, u"täy", u"täy", u"Kaatua", u"SukijaAntautua"),
 
-  (re_isoida, u"isoida", u"iseerata", u"iso", u"iseer", u"Kanavoida", u"Saneerata", u"Voida", u"Saneerata", re_isoida_x),
+def g2 (line, x):
+      outfile.write (line.replace (x[0], x[1]))
 
-  (re_nuolaista, u"Nuolaista_"),
-  (re_rangaista, u"Rangaista_"),
+
+def g6 (line, x):
+    if line.find(x[4]) > 0:
+        s = line.replace (x[4], x[5])
+        s = s.replace (x[0], x[1])
+        s = s.replace (x[2], x[3])
+        outfile.write (s)
+
+
+def gn (line, x):
+    for u in x[1]:
+        replace_and_write_2 (line, x[0], u)
+    for u in x[2]:
+        replace_and_write_2 (line.replace(x[3][0],x[3][1]), x[0], u)
+
+
+def g10 (line, x):
+    if not x[8].match(line):
+        s = line.replace(x[0],x[1]).replace(x[4],x[5]).replace(x[6],x[7])
+        replace_and_write (s, x[2], x[3])
+
+
+list_all = [
+    (re_nuolaista, g2, ("Nuolaista_", "SukijaNuolaista_")),
+    (re_rangaista, g2, ("Rangaista_", "SukijaRangaista_")),
+    (re_tautua1,   g2, ("Kaatua_",    "SukijaAntautua_")),
+    (re_tautua2,   g2, ("Kaatua_",    "SukijaAntautua_")),
+    (re_isoida,   g10, ("isoida", "iseerata", "iso", "iseer", "Kanavoida", "Saneerata", "Voida", "Saneerata", re_isoida_x)),
+
+    (re_oitin,     g6, ("oit:", "oit:", "oit ", "ot ",  "Suodatin",   "Suodatin")),
+    (re_oite,      g6, ("oit:", "oit:", "oit ", "ot ",  "Vaate",      "Vaate")),
+    (re_oittaa1,   g6, ("o:",   "oit:", "o ",   "ot ",  "Kirjoittaa", "Alittaa")),
+    (re_oittaa2,   g6, ("ö:",   "öit:", "ö ",   "öt ",  "Kirjoittaa", "Alittaa")),
+    (re_oittaa1,   g6, ("oit:", "oit:", "oit ", "ot ",  "Alittaa",    "Alittaa")),
+    (re_oittaa2,   g6, ("öit:", "öit:", "öit ", "öt ",  "Alittaa",    "Alittaa")),
+    (re_ottaa1,    g6, ("ot:",  "ot:",  "ot ",  "oit ", "Alittaa",    "Alittaa")),
+    (re_ottaa2,    g6, ("öt:",  "öt:",  "öt ",  "öit ", "Alittaa",    "Alittaa")),
+    (re_ottaa1,    g6, ("o:",   "o:",   "o ",   "oi ",  "Ammottaa",   "Ammottaa")),
+    (re_ottaa2,    g6, ("ö:",   "ö:",   "ö ",   "öi ",  "Ammottaa",   "Ammottaa")),
+    (re_oitella1,  g6, ("oit:", "oit:", "oit ", "ot ",  "Aatella",    "Aatella")),
+    (re_oitella2,  g6, ("öit:", "öit:", "öit ", "öt ",  "Aatella",    "Aatella")),
+    (re_otella1,   g6, ("ot:",  "ot:",  "ot ",  "oit ", "Aatella",    "Aatella")),
+    (re_otella2,   g6, ("öt:",  "öt:",  "öt ",  "öit ", "Aatella",    "Aatella")),
+    (re_ottua1,    g6, ("ot:",  "ot:",  "ot ",  "oit ", "Asettua",    "Asettua")),
+    (re_ottua2,    g6, ("öt:",  "öt:",  "öt ",  "öit ", "Asettua",    "Asettua")),
+    (re_oittua1,   g6, ("oit:", "oit:", "oit ", "ot ",  "Asettua",    "Asettua")),
+    (re_oittua2,   g6, ("öit:", "öit:", "öit ", "öt ",  "Asettua",    "Asettua")),
+
+    (re_uusio,     gn, ("uusio", ("usio",),         ("usion",  "usioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_tio,       gn, ("tio",   ("tsio",),         ("tsion",  "tsioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_aatio,     gn, ("aatio", ("atio", "atsio"), ("atsion", "atsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_uutio,     gn, ("uutio", ("utio", "utsio"), ("utsion", "utsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
 ]
 
-pattern_list_3 = [
-  (re_oitin,    "oit:", "oit:", "oit ", "ot ",  "Suodatin",   "Suodatin"),
-  (re_oite,     "oit:", "oit:", "oit ", "ot ",  "Vaate",      "Vaate"),
-  (re_oittaa1,  "o:",   "oit:", "o ",   "ot ",  "Kirjoittaa", "Alittaa"),
-  (re_oittaa2,  "ö:",   "öit:", "ö ",   "öt ",  "Kirjoittaa", "Alittaa"),
-  (re_oittaa1,  "oit:", "oit:", "oit ", "ot ",  "Alittaa",    "Alittaa"),
-  (re_oittaa2,  "öit:", "öit:", "öit ", "öt ",  "Alittaa",    "Alittaa"),
-  (re_ottaa1,   "ot:",  "ot:",  "ot ",  "oit ", "Alittaa",    "Alittaa"),
-  (re_ottaa2,   "öt:",  "öt:",  "öt ",  "öit ", "Alittaa",    "Alittaa"),
-  (re_ottaa1,   "o:",   "o:",   "o ",   "oi ",  "Ammottaa",   "Ammottaa"),
-  (re_ottaa2,   "ö:",   "ö:",   "ö ",   "öi ",  "Ammottaa",   "Ammottaa"),
-  (re_oitella1, "oit:", "oit:", "oit ", "ot ",  "Aatella",    "Aatella"),
-  (re_oitella2, "öit:", "öit:", "öit ", "öt ",  "Aatella",    "Aatella"),
-  (re_otella1,  "ot:",  "ot:",  "ot ",  "oit ", "Aatella",    "Aatella"),
-  (re_otella2,  "öt:",  "öt:",  "öt ",  "öit ", "Aatella",    "Aatella"),
-  (re_ottua1,   "ot:",  "ot:",  "ot ",  "oit ", "Asettua",    "Asettua"),
-  (re_ottua2,   "öt:",  "öt:",  "öt ",  "öit ", "Asettua",    "Asettua"),
-  (re_oittua1,  "oit:", "oit:", "oit ", "ot ",  "Asettua",    "Asettua"),
-  (re_oittua2,  "öit:", "öit:", "öit ", "öt ",  "Asettua",    "Asettua")
-]
 
-
-def generate_from_pattern_3 (line, pattern_list):
+def generate_all (line, pattern_list):
     for x in pattern_list:
-        if line.find(x[5]) > 0 and x[0].match(line):
-#            print ("Huuhaa1 {}".format (line[:-1]))
-            s = line.replace (x[5], x[6])
-            s = s.replace (x[1], x[2])
-            s = s.replace (x[3], x[4])
-#            print ("Huuhaa2 {}".format (s[:-1]))
-            outfile.write (s)
+        if x[0].match(line):
+            x[1] (line, x[2])
+        
 
 
 def word_class (line):
-    L = dict ([(u"[Ll]",  u"Laatusana"),
-               (u"[Ln]",  u"Nimisana"),
-               (u"[Lnl]", u"NimiLaatusana")])
+    L = dict ([("[Lep]", "Paikannimi"),
+               ("[Ll]",  "Laatusana"),
+               ("[Ln]",  "Nimisana"),
+               ("[Lnl]", "NimiLaatusana")])
     return L[line[0:line.find("]")+1]]
 
 
@@ -213,12 +208,6 @@ def write_ahven (line, word):
     if not line.startswith (u"[Lu]"):
         write_word (line, word, u"SukijaAhven")
 
-def write_kaunis (line, word):
-    write_word (line, word, u"SukijaKaunis")
-
-def write_altis (line, word):
-    write_word (line, word, u"SukijaAltis")
-
 def write_virkkaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaVirkkaa_ä ;\n" % (prefix))
@@ -231,59 +220,6 @@ def write_paahtaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
 
-def write_lahti (line, word):
-    write_word (line, word, u"SukijaLahti")
-
-
-def generate_from_pattern_1 (line, pattern_list):
-    for x in pattern_list:
-        if x[0].match(line):
-            if (len(x) == 2):
-                outfile.write (line.replace (x[1], u"Sukija" + x[1]))
-            elif (len(x) == 5) and (line.find (x[3]) >= 0):
-                replace_and_write (line.replace(x[3],x[4]), x[1], x[2])
-            elif (len(x) == 10 and not x[9].match(line)):
-                s = line.replace(x[1],x[2]).replace(x[5],x[6]).replace(x[7],x[8])
-                replace_and_write (s, x[3], x[4])
-
-
-pattern_list_2 = [
-  (re_aatio, [["aatio ", "atio "],
-##              ["aatio ", "atsio "],
-##              ["aatio:", "ation:",   "aatio ", "ation ",   "NimisanaAutio", "NimisanaPaperi"],
-              ["aatio:", "atsio:",   "aatio ", "atsio "],
-              ["aatio:", "atsion:",  "aatio ", "atsion ",  "NimisanaAutio", "NimisanaPaperi"],
-              ["aatio:", "atsioon:", "aatio ", "atsioon ", "NimisanaAutio", "NimisanaPaperi"],
-#              ["aatio",  "atio"],
-#              ["aatio[", "atsioni[",  "aatio:", "atsion:",  "aatio ", "atsion ",  "NimisanaAutio", "NimisanaPaperi"],
-#              ["aatio[", "atsiooni[", "aatio:", "atsioon:", "aatio ", "atsioon ", "NimisanaAutio", "NimisanaPaperi"]
-  ],
-)
-#  (re_uusio, ("uusio:", "usio:", "uusio ", "usio "),
-#             ("uusio:", "
-]
-
-def generate_aatio_etc (line):
-    for p in pattern_list_2:
-        if p[0].match(line):
- #           print (line)
-            for u in p[1]:
-                s = line
-#                print (len(u), u)
-                for i in range(int(len(u)/2)):
-                    s = s.replace (u[2*i], u[2*i+1])
-#                    print ("YYYYYYY", s[:-1])
-#                print ("XXXXXXX", s)
-                outfile.write (s)
-
-
-def generate_from_pattern_2 (line, pattern, string, p1, p2, s1, s2):
-    if pattern.match (line):
-        for x in p1:
-            replace_and_write_2 (line, string, x)
-        for x in p2:
-            replace_and_write_2 (line.replace(s1,s2), string, x)
-
 
 word_list = [
     (u"tällainen",       ((u"tällai",      u"tällai", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
@@ -291,7 +227,7 @@ word_list = [
 
     (u"lainen",  lambda line, word: replace_and_write (line.replace(u"lai",u"läi"), u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä")),
 
-    # 38 pieni (4, 4). Juoni, moni, pieni, tyyni.
+    # 38 pieni (4, 4). Juoni, moni, pieni, tyyni, (peilityyni, rasvatyyni).
     #
     # Nämä ovat tiedostossa poikkeavat-sukija.lexc
     #
@@ -304,12 +240,14 @@ word_list = [
 
     # 39 nuori (3, 3). Tuomi, s. 182, 184.
     #
-    (u"juuri",   [u"[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;",
-                  u"[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;"]),
-    (u"nuori",   [u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;",
-                  u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;"]),
-    (u"suuri",   [u"[Lnl][Xp]suuri[X]suur[Ses][Ny]na:suurna NimisanaLiOlV_a ;",
-                  u"[Lnl][Xp]suuri[X]suur[Ses][Ny]ra:suurra NimisanaLiOlV_a ;"]),
+    # Nämä ovat tiedostossa poikkeavat-sukija.lexc
+    #
+#    (u"juuri",   [u"[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;",
+#                  u"[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;"]),
+#    (u"nuori",   [u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;",
+#                  u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;"]),
+#    (u"suuri",   [u"[Lnl][Xp]suuri[X]suur[Ses][Ny]na:suurna NimisanaLiOlV_a ;",
+#                  u"[Lnl][Xp]suuri[X]suur[Ses][Ny]ra:suurra NimisanaLiOlV_a ;"]),
 
     # 46 hapsi (1, 1). Tuomi, s. 190. -- Vvfst tunnistaa muodot "hasten" ja "hapsien".
     # hasna, hassa, hasten, hapsien   -- Nämä ovat niin harvinaisia, että tarvitseeko näitä indeksoinnissa?
@@ -319,12 +257,14 @@ word_list = [
 
     # 79 terve (4, 4). Tuomi s. 142, 143, 146.
     #
-    (u"tuore", [u"[Ll][Xp]tuore[X]tuore[Ses][Ny]nna:tuorenna NimisanaLiOlV_a ;"]),
-    (u"vetre", [u"[Ll][Xp]vetre[X]vetre[Ses][Ny]nnä:vetrennä NimisanaLiOlV_ä ;"]),
-    (u"päre",  [u"[Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;"]),
-    (u"terve", [u"[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;"]),
+    # Nämä ovat tiedostossa poikkeavat-sukija.lexc
+    #
+#    (u"tuore", [u"[Ll][Xp]tuore[X]tuore[Ses][Ny]nna:tuorenna NimisanaLiOlV_a ;"]),
+#    (u"vetre", [u"[Ll][Xp]vetre[X]vetre[Ses][Ny]nnä:vetrennä NimisanaLiOlV_ä ;"]),
+#    (u"päre",  [u"[Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;"]),
+#    (u"terve", [u"[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;"]),
 
-    (u"kaivu", [u"[Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;"]),
+##    (u"kaivu", [u"[Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;"]),
 #    (u"kaivu", [u"[Ln][Xp]kaivu[X]kaivu:kaivu NimisanaPuu_a ;",
 #                u"[Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;"]),
 ]
@@ -392,7 +332,7 @@ function_list = [
     # 34 lahti (2, 2). Tuomi, s. 193.
     # lahta (= lahtea), lahtein
     #
-    (write_lahti, 
+    (lambda line, word: write_word (line, word, "SukijaLahti"),
      (u"haahti",
       u"lahti")),
 
@@ -427,7 +367,7 @@ function_list = [
 
     # 69 kaunis (7, 6). Tuomi, s. 358.
     #
-    (write_kaunis,
+     (lambda line, word: write_word (line, word, "SukijaKaunis"),
      (u"kallis",
       u"aulis",
       u"valmis",
@@ -435,13 +375,14 @@ function_list = [
 #      u"altis",
       u"tiivis")),
 
-     (write_altis, (u"altis", )),
+    (lambda line, word: write_word (line, word, "SukijaAltis"), ("altis", )),
 
      # 11 paistaa (9, 9). Tuomi s. 1, 2, 8, 11, 12, 15, 17.
      #
      (write_virkkaa, (u"vilkkaa",
                       u"virkkaa")),
-     (write_paistaa, (u"paistaa", )),
+     (write_paistaa, (u"paistaa",
+                      u"uppo=paistaa")),
      (write_paahtaa, (u"paahtaa",
                       u"raistaa",
                       u"saattaa",
@@ -593,16 +534,8 @@ while True:
     outfile.write (line)
     write_sukija_additions (line, sukija_additions)
 
-    generate_from_pattern_1 (line, spelling_pattern_list)
+    generate_all (line, list_all)
 
-    ###                            pattern   string    p1                   p2                       s1                  s2
-    generate_from_pattern_2 (line, re_uusio, u"uusio", (u"usio",),          (u"usion",  u"usioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
-    generate_from_pattern_2 (line, re_tio,   u"tio",   (u"tsio",),          (u"tsion",  u"tsioon"),  u"NimisanaAutio_a", u"NimisanaPaperi_a")
-    generate_from_pattern_2 (line, re_aatio, u"aatio", (u"atio", u"atsio"), (u"atsion", u"atsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
-    generate_from_pattern_2 (line, re_uutio, u"uutio", (u"utio", u"utsio"), (u"utsion", u"utsioon"), u"NimisanaAutio_a", u"NimisanaPaperi_a")
-#    generate_aatio_etc (line)
-
-    generate_from_pattern_3 (line, pattern_list_3)
     write_arvaella (line)
 
     r = base_form_re.search (line)
