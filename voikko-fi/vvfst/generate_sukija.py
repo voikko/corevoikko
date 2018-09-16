@@ -481,23 +481,24 @@ ei_yks = "@P.EI_YKS.ON@"
 
 
 sukija_additions = {
-    u"LEXICON Asemosana\n":     u"SukijaAsemosana ;\n",
-    u"LEXICON Sanasto_em\n":    u"SukijaPoikkeavat_em ;\n",
-    u"LEXICON Sanasto_ep\n":    u"SukijaPoikkeavat_ep ;\n",
-    u"LEXICON Sanasto_l\n":     u"SukijaPoikkeavat_l ;\n",
-    u"LEXICON Sanasto_n\n":     u"SukijaPoikkeavat_n ;\n",
-    u"LEXICON Sanasto_nl\n":    u"SukijaPoikkeavat_nl ;\n",
-    u"LEXICON Sanasto_p\n":     u"Sukija_p ;\n",
-    u"LEXICON Sanasto_t\n":     u"SukijaPoikkeavat_t ;\n",
-    u"LEXICON Sanasto_s\n":     u"SukijaPoikkeavat_s ;\n",
-    u"LEXICON Suhdesana\n":     u"SukijaSuhdesana ;\n",
-    u"LEXICON LukusananErikoisjälkiliite\n": u"SukijaLukusananErikoisjälkiliite ;\n",
-    u"LEXICON Omistusliite_a\n":  u"[O2y]s:s Liitesana_a  ;\n",
-    u"LEXICON Omistusliite_ä\n":  u"[O2y]s:s Liitesana_ä  ;\n",
-    u"LEXICON Omistusliite_aä\n": u"[O2y]s:s Liitesana_aä ;\n"
-#   u"LEXICON Omistusliite_a\n":  u"[O1y]in:in Liitesana_a  ;\n[O2y]s:s Liitesana_a  ;\n",
-#   u"LEXICON Omistusliite_ä\n":  u"[O1y]in:in Liitesana_ä  ;\n[O2y]s:s Liitesana_ä  ;\n",
-#   u"LEXICON Omistusliite_aä\n": u"[O1y]in:in Liitesana_aä ;\n[O2y]s:s Liitesana_aä ;\n"
+    "LEXICON Asemosana\n":     "SukijaAsemosana ;\n",
+    "LEXICON Sanasto_em\n":    "SukijaPoikkeavat_em ;\n",
+    "LEXICON Sanasto_ep\n":    "SukijaPoikkeavat_ep ;\n",
+    "LEXICON Sanasto_l\n":     "SukijaPoikkeavat_l ;\n",
+    "LEXICON Sanasto_n\n":     "SukijaPoikkeavat_n ;\n",
+    "LEXICON Sanasto_nl\n":    "SukijaPoikkeavat_nl ;\n",
+    "LEXICON Sanasto_p\n":     "Sukija_p ;\n",
+    "LEXICON Sanasto_t\n":     "SukijaPoikkeavat_t ;\n",
+    "LEXICON Sanasto_s\n":     "SukijaPoikkeavat_s ;\n",
+    "LEXICON Suhdesana\n":     "SukijaSuhdesana ;\n",
+    "LEXICON LukusananErikoisjälkiliite\n": "SukijaLukusananErikoisjälkiliite ;\n",
+    "LEXICON Lukusana\n":        "SukijaLukusanaSeitsemän ;\n",
+    "LEXICON Omistusliite_a\n":  "[O2y]s:s Liitesana_a  ;\n",
+    "LEXICON Omistusliite_ä\n":  "[O2y]s:s Liitesana_ä  ;\n",
+    "LEXICON Omistusliite_aä\n": "[O2y]s:s Liitesana_aä ;\n"
+#   "LEXICON Omistusliite_a\n":  "[O1y]in:in Liitesana_a  ;\n[O2y]s:s Liitesana_a  ;\n",
+#   "LEXICON Omistusliite_ä\n":  "[O1y]in:in Liitesana_ä  ;\n[O2y]s:s Liitesana_ä  ;\n",
+#   "LEXICON Omistusliite_aä\n": "[O1y]in:in Liitesana_aä ;\n[O2y]s:s Liitesana_aä ;\n"
 }
 
 

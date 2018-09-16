@@ -647,6 +647,12 @@ LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]valintainen[X]valintai:valintai    LukusananJälkiliiteNainen_a ;
 [Bc][Ll][Xp]vivahduksinen[X]vivahduksi:vivahduksi LukusananJälkiliiteNainen_a ;
 
+LEXICON SukijaLukusanaSeitsemän
+[Lu][Xp]seitsemän[X]seitse[Sp][Ny]ntä:seitsentä   LukusanaSpNy29_ä ;
+[Lu][Xp]seitsemän[X]seitse[Sp][Ny]mätä:seitsemätä LukusanaSpNy29_ä ;
+[Lu][Xp]seitsemän[X]seitse[Ses][Ny]nnä:seitsennä  LukusanaSesNy29_ä ;
+[Lu][Xp]seitsemän[X]seitse[Sg][Nm]mäin:seitsemäin LukusanaSgNm29_ä ;
+[Lu][Xp]seitsemän[X]seitse[Sg][Nm]nten:seitsenten LukusanaSgNm29_ä ;
 
 LEXICON SukijaPoikkeavat_em
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
