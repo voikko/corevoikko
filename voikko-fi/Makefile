@@ -120,6 +120,7 @@ $(VVFST_BUILDDIR)/autocorrect.foma: vvfst/autocorrect.foma.in
 
 $(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma
 	foma -f $(VVFST_BUILDDIR)/main.foma 2>&1 | grep -v "defined but not used"
+	test -e $@
 	! grep ']]' $@
 
 $(VVFST_BUILDDIR)/autocorrect.att: $(VVFST_BUILDDIR)/autocorrect.lexc $(VVFST_BUILDDIR)/autocorrect.foma
