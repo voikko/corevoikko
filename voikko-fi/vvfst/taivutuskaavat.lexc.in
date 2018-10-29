@@ -3650,6 +3650,7 @@ s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 ?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 ?Murre <A><A>:<A><A> TositapaPi_<A> ;
+?Sukija <A>: Johdin_vA_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;

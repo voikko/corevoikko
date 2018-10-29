@@ -1,4 +1,4 @@
-+! Voikko-fi, suomen kielen muoto-opin kuvaus.
+! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
 ! Tekijänoikeus © 2006 - 2018 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
@@ -237,9 +237,10 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
+[Ln][Xp]imaami[X]imaam:imam NimisanaPaperi_a ;
 [Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
-! [Ln][Xp]kaivu[X]kaivu:kaivu NimisanaPuu_a ;
 [Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;
+[Ln][Xp]kamari[X]kamar:kammar NimisanaPaperi_a ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
@@ -256,7 +257,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
-[Ln][Xp]linnanimpi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
+[Ln][Xp]linnan=impi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
@@ -271,12 +272,15 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:oopiumso NimisanaJuhta_a ;
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:ooppiumso NimisanaJuhta_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]paneeli[X]paneel:panel NimisanaPaperi_a ;
 [Ln][Xp]peitsi[X]pei[Sp][Ny]tseä:peitseä NimisanaLiOlV_ä ;
 [Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
 [Ln][Xp]posliini[X]posliin@P.INEN_SALLITTU.ON@:porsliin@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
+[Ln][Xp]puteli[X]putel:putell NimisanaPaperi_a ;
 [Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
+[Ln][Xp]rakuuna[X]rakuun:rakun NimisanaPeruna_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
@@ -327,6 +331,8 @@ LEXICON SukijaAsemosana
 
 
 LEXICON SukijaPoikkeavat_s
+[Ls][Xp]edes[X]ees:ees LoppuLiitesana_ä ;
+[Ls][Xp]edessä[X]eessä:eessä LoppuLiitesana_ä ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
@@ -789,7 +795,6 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
 [Lnl][Xp]isonlainen[X]ison[Bm]lai:isollai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
-!!![Lnl][Xp]lainen[X]lai@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:lai@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_ä ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
@@ -831,3 +836,5 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]puoleta[X]puole:puole Aleta_a ;
 [Lt][Xp]evakuoida[X]evakuo:evako Kanavoida_a ;
 [Lt][Xp]himottaa[X]himo@P.YKSITEKIJÄINEN.ON@:himoi@P.YKSITEKIJÄINEN.ON@ Ammottaa_a ;
+[Lt][Xp]odottaa[X]odot:oot Alittaa_a ;
+[Lt][Xp]pudottaa[X]pudo:puo Ammottaa_a ;
