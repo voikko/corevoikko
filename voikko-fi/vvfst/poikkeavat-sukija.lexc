@@ -333,6 +333,7 @@ LEXICON SukijaAsemosana
 LEXICON SukijaPoikkeavat_s
 [Ls][Xp]edes[X]ees:ees LoppuLiitesana_ä ;
 [Ls][Xp]edessä[X]eessä:eessä LoppuLiitesana_ä ;
+[Ls][Xp]eestaas[X]ees-taas:ees-taas Loppu ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
@@ -398,6 +399,10 @@ LEXICON Sukija_p
 [Lp]azorien:azorien EtuliitteenJatko_ellelnelt;
 [Lp]baijerin:baijerin EtuliitteenJatko_ellelnelt;
 [Lp]dalmatian:dalmatian EtuliitteenJatko_ellelnelt;
+[Lp]eestaas:eestaas EtuliitteenJatko_ellelnelt;
+[Lp]eestaas:ees-taas EtuliitteenJatko_ellelnelt;
+[Lp]eestaas[Bm]:eestaas- EtuliitteenJatko_ellelnelt;
+[Lp]eestaas[Bm]:ees-taas- EtuliitteenJatko_ellelnelt;
 [Lp]eurooppa:eurooppa EtuliitteenJatko_ellelnelt;
 [Lp]ex-[Bm]:ex- EtuliitteenJatko_ellelnH;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;

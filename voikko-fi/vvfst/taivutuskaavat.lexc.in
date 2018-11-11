@@ -3942,7 +3942,7 @@ kse:kse	Johdin_vA_<A>	;
 ksi:ksi	Johdin_ja_kulkija_<A>	;
 ks:ks	Ehtotapa_<A>	;
 ?Murre  ksee:ksee	TositapaPi_<A>	;
-?Sukija kse:kse SukijaTositapaVi_<A> ;
+?Sukija SukijaJuosta_<A> ;
 
 LEXICON Nähdä
 [Tt][Ap][P3][Ny][Ef]kee:kee	KestämänTekijäpääteY3Liitesana_<A>	;
@@ -5402,3 +5402,11 @@ h:h	Yliaste_<A> ;
 ?Sukija LEXICON NOUN SukijaVihanta
 ?Sukija t:t <WC>SukijaMatala_s_<A> ;
 ?Sukija n:n <WC>SukijaMatala_w_<A> ;
+
+?Sukija LEXICON SukijaJuosta
+?Sukija kse:kse SukijaTositapaVi_<A> ;
+?Sukija [Ll][Ru]ss[Xj]<U>t[X]@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:sn@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
+?Sukija [Ru]sseis:sneis	Johdin_UUs_<A>	;
+?Sukija [Ll][Ru]ssehe:snehe	Omistusliite_<A>	;
+?Sukija [Ru]ss@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:sn@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
+?Sukija [Ru]ssehe:snehe	Omistusliite_<A>	;
