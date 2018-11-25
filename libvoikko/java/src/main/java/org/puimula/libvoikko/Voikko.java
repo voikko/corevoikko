@@ -82,7 +82,7 @@ public class Voikko {
                     return library;
                 }
             }
-            throw new UnsatisfiedLinkError("Could not load the native component of libvoikko. Please see http://voikko.puimula.org/java.html for more information.");
+            throw new UnsatisfiedLinkError("Could not load the native component of libvoikko. Please see https://voikko.puimula.org/java.html for more information.");
         }
         return library;
     }
