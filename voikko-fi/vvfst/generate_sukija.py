@@ -118,9 +118,17 @@ re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"([^a]i|k|p)tio") # Traditio, funktio, mutta ei aitio.
 
+re_mmainen = re.compile (".*mmainen\\[X\\]")
+re_mmäinen = re.compile (".*mmäinen\\[X\\]")
+
 
 def g2 (line, x):
-      outfile.write (line.replace (x[0], x[1]))
+    outfile.write (line.replace (x[0], x[1]))
+
+
+def g4 (line, x):
+    s = line.replace (x[0], x[1])
+    outfile.write (s.replace (x[2], x[3]))
 
 
 def g6 (line, x):
@@ -174,6 +182,9 @@ list_all = [
     (re_tio,       gn, ("tio",   ("tsio",),         ("tsion",  "tsioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
     (re_aatio,     gn, ("aatio", ("atio", "atsio"), ("atsion", "atsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
     (re_uutio,     gn, ("uutio", ("utio", "utsio"), ("utsion", "utsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+
+    (re_mmainen,   g4, ("mmai ", "mai ", "mmai\t", "mai ")),
+    (re_mmäinen,   g4, ("mmäi ", "mäi ", "mmäi\t", "mäi ")),
 ]
 
 
