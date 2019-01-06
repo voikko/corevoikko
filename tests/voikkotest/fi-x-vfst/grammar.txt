@@ -145,7 +145,7 @@ Tavarat ovat hujanhajan.
  [code=1, level=0, stpos=13, len=10, suggs={"hujan hajan"}]
 Alkaa yhdestoista tunti.
 Alkaa yhdes tunti.
-[code=1, level=0, stpos=6, len=5, suggs={"ensimmäinen"}]
+ [code=1, level=0, stpos=6, len=5, suggs={"ensimmäinen"}]
 Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 Iso kirjain saa olla myös sanan etuliitteenä. Esimerkiksi B-rapussa on sallittu.
 Ostin maitoa A:n omistamasta kaupasta.
@@ -232,6 +232,9 @@ Millaisia bändejä festareilla mahtaakaan esiintyä?
 Minun KISSANI on harmaa.
 Marsuani ei juoksuteta eikä valvoteta öisin.
 Marsuani ei juoksuteta, kävi miten kävi.
+Ostan jauhelihaa, jonka viimeinen käyttöpäivä on tänään.
+Ostan jauhelihaa jonka viimeinen käyttöpäivä on tänään.
+ [code=19, level=0, stpos=16, len=6, suggs={", jonka"}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

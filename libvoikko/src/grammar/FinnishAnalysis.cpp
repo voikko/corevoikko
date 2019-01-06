@@ -61,6 +61,7 @@ void FinnishAnalysis::analyseToken(Token * token) {
 	token->isVerbNegative = true;
 	token->isPositiveVerb = true;
 	token->isConjunction = true;
+	token->isRelativePronoun = false;
 	token->requireFollowingVerb = FOLLOWING_VERB_NONE;
 	token->verbFollowerType = FOLLOWING_VERB_NONE;
 	if (token->type != TOKEN_WORD) {
@@ -89,6 +90,7 @@ void FinnishAnalysis::analyseToken(Token * token) {
 		const wchar_t * negative = (*it)->getValue(morphology::Analysis::Key::NEGATIVE);
 		const wchar_t * possibleGeographicalName = (*it)->getValue(morphology::Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME);
 		const wchar_t * requireFollowingVerb = (*it)->getValue(morphology::Analysis::Key::REQUIRE_FOLLOWING_VERB);
+		const wchar_t * baseform = (*it)->getValue(morphology::Analysis::Key::BASEFORM);
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
 			// Word may start with a capital letter anywhere
@@ -136,6 +138,11 @@ void FinnishAnalysis::analyseToken(Token * token) {
 			token->isPositiveVerb = false;
 			token->isMainVerb = false;
 			token->isVerbNegative = false;
+		}
+		
+		if (baseform && (wcscmp(baseform, L"joka") == 0 || wcscmp(baseform, L"mik\u00e4") == 0)) {
+			token->isRelativePronoun = true;
+			// TODO special cases such as "joka tapauksessa"
 		}
 		
 		if (possibleGeographicalName && wcscmp(L"true", possibleGeographicalName) == 0) {

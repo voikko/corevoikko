@@ -1097,10 +1097,12 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 			duplicateOrgName(analysis, outputBuffer, analysisList);
 			if (fullMorphology) {
 				analysis->addAttribute(Analysis::Key::FSTOUTPUT, StringUtils::copy(outputBuffer));
-				wchar_t * baseform = parseBaseform(outputBuffer, fstLen, structure);
-				if (baseform) {
-					analysis->addAttribute(Analysis::Key::BASEFORM, baseform);
-				}
+			}
+			wchar_t * baseform = parseBaseform(outputBuffer, fstLen, structure);
+			if (baseform) {
+				analysis->addAttribute(Analysis::Key::BASEFORM, baseform);
+			}
+			if (fullMorphology) {
 				parseDebugAttributes(analysis, outputBuffer, fstLen);
 			}
 		}

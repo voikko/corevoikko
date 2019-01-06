@@ -75,7 +75,7 @@ they may be useful for external applications:
   Examples:
    Word: kissalla -> FSTOUTPUT: [Ln][Xp]kissa[X][Xs]505527[X]kissa[Sade][Ny]lla
 
- BASEFORM (fullMorphology only)
+ BASEFORM
  ==============================
   Base form of the given word.
 

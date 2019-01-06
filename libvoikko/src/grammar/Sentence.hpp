@@ -56,6 +56,9 @@ class Sentence {
 		
 		/** Position of this sentence within paragraph */
 		size_t pos;
+		
+		/** Position of this sentence within paragraph */
+		std::vector<const Token *> getNonWhitespaceTokens() const;
 	
 	private:
 		Sentence(Sentence const & other);

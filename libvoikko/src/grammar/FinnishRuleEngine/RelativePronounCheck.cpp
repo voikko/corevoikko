@@ -34,7 +34,16 @@ using namespace std;
 namespace libvoikko { namespace grammar { namespace check {
 
 void RelativePronounCheck::check(voikko_options_t * options, const Sentence * sentence) {
-	// TODO
+	std::vector<const Token *> tokens = sentence->getNonWhitespaceTokens();
+	for (size_t i = 1; i < tokens.size(); i++) {
+		if (tokens[i]->isRelativePronoun && wcscmp(tokens[i - 1]->str, L",") != 0) {
+			CacheEntry * e = new CacheEntry(0);
+			e->error.setErrorCode(GCERR_COMMA_MISSING_BEFORE_RELATIVE_PRONOUN);
+			e->error.setStartPos(0);
+			e->error.setErrorLen(1);
+			options->grammarChecker->cache.appendError(e);
+		}
+	}
 }
 
 } } }

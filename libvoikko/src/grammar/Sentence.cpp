@@ -39,5 +39,14 @@ Sentence::~Sentence() {
 	}
 }
 
+std::vector<const Token *> Sentence::getNonWhitespaceTokens() const {
+	std::vector<const Token *> nwTokens;
+	for (size_t i = 0; i < this->tokenCount; i++) {
+		if (this->tokens[i].type != TOKEN_WHITESPACE) {
+			nwTokens.push_back(this->tokens + i);
+		}
+	}
+	return nwTokens;
+}
 
 } }

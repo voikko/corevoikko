@@ -29,6 +29,7 @@
 #ifndef VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
 #define VOIKKO_GRAMMAR_CHECK_SIDESANA_CHECK
 
+#include <vector>
 #include "grammar/FinnishRuleEngine/SentenceCheck.hpp"
 
 namespace libvoikko { namespace grammar { namespace check {
