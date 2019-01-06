@@ -78,6 +78,7 @@ libvoikko_la_SOURCES = \
     grammar/FinnishRuleEngine/ParagraphCheck.cpp \
     grammar/FinnishRuleEngine/SentenceCheck.cpp \
     grammar/FinnishRuleEngine/SidesanaCheck.cpp \
+    grammar/FinnishRuleEngine/RelativePronounCheck.cpp \
     compatibility/interface.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 16:0:15 @LIBLDFLAGSWIN@
 
@@ -172,6 +173,7 @@ noinst_HEADERS = \
     grammar/FinnishRuleEngine/ParagraphCheck.hpp \
     grammar/FinnishRuleEngine/SentenceCheck.hpp \
     grammar/FinnishRuleEngine/SidesanaCheck.hpp \
+    grammar/FinnishRuleEngine/RelativePronounCheck.hpp \
     grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \

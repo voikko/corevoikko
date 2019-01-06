@@ -35,6 +35,7 @@
 #include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
 #include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
 #include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
+#include "grammar/FinnishRuleEngine/RelativePronounCheck.hpp"
 
 #ifdef HAVE_VFST
         #include "grammar/FinnishRuleEngine/VfstAutocorrectCheck.hpp"
@@ -49,6 +50,7 @@ FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
 	sentenceChecks.push_back(new check::NegativeVerbCheck());
 	sentenceChecks.push_back(new check::CompoundVerbCheck());
 	sentenceChecks.push_back(new check::SidesanaCheck());
+	sentenceChecks.push_back(new check::RelativePronounCheck());
 #ifdef HAVE_VFST
 	if (voikkoOptions->dictionary.getGrammarBackend().getBackend() == "finnishVfst") {
 		std::string autocorrFile = voikkoOptions->dictionary.getGrammarBackend().getPath() + "/autocorr.vfst";
