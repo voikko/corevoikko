@@ -47,6 +47,9 @@ static bool isSpecialExpression(std::vector<const Token *> & tokens, size_t assu
 		if (wcscmp(L"vaan", tokens[assumedRP + 1]->str) == 0 && isMika(tokens[assumedRP])) {
 			return true; // mikä vaan, minne vaan jne.
 		}
+		if (wcscmp(L"tapauksessa", tokens[assumedRP + 1]->str) == 0 && isJoka(tokens[assumedRP])) {
+			return true; // joka tapauksessa
+		}
 	}
 	return false;
 }

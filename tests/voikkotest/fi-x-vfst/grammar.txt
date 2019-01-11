@@ -237,6 +237,7 @@ Ostan jauhelihaa jonka viimeinen käyttöpäivä on tänään.
  [code=19, level=0, stpos=16, len=6, suggs={", jonka"}]
 Ostan jauhelihaa jonka vaan syön.
  [code=19, level=0, stpos=16, len=6, suggs={", jonka"}]
+Hän on tähän ryhmään joka tapauksessa liian vanha.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
