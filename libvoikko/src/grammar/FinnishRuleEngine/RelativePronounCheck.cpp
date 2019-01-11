@@ -43,11 +43,13 @@ static bool isMika(const Token * t) {
 }
 
 static bool isSpecialExpression(std::vector<const Token *> & tokens, size_t assumedRP) {
+	const Token * rp = tokens[assumedRP];
 	if (tokens.size() - 1 > assumedRP) {
-		if (wcscmp(L"vaan", tokens[assumedRP + 1]->str) == 0 && isMika(tokens[assumedRP])) {
-			return true; // mikä vaan, minne vaan jne.
+		const Token * next = tokens[assumedRP + 1];
+		if ((wcscmp(L"vaan", next->str) == 0 || wcscmp(L"tahansa", next->str) == 0) && isMika(rp)) {
+			return true; // mikä vaan, mitä tahnsa jne.
 		}
-		if (wcscmp(L"tapauksessa", tokens[assumedRP + 1]->str) == 0 && isJoka(tokens[assumedRP])) {
+		if (wcscmp(L"tapauksessa", next->str) == 0 && isJoka(rp)) {
 			return true; // joka tapauksessa
 		}
 	}
