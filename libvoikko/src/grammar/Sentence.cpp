@@ -36,6 +36,7 @@ Sentence::Sentence() : tokenCount(0) {
 Sentence::~Sentence() {
 	for (size_t i = 0; i < this->tokenCount; i++) {
 		delete[] this->tokens[i].str;
+		delete[] this->tokens[i].baseform;
 	}
 }
 

@@ -87,9 +87,6 @@ class Token {
 		/** True if this word may be a conjunction */
 		bool possibleConjunction;
 		
-		/** True if this word is a relative pronoun */
-		bool isRelativePronoun;
-		
 		/**
 		 * What kind of verb must follow this verb in compound verb check. NONE if
 		 * this word is not (or may not be) a verb.
@@ -110,8 +107,11 @@ class Token {
 		
 		/** Position of this token within paragraph */
 		size_t pos;
+		
+		/** Baseform of the word if it is definitely known */
+		wchar_t * baseform;
 
-		/** List of analyses */
+		/** List of analyses (only for HFST at the moment) */
 		std::list<morphology::Analysis *> * analyses;
 };
 

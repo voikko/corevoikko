@@ -33,10 +33,28 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
+static bool isJoka(const Token * t) {
+	return t->baseform && wcscmp(t->baseform, L"joka") == 0;
+}
+
+
+static bool isMika(const Token * t) {
+	return t->baseform && wcscmp(t->baseform, L"mik\u00e4") == 0;
+}
+
+static bool isSpecialExpression(std::vector<const Token *> & tokens, size_t assumedRP) {
+	if (tokens.size() - 1 > assumedRP) {
+		if (wcscmp(L"vaan", tokens[assumedRP + 1]->str) == 0 && isMika(tokens[assumedRP])) {
+			return true; // mikä vaan, minne vaan jne.
+		}
+	}
+	return false;
+}
+
 void RelativePronounCheck::check(voikko_options_t * options, const Sentence * sentence) {
 	std::vector<const Token *> tokens = sentence->getNonWhitespaceTokens();
 	for (size_t i = 1; i < tokens.size(); i++) {
-		if (tokens[i]->isRelativePronoun && wcscmp(tokens[i - 1]->str, L",") != 0) {
+		if ((isJoka(tokens[i]) || isMika(tokens[i])) && wcscmp(tokens[i - 1]->str, L",") != 0 && !isSpecialExpression(tokens, i)) {
 			CacheEntry * e = new CacheEntry(0);
 			e->error.setErrorCode(GCERR_COMMA_MISSING_BEFORE_RELATIVE_PRONOUN);
 			e->error.setStartPos(0);
