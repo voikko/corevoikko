@@ -375,7 +375,7 @@ LEXICON NOUN Kiiski
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
-?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija <WC>Lovi_<A> ;
 
 LEXICON NOUN Siisti
 <WC>Risti_Siisti_s_<A>	;
