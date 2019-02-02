@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2018 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2019 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -160,6 +160,10 @@ LEXICON SukijaAsemosanaHän
 [Sill][Ny]nehen:nehen     Liitesana_ä     ;
 [Sab][Ny]nettä:nettä      Liitesana_ä     ;
 
+LEXICON SukijaAsemosanaMeTe
+[Sg][Nm]idän:iän Liitesana_ä ;
+[Sall][Nm]illen:illen Liitesana_ä ;
+
 LEXICON SukijaAsemosanaMieMä
 [Sall][Ny]ullen:ullen Liitesana_a ;
 
@@ -233,8 +237,9 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]harppuuna[X]harppuun:harppun NimisanaPeruna_a ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Loppu ;
-[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Loppu ;
+[Ln][Xp]heras=tuomari[X]heras[Bm]tuomar:herrastuomar NimisanaPaperi_a ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Liitesana_ä ;
+[Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Liitesana_ä ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]imaami[X]imaam:imam NimisanaPaperi_a ;
@@ -314,6 +319,7 @@ LEXICON SukijaPoikkeavat_n
 LEXICON SukijaAsemosana
 [Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
+[Lr][Xp]me[X]me:me      SukijaAsemosanaMeTe ;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
 [Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
@@ -322,6 +328,7 @@ LEXICON SukijaAsemosana
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMieMä ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMieMä ;
+[Lr][Xp]te[X]te:te      SukijaAsemosanaMeTe ;
 [Lr][Xp]mones[X]mone:mone JärjestyslukuKahdeksasOmistusliitteet_a ;
 [Lr][Xp]muuan[X]muu[Sn][Ny]dan:muudan Liitesana_a ;
 [Lr][Xp]muuan[X]muu[Ses][Ny]danna:muudanna Liitesana_a ;
