@@ -148,3 +148,80 @@ and return the values of the last body form."
        (declare (ignorable ,variable))
        (unwind-protect (progn ,@body)
          (terminate ,instance)))))
+
+(defun list-dicts (&optional path)
+  "Get a list of available dictionaries from Libvoikko's default search
+paths and additionally from PATH (string). Return a list which contains
+one association list for each dictionary. The association list has the
+following keys (keyword symbols): :LANGUAGE, :SCRIPT, :VARIANT and
+:DESCRIPTION. Each key's value is a string."
+  (check-type path (or string null))
+  (let ((dicts-ptr (foreign-funcall "voikko_list_dicts"
+                                    :string (if (null path)
+                                                (null-pointer)
+                                                path)
+                                    :pointer)))
+    (when (proper-pointer-p dicts-ptr)
+      (unwind-protect
+           (loop :for i :upfrom 0
+                 :for dict-ptr := (mem-aref dicts-ptr :pointer i)
+                 :while (proper-pointer-p dict-ptr)
+                 :collect
+                 (list (cons :language (foreign-funcall
+                                        "voikko_dict_language"
+                                        :pointer dict-ptr :string))
+                       (cons :script (foreign-funcall
+                                      "voikko_dict_script"
+                                      :pointer dict-ptr :string))
+                       (cons :variant (foreign-funcall
+                                       "voikko_dict_variant"
+                                       :pointer dict-ptr :string))
+                       (cons :description (foreign-funcall
+                                           "voikko_dict_description"
+                                           :pointer dict-ptr :string))))
+        (foreign-funcall "voikko_free_dicts" :pointer dicts-ptr :void)))))
+
+(defun list-supported-spelling-languages (&optional path)
+  "Return a list of language codes (string) representing the languages
+for which at least one dictionary is available for spell checking."
+  (check-type path (or string null))
+  (let ((ptr (foreign-funcall "voikkoListSupportedSpellingLanguages"
+                              :string (if (null path)
+                                          (null-pointer)
+                                          path)
+                              :pointer)))
+    (when (proper-pointer-p ptr)
+      (loop :for i :upfrom 0
+            :for lang := (mem-aref ptr :string i)
+            :while (stringp lang)
+            :collect lang))))
+
+(defun list-supported-hyphenation-languages (&optional path)
+  "Return a list of language codes (string) representing the languages
+for which at least one dictionary is available for hyphenation."
+  (check-type path (or string null))
+  (let ((ptr (foreign-funcall "voikkoListSupportedHyphenationLanguages"
+                              :string (if (null path)
+                                          (null-pointer)
+                                          path)
+                              :pointer)))
+    (when (proper-pointer-p ptr)
+      (loop :for i :upfrom 0
+            :for lang := (mem-aref ptr :string i)
+            :while (stringp lang)
+            :collect lang))))
+
+(defun list-supported-grammar-checking-languages (&optional path)
+  "Return a list of language codes (string) representing the languages
+for which at least one dictionary is available for grammar checking."
+  (check-type path (or string null))
+  (let ((ptr (foreign-funcall "voikkoListSupportedGrammarCheckingLanguages"
+                              :string (if (null path)
+                                          (null-pointer)
+                                          path)
+                              :pointer)))
+    (when (proper-pointer-p ptr)
+      (loop :for i :upfrom 0
+            :for lang := (mem-aref ptr :string i)
+            :while (stringp lang)
+            :collect lang))))
