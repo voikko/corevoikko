@@ -1,6 +1,6 @@
 ;;;; A Common Lisp interface for libvoikko
 ;;
-;; Copyright (C) 2011-2012 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2011, 2012, 2019 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; The contents of this file are subject to the Mozilla Public License Version
 ;; 1.1 (the "License"); you may not use this file except in compliance with
@@ -77,6 +77,8 @@ value is the value for that key (a string).
 INSTANCE must be an active Voikko instance, if not, a condition of type
 NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
+  (error-if-not-active-instance instance)
+  (check-type word string)
   (let ((analysis (analyze-word instance word)))
     (when (and (mor-analysis-p analysis)
                (activep analysis))

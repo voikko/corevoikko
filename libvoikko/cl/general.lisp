@@ -1,6 +1,6 @@
 ;;;; A Common Lisp interface for libvoikko
 ;;
-;; Copyright (C) 2011-2012 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2011, 2012, 2019 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; The contents of this file are subject to the Mozilla Public License Version
 ;; 1.1 (the "License"); you may not use this file except in compliance with
@@ -108,6 +108,7 @@ is signaled. In that case there is an active restart called
 CHANGE-LANGUAGE. It can be invoked with a new language string as its
 argument. The restart retries the initialize process."
 
+  (check-type language string)
   (with-foreign-object (error :pointer)
     (loop (restart-case
               (let ((address (foreign-funcall "voikkoInit"
