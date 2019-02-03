@@ -96,12 +96,15 @@ active or not."))
 (defmethod free-foreign-resource ((object instance))
   (foreign-funcall "voikkoTerminate" :pointer (address object) :void))
 
-(defun initialize (&key (language "fi_FI"))
-  "Initialize a Voikko instance for LANGUAGE. Return an object of type
-INSTANCE which can then be used with other Voikko functions. The
-instance must be closed with TERMINATE function after use. See also the
-macro WITH-INSTANCE which automatically initializes and terminates a
-Voikko instance.
+(defun initialize (&key (language "fi_FI") path)
+  "Initialize a Voikko instance for LANGUAGE (string). Language
+dictionaries are searched from Libvoikko's default locations and
+additionally from PATH (string).
+
+Return an object of type INSTANCE which can then be used with other
+Voikko functions. The instance must be closed with TERMINATE function
+after use. See also the macro WITH-INSTANCE which automatically
+initializes and terminates a Voikko instance.
 
 If instance couldn't be initialized a condition of type INITIALIZE-ERROR
 is signaled. In that case there is an active restart called
@@ -109,12 +112,15 @@ CHANGE-LANGUAGE. It can be invoked with a new language string as its
 argument. The restart retries the initialize process."
 
   (check-type language string)
+  (check-type path (or string null))
   (with-foreign-object (error :pointer)
     (loop (restart-case
               (let ((address (foreign-funcall "voikkoInit"
                                               :pointer error
                                               :string language
-                                              :pointer (null-pointer)
+                                              :string (if (null path)
+                                                          (null-pointer)
+                                                          path)
                                               :pointer)))
 
                 (if (and (pointerp address)
@@ -137,13 +143,16 @@ it."
   (assert (instancep instance) nil "The object is not a Voikko instance.")
   (free-foreign-resource instance))
 
-(defmacro with-instance ((variable &key (language "fi_FI")) &body body)
-  "Initialize a Voikko instance for LANGUAGE, bind VARIABLE to the
-INSTANCE object and execute BODY forms. Finally, terminate the instance
-and return the values of the last body form."
+(defmacro with-instance ((variable &key (language "fi_FI") path)
+                         &body body)
+  "Initialize a Voikko instance using VOIKKO:INITIALIZE function (with
+its keyword arguments), bind VARIABLE to the INSTANCE object and execute
+BODY forms. Finally, terminate the instance with VOIKKO:TERMINATE
+function and return the values of the last body form."
 
   (let ((instance (gensym "INSTANCE")))
-    `(let* ((,instance (initialize :language ,language))
+    `(let* ((,instance (initialize :language ,language
+                                   :path ,path))
             (,variable ,instance))
        (declare (ignorable ,variable))
        (unwind-protect (progn ,@body)
