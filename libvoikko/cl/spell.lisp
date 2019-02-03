@@ -122,6 +122,26 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
         (error 'hyphenation-error :string "Hyphenation error."))))
 
+(defun insert-hyphens (instance word &key (hyphen #\-)
+                                       allow-context-changes)
+  "Hyphenate WORD (string) by inserting HYPHEN (character) between each
+syllable. If ALLOW-CONTEXT-CHANGES is non-nil hyphens are inserted even
+if they alter the word in unhyphenated form. Return the hyphenated
+word (string).
+
+INSTANCE must be an active Voikko instance, if not, a condition of type
+NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
+  (error-if-not-active-instance instance)
+  (check-type word string)
+  (check-type hyphen character)
+  (foreign-funcall "voikkoInsertHyphensCstr"
+                   :pointer (address instance)
+                   :string word
+                   :string (string hyphen)
+                   :int (if allow-context-changes 1 0)
+                   :string))
+
 (defun split-word (instance width word)
   "Split WORD in two and return the parts as a cons cell. The word is
 split at correct hyphenation points only. The WIDTH argument defines the
