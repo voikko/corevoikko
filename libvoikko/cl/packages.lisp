@@ -4,7 +4,10 @@
   (:use #:cl #:cffi)
   (:export #:instance #:activep #:initialize #:terminate
            #:with-instance #:spell #:suggest #:hyphenate #:version
-           #:set-option #:analyze #:split-word
+           #:set-option #:analyze #:split-word #:list-dicts
+           #:list-supported-spelling-languages
+           #:list-supported-hyphenation-languages
+           #:list-supported-grammar-checking-languages
 
            #:error-string
            #:voikko-error #:initialize-error #:internal-error
