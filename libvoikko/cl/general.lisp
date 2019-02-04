@@ -145,10 +145,10 @@ it."
 
 (defmacro with-instance ((variable &key (language "fi_FI") path)
                          &body body)
-  "Initialize a Voikko instance using VOIKKO:INITIALIZE function (with
-its keyword arguments), bind VARIABLE to the INSTANCE object and execute
-BODY forms. Finally, terminate the instance with VOIKKO:TERMINATE
-function and return the values of the last body form."
+  "Initialize a Voikko instance using INITIALIZE function (with its
+keyword arguments), bind VARIABLE to the INSTANCE object and execute
+BODY forms. Finally, terminate the instance with TERMINATE function and
+return the values of the last body form."
 
   (let ((instance (gensym "INSTANCE")))
     `(let* ((,instance (initialize :language ,language
