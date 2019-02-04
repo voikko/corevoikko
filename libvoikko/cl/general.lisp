@@ -158,7 +158,7 @@ return the values of the last body form."
        (unwind-protect (progn ,@body)
          (terminate ,instance)))))
 
-(defun list-dicts (&optional path)
+(defun list-dictionaries (&optional path)
   "Get a list of available dictionaries from Libvoikko's default search
 paths and additionally from PATH (string). Return a list which contains
 one association list for each dictionary. The association list has the
