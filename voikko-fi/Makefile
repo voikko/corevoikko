@@ -17,7 +17,7 @@ VVFST_BASEFORMS=yes
 -include config.mak
 
 # Version of voikko-fi
-SM_VERSION=2.2
+SM_VERSION=2.3
 ifdef SOURCE_DATE_EPOCH
 	SM_BUILDDATE=$(shell date -R -u -d "@$(SOURCE_DATE_EPOCH)")
 else
