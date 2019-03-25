@@ -160,8 +160,9 @@ LEXICON SukijaAsemosanaHän
 [Sill][Ny]nehen:nehen     Liitesana_ä     ;
 [Sab][Ny]nettä:nettä      Liitesana_ä     ;
 
-LEXICON SukijaAsemosanaMeTe
+LEXICON SukijaAsemosanaMeTeHe
 [Sg][Nm]idän:iän Liitesana_ä ;
+[Sg][Nm]idän:ijän Liitesana_ä ;
 [Sall][Nm]illen:illen Liitesana_ä ;
 
 LEXICON SukijaAsemosanaMieMä
@@ -317,9 +318,10 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 
 LEXICON SukijaAsemosana
+[Lr][Xp]he[X]he:he      SukijaAsemosanaMeTeHe ;
 [Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
-[Lr][Xp]me[X]me:me      SukijaAsemosanaMeTe ;
+[Lr][Xp]me[X]me:me      SukijaAsemosanaMeTeHe ;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
 [Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
@@ -328,7 +330,7 @@ LEXICON SukijaAsemosana
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMieMä ;
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMieMä ;
-[Lr][Xp]te[X]te:te      SukijaAsemosanaMeTe ;
+[Lr][Xp]te[X]te:te      SukijaAsemosanaMeTeHe ;
 [Lr][Xp]mones[X]mone:mone JärjestyslukuKahdeksasOmistusliitteet_a ;
 [Lr][Xp]muuan[X]muu[Sn][Ny]dan:muudan Liitesana_a ;
 [Lr][Xp]muuan[X]muu[Ses][Ny]danna:muudanna Liitesana_a ;
@@ -338,9 +340,10 @@ LEXICON SukijaAsemosana
 
 
 LEXICON SukijaPoikkeavat_s
-[Ls][Xp]edes[X]ees:ees LoppuLiitesana_ä ;
-[Ls][Xp]edessä[X]eessä:eessä LoppuLiitesana_ä ;
-[Ls][Xp]eestaas[X]ees-taas:ees-taas Loppu ;
+[Ls][Xp]edes[X]edes:ees LoppuLiitesana_ä ;
+[Ls][Xp]edessä[X]edessä:eessä LoppuLiitesana_ä ;
+[Ls][Xp]edessä[X]edestä:eestä LoppuLiitesana_ä ;
+[Ls][Xp]eestaas[X]eestaas:ees-taas Loppu ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
