@@ -3028,6 +3028,8 @@ saartava
 saartanut
 saartaja
 saartaisi
+saartakaa
+saartanee
 laidun
 laitumen
 kuolisivat
