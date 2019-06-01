@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2012 - 2014
+ * Portions created by the Initial Developer are Copyright (C) 2012 - 2019
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -443,6 +443,10 @@ int main(int argc, char ** argv) {
 	cout << "Overflow cells: " << overflowCells << endl;
 	
 	ofstream transducerFile(outputFile.c_str(), ios::out | ios::binary);
+	if (!transducerFile.is_open()) {
+		cerr << "ERROR: cannot open output file for writing: " << outputFile << endl;
+		return 1;
+	}
 	
 	// Write header
 	// Following two 4 byte integers can be used to determine the file type and byte order
