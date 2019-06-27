@@ -344,6 +344,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]edessä[X]edessä:eessä LoppuLiitesana_ä ;
 [Ls][Xp]edessä[X]edestä:eestä LoppuLiitesana_ä ;
 [Ls][Xp]eestaas[X]eestaas:ees-taas Loppu ;
+[Ls][Xp]ihme[X]ihmeesti:ihmeesti LoppuLiitesana_ä ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
@@ -360,10 +361,13 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]miten[X]mitenkäs:mitenkäs     Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]muuanne[X]muudanne:muudanne LoppuLiitesana_a ;
+[Ls][Xp]neuvottelu[X]neuvotteluitse:neuvotteluitse Liitesana_a ;
+[Ls][Xp]neuvotteluitse[X]neuvotteluitse:neuvotteluitse Liitesana_a ;
 [Ls][Xp]niin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
 [Ls][Xp]niinkuin[X]niin[Bm]kuin:niinkuin Liitesana_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
+[Ls][Xp]pakko[X]pakosti:pakosti LoppuLiitesana_a ;
 [Ls][Xp]sensijaan[X]sen[Bm]sijaan:sensijaan Liitesana_a ;
 [Ls][Xp]sentähden[X]sen[Bm]tähden:sentähden Liitesana_ä ;
 [Ls][Xp]senvuoksi[X]sen[Bm]vuoksi:senvuoksi Liitesana_a ;
@@ -406,9 +410,6 @@ LEXICON Sukija_p
 [Lp]afrikka:afrikka EtuliitteenJatko_ellelnelt;
 [Lp]alaston:alaston EtuliitteenJatko_ellelnelt;
 [Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
-[Lp]azorien:azorien EtuliitteenJatko_ellelnelt;
-[Lp]baijerin:baijerin EtuliitteenJatko_ellelnelt;
-[Lp]dalmatian:dalmatian EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:eestaas EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:ees-taas EtuliitteenJatko_ellelnelt;
 [Lp]eestaas[Bm]:eestaas- EtuliitteenJatko_ellelnelt;
@@ -417,7 +418,6 @@ LEXICON Sukija_p
 [Lp]ex-[Bm]:ex- EtuliitteenJatko_ellelnH;
 [Lp]halpa:halpa EtuliitteenJatko_ellelnelt;
 [Lp]helsinki:helsinki EtuliitteenJatko_ellelnelt;
-[Lp]hulluin:hulluin EtuliitteenJatko_ellelnelt;
 [Lp]hyvin:hyvin EtuliitteenJatko_ellelnelt;
 [Lp]jehovan:jehovan EtuliitteenJatko_ellelnelt;
 [Lp]kaakkois:kaakkois EtuliitteenJatko_ellelnelt;
@@ -426,7 +426,6 @@ LEXICON Sukija_p
 [Lp]kaksi:kaksi EtuliitteenJatko_ellelnelt;
 [Lp]kapea:kapea EtuliitteenJatko_ellelnelt;
 [Lp]karaiitti:karaiitti EtuliitteenJatko_ellelnelt;
-[Lp]karibian:karibian EtuliitteenJatko_ellelnelt;
 [Lp]karkea:karkea EtuliitteenJatko_ellelnelt;
 [Lp]kashmir:kashmir EtuliitteenJatko_ellelnelt;
 [Lp]kaunis:kaunis EtuliitteenJatko_ellelnelt;
@@ -441,11 +440,7 @@ LEXICON Sukija_p
 [Lp]loppuun:loppuun EtuliitteenJatko_ellelnelt;
 [Lp]lyhyt:lyhyt EtuliitteenJatko_ellelnelt;
 [Lp]maahan:maahan EtuliitteenJatko_ellelnelt;
-[Lp]malaijan:malaijan EtuliitteenJatko_ellelnelt;
-[Lp]malakan:malakan EtuliitteenJatko_ellelnelt;
-[Lp]malawin:malawin EtuliitteenJatko_ellelnelt;
 [Lp]marjo:marjo EtuliitteenJatko_ellelnelt;
-[Lp]mauritiuksen:mauritiuksen EtuliitteenJatko_ellelnelt;
 [Lp]miljoona:miljoona EtuliitteenJatko_ellelnelt;
 [Lp]minkä:minkä EtuliitteenJatko_ellelnelt;
 [Lp]ohitse:ohitse EtuliitteenJatko_ellelnelt;
@@ -480,6 +475,7 @@ LEXICON Sukija_p
 [Lp]vaalea:vaalea EtuliitteenJatko_ellelnelt;
 [Lp]valko:valko EtuliitteenJatko_ellelnelt;
 [Lp]vallas:vallas EtuliitteenJatko_ellelnelt;
+[Lp]vallasta:vallasta EtuliitteenJatko_ellelnelt;
 [Lp]valmis:valmis EtuliitteenJatko_ellelnelt;
 [Lp]vihertävän:vihertävän EtuliitteenJatko_ellelnelt;
 [Lp]viisi:viisi EtuliitteenJatko_ellelnelt;
@@ -497,7 +493,6 @@ LEXICON Sukija_p
 [Lp]alaskan:alaskan EtuliitteenJatko_ellelnelt;
 [Lp]amazonin:amazonin EtuliitteenJatko_ellelnelt;
 [Lp]amerikan:amerikan EtuliitteenJatko_ellelnelt;
-[Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
 [Lp]anatolian:anatolian EtuliitteenJatko_ellelnelt;
 [Lp]andalusian:andalusian EtuliitteenJatko_ellelnelt;
 [Lp]andamaanien:andamaanien EtuliitteenJatko_ellelnelt;
@@ -507,7 +502,9 @@ LEXICON Sukija_p
 [Lp]antillien:antillien EtuliitteenJatko_ellelnelt;
 [Lp]argentiinan:argentiinan EtuliitteenJatko_ellelnelt;
 [Lp]australian:australian EtuliitteenJatko_ellelnelt;
+[Lp]azorien:azorien EtuliitteenJatko_ellelnelt;
 [Lp]bahian:bahian EtuliitteenJatko_ellelnelt;
+[Lp]baijerin:baijerin EtuliitteenJatko_ellelnelt;
 [Lp]balin:balin EtuliitteenJatko_ellelnelt;
 [Lp]balkanin:balkanin EtuliitteenJatko_ellelnelt;
 [Lp]bandan:bandan EtuliitteenJatko_ellelnelt;
@@ -528,6 +525,7 @@ LEXICON Sukija_p
 [Lp]celebesin:celebesin EtuliitteenJatko_ellelnelt;
 [Lp]chilen:chilen EtuliitteenJatko_ellelnelt;
 [Lp]coloradon:coloradon EtuliitteenJatko_ellelnelt;
+[Lp]dalmatian:dalmatian EtuliitteenJatko_ellelnelt;
 [Lp]darwinin:darwinin EtuliitteenJatko_ellelnelt;
 [Lp]ecuadorin:ecuadorin EtuliitteenJatko_ellelnelt;
 [Lp]egyptin:egyptin EtuliitteenJatko_ellelnelt;
@@ -586,13 +584,17 @@ LEXICON Sukija_p
 [Lp]louisiaden:louisiaden EtuliitteenJatko_ellelnelt;
 [Lp]madagaskarin:madagaskarin EtuliitteenJatko_ellelnelt;
 [Lp]malabarin:malabarin EtuliitteenJatko_ellelnelt;
+[Lp]malaijan:malaijan EtuliitteenJatko_ellelnelt;
 [Lp]malaitan:malaitan EtuliitteenJatko_ellelnelt;
+[Lp]malakan:malakan EtuliitteenJatko_ellelnelt;
+[Lp]malawin:malawin EtuliitteenJatko_ellelnelt;
 [Lp]malesian:malesian EtuliitteenJatko_ellelnelt;
 [Lp]mantsurian:mantsurian EtuliitteenJatko_ellelnelt;
 [Lp]mantsurian:mantshurian EtuliitteenJatko_ellelnelt;
 [Lp]manusin:manusin EtuliitteenJatko_ellelnelt;
 [Lp]mariaanien:mariaanien EtuliitteenJatko_ellelnelt;
 [Lp]marshallin:marshallin EtuliitteenJatko_ellelnelt;
+[Lp]mauritiuksen:mauritiuksen EtuliitteenJatko_ellelnelt;
 [Lp]meksikon:meksikon EtuliitteenJatko_ellelnelt;
 [Lp]mikronesian:mikronesian EtuliitteenJatko_ellelnelt;
 [Lp]molukkien:molukkien EtuliitteenJatko_ellelnelt;
