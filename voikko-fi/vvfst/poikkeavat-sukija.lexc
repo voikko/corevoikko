@@ -279,7 +279,6 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:ooppiumso NimisanaJuhta_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
 [Ln][Xp]paneeli[X]paneel:panel NimisanaPaperi_a ;
-[Ln][Xp]peitsi[X]pei[Sp][Ny]tseä:peitseä NimisanaLiOlV_ä ;
 [Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
@@ -288,6 +287,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
 [Ln][Xp]rakuuna[X]rakuun:rakun NimisanaPeruna_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
+[Ln][Xp]sarake[X]sarak:sarek NimisanaTarvike_a ;
+[Ln][Xp]saareke[X]saarek:sarek NimisanaTarvike_a ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
@@ -836,8 +837,6 @@ LEXICON SukijaPoikkeavat_nl
 LEXICON SukijaPoikkeavat_t
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
-[Lt][Xp]ei[X]ällös:ällös     Loppu ;
-[Lt][Xp]ei[X]ällöspä:ällöspä Loppu ;
 [Lt][Xp]kitistä[X]kit:kit Kihajaa_a ;
 [Lt][Xp]lätistä[X]lät:lät Kihajaa_ä ;
 [Lt][Xp]nitistä[X]nit:nit Kihajaa_a ;

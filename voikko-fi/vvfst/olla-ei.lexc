@@ -45,6 +45,7 @@ l:l                     Käskytapa_a ;
 l[Tk][Ap][P3][Ny][Ef]koon[Fkin]kin:lkoonkin	Loppu	;
 [Tt][Ap][P4][Ef]llaan:llaan Liitesana_a ;  # Ollaan.
 [Tt][Ai][P4][Ef]ltiin:ltiin Liitesana_a ;  # Oltiin.
+?Murre [Tt][Ai][P4][Ef]ltihin:ltihin Liitesana_a ;  # Oltihin.
 ?Murre [Tt][Ap][P1][Ny][Ef]on:on     Liitesana_a ;  # Mä oon.
 ?Murre [Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
 ?Murre [Tt][Ap][P3][Ny][Ef]mpi:mpi   Liitesana_a ;  # Hän ompi.
@@ -126,3 +127,13 @@ Lexicon Älkää
 [P2][Nm]kää:kää       KieltosananLiitesana_ä ;
 [P2][Nm]käätte:käätte KieltosananLiitesana_ä ;
 [P3][Nm]kööt:kööt     KieltosananLiitesana_ä ;
+?Murre [P3][Ny]köhön:köhön     KieltosananLiitesana_ä ;
+?Murre [P2][Nm]kään:kään       KieltosananLiitesana_ä ;
+?Murre [P2][Nm]kääs:kääs       KieltosananLiitesana_ä ;
+?Murre [P2][Nm]käät:käät       KieltosananLiitesana_ä ;
+?Murre [P2][Nm]käätkä:käätkä   Loppu ;
+?Murre [P2][Nm]käätkö:käätkö   Loppu ;
+?Murre [P2][Nm]käätten:käätten KieltosananLiitesana_ä ;
+?Murre [P3][Nm]köhöt:köhöt     KieltosananLiitesana_ä ;
+?Murre [P2][Ny]lös:lös         Loppu ;
+?Murre [P2][Ny]löspä[Ef]:löspä Loppu ;
