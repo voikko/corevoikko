@@ -86,7 +86,7 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 			size_t w2len = s->getWordLength() - splitind - stripLead2;
 			wcsncpy(suggestion + w2start, s->getWord() + splitind + stripLead2, w2len + 1);
 			bool part2Result = spellOk(s, suggestion + w2start, w2len, prio_part);
-			prio_total += prio_part;
+			prio_total = (prio_total + prio_part) * (1 + stripLead2 * 5);
 			if (part2Result) {
 				wcsncpy(suggestion, part1, splitind);
 				suggestion[splitind] = L' ';

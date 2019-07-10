@@ -11,7 +11,7 @@ Annna	Anna
 hkoira	!h-koira	koira
 marko	!marko	Marko
 keski-ranska	!keski-ranska	Keski-Ranska
-kerros-talo	!kerros- talo	!kerros -talo	kerrostalo
+kerros-talo	!kerros- talo	!kerros -talo	kerrostalo	kerros talo
 kuormaauto	kuorma-auto
 kuormaauto	kuorma auto
 ras'an	!raa’an	raa'an
