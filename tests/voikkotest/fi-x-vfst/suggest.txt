@@ -21,6 +21,7 @@ kuorma‐audo	!kuorma-auto	kuorma‐auto
 23.24	23,24
 etelä-afrikka	Etelä-Afrikka
 natsi-saksa	natsi-Saksa
+suuntaa-antava	suuntaa antava
 maara	määrä
 horoskoppi	horoskooppi
 mito	maito

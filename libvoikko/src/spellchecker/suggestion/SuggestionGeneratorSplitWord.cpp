@@ -77,13 +77,14 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 		   or after the first character of part2. Do not suggest splitting immediately
 		   before or after a hyphen either. */
 		if (s->getWord()[splitind-2] == L'-' || s->getWord()[splitind-1] == L'-' ||
-		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
+		    s->getWord()[splitind+1] == L'-') continue;
+		size_t stripLead2 = (s->getWord()[splitind] == L'-') ? 1 : 0; // "suuntaa-antava" -> "suuntaa antava"
 		part1[splitind] = L'\0';
 		if (getResultForPart1(s, part1, splitind, prio_total)) {
 			wchar_t * suggestion = new wchar_t[s->getWordLength() + 2];
 			size_t w2start = splitind + 1;
-			size_t w2len = s->getWordLength() - splitind;
-			wcsncpy(suggestion + w2start, s->getWord() + splitind, w2len + 1);
+			size_t w2len = s->getWordLength() - splitind - stripLead2;
+			wcsncpy(suggestion + w2start, s->getWord() + splitind + stripLead2, w2len + 1);
 			bool part2Result = spellOk(s, suggestion + w2start, w2len, prio_part);
 			prio_total += prio_part;
 			if (part2Result) {
