@@ -880,6 +880,7 @@ LEXICON NOUN Ruoka
 [Sn][Nm]<U><A>t:<U><A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<U><A>n:<U><A>n	<WC>YksikönGenetiivinJatko_<A>	;
 <U><A>:<U><A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<U>:<U>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<U><A>:<U><A>	Johdin_tOn_<A>	;
 
 ! Oikea esimerkkisana "hattara"

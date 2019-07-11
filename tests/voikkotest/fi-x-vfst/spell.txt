@@ -2720,6 +2720,8 @@ myydyimpiä
 ruoka
 ruoan
 ruuan
+ruuissa
+ruuista
 amsterdamilainen
 runsaskalsiuminen
 Björn-Erik
