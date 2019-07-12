@@ -821,6 +821,10 @@ kutiamaton
 huimahko
 hoikahko
 !huimahkompi
+multavahko
+haikeahko
+tiuhahko
+kolkohko
 
 # = taivutusluokat =
 []

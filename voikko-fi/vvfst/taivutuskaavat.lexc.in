@@ -172,6 +172,7 @@ LEXICON NOUN Valo_w
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Laatusana	Johdin_hkO_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -750,6 +751,7 @@ LEXICON NOUN Kala_w_ei_yliaste
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 
 LEXICON NOUN Nahka
@@ -954,6 +956,7 @@ LEXICON NOUN Asema_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
@@ -1149,6 +1152,7 @@ LEXICON NOUN Ainoa
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
