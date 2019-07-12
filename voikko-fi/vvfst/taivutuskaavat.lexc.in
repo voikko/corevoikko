@@ -832,6 +832,7 @@ LEXICON NOUN Koira_w_yksikkö
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -4437,6 +4438,9 @@ LEXICON Johdin_tOn
 llis@C.EI_YKS@:llis@C.EI_YKS@	NimisanaYsJatko	;
 llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnimet	;
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;
+
+LEXICON Johdin_hkO
+[Ll][Xj]hk<O>[X]hk<O>@P.EI_VERTM.ON@:hk<O>@P.EI_VERTM.ON@	LaatusanaValo_<A>	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in[Xj][X]:itt<A>in	Liitesana_<A>	;

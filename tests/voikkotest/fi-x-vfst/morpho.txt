@@ -2351,6 +2351,10 @@ word:saartavat
   NEGATIVE=false
   NUMBER=plural
   PERSON=3
+word:tyhmähkö
+ expected:1
+ analysis
+   CLASS=laatusana
 #word:12:12:12
 # expected:1
 # analysis

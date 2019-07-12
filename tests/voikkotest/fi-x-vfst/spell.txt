@@ -818,6 +818,9 @@ kutiaminen
 kutiaisin
 kutiamaan
 kutiamaton
+huimahko
+hoikahko
+!huimahkompi
 
 # = taivutusluokat =
 []
