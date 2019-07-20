@@ -829,6 +829,10 @@ hapahko
 kattavahko
 ehyehkö
 hontelohko
+lämpimähkö
+nuorehko
+tyynehkö
+pitkähkö
 
 # = taivutusluokat =
 []
