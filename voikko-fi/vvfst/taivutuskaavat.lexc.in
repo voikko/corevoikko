@@ -256,6 +256,7 @@ LEXICON NOUN Arvelu_w
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Laatusana	Johdin_hkO_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Sukija [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
@@ -1934,6 +1935,7 @@ LEXICON NOUN Airut
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	e:e	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
