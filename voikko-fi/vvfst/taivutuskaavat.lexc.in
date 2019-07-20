@@ -4465,7 +4465,21 @@ llis-[Bc]@D.INEN_KIELLETTY@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@C.EI_YKS@	Yleisnim
 llis-[Bc]@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@:llis-@D.INEN_KIELLETTY@@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.EI_YKS@	Sanasto_t	;
 
 LEXICON Johdin_hkO
-[Ll][Xj]hk<O>[X]hk<O>@P.EI_VERTM.ON@:hk<O>@P.EI_VERTM.ON@	LaatusanaValo_<A>	;
+[Ll][Xj]hk<O>[X]hk<O>:hk<O>	Johdin_hkO_jatko_<A>	;
+
+LEXICON Johdin_hkO_jatko
+[Sn][Nm]t:t	LaatusanaMonikonNominatiivinJatko_<A>	;
+[Sg][Ny]n:n	LaatusanaYksikönGenetiivinJatko_<A>	;
+LaatusanaYhteisetYksikönPaikallissijat_<A>	;
+LaatusanaYhteisetMonikonPaikallissijat_<A>	;
+[Sn][Ny]:	LaatusanaNormaaliYsJatkoOl_<A>	;
+[Sg][Nm]j:j	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]<A>:<A>	LaatusanaLiOlV_<A>	;
+[Sp][Nm]j<A>:j<A>	LaatusanaLiOlV_<A>	;
+[Sill][Ny]<O>:<O>	LaatusanaLiOlN_<A>	;
+[Sill][Nm]ihi:ihi	LaatusanaLiOlN_<A>	;
+[Ses][Ny]n<A>:n<A>	LaatusanaLiOlV_<A>	;
+LaatusanaYhteisetMonikonSijat2_<A>	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in[Xj][X]:itt<A>in	Liitesana_<A>	;

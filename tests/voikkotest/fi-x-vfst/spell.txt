@@ -846,6 +846,8 @@ vakaahko
 avoimehko
 happamahko
 tiiviihkö
+!nopeahkohko
+pienehköön
 
 # = taivutusluokat =
 []
