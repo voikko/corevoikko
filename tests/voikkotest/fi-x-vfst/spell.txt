@@ -833,6 +833,9 @@ lämpimähkö
 nuorehko
 tyynehkö
 pitkähkö
+kiivaahko
+tuoreehko
+uudehko
 
 # = taivutusluokat =
 []

@@ -1599,6 +1599,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	si:si	Johdin_mAinen_<A>	;
+?Laatusana	de:de	Johdin_hkO_<A>	;
 ?Laatusana	de:de	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Paikannimi	te:te	Johdin_lAinen_<A>	;
@@ -2139,6 +2140,7 @@ LEXICON NOUN Hame_s
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	e:e	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
@@ -2315,6 +2317,7 @@ LEXICON NOUN Vieras_s
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	[[L]]:[[L]]	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	[[L]]:[[L]]	Johdin_hkO_<A>	;
 ?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
 ?Paikannimi	[[L]]:[[L]]	Johdin_lAinen_<A>	;
 ?Vanha ?NotLaatusana [[HV]][Sn][Ny]h<A>:[[HV]] Omistusliite_<A>	;
