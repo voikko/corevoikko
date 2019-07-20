@@ -836,6 +836,13 @@ pitkähkö
 kiivaahko
 tuoreehko
 uudehko
+steriilihkö
+autiohko
+joviaalihko
+raa'ahko
+hatarahko
+tanakahko
+vakaahko
 
 # = taivutusluokat =
 []

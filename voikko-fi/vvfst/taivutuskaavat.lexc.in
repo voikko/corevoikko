@@ -342,6 +342,7 @@ LEXICON NOUN Paperi_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
+?Laatusana	i:i	Johdin_hkO_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 
@@ -362,6 +363,7 @@ LEXICON NOUN Autio
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Laatusana	Johdin_hkO_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
@@ -455,6 +457,7 @@ LEXICON NOUN Risti_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
+?Laatusana	i:i	Johdin_hkO_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 
@@ -703,6 +706,7 @@ k:k	<WC>Kala_s_<A>	;
 '<A>:'<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	'<A>:'<A>	Johdin_tOn_<A>	;
+?Laatusana	'<A>:'<A>	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Sukija '<O>:'<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -913,6 +917,7 @@ LEXICON NOUN Matala
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
@@ -1051,6 +1056,7 @@ LEXICON NOUN Solakka_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -1204,6 +1210,7 @@ LEXICON NOUN Vapaa_l
 [Sill][Ny]see:see	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Laatusana	Johdin_hkO_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]sehe:sehe	<WC>LiOlN_<A>	;
 
