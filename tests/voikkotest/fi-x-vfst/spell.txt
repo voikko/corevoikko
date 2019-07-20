@@ -843,6 +843,9 @@ raa'ahko
 hatarahko
 tanakahko
 vakaahko
+avoimehko
+happamahko
+tiiviihkö
 
 # = taivutusluokat =
 []

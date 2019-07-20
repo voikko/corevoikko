@@ -1813,6 +1813,7 @@ LEXICON NOUN Uistin_m
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	e:e	Johdin_hkO_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
@@ -1834,6 +1835,7 @@ LEXICON NOUN Uistin_mA
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
@@ -2368,6 +2370,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	i:i	Johdin_hkO_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
 ?Sukija  <WC>YhteisetHTaivutusmuodot_<A> ;
