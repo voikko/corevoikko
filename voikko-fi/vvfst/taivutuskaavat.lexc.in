@@ -1737,6 +1737,7 @@ LEXICON NOUN Hapan
 <A>n:<A>n	<WC>Uistin_n_<A>	;
 p<A>m:p<A>m	<WC>Uistin_m_<A>	;
 p<A>m:p<A>m	<WC>Uistin_mA_<A>	;
+?Laatusana	<A>:<A>	Johdin_hkO_<A>	;
 
 LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;
@@ -4313,6 +4314,7 @@ LEXICON Johdin_vE
 LEXICON Johdin_vA_muodot
 Johdin_vA_vE_muodot_<A>	;
 <A>:<A>	Voittoaste_<A>	;
+<A>:<A>	Johdin_hkO_<A>	;
 
 LEXICON Johdin_vE_muodot
 Johdin_vA_vE_muodot_<A>	;

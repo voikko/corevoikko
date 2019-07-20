@@ -825,6 +825,8 @@ multavahko
 haikeahko
 tiuhahko
 kolkohko
+hapahko
+kattavahko
 
 # = taivutusluokat =
 []
