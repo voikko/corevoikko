@@ -4480,6 +4480,12 @@ LaatusanaYhteisetMonikonPaikallissijat_<A>	;
 [Sill][Nm]ihi:ihi	LaatusanaLiOlN_<A>	;
 [Ses][Ny]n<A>:n<A>	LaatusanaLiOlV_<A>	;
 LaatusanaYhteisetMonikonSijat2_<A>	;
+?Sukija [Sg][Nm]id:id	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]itt:itt	LaatusanaMonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Ny]t<A>:t<A>	LaatusanaLiOlV_<A>      ;
+?Sukija [[HV]][Sill][Ny]:[[HV]]	LaatusanaLiOlN_<A>      ;
+?Sukija Voittoaste_<A>	;
+?Sukija Yliaste_<A>	;
 
 LEXICON Johdin_ittAin
 [Ls]itt<A>in[Xj][X]:itt<A>in	Liitesana_<A>	;
