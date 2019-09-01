@@ -400,6 +400,9 @@ class VoikkoLibrary(CDLL):
 
         self.voikkoListSupportedGrammarCheckingLanguages.argtypes = [c_char_p]
         self.voikkoListSupportedGrammarCheckingLanguages.restype = POINTER(c_char_p)
+        
+        self.voikkoGetAttributeValues.argtypes = [c_void_p, c_char_p]
+        self.voikkoGetAttributeValues.restype = POINTER(c_char_p)
 
         self.voikkoGetVersion.argtypes = []
         self.voikkoGetVersion.restype = c_char_p
@@ -748,6 +751,22 @@ class Voikko(object):
             position = position + sentenceLen.value
             textLen = textLen - sentenceLen.value
         return result
+
+    def attributeValues(self, attributeName):
+        """Returns a list of possible attribute values for attribute in morphological analysis.
+        If the attribute does not exist or it does not have a known finite set of possible values returns None."""
+        if not self.__isValidInput(attributeName):
+            return None
+        cValues = self.__lib.voikkoGetAttributeValues(self.__handle, _anyStringToUtf8(attributeName))
+        if not bool(cValues):
+            return None
+        i = 0
+        values = []
+        while bool(cValues[i]):
+            values.append(unicode_str(cValues[i], "UTF-8"))
+            i = i + 1
+        lib.voikkoFreeCstrArray(cValues)
+        return values
 
     def getHyphenationPattern(self, word):
         """Return a character pattern that describes the hyphenation of given word.

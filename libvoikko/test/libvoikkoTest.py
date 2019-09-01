@@ -189,6 +189,20 @@ class LibvoikkoTest(unittest.TestCase):
         self.assertEqual(u"Koira ei ole kissa.", sentences[1].sentenceText)
         self.assertEqual(Sentence.NONE, sentences[1].nextStartType)
 
+    def testAttributeValuesForEnumeratedAttribute(self):
+        values = self.voikko.attributeValues(u"NUMBER")
+        self.assertEqual(2, len(values))
+        self.assertTrue("singular" in values)
+        self.assertTrue("plural" in values)
+
+    def testAttributeValuesForNonEnumeratedAttribute(self):
+        values = self.voikko.attributeValues(u"BASEFORM")
+        self.assertEqual(None, values)
+
+    def testAttributeValuesForUnknownAttribute(self):
+        values = self.voikko.attributeValues(u"XYZ")
+        self.assertEqual(None, values)
+
     def testHyphenationPattern(self):
         pattern = self.voikko.getHyphenationPattern(u"kissa")
         self.assertEqual("   - ", pattern)

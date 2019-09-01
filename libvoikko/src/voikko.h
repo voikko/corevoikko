@@ -468,6 +468,16 @@ char * voikko_mor_analysis_value_cstr(
  */
 void voikko_free_mor_analysis_value_cstr(char * analysis_value);
 
+
+/**
+ * Get list of possible attribute values in morphological analysis.
+ * @param handle voikko instance
+ * @param attributeName name of morphological analysis attribute
+ * @return a list of possible attribute values for attribute in morphological analysis.
+ * If the attribute does not exist or it does not have a known finite set of possible values returns null.
+ */
+char ** voikkoGetAttributeValues(struct VoikkoHandle * handle, const char * attributeName);
+
 #ifndef VOIKKO_NO_DEPRECATED_API
 #include "voikko_deprecated.h"
 #endif

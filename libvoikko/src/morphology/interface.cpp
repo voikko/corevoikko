@@ -111,4 +111,9 @@ VOIKKOEXPORT void voikko_free_mor_analysis_value_cstr(char * analysis_value) {
 	delete[] analysis_value;
 }
 
+VOIKKOEXPORT char ** voikkoGetAttributeValues(voikko_options_t * options, const char * attributeName) {
+	// TODO
+	return nullptr;
+}
+
 } }
