@@ -31,6 +31,7 @@
 
 #include "morphology/Analysis.hpp"
 #include <list>
+#include <string>
 
 namespace libvoikko { namespace morphology {
 
@@ -45,6 +46,8 @@ class Analyzer {
 		 */
 		virtual std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology) = 0;
 		virtual std::list<Analysis *> * analyze(const char * word, bool fullMorphology) = 0;
+		
+		virtual std::list<std::string> getAttributeValues(const char * attributeName);
 		
 		virtual void terminate() = 0;
 		virtual ~Analyzer();

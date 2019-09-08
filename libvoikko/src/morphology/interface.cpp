@@ -112,8 +112,20 @@ VOIKKOEXPORT void voikko_free_mor_analysis_value_cstr(char * analysis_value) {
 }
 
 VOIKKOEXPORT char ** voikkoGetAttributeValues(voikko_options_t * options, const char * attributeName) {
-	// TODO
-	return nullptr;
+	if (!attributeName) {
+		return nullptr;
+	}
+	std::list<std::string> attributeValues = options->morAnalyzer->getAttributeValues(attributeName);
+	if (attributeValues.empty()) {
+		return nullptr;
+	}
+	char ** values = new char*[attributeValues.size() + 1];
+	size_t i = 0;
+	for (std::string s : attributeValues) {
+		values[i++] = utils::StringUtils::copy(s.c_str());
+	}
+	values[i] = nullptr;
+	return values;
 }
 
 } }
