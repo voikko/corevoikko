@@ -1645,6 +1645,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Sukija [Sp][Nm]eit<A>:eit<A>   <WC>LiOlV_<A>   ;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
