@@ -36,9 +36,9 @@ namespace libvoikko { namespace morphology {
 Analyzer::~Analyzer() {
 }
 
-std::list<std::string> Analyzer::getAttributeValues(const char * attributeName) {
+std::list<const wchar_t *> Analyzer::getAttributeValues(const char * attributeName) {
 	// Default implementation will handle all attributes as if their values cannot be enumerated.
-	return list<std::string>();
+	return list<const wchar_t *>();
 }
 
 void Analyzer::deleteAnalyses(list<Analysis *> * &analyses) {

@@ -46,6 +46,7 @@ class FinnishVfstAnalyzer : public Analyzer {
 		explicit FinnishVfstAnalyzer(const std::string & directoryName);
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen, bool fullMorphology);
 		std::list<Analysis *> * analyze(const char * word, bool fullMorphology);
+		std::list<const wchar_t *> getAttributeValues(const char * attributeName);
 		void terminate();
 	private:
 		fst::UnweightedTransducer * transducer;

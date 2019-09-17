@@ -765,7 +765,7 @@ class Voikko(object):
         while bool(cValues[i]):
             values.append(unicode_str(cValues[i], "UTF-8"))
             i = i + 1
-        lib.voikkoFreeCstrArray(cValues)
+        self.__lib.voikkoFreeCstrArray(cValues)
         return values
 
     def getHyphenationPattern(self, word):

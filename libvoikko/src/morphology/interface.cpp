@@ -115,14 +115,14 @@ VOIKKOEXPORT char ** voikkoGetAttributeValues(voikko_options_t * options, const 
 	if (!attributeName) {
 		return nullptr;
 	}
-	std::list<std::string> attributeValues = options->morAnalyzer->getAttributeValues(attributeName);
+	std::list<const wchar_t *> attributeValues = options->morAnalyzer->getAttributeValues(attributeName);
 	if (attributeValues.empty()) {
 		return nullptr;
 	}
 	char ** values = new char*[attributeValues.size() + 1];
 	size_t i = 0;
-	for (std::string s : attributeValues) {
-		values[i++] = utils::StringUtils::copy(s.c_str());
+	for (const wchar_t * s : attributeValues) {
+		values[i++] = utils::StringUtils::utf8FromUcs4(s);
 	}
 	values[i] = nullptr;
 	return values;

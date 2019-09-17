@@ -1110,6 +1110,63 @@ list<Analysis *> * FinnishVfstAnalyzer::analyze(const wchar_t * word, size_t wle
 	return analysisList;
 }
 
+static std::list<const wchar_t *> valuesFromMap(std::map<std::wstring, const wchar_t *> & map) {
+	list<const wchar_t *> values = list<const wchar_t *>();
+	for (auto const &entry : map) {
+		values.push_back(entry.second);
+	}
+	return values;
+}
+
+std::list<const wchar_t *> FinnishVfstAnalyzer::getAttributeValues(const char * attributeName) {
+	string attribute(attributeName);
+	if (attribute == "CLASS") {
+		return valuesFromMap(classMap);
+	}
+	if (attribute == "NUMBER") {
+		return valuesFromMap(numberMap);
+	}
+	if (attribute == "COMPARISON") {
+		return valuesFromMap(comparisonMap);
+	}
+	if (attribute == "FOCUS") {
+		return valuesFromMap(focusMap);
+	}
+	if (attribute == "TENSE") {
+		return valuesFromMap(tenseMap);
+	}
+	if (attribute == "SIJAMUOTO") {
+		return valuesFromMap(sijamuotoMap);
+	}
+	if (attribute == "MOOD") {
+		return valuesFromMap(moodMap);
+	}
+	if (attribute == "PERSON") {
+		return valuesFromMap(personMap);
+	}
+	if (attribute == "PARTICIPLE") {
+		return valuesFromMap(participleMap);
+	}
+	if (attribute == "NEGATIVE") {
+		return valuesFromMap(negativeMap);
+	}
+	if (attribute == "POSSESSIVE") {
+		return valuesFromMap(possessiveMap);
+	}
+	list<const wchar_t *> values = list<const wchar_t *>();
+	if (attribute == "KYSYMYSLIITE" || attribute == "MALAGA_VAPAA_JALKIOSA" ||
+	    attribute == "POSSIBLE_GEOGRAPHICAL_NAME") {
+		values.push_back(L"true");
+		return values;
+	}
+	if (attribute == "REQUIRE_FOLLOWING_VERB") {
+		values.push_back(L"A-infinitive");
+		values.push_back(L"MA-infinitive");
+		return values;
+	}
+	return values;
+}
+
 void FinnishVfstAnalyzer::terminate() {
 	delete[] outputBuffer;
 	delete configuration;
