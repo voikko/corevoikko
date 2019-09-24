@@ -78,7 +78,7 @@ public class Voikko {
             for (String libName : LIBRARY_NAMES) {
                 NativeLibrary nativeLibrary = tryLoadLibrary(libName);
                 if (nativeLibrary != null) {
-                    library = (Libvoikko) Native.loadLibrary(nativeLibrary.getFile().getPath(), Libvoikko.class);
+                    library = (Libvoikko) Native.load(nativeLibrary.getFile().getPath(), Libvoikko.class);
                     return library;
                 }
             }
