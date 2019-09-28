@@ -646,4 +646,28 @@ public class Voikko {
         }
     }
 
+    /**
+     * Get list of possible values for an attribute
+     * @param attributeName name of the attribute
+     * @return A list of possible attribute values for attribute in morphological analysis or null if
+     *         the attribute does not exist or it does not have a known finite set of possible values.
+     */
+    public List<String> attributeValues(String attributeName) {
+        requireValidHandle();
+        if (!isValidInput(attributeName)) {
+            return null;
+        }
+        Pointer cValues = getLib().voikkoGetAttributeValues(handle, s2n(attributeName));
+        if (cValues == null) {
+            return null;
+        }
+        Pointer[] pointerArray = cValues.getPointerArray(0);
+        List<String> values = new ArrayList<String>(pointerArray.length);
+        for (Pointer cStr : pointerArray) {
+            values.add(stringFromPointer(cStr));
+        }
+        getLib().voikkoFreeCstrArray(cValues);
+        return values;
+    }
+
 }

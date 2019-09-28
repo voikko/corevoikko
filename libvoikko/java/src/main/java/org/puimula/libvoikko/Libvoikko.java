@@ -113,4 +113,6 @@ interface Libvoikko extends Library {
     public abstract int voikkoSetBooleanOption(VoikkoHandle handle, int option, int value);
     
     public abstract int voikkoSetIntegerOption(VoikkoHandle handle, int option, int value);
+
+    public abstract Pointer voikkoGetAttributeValues(VoikkoHandle handle, byte[] attributeName);
 }

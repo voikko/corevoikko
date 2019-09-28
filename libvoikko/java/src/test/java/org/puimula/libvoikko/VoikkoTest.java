@@ -31,6 +31,7 @@ package org.puimula.libvoikko;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
@@ -250,6 +251,26 @@ public class VoikkoTest {
     }
     
     @Test
+    public void attributeValuesForEnumeratedAttribute() {
+        List<String> values = voikko.attributeValues("NUMBER");
+        assertEquals(2, values.size());
+        assertTrue(values.contains("singular"));
+        assertTrue(values.contains("plural"));
+    }
+    
+    @Test
+    public void attributeValuesForNonEnumeratedAttribute() {
+        List<String> values = voikko.attributeValues("BASEFORM");
+        assertNull(values);
+    }
+    
+    @Test
+    public void attributeValuesForUnknownAttribute() {
+        List<String> values = voikko.attributeValues("XYZ");
+        assertNull(values);
+    }
+    
+    @Test
     public void sentences() {
         List<Sentence> sentences = voikko.sentences("Kissa ei ole koira. Koira ei ole kissa.");
         assertEquals(2, sentences.size());
@@ -267,6 +288,7 @@ public class VoikkoTest {
         assertEquals("   =  ", voikko.getHyphenationPattern("vaa'an"));
     }
     
+    @SuppressWarnings("deprecation") // testing deprecated methods
     @Test
     public void hyphenate() {
         assertEquals("kis-sa", voikko.hyphenate("kissa"));
