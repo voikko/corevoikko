@@ -5,6 +5,7 @@ var c_setBooleanOption = cwrap('voikkoSetBooleanOption', 'number', ['number', 'n
 var c_setIntegerOption = cwrap('voikkoSetIntegerOption', 'number', ['number', 'number', 'number']);
 var c_spellCstr = cwrap('voikkoSpellCstr', 'number', ['number', 'string']);
 var c_suggestCstr = cwrap('voikkoSuggestCstr', 'number', ['number', 'string']);
+var c_voikkoGetAttributeValues = cwrap('voikkoGetAttributeValues', 'number', ['number', 'string']);
 var c_hyphenateCstr = cwrap('voikkoHyphenateCstr', 'number', ['number', 'string']);
 var c_insertHyphensCstr = cwrap('voikkoInsertHyphensCstr', 'number', ['number', 'string', 'string', 'number']);
 var c_freeCstrArray = cwrap('voikkoFreeCstrArray', null, ['number']);
@@ -190,6 +191,21 @@ Module["init"] = function(lang, path) {
 			extractSuggestions(cSuggestions, suggestions);
 			c_freeCstrArray(cSuggestions);
 			return suggestions;
+		},
+		
+		"attributeValues": function(attributeName) {
+			requireValidHandle();
+			if (!isValidInput(attributeName)) {
+				return null;
+			}
+			var cValues = c_voikkoGetAttributeValues(handle, attributeName);
+			if (cValues == 0) {
+				return null;
+			}
+			var values = [];
+			extractSuggestions(cValues, values);
+			c_freeCstrArray(cValues);
+			return values;
 		},
 		
 		"grammarErrors": function(text, language) {

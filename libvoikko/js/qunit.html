@@ -241,6 +241,23 @@ Libvoikko({
 			assert.ok(voikko.suggest("koari").indexOf("koira") >= 0);
 		});
 
+		QUnit.test("attributeValuesForEnumeratedAttribute", function(assert) {
+			let values = voikko.attributeValues("NUMBER");
+			assert.equal(values.length, 2);
+			assert.ok(values.indexOf("singular") >= 0);
+			assert.ok(values.indexOf("plural") >= 0);
+		});
+
+		QUnit.test("attributeValuesForNonEnumeratedAttribute", function(assert) {
+			let values = voikko.attributeValues("BASEFORM");
+			assert.equal(values, null);
+		});
+
+		QUnit.test("attributeValuesForUnknownAttribute", function(assert) {
+			let values = voikko.attributeValues("XYZ");
+			assert.equal(values, null);
+		});
+
 		QUnit.test("nullCharIsUnknownToken", function(assert) {
 			assert.deepEqual(voikko.tokens("kissa\0koira"), [
 				{type: "WORD", text: "kissa"},
