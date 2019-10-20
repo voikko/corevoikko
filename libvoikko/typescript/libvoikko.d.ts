@@ -192,7 +192,7 @@ declare interface Voikko {
 
   /**
    * Set the suggestion strategy to be used when generating spelling
-   * suggestions. Default: SuggestionStrategy.TYPO
+   * suggestions. Default: TYPO
    */
   setSuggestionStrategy: (suggestionStrategy: SuggestionStrategy) => void;
 }
