@@ -6,10 +6,15 @@ declare class Libvoikko {
 }
 
 declare interface GrammarError {
+  /** Error code describing the type of error. */
   errorCode: number;
+  /** Start of the error segment within the paragraph */
   startPos: number;
+  /** Length of the error segment */
   errorLen: number;
+  /** List of suggested replacements for the marked error */
   suggestions: Array<string>;
+  /** Human readable short description for the error. */
   shortDescription: string;
 }
 
