@@ -2,7 +2,7 @@ export = Libvoikko;
 
 declare class Libvoikko {
   constructor();
-  init(language: string): Voikko;
+  init(language: string, path?: string): Voikko;
 }
 
 declare interface GrammarError {
