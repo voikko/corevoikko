@@ -28,7 +28,7 @@ declare interface Token {
   text: string;
 }
 
-type TokenType = 'WORD' | 'WHITESPACE' | 'PUNCTUATION';
+type TokenType = 'WORD' | 'WHITESPACE' | 'PUNCTUATION' | 'NONE' | 'UNKNOWN';
 
 declare interface Sentence {
   text: string;
