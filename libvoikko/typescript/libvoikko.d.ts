@@ -2,6 +2,12 @@ export = Libvoikko;
 
 declare class Libvoikko {
   constructor();
+  /**
+   * Creates a new Voikko instance.
+   *
+   * @param language BCP 47 language tag to be used
+   * @param path Extra path that will be checked first when looking for linguistic resources
+   */
   init(language: string, path?: string): Voikko;
 }
 
