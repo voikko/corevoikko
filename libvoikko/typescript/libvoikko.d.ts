@@ -92,7 +92,7 @@ declare interface Voikko {
   /**
    * Returns the given word in fully hyphenated form.
    */
-  hyphenate: (word: string) => string;
+  hyphenate: (word: string, separator?: string, allowContextChanges?: boolean) => string;
 
   /**
    * Ignore dot at the end of the word (needed for use in some word processors).
