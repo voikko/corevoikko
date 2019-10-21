@@ -35,7 +35,7 @@ declare interface Sentence {
   nextStartType: NextStartType;
 }
 
-type NextStartType = 'PROBABLE' | 'NONE';
+type NextStartType = 'PROBABLE' | 'NONE' | 'POSSIBLE' | 'NO_START';
 
 type SuggestionStrategy = 'OCR' | 'TYPO';
 
