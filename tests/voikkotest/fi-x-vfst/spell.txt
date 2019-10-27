@@ -520,6 +520,7 @@ vaalirahoitusepäselvyydet
 haja-asutusalueilla
 aikakauslehden
 !aika=kauslehden
+!peremmältään # http://scripta.kotus.fi/visk/sisallys.php?p=300
 
 # = seikkasanat =
 []

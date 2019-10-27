@@ -4800,7 +4800,9 @@ LEXICON Sivumpana
 [Ses][Ny]p<A>n<A>:p<A>n<A>	Liitesana_<A>	;
 m<A>:m<A>	SisäpaikallissijatSsaSta_<A>	;
 [Sill][Ny]p<A><A>n:p<A><A>n	Liitesana_<A>	;
-m<A>:m<A>	Ulkopaikallissijat_Yks_<A>	;
+m<A>[Sade][Ny]ll<A>:m<A>ll<A>	LoppuLiitesana_<A>	;
+m<A>[Sabl][Ny]lt<A>:m<A>lt<A>	LoppuLiitesana_<A>	;
+m<A>[Sall][Ny]lle:m<A>lle	LoppuLiitesana_<A>	;
 ?Sukija [Sill][Ny]p<A>h<A>n:p<A>h<A>n	Liitesana_<A>	;
 
 LEXICON Ulkopaikallissijat_Yks
