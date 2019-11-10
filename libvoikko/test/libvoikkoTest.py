@@ -203,6 +203,10 @@ class LibvoikkoTest(unittest.TestCase):
         values = self.voikko.attributeValues(u"XYZ")
         self.assertEqual(None, values)
 
+    def testAttributeValuesDoNotContainDuplicates(self):
+        values = self.voikko.attributeValues(u"CLASS")
+        self.assertEqual(1, values.count(u"lukusana"))
+
     def testHyphenationPattern(self):
         pattern = self.voikko.getHyphenationPattern(u"kissa")
         self.assertEqual("   - ", pattern)

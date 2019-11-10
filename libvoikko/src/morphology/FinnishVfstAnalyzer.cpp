@@ -54,6 +54,7 @@ FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) {
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new wchar_t[BUFFER_SIZE];
 	
+	const wchar_t * lukusana = L"lukusana";
 	classMap.insert(std::make_pair(L"n", L"nimisana"));
 	classMap.insert(std::make_pair(L"l", L"laatusana"));
 	classMap.insert(std::make_pair(L"nl", L"nimisana_laatusana"));
@@ -65,8 +66,8 @@ FinnishVfstAnalyzer::FinnishVfstAnalyzer(const string & directoryName) {
 	classMap.insert(std::make_pair(L"t", L"teonsana"));
 	classMap.insert(std::make_pair(L"a", L"lyhenne"));
 	classMap.insert(std::make_pair(L"s", L"seikkasana"));
-	classMap.insert(std::make_pair(L"u", L"lukusana"));
-	classMap.insert(std::make_pair(L"ur", L"lukusana"));
+	classMap.insert(std::make_pair(L"u", lukusana));
+	classMap.insert(std::make_pair(L"ur", lukusana));
 	classMap.insert(std::make_pair(L"r", L"asemosana"));
 	classMap.insert(std::make_pair(L"c", L"sidesana"));
 	classMap.insert(std::make_pair(L"d", L"suhdesana"));
@@ -1115,6 +1116,7 @@ static std::list<const wchar_t *> valuesFromMap(std::map<std::wstring, const wch
 	for (auto const &entry : map) {
 		values.push_back(entry.second);
 	}
+	values.unique();
 	return values;
 }
 
