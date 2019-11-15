@@ -124,37 +124,40 @@ h:h SukijaUrosMonikko ;
 [Sill][Nm]hisi:hisi NimisanaLiOlN_a ;
 [Ssti]osti:osti     Liitesana_a;
 
+LEXICON SukijaVuoka
+[Sg][Ny]uan:uan NimisanaYksikönGenetiivinJatko_a	;
+
 LEXICON SukijaLukusanaKolmattaYhdeksättä
-[Bc]kolmatta:kolmatta       Liitesana_a     ;
-[Bc]kolmatta:kolmatta       LukusananJälkiliite     ;
-[Bc]neljättä:neljättä       Liitesana_ä     ;
-[Bc]neljättä:neljättä       LukusananJälkiliite     ;
-[Bc]viidettä:viidettä       Liitesana_ä     ;
-[Bc]viidettä:viidettä       LukusananJälkiliite     ;
-[Bc]kuudetta:kuudetta       Liitesana_a     ;
-[Bc]kuudetta:kuudetta       LukusananJälkiliite     ;
-[Bc]seitsemättä:seitsemättä Liitesana_ä     ;
-[Bc]seitsemättä:seitsemättä LukusananJälkiliite     ;
-[Bc]kahdeksatta:kahdeksatta Liitesana_a    ;
-[Bc]kahdeksatta:kahdeksatta LukusananJälkiliite     ;
-[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
-[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliite     ;
+[Bc]kolmatta[Xp][X]:kolmatta       Liitesana_a     ;
+[Bc]kolmatta:kolmatta              LukusananJälkiliite     ;
+[Bc]neljättä[Xp][X]:neljättä       Liitesana_ä     ;
+[Bc]neljättä:neljättä              LukusananJälkiliite     ;
+[Bc]viidettä[Xp][X]:viidettä       Liitesana_ä     ;
+[Bc]viidettä:viidettä              LukusananJälkiliite     ;
+[Bc]kuudetta[Xp][X]:kuudetta       Liitesana_a     ;
+[Bc]kuudetta:kuudetta              LukusananJälkiliite     ;
+[Bc]seitsemättä[Xp][X]:seitsemättä Liitesana_ä     ;
+[Bc]seitsemättä:seitsemättä        LukusananJälkiliite     ;
+[Bc]kahdeksatta[Xp][X]:kahdeksatta Liitesana_a    ;
+[Bc]kahdeksatta:kahdeksatta        LukusananJälkiliite     ;
+[Bc]yhdeksättä[Xp][X]:yhdeksättä   Liitesana_ä     ;
+[Bc]yhdeksättä:yhdeksättä          LukusananJälkiliite     ;
 
 LEXICON SukijaJärjestyslukuKolmattaYhdeksättä
-[Bc]kolmatta:kolmatta       Liitesana_a     ;
-[Bc]kolmatta:kolmatta       LukusananJälkiliiteJl   ;
-[Bc]neljättä:neljättä       Liitesana_ä     ;
-[Bc]neljättä:neljättä       LukusananJälkiliiteJl   ;
-[Bc]viidettä:viidettä       Liitesana_ä     ;
-[Bc]viidettä:viidettä       LukusananJälkiliiteJl     ;
-[Bc]kuudetta:kuudetta       Liitesana_a     ;
-[Bc]kuudetta:kuudetta       LukusananJälkiliiteJl     ;
-[Bc]seitsemättä:seitsemättä Liitesana_ä     ;
-[Bc]seitsemättä:seitsemättä LukusananJälkiliiteJl     ;
-[Bc]kahdeksatta:kahdeksatta Liitesana_a     ;
-[Bc]kahdeksatta:kahdeksatta LukusananJälkiliiteJl     ;
-[Bc]yhdeksättä:yhdeksättä   Liitesana_ä     ;
-[Bc]yhdeksättä:yhdeksättä   LukusananJälkiliiteJl     ;
+[Bc]kolmatta[Xp][X]:kolmatta       Liitesana_a     ;
+[Bc]kolmatta:kolmatta              LukusananJälkiliiteJl   ;
+[Bc]neljättä[Xp][X]:neljättä       Liitesana_ä     ;
+[Bc]neljättä:neljättä              LukusananJälkiliiteJl   ;
+[Bc]viidettä[Xp][X]:viidettä       Liitesana_ä     ;
+[Bc]viidettä:viidettä              LukusananJälkiliiteJl     ;
+[Bc]kuudetta[Xp][X]:kuudetta       Liitesana_a     ;
+[Bc]kuudetta:kuudetta              LukusananJälkiliiteJl     ;
+[Bc]seitsemättä[Xp][X]:seitsemättä Liitesana_ä     ;
+[Bc]seitsemättä:seitsemättä        LukusananJälkiliiteJl     ;
+[Bc]kahdeksatta[Xp][X]:kahdeksatta Liitesana_a     ;
+[Bc]kahdeksatta:kahdeksatta        LukusananJälkiliiteJl     ;
+[Bc]yhdeksättä[Xp][X]:yhdeksättä   Liitesana_ä     ;
+[Bc]yhdeksättä:yhdeksättä          LukusananJälkiliiteJl     ;
 
 LEXICON SukijaAsemosanaHän
 [Sill][Ny]nehen:nehen     Liitesana_ä     ;
@@ -300,6 +303,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]vartija[X]vartij:varti NimisanaApila_a ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
+[Ln][Xp]vuoka[X]vu:vu SukijaVuoka ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
 [Ln][Xp]aasi=ori[X]aasi[Bm]or@D.YS_ALKANUT@:aasior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
@@ -641,6 +645,7 @@ LEXICON Sukija_p
 [Lp]tahitin:tahitin EtuliitteenJatko_ellelnelt;
 [Lp]taiwanin:taiwanin EtuliitteenJatko_ellelnelt;
 [Lp]tanimbarin:tanimbarin EtuliitteenJatko_ellelnelt;
+[Lp]tansanian:tansanian EtuliitteenJatko_ellelnelt;
 [Lp]tasmanian:tasmanian EtuliitteenJatko_ellelnelt;
 [Lp]teksasin:teksasin EtuliitteenJatko_ellelnelt;
 [Lp]timorin:timorin EtuliitteenJatko_ellelnelt;
