@@ -26,6 +26,7 @@ compile
 /m4/ltversion.m4
 /m4/lt~obsolete.m4
 /missing
+/python/build
 /src/libvoikko.la
 /src/libvoikko.pc
 /src/tools/voikkogc
