@@ -27,6 +27,8 @@ compile
 /m4/lt~obsolete.m4
 /missing
 /python/build
+/python/dist
+/python/libvoikko.egg-info
 /src/libvoikko.la
 /src/libvoikko.pc
 /src/tools/voikkogc

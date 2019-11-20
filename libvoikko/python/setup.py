@@ -1,13 +1,18 @@
 import setuptools
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setuptools.setup(
     name="libvoikko",
     version="4.3",
     author="Harri Pitkänen",
     author_email="hatapitk@iki.fi",
     description="Python API for libvoikko, library of free natural language processing tools",
-    url="https://github.com/voikko/corevoikko",
-    packages=setuptools.find_packages(),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://voikko.puimula.org/python.html",
+    py_modules=['libvoikko'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",
@@ -18,4 +23,3 @@ setuptools.setup(
     ],
     python_requires='>=3.2'
 )
-	
