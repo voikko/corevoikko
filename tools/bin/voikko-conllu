@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Copyright 2019 Harri Pitkänen (hatapitk@iki.fi)
+# Program for producing and comparing CONLL-U formatted data.
+# This program requires Python and Python module of libvoikko from
+# libvoikko 3.0 or later.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+from libvoikko import Voikko
+from conllu import parse
+
+class Difference:
+    def __init__(self, attr_name, left, right):
+        self.attr_name = attr_name
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return "Attr: {}, {} <-> {}".format(self.attr_name, self.left, self.right)
+
+def get_differences(left, right):
+    diffs = []
+    #TODO
+    return diffs
+
+def to_conllu(voikko_analysis):
+    return voikko_analysis
+
+if "--help" in sys.argv:
+    print("Usage:")
+    print(sys.argv[0], "TODO")
+    sys.exit(0)
+
+language = "fi"
+
+voikko = Voikko(language)
+
+for tokens in parse(sys.stdin.read()):
+    for token in tokens:
+        if "form" not in token:
+            continue
+        word_form = token["form"]
+        analysis_list = voikko.analyze(word_form)
+        if len(analysis_list) != 1:
+            continue
+        print(word_form)
+        left = token
+        right = to_conllu(analysis_list[0])
+        diffs = get_differences(left, right)
+        print(diffs)
+
+voikko.terminate()
