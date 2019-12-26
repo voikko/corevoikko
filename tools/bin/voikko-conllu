@@ -47,10 +47,21 @@ def get_differences(left, right):
                 diffs.append(Difference(k_l, v_l, feats_r[k_l]))
     return diffs
 
+def map_or_self(m, key):
+    if key in m:
+        return m[key]
+    return key
+
 def map_feats(voikko_analysis):
     feats = OrderedDict()
     if "NUMBER" in voikko_analysis:
-        feats["Number"] = {"singular":"Sing", "plural":"Plur"}[voikko_analysis["NUMBER"]]
+        feats["Number"] = map_or_self({"singular":"Sing", "plural":"Plur"}, voikko_analysis["NUMBER"])
+    if "SIJAMUOTO" in voikko_analysis:
+        feats["Case"] = map_or_self({"nimento":"Nom", "omanto":"Gen", "osanto":"Par",
+                                     "sisaolento":"Ine", "sisaeronto":"Ela", "sisatulento":"Ill",
+                                     "ulkoolento":"Ade", "ulkoeronto":"Abl", "ulkotulento":"All",
+                                     "olento":"Ess", "tulento":"Tra", "seuranto":"Com",
+                                     "kohdanto":"Acc", "keinonto":"Ins", "vajanto":"Abe"}, voikko_analysis["SIJAMUOTO"])
     if len(feats) > 0:
         return feats
     return None
