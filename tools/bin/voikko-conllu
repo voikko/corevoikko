@@ -39,12 +39,27 @@ def get_differences(left, right):
     for attr in ["form", "lemma"]:
         if left[attr] != right[attr]:
             diffs.append(Difference(attr, left[attr], right[attr]))
+    feats_l = left["feats"]
+    feats_r = right["feats"]
+    if feats_l is not None and feats_r is not None:
+        for k_l, v_l in feats_l.items():
+            if k_l in feats_r and feats_r[k_l] != v_l:
+                diffs.append(Difference(k_l, v_l, feats_r[k_l]))
     return diffs
+
+def map_feats(voikko_analysis):
+    feats = OrderedDict()
+    if "NUMBER" in voikko_analysis:
+        feats["Number"] = {"singular":"Sing", "plural":"Plur"}[voikko_analysis["NUMBER"]]
+    if len(feats) > 0:
+        return feats
+    return None
 
 def to_conllu(form, voikko_analysis):
     result = OrderedDict()
     result["form"] = form
     result["lemma"] = voikko_analysis["BASEFORM"]
+    result["feats"] = map_feats(voikko_analysis)
     return result
 
 if "--help" in sys.argv:
