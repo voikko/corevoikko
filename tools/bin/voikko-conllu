@@ -23,6 +23,7 @@
 import sys
 from libvoikko import Voikko
 from conllu import parse
+from collections import OrderedDict
 
 class Difference:
     def __init__(self, attr_name, left, right):
@@ -35,11 +36,16 @@ class Difference:
 
 def get_differences(left, right):
     diffs = []
-    #TODO
+    for attr in ["form", "lemma"]:
+        if left[attr] != right[attr]:
+            diffs.append(Difference(attr, left[attr], right[attr]))
     return diffs
 
-def to_conllu(voikko_analysis):
-    return voikko_analysis
+def to_conllu(form, voikko_analysis):
+    result = OrderedDict()
+    result["form"] = form
+    result["lemma"] = voikko_analysis["BASEFORM"]
+    return result
 
 if "--help" in sys.argv:
     print("Usage:")
@@ -58,10 +64,12 @@ for tokens in parse(sys.stdin.read()):
         analysis_list = voikko.analyze(word_form)
         if len(analysis_list) != 1:
             continue
-        print(word_form)
         left = token
-        right = to_conllu(analysis_list[0])
+        right = to_conllu(word_form, analysis_list[0])
         diffs = get_differences(left, right)
-        print(diffs)
+        if len(diffs) > 0:
+            print(token)
+            for diff in diffs:
+                print(word_form, diff)
 
 voikko.terminate()
