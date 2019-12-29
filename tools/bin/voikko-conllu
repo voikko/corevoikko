@@ -62,6 +62,21 @@ def map_feats(voikko_analysis):
                                      "ulkoolento":"Ade", "ulkoeronto":"Abl", "ulkotulento":"All",
                                      "olento":"Ess", "tulento":"Tra", "seuranto":"Com",
                                      "kohdanto":"Acc", "keinonto":"Ins", "vajanto":"Abe"}, voikko_analysis["SIJAMUOTO"])
+    if "PERSON" in voikko_analysis:
+        feats["Person"] = map_or_self({}, voikko_analysis["PERSON"])
+    if "TENSE" in voikko_analysis:
+        feats["Tense"] = map_or_self({"present_simple":"Pres", "past_imperfective":"Past"}, voikko_analysis["TENSE"])
+    if "MOOD" in voikko_analysis:
+        feats["Mood"] = map_or_self({"indicative":"Ind", "conditional":"Cnd", "potential":"Pot",
+                                     "imperative":"Imp"}, voikko_analysis["MOOD"])
+    if "FOCUS" in voikko_analysis:
+        feats["Clitic"] = map_or_self({"kin":"Kin", "kaan":"Kaan"}, voikko_analysis["FOCUS"])
+    if "PARTICIPLE" in voikko_analysis:
+        feats["VerbForm"] = "Part"
+        feats["PartForm"] = map_or_self({"present_active":"Pres", "past_active":"Past", "agent":"Agt",
+                                         "present_passive":"Pres", "past_passive":"Past"}, voikko_analysis["PARTICIPLE"])
+        feats["Voice"] = map_or_self({"present_active":"Act", "past_active":"Act", "agent":"Act",
+                                      "present_passive":"Pass", "past_passive":"Pass"}, voikko_analysis["PARTICIPLE"])
     if len(feats) > 0:
         return feats
     return None
