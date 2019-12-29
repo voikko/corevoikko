@@ -83,8 +83,14 @@ def map_feats(voikko_analysis):
             feats["InfForm"] = "2"
         if voikko_mood == "MINEN-infinitive":
             feats["Derivation"] = "Minen"
+        if voikko_mood == "MA-infinitive":
+            pass #TODO
+        if voikko_mood == "MAINEN-infinitive":
+            pass #TODO
     if "FOCUS" in voikko_analysis:
         feats["Clitic"] = map_or_self({"kin":"Kin", "kaan":"Kaan"}, voikko_analysis["FOCUS"])
+    if "KYSYMYSLIITE" in voikko_analysis:
+        feats["Clitic"] = "Ko"
     if "PARTICIPLE" in voikko_analysis:
         feats["VerbForm"] = "Part"
         feats["PartForm"] = map_or_self({"present_active":"Pres", "past_active":"Past", "agent":"Agt",
@@ -123,7 +129,6 @@ for tokens in parse(sys.stdin.read()):
         right = to_conllu(word_form, analysis_list[0])
         diffs = get_differences(left, right)
         if len(diffs) > 0:
-            print(token)
             for diff in diffs:
                 print(word_form, diff)
 
