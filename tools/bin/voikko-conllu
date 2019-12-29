@@ -62,6 +62,11 @@ def map_feats(voikko_analysis):
                                      "ulkoolento":"Ade", "ulkoeronto":"Abl", "ulkotulento":"All",
                                      "olento":"Ess", "tulento":"Tra", "seuranto":"Com",
                                      "kohdanto":"Acc", "keinonto":"Ins", "vajanto":"Abe"}, voikko_analysis["SIJAMUOTO"])
+    if "POSSESSIVE" in voikko_analysis:
+        feats["Person[psor]"] = map_or_self({"1s":"1", "2s":"2", "1p":"1", "2p":"2"}, voikko_analysis["POSSESSIVE"])
+        feats["Number[psor]"] = map_or_self({"1s":"Sing", "2s":"Sing", "1p":"Plur", "2p":"Plur"}, voikko_analysis["POSSESSIVE"])
+    if "COMPARISON" in voikko_analysis:
+        feats["Degree"] = map_or_self({"positive":"Pos", "comparative":"Cmp", "superlative":"Sup"}, voikko_analysis["COMPARISON"])
     if "PERSON" in voikko_analysis:
         feats["Person"] = map_or_self({}, voikko_analysis["PERSON"])
     if "TENSE" in voikko_analysis:
