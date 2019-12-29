@@ -1,0 +1,18 @@
+word:voinu
+ expected:1
+ analysis
+  BASEFORM=voinut
+  PARTICIPLE=past_active
+word:ollu
+ expected:1
+ analysis
+  BASEFORM=ollut
+  PARTICIPLE=past_active
+word:tää
+ expected:1
+ analysis
+  BASEFORM=tämä
+  CLASS=asemosana
+  NUMBER=singular
+  SIJAMUOTO=nimento
+

@@ -4300,7 +4300,7 @@ LEXICON Johdin_nUt
 [Ll][Ru]n[Xj]<U>t[X]@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
 [Ru]neis:neis	Johdin_UUs_<A>	;
 ?Sukija [Ru]n@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@:n@D.EI_NIMI_LAATUSANAJOHDOSTA@@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@@P.YS_EI_JATKOA.ON@	NimiLaatusanaKuollut_<A>	;
-?Sukija [Ll][Ru]n[Xj]<U>t[X][Sn][Ny]n<U>:n<U> Loppu ;
+?Murre [Ll][Ru]n[Xj]<U>t[X][Sn][Ny]<U>:n<U> Loppu ;
 ?Sukija [Ru]n[Sn][Ny]n<U>:n<U> Loppu ;
 
 LEXICON Johdin_lUt
@@ -4312,7 +4312,7 @@ LEXICON Johdin_lUt
 ?Sukija [Ru]l[Sn][Ny]ee:lee	Omistusliite_<A>	;
 ?Sukija [Ll][Ru]l[Xj]<U>t[X][Sn][Ny]ehe:lehe	Omistusliite_<A>	;
 ?Sukija [Ru]lehe:lehe	Omistusliite_<A>	;
-?Sukija [Ll][Ru]l[Xj]<U>t[X][Sn][Ny]l<U>:l<U> Loppu ;
+?Murre [Ll][Ru]l[Xj]<U>t[X][Sn][Ny]<U>:l<U> Loppu ;
 ?Sukija [Ru]n[Sn][Ny]l<U>:l<U> Loppu ;
 
 LEXICON Johdin_rUt
