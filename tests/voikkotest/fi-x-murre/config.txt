@@ -1,0 +1,6 @@
+LANGUAGE="fi-x-murre"
+SOURCEDIR=COREVOIKKO + "/voikko-fi"
+BUILDCMD='make vvfst VVFST_BUILDDIR="%s" GENLEX_OPTS="--sourceid --style=dialect" VOIKKO_VARIANT=murre' % (BUILDDIR + "/fi-x-murre")
+INSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" VOIKKO_VARIANT=murre DESTDIR="%s"' % (BUILDDIR + "/fi-x-murre", INSTALLDIR)
+BASEINSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" DESTDIR="%s"' % (BUILDDIR + "/fi-x-murre", BASEINSTALLDIR)
+CLEANCMD='make clean VVFST_BUILDDIR="%s"' % (BUILDDIR + "/fi-x-murre")
