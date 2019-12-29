@@ -72,8 +72,17 @@ def map_feats(voikko_analysis):
     if "TENSE" in voikko_analysis:
         feats["Tense"] = map_or_self({"present_simple":"Pres", "past_imperfective":"Past"}, voikko_analysis["TENSE"])
     if "MOOD" in voikko_analysis:
+        voikko_mood = voikko_analysis["MOOD"]
         feats["Mood"] = map_or_self({"indicative":"Ind", "conditional":"Cnd", "potential":"Pot",
-                                     "imperative":"Imp"}, voikko_analysis["MOOD"])
+                                     "imperative":"Imp"}, voikko_mood)
+        if voikko_mood == "A-infinitive":
+            feats["VerbForm"] = "Inf"
+            feats["InfForm"] = "1"
+        if voikko_mood == "E-infinitive":
+            feats["VerbForm"] = "Inf"
+            feats["InfForm"] = "2"
+        if voikko_mood == "MINEN-infinitive":
+            feats["Derivation"] = "Minen"
     if "FOCUS" in voikko_analysis:
         feats["Clitic"] = map_or_self({"kin":"Kin", "kaan":"Kaan"}, voikko_analysis["FOCUS"])
     if "PARTICIPLE" in voikko_analysis:
