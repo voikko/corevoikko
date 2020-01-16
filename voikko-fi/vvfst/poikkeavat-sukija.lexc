@@ -125,7 +125,8 @@ h:h SukijaUrosMonikko ;
 [Ssti]osti:osti     Liitesana_a;
 
 LEXICON SukijaVuoka
-[Sg][Ny]uan:uan NimisanaYksikönGenetiivinJatko_a	;
+[Sg][Ny]oan:uan NimisanaYksikönGenetiivinJatko_a	;
+[Sg][Ny]oan:okan NimisanaYksikönGenetiivinJatko_a	;
 
 LEXICON SukijaLukusanaKolmattaYhdeksättä
 [Bc]kolmatta[Xp][X]:kolmatta       Liitesana_a     ;
@@ -262,6 +263,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kiiru[X]kiiru:kiiruu Loppu ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kirjasin[X]kirjasi:kirjaisi NimisanaUistin_a ;
+[Ln][Xp]kraatteri[X]kraatter:krater NimisanaPaperi_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
@@ -270,6 +272,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
+[Ln][Xp]morsian[X]morsiam:morsiamm NimisanaUistin_m_a ;
 [Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
@@ -294,6 +297,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]saareke[X]saarek:sarek NimisanaTarvike_a ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
+[Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]kraat:sosialidemokraat NimisanaTatti_a ;
+[Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]krat:sosialidemokrat NimisanaRisti_a ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationaarisyy NimisanaKalleus_aä ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationäärisyy NimisanaKalleus_aä ;
@@ -354,6 +359,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalta:kaukaalta LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaan:kaukaan LoppuLiitesana_a ;
+[Ls][Xp]kauas[X]kaukaitse:kaukaitse LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruitse:kiiruitse LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruimmiten:kiiruimmiten LoppuLiitesana_a ;
 [Ls][Xp]kiiru[X]kiiruimmittan:kiiruimmittain LoppuLiitesana_a ;
@@ -798,6 +804,8 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]sisäkäyttöinen[X]sisä[Bm]käyttöi:sisäkäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]sisäviistoinen[X]sisä[Bm]viistoi:sisäviistoi     LaatusanaNainenInen_a ;
 [Ll][Xp]sosiaali=demo=kraattinen[X]sosiaali[Bm]demo[Bm]kraatti:sosialidemokrati LaatusanaNainenInen_a ;
+[Ll][Xp]taiteikas[X]taiteik:taitehik LaatusanaVilkas_a ;
+[Ll][Xp]taiteikas[X]taiteik:taidehik LaatusanaVilkas_a ;
 [Ll][Xp]toisenlainen[X]toisen[Bm]lai:toisellai LaatusanaNainenInen_a ;
 [Ll][Xp]tosi=kristillinen[X]tosi[Bm]kristilli:tosikristilli LaatusanaNainenInen_ä ;
 [Ll][Xp]tuollainen[X]tuollai:tollai LaatusanaNainenInen_a ;
