@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2018 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2018, 2020 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
 # Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
@@ -115,8 +115,8 @@ re_oite  = makeRe (u"Ln", u".Coite")
 
 re_aatio = makeRe (u"Ln", u"..aatio")
 re_uutio = makeRe (u"Ln", u".Cuutio")
-re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"([^a]i|k|p)tio") # Traditio, funktio, mutta ei aitio.
+re_uusio = makeRe (u"Ln", u"Cuusio")         # Myös fuusio.
 
 re_mmainen = re.compile (".*mmainen\\[X\\]")
 re_mmäinen = re.compile (".*mmäinen\\[X\\]")
@@ -139,11 +139,23 @@ def g6 (line, x):
         outfile.write (s)
 
 
+def xprint (s, old, new):
+    p = s.find(":")
+#    print (s, p, old, new)
+    if p >= 0:
+        n = s.find (old, p)
+        if n >= 0:
+            outfile.write (s[:n] + new + s[n+len(old):])
+
+
 def gn (line, x):
-    for u in x[1]:
-        replace_and_write_2 (line, x[0], u)
-    for u in x[2]:
-        replace_and_write_2 (line.replace(x[3][0],x[3][1]), x[0], u)
+    if not line.startswith("[Ln][Xp]kuusio[X]"):
+        for u in x[1]:
+            xprint (line, x[0], u)
+            replace_and_write_2 (line, x[0], u)
+        for u in x[2]:
+#            xprint (line.replace(x[3][0],x[3][1]), x[0], u)
+            replace_and_write_2 (line.replace(x[3][0],x[3][1]), x[0], u)
 
 
 def g10 (line, x):
