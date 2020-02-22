@@ -1141,6 +1141,7 @@ LEXICON NOUN Peruna
 
 LEXICON NOUN Korkea
 e:e	<WC>Ainoa_<A>	;
+?Murre ee:ee	Kerronto_sti_<A>	;
 ?Sukija <WC>SukijaKorkeaKorkeeKorkia_<A> ;
 
 LEXICON NOUN Ainoa
@@ -3850,7 +3851,7 @@ Ehtotapa_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 ?Sukija <A>:<A> SukijaTositapaVi_<A> ;
 ?Murre <A><A>:<A><A> TositapaPi_<A> ;
-?Vanha [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] Liitesana_<A> ;
+?Murre [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] Liitesana_<A> ;
 ?Murre [[L]]:[[L]] TositapaPi_<A> ;
 ?Vanha [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
 ?Sukija [[L]]:[[L]] Johdin_mA_<A> ;

@@ -8,6 +8,26 @@ word:ollu
  analysis
   BASEFORM=ollut
   PARTICIPLE=past_active
+word:selkeesti
+ expected:1
+ analysis
+  BASEFORM=selkeä
+  SIJAMUOTO=kerrontosti
+word:tajuu
+ expected:1
+ analysis
+  BASEFORM=tajuta
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=3
+  TENSE=present_simple
+word:tän
+ expected:1
+ analysis
+  BASEFORM=tämä
+  CLASS=asemosana
+  NUMBER=singular
+  SIJAMUOTO=omanto
 word:tää
  expected:1
  analysis
