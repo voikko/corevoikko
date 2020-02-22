@@ -618,6 +618,7 @@ kissaloikkiminen
 koiramääkiminen
 !koiramääminen
 1
+21.
 04
 253,73
 !,1

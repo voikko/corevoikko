@@ -2355,6 +2355,12 @@ word:tyhmähkö
  expected:1
  analysis
    CLASS=laatusana
+word:21.
+ expected:1
+ analysis
+   CLASS=lukusana
+   BASEFORM=21.
+   STRUCTURE==qqq
 #word:12:12:12
 # expected:1
 # analysis
