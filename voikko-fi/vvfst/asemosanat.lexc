@@ -49,6 +49,7 @@ LEXICON Asemosana
 [Lr][Xp]sinä[X]sin:sin	AsemosanaMinä	;
 [Lr][Xp]te[X]te:te	AsemosanaMe	;
 [Lr][Xp]tuo[X]tuo:tuo	AsemosanaTuo	;
+?Murre [Lr][Xp]tuo[X]to:to	AsemosanaTuo2	;
 [Lr][Xp]tämä[X]tä:tä	AsemosanaTämä	;
 ?Murre [Lr][Xp]mä[X]m:m	AsemosanaMä	;
 ?Murre [Lr][Xp]sä[X]s:s	AsemosanaMä	;
@@ -381,6 +382,9 @@ LEXICON AsemosanaNämä
 
 LEXICON AsemosanaTuo
 [Sn][Ny]:	Liitesana_a	;
+AsemosanaTuo2	;
+
+LEXICON AsemosanaTuo2
 [Sg][Ny]n:n	Liitesana_a	;
 [Sp][Ny]ta:ta	Liitesana_a	;
 [Str][Ny]ksi:ksi	Liitesana_a	;

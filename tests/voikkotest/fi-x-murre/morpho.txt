@@ -21,6 +21,12 @@ word:tajuu
   NUMBER=singular
   PERSON=3
   TENSE=present_simple
+word:tonne
+ expected:1
+ analysis
+  BASEFORM=tuo
+  NUMBER=singular
+  SIJAMUOTO=sisatulento
 word:tän
  expected:1
  analysis
