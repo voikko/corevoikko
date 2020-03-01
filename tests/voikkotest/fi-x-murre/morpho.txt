@@ -41,4 +41,10 @@ word:tää
   CLASS=asemosana
   NUMBER=singular
   SIJAMUOTO=nimento
-
+word:yks
+ expected:1
+ analysis
+  BASEFORM=yksi
+  CLASS=lukusana
+  NUMBER=singular
+  SIJAMUOTO=nimento

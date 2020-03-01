@@ -4935,6 +4935,7 @@ LyhenteenTaivutuspääte_<A>	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
+?Murre [Sn][Ny]ks:ks	LukusanaSnNy_<A>	;
 [Sg][Ny]hden:hden	LukusanaSgNy1_<A>	;
 [Sp][Ny]ht<A>:ht<A>	LukusanaSpNy1_<A>	;
 [Str][Ny]hdeksi:hdeksi	LukusanaStrNy1_<A>	;
