@@ -320,10 +320,13 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kanta=kirja=ori[X]kanta[Bm]kirja[Bm]or@D.YS_ALKANUT@:kantakirjaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]kanta=ori[X]kanta[Bm]or@D.YS_ALKANUT@:kantaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]kilpa=ori[X]kilpa[Bm]or@D.YS_ALKANUT@:kilpaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kruunun=ori[X]kruunun[Bm]or@D.YS_ALKANUT@:kruununor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kruunun=ori[X]kruunun[Bm]or@D.YS_ALKANUT@:ruununor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]ravuri=ori[X]ravuri[Bm]or@D.YS_ALKANUT@:ravurior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]siitos=ori[X]siitos[Bm]or@D.YS_ALKANUT@:siitosor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]täysi=veri=ori[X]täysi[Bm]veri[Bm]or@D.YS_ALKANUT@:täysiverior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]valtion=ori[X]valtion[Bm]or@D.YS_ALKANUT@:valtionor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 
@@ -813,6 +816,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]tuollainen[X]tuollai:tollai LaatusanaNainenInen_a ;
 [Ll][Xp]tuore[X]tuore[Ses][Ny]nna:tuorenna NimisanaLiOlV_a ;
 [Ll][Xp]tyyni[X]tyyn:tyyn LaatusanaSukijaPieni_ä ;
+[Ll][Xp]tämän=lainen[X]tämän[Bm]lai:tänlai LaatusanaNainenInen_a ;
 [Ll][Xp]vaivalloinen[X]vaivalloi:vaivaloi LaatusanaNainenInen_a ;
 [Ll][Xp]valkoinen[X]valkoi:valko LaatusanaNainenInen_a ;
 [Ll][Xp]vetre[X]vetre:vetre LaatusanaHame_ä ;
