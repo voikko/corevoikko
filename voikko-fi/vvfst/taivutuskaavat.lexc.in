@@ -4962,18 +4962,19 @@ LEXICON LukusanaYksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm1_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm1_<A>	;
 hde:hde	Kerronto_sti_<A>	;
-?Sukija [Sg][Ny]hen:hen	LukusanaSgNy1_<A>	;
-?Sukija [Str][Ny]heksi:heksi	LukusanaStrNy1_<A>	;
-?Sukija [Sine][Ny]hess<A>:hess<A>	LukusanaSineNy1_<A>	;
-?Sukija [Sela][Ny]hest<A>:hest<A>	LukusanaSelaNy1_<A>	;
+?Sukija [Sn][Ny]ksi:ks	LukusanaSnNy_<A>	;
+?Sukija [Sg][Ny]hden:hen	LukusanaSgNy1_<A>	;
+?Sukija [Str][Ny]hdeksi:heksi	LukusanaStrNy1_<A>	;
+?Sukija [Sine][Ny]hdess<A>:hess<A>	LukusanaSineNy1_<A>	;
+?Sukija [Sela][Ny]hdest<A>:hest<A>	LukusanaSelaNy1_<A>	;
 ?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
-?Sukija [Sade][Ny]hell<A>:hell<A>	LukusanaSadeNy1_<A>	;
-?Sukija [Sabl][Ny]helt<A>:helt<A>	LukusanaSablNy1_<A>	;
-?Sukija [Sall][Ny]helle:helle	LukusanaSallNy1_<A>	;
-?Sukija [Sab][Ny]hett<A>:hett<A>	LukusanaSabNy1_<A>	;
-?Sukija [Sn][Nm]het:het	LukusanaSnNm_<A>	;
+?Sukija [Sade][Ny]hdell<A>:hell<A>	LukusanaSadeNy1_<A>	;
+?Sukija [Sabl][Ny]hdelt<A>:helt<A>	LukusanaSablNy1_<A>	;
+?Sukija [Sall][Ny]hdelle:helle	LukusanaSallNy1_<A>	;
+?Sukija [Sab][Ny]hdett<A>:hett<A>	LukusanaSabNy1_<A>	;
+?Sukija [Sn][Nm]hdet:het	LukusanaSnNm_<A>	;
 ?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm1_<A>	;
-?Sukija he:he	Kerronto_sti_<A>	;
+?Sukija dhe:he	Kerronto_sti_<A>	;
 
 LEXICON LukusanaKaksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
@@ -5003,7 +5004,19 @@ LEXICON LukusanaKaksi
 [Sin][Nm]ksin:ksin	LukusanaSinNm29_<A>	;
 [Sko][Nm]ksine:ksine	LukusanaSkoNm29_<A>	;
 hde:hde	Kerronto_sti_<A>	;
+?Sukija [Sn][Ny]ksi:ks	LukusanaSnNy_<A>	;
+?Sukija [Sg][Ny]hden:hen	LukusanaSgNy1_<A>	;
+?Sukija [Str][Ny]hdeksi:heksi	LukusanaStrNy1_<A>	;
+?Sukija [Sine][Ny]hdess<A>:hess<A>	LukusanaSineNy1_<A>	;
+?Sukija [Sela][Ny]hdest<A>:hest<A>	LukusanaSelaNy1_<A>	;
+?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
+?Sukija [Sade][Ny]hdell<A>:hell<A>	LukusanaSadeNy1_<A>	;
+?Sukija [Sabl][Ny]hdelt<A>:helt<A>	LukusanaSablNy1_<A>	;
+?Sukija [Sall][Ny]hdelle:helle	LukusanaSallNy1_<A>	;
+?Sukija [Sab][Ny]hdett<A>:hett<A>	LukusanaSabNy1_<A>	;
+?Sukija [Sn][Nm]hdet:het	LukusanaSnNm_<A>	;
 ?Sukija [Sill][Nm]ksihin:ksihin	LukusanaSillNm29_<A>	;
+?Sukija hde:he	Kerronto_sti_<A>
 
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>	;
@@ -5126,6 +5139,7 @@ LEXICON LukusanaSeitsemän
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A> LukusanaSpNy29_ä ;
 ?Sukija [Sill][Ny]<A>h<A>n:<A>h<A>n	LukusanaSillNy29_<A>	;
 ?Sukija [Sill][Nm]ihin:ihin	LukusanaSillNm29_<A>	;
 

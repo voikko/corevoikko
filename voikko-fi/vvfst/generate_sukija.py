@@ -503,6 +503,34 @@ ei_vertm = re.compile (u"@[PDC][.]EI_VERTM([.]ON)?@", re.UNICODE)
 ei_yks = "@P.EI_YKS.ON@"
 
 
+# Yksikintoista, yksikääntoista, kaksikaantoista, jne.
+#
+LUKUSANA_TOISTA =\
+  "[Bc]toista[Xp][X]:kintoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kintoista	LukusananJälkiliite	;\n" +\
+  "[Bc]toista:kintoista	LukusanaKerroinTuhatta	;\n" +\
+  "[Bc]toista:kintoista	LukusananAlkuKerroin	;\n" +\
+  "[Bc]toista[Xp][X]:kaantoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kaantoista	LukusananJälkiliite	;\n" +\
+  "[Bc]toista:kaantoista	LukusanaKerroinTuhatta	;\n" +\
+  "[Bc]toista:kaantoista	LukusananAlkuKerroin	;\n" +\
+  "[Bc]toista[Xp][X]:kääntoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kääntoista	LukusananJälkiliite	;\n" +\
+  "[Bc]toista:kääntoista	LukusanaKerroinTuhatta	;\n" +\
+  "[Bc]toista:kääntoista	LukusananAlkuKerroin	;\n"
+
+
+# Yhdeskintoista jne.
+#
+JÄRJESTYSLUKU_TOISTA = \
+  "[Bc]toista[Xp][X]:kintoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kintoista	LukusananJälkiliiteJl	;\n" +\
+  "[Bc]toista[Xp][X]:kaantoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kaantoista	LukusananJälkiliiteJl	;\n" +\
+  "[Bc]toista[Xp][X]:kääntoista	Liitesana_a	;\n" +\
+  "[Bc]toista:kääntoista	LukusananJälkiliiteJl	;\n"
+
+
 sukija_additions = {
     "LEXICON Asemosana\n":     "SukijaAsemosana ;\n",
     "LEXICON Sanasto_em\n":    "SukijaPoikkeavat_em ;\n",
@@ -515,7 +543,9 @@ sukija_additions = {
     "LEXICON Sanasto_s\n":     "SukijaPoikkeavat_s ;\n",
     "LEXICON Suhdesana\n":     "SukijaSuhdesana ;\n",
     "LEXICON LukusananErikoisjälkiliite\n": "SukijaLukusananErikoisjälkiliite ;\n",
-    "LEXICON Lukusana\n":        "SukijaLukusanaSeitsemän ;\n",
+    "LEXICON Lukusana\n":            "SukijaLukusanaSeitsemän ;\n",
+    "LEXICON LukusanaToista\n":      LUKUSANA_TOISTA, 
+    "LEXICON JärjestyslukuToista\n": JÄRJESTYSLUKU_TOISTA,
     "LEXICON Omistusliite_a\n":  "[O2y]s:s Liitesana_a  ;\n",
     "LEXICON Omistusliite_ä\n":  "[O2y]s:s Liitesana_ä  ;\n",
     "LEXICON Omistusliite_aä\n": "[O2y]s:s Liitesana_aä ;\n"
