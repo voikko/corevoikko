@@ -5009,6 +5009,8 @@ hde:hde	Kerronto_sti_<A>	;
 ?Sukija [Str][Ny]hdeksi:heksi	LukusanaStrNy1_<A>	;
 ?Sukija [Sine][Ny]hdess<A>:hess<A>	LukusanaSineNy1_<A>	;
 ?Sukija [Sela][Ny]hdest<A>:hest<A>	LukusanaSelaNy1_<A>	;
+?Sukija [Sela][Ny]hdest<A>:hest<A>      Omistusliite_<A> ;
+?Sukija [Sela][Ny]hdest<A><A>[O3]n:hest<A><A>n Liitesana_<A> ;
 ?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
 ?Sukija [Sade][Ny]hdell<A>:hell<A>	LukusanaSadeNy1_<A>	;
 ?Sukija [Sabl][Ny]hdelt<A>:helt<A>	LukusanaSablNy1_<A>	;
