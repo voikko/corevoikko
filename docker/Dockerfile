@@ -30,7 +30,6 @@ RUN cd /usr/src && \
 
 # install libvoikko (NB: `ldconfig` flushes cache so that libvoikko.so.1 can be found)
 RUN cd /usr/src/voikko-corevoikko-*/libvoikko && \
-  perl -pi -e 's/AC_LIBTOOL_WIN32_DLL//' configure.ac && \
   ./autogen.sh && \
   ./configure --disable-hfst --with-dictionary-path=/usr/share/voikko:/usr/lib/voikko && \
   make && \
