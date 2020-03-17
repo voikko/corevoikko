@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2019 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2020 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -249,6 +249,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]imaami[X]imaam:imam NimisanaPaperi_a ;
 [Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
+[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
+[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 [Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;
 [Ln][Xp]kamari[X]kamar:kammar NimisanaPaperi_a ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
@@ -277,7 +279,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neitten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Loppu ;
-[Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]nuorimies[X]nuorena[Bm]miehenä:nuornamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]omatunto[X][Sp][Ny]omaa[Bm]tuntoa:omaatuntoo	NimisanaLiOlV_a	;
 [Ln][Xp]oopiumi[X]oopium:ooppium NimisanaRisti_a ;
 [Ln][Xp]oopiumi=unikko[X]oopiumi[Bm]unik:oopiumunik NimisanaLaatikko_a ;
 [Ln][Xp]oopiumi=unikko[X]oopiumi[Bm]unik:ooppiumunik NimisanaLaatikko_a ;
@@ -327,8 +330,20 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]täysi=veri=ori[X]täysi[Bm]veri[Bm]or@D.YS_ALKANUT@:täysiverior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]valtion=ori[X]valtion[Bm]or@D.YS_ALKANUT@:valtionor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
-[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
-[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
+[Ln][Xp]ajo=asu[X]ajo[Bm]asu:ajoasu NimisanaValo_a ;
+[Ln][Xp]esiintymis=asu[X]esiintymis[Bm]asu:esiintymisasu NimisanaValo_a ;
+[Ln][Xp]juhla-=asu[X]juhla-[Bm]asu:juhla-asu NimisanaValo_a ;
+[Ln][Xp]kieli=asu[X]kieli[Bm]asu:kieliasu NimisanaValo_a ;
+[Ln][Xp]kirjoitus=asu[X]kirjoitus[Bm]asu:kirjoitusasu NimisanaValo_a ;
+[Ln][Xp]naamiais=asu[X]naamiais[Bm]asu:naamiaisasu NimisanaValo_a ;
+[Ln][Xp]palvelus=asu[X]palvelus[Bm]asu:palvelusasu NimisanaValo_a ;
+[Ln][Xp]peli=asu[X]peli[Bm]asu:peliasu NimisanaValo_a ;
+[Ln][Xp]pyöräily=asu[X]pyöräily[Bm]asu:pyöräilyasu NimisanaValo_a ;
+[Ln][Xp]työ=asu[X]työ[Bm]asu:työasu NimisanaValo_a ;
+[Ln][Xp]uima-=asu[X]uima-[Bm]asu:uima-asu NimisanaValo_a ;
+[Ln][Xp]ulkoilu=asu[X]ulkoilu[Bm]asu:ulkoiluasu NimisanaValo_a ;
+[Ln][Xp]urheilu=asu[X]urheilu[Bm]asu:urheiluasu NimisanaValo_a ;
+[Ln][Xp]vappu=asu[X]]vappu[Bm]asu:vappuasu NimisanaValo_a ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]he[X]he:he      SukijaAsemosanaMeTeHe ;
@@ -406,24 +421,10 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]ympäri[X]ympäritse:ympäritse Omistusliite_ä ;
 
 LEXICON Sukija_p
-[Lp]ajoasu:ajoasu EtuliitteenJatko_ellelnelt;
-[Lp]esiintymisasu:esiintymisasu EtuliitteenJatko_ellelnelt;
-[Lp]juhla-asu:juhla-asu EtuliitteenJatko_ellelnelt;
-[Lp]kieliasu:kieliasu EtuliitteenJatko_ellelnelt;
-[Lp]kirjoitusasu:kirjoitusasu EtuliitteenJatko_ellelnelt;
-[Lp]naamiaisasu:naamiaisasu EtuliitteenJatko_ellelnelt;
-[Lp]palvelusasu:palvelusasu EtuliitteenJatko_ellelnelt;
-[Lp]peliasu:peliasu EtuliitteenJatko_ellelnelt;
-[Lp]pyöräilyasu:pyöräilyasu EtuliitteenJatko_ellelnelt;
-[Lp]työasu:työasu EtuliitteenJatko_ellelnelt;
-[Lp]uima-asu:uima-asu EtuliitteenJatko_ellelnelt;
-[Lp]ulkoiluasu:ulkoiluasu EtuliitteenJatko_ellelnelt;
-[Lp]urheiluasu:urheiluasu EtuliitteenJatko_ellelnelt;
-[Lp]vappuasu:vappuasu EtuliitteenJatko_ellelnelt;
-!!
 [Lp]afrikka:afrikka EtuliitteenJatko_ellelnelt;
 [Lp]alaston:alaston EtuliitteenJatko_ellelnelt;
 [Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
+[Lp]edelleen:edelleen EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:eestaas EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:ees-taas EtuliitteenJatko_ellelnelt;
 [Lp]eestaas[Bm]:eestaas- EtuliitteenJatko_ellelnelt;
@@ -685,11 +686,21 @@ LEXICON SukijaLukusananErikoisjälkiliite
 [Bc][Ll][Xp]valintainen[X]valintai:valintai    LukusananJälkiliiteNainen_a ;
 [Bc][Ll][Xp]vivahduksinen[X]vivahduksi:vivahduksi LukusananJälkiliiteNainen_a ;
 
-LEXICON SukijaLukusanaSeitsemän
+
+LEXICON SukijaLukusana
 [Lu][Xp]seitsemän[X]seitse[Sp][Ny]ntä:seitsentä   LukusanaSpNy29_ä ;
 [Lu][Xp]seitsemän[X]seitse[Ses][Ny]nnä:seitsennä  LukusanaSesNy29_ä ;
 [Lu][Xp]seitsemän[X]seitse[Sg][Nm]mäin:seitsemäin LukusanaSgNm29_ä ;
 [Lu][Xp]seitsemän[X]seitse[Sg][Nm]nten:seitsenten LukusanaSgNm29_ä ;
+[Lu][Xp]kahdeksan[X]kahdeks:kaheks	LukusanaSeitsemän_a	;
+[Lu][Xp]yhdeksän[X]yhdeks:yheks	LukusanaSeitsemän_ä             ;
+	
+
+LEXICON SukijaJärjestysluku
+[Lu][Xp]yhdes[X]yhde:yhe	JärjestyslukuKahdeksas_ä	;
+[Lu][Xp]kahdeksas[X]kahdeksa:kaheksa	JärjestyslukuKahdeksas_a	;
+[Lu][Xp]yhdeksäs[X]yhdeksä:yheksä	JärjestyslukuKahdeksas_ä	;
+
 
 LEXICON SukijaPoikkeavat_em
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;

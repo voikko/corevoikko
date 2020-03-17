@@ -4965,6 +4965,7 @@ hde:hde	Kerronto_sti_<A>	;
 ?Sukija [Sn][Ny]ksi:ks	LukusanaSnNy_<A>	;
 ?Sukija [Sg][Ny]hden:hen	LukusanaSgNy1_<A>	;
 ?Sukija [Str][Ny]hdeksi:heksi	LukusanaStrNy1_<A>	;
+?Sukija [Str][Ny]hdeksi:heks	LukusanaStrNy1_<A>	;
 ?Sukija [Sine][Ny]hdess<A>:hess<A>	LukusanaSineNy1_<A>	;
 ?Sukija [Sela][Ny]hdest<A>:hest<A>	LukusanaSelaNy1_<A>	;
 ?Sukija [Sill][Ny]htehen:htehen	LukusanaSillNy1_<A>	;
@@ -5007,6 +5008,7 @@ hde:hde	Kerronto_sti_<A>	;
 ?Sukija [Sn][Ny]ksi:ks	LukusanaSnNy_<A>	;
 ?Sukija [Sg][Ny]hden:hen	LukusanaSgNy1_<A>	;
 ?Sukija [Str][Ny]hdeksi:heksi	LukusanaStrNy1_<A>	;
+?Sukija [Str][Ny]hdeksi:heks	LukusanaStrNy1_<A>	;
 ?Sukija [Sine][Ny]hdess<A>:hess<A>	LukusanaSineNy1_<A>	;
 ?Sukija [Sela][Ny]hdest<A>:hest<A>	LukusanaSelaNy1_<A>	;
 ?Sukija [Sela][Ny]hdest<A>:hest<A>      Omistusliite_<A> ;
@@ -5048,6 +5050,7 @@ LEXICON LukusanaKolme
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 e:e	Kerronto_sti_<A>	;
+?Sukija [Str][Ny]eksi:eks	LukusanaStrNy29_<A>	;
 ?Sukija [Sill][Ny]ehen:ehen	LukusanaSillNy29_<A>	;
 
 LEXICON LukusanaNeljä
@@ -5078,6 +5081,7 @@ LEXICON LukusanaNeljä
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
+[Str][Ny]<A>ksi:<A>ks	LukusanaStrNy29_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>n:<A>h<A>n	LukusanaSillNy29_<A>	;
 ?Sukija [Sill][Nm]ihin:ihin	LukusanaSillNm29_<A>	;
 
@@ -5110,6 +5114,7 @@ LEXICON LukusanaViisi
 [Sin][Nm]sin:sin	LukusanaSinNm29_<A>	;
 [Sko][Nm]sine:sine	LukusanaSkoNm29_<A>	;
 de:de	Kerronto_sti_<A>	;
+?Sukija [Str][Ny]deksi:deks	LukusanaStrNy29_<A>	;
 ?Sukija [Sill][Ny]tehen:tehen	LukusanaSillNy29_<A>	;
 ?Sukija [Sill][Nm]sihin:sihin	LukusanaSillNm29_<A>	;
 
@@ -5142,6 +5147,7 @@ LEXICON LukusanaSeitsemän
 [Sko][Nm]ine:ine	LukusanaSkoNm29_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A> LukusanaSpNy29_ä ;
+?Sukija [Str][Ny]<A>ksi:<A>ks	LukusanaStrNy29_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>n:<A>h<A>n	LukusanaSillNy29_<A>	;
 ?Sukija [Sill][Nm]ihin:ihin	LukusanaSillNm29_<A>	;
 
