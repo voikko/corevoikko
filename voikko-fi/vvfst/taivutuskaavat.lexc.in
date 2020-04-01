@@ -3895,6 +3895,7 @@ k<U>:k<U>	KohotaKohoilla_s_<A>	;
 LEXICON Kadota
 d<O>:d<O>	KohotaKohoilla_w_<A>	;
 t<O>:t<O>	KohotaKohoilla_s_<A>	;
+?Sukija d<O>:<O>	KohotaKohoilla_w_<A>	;
 
 LEXICON KohotaKohoilla_w
 Kohota_w_<A>	;
