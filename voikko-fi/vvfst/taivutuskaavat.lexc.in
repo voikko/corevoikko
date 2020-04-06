@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2019 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2020 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 !                 2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
@@ -2492,7 +2492,7 @@ LEXICON NOUN YhteisetYksikönPaikallissijat
 [Sall][Ny]lle:lle	<WC>LiOlV_<A>	;
 [Sab][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 ?Laatusana	Kerronto_sti_<A>	;
-?Sukija [Str][Ny]ks:ks	Loppu ;
+?Sukija [Str][Ny]ks:ks	Liitesana_<A> ;
 ?Sukija [Sine][Ny]ss:ss	Loppu ;
 ?Sukija [Sela][Ny]st:st	Loppu ;
 ?Sukija [Sade][Ny]ll:ll	Loppu ;
@@ -2508,7 +2508,7 @@ LEXICON Johdin_inen_YhteisetYksikönPaikallissijat
 [Sall][Ny]lle:lle	Johdin_inen_LiOlV_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Johdin_inen_LiOlV_<A>	;
 Kerronto_sti_<A>	;
-?Sukija [Str][Ny]ks:ks	Loppu ;
+?Sukija [Str][Ny]ks:ks	Liitesana_<A> ;
 ?Sukija [Sine][Ny]ss:ss	Loppu ;
 ?Sukija [Sela][Ny]st:st	Loppu ;
 ?Sukija [Sade][Ny]ll:ll	Loppu ;
@@ -4778,6 +4778,7 @@ LiitesanaKoPaHan_<A>	;
 [Fkin]kin[Fko]k<O>h<A>n:kink<O>h<A>n	Loppu ;
 [Fkin]kin[Fko]k<O>s:kink<O>s	Loppu ;
 ?Sukija [Fkin]ki:ki	Loppu       ;
+?Sukija [Fkin]kii:kii	Loppu       ;
 
 LEXICON LiitesanaKaanPaHan
 LiitesanaPaHan_<A>	;

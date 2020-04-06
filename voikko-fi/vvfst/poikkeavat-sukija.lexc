@@ -204,7 +204,7 @@ LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 
 LEXICON SukijaPoikkeavat_n
-[Ln][Xp]aatelisimpi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
+[Ln][Xp]aatelis=impi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
 [Ln][Xp]asu=analyysi[X]asu[Bm]analyys:asuanalyys NimisanaRisti_aä ;
@@ -344,7 +344,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]uima-=asu[X]uima-[Bm]asu:uima-asu NimisanaValo_a ;
 [Ln][Xp]ulkoilu=asu[X]ulkoilu[Bm]asu:ulkoiluasu NimisanaValo_a ;
 [Ln][Xp]urheilu=asu[X]urheilu[Bm]asu:urheiluasu NimisanaValo_a ;
-[Ln][Xp]vappu=asu[X]]vappu[Bm]asu:vappuasu NimisanaValo_a ;
+[Ln][Xp]vappu=asu[X]vappu[Bm]asu:vappuasu NimisanaValo_a ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]he[X]he:he      SukijaAsemosanaMeTeHe ;
