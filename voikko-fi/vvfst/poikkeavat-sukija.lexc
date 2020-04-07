@@ -212,6 +212,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]asu=kulttuuri[X]asu[Bm]kulttuur@P.INEN_SALLITTU.ON@:asukulttuur@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
 [Ln][Xp]asu=kuva[X]asu[Bm]kuv:asukuv NimisanaKoira_a ;
 [Ln][Xp]asu=malli[X]asu[Bm]mall@P.INEN_KIELLETTY.ON@:asumall@P.INEN_KIELLETTY.ON@ NimisanaRisti_a ;
+[Ln][Xp]asu=mallisto[X]tasu[Bm]mallisto:asumallisto NimisanaArvelu_a ;
 [Ln][Xp]asu=muoto[X]asu[Bm]muo@P.INEN_SALLITTU.ON@:asumuo@P.INEN_SALLITTU.ON@ NimisanaLeuto_a ;
 [Ln][Xp]asu=paketti[X]asu[Bm]paket:asupaket NimisanaSalaatti_a ;
 [Ln][Xp]asu=näyttelijä[X]asu[Bm]näyttelij:asunäyttelij NimisanaApila_ä ;
@@ -315,6 +316,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]vuoka[X]vu:vu SukijaVuoka ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
+!
 [Ln][Xp]aasi=ori[X]aasi[Bm]or@D.YS_ALKANUT@:aasior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]hevos=ori[X]hevos[Bm]or:hevosor SukijaOriYhdyssana ;
 [Ln][Xp]isä=ori[X]isä[Bm]or@D.YS_ALKANUT@:isäor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
@@ -331,20 +333,26 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]täysi=veri=ori[X]täysi[Bm]veri[Bm]or@D.YS_ALKANUT@:täysiverior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]valtion=ori[X]valtion[Bm]or@D.YS_ALKANUT@:valtionor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
-[Ln][Xp]ajo=asu[X]ajo[Bm]asu:ajoasu NimisanaValo_a ;
-[Ln][Xp]esiintymis=asu[X]esiintymis[Bm]asu:esiintymisasu NimisanaValo_a ;
-[Ln][Xp]juhla-=asu[X]juhla-[Bm]asu:juhla-asu NimisanaValo_a ;
-[Ln][Xp]kieli=asu[X]kieli[Bm]asu:kieliasu NimisanaValo_a ;
-[Ln][Xp]kirjoitus=asu[X]kirjoitus[Bm]asu:kirjoitusasu NimisanaValo_a ;
-[Ln][Xp]naamiais=asu[X]naamiais[Bm]asu:naamiaisasu NimisanaValo_a ;
-[Ln][Xp]palvelus=asu[X]palvelus[Bm]asu:palvelusasu NimisanaValo_a ;
-[Ln][Xp]peli=asu[X]peli[Bm]asu:peliasu NimisanaValo_a ;
-[Ln][Xp]pyöräily=asu[X]pyöräily[Bm]asu:pyöräilyasu NimisanaValo_a ;
-[Ln][Xp]työ=asu[X]työ[Bm]asu:työasu NimisanaValo_a ;
-[Ln][Xp]uima-=asu[X]uima-[Bm]asu:uima-asu NimisanaValo_a ;
-[Ln][Xp]ulkoilu=asu[X]ulkoilu[Bm]asu:ulkoiluasu NimisanaValo_a ;
-[Ln][Xp]urheilu=asu[X]urheilu[Bm]asu:urheiluasu NimisanaValo_a ;
-[Ln][Xp]vappu=asu[X]vappu[Bm]asu:vappuasu NimisanaValo_a ;
+!
+[Ln][Xp]ajo=asu=merkki[X]ajo[Bm]asu[Bm]merk@P.INEN_SALLITTU.ON@:ajoasumerk@P.INEN_SALLITTU.ON@ NimisanaTakki_ä ;
+[Ln][Xp]juhla-=asu=liike[X]juhla-[Bm]asu[Bm]liik@P.INEN_SALLITTU.ON@:juhla-asuliik@P.INEN_SALLITTU.ON@ NimisanaTarvike_a ;
+[Ln][Xp]kieli=asun=korjaus=malline[X]kieli[Bm]asun[Bm]korjaus[Bm]malline:kieliasunkorjausmalline NimisanaHame_a ;
+[Ln][Xp]naamiais=asu=paska[X]naamiais[Bm]asu[Bm]@P.INEN_SALLITTU.ON@:naamiaisasupask@P.INEN_SALLITTU.ON@ NimisanaKala_a ;
+[Ln][Xp]peli=asu=logo[X]peli[Bm]asu[Bm]logo:peliasulogo NimisanaHame_a ;
+[Ln][Xp]peli=asu=malline[X]peli[Bm]asu[Bm]malline:peliasumalline NimisanaHame_a ;
+[Ln][Xp]peli=asu=osio[X]peli[Bm]asu[Bm]osio:peliasuosio NimisanaAutio_a ;
+[Ln][Xp]peli=asu=setti[X]peli[Bm]asu[Bm]set:peliasuset NimisanaTatti_ä ;
+[Ln][Xp]peli=asu=sponsori[X]peli[Bm]asu[Bm]sponsor:peliasusponsor NimisanaPaperi_a ;
+[Ln][Xp]peli=asu=tieto[X]peli[Bm]asu[Bm]tie@P.INEN_SALLITTU.ON@:peliasutie@P.INEN_SALLITTU.ON@ NimisanaLeuto_a ;
+[Ln][Xp]peli=asu=väri[X]peli[Bm]asu[Bm]vär@P.INEN_SALLITTU.ON@:peliasuvär@P.INEN_SALLITTU.ON@ NimisanaRisti_ä ;
+[Ln][Xp]pyöräily=asu=malline[X]pyöräily[Bm]asu[Bm]malline:pyöräilyasumalline NimisanaHame_a ;
+[Ln][Xp]työ=asu=valmistaja[X]työ[Bm]asu[Bm]valmistaj:työasuvalmistaj NimisanaKoira_a ;
+[Ln][Xp]uima-=asu=muoti[X]uima-[Bm]asu[Bm]muo:uima-asumuo NimisanaVati_a ;
+[Ln][Xp]ulko=asu=ohje[X]ulko[Bm]asu[Bm]ohje:ulkoasuohje NimisanaHame_a ;
+[Ln][Xp]ulkoilu=asu=merkki[X]ulkoilu[Bm]asu[Bm]merk@P.INEN_SALLITTU.ON@:ulkoiluasumerk@P.INEN_SALLITTU.ON@ NimisanaTakki_ä ;
+[Ln][Xp]urheilu=asu=malline[X]urheilu[Bm]asu[Bm]malline:urheiluasumalline NimisanaHame_a ;
+[Ln][Xp]urheilu=asu=tuote[X]urheilu[Bm]asu[Bm]tuot:urheiluasutuot NimisanaVaate_a ;
+[Ln][Xp]vappu=asu=idea[X]vappu[Bm]asu[Bm]ide:vappuasuide NimisanaKarahka_a ;
 
 LEXICON SukijaAsemosana
 [Lr][Xp]he[X]he:he      SukijaAsemosanaMeTeHe ;
@@ -446,7 +454,9 @@ LEXICON Sukija_p
 [Lp]kashmir:kashmir EtuliitteenJatko_ellelnelt;
 [Lp]kaunis:kaunis EtuliitteenJatko_ellelnelt;
 [Lp]kevyt:kevyt EtuliitteenJatko_ellelnelt;
+[Lp]kieliasu:kieliasu EtuliitteenJatko_elleln;
 [Lp]kiinteä:kiinteä EtuliitteenJatko_ellelnelt;
+[Lp]kirjoitusasu:kirjoitusasu EtuliitteenJatko_elleln;
 [Lp]kokoon:kokoon EtuliitteenJatko_ellelnelt;
 [Lp]koloniaali:koloniaali EtuliitteenJatko_ellelnelt;
 [Lp]kolossaali:kolossaali EtuliitteenJatko_ellelnelt;
