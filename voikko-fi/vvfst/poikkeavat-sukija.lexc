@@ -268,6 +268,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kirjasin[X]kirjasi:kirjaisi NimisanaUistin_a ;
 [Ln][Xp]kraatteri[X]kraatter:krater NimisanaPaperi_a ;
+[Ln][Xp]kulkku[X]kulk@P.INEN_KIELLETTY.ON@:kulk@P.INEN_KIELLETTY.ON@ NimisanaAlku_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
@@ -328,6 +329,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kilpa=ori[X]kilpa[Bm]or@D.YS_ALKANUT@:kilpaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]kruunun=ori[X]kruunun[Bm]or@D.YS_ALKANUT@:kruununor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]kruunun=ori[X]kruunun[Bm]or@D.YS_ALKANUT@:ruununor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
+[Ln][Xp]kulta=ori[X]kulta[Bm]or@D.YS_ALKANUT@:kultaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;  ! Ei ole Joukahaisessa.
 [Ln][Xp]ravuri=ori[X]ravuri[Bm]or@D.YS_ALKANUT@:ravurior@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]siitos=ori[X]siitos[Bm]or@D.YS_ALKANUT@:siitosor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
 [Ln][Xp]sota=ori[X]sota[Bm]or@D.YS_ALKANUT@:sotaor@D.YS_ALKANUT@ SukijaOriYhdyssana ;
