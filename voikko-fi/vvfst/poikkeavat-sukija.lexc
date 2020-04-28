@@ -238,9 +238,11 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]elävätkuvat[X][Sab][Nm]elävittä[Bm]kuvitta:elävittäkuvitta      NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sko][Nm]elävine[Bm]kuvine:elävinekuvine  NimisanaLiOlV_a ;
 [Ln][Xp]elävätkuvat[X][Sin][Nm]elävin[Bm]kuvin:elävinkuvin      Liitesana_a;
+[Ln][Xp]fil=harmonikko[X]fil[Bm]harmonik:filharmoonik NimisanaLaatikko_a ;
 [Ln][Xp]faarao[X]faarao:farao NimisanaAutio_a ;
 [Ln][Xp]farao[X]farao:faarao NimisanaAutio_a ;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
+[Ln][Xp]harmonikka[X]harmonik:harmoonik NimisanaHaka_a ;
 [Ln][Xp]harppuuna[X]harppuun:harppun NimisanaPeruna_a ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
@@ -251,6 +253,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]imaami[X]imaam:imam NimisanaPaperi_a ;
 [Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
+[Ln][Xp]jeremiadi[X]jeremiad:jeremiaad NimisanaRisti_a ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 [Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;
@@ -275,14 +278,18 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
 [Ln][Xp]linnan=impi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
-[Ln][Xp]maalaisimpi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
+[Ln][Xp]maalais=impi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
 [Ln][Xp]morsian[X]morsiam:morsiamm NimisanaUistin_m_a ;
 [Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
+[Ln][Xp]myriadi[X]myriad:myriaad NimisanaPaperi_a ;
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neitten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Loppu ;
 [Ln][Xp]nuorimies[X]nuorena[Bm]miehenä:nuornamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]olympia[X]olympi:olymppi NimisanaKarahka_a ;
+[Ln][Xp]olympiadi[X]olympiad:olympiaad NimisanaRisti_a ;
+[Ln][Xp]olympialainen[X]olympialai@P.EI_YKS.ON@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:olymppialai@P.EI_YKS.ON@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimisanaNainen_a ;
 [Ln][Xp]omatunto[X][Sp][Ny]omaa[Bm]tuntoa:omaatuntoo	NimisanaLiOlV_a	;
 [Ln][Xp]oopiumi[X]oopium:ooppium NimisanaRisti_a ;
 [Ln][Xp]oopiumi=unikko[X]oopiumi[Bm]unik:oopiumunik NimisanaLaatikko_a ;
@@ -310,6 +317,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationäärisyy NimisanaKalleus_aä ;
 [Ln][Xp]sydän[X]sydäm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]sävel[X]sävel:sävel NimisanaAskel_ä ;
+[Ln][Xp]teoria[X]teori:teoori NimisanaKarahka_a ;
+[Ln][Xp]universiadi[X]universiad@P.EI_YKS.ON@:universiaad@P.EI_YKS.ON@ NimisanaRisti_a ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]vartija[X]vartij:varti NimisanaApila_a ;

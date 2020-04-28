@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2013-2018, 2020 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
-# Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,6 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
+# Program to generate old spellings and common spelling mistakes for Voikko lexicon.
 # This automatic generation will generate some old
 # spellings and spelling errors that do not exist in real life.
 
@@ -40,19 +40,30 @@ infile = codecs.open (OPTIONS["destdir"] + u"/all.lexc", "r", "UTF-8")
 outfile = codecs.open (OPTIONS["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
 sukijafile = codecs.open (OPTIONS["destdir"] + u"/poikkeavat-sukija.lexc", 'r', 'UTF-8')
 
-C = u"[qwrtpsšdfghjklzžxcvbnm]"      # Kerakkeet.
-K = u"[qwrtpsšdfghjklzžxcvbnmaiou]"  # Kerakkeet + ääntiöitä.
-V = u"[aeiouüyåäö]"                  # Ääntiöt.
-A = u"[aä]"
-U = u"[uy]"
+C = "[qwrtpsšdfghjklzžxcvbnm]"      # Kerakkeet.
+M = "[bcdfghklmnpqrsštvwxzži]"      # Kerakkeet - j + i.
+J = "[bcdfghklmnpqrsštvwxzž]"       # Kerakkeet - j.
+K = "[qwrtpsšdfghjklzžxcvbnmaiou]"  # Kerakkeet + ääntiöitä.
+V = "[aeiouüyåäö]"                  # Ääntiöt.
+A = "[aä]"
+E = "[ei]"
+O = "[oö]"
+U = "[uy]"
+
 
 def makeRePattern (wordClass, word):
-    u = u"^\\[%s\\](\\[I..\\])?\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
+    u = "^\\[%s\\](\\[I..\\])?\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
+    outfile.write ("!===== " + u + " " + word + "\n")
     u = u.replace ('C', C)
+    u = u.replace ('J', J)
     u = u.replace ('K', K)
+    u = u.replace ('M', M)
     u = u.replace ('V', V)
     u = u.replace ('A', A)
+    u = u.replace ('E', E)
+    u = u.replace ('O', O)
     u = u.replace ('U', U)
+    outfile.write ("!===== " + u + "\n\n")
     return u
 
 
@@ -72,10 +83,54 @@ def replace_and_write (line, string1, string2):
     s = replace (line, string1, string2)
     outfile.write (s)
 
+# Spor(a)adi, spor(a)adinen, jne.
+#
+re_aCi    = makeRe ("(Ln|Ln|Lnl|Le.)", "(.{2,}C)(a)([df])(i)")
+re_aCia   = makeRe ("(Ln|Ln|Lnl|Le.)", "(.{2,}C)(a)([df]i)(a)")
+re_aCinen = makeRe ("(Ll|Ln|Lnl|Le.)", "(.{3,})(a)([df]i)(nen)")
 
-def replace_and_write_2 (line, string1, string2):
-    s = replace (line, string1, string2)
-    outfile.write (s)
+
+# -omi, -oni, -ori jne -loppuiset sanat; myös -omia, -ominen, jne.
+re_oMi    = makeRe ("(Ll|Ln|Lnl|Le.)", "(.{1,}M)(o)([dfglmnr])(i)")
+re_oMia   = makeRe ("(Ll|Ln|Lnl|Le.)", "(.{1,}M)(o)([dfglmnr])(ia)")
+re_oMinen = makeRe ("(Ll|Ln|Lnl|Le.)", "(.{1,}M)(o)([dfglmnr]i)(nen)")
+
+re_aali    = makeRe ("(Ll|Ln|Lnl)", "(.{2,})(aa)(l)(i)")
+re_aalinen = makeRe ("(Ll|Ln|Lnl)", "(.{2,})(aa)(li)(nen)")
+
+re_iivi    = makeRe ("(Ll|Ln|Lnl)", "(.{2,})(ii)(v)(i)")
+re_iivinen = makeRe ("(Ll|Ln|Lnl)", "(.{2,})(ii)(vi)(nen)")
+
+re_uuri = makeRe ("(Ll|Ln|Lnl)", "(.{1,}J)(uu)(r)(i)") # Ei muuteta juuri-loppuisia yhdyssanoja.
+re_yyri = makeRe ("(Ll|Ln|Lnl)", "(.{1,}C)(yy)(r)(i)")
+re_ööri = makeRe ("(Ll|Ln|Lnl)", "(.{1,}C)(öö)(r)(i)")
+
+re_torio = makeRe ("(Ll|Ln|Lnl)", "(.{1,}t)(o)(rio)")
+
+def find (line, list):
+    for u in list:
+#        outfile.write ("!!!! " + u + " " + list)
+        if line.find(u) >= 0:
+            return True
+    return False
+
+
+STOP = re.compile ("( |\t|@)")
+
+def end (line):
+    n = line.find(":")
+    r = STOP.search(line[n+1:])
+    return (n, n+r.start(1)+2)
+
+
+def ga (line, x):
+    if not find (line, x[0]):
+        e = end (line)
+        p = line[e[0]:e[1]]
+        q = p[:-x[1]-1] + x[2] + p[-x[3]-1:]
+        if line.find("bromi") > 0:
+            outfile.write ("!!HUUHAA [" + p + "]  [" + q + "]\n")
+        outfile.write (line.replace (p, q))
 
 
 re_oittaa1 = makeRe (u"Lt", u".Koittaa")
@@ -139,23 +194,29 @@ def g6 (line, x):
         outfile.write (s)
 
 
-def xprint (s, old, new):
-    p = s.find(":")
-#    print (s, p, old, new)
-    if p >= 0:
-        n = s.find (old, p)
-        if n >= 0:
-            outfile.write (s[:n] + new + s[n+len(old):])
+def replace4 (s, old, new, u):
+    return s.replace (old + u, new + u)
+
+
+def replace5 (s, old, new, u, v):
+    p = replace4 (s, old, new, u)
+    return replace4 (p, old, new, v)
 
 
 def gn (line, x):
     if not line.startswith("[Ln][Xp]kuusio[X]"):
         for u in x[1]:
-            xprint (line, x[0], u)
-            replace_and_write_2 (line, x[0], u)
-        for u in x[2]:
-#            xprint (line.replace(x[3][0],x[3][1]), x[0], u)
-            replace_and_write_2 (line.replace(x[3][0],x[3][1]), x[0], u)
+            s = replace5 (line, x[0], u, " ", "\t")
+            outfile.write (s)
+        s = line.replace (x[0] + "[X]", x[2][0] + "i[X]")
+        s = s.replace (x[3][0], x[3][1])
+        s = replace (s, x[0], x[2][0])
+        outfile.write (s)
+        s = replace5 (s, x[2][0], x[2][1], " ", "\t")
+        outfile.write (s)
+        s = line.replace (x[3][0], x[3][1])
+        replace_and_write (s, x[0], x[2][0])
+        replace_and_write (s, x[0], x[2][1])
 
 
 def g10 (line, x):
@@ -164,12 +225,37 @@ def g10 (line, x):
         replace_and_write (s, x[2], x[3])
 
 
+list_oMi    = ["blogi", "kromi", "aasiori", "hevosori", "jalostusori", "siitosori"]
+list_oMia   = ["victoria", "viktoria"]
+list_oMinen = ["hiusten=halkominen"]
+list_aali   = ["kraali", "shaali"]
+
 list_all = [
     (re_nuolaista, g2, ("Nuolaista_", "SukijaNuolaista_")),
     (re_rangaista, g2, ("Rangaista_", "SukijaRangaista_")),
     (re_tautua1,   g2, ("Kaatua_",    "SukijaAntautua_")),
     (re_tautua2,   g2, ("Kaatua_",    "SukijaAntautua_")),
     (re_isoida,   g10, ("isoida", "iseerata", "iso", "iseer", "Kanavoida", "Saneerata", "Voida", "Saneerata", re_isoida_x)),
+
+    (re_aCi,       ga, ([], 1, "a", 1)),
+    (re_aCia,      ga, ([], 2, "a", 2)),
+    (re_aCinen,    ga, ([], 2, "a", 2)),
+
+#    (re_oMi,       ga, (list_oMi,    1, "o", 1)),
+#    (re_oMia,      ga, (list_oMia,   2, "o", 2)),
+#    (re_oMinen,    ga, (list_oMinen, 2, "o", 2)),
+
+#    (re_aali,      ga, (list_aali, 2, "", 1)),
+#    (re_aalinen,   ga, ([],        3, "", 2)),
+
+#    (re_iivi,      ga, (["aktiivi"], 2, "", 1)),
+#    (re_iivinen,   ga, ([], 3, "", 2)),
+
+#    (re_uuri,      ga, (["kulttuuri"], 2, "", 1)),
+#    (re_yyri,      ga, ([], 2, "", 1)),
+#    (re_ööri,      ga, ([], 2, "", 1)),
+
+#    (re_torio,     ga, ([], 3, "o", 3)),
 
     (re_oitin,     g6, ("oit:", "oit:", "oit ", "ot ",  "Suodatin",   "Suodatin")),
     (re_oite,      g6, ("oit:", "oit:", "oit ", "ot ",  "Vaate",      "Vaate")),
@@ -190,8 +276,8 @@ list_all = [
     (re_oittua1,   g6, ("oit:", "oit:", "oit ", "ot ",  "Asettua",    "Asettua")),
     (re_oittua2,   g6, ("öit:", "öit:", "öit ", "öt ",  "Asettua",    "Asettua")),
 
-    (re_uusio,     gn, ("uusio", ("usio",),         ("usion",  "usioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
-    (re_tio,       gn, ("tio",   ("tsio",),         ("tsion",  "tsioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_uusio,     gn, ("uusio", ("usio", ),        ("usion",  "usioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_tio,       gn, ("tio",   ("tsio", ),        ("tsion",  "tsioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
     (re_aatio,     gn, ("aatio", ("atio", "atsio"), ("atsion", "atsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
     (re_uutio,     gn, ("uutio", ("utio", "utsio"), ("utsion", "utsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
 
@@ -590,7 +676,6 @@ while True:
     write_sukija_additions (line, sukija_additions)
 
     generate_all (line, list_all)
-
     write_arvaella (line)
 
     r = base_form_re.search (line)
