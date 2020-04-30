@@ -3854,7 +3854,9 @@ Ehtotapa_<A>	;
 ?Murre [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] Liitesana_<A> ;
 ?Murre [[L]]:[[L]] TositapaPi_<A> ;
 ?Vanha [[L]]:[[L]] KestämänTekijäpääteHeikko_<A> ;
-?Sukija [[L]]:[[L]] Johdin_mA_<A> ;
+?Sukija <A>:[[L]] Johdin_mA_<A> ;
+?Sukija <A>:[[L]] Johdin_vA_<A> ;
+?Sukija [[L]][Tt][Ap][P3][Nm][Ef]v<A>t:[[L]]v<A>t Liitesana_<A> ;
 
 LEXICON Kohota
 KohotaKohoilla_w_<A>	;

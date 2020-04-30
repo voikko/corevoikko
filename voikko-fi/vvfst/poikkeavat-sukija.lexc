@@ -302,6 +302,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
 [Ln][Xp]poliisi[X]poliis:polis NimisanaPaperi_a ;
 [Ln][Xp]posliini[X]posliin@P.INEN_SALLITTU.ON@:porsliin@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
+[Ln][Xp]prioriteetti[X]prioriteet:priooriteet NimisanaTatti_a ;
 [Ln][Xp]puteli[X]putel:putell NimisanaPaperi_a ;
 [Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
 [Ln][Xp]rakuuna[X]rakuun:rakun NimisanaPeruna_a ;
@@ -724,12 +725,18 @@ LEXICON SukijaJärjestysluku
 [Lu][Xp]yhdeksäs[X]yhdeksä:yheksä	JärjestyslukuKahdeksas_ä	;
 
 
+LEXICON SukijaPoikkeavat_ee
+[Lee][Xp]Napoleon[X]napoleon:napooleon EtunimiEdam_a ;
+[Lee][Xp]Platon[X]platon:platoon EtunimiKalsium_a ;
+
+
 LEXICON SukijaPoikkeavat_em
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
 
 
 LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Fär=saari[X]fär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
+[Lep][Xp]Ikonion[X]ikonion:ikoonion PaikannimiKalsium_a ;
 [Lep][Xp]Isokylä[X][Sn][Ny]iso[Bm]kylä:isokylä	PaikannimiNormaaliYsJatkoOl_ä	;
 [Lep][Xp]Isokylä[X][Sg][Ny]ison[Bm]kylän:isonkylän	PaikannimiYksikönGenetiivinJatko_ä	;
 [Lep][Xp]Isokylä[X][Sp][Ny]isoa[Bm]kylää:isoakylää	PaikannimiLiOlV_ä	;
@@ -817,6 +824,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]kiiruinen[X]kiirui:kiirui LaatusanaNainenInen_a ;
 [Ll][Xp]kiiruisa[X]kiiruis:kiiruis LaatusanaKoira_a ;
 [Ll][Xp]kiirumpi[X]kiiru:kiiru NimiLaatusanaSuurempi_a ;
+[Ll][Xp]kiirumpi[X]kiiru:kiiruhu NimiLaatusanaSuurempi_a ;
 [Ll][Xp]kiirumpi[X]kiiru:kiiruu NimiLaatusanaSuurempi_a ;
 [Ll][Xp]kiirunalainen[X]kiirun[Bm]alai:kiirunalai LaatusanaNainenInen_a ;
 [Ll][Xp]kultainen[X]kultai:kullai LaatusanaNainenInen_a ;
@@ -866,6 +874,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]platonilainen[X]platonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:platoonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]ranskalainen[X]ranska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]roomalainen[X]rooma[Bm]lai:romalai      NimiLaatusanaNainenInen_a ;
@@ -905,3 +914,10 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]himottaa[X]himo@P.YKSITEKIJÄINEN.ON@:himoi@P.YKSITEKIJÄINEN.ON@ Ammottaa_a ;
 [Lt][Xp]odottaa[X]odot:oot Alittaa_a ;
 [Lt][Xp]pudottaa[X]pudo:puo Ammottaa_a ;
+[Lt][Xp]enätä[X]enä:enä Aleta_ä ;
+[Lt][Xp]käätä[X]kää:kää Aleta_ä ;
+[Lt][Xp]löytä[X]löy:löy Aleta_ä ;
+[Lt][Xp]ojeta[X]oje:ojee Aleta_a ;
+[Lt][Xp]raketa[X]rake:rake Aleta_a ;
+[Lt][Xp]rietä[X]rie:rie Aleta_ä ;
+[Lt][Xp]väätä[X]vää:vää Aleta_ä ;

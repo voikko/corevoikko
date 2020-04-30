@@ -241,9 +241,9 @@ list_all = [
     (re_aCia,      ga, ([], 2, "a", 2)),
     (re_aCinen,    ga, ([], 2, "a", 2)),
 
-#    (re_oMi,       ga, (list_oMi,    1, "o", 1)),
-#    (re_oMia,      ga, (list_oMia,   2, "o", 2)),
-#    (re_oMinen,    ga, (list_oMinen, 2, "o", 2)),
+    (re_oMi,       ga, (list_oMi,    1, "o", 1)),
+    (re_oMia,      ga, (list_oMia,   2, "o", 2)),
+    (re_oMinen,    ga, (list_oMinen, 2, "o", 2)),
 
 #    (re_aali,      ga, (list_aali, 2, "", 1)),
 #    (re_aalinen,   ga, ([],        3, "", 2)),
@@ -619,6 +619,7 @@ JÄRJESTYSLUKU_TOISTA = \
 
 sukija_additions = {
     "LEXICON Asemosana\n":     "SukijaAsemosana ;\n",
+    "LEXICON Sanasto_ee\n":    "SukijaPoikkeavat_ee ;\n",
     "LEXICON Sanasto_em\n":    "SukijaPoikkeavat_em ;\n",
     "LEXICON Sanasto_ep\n":    "SukijaPoikkeavat_ep ;\n",
     "LEXICON Sanasto_l\n":     "SukijaPoikkeavat_l ;\n",
