@@ -1992,6 +1992,7 @@ LEXICON NOUN Kevät
 ?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija <WC>YhteisetHTaivutusmuodot_<A> ;
 ?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]nn<A>:nn<A>           	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 

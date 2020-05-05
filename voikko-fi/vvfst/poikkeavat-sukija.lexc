@@ -277,6 +277,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
 [Ln][Xp]linnan=impi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
+[Ln][Xp]lounat[X]louna@P.INEN_SALLITTU.ON@:louna@P.INEN_SALLITTU.ON@ NimisanaKevät_a ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalais=impi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
@@ -874,6 +875,9 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäasuvainen[X]läsnä[Bm]asuvai:läsnäasuvai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]läsnäolevainen[X]läsnä[Bm]olevai:läsnäolevai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]mongolilainen[X]mongolilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:mongoolilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;
+[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;
 [Lnl][Xp]platonilainen[X]platonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:platoonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]radikaalinen[X]radikaali:radikali NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]ranskalainen[X]ranska[Bm]lai:franskalai  NimiLaatusanaNainenInen_a ;
@@ -887,11 +891,12 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]stationaari[X]stationaar:stationäär NimiLaatusanaRisti_aä ;
 [Lnl][Xp]stationaarinen[X]stationaari:stationääri NimiLaatusanaNainenInen_aä ;
 [Lnl][Xp]suurenmoinen[X]suuren[Bm]moi:suuremmoi NimiLaatusanaNainenInen_a ;
-[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;
-[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;
-[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;
 [Lnl][Xp]suuri[X]suur[Ses][Ny]na:suurna NimisanaLiOlV_a ;
 [Lnl][Xp]suuri[X]suur[Ses][Ny]ra:suurra NimisanaLiOlV_a ;
+[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;
+[Lnl][Xp]teutonilainen[X]teutonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:teutoonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]vallonilainen[X]vallonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:valloonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]viktoriaaninen[X]viktoriaani:viktooriaani NimiLaatusanaNainenInen_a ;
 
 
 LEXICON SukijaPoikkeavat_t
