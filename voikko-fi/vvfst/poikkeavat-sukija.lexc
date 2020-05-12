@@ -375,6 +375,10 @@ LEXICON SukijaAsemosana
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
 [Lr][Xp]minä[X]min:min  SukijaAsemosanaMinä ;
+[Lr][Xp]moniahta[X]moniah:moniah AsemosanaPata_a;
+[Lr][Xp]moniahta[X]moniah:monikah AsemosanaPata_a;
+[Lr][Xp]monias[X]monia:monia AsemosanaVieras_a ;
+[Lr][Xp]monias[X]moniaasti:moniaasti Liitesana_a ;
 [Lr][Xp]mä[X]m:m        SukijaAsemosanaMieMä ;
 [Lr][Xp]nämä[X]nä:nä    SukijaAsemosanaNämä ;
 [Lr][Xp]sie[X]si:si     SukijaAsemosanaMieMä ;
@@ -474,6 +478,7 @@ LEXICON Sukija_p
 [Lp]koloniaali:koloniaali EtuliitteenJatko_ellelnelt;
 [Lp]kolossaali:kolossaali EtuliitteenJatko_ellelnelt;
 [Lp]koraanin:koraanin EtuliitteenJatko_ellelnelt;
+[Lp]korsikan:korsikan EtuliitteenJatko_ellelnelt;
 [Lp]laaja:laaja EtuliitteenJatko_ellelnelt;
 [Lp]leveä:leveä EtuliitteenJatko_ellelnelt;
 [Lp]loppuun:loppuun EtuliitteenJatko_ellelnelt;

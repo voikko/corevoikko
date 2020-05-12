@@ -119,6 +119,8 @@ def appendLexicon(lexiconName, lines, lexcFile):
 		if (OPTIONS["sukija"] or OPTIONS["vanhat"]) and realName in ["YhteisetHTaivutusmuodot"]:
 			appendLines("LukusananJälkiliite", realName, lines, lexcFile)
 			appendLines("Asemosana", realName, lines, lexcFile)
+		if OPTIONS["sukija"] and realName in ["Kala_s", "Kala_w", "Kala_w_ei_yliaste", "Pata"]:
+			appendLines("Asemosana", realName, lines, lexcFile)
 	else:
 		appendLines("", lexiconName, lines, lexcFile)
 
