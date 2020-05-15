@@ -432,6 +432,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]väännyksissä[X]väännyksissä:väännyksissä Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksiin:väännyksiin   Loppu ;
 [Ls][Xp]väännyksissä[X]väännyksihin:väännyksihin Loppu ;
+[Ls][Xp]ylhäällä[X]ylähä:ylähä Ulkopaikallissijat_Yks_ä ;
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympäri:ylt'ympäri LoppuLiitesana_ä ;
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympäriinsä:ylt'ympäriinsä LoppuLiitesana_ä ;
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympärinsä:ylt'ympärinsä LoppuLiitesana_ä ;
@@ -544,7 +545,9 @@ LEXICON Sukija_p
 [Lp]angolan:angolan EtuliitteenJatko_ellelnelt;
 [Lp]anonyymi:anonyymi EtuliitteenJatko_ellelnelt;
 [Lp]antillien:antillien EtuliitteenJatko_ellelnelt;
+[Lp]aragonian:aragonian EtuliitteenJatko_ellelnelt;
 [Lp]argentiinan:argentiinan EtuliitteenJatko_ellelnelt;
+[Lp]arizonan:arizonan EtuliitteenJatko_ellelnelt;
 [Lp]australian:australian EtuliitteenJatko_ellelnelt;
 [Lp]azorien:azorien EtuliitteenJatko_ellelnelt;
 [Lp]bahian:bahian EtuliitteenJatko_ellelnelt;

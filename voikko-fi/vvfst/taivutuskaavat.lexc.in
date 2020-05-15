@@ -1,7 +1,7 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2020 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
-!                 2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
+! Tekijänoikeus © 2006 - 2015 Harri Pitkänen (hatapitk@iki.fi)
+!                 2006 - 2020 Hannu Väisänen (hannuv@meiliboxi.fi)
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -4680,6 +4680,8 @@ mm:mm	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>h<A>n@D.EI_VERTM@:mp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Ny][Cc]mp<A>t<A>@D.EI_VERTM@:mp<A>t<A>@D.EI_VERTM@	NimisanaLiOlN_<A>	;
 ?Sukija [Sill][Nm][Cc]mpihi@D.EI_VERTM@:mpihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
+?Sukija [Sall][Ny][Cc]mm<A>llen@D.EI_VERTM@:mm<A>llen@D.EI_VERTM@	Liitesana_<A>	;
+?Sukija [Sall][Nm][Cc]mmillen@D.EI_VERTM@:mmillen@D.EI_VERTM@	Liitesana_<A>	;
 
 LEXICON Yliaste
 [Sn][Ny][Cs]in@D.EI_VERTM@:in@D.EI_VERTM@	Liitesana_<A>	;
@@ -4721,6 +4723,8 @@ imm<A>:imm<A>	Kerronto_sti_<A>	;
 ?Sukija [Ses][Ny][Cs]inn<A>@D.EI_VERTM@:inn<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 ?Sukija [Sill][Ny][Cs]imp<A>h<A>n@D.EI_VERTM@:imp<A>h<A>n@D.EI_VERTM@	Liitesana_<A>	;
 ?Sukija [Sill][Nm][Cs]impihi@D.EI_VERTM@:impihi@D.EI_VERTM@	NimisanaLiOlN_<A>	;
+?Sukija [Sall][Ny][Cs]imm<A>llen@D.EI_VERTM@:imm<A>llen@D.EI_VERTM@	Liitesana_<A>	;
+?Sukija [Sall][Nm][Cs]immillen@D.EI_VERTM@:immillen@D.EI_VERTM@	Liitesana_<A>	;
 
 LEXICON LiitesanaPi
 Liitesana_<A>	;
@@ -4810,16 +4814,25 @@ m<A>[Sade][Ny]ll<A>:m<A>ll<A>	LoppuLiitesana_<A>	;
 m<A>[Sabl][Ny]lt<A>:m<A>lt<A>	LoppuLiitesana_<A>	;
 m<A>[Sall][Ny]lle:m<A>lle	LoppuLiitesana_<A>	;
 ?Sukija [Sill][Ny]p<A>h<A>n:p<A>h<A>n	Liitesana_<A>	;
+?Sukija m<A>[Sade][Ny]ll:m<A>ll	LoppuLiitesana_<A>	;
+?Sukija m<A>[Sabl][Ny]lt:m<A>lt	LoppuLiitesana_<A>	;
+?Sukija m<A>[Sall][Ny]llen:m<A>llen	LoppuLiitesana_<A>	;
 
 LEXICON Ulkopaikallissijat_Yks
 [Sade][Ny]ll<A>:ll<A>	LoppuLiitesanaOlV_<A>	;
 [Sabl][Ny]lt<A>:lt<A>	LoppuLiitesanaOlV_<A>	;
 [Sall][Ny]lle:lle	LoppuLiitesanaOlV_<A>	;
+?Sukija [Sade][Ny]ll:ll	LoppuLiitesana_<A>	;
+?Sukija [Sabl][Ny]lt:lt	LoppuLiitesana_<A>	;
+?Sukija [Sall][Ny]llen:llen	LoppuLiitesana_<A>	;
 
 LEXICON Ulkopaikallissijat_Mon
 [Sade][Nm]ill<A>:ill<A>	LoppuLiitesanaOlV_<A>	;
 [Sabl][Nm]ilt<A>:ilt<A>	LoppuLiitesanaOlV_<A>	;
 [Sall][Nm]ille:ille	LoppuLiitesanaOlV_<A>	;
+?Sukija [Sade][Nm]ill:ill	LoppuLiitesana_<A>	;
+?Sukija [Sabl][Nm]ilt:ilt	LoppuLiitesana_<A>	;
+?Sukija [Sall][Nm]illen:illen	LoppuLiitesana_<A>	;
 
 LEXICON SisäpaikallissijatSsaSta
 [Sine][Ny]ss<A>:ss<A>	LoppuLiitesanaOlV_<A>	;
