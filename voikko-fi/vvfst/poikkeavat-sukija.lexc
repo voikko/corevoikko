@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2020 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+! Tekijänoikeus © 2006 - 2020 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -270,6 +270,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kiiru[X]kiiru:kiiruu Loppu ;
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kirjasin[X]kirjasi:kirjaisi NimisanaUistin_a ;
+[Ln][Xp]kokous[X]kokou:kokkou NimisanaVastaus_a ;
 [Ln][Xp]kraatteri[X]kraatter:krater NimisanaPaperi_a ;
 [Ln][Xp]kulkku[X]kulk@P.INEN_KIELLETTY.ON@:kulk@P.INEN_KIELLETTY.ON@ NimisanaAlku_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
@@ -308,10 +309,14 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
 [Ln][Xp]rakuuna[X]rakuun:rakun NimisanaPeruna_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
+[Ln][Xp]sampoo[X]sampo:samppo NimisanaTrikoo_a ;
+[Ln][Xp]sampoo[X]shampo:shampo NimisanaTrikoo_a ;
+[Ln][Xp]sampoo[X]shampo:shamppo NimisanaTrikoo_a ;
 [Ln][Xp]sarake[X]sarak:sarek NimisanaTarvike_a ;
 [Ln][Xp]saareke[X]saarek:sarek NimisanaTarvike_a ;
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
+[Ln][Xp]shampoo[X]shampo:shamppo NimisanaTrikoo_a ;
 [Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]kraat:sosialidemokraat NimisanaTatti_a ;
 [Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]krat:sosialidemokrat NimisanaRisti_a ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
@@ -320,6 +325,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sydän[X]sydäm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]sävel[X]sävel:sävel NimisanaAskel_ä ;
 [Ln][Xp]teoria[X]teori:teoori NimisanaKarahka_a ;
+[Ln][Xp]tirehtööri[X]tirehtor:tirehtor NimisanaRisti_a ;
 [Ln][Xp]universiadi[X]universiad@P.EI_YKS.ON@:universiaad@P.EI_YKS.ON@ NimisanaRisti_a ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
