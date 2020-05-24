@@ -223,6 +223,11 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]asu=varasto[X]asu[Bm]varasto:asuvarasto NimisanaArvelu_a ;
 [Ln][Xp]aurinko[X]aurinko:aurinko NimisanaSukijaAurinko_a ;
 [Ln][Xp]banni[X]bann:bann NimisanaRisti_a ;
+[Ln][Xp]bolsevikki[X]bolsevik:bolshevik NimisanaTakki_a ;
+[Ln][Xp]bolsevikki[X]bolsevik:bolschevik NimisanaTakki_a ;
+[Ln][Xp]bolsevikki[X]bolsevik:bolscheviik NimisanaTakki_a ;
+[Ln][Xp]bolsevismi[X]bolsevism:bolshevism NimisanaRisti_a ;
+[Ln][Xp]bolsevismi[X]bolsevism:bolschevism NimisanaRisti_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
@@ -309,6 +314,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;
 [Ln][Xp]rakuuna[X]rakuun:rakun NimisanaPeruna_a ;
 [Ln][Xp]ruoka[X]ru:ru   SukijaRuoka ;
+[Ln][Xp]shakki[X]sak:shak NimisanaTakki_a 
 [Ln][Xp]sampoo[X]sampo:samppo NimisanaTrikoo_a ;
 [Ln][Xp]sampoo[X]shampo:shampo NimisanaTrikoo_a ;
 [Ln][Xp]sampoo[X]shampo:shamppo NimisanaTrikoo_a ;
@@ -743,7 +749,8 @@ LEXICON SukijaJärjestysluku
 LEXICON SukijaPoikkeavat_ee
 [Lee][Xp]Napoleon[X]napoleon:napooleon EtunimiEdam_a ;
 [Lee][Xp]Platon[X]platon:platoon EtunimiKalsium_a ;
-
+[Lee][Xp]Tšingis[X]tšingi:tschingi EtunimiVastaus_ä ;
+[Lee][Xp]Tšingis[X]tšingi:tshingi EtunimiVastaus_ä ;
 
 LEXICON SukijaPoikkeavat_em
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
@@ -821,6 +828,7 @@ LEXICON SukijaPoikkeavat_ep
 
 LEXICON SukijaPoikkeavat_l
 [Ll][Xp]aikainen[X]aikai:aikahi  LaatusanaNainenInen_a ;
+[Ll][Xp]bolsevistinen[X]bolsevisti:bolshevisti LaatusanaNainenInen_a ;
 [Ll][Xp]esimuistoinen[X]esi[Bm]muistoi:esimuistoi  LaatusanaNainenInen_a ;
 [Ll][Xp]esivalintainen[X]esi[Bm]valintai:esivalintai  LaatusanaNainenInen_a ;
 [Ll][Xp]etäkäyttöinen[X]etä[Bm]käyttöi:etäkäyttöi     LaatusanaNainenInen_ä ;
