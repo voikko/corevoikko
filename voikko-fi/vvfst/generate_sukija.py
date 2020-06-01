@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2018, 2020 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+# Copyright 2013-2018, 2020 Hannu Väisänen
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,6 +34,26 @@ from types import *
 sys.path.append("common")
 import generate_lex_common
 
+# Tulosta sanojen historiallinen taivutus.
+# Mallia on otettu funktiosta handle_word(word) tiedostossa generate_lex.py.
+#
+import voikkoutils
+import xml.dom.minidom
+def print_historical_inflection (word):
+    sukija_infclass = None
+    for infclass in word.getElementsByTagName ("infclass"):
+        if infclass.getAttribute("type") == "historical":
+            sukija_infclass = generate_lex_common.tValue (infclass)
+            break
+    if sukija_infclass is not None:
+        altforms = generate_lex_common.tValues (word.getElementsByTagName("forms")[0], "form")
+        for altform in altforms:
+            print ("SANA", altform, sukija_infclass)
+#voikkoutils.process_wordlist (generate_lex_common.VOCABULARY_DATA + '/joukahainen.xml', \
+#                              print_historical_inflection, False)
+#sys.exit(1)
+
+
 OPTIONS = generate_lex_common.get_options()
 
 infile = codecs.open (OPTIONS["destdir"] + u"/all.lexc", "r", "UTF-8")
@@ -53,7 +73,7 @@ U = "[uy]"
 
 def makeRePattern (wordClass, word):
     u = "^\\[%s\\](\\[I..\\])?\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
-    outfile.write ("!===== " + u + " " + word + "\n")
+#    outfile.write ("!===== " + u + " " + word + "\n")
     u = u.replace ('C', C)
     u = u.replace ('J', J)
     u = u.replace ('K', K)
@@ -63,7 +83,7 @@ def makeRePattern (wordClass, word):
     u = u.replace ('E', E)
     u = u.replace ('O', O)
     u = u.replace ('U', U)
-    outfile.write ("!===== " + u + "\n\n")
+#    outfile.write ("!===== " + u + "\n\n")
     return u
 
 
@@ -128,8 +148,8 @@ def ga (line, x):
         e = end (line)
         p = line[e[0]:e[1]]
         q = p[:-x[1]-1] + x[2] + p[-x[3]-1:]
-        if line.find("bromi") > 0:
-            outfile.write ("!!HUUHAA [" + p + "]  [" + q + "]\n")
+#        if line.find("bromi") > 0:
+#            outfile.write ("!!HUUHAA [" + p + "]  [" + q + "]\n")
         outfile.write (line.replace (p, q))
 
 
@@ -157,9 +177,6 @@ re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_", re.UNICODE)
 re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
 
 re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
-
-re_tautua1 = re.compile ("\\[Lt\\].*tautua.*Kaatua_", re.UNICODE)
-re_tautua2 = re.compile ("\\[Lt\\].*täytyä.*Kaatua_", re.UNICODE)
 
 re_isoida_x = re.compile (u"\\A\[Lt\]\[Xp\](dramatisoida|karakterisoida)\[X\]")
 
@@ -233,8 +250,6 @@ list_aali   = ["kraali", "shaali"]
 list_all = [
     (re_nuolaista, g2, ("Nuolaista_", "SukijaNuolaista_")),
     (re_rangaista, g2, ("Rangaista_", "SukijaRangaista_")),
-    (re_tautua1,   g2, ("Kaatua_",    "SukijaAntautua_")),
-    (re_tautua2,   g2, ("Kaatua_",    "SukijaAntautua_")),
     (re_isoida,   g10, ("isoida", "iseerata", "iso", "iseer", "Kanavoida", "Saneerata", "Voida", "Saneerata", re_isoida_x)),
 
     (re_aCi,       ga, ([], 1, "a", 1)),
@@ -435,7 +450,7 @@ function_list = [
     (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
      (u"lohi",
-      u"tyynenmerenlohi",   # On Joukahaisessa.
+      u"tyynen=meren=lohi",   # On Joukahaisessa.
       u"uuhi")),
 
     # 34 lahti (2, 2). Tuomi, s. 193.
@@ -673,9 +688,9 @@ while True:
         line = line.replace (u"@P.YS_EI_JATKOA.ON@", u"")
         line = line.replace (u"@D.YS_EI_JATKOA@", u"")
         line = line.replace (u"@C.YS_EI_JATKOA@", u"")
+
     outfile.write (line)
     write_sukija_additions (line, sukija_additions)
-
     generate_all (line, list_all)
     write_arvaella (line)
 

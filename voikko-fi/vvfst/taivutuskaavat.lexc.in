@@ -1047,6 +1047,10 @@ LEXICON NOUN Savotta
 t:t	<WC>Solakka_s_<A>	;
 <WC>Solakka_w_<A>	;
 
+LEXICON NOUN Veranta
+t:t <WC>Solakka_s_<A> ;
+n:n <WC>Solakka_w_<A> ;
+
 LEXICON NOUN Solakka_w
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
@@ -4641,6 +4645,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 @D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
 @D.VAIN_YM3@[Ln][Xj]j<A>[X][Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 @D.VAIN_YM3@[Ln][Xj]j<A>[X][Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaOlVLoppu_<A>	;
+?Sukija @D.VAIN_YM3@[Ln][Xj]j<A>[X][Sill][Nm]jihi@C.JOHDETTAVA_NIMISANAKSI@:@D.VAIN_YM3@jihi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlN_<A>	;
 
 LEXICON Johdin_nti
 [Ln]n[Xj]ti[X]@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
@@ -5445,9 +5450,11 @@ LEXICON TositapaPi
 ?Sukija LEXICON NOUN SukijaPieni
 ?Sukija [Ses][Ny]n<A>:n<A> <WC>LiOlV_<A> ;
 
-?Sukija LEXICON SukijaAntautua
+!! Nykysuomen sanakirja, teonsanan taivutuskaava 44.
+?Sukija LEXICON Antautua
+?Sukija Kaatua_<A> ;
 ?Sukija KestämänTekijäpääteHeikko_<A> ;
-?Sukija [[L]][Tt][Ap][P3][Ny][Ef]:[[L]] KestämänTekijäpääteY3Liitesana_<A> ;
+?Sukija <U>[Tt][Ap][P3][Ny][Ef]:<U> KestämänTekijäpääteY3Liitesana_<A> ;
 ?Sukija [Tt][Ap][P3][Nm][Ef]v<A>t:v<A>t Liitesana_<A> ;
 ?Sukija s:s KertomanTekijäpääteHeikko_<A> ;
 ?Sukija s:s KertomanTekijäpääteVahva_<A> ;
@@ -5536,3 +5543,20 @@ h:h	Yliaste_<A> ;
 
 ?Sukija LEXICON SukijaKäskytapa_Os
 ?Sukija [Tk][Ap][P2][Ny][Eb]<O>s:<O>s Loppu ; ! Ottaos, puhuos.
+
+! Nykysuomen sanakirjan taivutuskaava 70 on yhdistelmä taivutuskaavoista 64 ja 66.
+?Sukija LEXICON NOUN Koiras
+?Sukija <WC>Vastaus_<A> ;
+?Sukija <WC>Vieras_<A> ;
+
+! Nykysuomen sanakirjan taivutuskaava 16.
+?Sukija LEXICON NOUN Kantaja
+?Sukija <WC>Koira_<A> ;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	<WC>LiOlV_<A>	;
+?Sukija [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+?Sukija [Sill][Nm]<O>ihi:<O>ihi         <WC>LiOlN_<A>	;
+?Sukija <O>:<O>                         <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija <O>:<O>                         <WC>YhteisetMonikonSijat2_<A>	;

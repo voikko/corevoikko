@@ -294,6 +294,8 @@ modern_classmap = [('valo', 'sw', [(None,'(.*)','valo'),
 	('hapsi', '-', [(None,'(.*)psi','hapsi')]),
 	('loppu', '-', [(None,'(.*)','loppu')]),
 	('veitsi', '-', [(None,'(.*)tsi','veitsi')]),
+        ('kantaja', '-', [(None,'(.*j)A', 'kantaja')]), # Historical inflection (Nykysuomen sanakirja, noun type 16).
+        ('koiras', '-', [(None,'(.*)s','koiras')]),    # Historical inflection (Nykysuomen sanakirja, noun type 70).
 	# Verbs
 	('punoa', 'sw', [(None,'(.*)A','punoa'),
 	                   ('mp','(.*m)pUA','ampua'),
@@ -489,7 +491,8 @@ modern_classmap = [('valo', 'sw', [(None,'(.*)','valo'),
 	('taitaa', '-', [(None,'(.*)tAA','taitaa')]),
 	('juosta', '-', [(None,'(.*V)stA','juosta')]),
 	('nähdä', '-', [(None,'(.*)hdA','nähdä')]),
-	('kevetä', '-', [(None,'(.*)vetA','kevetä')])
+	('kevetä', '-', [(None,'(.*)vetA','kevetä')]),
+	('antautua', '-', [(None,'(.*)tUA','antautua')])  # Historical inflection (Nykysuomen sanakirja, verb type 44).
 	]
 
 def compileClassmapREs(inputClassmap):

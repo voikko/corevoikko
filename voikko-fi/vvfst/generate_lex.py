@@ -312,7 +312,22 @@ def handle_word(word):
 					voikko_infclass = "paperi"
 				elif voikko_infclass == "pasuuna":
 					voikko_infclass = "peruna"
-				if voikko_infclass not in ["aavistaa-av1", "arvelu", "arvelu-av1", "asema-av1", "haravoida-av2", "karahka", "kiiski", "matala", "paperi", "paperi-av1", "peruna"]:
+				elif voikko_infclass == "apaja":
+					voikko_infclass = "kantaja"
+				elif voikko_infclass == "veranta":
+					voikko_infclass = "karahka-av1"
+#				if voikko_infclass in ["ahven", "altis", "bébé", "haastaa", "herttua", "hyljätä", "hylätä",
+#                                                       "jälki", "kaihtaa", "kalsium", "katketa-av4",
+##                                                       "kantaja",
+#                                                       "kirjoitella", "kulkija", "kutiaa", "laittaa", "lampi", "levätä",
+#                                                       "nuori", "paahtaa", "paistaa", "palaa", "palata", "peitsi",
+#                                                       "siivota", "sydän", "taittaa", "terve", "tulla", "tuomi", "uros",
+#                                                       "valmis", "veranta", "virkkaa"]:
+#					voikko_infclass = None
+#
+				if voikko_infclass not in ["aavistaa-av1", "antautua", "arvelu", "arvelu-av1", "asema-av1", "haravoida-av2", "huuli",
+                                                           "kantaja", "karahka", "karahka-av1",
+                                                           "kiiski", "koiras", "matala", "paperi", "paperi-av1", "peruna"]:
 					voikko_infclass = None
 				break
 	if voikko_infclass == None:
