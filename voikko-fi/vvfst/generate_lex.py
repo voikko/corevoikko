@@ -310,12 +310,8 @@ def handle_word(word):
 				voikko_infclass = generate_lex_common.tValue(infclass)
 				if voikko_infclass == "banaali":   # Banaali taipuu kuten paperi.
 					voikko_infclass = "paperi"
-				elif voikko_infclass == "pasuuna":
+				elif voikko_infclass == "pasuuna": # Pasuuna tapuu kuten peruna.
 					voikko_infclass = "peruna"
-				elif voikko_infclass == "apaja":
-					voikko_infclass = "kantaja"
-				elif voikko_infclass == "veranta":
-					voikko_infclass = "karahka-av1"
 #				if voikko_infclass in ["ahven", "altis", "bébé", "haastaa", "herttua", "hyljätä", "hylätä",
 #                                                       "jälki", "kaihtaa", "kalsium", "katketa-av4",
 ##                                                       "kantaja",
@@ -325,7 +321,7 @@ def handle_word(word):
 #                                                       "valmis", "veranta", "virkkaa"]:
 #					voikko_infclass = None
 #
-				if voikko_infclass not in ["aavistaa-av1", "antautua", "arvelu", "arvelu-av1", "asema-av1", "haravoida-av2", "huuli",
+				if voikko_infclass not in ["aavistaa-av1", "antautua", "arvelu", "arvelu-av1", "asema-av1", "haravoida", "haravoida-av2", "huuli",
                                                            "kantaja", "karahka", "karahka-av1",
                                                            "kiiski", "koiras", "matala", "paperi", "paperi-av1", "peruna"]:
 					voikko_infclass = None
