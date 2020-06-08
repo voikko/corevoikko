@@ -252,6 +252,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]den:herrasneiden Loppu ;
 [Ln][Xp]herrasneiti[X]herras[Bm]nei[Sg][Ny]tten:herrasneitten Loppu ;
 [Ln][Xp]heras=tuomari[X]heras[Bm]tuomar:herrastuomar NimisanaPaperi_a ;
+[Ln][Xp]hipen[X]hipen:hipen NimisanaAskel_ä;
+[Ln][Xp]hiven[X]hiven:hipen NimisanaAskel_ä;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]den:hovineiden Liitesana_ä ;
 [Ln][Xp]hovineiti[X]hovi[Bm]nei[Sg][Ny]tten:hovineitten Liitesana_ä ;
 [Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;

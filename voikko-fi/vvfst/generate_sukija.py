@@ -344,6 +344,10 @@ def write_paahtaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
 
+def write_palata (line, word):
+    prefix = line[0:line.find (u" ")]
+    outfile.write (u"%s SukijaPalata_a ;\n" % (prefix))
+
 
 word_list = [
     (u"tällainen",       ((u"tällai",      u"tällai", u"NimiLaatusanaNainenInen_a", u"NimiLaatusanaNainenInen_ä"),
@@ -503,16 +507,19 @@ function_list = [
 
      # 11 paistaa (9, 9). Tuomi s. 1, 2, 8, 11, 12, 15, 17.
      #
-     (write_virkkaa, (u"vilkkaa",
-                      u"virkkaa")),
-     (write_paistaa, (u"paistaa",
-                      u"uppo=paistaa")),
-     (write_paahtaa, (u"paahtaa",
-                      u"raistaa",
-                      u"saattaa",
-                      u"taittaa",
-                      u"palttaa",
-                      u"varttaa")),
+     (write_virkkaa, ("vilkkaa",
+                      "virkkaa")),
+     (write_paistaa, ("paistaa",
+                      "uppo=paistaa")),
+     (write_paahtaa, ("paahtaa",
+                      "raistaa",
+                      "saattaa",
+                      "taittaa",
+                      "palttaa",
+                      "varttaa")),
+     (write_palata,  ("avata",
+                      "halata",
+                      "palata")),
 ]
 
 def convert_to_dictionary (word_list):

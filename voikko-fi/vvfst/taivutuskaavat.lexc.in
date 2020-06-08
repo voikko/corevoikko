@@ -3942,6 +3942,8 @@ LEXICON Kihajaa
 ?Sukija <A>j:<A>j KertomanTekijäpääteHeikko_<A> ;
 ?Sukija <A>j:<A>j KertomanTekijäpääteVahva_<A> ;
 ?Sukija <A>j<A>:<A>j<A> Ehtotapa_<A> ;
+?Sukija <A>j<A>:<A>j<A> Johdin_mA_<A> ;
+?Sukija <A>j<A>:<A>j<A> Johdin_vA_<A> ;
 
 LEXICON Kitistä
 ist:ist	Johdin_nimitapa1A_<A>	;
@@ -5560,3 +5562,19 @@ h:h	Yliaste_<A> ;
 ?Sukija [Sill][Nm]<O>ihi:<O>ihi         <WC>LiOlN_<A>	;
 ?Sukija <O>:<O>                         <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija <O>:<O>                         <WC>YhteisetMonikonSijat2_<A>	;
+
+! Nykysuomen sanakirjan teonsanojen taivutuskaavan 40 ne osat,
+! jotka eivät ole samoja kuin Voikon taivutus Salata.
+?Sukija LEXICON SukijaPalata
+?Sukija <A>j<A>:<A>j<A> KestämänTekijäpääteHeikko_<A>	;
+?Sukija [Tt][Ap][P3][Ny][Ef]<A>j<A><A>:<A>j<A><A> KestämänTekijäpääteY3Liitesana_<A>	;
+?Sukija <A>j<A>:<A>j<A> Ehtotapa_<A> ;
+?Sukija <A>j<A>t:<A>j<A>t Käskytapa_<A> ;
+?Sukija <A>j<A>:<A>j<A>	Johdin_nUt_<A>;
+?Sukija <A>j<A>:<A>j<A>	Johdin_vA_<A>	;
+?Sukija <A>j<A>:<A>j<A>	Johdin_mA_<A>	;
+?Sukija <A>j<A>:<A>j<A>	SukijaTositapaVi_<A> ;
+?Sukija <A>j<A>:<A>j<A>	LiitesanaVainPi_<A> ;
+?Sukija <A><A>:<A>j<A>	Johdin_vA_<A>	;
+?Sukija <A><A>:<A>j<A>	Johdin_mA_<A>	;
+?Sukija <A>n:<A>j<A>	Johdin_nUt_<A>;
