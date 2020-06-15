@@ -5380,14 +5380,30 @@ LEXICON JärjestyslukuKymmentäSnNm
 ?Sukija LEXICON NOUN SukijaAltis
 ?Sukija t:t <WC>SukijaKaunis_<A> ;
 
+! Nykysuomen sanakirjan teonsanojen taivutuskaavan 10 ja 11 ne osat,
+! jotka eivät ole samoja kuin Voikon taivutus Kaivaa.
 ?Sukija LEXICON SukijaPaistaa
 ?Sukija KertomanTekijäpääteVahva_<A> ;
+?Sukija KertomanTekijäpääteHeikko_<A>	;
 
+! Nykysuomen sanakirjan teonsanojen taivutuskaavan 10 ja 11 ne osat,
+! jotka eivät ole samoja kuin Voikon taivutus Raataa.
 ?Sukija LEXICON SukijaPaahtaa
 ?Sukija t:t KertomanTekijäpääteVahva_<A> ;
+?Sukija d:d KertomanTekijäpääteHeikko_<A>	;
 
+! Nykysuomen sanakirjan teonsanojen taivutuskaavan 10 ja 11 ne osat,
+! jotka eivät ole samoja kuin Voikon taivutus Jakaa.
+?Sukija LEXICON SukijaTaittaa
+?Sukija t:t KertomanTekijäpääteVahva_<A> ;
+?Sukija KertomanTekijäpääteHeikko_<A>	;
+
+
+! Nykysuomen sanakirjan teonsanojen taivutuskaavan 10 ja 11 ne osat,
+! jotka eivät ole samoja kuin Voikon taivutus Jakaa.
 ?Sukija LEXICON SukijaVirkkaa
 ?Sukija k:k KertomanTekijäpääteVahva_<A> ;
+?Sukija KertomanTekijäpääteHeikko_<A>	;
 
 ?Sukija LEXICON SukijaNuolaista
 ?Sukija is:s   Nuolaista_w_<A> ;
@@ -5570,6 +5586,7 @@ h:h	Yliaste_<A> ;
 ?Sukija [Tt][Ap][P3][Ny][Ef]<A>j<A><A>:<A>j<A><A> KestämänTekijäpääteY3Liitesana_<A>	;
 ?Sukija <A>j<A>:<A>j<A> Ehtotapa_<A> ;
 ?Sukija <A>j<A>t:<A>j<A>t Käskytapa_<A> ;
+?Sukija <A>j<A>:<A>j<A> Käskytapa_y2_<A> ;
 ?Sukija <A>j<A>:<A>j<A>	Johdin_nUt_<A>;
 ?Sukija <A>j<A>:<A>j<A>	Johdin_vA_<A>	;
 ?Sukija <A>j<A>:<A>j<A>	Johdin_mA_<A>	;
@@ -5578,3 +5595,9 @@ h:h	Yliaste_<A> ;
 ?Sukija <A><A>:<A>j<A>	Johdin_vA_<A>	;
 ?Sukija <A><A>:<A>j<A>	Johdin_mA_<A>	;
 ?Sukija <A>n:<A>j<A>	Johdin_nUt_<A>;
+
+?Sukija LEXICON SukijaHylätä
+?Sukija k:k SukijaPalata_<A> ;
+
+?Sukija LEXICON SukijaLevätä
+?Sukija p:p SukijaPalata_<A> ;

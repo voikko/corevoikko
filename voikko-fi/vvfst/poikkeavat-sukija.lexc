@@ -265,6 +265,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
 [Ln][Xp]kaivu[X]kaivu[Sill][Ny]usee:kaivuusee NimisanaLiOlN_a ;
 [Ln][Xp]kamari[X]kamar:kammar NimisanaPaperi_a ;
+[Ln][Xp]kampi[X]kam[Sg][Ny]min:kammin NimisanaYksikönGenetiivinJatko_a ;
+[Ln][Xp]kampi[X]kam[Sn][Nm]mit:kammit NimisanaMonikonNominatiivinJatko_a;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
@@ -288,6 +290,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]lounat[X]louna@P.INEN_SALLITTU.ON@:louna@P.INEN_SALLITTU.ON@ NimisanaKevät_a ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalais=impi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
+[Ln][Xp]maustin[X]mausti:mausti NimisanaUistin_a ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
 [Ln][Xp]morsian[X]morsiam:morsiamm NimisanaUistin_m_a ;
 [Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
@@ -437,6 +440,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Omistusliite_a ;
 [Ls][Xp]paitahihasillaan[X]paita[Bm]hihasilla:paitahihasilla Liitesana_a ;
 [Ls][Xp]pakko[X]pakosti:pakosti LoppuLiitesana_a ;
+[Ls][Xp]saati[X]saatika:saatika Loppu_a ;
 [Ls][Xp]sensijaan[X]sen[Bm]sijaan:sensijaan Liitesana_a ;
 [Ls][Xp]sentähden[X]sen[Bm]tähden:sentähden Liitesana_ä ;
 [Ls][Xp]senvuoksi[X]sen[Bm]vuoksi:senvuoksi Liitesana_a ;
@@ -451,7 +455,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympäriinsä:ylt'ympäriinsä LoppuLiitesana_ä ;
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympärinsä:ylt'ympärinsä LoppuLiitesana_ä ;
 [Ls][Xp]yltympäri[X]ylt'[Bm]ympäri:ylt'ympäri Ulkopaikallissijat_Yks_ä ;
-[Ls][Xp]yltympäri[X]ylt'ympäritse:ylt'ympäritse LoppuLiitesana_ä ;
+[Ls][Xp]yltympäri[X]ylt'[Bm]ympäritse:ylt'ympäritse LoppuLiitesana_ä ;
 [Ls][Xp]yltympäri[X]ylt[Bm]ympäri:yltympäri Ulkopaikallissijat_Yks_ä ;
 [Ls][Xp]yltympäri[X]ylt[Bm]ympärinsä:yltympärinsä LoppuLiitesana_ä ;
 [Ls][Xp]ylöspäin[X]ylähältäkin[Bm]päin:ylähältäkinpäin Loppu_ä ;
@@ -941,8 +945,11 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]puoleta[X]puole:puole Aleta_a ;
 [Lt][Xp]evakuoida[X]evakuo:evako Kanavoida_a ;
 [Lt][Xp]himottaa[X]himo@P.YKSITEKIJÄINEN.ON@:himoi@P.YKSITEKIJÄINEN.ON@ Ammottaa_a ;
+[Lt][Xp]huojeta[X]huoke:huoke Aleta_s_a ;
+[Lt][Xp]hyljätä[X]hylj:hylj Salata_ä ;
 [Lt][Xp]odottaa[X]odot:oot Alittaa_a ;
 [Lt][Xp]pudottaa[X]pudo:puo Ammottaa_a ;
+[Lt][Xp]vavista[X]vavis:vavis Nuolaista_s_a ;
 [Lt][Xp]enätä[X]enä:enä Aleta_ä ;
 [Lt][Xp]käätä[X]kää:kää Aleta_ä ;
 [Lt][Xp]löytä[X]löy:löy Aleta_ä ;

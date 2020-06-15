@@ -312,7 +312,8 @@ def word_class (line):
     L = dict ([("[Lep]", "Paikannimi"),
                ("[Ll]",  "Laatusana"),
                ("[Ln]",  "Nimisana"),
-               ("[Lnl]", "NimiLaatusana")])
+               ("[Lnl]", "NimiLaatusana"),
+               ("[Lt]",  "")])
     return L[line[0:line.find("]")+1]]
 
 
@@ -343,6 +344,10 @@ def write_paistaa (line, word):
 def write_paahtaa (line, word):
     prefix = line[0:line.find (u" ")]
     outfile.write (u"%s SukijaPaahtaa_a ;\n" % (prefix))
+
+def write_taittaa (line, word):
+    prefix = line[0:line.find (u" ")]
+    outfile.write (u"%s SukijaTaittaa_a ;\n" % (prefix))
 
 def write_palata (line, word):
     prefix = line[0:line.find (u" ")]
@@ -509,17 +514,23 @@ function_list = [
      #
      (write_virkkaa, ("vilkkaa",
                       "virkkaa")),
-     (write_paistaa, ("paistaa",
-                      "uppo=paistaa")),
-     (write_paahtaa, ("paahtaa",
+     (write_paistaa, ("maustaa",  # Ei ole Tuomella, mutta Lönnrot-projektin kirjoissa taivutetaan maustin, maustit, maustimme...
+                      "paistaa",
                       "raistaa",
-                      "saattaa",
+                      "uppo=paistaa")),
+     (write_paahtaa, ("kaihtaa",        # NS: haastaa.
+                      "paahtaa", )),
+     (write_taittaa, ("saattaa",
                       "taittaa",
                       "palttaa",
                       "varttaa")),
+
+     # Avata -> avaja jne. Nykysuomen sanakirjan teonsanojen taivutuskaava 40.
      (write_palata,  ("avata",
                       "halata",
                       "palata")),
+     (lambda line, word: write_word (line, word, "SukijaLevätä"), ("levätä", )),
+     (lambda line, word: write_word (line, word, "SukijaHylätä"), ("hyljätä", "hylätä")),
 ]
 
 def convert_to_dictionary (word_list):
