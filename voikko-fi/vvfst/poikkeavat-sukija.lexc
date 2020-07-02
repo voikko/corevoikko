@@ -203,6 +203,9 @@ LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
 
+LEXICON SukijaPoikkeavat_h
+[Lh][Xp]juu[X]juupas:juupas # ;
+
 LEXICON SukijaPoikkeavat_n
 [Ln][Xp]aatelis=impi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
@@ -298,7 +301,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neitten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Loppu ;
-[Ln][Xp]nuorimies[X]nuorena[Bm]miehenä:nuornamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]olympia[X]olympi:olymppi NimisanaKarahka_a ;
 [Ln][Xp]olympiadi[X]olympiad:olympiaad NimisanaRisti_a ;
 [Ln][Xp]olympialainen[X]olympialai@P.EI_YKS.ON@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:olymppialai@P.EI_YKS.ON@@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimisanaNainen_a ;
@@ -342,6 +345,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
 [Ln][Xp]vartija[X]vartij:varti NimisanaApila_a ;
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
+[Ln][Xp]vierasmies[X]vierasna[Bm]miesnä:vierasnamiesnä NimisanaLiOlV_ä ;
+[Ln][Xp]vierasmies[X]vierasna-[Bm]miesnä:vierasna-miesnä NimisanaLiOlV_ä ;
 [Ln][Xp]vuoka[X]vu:vu SukijaVuoka ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;

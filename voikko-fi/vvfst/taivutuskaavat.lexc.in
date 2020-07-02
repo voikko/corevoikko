@@ -5579,6 +5579,11 @@ h:h	Yliaste_<A> ;
 ?Sukija <O>:<O>                         <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija <O>:<O>                         <WC>YhteisetMonikonSijat2_<A>	;
 
+! Nykysuomen sanakirjan teonsanojen taivutuskaava 10 ja 11.
+?Sukija LEXICON Haastaa
+?Sukija <WC>Kaivaa_<A> ;
+?Sukija <WC>SukijaPaistaa_<A> ;
+
 ! Nykysuomen sanakirjan teonsanojen taivutuskaavan 40 ne osat,
 ! jotka eivät ole samoja kuin Voikon taivutus Salata.
 ?Sukija LEXICON SukijaPalata

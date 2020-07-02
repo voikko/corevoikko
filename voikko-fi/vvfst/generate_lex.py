@@ -322,7 +322,7 @@ def handle_word(word):
 #					voikko_infclass = None
 #
 				if voikko_infclass not in ["aavistaa-av1", "antautua", "arvelu", "arvelu-av1", "asema", "asema-av1", "askel", "autio",
-                                                           "haravoida", "haravoida-av2", "heittää-av1", "huuli",
+                                                           "edam", "haastaa", "haravoida", "haravoida-av2", "heittää-av1", "huuli",
                                                            "kantaja", "karahka", "karahka-av1",
                                                            "kiiski", "koiras", "matala", "paperi", "paperi-av1", "peruna"]:
 					voikko_infclass = None

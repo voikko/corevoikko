@@ -518,7 +518,7 @@ function_list = [
                       "paistaa",
                       "raistaa",
                       "uppo=paistaa")),
-     (write_paahtaa, ("kaihtaa",        # NS: haastaa.
+     (write_paahtaa, ("kaihtaa",
                       "paahtaa", )),
      (write_taittaa, ("saattaa",
                       "taittaa",
@@ -655,6 +655,7 @@ sukija_additions = {
     "LEXICON Sanasto_ee\n":    "SukijaPoikkeavat_ee ;\n",
     "LEXICON Sanasto_em\n":    "SukijaPoikkeavat_em ;\n",
     "LEXICON Sanasto_ep\n":    "SukijaPoikkeavat_ep ;\n",
+    "LEXICON Sanasto_h\n":     "SukijaPoikkeavat_h ;\n",
     "LEXICON Sanasto_l\n":     "SukijaPoikkeavat_l ;\n",
     "LEXICON Sanasto_n\n":     "SukijaPoikkeavat_n ;\n",
     "LEXICON Sanasto_nl\n":    "SukijaPoikkeavat_nl ;\n",

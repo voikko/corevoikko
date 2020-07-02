@@ -492,6 +492,7 @@ modern_classmap = [('valo', 'sw', [(None,'(.*)','valo'),
 	('juosta', '-', [(None,'(.*V)stA','juosta')]),
 	('nähdä', '-', [(None,'(.*)hdA','nähdä')]),
 	('kevetä', '-', [(None,'(.*)vetA','kevetä')]),
+        ('haastaa', '-', [(None,'(.*C)AA','haastaa')]), # Historical inflection (Nykysuomen sanakirja, verb type 10).
 	('antautua', '-', [(None,'(.*)tUA','antautua')])  # Historical inflection (Nykysuomen sanakirja, verb type 44).
 	]
 
