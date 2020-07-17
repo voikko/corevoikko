@@ -39,6 +39,11 @@ LEXICON SukijaTuta
 [Tn1]takse:takse SukijaOmistusliite_a_in ;
 [Tn2]ten:ten Liitesana_a ;
 
+LEXICON SukijaItte
+te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
+tte[Sg][Ny]@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@n:tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Liitesana_ä ;
+tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
+
 LEXICON SukijaKiiru
 [Sg][Ny]hun:hun NimisanaYksikönGenetiivinJatko_a ;
 [Sp][Ny]a:a NimisanaLiOlV_a ;
@@ -231,6 +236,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]bolsevikki[X]bolsevik:bolscheviik NimisanaTakki_a ;
 [Ln][Xp]bolsevismi[X]bolsevism:bolshevism NimisanaRisti_a ;
 [Ln][Xp]bolsevismi[X]bolsevism:bolschevism NimisanaRisti_a ;
+[Ln][Xp]bulgaari[X]bulgaar:bulgar NimisanaPaperi_a 
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
@@ -289,6 +295,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
+[Ln][Xp]itse[X]i:i SukijaItte ;
 [Ln][Xp]linnan=impi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]lounat[X]louna@P.INEN_SALLITTU.ON@:louna@P.INEN_SALLITTU.ON@ NimisanaKevät_a ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
@@ -551,6 +558,8 @@ LEXICON Sukija_p
 [Lp]vuotis:vuotis EtuliitteenJatko_ellelnelt;
 [Lp]vähittäis:vähittäis EtuliitteenJatko_ellelnelt;
 [Lp]yksi:yksi EtuliitteenJatko_ellelnelt;
+[Lp]ylen:ylön EtuliitteenJatko_ellelnelt;
+[Lp]ylön:ylön EtuliitteenJatko_ellelnelt;
 [Lp]äärimmäis:äärimmäis EtuliitteenJatko_ellelnelt;
 !!
 [Lp]aasian:aasian EtuliitteenJatko_ellelnelt;
@@ -768,6 +777,8 @@ LEXICON SukijaPoikkeavat_em
 
 
 LEXICON SukijaPoikkeavat_ep
+[Lep][Xp]Albania[X]albani:albaani PaikannimiApila_a ;
+[Lep][Xp]Bulgaria[X]bulgari:bulgaari PaikannimiApila_a ;
 [Lep][Xp]Fär=saari[X]fär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
 [Lep][Xp]Ikonion[X]ikonion:ikoonion PaikannimiKalsium_a ;
 [Lep][Xp]Isokylä[X][Sn][Ny]iso[Bm]kylä:isokylä	PaikannimiNormaaliYsJatkoOl_ä	;
@@ -898,11 +909,15 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]yhdenlainen[X]yhden[Bm]lai:yhdellai LaatusanaNainenInen_a ;
 [Ll][Xp]yksi=toikkoinen[X]yksi[Bm]toikkoi:ykstoikkoi LaatusanaNainenInen_a ;
 [Ll][Xp]ylitse=vuotavainen[X]ylitse[Bm]vuotavai:ylitsevuotavai LaatusanaNainenInen_a ;
+[Ll][Xp]yli=luonnollinen[X]yli[Bm]luonnolli:ylönluonnolli LaatusanaNainenInen_a ;
+[Ll][Xp]ylen=palttinen[X]ylen[Bm]paltti:ylönpaltti LaatusanaNainenInen_a ;
 [Ll][Xp]ylös=rakentavainen[X]ylös[Bm]rakentavai:ylösrakentavai LaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]afgaanilainen[X]afgaanilai:afgaanilai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]afgaanilainen[X]afgaanilai:afganilai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]albanialainen[X]albanialai:albaanialai NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]bulgarialainen[X]bulgarialai:bulgaarialai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]juoni[X]juon:juon NimiLaatusanaSukijaPieni_a ;
 [Lnl][Xp]isonlainen[X]ison[Bm]lai:isollai NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]kaikenlainen[X]kaiken[Bm]lai:kaikellai NimiLaatusanaNainenInen_a ;
