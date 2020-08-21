@@ -1,6 +1,6 @@
 ;;;; A Common Lisp interface for libvoikko
 ;;
-;; Copyright (C) 2011-2012 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2011-2012, 2020 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; The contents of this file are subject to the Mozilla Public License Version
 ;; 1.1 (the "License"); you may not use this file except in compliance with
@@ -52,9 +52,9 @@
 
 (defmethod set-option-caller ((instance instance) (option boolean-option))
   (with-slots (id value) option
-    (let ((success (foreign-funcall "voikkoSetBooleanOption"
-                                    :pointer (address instance)
-                                    :int id :int (if value 1 0) :int)))
+    (let ((success (cffi:foreign-funcall "voikkoSetBooleanOption"
+                                         :pointer (address instance)
+                                         :int id :int (if value 1 0) :int)))
       (if (zerop success) nil t))))
 
 (defmethod set-option-caller ((instance instance) (option integer-option))
@@ -62,9 +62,9 @@
     (unless (integerp value)
       (error 'invalid-value-type-error
              :string "Invalid value type. The value must be an integer."))
-    (let ((success (foreign-funcall "voikkoSetIntegerOption"
-                                    :pointer (address instance)
-                                    :int id :int value :int)))
+    (let ((success (cffi:foreign-funcall "voikkoSetIntegerOption"
+                                         :pointer (address instance)
+                                         :int id :int value :int)))
       (if (zerop success) nil t))))
 
 (defun set-option (instance key value)

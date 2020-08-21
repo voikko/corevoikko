@@ -1,6 +1,6 @@
 ;;;; A Common Lisp interface for libvoikko
 ;;
-;; Copyright (C) 2011, 2012, 2019 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2011-2012, 2019-2020 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; The contents of this file are subject to the Mozilla Public License Version
 ;; 1.1 (the "License"); you may not use this file except in compliance with
@@ -33,10 +33,10 @@ not, a condition of type NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
   (error-if-not-active-instance instance)
   (check-type word string)
-  (let ((value (foreign-funcall "voikkoSpellCstr"
-                                :pointer (address instance)
-                                :string word
-                                :int)))
+  (let ((value (cffi:foreign-funcall "voikkoSpellCstr"
+                                     :pointer (address instance)
+                                     :string word
+                                     :int)))
 
     (ecase value
       (#.+voikko-spell-failed+ nil)
@@ -59,18 +59,18 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
   (error-if-not-active-instance instance)
   (check-type word string)
-  (let ((suggestions (foreign-funcall "voikkoSuggestCstr"
-                                      :pointer (address instance)
-                                      :string word
-                                      :pointer)))
+  (let ((suggestions (cffi:foreign-funcall "voikkoSuggestCstr"
+                                           :pointer (address instance)
+                                           :string word
+                                           :pointer)))
 
     (when (proper-pointer-p suggestions)
       (unwind-protect
            (loop :for i :upfrom 0
-                 :for sug := (mem-aref suggestions :string i)
-                 :while (stringp sug)
-                 :collect sug)
-        (foreign-funcall "voikkoFreeCstrArray" :pointer suggestions :void)))))
+              :for sug := (cffi:mem-aref suggestions :string i)
+              :while (stringp sug)
+              :collect sug)
+        (cffi:foreign-funcall "voikkoFreeCstrArray" :pointer suggestions :void)))))
 
 (defun hyphenate (instance word)
   "Hyphenate WORD. Two values are returned: (1) the hyphenated word as a
@@ -90,35 +90,35 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
   (error-if-not-active-instance instance)
   (check-type word string)
-  (let ((hyphenation (foreign-funcall "voikkoHyphenateCstr"
-                                      :pointer (address instance)
-                                      :string word
-                                      :pointer)))
+  (let ((hyphenation (cffi:foreign-funcall "voikkoHyphenateCstr"
+                                           :pointer (address instance)
+                                           :string word
+                                           :pointer)))
 
     (if (proper-pointer-p hyphenation)
         (unwind-protect
-             (loop :with pattern := (foreign-string-to-lisp hyphenation)
-                   :with hyph
-                   :with start := 0
-                   :for pos :upfrom 0
-                   :for h :across pattern
+             (loop :with pattern := (cffi:foreign-string-to-lisp hyphenation)
+                :with hyph
+                :with start := 0
+                :for pos :upfrom 0
+                :for h :across pattern
 
-                   :if (char= h #\=) :do
-                   (when (< start pos)
-                     (push (subseq word start pos) hyph))
-                   (setf start (1+ pos))
+                :if (char= h #\=) :do
+                  (when (< start pos)
+                    (push (subseq word start pos) hyph))
+                  (setf start (1+ pos))
 
-                   :else :if (char= h #\-) :do
-                   (when (< start pos)
-                     (push (subseq word start pos) hyph))
-                   (setf start pos)
+                :else :if (char= h #\-) :do
+                  (when (< start pos)
+                    (push (subseq word start pos) hyph))
+                  (setf start pos)
 
-                   :finally
-                   (when (< start (length word))
-                     (push (subseq word start) hyph))
-                   (return (values (nreverse hyph) pattern)))
+                :finally
+                  (when (< start (length word))
+                    (push (subseq word start) hyph))
+                  (return (values (nreverse hyph) pattern)))
 
-          (foreign-funcall "voikkoFreeCstr" :pointer hyphenation :void))
+          (cffi:foreign-funcall "voikkoFreeCstr" :pointer hyphenation :void))
 
         (error 'hyphenation-error :string "Hyphenation error."))))
 
@@ -135,12 +135,12 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
   (error-if-not-active-instance instance)
   (check-type word string)
   (check-type hyphen character)
-  (foreign-funcall "voikkoInsertHyphensCstr"
-                   :pointer (address instance)
-                   :string word
-                   :string (string hyphen)
-                   :int (if allow-context-changes 1 0)
-                   :string))
+  (cffi:foreign-funcall "voikkoInsertHyphensCstr"
+                        :pointer (address instance)
+                        :string word
+                        :string (string hyphen)
+                        :int (if allow-context-changes 1 0)
+                        :string))
 
 (defun split-word (instance width word)
   "Split WORD in two and return the parts as a cons cell. The word is
