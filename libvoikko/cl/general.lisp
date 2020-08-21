@@ -28,7 +28,7 @@
 
 (eval-when (:load-toplevel :execute)
   (with-simple-restart (skip-libvoikko "Skip loading libvoikko.")
-    (load-foreign-library '(:default "libvoikko"))))
+    (cffi:load-foreign-library '(:default "libvoikko"))))
 
 (define-condition voikko-error (error)
   ((error-string :initarg :string :reader error-string))
@@ -60,8 +60,8 @@ You can use function ACTIVEP to test whether an INSTANCE object is
 active or not."))
 
 (defun proper-pointer-p (object)
-  (and (pointerp object)
-       (not (null-pointer-p object))))
+  (and (cffi:pointerp object)
+       (not (cffi:null-pointer-p object))))
 
 (defun instancep (object)
   (typep object 'instance))
@@ -83,7 +83,7 @@ active or not."))
 
 (defun version ()
   "Return the version number of libvoikko (as a string)."
-  (foreign-funcall "voikkoGetVersion" :string))
+  (cffi:foreign-funcall "voikkoGetVersion" :string))
 
 (defgeneric free-foreign-resource (object))
 
@@ -94,7 +94,7 @@ active or not."))
     object))
 
 (defmethod free-foreign-resource ((object instance))
-  (foreign-funcall "voikkoTerminate" :pointer (address object) :void))
+  (cffi:foreign-funcall "voikkoTerminate" :pointer (address object) :void))
 
 (defun initialize (&key (language "fi_FI") path)
   "Initialize a Voikko instance for LANGUAGE (string). Language
@@ -113,21 +113,21 @@ argument. The restart retries the initialize process."
 
   (check-type language string)
   (check-type path (or string null))
-  (with-foreign-object (error :pointer)
+  (cffi:with-foreign-object (error :pointer)
     (loop (restart-case
-              (let ((address (foreign-funcall "voikkoInit"
-                                              :pointer error
-                                              :string language
-                                              :string (if (null path)
-                                                          (null-pointer)
-                                                          path)
-                                              :pointer)))
+              (let ((address (cffi:foreign-funcall "voikkoInit"
+                                                   :pointer error
+                                                   :string language
+                                                   :string (if (null path)
+                                                               (cffi:null-pointer)
+                                                               path)
+                                                   :pointer)))
 
-                (if (and (pointerp address)
-                         (null-pointer-p (mem-aref error :pointer)))
+                (if (and (cffi:pointerp address)
+                         (cffi:null-pointer-p (cffi:mem-aref error :pointer)))
                     (return (make-instance 'instance :address address))
                     (error 'initialize-error
-                           :string (mem-aref error :string))))
+                           :string (cffi:mem-aref error :string))))
 
             (change-language (new-language)
               :report "Use a different language"
@@ -165,72 +165,72 @@ one association list for each dictionary. The association list has the
 following keys (keyword symbols): :LANGUAGE, :SCRIPT, :VARIANT and
 :DESCRIPTION. Each key's value is a string."
   (check-type path (or string null))
-  (let ((dicts-ptr (foreign-funcall "voikko_list_dicts"
+  (let ((dicts-ptr (cffi:foreign-funcall "voikko_list_dicts"
                                     :string (if (null path)
-                                                (null-pointer)
+                                                (cffi:null-pointer)
                                                 path)
                                     :pointer)))
     (when (proper-pointer-p dicts-ptr)
       (unwind-protect
            (loop :for i :upfrom 0
-                 :for dict-ptr := (mem-aref dicts-ptr :pointer i)
-                 :while (proper-pointer-p dict-ptr)
-                 :collect
-                 (list (cons :language (foreign-funcall
-                                        "voikko_dict_language"
-                                        :pointer dict-ptr :string))
-                       (cons :script (foreign-funcall
-                                      "voikko_dict_script"
-                                      :pointer dict-ptr :string))
-                       (cons :variant (foreign-funcall
-                                       "voikko_dict_variant"
+              :for dict-ptr := (cffi:mem-aref dicts-ptr :pointer i)
+              :while (proper-pointer-p dict-ptr)
+              :collect
+                (list (cons :language (cffi:foreign-funcall
+                                       "voikko_dict_language"
                                        :pointer dict-ptr :string))
-                       (cons :description (foreign-funcall
-                                           "voikko_dict_description"
-                                           :pointer dict-ptr :string))))
-        (foreign-funcall "voikko_free_dicts" :pointer dicts-ptr :void)))))
+                      (cons :script (cffi:foreign-funcall
+                                     "voikko_dict_script"
+                                     :pointer dict-ptr :string))
+                      (cons :variant (cffi:foreign-funcall
+                                      "voikko_dict_variant"
+                                      :pointer dict-ptr :string))
+                      (cons :description (cffi:foreign-funcall
+                                          "voikko_dict_description"
+                                          :pointer dict-ptr :string))))
+        (cffi:foreign-funcall "voikko_free_dicts" :pointer dicts-ptr :void)))))
 
 (defun list-supported-spelling-languages (&optional path)
   "Return a list of language codes (string) representing the languages
 for which at least one dictionary is available for spell checking."
   (check-type path (or string null))
-  (let ((ptr (foreign-funcall "voikkoListSupportedSpellingLanguages"
-                              :string (if (null path)
-                                          (null-pointer)
-                                          path)
-                              :pointer)))
+  (let ((ptr (cffi:foreign-funcall "voikkoListSupportedSpellingLanguages"
+                                   :string (if (null path)
+                                               (cffi:null-pointer)
+                                               path)
+                                   :pointer)))
     (when (proper-pointer-p ptr)
       (loop :for i :upfrom 0
-            :for lang := (mem-aref ptr :string i)
-            :while (stringp lang)
-            :collect lang))))
+         :for lang := (cffi:mem-aref ptr :string i)
+         :while (stringp lang)
+         :collect lang))))
 
 (defun list-supported-hyphenation-languages (&optional path)
   "Return a list of language codes (string) representing the languages
 for which at least one dictionary is available for hyphenation."
   (check-type path (or string null))
-  (let ((ptr (foreign-funcall "voikkoListSupportedHyphenationLanguages"
-                              :string (if (null path)
-                                          (null-pointer)
-                                          path)
-                              :pointer)))
+  (let ((ptr (cffi:foreign-funcall "voikkoListSupportedHyphenationLanguages"
+                                   :string (if (null path)
+                                               (cffi:null-pointer)
+                                               path)
+                                   :pointer)))
     (when (proper-pointer-p ptr)
       (loop :for i :upfrom 0
-            :for lang := (mem-aref ptr :string i)
-            :while (stringp lang)
-            :collect lang))))
+         :for lang := (cffi:mem-aref ptr :string i)
+         :while (stringp lang)
+         :collect lang))))
 
 (defun list-supported-grammar-checking-languages (&optional path)
   "Return a list of language codes (string) representing the languages
 for which at least one dictionary is available for grammar checking."
   (check-type path (or string null))
-  (let ((ptr (foreign-funcall "voikkoListSupportedGrammarCheckingLanguages"
-                              :string (if (null path)
-                                          (null-pointer)
-                                          path)
-                              :pointer)))
+  (let ((ptr (cffi:foreign-funcall "voikkoListSupportedGrammarCheckingLanguages"
+                                   :string (if (null path)
+                                               (cffi:null-pointer)
+                                               path)
+                                   :pointer)))
     (when (proper-pointer-p ptr)
       (loop :for i :upfrom 0
-            :for lang := (mem-aref ptr :string i)
-            :while (stringp lang)
-            :collect lang))))
+         :for lang := (cffi:mem-aref ptr :string i)
+         :while (stringp lang)
+         :collect lang))))

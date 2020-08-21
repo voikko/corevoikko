@@ -1,7 +1,7 @@
 ;;;; A Common Lisp interface for libvoikko
 
 (defpackage #:voikko
-  (:use #:cl #:cffi)
+  (:use #:cl)
   (:export #:instance #:activep #:initialize #:terminate
            #:with-instance #:spell #:suggest #:hyphenate #:version
            #:insert-hyphens
