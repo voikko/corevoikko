@@ -1,6 +1,6 @@
 ;;;; A Common Lisp interface for libvoikko
 ;;
-;; Copyright (C) 2011-2012 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2011-2012, 2020 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; The contents of this file are subject to the Mozilla Public License Version
 ;; 1.1 (the "License"); you may not use this file except in compliance with
