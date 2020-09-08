@@ -634,6 +634,7 @@ LEXICON Sukija_p
 [Lp]intian:intian EtuliitteenJatko_ellelnelt;
 [Lp]irlannin:irlannin EtuliitteenJatko_ellelnelt;
 [Lp]jaavan:jaavan EtuliitteenJatko_ellelnelt;
+[Lp]jakutian:jakutian EtuliitteenJatko_ellelnelt;
 [Lp]jamaikan:jamaikan EtuliitteenJatko_ellelnelt;
 [Lp]japanin:japanin EtuliitteenJatko_ellelnelt;
 [Lp]jugoslavian:jugoslavian EtuliitteenJatko_ellelnelt;
@@ -777,6 +778,7 @@ LEXICON SukijaPoikkeavat_em
 
 
 LEXICON SukijaPoikkeavat_ep
+[Lep][Xp]Akhaia[X]akhai:akai PaikannimiApila_a ;
 [Lep][Xp]Albania[X]albani:albaani PaikannimiApila_a ;
 [Lep][Xp]Bulgaria[X]bulgari:bulgaari PaikannimiApila_a ;
 [Lep][Xp]Fär=saari[X]fär[Bm]saar@P.EI_YKS.ON@:fäärsaar@P.EI_YKS.ON@ PaikannimiTuohi_a ;
@@ -820,6 +822,7 @@ LEXICON SukijaPoikkeavat_ep
 [Lep][Xp]Isotalo[X][Sall][Ny]isolle[Bm]talolle:isolletalolle	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X][Sab][Ny]isotta[Bm]talotta:isottatalotta	PaikannimiLiOlV_a	;
 [Lep][Xp]Isotalo[X]iso[Bm]talo:isotalo	Johdin_lAinen_a	;
+[Lep][Xp]Italia[X]itali:itaali PaikannimiKarahka_a 
 [Lep][Xp]Kaunisportti[X][Sn][Ny]kaunis[Bm]portti:kaunisportti       PaikannimiNormaaliYsJatkoOl_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portti:kauniinportti     Omistusliite_a ;
 [Lep][Xp]Kaunisportti[X][Sg][Ny]kauniin[Bm]portin:kauniinportin     PaikannimiYksikönGenetiivinJatko_a ;
@@ -911,6 +914,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]ylitse=vuotavainen[X]ylitse[Bm]vuotavai:ylitsevuotavai LaatusanaNainenInen_a ;
 [Ll][Xp]yli=luonnollinen[X]yli[Bm]luonnolli:ylönluonnolli LaatusanaNainenInen_a ;
 [Ll][Xp]ylen=palttinen[X]ylen[Bm]paltti:ylönpaltti LaatusanaNainenInen_a ;
+[Ll][Xp]ylön=palttinen[X]ylön[Bm]paltti:ylönpaltti LaatusanaNainenInen_a ;
 [Ll][Xp]ylös=rakentavainen[X]ylös[Bm]rakentavai:ylösrakentavai LaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_nl
