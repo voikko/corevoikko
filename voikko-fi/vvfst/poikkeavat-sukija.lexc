@@ -210,6 +210,8 @@ LEXICON SukijaSuhdesana
 
 LEXICON SukijaPoikkeavat_h
 [Lh][Xp]juu[X]juupas:juupas # ;
+[Lh][Xp]tuut[X]tuut:tuut # ;
+[Lh][Xp]tyyt[X]tyyt:tyyt # ;
 
 LEXICON SukijaPoikkeavat_n
 [Ln][Xp]aatelis=impi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
@@ -354,6 +356,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;
 [Ln][Xp]vierasmies[X]vierasna[Bm]miesnä:vierasnamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]vierasmies[X]vierasna-[Bm]miesnä:vierasna-miesnä NimisanaLiOlV_ä ;
+[Ln][Xp]vinottais=pysäköinti[X]vinottais[Bm]pysäköin:vinottaispysäköin NimisanaTunti_ä ;
 [Ln][Xp]vuoka[X]vu:vu SukijaVuoka ;
 [Ln][Xp]yhteen=sattuvaisuus[X]yhteen[Bm]sattuvaisuu:yhteensattuvaisuu NimisanaKalleus_a ;
 [Ln][Xp]yhteen=sopivaisuus[X]yhteen[Bm]sopivaisuu:yhteensopivaisuu    NimisanaKalleus_a ;
@@ -551,10 +554,9 @@ LEXICON Sukija_p
 [Lp]valko:valko EtuliitteenJatko_ellelnelt;
 [Lp]vallas:vallas EtuliitteenJatko_ellelnelt;
 [Lp]vallasta:vallasta EtuliitteenJatko_ellelnelt;
-[Lp]valmis:valmis EtuliitteenJatko_ellelnelt;
+[Lp]valmis:valmis EtuliitteenJatko_eln;
 [Lp]vihertävän:vihertävän EtuliitteenJatko_ellelnelt;
 [Lp]viisi:viisi EtuliitteenJatko_ellelnelt;
-[Lp]vinottais:vinottais EtuliitteenJatko_ellelnelt;
 [Lp]vuotis:vuotis EtuliitteenJatko_ellelnelt;
 [Lp]vähittäis:vähittäis EtuliitteenJatko_ellelnelt;
 [Lp]yksi:yksi EtuliitteenJatko_ellelnelt;
@@ -861,6 +863,12 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]institutionaalinen[X]institutionaali:institutionali LaatusanaNainenInen_a ;
 [Ll][Xp]jonkinlainen[X]jonkin[Bm]lai:jonkillai LaatusanaNainenInen_a ;
 [Ll][Xp]jonkunlainen[X]jonkun[Bm]lai:jonkullai LaatusanaNainenInen_a ;
+[Ll][Xp]jäljelläoleva[X]jäljellä[Bm]olev:jälelläolev LaatusanaAsema_a ;
+[Ll][Xp]jäljelläoleva[X]jäljellä[Bm]olev:jäljelläolev LaatusanaAsema_a ;
+[Ll][Xp]jäljellejäänyt[X]jäljelle[Bm]jään:jälellejään LaatusanaKuollut_ä;
+[Ll][Xp]jäljellejäänyt[X]jäljelle[Bm]jään:jäljellejään LaatusanaKuollut_ä;
+[Ll][Xp]jäljellejäävä[X]jäljelle[Bm]jääv:jälellejääv LaatusanaAsema_ä;
+[Ll][Xp]jäljellejäävä[X]jäljelle[Bm]jääv:jäljellejääv LaatusanaAsema_ä;
 [Ll][Xp]kaksoistiheyksinen[X]kaksois[Bm]tiheyksi:kaksoistiheyksi LaatusanaNainenInen_a ;
 [Ll][Xp]kaukokäyttöinen[X]kauko[Bm]käyttöi:kaukokäyttöi     LaatusanaNainenInen_ä ;
 [Ll][Xp]keltainen[X]keltai:kelta LaatusanaNainenInen_a ;
@@ -950,10 +958,11 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]vallonilainen[X]vallonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:valloonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]viktoriaaninen[X]viktoriaani:viktooriaani NimiLaatusanaNainenInen_a ;
 
-
 LEXICON SukijaPoikkeavat_t
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
+[Lt][Xp]mennä[X]mee:mee KestämänTekijäpääteHeikko_ä ;
+[Lt][Xp]tulla[X]tuu:tuu KestämänTekijäpääteHeikko_a ;
 [Lt][Xp]kitistä[X]kit:kit Kihajaa_a ;
 [Lt][Xp]lätistä[X]lät:lät Kihajaa_ä ;
 [Lt][Xp]nitistä[X]nit:nit Kihajaa_a ;

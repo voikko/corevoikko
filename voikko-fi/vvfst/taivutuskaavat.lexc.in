@@ -2471,6 +2471,8 @@ LEXICON NOUN YksikönGenetiivinJatkoEiYs
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
 ?Sukunimi	in@P.PAIKANNIMEN_JL.ON@[Bc]:in@P.PAIKANNIMEN_JL.ON@	Sanasto_nimisanat	;
+?Sukija i[O1m]mme:imme                  Liitesana_<A>	;
+?Sukija i[O2m]nne:inne                  Liitesana_<A>	;
 ?Sukija i[O3]ns<A>:ins<A>		Liitesana_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
