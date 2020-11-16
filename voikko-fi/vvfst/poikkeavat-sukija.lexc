@@ -204,6 +204,9 @@ LEXICON SukijaAsemosanaMinä
 LEXICON SukijaAsemosanaNämä
 [Sak][Ny]mät:mät Liitesana_ä ;
 
+LEXICON SukijaAsemosanaTämä 
+[Sg][Ny]än:än	Liitesana_ä	;
+
 LEXICON SukijaSuhdesana
 [Ld][Xp]ammolla[X]ammolla:ammolla Liitesana_a ;
 [Ld][Xp]ammolla[X]ammollansa:ammollansa Liitesana_a ;
@@ -417,6 +420,7 @@ LEXICON SukijaAsemosana
 [Lr][Xp]sinä[X]sin:sin  SukijaAsemosanaMinä ;
 [Lr][Xp]sä[X]s:s        SukijaAsemosanaMieMä ;
 [Lr][Xp]te[X]te:te      SukijaAsemosanaMeTeHe ;
+[Lr][Xp]tämä[X]tä:tä    SukijaAsemosanaTämä ;
 [Lr][Xp]mones[X]mone:mone JärjestyslukuKahdeksasOmistusliitteet_a ;
 [Lr][Xp]muuan[X]muu[Sn][Ny]dan:muudan Liitesana_a ;
 [Lr][Xp]muuan[X]muu[Ses][Ny]danna:muudanna Liitesana_a ;
