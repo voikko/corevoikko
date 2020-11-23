@@ -1661,6 +1661,7 @@ LEXICON NOUN Nainen
 s:s	<WC>NainenYsJatko_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
+?Laatusana      se:se   Johdin_hkO_<A>	;
 ?Erisnimi	nen:nen	<WC>YsJatko	;
 
 LEXICON NOUN InenLoppuinen
@@ -1881,6 +1882,7 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 m:m	Johdin_UUs_<A>	;
+?NotLaatusana   m<A>:m<A>       Omistusliite_<A> ;
 ?Laatusana	m<A>:m<A>	Voittoaste_<A>	;
 ?Laatusana	m:m	Yliaste_<A>	;
 ?Sukija [Sill][Ny]m<A>h<A>:m<A>h<A>	<WC>LiOlN_<A>	;
