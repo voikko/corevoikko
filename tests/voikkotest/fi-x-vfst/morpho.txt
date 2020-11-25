@@ -2355,6 +2355,12 @@ word:tyhmähkö
  expected:1
  analysis
    CLASS=laatusana
+word:ummikoin
+ expected:2
+ analysis
+  COMPARISON=superlative
+ analysis
+  SIJAMUOTO=keinonto
 word:21.
  expected:1
  analysis
