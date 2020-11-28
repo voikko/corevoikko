@@ -137,6 +137,6 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
-Copyright (©) 2006 - 2019 Hannu Väisänen (Email: Hannu.Vaisanen@uef.fi)
-and 2006 - 2019 Harri Pitkänen (hatapitk@iki.fi). Contributors listed
+Copyright (©) 2006 - 2020 Hannu Väisänen (Email: Hannu.Vaisanen@uef.fi)
+and 2006 - 2020 Harri Pitkänen (hatapitk@iki.fi). Contributors listed
 in file CONTRIBUTORS hold copyrights to the vocabulary data.
