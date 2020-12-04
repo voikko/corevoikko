@@ -352,6 +352,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sävel[X]sävel:sävel NimisanaAskel_ä ;
 [Ln][Xp]teoria[X]teori:teoori NimisanaKarahka_a ;
 [Ln][Xp]tirehtööri[X]tirehtor:tirehtor NimisanaRisti_a ;
+[Ln][Xp]uskalikkous[X]uskalikkou:uskalikkuu NimisanaKalleus_a ;
+[Ln][Xp]uskalikkuus[X]uskalikkuu:uskalikkuu NimisanaKalleus_a ;
 [Ln][Xp]universiadi[X]universiad@P.EI_YKS.ON@:universiaad@P.EI_YKS.ON@ NimisanaRisti_a ;
 [Ln][Xp]uros[X]uro:uro  SukijaUros ;
 [Ln][Xp]vartia[X]varti:varti NimisanaApila_a ;
