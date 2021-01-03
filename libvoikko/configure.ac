@@ -44,8 +44,7 @@ PKG_PROG_PKG_CONFIG
 m4_pattern_forbid([^PKG_PROG_PKG_CONFIG], [PKG_PROG_PKG_CONFIG was not expanded. You need to install pkg-config to ensure that macros from pkg.m4 are found])
 
 dnl Libtool (new and old)
-AC_LIBTOOL_WIN32_DLL
-LT_INIT
+LT_INIT([win32-dll])
 
 AM_MAINTAINER_MODE
 
