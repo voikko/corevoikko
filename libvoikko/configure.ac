@@ -60,7 +60,7 @@ AC_CANONICAL_HOST
 # The default dictionary path is empty (no default locations to search from)
 DICTIONARY_PATH=
 AC_ARG_WITH(dictionary-path,
-            AC_HELP_STRING([--with-dictionary-path=PATH],
+            AS_HELP_STRING([--with-dictionary-path=PATH],
 	                   [Dictionary path]),
 	    [DICTIONARY_PATH="$withval"])
 AC_DEFINE_UNQUOTED(DICTIONARY_PATH, "$DICTIONARY_PATH", [Dictionary path])
@@ -102,14 +102,14 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE(
 
 dnl Build tools
 buildtools="yes"
-AC_ARG_ENABLE(buildtools, AC_HELP_STRING([--disable-buildtools],
+AC_ARG_ENABLE(buildtools, AS_HELP_STRING([--disable-buildtools],
         [disable voikkovfstc]),
         [buildtools=${enableval}], [buildtools=yes])
 AM_CONDITIONAL([HAVE_BUILDTOOLS], [test x$buildtools = xyes])
 
 dnl Test tools
 testtools="yes"
-AC_ARG_ENABLE(testtools, AC_HELP_STRING([--disable-testtools],
+AC_ARG_ENABLE(testtools, AS_HELP_STRING([--disable-testtools],
 	[disable voikkospell, voikkohyphenate and voikkogc]),
 	[testtools=${enableval}], [testtools=yes])
 AM_CONDITIONAL([HAVE_TESTTOOLS], [test x$testtools = xyes])
@@ -117,7 +117,7 @@ AM_CONDITIONAL([HAVE_TESTTOOLS], [test x$testtools = xyes])
 dnl HFST support
 hfst="yes"
 AH_TEMPLATE(HAVE_HFST, [Have HFST])
-AC_ARG_ENABLE(hfst, AC_HELP_STRING([--disable-hfst],
+AC_ARG_ENABLE(hfst, AS_HELP_STRING([--disable-hfst],
 	[disable HFST morphology backend]),
 	[hfst=${enableval}], [hfst=yes])
 dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
@@ -131,7 +131,7 @@ AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
 dnl VISLCG3 support
 AH_TEMPLATE(HAVE_VISLCG3, [Have VISLCG3])
-AC_ARG_ENABLE(vislcg3, AC_HELP_STRING([--enable-vislcg3],
+AC_ARG_ENABLE(vislcg3, AS_HELP_STRING([--enable-vislcg3],
 	[enable vislcg3 grammar checking backend (EXPERIMENTAL!)]),
 	[cg3=${enableval}], [cg3=no])
 dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
@@ -148,7 +148,7 @@ AM_CONDITIONAL([HAVE_VISLCG3], [test x$cg3 = xyes])
 dnl VFST support
 vfst="yes"
 AH_TEMPLATE(HAVE_VFST, [Have VFST])
-AC_ARG_ENABLE(vfst, AC_HELP_STRING([--disable-vfst],
+AC_ARG_ENABLE(vfst, AS_HELP_STRING([--disable-vfst],
 	[disable VFST morphology backend]),
 	[vfst=${enableval}], [vfst=yes])
 if test x$vfst = xyes; then
@@ -160,7 +160,7 @@ AM_CONDITIONAL([HAVE_VFST], [test x$vfst = xyes])
 dnl support for experimental parts of VFST format
 expvfst="no"
 AH_TEMPLATE(HAVE_EXPERIMENTAL_VFST, [Have experimental VFST])
-AC_ARG_ENABLE(expvfst, AC_HELP_STRING([--enable-expvfst],
+AC_ARG_ENABLE(expvfst, AS_HELP_STRING([--enable-expvfst],
 	[enable EXPERIMENTAL features of VFST morphology backend]),
 	[expvfst=${enableval}], [expvfst=no])
 if test x$expvfst = xyes; then
@@ -170,7 +170,7 @@ AM_CONDITIONAL([HAVE_EXPERIMENTAL_VFST], [test x$expvfst = xyes])
 
 dnl Lttoolbox support
 AH_TEMPLATE(HAVE_LTTOOLBOX, [Have Lttoolbox])
-AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],
+AC_ARG_ENABLE(lttoolbox, AS_HELP_STRING([--enable-lttoolbox],
 	[enable Lttoolbox morphology backend (EXPERIMENTAL!)]),
 	[lttoolbox=${enableval}], [lttoolbox=no])
 if test x$lttoolbox = xyes; then
@@ -183,7 +183,7 @@ AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
 dnl External dictionary loading
 external_dicts="yes"
 AH_TEMPLATE(DISABLE_EXTDICTS, [Disable external dictionaries])
-AC_ARG_ENABLE(external_dicts, AC_HELP_STRING([--disable-external-dicts],
+AC_ARG_ENABLE(external_dicts, AS_HELP_STRING([--disable-external-dicts],
 	[disable loading of external dictionaries (use with experimental or patched builds)]),
 	[external_dicts=${enableval}], [external_dicts=yes])
 if test x$external_dicts = xno; then
