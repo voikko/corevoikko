@@ -50,7 +50,7 @@ LT_INIT
 AM_MAINTAINER_MODE
 
 dnl Compiler features
-AC_LANG_CPLUSPLUS
+AC_LANG([C++])
 AC_C_CONST
 AX_CXX_COMPILE_STDCXX(11, noext, mandatory)
 
