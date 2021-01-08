@@ -48,7 +48,7 @@ namespace hfst_ospell {
 
 namespace libvoikko {
 
-typedef struct {
+typedef struct voikko_options_t {
 	int ignore_dot;
 	int ignore_numbers;
 	int ignore_uppercase;
