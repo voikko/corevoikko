@@ -184,7 +184,7 @@ list<string> DictionaryFactory::getDefaultLocations() {
 		splitPathAndAppend(string(path_from_env), locations);
 	}
 
-	#ifdef HAVE_GETPWUID_R
+	#if defined(HAVE_GETPWUID_R) && !defined(__EMSCRIPTEN__)
 	/* $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 	passwd * pwdResult;
 	char * pwdBuf = new char[10000];
