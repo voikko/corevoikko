@@ -29,9 +29,6 @@
 #include "porting.h"
 #include "setup/setup.hpp"
 #include "setup/DictionaryFactory.hpp"
-#ifdef HAVE_GETPWUID_R
-#include <pwd.h>
-#endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellerFactory.hpp"
 #include "grammar/GrammarCheckerFactory.hpp"
