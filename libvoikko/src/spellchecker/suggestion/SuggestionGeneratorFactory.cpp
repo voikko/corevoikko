@@ -64,6 +64,9 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	#ifdef HAVE_HFST
 	if (backend == "hfst") {
 		const HfstSpeller * hfstSpeller = dynamic_cast<HfstSpeller *>(voikkoOptions->speller);
+		if (!hfstSpeller) {
+			throw setup::DictionaryException("HFST suggestion generator works only with HFST speller");
+		}
 		return new HfstSuggestion(hfstSpeller->speller);
 	}
 	#endif
