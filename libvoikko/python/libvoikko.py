@@ -258,7 +258,7 @@ class VoikkoLibrary(CDLL):
         """
         Open the Voikko C library based on the OS name and architecture, etc.
 
-        :param path: Extra search paths, if any.
+        :param path: Extra search path, if any.
         :return: an instance of VoikkoLibrary
         """
         if os.name == 'nt':
@@ -284,6 +284,11 @@ class VoikkoLibrary(CDLL):
             fileName = "libvoikko.so.1"
             optionalDependencies = []
         if path:
+            try:
+                os.add_dll_directory(path)
+            except AttributeError:
+                # Only available on certain operating systems and Python versions.
+                pass
             try:
                 return cls(path + os.sep + fileName)
             except:
