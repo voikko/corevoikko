@@ -230,9 +230,7 @@ namespace libvoikko { namespace fst {
 		if (!flagDiacriticFeatureCount || symbol == 0) {
 			return true;
 		}
-		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint16_t);
-		uint16_t * flagValueStack = configuration->flagValueStack;
-		uint16_t * currentFlagArray = flagValueStack + configuration->flagDepth * flagDiacriticFeatureCount;
+		uint16_t * currentFlagArray = configuration->currentFlagValues;
 		
 		bool update = false;
 		OpFeatureValue ofv = transducer->symbolToDiacritic[symbol];
@@ -274,10 +272,11 @@ namespace libvoikko { namespace fst {
 		}
 		DEBUG("allowed")
 		
-		memcpy(currentFlagArray + flagDiacriticFeatureCount, currentFlagArray, diacriticCell);
+		configuration->updatedFlagFeature[configuration->flagDepth] = ofv.feature;
+		configuration->updatedFlagValue[configuration->flagDepth] = currentFlagArray[ofv.feature];
 		if (update) {
 			DEBUG("updating feature " << ofv.feature << " to " << ofv.value)
-			(currentFlagArray + flagDiacriticFeatureCount)[ofv.feature] = ofv.value;
+			currentFlagArray[ofv.feature] = ofv.value;
 		}
 		configuration->flagDepth++;
 		return true;
@@ -359,6 +358,7 @@ namespace libvoikko { namespace fst {
 				}
 				else if (flagDiacriticFeatureCount && previousInputSymbol != 0) {
 					configuration->flagDepth--;
+					configuration->currentFlagValues[configuration->updatedFlagFeature[configuration->flagDepth]] = configuration->updatedFlagValue[configuration->flagDepth];
 				}
 			}
 			configuration->currentTransitionStack[configuration->stackDepth]++;

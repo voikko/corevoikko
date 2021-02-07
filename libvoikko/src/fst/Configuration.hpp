@@ -44,7 +44,9 @@ namespace libvoikko { namespace fst {
 		uint32_t * currentTransitionStack;
 		uint16_t * inputSymbolStack;
 		uint16_t * outputSymbolStack;
-		uint16_t * flagValueStack;
+		uint16_t * currentFlagValues;
+		uint16_t * updatedFlagValue;
+		uint16_t * updatedFlagFeature;
 		/** Length of entire input string in characters */
 		int inputLength;
 		Configuration(uint16_t flagDiacriticFeatureCount, int bufferSize);
