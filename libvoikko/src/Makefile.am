@@ -80,7 +80,7 @@ libvoikko_la_SOURCES = \
     grammar/FinnishRuleEngine/SidesanaCheck.cpp \
     grammar/FinnishRuleEngine/RelativePronounCheck.cpp \
     compatibility/interface.cpp
-libvoikko_la_LDFLAGS = -no-undefined -version-info 17:0:16 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -no-undefined -version-info 17:1:16 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \
