@@ -50,6 +50,7 @@ l[Tk][Ap][P3][Ny][Ef]koon[Fkin]kin:lkoonkin	Loppu	;
 ?Murre [Tt][Ap][P2][Ny][Ef]ot:ot     Liitesana_a ;  # Sä oot.
 ?Murre [Tt][Ap][P3][Ny][Ef]mpi:mpi   Liitesana_a ;  # Hän ompi.
 ?Murre [Tt][Ap][P3][Ny][Ef]npi:npi   Liitesana_a ;  # Hän onpi.
+?Murre [Tt][Ap][P1][Nm][Ef]omme:omme Liitesana_a ;  # Me oomme.
 ?Murre [Tt][Ap][P2][Nm][Ef]otte:otte Liitesana_a ;  # Te ootte.
 ?Murre [Tt][Ap][P2][Nm][Ef]otta:otta Liitesana_a ;  # Te ootta.
 ?Murre [Te][Ap][P1][Ny][Ef]isin:isin Liitesana_a ;  # Mä oisin jne.
