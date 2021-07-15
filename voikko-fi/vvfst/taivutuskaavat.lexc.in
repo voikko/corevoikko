@@ -2177,6 +2177,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sill][Nm]hisii:hisii	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]isihi:isihi	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]isi:isi	<WC>LiOlN_<A>	;
 ?Sukija ?Laatusana	he:he	Voittoaste_<A>	;
 ?Sukija ?Laatusana		HYliaste_<A>	;
 ?Sukija ?Nimisana	he:he	Johdin_tOn_<A>	;
