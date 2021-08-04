@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2020 Hannu Väisänen
+! Tekijänoikeus © 2006 - 2021 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -282,6 +282,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kampi[X]kam[Sg][Ny]min:kammin NimisanaYksikönGenetiivinJatko_a ;
 [Ln][Xp]kampi[X]kam[Sn][Nm]mit:kammit NimisanaMonikonNominatiivinJatko_a;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]karabinieeri[X]karabinieer:karabinier NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahviin NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karahvin NimisanaRisti_aä ;
@@ -301,6 +302,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
 [Ln][Xp]kävijä[X]kävij:kävi NimisanaApila_ä ;
 [Ln][Xp]itse[X]i:i SukijaItte ;
+[Ln][Xp]kurtiisi[X]kurtiis:kurttiis NimisanaPaperi_a ;
 [Ln][Xp]linnan=impi[X]linnan[Bm]im:linnanim NimisanaSampi_ä ;
 [Ln][Xp]lounat[X]louna@P.INEN_SALLITTU.ON@:louna@P.INEN_SALLITTU.ON@ NimisanaKevät_a ;
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
@@ -989,6 +991,7 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]himottaa[X]himo@P.YKSITEKIJÄINEN.ON@:himoi@P.YKSITEKIJÄINEN.ON@ Ammottaa_a ;
 [Lt][Xp]huojeta[X]huoke:huoke Aleta_s_a ;
 [Lt][Xp]hyljätä[X]hylj:hylj Salata_ä ;
+[Lt][Xp]kurtiseerata[X]kurtiseer:kurttiseer Saneerata_a ;
 [Lt][Xp]odottaa[X]odot:oot Alittaa_a ;
 [Lt][Xp]pudottaa[X]pudo:puo Ammottaa_a ;
 [Lt][Xp]vavista[X]vavis:vavis Nuolaista_s_a ;
