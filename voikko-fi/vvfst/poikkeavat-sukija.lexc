@@ -436,6 +436,8 @@ LEXICON SukijaAsemosana
 
 
 LEXICON SukijaPoikkeavat_s
+[Ls][Xp]aiottaisin[X]ajoittain:aiottaisin LoppuLiitesana_a ;
+[Ls][Xp]ajoittain[X]ajoittain:aiottaisin LoppuLiitesana_a ;
 [Ls][Xp]edes[X]edes:ees LoppuLiitesana_ä ;
 [Ls][Xp]edessä[X]edessä:eessä LoppuLiitesana_ä ;
 [Ls][Xp]edessä[X]edestä:eestä LoppuLiitesana_ä ;
