@@ -520,7 +520,8 @@ function_list = [
                       "uppo=paistaa")),
      (write_paahtaa, ("kaihtaa",
                       "paahtaa", )),
-     (write_taittaa, ("saattaa",
+     (write_taittaa, ("naittaa", # Onko Tuomen kirjassa?
+                      "saattaa",
                       "taittaa",
                       "palttaa",
                       "varttaa")),
