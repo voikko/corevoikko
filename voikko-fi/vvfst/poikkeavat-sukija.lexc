@@ -308,6 +308,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]maailma[X]maailmoitse:maailmoitse Loppu ;
 [Ln][Xp]maalais=impi[X]maalais[Bm]im:maalaisim NimisanaSampi_ä ;
 [Ln][Xp]maustin[X]mausti:mausti NimisanaUistin_a ;
+[Ln][Xp]mikro=skooppi[X]mikro[Bm]skoop@P.INEN_SALLITTU.ON@:mikroskop@P.INEN_SALLITTU.ON@ NimisanaRisti_a ;
 [Ln][Xp]moni[X]mon:mon NimisanaSukijaPieni_a ;
 [Ln][Xp]morsian[X]morsiam:morsiamm NimisanaUistin_m_a ;
 [Ln][Xp]muistiin=palautuminen[X]muistiin[Bm]palautumi:muistiinpalautumi NimisanaNainen_a ;
@@ -315,6 +316,8 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]neiti[X]nei:nei SukijaNeiti ;
 [Ln][Xp]neiti[X]nei[Sg][Ny]den@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neiden@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@   Loppu ;
 [Ln][Xp]neiti[X]nei[Sg][Nm]tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:neitten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Loppu ;
+[Ln][Xp]neitsyt[X]neits:neitsy NimisanaKuollut_ä ;
+[Ln][Xp]neitsyys[X]neitsyy:neitsey NimisanaKalleus_ä ;
 [Ln][Xp]nuorimies[X]nuorna[Bm]miesnä:nuornamiesnä NimisanaLiOlV_ä ;
 [Ln][Xp]olympia[X]olympi:olymppi NimisanaKarahka_a ;
 [Ln][Xp]olympiadi[X]olympiad:olympiaad NimisanaRisti_a ;
@@ -900,6 +903,10 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]minkään=lainen[X]minkään[Bm]lai:minkäänläi LaatusanaNainenInen_aä ;
 [Ll][Xp]muistiin=painuva[X]muistiin[Bm]painuv:muistiinpainuv LaatusanaAsema_a ;
 [Ll][Xp]monen=lainen[X]monen[Bm]lai:monellai LaatusanaNainenInen_a ;
+[Ll][Xp]neitseellinen[X]neitseelli:neitsyelli LaatusanaNainenInen_ä ;
+[Ll][Xp]neitseellinen[X]neitseelli:neitsyeelli LaatusanaNainenInen_ä ;
+[Ll][Xp]neitseellinen[X]neitseelli:neitselli LaatusanaNainenInen_ä ;
+[Ll][Xp]neitsyinen[X]neitsyi:neitsyi LaatusanaNainenInen_ä ;
 [Ll][Xp]oktaaninen[X]oktaani:oktani LaatusanaNainenInen_a ;
 [Ll][Xp]oma=kutoinen[X]oma[Bm]kutoi:omakutoi LaatusanaNainenInen_a ;
 [Ll][Xp]oma=rahoitteinen[X]oma[Bm]rahoittei:omarahottei LaatusanaNainenInen_a ;
