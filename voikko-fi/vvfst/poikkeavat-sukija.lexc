@@ -499,6 +499,7 @@ LEXICON Sukija_p
 [Lp]afrikka:afrikka EtuliitteenJatko_ellelnelt;
 [Lp]alaston:alaston EtuliitteenJatko_ellelnelt;
 [Lp]amerikka:amerikka EtuliitteenJatko_ellelnelt;
+[Lp]atlantin:atlantin EtuliitteenJatko_ellelnelt;
 [Lp]edelleen:edelleen EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:eestaas EtuliitteenJatko_ellelnelt;
 [Lp]eestaas:ees-taas EtuliitteenJatko_ellelnelt;
@@ -539,6 +540,7 @@ LEXICON Sukija_p
 [Lp]ohitse:ohitse EtuliitteenJatko_ellelnelt;
 [Lp]olemassa:olemassa EtuliitteenJatko_ellelnelt;
 [Lp]orientaali:orientaali EtuliitteenJatko_ellelnelt;
+[Lp]oseanian:oseanian EtuliitteenJatko_ellelnelt;
 [Lp]pehmyt:pehmyt EtuliitteenJatko_ellelnelt;
 [Lp]piki:piki EtuliitteenJatko_ellelnelt;
 [Lp]populaari:populaari EtuliitteenJatko_ellelnelt;
@@ -914,6 +916,10 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]pieni[X]pien:pien LaatusanaSukijaPieni_ä ;
 [Ll][Xp]peilityyni[X]peili[Bm]tyyn:peilityyn LaatusanaSukijaPieni_ä ;
 [Ll][Xp]perään=antavainen[X]perään[Bm]antavai:peräänantavai LaatusanaNainenInen_a ;
+[Ll][Xp]populaarinen[X]populaari:populaari LaatusanaNainenInen_a ;
+[Ll][Xp]populaarinen[X]populaari:populääri LaatusanaNainenInen_aä ;
+[Ll][Xp]populäärinen[X]populääri:populääri LaatusanaNainenInen_aä ;
+[Ll][Xp]populäärinen[X]populääri:populaari LaatusanaNainenInen_aä ;
 [Ll][Xp]psykedeelinen[X]psykedeeli:psykedeli LaatusanaNainenInen_ä ;
 [Ll][Xp]punainen[X]punai:puna LaatusanaNainenInen_a ;
 [Ll][Xp]päälle=tunkevainen[X]päälle[Bm]tunkevai:päälletunkevai LaatusanaNainenInen_a ;
