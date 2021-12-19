@@ -982,6 +982,7 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;
 [Lnl][Xp]teutonilainen[X]teutonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:teutoonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]vallonilainen[X]vallonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@:valloonilai@P.LAINEN.ON@@C.LAINEN_VAADITTU@@C.VAIN_NIMISANA@ NimiLaatusanaNainenInen_a ;
+[Lnl][Xp]vapaa=ehtoinen[X]vapaa[Bm]ehtoi:vapaehtoi NimiLaatusanaNainenInen_a ;
 [Lnl][Xp]viktoriaaninen[X]viktoriaani:viktooriaani NimiLaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_t
