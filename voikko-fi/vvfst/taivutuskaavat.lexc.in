@@ -4529,7 +4529,7 @@ LEXICON Johdin_ttU
 ?Sukija [Rt][Sg][Nm]t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>id@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Rt]tt<U>[Sp][Ny]<A>:tt<U><A>	OlV_<A>	;
 ?Sukija [Rt]t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaHattu_<A>	;
-?Sukija [Rt][Sp][Nm]t<U>it<A>:t<U>it<A> NimiLaatusanaLiOlV_<A> ;
+?Sukija [Ll][Rt]t[Xj]t<U>[X][Sp][Nm]t<U>it<A>:t<U>it<A> NimiLaatusanaLiOlV_<A> ;
 ?Sukija [Rt][Sg][Nm]t<U>itt@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:t<U>itt@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaMonikonGenetiiviEnJatko_<A>	;
 
 ! myydä -> myyty
