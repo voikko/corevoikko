@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Copyright 2010 Harri Pitkänen (hatapitk@iki.fi)
@@ -26,46 +26,45 @@ import voikkoutils
 from libvoikko import Voikko
 
 LANGUAGE = voikkoutils.get_preference('language_variant')
-ENCODING = voikkoutils.get_preference('encoding')
 
 voikko = Voikko(LANGUAGE)
 
 if '--help' in sys.argv:
-	print "Usage:"
-	print "Checks grammar of text read from stdin and prints errors."
-	print "Normally paragraphs are separated by line feeds. Use option"
-	print "--empty-line if paragraphs are separated by empty lines."
+	print("Usage:")
+	print("Checks grammar of text read from stdin and prints errors.")
+	print("Normally paragraphs are separated by line feeds. Use option")
+	print("--empty-line if paragraphs are separated by empty lines.")
 	sys.exit(0)
 
 emptyLineSeparates = '--empty-line' in sys.argv
 
 def handleParagraph(paragraph):
-	for error in voikko.grammarErrors(paragraph, u"fi"):
-		print paragraph.encode(ENCODING)
+	for error in voikko.grammarErrors(paragraph, "fi"):
+		print(paragraph)
 		errorRange = paragraph[error.startPos : error.startPos + error.errorLen]
-		print (u"E: " + error.shortDescription + u" (start=" + str(error.startPos) + u")").encode(ENCODING)
-		print (u'E: "' + errorRange + u'"').encode(ENCODING)
+		print("E: " + error.shortDescription + " (start=" + str(error.startPos) + ")")
+		print('E: "' + errorRange + '"')
 		for suggestion in error.suggestions:
-			print (u'S:  "' + suggestion + u'"').encode(ENCODING)
-		print u"================================================="
+			print('S:  "' + suggestion + '"')
+		print("=================================================")
 
 if not emptyLineSeparates:
 	for line in sys.stdin:
 		line = line.strip() # Ignore leading/trailing whitespace
 		if len(line) == 0:
 			continue
-		paragraph = unicode(line, ENCODING)
+		paragraph = line
 		handleParagraph(paragraph)
 else:
-	paragraph = u""
+	paragraph = ""
 	for line in sys.stdin:
 		line = line.strip()
 		if len(line) == 0:
 			if len(paragraph) > 0:
 				handleParagraph(paragraph)
-				paragraph = u""
+				paragraph = ""
 			continue
 		if len(paragraph) > 0:
-			paragraph = paragraph + u" "
-		paragraph = paragraph + unicode(line, ENCODING)
+			paragraph = paragraph + " "
+		paragraph = paragraph + line
 
