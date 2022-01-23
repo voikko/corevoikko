@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Copyright 2008 - 2015 Harri Pitkänen (hatapitk@iki.fi)
@@ -21,7 +21,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import codecs
-from commands import getoutput
+from subprocess import getoutput
 from subprocess import Popen, PIPE
 from os import access, F_OK
 from os import waitpid
@@ -32,105 +32,105 @@ def runCmd(cmd):
 	p = Popen(cmd, shell=True)
 	sts = waitpid(p.pid, 0)
 	if sts[1] != 0:
-		print u"Error while executing command: " + cmd
+		print("Error while executing command: " + cmd)
 		exit(1)
 
 def indexHeader(indexFile):
-	indexFile.write(u"<html><head><title>Voikon sanastoja</title>")
-	indexFile.write(u"<style type='text/css'>")
-	indexFile.write(u".small {font-size:0.8em; font-style:italic;}")
-	indexFile.write(u"table {border-collapse:collapse;}")
-	indexFile.write(u"table td {border:1px solid black;}")
-	indexFile.write(u"</style></head>")
-	indexFile.write(u"<body><h1>Voikon sanastoja (sanastoformaatin versio 5)</h1>")
-	indexFile.write(u"<p>Tämä sivu ja sivulla olevat Voikon sanaston versiot ")
-	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
-	indexFile.write(u"<strong>Sanastoformaatti 5 toimii libvoikon version 4.0 ja uudempien kanssa.</strong></p>")
+	indexFile.write("<html><head><title>Voikon sanastoja</title>")
+	indexFile.write("<style type='text/css'>")
+	indexFile.write(".small {font-size:0.8em; font-style:italic;}")
+	indexFile.write("table {border-collapse:collapse;}")
+	indexFile.write("table td {border:1px solid black;}")
+	indexFile.write("</style></head>")
+	indexFile.write("<body><h1>Voikon sanastoja (sanastoformaatin versio 5)</h1>")
+	indexFile.write("<p>Tämä sivu ja sivulla olevat Voikon sanaston versiot ")
+	indexFile.write("on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
+	indexFile.write("<strong>Sanastoformaatti 5 toimii libvoikon version 4.0 ja uudempien kanssa.</strong></p>")
 
 def indexDict(indexFile, dict):
-	indexFile.write(u"<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")
-	indexFile.write(u"Sisältö: <kbd>" + dict.nameFi + "</kbd></br />")
-	indexFile.write(u"Sanatietueita Joukahaisesta: <kbd>" + `dict.wordRecords` + "</kbd></td>")
-	dictFile = u"dict" + dict.idSuffix + ".zip"
-	indexFile.write(u"<td><a href='" + dictFile + "'>" + dictFile + "</a></td></tr>")
+	indexFile.write("<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")
+	indexFile.write("Sisältö: <kbd>" + dict.nameFi + "</kbd></br />")
+	indexFile.write("Sanatietueita Joukahaisesta: <kbd>" + repr(dict.wordRecords) + "</kbd></td>")
+	dictFile = "dict" + dict.idSuffix + ".zip"
+	indexFile.write("<td><a href='" + dictFile + "'>" + dictFile + "</a></td></tr>")
 
 def indexFooter(indexFile):
-	indexFile.write(u"</body></html>")
+	indexFile.write("</body></html>")
 
 # === Define dictionary properties ===
 
 class Voikkodict:
-	idSuffix = u""
-	variant = u""
-	nameFi = u""
-	nameEn = u""
-	smOptions = u""
+	idSuffix = ""
+	variant = ""
+	nameFi = ""
+	nameEn = ""
+	smOptions = ""
 	wordRecords = 0
 
 allDicts = []
 
 d = Voikkodict()
-d.idSuffix = u""
-d.variant = u"standard"
-d.nameFi = u"suomi (perussanasto)"
-d.nameEn = u"Finnish (basic vocabulary)"
-d.smOptions = u""
+d.idSuffix = ""
+d.variant = "standard"
+d.nameFi = "suomi (perussanasto)"
+d.nameEn = "Finnish (basic vocabulary)"
+d.smOptions = ""
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-erityis"
-d.variant = u"science"
-d.nameFi = u"suomi (matematiikan, fysiikan, kemian, biologian, maantieteen, geologian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot)"
-d.nameEn = u"Finnish (scientific vocabulary)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,nature,education"'
+d.idSuffix = "-erityis"
+d.variant = "science"
+d.nameFi = "suomi (matematiikan, fysiikan, kemian, biologian, maantieteen, geologian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot)"
+d.nameEn = "Finnish (scientific vocabulary)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=it,medicine,science,nature,education"'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-murre"
-d.variant = u"dialects"
-d.nameFi = u"suomi (murteellisten, vanhojen ja harvinaisten sanojen sanasto)"
-d.nameEn = u"Finnish (dialects)"
-d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign,inappropriate --min-frequency=10" VANHAT_MUODOT=yes'
+d.idSuffix = "-murre"
+d.variant = "dialects"
+d.nameFi = "suomi (murteellisten, vanhojen ja harvinaisten sanojen sanasto)"
+d.nameEn = "Finnish (dialects)"
+d.smOptions = 'GENLEX_OPTS="--style=dialect,old,international,foreign,inappropriate --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-kasvatus"
-d.variant = u"education"
-d.nameFi = u"suomi (kasvatustieteen sanasto)"
-d.nameEn = u"Finnish (education vocabulary)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
+d.idSuffix = "-kasvatus"
+d.variant = "education"
+d.nameFi = "suomi (kasvatustieteen sanasto)"
+d.nameEn = "Finnish (education vocabulary)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=education"'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-laaketiede"
-d.variant = u"medicine"
-d.nameFi = u"suomi (matematiikan, fysiikan, kemian, biologian, maantieteen, geologian ja lääketieteen sanastot)"
-d.nameEn = u"Finnish (medical vocabulary)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science,nature"'
+d.idSuffix = "-laaketiede"
+d.variant = "medicine"
+d.nameFi = "suomi (matematiikan, fysiikan, kemian, biologian, maantieteen, geologian ja lääketieteen sanastot)"
+d.nameEn = "Finnish (medical vocabulary)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=medicine,science,nature"'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-po"
-d.variant = u"po"
-d.nameFi = u"suomi (po-tiedostojen oikolukusanasto)"
-d.nameEn = u"Finnish (po file spelling vocabulary)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science"'
+d.idSuffix = "-po"
+d.variant = "po"
+d.nameFi = "suomi (po-tiedostojen oikolukusanasto)"
+d.nameEn = "Finnish (po file spelling vocabulary)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=it,science"'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-morpho"
-d.variant = u"morpho"
-d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
-d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,nature,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
+d.idSuffix = "-morpho"
+d.variant = "morpho"
+d.nameFi = "suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
+d.nameEn = "Finnish, very extensive vocabulary (with additional information needed in morphological analysis)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=it,science,nature,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-morphoid"
-d.variant = u"morphoid"
-d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio ja linkitys Joukahaiseen)"
-d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis and links to Joukahainen)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,nature,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10 --sourceid" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
+d.idSuffix = "-morphoid"
+d.variant = "morphoid"
+d.nameFi = "suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio ja linkitys Joukahaiseen)"
+d.nameEn = "Finnish, very extensive vocabulary (with additional information needed in morphological analysis and links to Joukahainen)"
+d.smOptions = 'GENLEX_OPTS="--extra-usage=it,science,nature,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10 --sourceid" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
 WORK_DIR = "build-v5"
@@ -181,13 +181,13 @@ if access(oxtdir + OXT_DESCRIPTION, F_OK):
 		descIn = codecs.open(oxtdir + OXT_DESCRIPTION, "r", "UTF-8")
 		descOut = codecs.open(oxtdir + OXT_DESCRIPTION + ".new", "w", "UTF-8")
 		line = descIn.readline()
-		while (line != u""):
+		while (line != ""):
 			descOut.write(line)
-			if (line.find(u"<display-name>") >= 0):
+			if (line.find("<display-name>") >= 0):
 				descIn.readline()
-				descOut.write(u'    <name lang="en-US">Voikko - %s</name>\n' % dict.nameEn)
+				descOut.write('    <name lang="en-US">Voikko - %s</name>\n' % dict.nameEn)
 				descIn.readline()
-				descOut.write(u'    <name lang="fi">Voikko - %s</name>\n' % dict.nameFi)
+				descOut.write('    <name lang="fi">Voikko - %s</name>\n' % dict.nameFi)
 			line = descIn.readline()
 		descIn.close()
 		descOut.close()
@@ -196,14 +196,14 @@ if access(oxtdir + OXT_DESCRIPTION, F_OK):
 
 # === Phase 3: build zip packages ===
 
-indexFile.write(u"<h2>Sanastot</h2>")
-indexFile.write(u"<table>")
+indexFile.write("<h2>Sanastot</h2>")
+indexFile.write("<table>")
 for dict in allDicts:
 	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
 	zipFile = DICT_DIR_PREFIX + dict.idSuffix + '.zip'
 	runCmd('cd ' + dirName + ' && zip -r ../' + zipFile + ' *')
 	indexDict(indexFile, dict)
-indexFile.write(u"</table>")
+indexFile.write("</table>")
 
 # === Phase 4: build source package ===
 
@@ -211,20 +211,20 @@ runCmd('make clean')
 runCmd('make dist-gzip SM_VERSION=snapshot')
 runCmd('cp voikko-fi-snapshot.tar.gz ' + WORK_DIR)
 runCmd('make clean SM_VERSION=snapshot')
-indexFile.write(u"<h2>Lähdekoodi</h2>")
-indexFile.write(u"<p><a href='voikko-fi-snapshot.tar.gz'>voikko-fi-snapshot.tar.gz</a></p>")
+indexFile.write("<h2>Lähdekoodi</h2>")
+indexFile.write("<p><a href='voikko-fi-snapshot.tar.gz'>voikko-fi-snapshot.tar.gz</a></p>")
 
 # === Finalisation ===
 
-indexFile.write(u"<h2>Lähdekoodin versiotiedot</h2><pre>")
+indexFile.write("<h2>Lähdekoodin versiotiedot</h2><pre>")
 out = getoutput("git log --format=short HEAD^1..HEAD")
-indexFile.write(unicode(out, "UTF-8"))
-indexFile.write(u"</pre><p>Viimeisin päivitys Joukahaisesta")
+indexFile.write(out)
+indexFile.write("</pre><p>Viimeisin päivitys Joukahaisesta")
 out = getoutput("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'")
 indexFile.write(out)
-indexFile.write(u"</p>")
+indexFile.write("</p>")
 endTime = datetime.now()
-indexFile.write(u"<p class='small'>Generointi valmis " + endTime.isoformat() + u"<br />")
-indexFile.write(u"Aikaa kului " + `(endTime - startTime).seconds` + u" sekuntia</p>")
+indexFile.write("<p class='small'>Generointi valmis " + endTime.isoformat() + "<br />")
+indexFile.write("Aikaa kului " + repr((endTime - startTime).seconds) + " sekuntia</p>")
 indexFooter(indexFile)
 indexFile.close()
