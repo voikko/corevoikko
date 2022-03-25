@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2021 Hannu Väisänen
+! Tekijänoikeus © 2006 - 2022 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -105,6 +105,10 @@ Omistusliite_a ;
 [Ses][Ny]na:na NimisanaLiOlV_a ;
 NimisanaYhteisetYksikönPaikallissijat_a ;
 [Sn][Nm]t:t NimisanaMonikonNominatiivinJatko_a ;
+
+LEXICON SukijaUksi
+[Sp][Ny]sta:sta   NimisanaLiOlV_a	;
+[Sg][Nm]st:st     NimisanaMonikonGenetiiviEnJatko_a ;
 
 LEXICON SukijaUrosMonikko
 [Sg][Nm]itt:itt  NimisanaMonikonGenetiiviEnJatko_a ;
@@ -281,6 +285,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kamari[X]kamar:kammar NimisanaPaperi_a ;
 [Ln][Xp]kampi[X]kam[Sg][Ny]min:kammin NimisanaYksikönGenetiivinJatko_a ;
 [Ln][Xp]kampi[X]kam[Sn][Nm]mit:kammit NimisanaMonikonNominatiivinJatko_a;
+[Ln][Xp]kapale[X]kapale:kapale NimisanaHame_a ;
 [Ln][Xp]kappale[X][Sg][Nm]kappalt:kappalt NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]karabinieeri[X]karabinieer:karabinier NimisanaRisti_aä ;
 [Ln][Xp]karafiini[X]karafiin:karafin NimisanaRisti_aä ;
@@ -353,10 +358,12 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationaarisyy NimisanaKalleus_aä ;
 [Ln][Xp]stationaarisuus[X]stationaarisuu:stationäärisyy NimisanaKalleus_aä ;
+[Ln][Xp]suksi[X]su[Sg][Nm]st:sust NimisanaMonikonGenetiiviEnJatko_a ;
 [Ln][Xp]sydän[X]sydäm:sydämm NimisanaUistin_m_ä ;
 [Ln][Xp]sävel[X]sävel:sävel NimisanaAskel_ä ;
 [Ln][Xp]teoria[X]teori:teoori NimisanaKarahka_a ;
 [Ln][Xp]tirehtööri[X]tirehtor:tirehtor NimisanaRisti_a ;
+[Ln][Xp]uksi[X]u@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:u@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ SukijaUksi ;
 [Ln][Xp]uskalikkous[X]uskalikkou:uskalikkuu NimisanaKalleus_a ;
 [Ln][Xp]uskalikkuus[X]uskalikkuu:uskalikkuu NimisanaKalleus_a ;
 [Ln][Xp]uskottumies[X][Sn][Ny]uskottu[Bm]mies:uskottumies	NimisanaNormaaliYsJatko_ä ;
