@@ -302,6 +302,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kokous[X]kokou:kokkou NimisanaVastaus_a ;
 [Ln][Xp]kraatteri[X]kraatter:krater NimisanaPaperi_a ;
 [Ln][Xp]kulkku[X]kulk@P.INEN_KIELLETTY.ON@:kulk@P.INEN_KIELLETTY.ON@ NimisanaAlku_a ;
+[Ln][Xp]kumoon=purjehdus[X]kumoon[Bm]purjehdu:kumoonpurjehdu NimisanaVastaus_a ;
 [Ln][Xp]kumppani[X]kumppan:kumppal NimisanaPaperi_a ;
 [Ln][Xp]kymnaasi[X]kymnaas:kimnaas NimisanaRisti_a ;
 [Ln][Xp]käsi=rysy=taistelu[X]käsi[Bm]rysy[Bm]taistelu:käsirysytaistelu NimisanaArvelu_a ;
@@ -1025,6 +1026,19 @@ LEXICON SukijaPoikkeavat_nl
 [Lnl][Xp]viktoriaaninen[X]viktoriaani:viktooriaani NimiLaatusanaNainenInen_a ;
 
 LEXICON SukijaPoikkeavat_t
+[Lt][Xp]kumoon=heittää[X]kumoon[Bm]heit@P.V_SALLITTU.T@:kumoonheit@P.V_SALLITTU.T@ Heittää_ä ;
+[Lt][Xp]kumoon=kaataa[X]kumoon[Bm]kaa:kumoonkaa Huutaa_a ;
+[Lt][Xp]kumoon=kaataa[X]kumoon[Bm]kaa:kumoonkaa Raataa_a ;
+[Lt][Xp]kumoon=kaatua[X]kumoon[Bm]kaa:kumoonkaa Kaatua_a ;
+[Lt][Xp]kumoon=keikahtaa[X]kumoon[Bm]keika:kumoonkeika Hujahtaa_a ;
+[Lt][Xp]kumoon=kääntää[X]kumoon[Bm]kään:kumoonkään Alentaa_ä ;
+[Lt][Xp]kumoon=mennä[X]kumoon[Bm]men:kumoonmen Mennä_ä ;
+[Lt][Xp]kumoon=paiskata[X]kumoon[Bm]paisk:kumoonpaisk Salata_a ;
+[Lt][Xp]kumoon=puhua[X]kumoon[Bm]puhu:kumoonpuhu Punoa_a ;
+[Lt][Xp]kumoon=purjehtia[X]kumoon[Bm]purjeh:kumoonpurjeh Laatia_a ;
+[Lt][Xp]kumoon=ratsastaa[X]kumoon[Bm]ratsast:kumoonratsast Aavistaa_a ;
+[Lt][Xp]kumoon=suistaa[X]kumoon[Bm]suist@P.V_SALLITTU.T@:kumoonsuist@P.V_SALLITTU.T@ Muistaa_a ;
+[Lt][Xp]kumoon=viskata[X]kumoon[Bm]visk:kumoonvisk Salata_a ;
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
 [Lt][Xp]mennä[X]mee:mee KestämänTekijäpääteHeikko_ä ;
