@@ -51,7 +51,7 @@ AM_MAINTAINER_MODE
 dnl Compiler features
 AC_LANG([C++])
 AC_C_CONST
-AX_CXX_COMPILE_STDCXX(11, noext, mandatory)
+AX_CXX_COMPILE_STDCXX(14, noext, mandatory)
 
 # Prepare platform specific setups (sets $host_os a.o.):
 AC_CANONICAL_HOST
