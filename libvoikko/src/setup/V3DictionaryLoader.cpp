@@ -33,6 +33,9 @@
 #include <fstream>
 #include <cstdlib>
 
+// Workaround needed for hfst-ospell <= 0.5.3, see https://github.com/hfst/hfst-ospell/issues/57
+#include <cstdint>
+
 #include <ZHfstOspeller.h>
 #include <ospell.h>
 #include <ol-exceptions.h>

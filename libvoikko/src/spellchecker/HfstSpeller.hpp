@@ -33,6 +33,10 @@
 #include "setup/DictionaryException.hpp"
 #include "setup/setup.hpp"
 #include <string>
+
+// Workaround needed for hfst-ospell <= 0.5.3, see https://github.com/hfst/hfst-ospell/issues/57
+#include <cstdint>
+
 #include <ospell.h>
 #include <ZHfstOspeller.h>
 

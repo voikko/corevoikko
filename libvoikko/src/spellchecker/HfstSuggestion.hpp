@@ -30,6 +30,10 @@
 #define VOIKKO_SPELLCHECKER_HFST_SUGGESTION
 
 #include <string>
+
+// Workaround needed for hfst-ospell <= 0.5.3, see https://github.com/hfst/hfst-ospell/issues/57
+#include <cstdint>
+
 #include <ospell.h>
 #include <ZHfstOspeller.h>
 

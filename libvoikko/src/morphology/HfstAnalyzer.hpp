@@ -29,6 +29,9 @@
 #ifndef VOIKKO_MORPHOLOGY_HFST_ANALYZER
 #define VOIKKO_MORPHOLOGY_HFST_ANALYZER
 
+// Workaround needed for hfst-ospell <= 0.5.3, see https://github.com/hfst/hfst-ospell/issues/57
+#include <cstdint>
+
 #include <ospell.h>
 #include "morphology/Analyzer.hpp"
 #include "setup/DictionaryException.hpp"
