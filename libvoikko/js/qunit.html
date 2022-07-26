@@ -3,14 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>Tests for JS-libvoikko</title>
-<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.6.2.css">
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
 </head>
 <body>
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
 <div id="editor"></div>
 <script type="text/javascript" src="libvoikko.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/qunit/qunit-2.6.2.js"></script>
+<script
+  src="https://code.jquery.com/qunit/qunit-2.19.1.js"
+  integrity="sha256-JKXf8hYyT6TCyX2GIQgbqsBGOx1Fq4kI0IHuoTxbj44="
+  crossorigin="anonymous"></script>
 <script>
 QUnit.config.autostart = false;
 Libvoikko({
@@ -72,6 +75,13 @@ Libvoikko({
 			var errors = voikko.grammarErrors("Olen täi.\r\nOlen joten kuten.", "fi");
 			assert.equal(errors.length, 1);
 			assert.equal(errors[0].startPos, 16);
+			assert.equal(errors[0].errorLen, 11);
+		});
+		
+		QUnit.test("grammarErrorWithMultipleWindowsParagraphSeparator", function(assert) {
+			var errors = voikko.grammarErrors("Olen täi.\r\nOlen täi.\r\nOlen joten kuten.", "fi");
+			assert.equal(errors.length, 1);
+			assert.equal(errors[0].startPos, 27);
 			assert.equal(errors[0].errorLen, 11);
 		});
 		
