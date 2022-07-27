@@ -87,6 +87,8 @@ void FinnishAnalysis::analyseToken(Token * token) {
 		const wchar_t * mood = (*it)->getValue(morphology::Analysis::Key::MOOD);
 		const wchar_t * person = (*it)->getValue(morphology::Analysis::Key::PERSON);
 		const wchar_t * negative = (*it)->getValue(morphology::Analysis::Key::NEGATIVE);
+		const wchar_t * participle = (*it)->getValue(morphology::Analysis::Key::PARTICIPLE);
+		const wchar_t * sijamuoto = (*it)->getValue(morphology::Analysis::Key::SIJAMUOTO);
 		const wchar_t * possibleGeographicalName = (*it)->getValue(morphology::Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME);
 		const wchar_t * requireFollowingVerb = (*it)->getValue(morphology::Analysis::Key::REQUIRE_FOLLOWING_VERB);
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
@@ -173,6 +175,9 @@ void FinnishAnalysis::analyseToken(Token * token) {
 				} else if (token->verbFollowerType != followerType) {
 					token->verbFollowerType = FOLLOWING_VERB_NONE;
 				}
+			}
+			else if (participle && wcscmp(L"agent", participle) == 0 && sijamuoto && wcscmp(L"vajanto", sijamuoto) == 0) {
+				token->verbFollowerType = FOLLOWING_VERB_NONE;
 			}
 		}
 		++it;

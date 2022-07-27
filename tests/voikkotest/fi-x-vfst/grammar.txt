@@ -185,6 +185,7 @@ Pertti jaksaa tekemään läksyjä.
 Pertti ryhtyy tehdä läksyjä.
  [code=15, level=0, stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
+Leikkauksia ei voida välttämättä tehdä.
 Tätä ei käsittääkseni voi näin esittää.
 Pitkänen pystyy uhattaessa muokkaamaan käsityksiään maailmankaikkeuden fysikaalisista ominaisuuksista.
 Lääkäri ehtii auttamaan Hannelea synnytyksessä.
