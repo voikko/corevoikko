@@ -246,6 +246,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]bolsevismi[X]bolsevism:bolshevism NimisanaRisti_a ;
 [Ln][Xp]bolsevismi[X]bolsevism:bolschevism NimisanaRisti_a ;
 [Ln][Xp]bulgaari[X]bulgaar:bulgar NimisanaPaperi_a 
+[Ln][Xp]eksä[X]eks:ex NimisanaKoira_ä ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuvat:elävätkuvat       Liitesana_a ;
 [Ln][Xp]elävätkuvat[X][Sn][Nm]elävät[Bm]kuva:elävätkuva Omistusliite_a ;
 [Ln][Xp]elävätkuvat[X][Sg][Nm]elävien[Bm]kuvi:elävienkuvi       NimisanaMonikonGenetiiviEnJatko_a ;
