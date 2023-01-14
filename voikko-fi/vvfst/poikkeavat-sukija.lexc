@@ -173,6 +173,10 @@ LEXICON SukijaAsemosanaHän
 [Sill][Ny]nehen:nehen     Liitesana_ä     ;
 [Sab][Ny]nettä:nettä      Liitesana_ä     ;
 
+LEXICON SukijaAsemosanaKumpi
+[Sg][Nm]pain:pain       Liitesana_a ;
+[Sko][Nm]pine:pine      Liitesana_a ;
+
 LEXICON SukijaAsemosanaMeTeHe
 [Sg][Nm]idän:iän Liitesana_ä ;
 [Sg][Nm]idän:ijän Liitesana_ä ;
@@ -456,6 +460,7 @@ LEXICON SukijaAsemosana
 [Lr][Xp]he[X]he:he      SukijaAsemosanaMeTeHe ;
 [Lr][Xp]hän[X]hä:hä     SukijaAsemosanaHän ;
 [Lr][Xp]jompi[X]jom:jom	AsemosanaKumpi ;
+[Lr][Xp]kumpi[X]kum:kum	SukijaAsemosanaKumpi ;
 [Lr][Xp]me[X]me:me      SukijaAsemosanaMeTeHe ;
 [Lr][Xp]mie[X]mi:mi     SukijaAsemosanaMieMä ;
 [Lr][Xp]mikä[X]mi:mi	SukijaAsemosanaMikä ;
