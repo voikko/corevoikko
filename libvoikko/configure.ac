@@ -28,7 +28,7 @@
 
 dnl General options for autoconf
 AC_PREREQ(2.62)
-AC_INIT([libvoikko],[4.3.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[4.3.2],[hatapitk@iki.fi])
 
 LT_PREREQ([2.2.6])
 
