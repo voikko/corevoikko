@@ -2059,6 +2059,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Sg][Nm]<U>id:<U>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Ses][Ny]ehen<A>:ehen<A>	<WC>LiOlV_<A>	;
 ?Sukija [Ses][Ny]<U>nn<A>:<U>nn<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]<U>n<A>:<U>n<A>	<WC>LiOlV_<A>	;
 ?Sukija [Sill][Ny]eese:eese	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Ny]ehese:ehese	<WC>LiOlN_<A>	;
