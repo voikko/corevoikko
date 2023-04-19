@@ -488,8 +488,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]aiottaisin[X]ajoittain:aiottaisin LoppuLiitesana_a ;
 [Ls][Xp]ajoittain[X]ajoittain:aiottaisin LoppuLiitesana_a ;
 [Ls][Xp]edes[X]edes:ees LoppuLiitesana_ä ;
-[Ls][Xp]edessä[X]edessä:eessä LoppuLiitesana_ä ;
-[Ls][Xp]edessä[X]edestä:eestä LoppuLiitesana_ä ;
+[Ls][Xp]edessä[X]ede:ee HeikkoasteisetPaikallissijat_ä ;
 [Ls][Xp]eestaas[X]eestaas:ees-taas Loppu ;
 [Ls][Xp]ihme[X]ihmeesti:ihmeesti LoppuLiitesana_ä ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
