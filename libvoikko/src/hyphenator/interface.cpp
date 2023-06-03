@@ -115,6 +115,7 @@ VOIKKOEXPORT char * voikkoInsertHyphensCstr(voikko_options_t * options, const ch
 	// Clean up and return the result
 	delete[] hyphen_ucs4;
 	delete[] word_ucs4;
+  delete[] hyphenationPattern;
 	return utils::StringUtils::utf8FromUcs4(hyphenated.str().c_str());
 }
 
