@@ -653,7 +653,7 @@ JÄRJESTYSLUKU_TOISTA = \
 
 sukija_additions = {
     "LEXICON Asemosana\n":     "SukijaAsemosana ;\n",
-    "LEXICON Sanasto_ee\n":    "SukijaPoikkeavat_ee ;\n",
+    "LEXICON Sanasto_a\n":     "SukijaPoikkeavat_ee ;\n",
     "LEXICON Sanasto_em\n":    "SukijaPoikkeavat_em ;\n",
     "LEXICON Sanasto_ep\n":    "SukijaPoikkeavat_ep ;\n",
     "LEXICON Sanasto_h\n":     "SukijaPoikkeavat_h ;\n",

@@ -269,6 +269,10 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]fil=harmonikko[X]fil[Bm]harmonik:filharmoonik NimisanaLaatikko_a ;
 [Ln][Xp]faarao[X]faarao:farao NimisanaAutio_a ;
 [Ln][Xp]farao[X]farao:faarao NimisanaAutio_a ;
+[Ln][Xp]fysiikka[X]fysiik:fysik NimisanaKala_a ;
+[Ln][Xp]fysiikka[X]fysiik:fysik NimisanaSolakka_a ;
+[Ln][Xp]fyysikko[X]fyysik:fysik NimisanaLaatikko_a ;
+[Ln][Xp]fyysikko[X]fyysik:fysik NimisanaLaatikko_a ;
 [Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;
 [Ln][Xp]harmonikka[X]harmonik:harmoonik NimisanaHaka_a ;
 [Ln][Xp]harppuuna[X]harppuun:harppun NimisanaPeruna_a ;
