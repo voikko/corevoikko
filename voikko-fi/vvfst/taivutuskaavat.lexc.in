@@ -4101,6 +4101,7 @@ LEXICON Ehtotapa_tA
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Et]t<A>isi:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isi	Liitesana_<A>	;
 @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Ef]t<A>isiin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isiin	Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Et]t<A>is:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>is	Liitesana_<A>	;
+?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4][Et]t<A>s:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>s	        Liitesana_<A>	;
 ?Sukija @D.VAIN_YM3@@D.YKSITEKIJÄINEN@[Te][Ap][P4]t<A>isihin:@D.VAIN_YM3@@D.YKSITEKIJÄINEN@t<A>isihin	Liitesana_<A>	;
 
 LEXICON Mahtotapa
