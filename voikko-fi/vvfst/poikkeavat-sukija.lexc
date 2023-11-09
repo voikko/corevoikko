@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2022 Hannu Väisänen
+! Tekijänoikeus © 2006 - 2023 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -543,6 +543,11 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]ympäri[X]ympäri:ympäri Ulkopaikallissijat_Yks_ä ;
 [Ls][Xp]ympäri[X]ympäritse:ympäritse LoppuLiitesana_ä ;
 [Ls][Xp]ympäri[X]ympäritse:ympäritse Omistusliite_ä ;
+[Ls][Xp]kesä=sydän[X]kesäsydännä:kesäsydännä LoppuLiitesana_ä ;
+[Ls][Xp]päivä=sydän[X]päiväsydännä:päiväsydännä LoppuLiitesana_ä ;
+[Ls][Xp]suvi=sydän[X]suvisydännä:suvisydännä LoppuLiitesana_ä ;
+[Ls][Xp]talvi=sydän[X]talvisydännä:talvisydännä LoppuLiitesana_ä ;
+[Ls][Xp]yö=sydän[X]yösydännä:yösydännä LoppuLiitesana_ä ;
 
 LEXICON Sukija_p
 [Lp]afrikka:afrikka EtuliitteenJatko_ellelnelt;
