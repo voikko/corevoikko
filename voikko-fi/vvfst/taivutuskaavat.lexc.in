@@ -4151,6 +4151,9 @@ LEXICON Käskytapa
 LEXICON Käskytapa_y2
 [Tk][Ap][P2][Ny][Eb]:	LiitesanaKinPaHan_<A>	;
 [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
+?Sukija [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>	Loppu	;
+?Sukija [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:kk<A><A>n	Loppu	;
+?Sukija [Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:kk<A><A>	Loppu	;
 
 LEXICON Käskytapa_ttA
 [Tk][Ap][P4][Ef]tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
