@@ -17,6 +17,14 @@
 ! Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 ! 02110-1301, USA.
 
+LEXICON SukijaMennä_ä
+KestämänTekijäpääteHeikko_ä ;
+[Tk][Ap][P2][Ny][Eb]:  LiitesanaKinPaHan_ä ;
+
+LEXICON SukijaTulla_a
+KestämänTekijäpääteHeikko_a ;
+[Tk][Ap][P2][Ny][Eb]:  LiitesanaKinPaHan_a ;
+
 LEXICON SukijaRangaista_a
 gas:gas Nuolaista_w_a ;
 kas:kas Nuolaista_s_a ;
@@ -1055,8 +1063,8 @@ LEXICON SukijaPoikkeavat_t
 [Lt][Xp]kumoon=viskata[X]kumoon[Bm]visk:kumoonvisk Salata_a ;
 [Lt][Xp]olla[X]lien:lien Ehtotapa_ä ;
 [Lt][Xp]tuta[X]tu:tu SukijaTuta ;
-[Lt][Xp]mennä[X]mee:mee KestämänTekijäpääteHeikko_ä ;
-[Lt][Xp]tulla[X]tuu:tuu KestämänTekijäpääteHeikko_a ;
+[Lt][Xp]mennä[X]mee:mee SukijaMennä_ä ;
+[Lt][Xp]tulla[X]tuu:tuu SukijaTulla_a ;
 [Lt][Xp]kitistä[X]kit:kit Kihajaa_a ;
 [Lt][Xp]lätistä[X]lät:lät Kihajaa_ä ;
 [Lt][Xp]nitistä[X]nit:nit Kihajaa_a ;
