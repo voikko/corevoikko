@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2023 Hannu Väisänen
+! Tekijänoikeus © 2006 - 2024 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -317,6 +317,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]kimnaasi[X]kimnaas:kymnaas NimisanaRisti_a ;
 [Ln][Xp]kirjasin[X]kirjasi:kirjaisi NimisanaUistin_a ;
 [Ln][Xp]kokous[X]kokou:kokkou NimisanaVastaus_a ;
+[Ln][Xp]kortteeri[X]kortteer:korttier NimisanaPaperi_a ;
 [Ln][Xp]kraatteri[X]kraatter:krater NimisanaPaperi_a ;
 [Ln][Xp]kulkku[X]kulk@P.INEN_KIELLETTY.ON@:kulk@P.INEN_KIELLETTY.ON@ NimisanaAlku_a ;
 [Ln][Xp]kumoon=purjehdus[X]kumoon[Bm]purjehdu:kumoonpurjehdu NimisanaVastaus_a ;
@@ -352,6 +353,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:oopiumso NimisanaJuhta_a ;
 [Ln][Xp]oopiumi=sota[X]oopiumi[Bm]so:ooppiumso NimisanaJuhta_a ;
 [Ln][Xp]ori[X]ori:ori   SukijaOri ;
+[Ln][Xp]paikka[X]paik@P.INEN_SALLITTU.ON@:paek@P.INEN_SALLITTU.ON@ NimisanaHaka_a ;
 [Ln][Xp]paneeli[X]paneel:panel NimisanaPaperi_a ;
 [Ln][Xp]pitsa[X]pits:pizz NimisanaKala_a ;
 [Ln][Xp]pizza[X]pizz:pits NimisanaKala_a ;
@@ -502,6 +504,7 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]edes[X]edes:ees LoppuLiitesana_ä ;
 [Ls][Xp]edessä[X]ede:ee HeikkoasteisetPaikallissijat_ä ;
 [Ls][Xp]eestaas[X]eestaas:ees-taas Loppu ;
+[Ls][Xp]etäällä[X]etäs:etäs LoppuLiitesana_ä ;
 [Ls][Xp]ihme[X]ihmeesti:ihmeesti LoppuLiitesana_ä ;
 [Ls][Xp]kaukaalla[X]kaukaalla:kaukaalla LoppuLiitesana_a ;
 [Ls][Xp]kaukaalla[X]kaukaalle:kaukaalle LoppuLiitesana_a ;
