@@ -373,6 +373,7 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]seraiji[X]seraij:seralj NimisanaPaperi_a ;
 [Ln][Xp]seralji[X]seralj:seraij NimisanaPaperi_a ;
 [Ln][Xp]shampoo[X]shampo:shamppo NimisanaTrikoo_a ;
+[Ln][Xp]sihteeri[X]sihteer:sihtier NimisanaPaperi_ä ;
 [Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]kraat:sosialidemokraat NimisanaTatti_a ;
 [Ln][Xp]sosiaali=demo=kraatti[X]sosiaali[Bm]demo[Bm]krat:sosialidemokrat NimisanaRisti_a ;
 [Ln][Xp]sosiaali=demo=kratia[X]sosiaali[Bm]demo[Bm]krati:sosialidemokrati NimisanaApila_a ;
