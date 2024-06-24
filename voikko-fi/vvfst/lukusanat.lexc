@@ -276,6 +276,8 @@ LEXICON Erikoisluku
 [Lu][Xp]seitsemisentoista[X]seitsemisen[Bm]toista:seitsemisentoista	Liitesana_a	;
 [Lu][Xp]kahdeksisentoista[X]kahdeksisen[Bm]toista:kahdeksisentoista	Liitesana_a	;
 [Lu][Xp]yhdeksisentoista[X]yhdeksisen[Bm]toista:yhdeksisentoista	Liitesana_a	;
+[Lu][Xp]puolisensataa[X]puolisen[Bm]sataa:puolisensataa	Liitesana_a	;
+[Lu][Xp]puolisentoistasataa[X]puolisen[Bm]toista[Bm]sataa:puolisentoistasataa	Liitesana_a	;
 [Lu][Xp]parisen[X]parisen:parisen	ParisenKymmentä	;
 [Lu][Xp]kolmisen[X]kolmisen:kolmisen	XKymmentä_a	;
 [Lu][Xp]nelisen[X]nelisen:nelisen	XKymmentä_ä	;
