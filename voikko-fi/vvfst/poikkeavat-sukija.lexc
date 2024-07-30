@@ -232,10 +232,12 @@ LEXICON SukijaPoikkeavat_h
 [Lh][Xp]tuut[X]tuut:tuut # ;
 [Lh][Xp]tyyt[X]tyyt:tyyt # ;
 
+!! Ahvena = ahven murteissa.
 LEXICON SukijaPoikkeavat_n
 [Ln][Xp]aatelis=impi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
+[Ln][Xp]ahvena[X]ahven@P.YS_EI_JATKOA.ON@:ahven@P.YS_EI_JATKOA.ON@ NimisanaPeruna_a ;
 [Ln][Xp]asu=analyysi[X]asu[Bm]analyys:asuanalyys NimisanaRisti_aä ;
 [Ln][Xp]asu=koko[X]asu[Bm]ko@P.INEN_SALLITTU.ON@:asuko@P.INEN_SALLITTU.ON@ NimisanaKoko_a ;
 [Ln][Xp]asu=kulttuuri[X]asu[Bm]kulttuur@P.INEN_SALLITTU.ON@:asukulttuur@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
@@ -859,6 +861,7 @@ LEXICON SukijaPoikkeavat_ee
 [Lee][Xp]Tšingis[X]tšingi:tshingi EtunimiVastaus_ä ;
 
 LEXICON SukijaPoikkeavat_em
+[Lem][Xp]Sloggi[X]Slogg:Slogg NimisanaRisti_a ;
 [Lem][Xp]Suomi-neiti[X]suomi-[Bm]nei[Sg][Ny]den:suomi-neiden Loppu ;
 
 

@@ -1139,7 +1139,6 @@ LEXICON NOUN Peruna
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija <WC>YhteisetMonikonPaikallissijat_<A> ;
 ?Sukija <WC>YhteisetMonikonSijat2_<A> ;
-?Sukija <WC>MonikonGenetiiviEnJatko_<A> ;
 ?Sukija <O>j:<O>j <WC>MonikonGenetiiviEnJatko_<A> ;
 ?Sukija [Sp][Nm]<O>j<A>:<O>j<A> <WC>LiOlV_<A> ;
 ?Sukija ?Laatusana <A>:<A> Voittoaste_<A> ;
