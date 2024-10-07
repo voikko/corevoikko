@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2013-2018, 2020 Hannu Väisänen
+# Copyright 2013-2018, 2020, 2024 Hannu Väisänen
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -178,7 +178,7 @@ re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_", re.UNICODE)
 
 re_Xiljoona = re.compile (u"\\A(?:\\[Bc\\]|\\[Sn\\]|@).*(b|m|tr)iljoon", re.UNICODE)
 
-re_isoida_x = re.compile (u"\\A\[Lt\]\[Xp\](dramatisoida|karakterisoida)\[X\]")
+re_isoida_x = re.compile (u"\\A\\[Lt\\]\\[Xp\\](dramatisoida|karakterisoida)\\[X\\]")
 
 re_A = re.compile (u"[aou]")
 
