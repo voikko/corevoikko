@@ -3931,10 +3931,10 @@ LEXICON Kihistä
 @C.V_SALLITTU@:@C.V_SALLITTU@	Kitistä_<A>	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	Kihajaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	Kihajaa_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@aut[Xj]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_w_a	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@aut[Xj]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	MuistaaMuistella_s_tt_t_a  ;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äyt[Xj]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_w_ä	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@äyt[Xj]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@äyt	MuistaaMuistella_s_tt_t_ä  ;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.VAIN_YM3@aut[Xj]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.VAIN_YM3@aut	MuistaaMuistella_w_a	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.VAIN_YM3@aut[Xj]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.VAIN_YM3@aut	MuistaaMuistella_s_tt_t_a  ;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.VAIN_YM3@äyt[Xj]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.VAIN_YM3@äyt	MuistaaMuistella_w_ä	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.VAIN_YM3@äyt[Xj]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.VAIN_YM3@äyt	MuistaaMuistella_s_tt_t_ä  ;
 @R.V_SALLITTU.T@@C.V_SALLITTU@ah[Xj]taa[X]:@R.V_SALLITTU.T@@C.V_SALLITTU@ah	Astahtaa_a	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@äh[Xj]tää[X]:@R.V_SALLITTU.E@@C.V_SALLITTU@äh	Astahtaa_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@aut:@R.V_SALLITTU.T@@C.V_SALLITTU@aut	Johdin_Us_ksen_a	;
