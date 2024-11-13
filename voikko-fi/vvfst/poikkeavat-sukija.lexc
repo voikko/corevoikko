@@ -961,6 +961,7 @@ LEXICON SukijaPoikkeavat_l
 [Ll][Xp]kelta=valkoinen[X]kelta[Bm]valkoi:keltavalkoi LaatusanaNainenInen_a ;
 [Ll][Xp]kelta=vartinen[X]kelta[Bm]varti:keltavarti LaatusanaNainenInen_a ;
 [Ll][Xp]kelta=verinen[X]kelta[Bm]veri:keltaveri LaatusanaNainenInen_ä ;
+[Ll][Xp]kielinen[X]kieli@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:kieli@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ LaatusanaNainenInen_ä ;
 [Ll][Xp]kiiru[X]kiiru:kiiru Yliaste_a ;
 [Ll][Xp]kiiruinen[X]kiirui:kiiruhui LaatusanaNainenInen_a ;
 [Ll][Xp]kiiruinen[X]kiirui:kiirui LaatusanaNainenInen_a ;
