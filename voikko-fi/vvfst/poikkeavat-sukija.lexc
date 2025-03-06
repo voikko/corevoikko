@@ -523,6 +523,15 @@ LEXICON SukijaPoikkeavat_s
 [Ls][Xp]kiiru[X]kiirusilla:kiirusilla LoppuLiitesana_a ;
 [Ls][Xp]käännyksissä[X]käännyksissä:käännyksissä Loppu ;
 [Ls][Xp]käännyksissä[X]käännyksiin:käännyksiin   Loppu ;
+[Ls][Xp]milloin[X]milloin:millon LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinkaan:millonkaa LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinka:millonka LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinkan:millonkan LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinkapa:millonkapa LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinkas:millonkas LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinnii:millonnii LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]milloinni:millonni LoppuLiitesana_a ;
+[Ls][Xp]milloin[X]millos:millos Loppu ;
 [Ls][Xp]miten[X]mitenkäs:mitenkäs     Liitesana_ä ;
 [Ls][Xp]miten[X]mitenkäspä:mitenkäspä Liitesana_ä ;
 [Ls][Xp]muuanne[X]muudanne:muudanne LoppuLiitesana_a ;
