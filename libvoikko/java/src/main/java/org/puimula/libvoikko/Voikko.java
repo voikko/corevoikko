@@ -428,7 +428,7 @@ public class Voikko {
      * hyphenated form. For example, in order to insert soft hyphens for automatic hyphenation
      * in HTML text use hyphenate(word, "&shy;", false)
      * @param word The word to be hypnenated
-     * @param separtor The separator to be inserted at hyphenation point
+     * @param separator The separator to be inserted at hyphenation point
      * @param allowContextChanges Whether to allow hyphenation at points where inserting
      *        the hyphen will lead to other changes in the word
      * @return the given word in fully hyphenated form.
