@@ -47,7 +47,7 @@ class HyphenatorFactory {
 		 * The hyphenator must be terminated and deleted after use.
 		 * @throws DictionaryException if the hyphenator cannot be initialized.
 		 */
-		static Hyphenator * getHyphenator(const voikko_options_t * options,
+		static Hyphenator * getHyphenator(const VoikkoHandle * options,
 		                                  const setup::Dictionary & dictionary);
 	
 };

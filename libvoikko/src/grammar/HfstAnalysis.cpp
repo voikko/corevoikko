@@ -49,7 +49,7 @@ using namespace hfst_ospell;
 
 namespace libvoikko {
 
-HfstAnalysis::HfstAnalysis(morphology::Analyzer * a, voikko_options_t * options) : analyser(a), voikkoOptions(options) {
+HfstAnalysis::HfstAnalysis(morphology::Analyzer * a, VoikkoHandle * options) : analyser(a), voikkoOptions(options) {
 }
 
 

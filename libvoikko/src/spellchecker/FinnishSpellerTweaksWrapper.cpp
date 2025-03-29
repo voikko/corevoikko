@@ -40,7 +40,7 @@ namespace libvoikko { namespace spellchecker {
 
 // TODO: stop passing voikkoOptions here
 FinnishSpellerTweaksWrapper::FinnishSpellerTweaksWrapper(Speller * speller, Analyzer * analyzer,
-	 voikko_options_t * voikkoOptions) :
+	 VoikkoHandle * voikkoOptions) :
 	speller(speller), analyzer(analyzer),
 	hyphenator(new hyphenator::AnalyzerToFinnishHyphenatorAdapter(analyzer)),
 	voikkoOptions(voikkoOptions) {

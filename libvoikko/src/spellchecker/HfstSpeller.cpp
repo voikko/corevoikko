@@ -43,7 +43,7 @@ using hfst_ospell::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker {
 
-HfstSpeller::HfstSpeller(const string & zhfstFileName, voikko_options_t * voikkoOptions) :
+HfstSpeller::HfstSpeller(const string & zhfstFileName, VoikkoHandle * voikkoOptions) :
 	voikkoOptions(voikkoOptions) {
 	speller = new ZHfstOspeller();
 	try {

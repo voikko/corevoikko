@@ -37,7 +37,7 @@ namespace libvoikko { namespace grammar { namespace check {
  */
 class NegativeVerbCheck : public SentenceCheck {
 	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
+		void check(VoikkoHandle * options, const Sentence * sentence);
 };
 
 } } }

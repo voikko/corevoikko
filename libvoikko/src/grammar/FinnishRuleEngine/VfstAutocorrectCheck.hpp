@@ -43,13 +43,13 @@ class VfstAutocorrectCheck : public SentenceCheck {
 	public:
 		explicit VfstAutocorrectCheck(const std::string & fileName);
 		~VfstAutocorrectCheck();
-		void check(voikko_options_t * options, const Sentence * sentence);
+		void check(VoikkoHandle * options, const Sentence * sentence);
 	private:
 		fst::UnweightedTransducer * transducer;
 		fst::Configuration * configuration;
 		wchar_t * inputBuffer;
 		wchar_t * outputBuffer;
-		bool check(voikko_options_t * options, const Sentence * sentence, bool lowerFirst);
+		bool check(VoikkoHandle * options, const Sentence * sentence, bool lowerFirst);
 
 };
 

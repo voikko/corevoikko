@@ -41,7 +41,7 @@ class ParagraphCheck {
 		/**
 		 * Checks given paragraph and adds errors to grammar checker cache.
 		 */
-		virtual void check(voikko_options_t * options, const Paragraph * paragraph) = 0;
+		virtual void check(VoikkoHandle * options, const Paragraph * paragraph) = 0;
 		
 		virtual ~ParagraphCheck();
 };

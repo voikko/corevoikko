@@ -32,7 +32,7 @@
 
 namespace libvoikko { namespace grammar { namespace check {
 
-void MissingVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
+void MissingVerbCheck::check(VoikkoHandle * options, const Sentence * sentence) {
 	const Token * firstToken = sentence->tokens;
 	if (firstToken->type == TOKEN_PUNCTUATION) {
 		return;

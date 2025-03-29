@@ -39,7 +39,7 @@ namespace libvoikko { namespace sentence {
  * Returns true if given word ending with a dot can be interpreted
  * as a single word, false if the dot does not belong to the word.
  */
-static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * text, size_t len) {
+static bool dot_part_of_word(VoikkoHandle * voikkoOptions, const wchar_t * text, size_t len) {
 	if (len < 2) {
 		return false;
 	}
@@ -69,7 +69,7 @@ static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * t
 	return false;
 }
 
-voikko_sentence_type Sentence::next(voikko_options_t * options,
+voikko_sentence_type Sentence::next(VoikkoHandle * options,
 		const wchar_t * text, size_t textlen, size_t * sentencelen) {
 	voikko_token_type token = TOKEN_WORD;
 	size_t slen = 0;

@@ -32,8 +32,6 @@
 
 using namespace libvoikko::utils;
 
-namespace libvoikko { namespace morphology {
-
 static constexpr std::array<const char *,21> KEY_TO_STRING { {
 	"BASEFORM",
 	"CLASS",
@@ -58,34 +56,34 @@ static constexpr std::array<const char *,21> KEY_TO_STRING { {
 	"WORDIDS"
 } };
 
-static const std::map<std::string, Analysis::Key> STRING_TO_KEY = {
-	{"BASEFORM", Analysis::Key::BASEFORM},
-	{"CLASS", Analysis::Key::CLASS},
-	{"COMPARISON", Analysis::Key::COMPARISON},
-	{"FOCUS", Analysis::Key::FOCUS},
-	{"FSTOUTPUT", Analysis::Key::FSTOUTPUT},
-	{"KYSYMYSLIITE", Analysis::Key::KYSYMYSLIITE},
-	{"MALAGA_VAPAA_JALKIOSA", Analysis::Key::MALAGA_VAPAA_JALKIOSA},
-	{"MOOD", Analysis::Key::MOOD},
-	{"NEGATIVE", Analysis::Key::NEGATIVE},
-	{"NUMBER", Analysis::Key::NUMBER},
-	{"PARTICIPLE", Analysis::Key::PARTICIPLE},
-	{"PERSON", Analysis::Key::PERSON},
-	{"POSSESSIVE", Analysis::Key::POSSESSIVE},
-	{"POSSIBLE_GEOGRAPHICAL_NAME", Analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME},
-	{"REQUIRE_FOLLOWING_VERB", Analysis::Key::REQUIRE_FOLLOWING_VERB},
-	{"SIJAMUOTO", Analysis::Key::SIJAMUOTO},
-	{"STRUCTURE", Analysis::Key::STRUCTURE},
-	{"TENSE", Analysis::Key::TENSE},
-	{"WEIGHT", Analysis::Key::WEIGHT},
-	{"WORDBASES", Analysis::Key::WORDBASES},
-	{"WORDIDS", Analysis::Key::WORDIDS}
+static const std::map<std::string, voikko_mor_analysis::Key> STRING_TO_KEY = {
+	{"BASEFORM", voikko_mor_analysis::Key::BASEFORM},
+	{"CLASS", voikko_mor_analysis::Key::CLASS},
+	{"COMPARISON", voikko_mor_analysis::Key::COMPARISON},
+	{"FOCUS", voikko_mor_analysis::Key::FOCUS},
+	{"FSTOUTPUT", voikko_mor_analysis::Key::FSTOUTPUT},
+	{"KYSYMYSLIITE", voikko_mor_analysis::Key::KYSYMYSLIITE},
+	{"MALAGA_VAPAA_JALKIOSA", voikko_mor_analysis::Key::MALAGA_VAPAA_JALKIOSA},
+	{"MOOD", voikko_mor_analysis::Key::MOOD},
+	{"NEGATIVE", voikko_mor_analysis::Key::NEGATIVE},
+	{"NUMBER", voikko_mor_analysis::Key::NUMBER},
+	{"PARTICIPLE", voikko_mor_analysis::Key::PARTICIPLE},
+	{"PERSON", voikko_mor_analysis::Key::PERSON},
+	{"POSSESSIVE", voikko_mor_analysis::Key::POSSESSIVE},
+	{"POSSIBLE_GEOGRAPHICAL_NAME", voikko_mor_analysis::Key::POSSIBLE_GEOGRAPHICAL_NAME},
+	{"REQUIRE_FOLLOWING_VERB", voikko_mor_analysis::Key::REQUIRE_FOLLOWING_VERB},
+	{"SIJAMUOTO", voikko_mor_analysis::Key::SIJAMUOTO},
+	{"STRUCTURE", voikko_mor_analysis::Key::STRUCTURE},
+	{"TENSE", voikko_mor_analysis::Key::TENSE},
+	{"WEIGHT", voikko_mor_analysis::Key::WEIGHT},
+	{"WORDBASES", voikko_mor_analysis::Key::WORDBASES},
+	{"WORDIDS", voikko_mor_analysis::Key::WORDIDS}
 };
 
-Analysis::Analysis() : keys(0) {
+voikko_mor_analysis::voikko_mor_analysis() : keys(0) {
 }
 
-Analysis::~Analysis() {
+voikko_mor_analysis::~voikko_mor_analysis() {
 	deleteKeys();
 	std::map<Key, wchar_t *>::iterator it = attributes.begin();
 	while (it != attributes.end()) {
@@ -96,16 +94,16 @@ Analysis::~Analysis() {
 	}
 }
 
-void Analysis::addAttribute(Key key, wchar_t * value) {
+void voikko_mor_analysis::addAttribute(Key key, wchar_t * value) {
 	attributes.insert(std::make_pair(key, value));
 }
 
-void Analysis::addConstAttribute(Key key, const wchar_t * value) {
+void voikko_mor_analysis::addConstAttribute(Key key, const wchar_t * value) {
 	attributes.insert(std::make_pair(key, const_cast<wchar_t *>(value)));
 	constAttributes.set(static_cast<int>(key));
 }
 
-void Analysis::removeAttribute(Key key) {
+void voikko_mor_analysis::removeAttribute(Key key) {
 	std::map<Key, wchar_t *>::iterator valueI = attributes.find(key);
 	if (valueI != attributes.end()) {
 		if (constAttributes[static_cast<int>(valueI->first)]) {
@@ -118,19 +116,19 @@ void Analysis::removeAttribute(Key key) {
 	}
 }
 
-const char ** Analysis::getKeys() const {
+const char ** voikko_mor_analysis::getKeys() const {
 	return const_cast<const char **>(keys);
 }
 
-std::vector<Analysis::Key> Analysis::getInternalKeys() const {
-	std::vector<Analysis::Key> keys;
+std::vector<voikko_mor_analysis::Key> voikko_mor_analysis::getInternalKeys() const {
+	std::vector<voikko_mor_analysis::Key> keys;
 	for (auto keyAndValue: attributes) {
 		keys.push_back(keyAndValue.first);
 	}
 	return keys;
 }
 
-const wchar_t * Analysis::getValue(Analysis::Key key) const {
+const wchar_t * voikko_mor_analysis::getValue(voikko_mor_analysis::Key key) const {
 	std::map<Key, wchar_t *>::const_iterator valueI =
 	    attributes.find(key);
 	if (valueI == attributes.end()) {
@@ -141,8 +139,8 @@ const wchar_t * Analysis::getValue(Analysis::Key key) const {
 	}
 }
 
-const wchar_t * Analysis::getValueS(const char * key) const {
-	std::map<std::string, Analysis::Key>::const_iterator keyI = STRING_TO_KEY.find(std::string(key));
+const wchar_t * voikko_mor_analysis::getValueS(const char * key) const {
+	std::map<std::string, voikko_mor_analysis::Key>::const_iterator keyI = STRING_TO_KEY.find(std::string(key));
 	if (keyI == STRING_TO_KEY.end()) {
 		return nullptr;
 	}
@@ -151,12 +149,12 @@ const wchar_t * Analysis::getValueS(const char * key) const {
 	}
 }
 
-void Analysis::deleteKeys() {
+void voikko_mor_analysis::deleteKeys() {
 	delete[] keys;
 	keys = 0;
 }
 
-void Analysis::seal() {
+void voikko_mor_analysis::seal() {
 	deleteKeys();
 	keys = new const char*[attributes.size() + 1];
 	std::map<Key, wchar_t *>::const_iterator it = attributes.begin();
@@ -166,5 +164,3 @@ void Analysis::seal() {
 	}
 	keys[i] = 0;
 }
-
-} }

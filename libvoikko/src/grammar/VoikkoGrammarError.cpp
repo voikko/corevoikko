@@ -29,9 +29,6 @@
 #include "setup/setup.hpp"
 #include "grammar/VoikkoGrammarError.hpp"
 
-namespace libvoikko { namespace grammar {
-
-
 VoikkoGrammarError::VoikkoGrammarError() {
 	legacyError.error_code = 0;
 	legacyError.error_level = 0;
@@ -88,5 +85,3 @@ char ** VoikkoGrammarError::getSuggestions() const {
 void VoikkoGrammarError::setSuggestions(char ** suggestions) {
 	this->legacyError.suggestions = suggestions;
 }
-
-} }

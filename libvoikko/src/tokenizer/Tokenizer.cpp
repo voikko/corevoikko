@@ -112,7 +112,7 @@ static size_t findUrlOrEmail(const wchar_t * text, size_t textlen) {
 	return textlen;
 }
 	
-static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t * options) {
+static size_t word_length(const wchar_t * text, size_t textlen, VoikkoHandle * options) {
 	size_t wlen = 0;
 	bool processing_number = false;
 	bool seenLetters = false;
@@ -207,7 +207,7 @@ static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t
 	return textlen;
 }
 
-voikko_token_type Tokenizer::nextToken(voikko_options_t * options, const wchar_t * text, size_t textlen, size_t * tokenlen) {
+voikko_token_type Tokenizer::nextToken(VoikkoHandle * options, const wchar_t * text, size_t textlen, size_t * tokenlen) {
 	if (textlen == 0) {
 		*tokenlen = 0;
 		return TOKEN_NONE;

@@ -48,7 +48,7 @@ struct CapitalizationContext {
 	size_t currentToken;
 	const Token * tokenBeforeNextWord;
 	const Token * nextWord;
-	voikko_options_t * options;
+	VoikkoHandle * options;
 	stack<wchar_t> quotes;
 	bool sentenceEnded;
 };
@@ -359,7 +359,7 @@ static CapitalizationState inQuoted(CapitalizationContext & context) {
 
 static CapitalizationState (*stateFunctions[])(CapitalizationContext & context) = {&inInitial, &inUpper, &inLower, &inDontCare, &inQuoted};
 
-void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * paragraph) {
+void CapitalizationCheck::check(VoikkoHandle * options, const Paragraph * paragraph) {
 	CapitalizationContext context;
 	context.paragraph = paragraph;
 	context.currentSentence = 0;

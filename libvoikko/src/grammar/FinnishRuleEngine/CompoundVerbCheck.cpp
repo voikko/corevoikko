@@ -33,7 +33,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
-void CompoundVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
+void CompoundVerbCheck::check(VoikkoHandle * options, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		const Token * token = sentence->tokens + i;
 		if (token->type == TOKEN_WORD &&

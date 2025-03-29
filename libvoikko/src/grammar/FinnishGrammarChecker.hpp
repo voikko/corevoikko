@@ -37,13 +37,13 @@ namespace libvoikko { namespace grammar {
 
 class FinnishGrammarChecker : public GrammarChecker {
 	public:
-		explicit FinnishGrammarChecker(voikko_options_t * voikkoOptions);
+		explicit FinnishGrammarChecker(VoikkoHandle * voikkoOptions);
 		
 		~FinnishGrammarChecker();
 
 		void init();
 
-		voikko_options_t * options;
+		VoikkoHandle * options;
 		
 	private:
 

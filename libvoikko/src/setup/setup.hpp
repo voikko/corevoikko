@@ -46,9 +46,7 @@ namespace hfst_ospell {
 	class ZHfstOspeller;
 }
 
-namespace libvoikko {
-
-typedef struct voikko_options_t {
+typedef struct VoikkoHandle {
 	int ignore_dot;
 	int ignore_numbers;
 	int ignore_uppercase;
@@ -60,16 +58,14 @@ typedef struct voikko_options_t {
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	grammar::GrammarChecker * grammarChecker;
-	morphology::Analyzer * morAnalyzer;
-	spellchecker::Speller * speller;
-	spellchecker::SpellerCache * spellerCache;
-	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
-	hyphenator::Hyphenator * hyphenator;
-	setup::Dictionary dictionary;
+	libvoikko::grammar::GrammarChecker * grammarChecker;
+	libvoikko::morphology::Analyzer * morAnalyzer;
+	libvoikko::spellchecker::Speller * speller;
+	libvoikko::spellchecker::SpellerCache * spellerCache;
+	libvoikko::spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
+	libvoikko::hyphenator::Hyphenator * hyphenator;
+	libvoikko::setup::Dictionary dictionary;
 	hfst_ospell::ZHfstOspeller* hfst;
-} voikko_options_t;
-
-}
+} VoikkoHandle;
 
 #endif

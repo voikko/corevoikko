@@ -51,7 +51,7 @@ namespace libvoikko {
 
 using namespace setup;
 
-static int setGrammarOption(voikko_options_t * handle, int value, int * option) {
+static int setGrammarOption(VoikkoHandle * handle, int value, int * option) {
 		if (value && !(*option)) {
 			*option = 1;
 			handle->grammarChecker->cache.clear();
@@ -63,7 +63,7 @@ static int setGrammarOption(voikko_options_t * handle, int value, int * option) 
 		return 1;
 }
 
-VOIKKOEXPORT int voikkoSetBooleanOption(voikko_options_t * options, int option, int value) {
+VOIKKOEXPORT int voikkoSetBooleanOption(VoikkoHandle * options, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) {
@@ -135,7 +135,7 @@ VOIKKOEXPORT int voikkoSetBooleanOption(voikko_options_t * options, int option, 
 	return 0;
 }
 
-VOIKKOEXPORT int voikkoSetIntegerOption(voikko_options_t * options, int option, int value) {
+VOIKKOEXPORT int voikkoSetIntegerOption(VoikkoHandle * options, int option, int value) {
 	switch (option) {
 		case VOIKKO_MIN_HYPHENATED_WORD_LENGTH:
 			options->hyphenator->setMinHyphenatedWordLength(value);
@@ -160,13 +160,13 @@ VOIKKOEXPORT int voikkoSetIntegerOption(voikko_options_t * options, int option, 
 	return 0;
 }
 
-VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * langcode,
+VOIKKOEXPORT VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
                                    const char * path) {
 	if (!langcode) {
 		*error = "Language must not be null";
 		return 0;
 	}
-	voikko_options_t * options = new voikko_options_t();
+	VoikkoHandle * options = new VoikkoHandle();
 	options->ignore_dot = 0;
 	options->ignore_numbers = 0;
 	options->ignore_uppercase = 0;
@@ -232,7 +232,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	return options;
 }
 
-VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
+VOIKKOEXPORT void voikkoTerminate(VoikkoHandle * handle) {
 	delete handle->grammarChecker;
 	handle->hyphenator->terminate();
 	delete handle->hyphenator;

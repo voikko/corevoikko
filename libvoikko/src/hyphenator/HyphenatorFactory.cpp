@@ -38,7 +38,7 @@ using namespace std;
 
 namespace libvoikko { namespace hyphenator {
 
-Hyphenator * HyphenatorFactory::getHyphenator(const voikko_options_t * options,
+Hyphenator * HyphenatorFactory::getHyphenator(const VoikkoHandle * options,
                                 const Dictionary & dictionary) {
 	string backend = dictionary.getHyphenatorBackend().getBackend();
 	if (backend == "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)") {

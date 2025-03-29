@@ -35,7 +35,7 @@
 
 namespace libvoikko { namespace hyphenator {
 
-VOIKKOEXPORT char * voikkoHyphenateUcs4(voikko_options_t * options, const wchar_t * word) {
+VOIKKOEXPORT char * voikkoHyphenateUcs4(VoikkoHandle * options, const wchar_t * word) {
 	if (word == 0) {
 		return 0;
 	}
@@ -48,7 +48,7 @@ VOIKKOEXPORT char * voikkoHyphenateUcs4(voikko_options_t * options, const wchar_
 	return hyphenation;
 }
 
-VOIKKOEXPORT char * voikkoHyphenateCstr(voikko_options_t * options, const char * word) {
+VOIKKOEXPORT char * voikkoHyphenateCstr(VoikkoHandle * options, const char * word) {
 	if (word == 0) {
 		return 0;
 	}
@@ -65,7 +65,7 @@ VOIKKOEXPORT char * voikkoHyphenateCstr(voikko_options_t * options, const char *
 	return result;
 }
 
-VOIKKOEXPORT char * voikkoInsertHyphensCstr(voikko_options_t * options, const char * word,
+VOIKKOEXPORT char * voikkoInsertHyphensCstr(VoikkoHandle * options, const char * word,
                                             const char * hyphen, int allowContextChanges) {
 	if (!word) {
 		return nullptr;

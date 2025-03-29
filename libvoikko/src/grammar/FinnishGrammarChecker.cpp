@@ -34,7 +34,7 @@
 
 namespace libvoikko { namespace grammar {
 
-FinnishGrammarChecker::FinnishGrammarChecker(voikko_options_t * voikkoOptions)  {
+FinnishGrammarChecker::FinnishGrammarChecker(VoikkoHandle * voikkoOptions)  {
 	ruleEngine = new FinnishRuleEngine(voikkoOptions);
 	paragraphAnalyser = new FinnishAnalysis(voikkoOptions);
 }

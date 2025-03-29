@@ -37,7 +37,7 @@ namespace libvoikko { namespace sentence {
 
 class Sentence {
 	public:
-		static voikko_sentence_type next(voikko_options_t * options,
+		static voikko_sentence_type next(VoikkoHandle * options,
 		       const wchar_t * text, size_t textlen, size_t * sentencelen);
 };
 

@@ -43,7 +43,7 @@ namespace libvoikko { namespace grammar {
 class FinnishRuleEngine : public RuleEngine {
 
 	public:
-		explicit FinnishRuleEngine(voikko_options_t * voikkoOptions);
+		explicit FinnishRuleEngine(VoikkoHandle * voikkoOptions);
 		
 		~FinnishRuleEngine();
 		
@@ -52,7 +52,7 @@ class FinnishRuleEngine : public RuleEngine {
 	private:
 		check::CapitalizationCheck capitalizationCheck;
 		std::list<check::SentenceCheck *> sentenceChecks;
-		voikko_options_t * voikkoOptions;
+		VoikkoHandle * voikkoOptions;
 
 		FinnishRuleEngine(FinnishRuleEngine const & other);
 		FinnishRuleEngine & operator = (const FinnishRuleEngine & other);

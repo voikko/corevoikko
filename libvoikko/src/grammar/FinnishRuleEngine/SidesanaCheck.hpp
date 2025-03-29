@@ -37,7 +37,7 @@ namespace libvoikko { namespace grammar { namespace check {
  */
 class SidesanaCheck : public SentenceCheck {
 	public:
-		void check(voikko_options_t * options, const Sentence * sentence);
+		void check(VoikkoHandle * options, const Sentence * sentence);
 };
 
 } } }

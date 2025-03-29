@@ -40,7 +40,7 @@ namespace libvoikko { namespace morphology {
 typedef Analysis voikko_mor_analysis;
 
 VOIKKOEXPORT voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
-                                    voikko_options_t * options, const wchar_t * word) {
+                                    VoikkoHandle * options, const wchar_t * word) {
 	Analyzer * analyzer = options->morAnalyzer;
 	list<Analysis *> * analyses = analyzer->analyze(word, wcslen(word), true);
 	voikko_mor_analysis ** result
@@ -78,7 +78,7 @@ VOIKKOEXPORT const wchar_t * voikko_mor_analysis_value_ucs4(
 }
 
 VOIKKOEXPORT voikko_mor_analysis ** voikkoAnalyzeWordCstr(
-                                    voikko_options_t * options, const char * word) {
+                                    VoikkoHandle * options, const char * word) {
 	if (word == 0 || word[0] == '\0') {
 		return 0;
 	}
@@ -111,7 +111,7 @@ VOIKKOEXPORT void voikko_free_mor_analysis_value_cstr(char * analysis_value) {
 	delete[] analysis_value;
 }
 
-VOIKKOEXPORT char ** voikkoGetAttributeValues(voikko_options_t * options, const char * attributeName) {
+VOIKKOEXPORT char ** voikkoGetAttributeValues(VoikkoHandle * options, const char * attributeName) {
 	if (!attributeName) {
 		return nullptr;
 	}

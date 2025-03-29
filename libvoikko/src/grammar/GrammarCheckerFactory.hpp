@@ -46,7 +46,7 @@ class GrammarCheckerFactory {
 		 * The object must be terminated and deleted after use.
 		 * @throws DictionaryException if the checker cannot be initialised.
 		 */
-		static GrammarChecker * getGrammarChecker(voikko_options_t * voikkoOptions, const setup::Dictionary & dictionary);
+		static GrammarChecker * getGrammarChecker(VoikkoHandle * voikkoOptions, const setup::Dictionary & dictionary);
 };
 
 } }

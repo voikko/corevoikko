@@ -37,7 +37,7 @@ namespace libvoikko { namespace grammar {
 
 class FinnishAnalysis : public Analysis {
 	public:
-		explicit FinnishAnalysis(voikko_options_t * voikkoOptions);
+		explicit FinnishAnalysis(VoikkoHandle * voikkoOptions);
 
 		~FinnishAnalysis();
 		
@@ -45,7 +45,7 @@ class FinnishAnalysis : public Analysis {
 
 		Paragraph * analyseParagraph(const wchar_t * text, size_t textlen);
 
-		voikko_options_t * voikkoOptions;
+		VoikkoHandle * voikkoOptions;
 	
 	private:
 		FinnishAnalysis(FinnishAnalysis const & other);

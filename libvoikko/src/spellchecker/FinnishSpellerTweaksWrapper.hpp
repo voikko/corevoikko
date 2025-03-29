@@ -43,7 +43,7 @@ namespace libvoikko { namespace spellchecker {
  */
 class FinnishSpellerTweaksWrapper : public Speller {
 	public:
-		FinnishSpellerTweaksWrapper(Speller * speller, morphology::Analyzer * analyzer, voikko_options_t * voikkoOptions);
+		FinnishSpellerTweaksWrapper(Speller * speller, morphology::Analyzer * analyzer, VoikkoHandle * voikkoOptions);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
@@ -51,7 +51,7 @@ class FinnishSpellerTweaksWrapper : public Speller {
 		Speller * const speller;
 		morphology::Analyzer * const analyzer;
 		hyphenator::AnalyzerToFinnishHyphenatorAdapter * hyphenator;
-		const voikko_options_t * const voikkoOptions;
+		const VoikkoHandle * const voikkoOptions;
 };
 
 } }

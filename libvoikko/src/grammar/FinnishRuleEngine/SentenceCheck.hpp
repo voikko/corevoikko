@@ -41,7 +41,7 @@ class SentenceCheck {
 		/**
 		 * Checks given sentence and adds errors to grammar checker cache.
 		 */
-		virtual void check(voikko_options_t * options, const Sentence * sentence) = 0;
+		virtual void check(VoikkoHandle * options, const Sentence * sentence) = 0;
 		
 		virtual ~SentenceCheck();
 };

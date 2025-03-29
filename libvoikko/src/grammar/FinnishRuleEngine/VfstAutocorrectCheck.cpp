@@ -56,13 +56,13 @@ VfstAutocorrectCheck::~VfstAutocorrectCheck() {
 	}
 }
 
-void VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence) {
+void VfstAutocorrectCheck::check(VoikkoHandle * options, const Sentence * sentence) {
 	if (check(options, sentence, false)) {
 		check(options, sentence, true);
 	}
 }
 
-bool VfstAutocorrectCheck::check(voikko_options_t * options, const Sentence * sentence, bool lowerFirst) {
+bool VfstAutocorrectCheck::check(VoikkoHandle * options, const Sentence * sentence, bool lowerFirst) {
 	list<size_t> lookupPositionsUtf;
 	list<size_t> lookupPositionsUcs;
 	vector<size_t> ucsOriginalPositions;

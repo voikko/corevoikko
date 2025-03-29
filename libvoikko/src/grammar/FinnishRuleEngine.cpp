@@ -44,7 +44,7 @@
 
 namespace libvoikko { namespace grammar {
 
-FinnishRuleEngine::FinnishRuleEngine(voikko_options_t * voikkoOptions) :
+FinnishRuleEngine::FinnishRuleEngine(VoikkoHandle * voikkoOptions) :
 	 voikkoOptions(voikkoOptions) {
 	sentenceChecks.push_back(new check::MissingVerbCheck());
 	sentenceChecks.push_back(new check::NegativeVerbCheck());

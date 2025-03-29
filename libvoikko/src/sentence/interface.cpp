@@ -33,12 +33,12 @@
 
 namespace libvoikko { namespace sentence {
 
-VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartUcs4(voikko_options_t * options,
+VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartUcs4(VoikkoHandle * options,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
 	return Sentence::next(options, text, textlen, sentencelen);
 }
 
-VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartCstr(voikko_options_t * options, const char * text,
+VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartCstr(VoikkoHandle * options, const char * text,
                           size_t textlen, size_t * sentencelen) {
 	enum voikko_sentence_type result;
 	if (text == 0) {

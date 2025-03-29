@@ -37,7 +37,7 @@ namespace libvoikko { namespace grammar { namespace check {
  */
 class CapitalizationCheck : public ParagraphCheck {
 	public:
-		void check(voikko_options_t * options, const Paragraph * paragraph);
+		void check(VoikkoHandle * options, const Paragraph * paragraph);
 };
 
 } } }

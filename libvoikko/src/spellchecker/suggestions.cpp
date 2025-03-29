@@ -84,7 +84,7 @@ VOIKKOEXPORT void voikkoFreeCstrArray(char ** suggest_result) {
 	}
 }
 
-VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wchar_t * word) {
+VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(VoikkoHandle * options, const wchar_t * word) {
 	bool add_dots = false;
 	if (word == 0) return 0;
 	size_t wlen = wcslen(word);
@@ -154,7 +154,7 @@ VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wcha
 	return suggestions;
 }
 
-VOIKKOEXPORT char ** voikkoSuggestCstr(voikko_options_t * options, const char * word) {
+VOIKKOEXPORT char ** voikkoSuggestCstr(VoikkoHandle * options, const char * word) {
 	if (word == 0 || word[0] == '\0') {
 		return 0;
 	}

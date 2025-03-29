@@ -34,14 +34,12 @@
 #include <vector>
 #include <bitset>
 
-namespace libvoikko { namespace morphology {
-
 /**
  * Results from morphological analysis. See
  * doc/morphological-analysis.txt for more information about the
  * attributes that should be included in the analysis.
  */
-class Analysis {
+class voikko_mor_analysis {
 	public:
 		enum class Key {
 			BASEFORM,
@@ -67,8 +65,8 @@ class Analysis {
 			WORDIDS
 		};
 		
-		Analysis();
-		~Analysis();
+		voikko_mor_analysis();
+		~voikko_mor_analysis();
 		
 		/**
 		 * Adds an attribute to analysis. Ownership of value
@@ -115,14 +113,18 @@ class Analysis {
 		const wchar_t * getValueS(const char * key) const;
 		
 	private:
-		Analysis(Analysis const & other);
-		Analysis & operator = (const Analysis & other);
+		voikko_mor_analysis(voikko_mor_analysis const & other);
+		voikko_mor_analysis & operator = (const voikko_mor_analysis & other);
 		
 		void deleteKeys();
 		const char ** keys;
 		std::map<Key, wchar_t *> attributes;
 		std::bitset<21> constAttributes;
 };
+
+namespace libvoikko { namespace morphology {
+
+	using Analysis = voikko_mor_analysis;
 
 } }
 

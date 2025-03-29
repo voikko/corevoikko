@@ -33,7 +33,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
-void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence) {
+void SidesanaCheck::check(VoikkoHandle * options, const Sentence * sentence) {
 	size_t tokenCount = sentence->tokenCount;
 	if ((sentence->tokens + (tokenCount - 1))->type == TOKEN_WHITESPACE) {
 		--tokenCount;

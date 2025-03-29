@@ -38,7 +38,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar {
 
-CgRuleEngine::CgRuleEngine(voikko_options_t * voikkoOptions)  {
+CgRuleEngine::CgRuleEngine(VoikkoHandle * voikkoOptions)  {
 	grammar = 0;
 	applicator = 0;
 

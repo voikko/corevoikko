@@ -37,7 +37,7 @@ namespace libvoikko { namespace tokenizer {
 
 class Tokenizer {
 	public:
-		static voikko_token_type nextToken(voikko_options_t * options, const wchar_t * text,
+		static voikko_token_type nextToken(VoikkoHandle * options, const wchar_t * text,
                                            size_t textlen, size_t * tokenlen);
 };
 

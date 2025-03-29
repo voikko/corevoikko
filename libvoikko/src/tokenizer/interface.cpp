@@ -34,12 +34,12 @@
 
 namespace libvoikko { namespace tokenizer {
 
-VOIKKOEXPORT enum voikko_token_type voikkoNextTokenUcs4(voikko_options_t * options,
+VOIKKOEXPORT enum voikko_token_type voikkoNextTokenUcs4(VoikkoHandle * options,
 		const wchar_t * text, size_t textlen, size_t * tokenlen) {
 	return Tokenizer::nextToken(options, text, textlen, tokenlen);
 }
 
-static enum voikko_token_type doVoikkoNextTokenCstr(voikko_options_t * options, const char * text, size_t textlen,
+static enum voikko_token_type doVoikkoNextTokenCstr(VoikkoHandle * options, const char * text, size_t textlen,
                                                            size_t * tokenlen, size_t maxChars) {
 	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen, maxChars);
 	if (text_ucs4 == 0) {
@@ -51,7 +51,7 @@ static enum voikko_token_type doVoikkoNextTokenCstr(voikko_options_t * options, 
 	return result;
 }
 
-VOIKKOEXPORT enum voikko_token_type voikkoNextTokenCstr(voikko_options_t * options, const char * text, size_t textlen,
+VOIKKOEXPORT enum voikko_token_type voikkoNextTokenCstr(VoikkoHandle * options, const char * text, size_t textlen,
                                                            size_t * tokenlen) {
 	if (text == 0) return TOKEN_NONE;
 	// Converting the entire text to UCS4 will lead to textlen^2 execution times for typical use where this

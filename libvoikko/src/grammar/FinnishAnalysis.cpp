@@ -39,7 +39,7 @@ using std::list;
 
 namespace libvoikko {
 
-FinnishAnalysis::FinnishAnalysis(voikko_options_t * voikkoOptions) : voikkoOptions(voikkoOptions) {
+FinnishAnalysis::FinnishAnalysis(VoikkoHandle * voikkoOptions) : voikkoOptions(voikkoOptions) {
 }
 
 

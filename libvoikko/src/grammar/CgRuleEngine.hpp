@@ -40,7 +40,7 @@ namespace libvoikko { namespace grammar {
 class CgRuleEngine : public RuleEngine {
 
 	public:
-		CgRuleEngine(voikko_options_t * options);
+		CgRuleEngine(VoikkoHandle * options);
 		
 		~CgRuleEngine();
 		
@@ -50,7 +50,7 @@ class CgRuleEngine : public RuleEngine {
 
 		void setErrorList(std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * errorlist);
 
-		voikko_options_t * options;
+		VoikkoHandle * options;
 
 		std::map< std::pair<std::string, std::string>, std::pair<std::string, std::string> > * errorlist;
 	

@@ -44,7 +44,7 @@ using namespace std;
 
 namespace libvoikko { namespace spellchecker {
 
-Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
+Speller * SpellerFactory::getSpeller(VoikkoHandle * voikkoOptions,
 	                             const setup::Dictionary & dictionary) {
 	morphology::Analyzer * currentAnalyzer = voikkoOptions->morAnalyzer;
 	// FIXME: add proper parsing and possibility to combine components freely

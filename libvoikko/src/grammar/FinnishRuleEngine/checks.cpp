@@ -42,7 +42,7 @@ using namespace libvoikko::utils;
 
 namespace libvoikko {
 
-void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence) {
+void gc_local_punctuation(VoikkoHandle * options, const Sentence * sentence) {
 	CacheEntry * e;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
@@ -117,7 +117,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 	}
 }
 
-void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * sentence) {
+void gc_punctuation_of_quotations(VoikkoHandle * options, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		if (sentence->tokens[i].type != TOKEN_PUNCTUATION) {
 			continue;
@@ -184,7 +184,7 @@ void gc_punctuation_of_quotations(voikko_options_t * options, const Sentence * s
 	}
 }
 
-void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
+void gc_repeating_words(VoikkoHandle * options, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		if (sentence->tokens[i].type != TOKEN_WORD) continue;
 		if (sentence->tokens[i + 1].type != TOKEN_WHITESPACE) {
@@ -222,7 +222,7 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 	}
 }
 
-void gc_end_punctuation(voikko_options_t * options, const Paragraph * paragraph) {
+void gc_end_punctuation(VoikkoHandle * options, const Paragraph * paragraph) {
 	if (options->accept_titles_in_gc && paragraph->sentenceCount == 1) return;
 	if (options->accept_unfinished_paragraphs_in_gc) return;
 	if (options->accept_bulleted_lists_in_gc) return;

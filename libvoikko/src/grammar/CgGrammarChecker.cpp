@@ -45,7 +45,7 @@ CgGrammarChecker::CgGrammarChecker()  {
 	
 }
 
-CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules, voikko_options_t * voikkoOptions) {
+CgGrammarChecker::CgGrammarChecker(const string & f_analyser, const string & rules, VoikkoHandle * voikkoOptions) {
 
 	cerr << "CgGrammarChecker::CgGrammarChecker: " << analyser << " " << rules << endl;
 

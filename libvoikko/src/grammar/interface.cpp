@@ -37,7 +37,7 @@ using namespace libvoikko::grammar;
 
 namespace libvoikko {
 
-VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * options, const wchar_t * text_ucs4,
+VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * options, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
 	if (text_ucs4 == 0 || wtextlen == 0) {
 		return 0;
@@ -73,7 +73,7 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	return e;
 }
 
-VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorCstr(voikko_options_t * options,
+VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorCstr(VoikkoHandle * options,
 		const char * text, size_t textlen, size_t startpos, int skiperrors) {
 	if (text == 0 || textlen == 0) {
 		return 0;

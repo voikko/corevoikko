@@ -48,7 +48,7 @@ using namespace std;
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
-	                             voikko_options_t * voikkoOptions,
+	                             VoikkoHandle * voikkoOptions,
 	                             SuggestionType suggestionType) {
 	string backend = voikkoOptions->dictionary.getSuggestionBackend().getBackend();
 	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {

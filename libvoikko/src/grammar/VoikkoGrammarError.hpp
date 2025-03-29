@@ -37,6 +37,8 @@ namespace libvoikko { namespace grammar {
 
 class GrammarChecker;
 
+} }
+
 class VoikkoGrammarError {
 
 	public:
@@ -44,7 +46,7 @@ class VoikkoGrammarError {
 	voikko_grammar_error legacyError;
 	char * error_id;
 	char * title;
-	GrammarChecker * checker;
+	libvoikko::grammar::GrammarChecker * checker;
 
 	VoikkoGrammarError();
 	VoikkoGrammarError(const VoikkoGrammarError & error);
@@ -62,6 +64,10 @@ class VoikkoGrammarError {
 	void setSuggestions(char ** suggestions);
 	char ** getSuggestions() const;
 };
+
+namespace libvoikko { namespace grammar {
+
+using VoikkoGrammarError = VoikkoGrammarError;
 
 } }
 

@@ -48,7 +48,7 @@ namespace libvoikko { namespace spellchecker {
 class HfstSpeller : public Speller {
 	public:
 		/** Constructor for V3 stable format */
-		HfstSpeller(const std::string & zhfstFileName, voikko_options_t * voikkoOptions);
+		HfstSpeller(const std::string & zhfstFileName, VoikkoHandle * voikkoOptions);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 		
@@ -57,7 +57,7 @@ class HfstSpeller : public Speller {
 	private:
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
-		const voikko_options_t * const voikkoOptions;
+		const VoikkoHandle * const voikkoOptions;
 };
 
 

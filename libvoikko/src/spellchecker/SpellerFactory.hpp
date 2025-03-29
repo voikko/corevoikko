@@ -46,7 +46,7 @@ class SpellerFactory {
 		 * The speller must be terminated and deleted after use.
 		 * @throws DictionaryException if the speller cannot be initialized.
 		 */
-		static Speller * getSpeller(voikko_options_t * voikkoOptions,
+		static Speller * getSpeller(VoikkoHandle * voikkoOptions,
 		                            const setup::Dictionary & dictionary);
 };
 

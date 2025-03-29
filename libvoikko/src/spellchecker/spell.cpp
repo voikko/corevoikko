@@ -50,7 +50,7 @@ namespace libvoikko {
  * @param len length of the word to check
  * @return spelling result
  */
-static spellresult hyphenAwareSpell(voikko_options_t * voikkoOptions,
+static spellresult hyphenAwareSpell(VoikkoHandle * voikkoOptions,
 	                                   const wchar_t * word, size_t len) {
 	spellresult spres = voikkoOptions->speller->spell(word, len);
 	if (spres != SPELL_FAILED || !voikkoOptions->accept_missing_hyphens) {
@@ -86,7 +86,7 @@ static spellresult hyphenAwareSpell(voikko_options_t * voikkoOptions,
  * @param len length of the word to check
  * @return spelling result
  */
-static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
+static spellresult voikko_cached_spell(VoikkoHandle * voikkoOptions, const wchar_t * buffer, size_t len) {
 	SpellerCache * cache = voikkoOptions->spellerCache;
 	if (cache) {
 		if (cache->isInCache(buffer, len)) {
@@ -103,7 +103,7 @@ static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const w
 }
 
 
-VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t * word) {
+VOIKKOEXPORT int voikkoSpellUcs4(VoikkoHandle * voikkoOptions, const wchar_t * word) {
 	size_t nchars = wcslen(word);
 	int result;
 	spellresult sres;
@@ -234,7 +234,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 	return result;
 }
 
-VOIKKOEXPORT int voikkoSpellCstr(voikko_options_t * handle, const char * word) {
+VOIKKOEXPORT int voikkoSpellCstr(VoikkoHandle * handle, const char * word) {
 	if (word == 0 || word[0] == '\0') {
 		return VOIKKO_SPELL_OK;
 	}

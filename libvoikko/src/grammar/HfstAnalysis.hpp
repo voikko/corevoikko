@@ -38,7 +38,7 @@ namespace libvoikko { namespace grammar {
 
 class HfstAnalysis : public Analysis {
 	public:
-		HfstAnalysis(morphology::Analyzer * a, voikko_options_t * options);
+		HfstAnalysis(morphology::Analyzer * a, VoikkoHandle * options);
 		
 		~HfstAnalysis();
 		
@@ -60,7 +60,7 @@ class HfstAnalysis : public Analysis {
 		/** Analyse sentence text. Sentence type must be set by the caller. */
 		Sentence * analyseSentence(const wchar_t * text, size_t textlen, size_t sentencepos);
 		
-		voikko_options_t * voikkoOptions;
+		VoikkoHandle * voikkoOptions;
 
 
 };

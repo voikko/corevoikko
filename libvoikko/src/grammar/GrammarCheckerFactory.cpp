@@ -39,7 +39,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar {
 
-GrammarChecker * GrammarCheckerFactory::getGrammarChecker(voikko_options_t * voikkoOptions,
+GrammarChecker * GrammarCheckerFactory::getGrammarChecker(VoikkoHandle * voikkoOptions,
 	                              const setup::Dictionary & dictionary) {
 	string grammarBackend = dictionary.getGrammarBackend().getBackend();
 	if (grammarBackend == "null") {

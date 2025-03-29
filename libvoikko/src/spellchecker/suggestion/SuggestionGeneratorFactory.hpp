@@ -47,7 +47,7 @@ class SuggestionGeneratorFactory {
 		 * The suggestion generator must be terminated and deleted after use.
 		 * @throws DictionaryException if the suggestion generator cannot be initialized.
 		 */
-		static SuggestionGenerator * getSuggestionGenerator(voikko_options_t * voikkoOptions,
+		static SuggestionGenerator * getSuggestionGenerator(VoikkoHandle * voikkoOptions,
 		                            SuggestionType suggestionType);
 };
 

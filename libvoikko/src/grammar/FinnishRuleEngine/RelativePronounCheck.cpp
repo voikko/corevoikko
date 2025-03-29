@@ -33,7 +33,7 @@ using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
-void RelativePronounCheck::check(voikko_options_t * options, const Sentence * sentence) {
+void RelativePronounCheck::check(VoikkoHandle * options, const Sentence * sentence) {
 	// TODO
 }
 
