@@ -5,7 +5,7 @@
 
   <groupId>org.puimula.voikko</groupId>
   <artifactId>libvoikko</artifactId>
-  <version>4.3.2</version>
+  <version>4.3.3</version>
   <packaging>jar</packaging>
   <name>libvoikko</name>
   <description>Java API for libvoikko, library of free natural language processing tools</description>

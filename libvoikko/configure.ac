@@ -28,7 +28,7 @@
 
 dnl General options for autoconf
 AC_PREREQ(2.62)
-AC_INIT([libvoikko],[4.3.2],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[4.3.3],[hatapitk@iki.fi])
 
 LT_PREREQ([2.2.6])
 
@@ -51,7 +51,7 @@ AM_MAINTAINER_MODE
 dnl Compiler features
 AC_LANG([C++])
 AC_C_CONST
-AX_CXX_COMPILE_STDCXX(14, noext, mandatory)
+AX_CXX_COMPILE_STDCXX(17, noext, mandatory)
 
 # Prepare platform specific setups (sets $host_os a.o.):
 AC_CANONICAL_HOST
