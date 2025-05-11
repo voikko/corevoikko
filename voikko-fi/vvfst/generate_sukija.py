@@ -90,18 +90,32 @@ def makeRePattern (wordClass, word):
 def makeRe (wordClass, word):
     return re.compile (makeRePattern (wordClass, word), re.UNICODE)
 
+def replace0 (s, old, new):
+    return s.replace (old + "[X]", new + "[X]")
 
-def replace (s, old, new):
-    u = s.replace (old + u":",  new + u":")
-    u = u.replace (old + u" ",  new + u" ")
-    u = u.replace (old + u"\t", new + u"\t")
-    u = u.replace (old + u"@",  new + u"@")
+def replace1 (s, old, new):
+    return s.replace (old + ":", new + ":")
+
+def replace3 (s, old, new):
+    u = s.replace (old + " ",  new + " ")
+    u = u.replace (old + "\t", new + "\t")
+    u = u.replace (old + "@",  new + "@")
     return u
 
+def replace4 (s, old, new):
+    u = s.replace (old + ":",  new + ":")
+    return replace3 (u, old, new)
+    return u
+
+def replace5 (s, old, new):
+    u = replace0 (s, old, new)
+    u = replace4 (u, old, new)
+    return u
 
 def replace_and_write (line, string1, string2):
-    s = replace (line, string1, string2)
+    s = replace4 (line, string1, string2)
     outfile.write (s)
+
 
 # Spor(a)adi, spor(a)adinen, jne.
 #
@@ -211,29 +225,66 @@ def g6 (line, x):
         outfile.write (s)
 
 
-def replace4 (s, old, new, u):
-    return s.replace (old + u, new + u)
+def go (line, x):
+    if line.startswith("[Ln][Xp]kuusio[X]"):
+        return
+    s = replace3 (line, x[0], x[1])
+    outfile.write (s)
+    r = line.replace (x[6], x[7])
+    s = replace0 (r, x[0], x[2])
+    s = replace4 (s, x[0], x[4])
+    outfile.write (s)
+    s = replace3 (s, x[4], x[5])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[4])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[5])
+    outfile.write (s)
 
 
-def replace5 (s, old, new, u, v):
-    p = replace4 (s, old, new, u)
-    return replace4 (p, old, new, v)
+def gp (line, x):
+    if line.startswith("[Ln][Xp]kuusio[X]"):
+        return
+    s = replace3 (line, x[0], x[1])
+    outfile.write (s)
+    r = line.replace (x[10], x[11])
+    s = replace0 (r, x[0], x[4])
+    s = replace4 (s, x[0], x[8])
+    outfile.write (s)
+    s = replace3 (s, x[8], x[9])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[8])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[9])
+    outfile.write (s)
+
+    s = replace0 (r, x[0], x[2])
+    s = replace4 (s, x[0], x[6])
+    outfile.write (s)
+    s = replace0 (r, x[0], x[3])
+    s = replace4 (s, x[0], x[7])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[6])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[7])
+    outfile.write (s)
 
 
-def gn (line, x):
-    if not line.startswith("[Ln][Xp]kuusio[X]"):
-        for u in x[1]:
-            s = replace5 (line, x[0], u, " ", "\t")
-            outfile.write (s)
-        s = line.replace (x[0] + "[X]", x[2][0] + "i[X]")
-        s = s.replace (x[3][0], x[3][1])
-        s = replace (s, x[0], x[2][0])
-        outfile.write (s)
-        s = replace5 (s, x[2][0], x[2][1], " ", "\t")
-        outfile.write (s)
-        s = line.replace (x[3][0], x[3][1])
-        replace_and_write (s, x[0], x[2][0])
-        replace_and_write (s, x[0], x[2][1])
+def gq (line, x):
+    s = replace3 (line, x[0], x[1])
+    outfile.write (s)
+    s = replace3 (line, x[0], x[2])
+    outfile.write (s)
+    r = line.replace (x[7], x[8])
+    s = replace0 (r, x[0], x[3])
+    s = replace4 (s, x[0], x[5])
+    outfile.write (s)
+    s = replace3 (s, x[5], x[6])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[5])
+    outfile.write (s)
+    s = replace4 (r, x[0], x[6])
+    outfile.write (s)
 
 
 def g10 (line, x):
@@ -291,10 +342,12 @@ list_all = [
     (re_oittua1,   g6, ("oit:", "oit:", "oit ", "ot ",  "Asettua",    "Asettua")),
     (re_oittua2,   g6, ("öit:", "öit:", "öit ", "öt ",  "Asettua",    "Asettua")),
 
-    (re_uusio,     gn, ("uusio", ("usio", ),        ("usion",  "usioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
-    (re_tio,       gn, ("tio",   ("tsio", ),        ("tsion",  "tsioon"),  ("NimisanaAutio_a", "NimisanaPaperi_a"))),
-    (re_aatio,     gn, ("aatio", ("atio", "atsio"), ("atsion", "atsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
-    (re_uutio,     gn, ("uutio", ("utio", "utsio"), ("utsion", "utsioon"), ("NimisanaAutio_a", "NimisanaPaperi_a"))),
+    (re_uusio,     go, ("uusio", "usio", "usioni", "usiooni", "usion", "usioon", "NimisanaAutio_a", "NimisanaPaperi_a")),
+
+    (re_tio,       gp, ("tio",   "tsio", "tioni", "tiooni", "tsioni", "tsiooni", "tion", "tioon", "tsion", "tsioon", "NimisanaAutio_a", "NimisanaPaperi_a")),
+
+    (re_aatio,     gq, ("aatio", "atio", "atsio", "atsioni", "atsiooni", "atsion", "atsioon", "NimisanaAutio_a", "NimisanaPaperi_a")),
+    (re_uutio,     gq, ("uutio", "utio", "utsio", "utsioni", "utsiooni", "utsion", "utsioon", "NimisanaAutio_a", "NimisanaPaperi_a")),
 
     (re_mmainen,   g4, ("mmai ", "mai ", "mmai\t", "mai ")),
     (re_mmäinen,   g4, ("mmäi ", "mäi ", "mmäi\t", "mäi ")),
@@ -566,7 +619,7 @@ def write_tuple (line, key, g):
                  replace_and_write (line, g[i][0], g[i][1])
              else:
                  s = line.replace (g[i][2], g[i][3])
-                 outfile.write (replace (s, g[i][0], g[i][1]))
+                 outfile.write (replace4 (s, g[i][0], g[i][1]))
      else:
          error (line)
 

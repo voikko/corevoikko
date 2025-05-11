@@ -50,7 +50,12 @@ LEXICON SukijaTuta
 LEXICON SukijaItte
 te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
 tte[Sg][Ny]@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@n:tten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Liitesana_ä ;
+te[Sg][Ny]@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@n:ten@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ Liitesana_ä ;
 tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
+[Sn][Ny]te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:te@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
+[Sn][Ny]tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:tte@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaYhteisetYksikönPaikallissijat_ä	;
+[Sp][Ny]tteä:tteä Liitesana_ä ;
+[Ses][Ny]ttenä:ttenä Liitesana_ä ;
 
 LEXICON SukijaKiiru
 [Sg][Ny]hun:hun NimisanaYksikönGenetiivinJatko_a ;
