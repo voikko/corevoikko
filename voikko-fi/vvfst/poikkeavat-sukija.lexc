@@ -242,6 +242,36 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]aatelis=impi[X]aatelis[Bm]im:aatelisim NimisanaSampi_ä ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]den:aatelisneiden Loppu ;
 [Ln][Xp]aatelisneiti[X]aatelis[Bm]nei[Sg][Ny]tten:aatelisneitten Loppu ;
+!!!! https://www.sanakirja.org/search.php?id=671695&l2=3
+!!!! Nimentö tulee Joukahaisesta, jossa vain sanan loppuosa taipuu.
+!!!! [Ln][Xp]ahkeraliisa[X][Sn][Ny]ahkera[Bm]liisa:ahkeraliisa  NimisanaNormaaliYsJatkoOl_a ;
+[Ln][Xp]ahkera=liisa[X][Sn][Ny]ahkeran[Bm]liisan:ahkeranliisa Omistusliite_a ;
+[Ln][Xp]ahkera=liisa[X][Sg][Ny]ahkeran[Bm]liisan:ahkeranliisan NimisanaYksikönGenetiivinJatko_a ;
+[Ln][Xp]ahkera=liisa[X][Sp][Ny]ahkeraa[Bm]liisaa:ahkeraaliisaa NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Ses][Ny]ahkerana[Bm]liisana:ahkeranaliisana      NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Str][Ny]ahkeraksi[Bm]liisaksi:ahkeraksiliisaksi  NimisanaLiOlI_a ;
+[Ln][Xp]ahkera=liisa[X][Sine][Ny]ahkerassa[Bm]liisassa:ahkerassaliisassa NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sela][Ny]ahkerasta[Bm]liisasta:ahkerastaliisasta NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sill][Ny]ahkeraan[Bm]liisaan:ahkeraanliisaa      NimisanaLiOlN_a ;
+[Ln][Xp]ahkera=liisa[X][Sade][Ny]ahkeralla[Bm]liisalla:ahkerallaliisalla NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sabl][Ny]ahkeralta[Bm]liisalta:ahkeraltaliisalta NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sall][Ny]ahkeralle[Bm]liisalle:ahkeralleliisalle NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sabl][Ny]ahkeratta[Bm]liisatta:ahkerattaliisatta NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sn][Nm]ahkerat[Bm]liisat:ahkeratliisat Liitesana_a ;
+[Ln][Xp]ahkera=liisa[X][Sn][Nm]ahkerat[Bm]liisa:ahkeratliisa   Omistusliite_a ;
+[Ln][Xp]ahkera=liisa[X][Sg][Nm]ahkerien[Bm]liisojen:ahkerienliisoj NimisanaMonikonGenetiiviEnJatko_a ;
+[Ln][Xp]ahkera=liisa[X][Sg][Nm]ahkerain[Bm]liisain:ahkerainliisa NimisanaMonikonGenetiiviInJatko_a ;
+[Ln][Xp]ahkera=liisa[X][Sp][Nm]ahkeria[Bm]liisoja:ahkerialiisoja NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Ses][Nm]ahkerina[Bm]liisoina:ahkerinaliisoina NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Str][Nm]ahkeriksi[Bm]liisoiksi:ahkeriksiliisoiksi NimisanaLiOlI_a ;
+[Ln][Xp]ahkera=liisa[X][Sine][Nm]ahkerissa[Bm]liisoissa:ahkerissaliisoissa NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sela][Nm]ahkerista[Bm]liisoista:ahkeristaliisoista NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sill][Nm]ahkeriin[Bm]liisoihin:ahkeriinliisoihi NimisanaLiOlN_a ;
+[Ln][Xp]ahkera=liisa[X][Sade][Nm]ahkerilla[Bm]liisoilla:ahkerillaliisoilla NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sabl][Nm]ahkerilta[Bm]liisoilta:ahkeriltaliisoilta NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sall][Nm]ahkerille[Bm]liisoille:ahkerilleliisoille NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sab][Nm]ahkeritta[Bm]liisoitta:ahkerittaliisoitta NimisanaLiOlV_a ;
+[Ln][Xp]ahkera=liisa[X][Sin][Nm]ahkerin[Bm]liisoin:ahkerinliisoin Liitesana_a ;
 [Ln][Xp]ahvena[X]ahven@P.YS_EI_JATKOA.ON@:ahven@P.YS_EI_JATKOA.ON@ NimisanaPeruna_a ;
 [Ln][Xp]asu=analyysi[X]asu[Bm]analyys:asuanalyys NimisanaRisti_aä ;
 [Ln][Xp]asu=koko[X]asu[Bm]ko@P.INEN_SALLITTU.ON@:asuko@P.INEN_SALLITTU.ON@ NimisanaKoko_a ;
