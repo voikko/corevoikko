@@ -1,6 +1,6 @@
 ! Voikko-fi, suomen kielen muoto-opin kuvaus.
 !
-! Tekijänoikeus © 2006 - 2024 Hannu Väisänen
+! Tekijänoikeus © 2006 - 2025 Hannu Väisänen
 !
 ! This program is free software; you can redistribute it and/or modify
 ! it under the terms of the GNU General Public License as published by
@@ -332,6 +332,36 @@ LEXICON SukijaPoikkeavat_n
 [Ln][Xp]ien[X]ien[Ses][Ny]nä:iennä NimisanaLiOlV_ä ;
 [Ln][Xp]imaami[X]imaam:imam NimisanaPaperi_a ;
 [Ln][Xp]ioota[X]ioot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@:iot@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@ NimisanaKala_a ;
+!! "Isovene" tunnistetaan yhdyssanana iso+vene.
+!! [Ln][Xp]iso=vene[X][Sn][Ny]iso[Bm]vene:isovene	NimisanaNormaaliYsJatko_ä ;
+[Ln][Xp]iso=vene[X][Sn][Ny]ison[Bm]venee:isonvenee       Omistusliite_ä ;
+[Ln][Xp]iso=vene[X][Sg][Ny]ison[Bm]veneen:isonveneen	NimisanaYksikönGenetiivinJatko_ä ;
+[Ln][Xp]iso=vene[X][Sp][Ny]isoa[Bm]venettä:isoavenettä	NimisanaLiOlAA_ä ;
+[Ln][Xp]iso=vene[X][Ses][Ny]isona[Bm]veneenä:isonveneenä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Str][Ny]isoksi[Bm]veneeksi:isoksiveneeksi	NimisanaLiOlI_ä ;
+[Ln][Xp]iso=vene[X][Sine][Ny]isossa[Bm]veneessä:isossaeneessä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sela][Ny]isosta[Bm]veneestä:isostaveneestä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sill][Ny]isoon[Bm]veneesee:isoonveneesee	NimisanaLiOlN_ä ;
+[Ln][Xp]iso=vene[X][Sade][Ny]isolla[Bm]veneellä:isollaveneellä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sabl][Ny]isolta[Bm]veneeltä:isoltaveneeltä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sall][Ny]isolle[Bm]veneelle:isolleveneelle	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sab][Ny]isotta[Bm]veneettä:isottaveneettä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sn][Nm]isot[Bm]veneet:isotveneet		Liitesana_ä ;
+[Ln][Xp]iso=vene[X][Sn][Nm]isot[Bm]veneet:isotveneet		Omistusliite_ä ;
+[Ln][Xp]iso=vene[X][Sg][Nm]isojen[Bm]veneid:isojenveneid		NimisanaMonikonGenetiiviEnJatko_ä ;
+[Ln][Xp]iso=vene[X][Sg][Nm]isojen[Bm]veneitt:isojenveneitt		NimisanaMonikonGenetiiviEnJatko_ä ;
+[Ln][Xp]iso=vene[X][Sp][Nm]isoja[Bm]veneitä:isojaveneitä		NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Ses][Nm]isoina[Bm]veneinä:isoinaveneinä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Str][Nm]isoiksi[Bm]veneiksi:isoiksiveneiksi	NimisanaLiOlI_ä ;
+[Ln][Xp]iso=vene[X][Sine][Nm]isoissa[Bm]veneissä:isoissaveneissä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sela][Nm]isoista[Bm]veneistä:isoistaveneistä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sill][Nm]isoihin[Bm]veneihi:isoihinveneihi	NimisanaLiOlN_ä ;
+[Ln][Xp]iso=vene[X][Sade][Nm]isoilla[Bm]veneillä:isoillaveneillä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sabl][Nm]isoilta[Bm]veneiltä:isoiltaveneiltä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sall][Nm]isoille[Bm]veneille:isoilleveneille	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sab][Nm]isoitta[Bm]veneittä:isoittaveneittä	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sko][Nm]isoine[Bm]veneine:isoineveneine	NimisanaLiOlV_ä ;
+[Ln][Xp]iso=vene[X][Sin][Nm]isoin[Bm]venein:isoinvenein		Liitesana_ä;
 [Ln][Xp]jeremiadi[X]jeremiad:jeremiaad NimisanaRisti_a ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;
 [Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;
