@@ -153,6 +153,8 @@ void DictionaryFactory::addAllVersionVariantsFromPath(const string & path, map<s
 	}
 }
 
+#ifndef DISABLE_EXTDICTS
+
 /**
  * Split a list of paths, separated by OS specific path separator, and insert the individual
  * elements into a list.
@@ -172,6 +174,8 @@ static void splitPathAndAppend(string combinedPath, list<string> & locations) {
 		locations.push_back(pathComponent);
 	}
 }
+
+#endif
 
 list<string> DictionaryFactory::getDefaultLocations() {
 	list<string> locations;
