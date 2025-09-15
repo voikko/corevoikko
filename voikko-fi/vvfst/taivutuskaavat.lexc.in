@@ -2384,7 +2384,9 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Laatusana	i:i	Johdin_hkO_<A>	;
 ?Laatusana	i:i	Voittoaste_<A>	;
+?Sukija [Sn][Nm]hit:hit       <WC>MonikonNominatiivinJatko_<A>	;
 ?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]ihise:isihe	<WC>LiOlN_<A>	;
 ?Sukija  <WC>YhteisetHTaivutusmuodot_<A> ;
 ?Sukija  ?Laatusana hi:hi Voittoaste_<A>	;
 
