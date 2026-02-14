@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
 RUN apt-get -y update && \
   apt-get -y dist-upgrade
@@ -15,14 +15,8 @@ RUN apt-get -y install \
   autoconf \
   gettext \
   pkg-config \
+  foma-bin \
   libtool
-
-# install foma
-RUN cd /usr/src && \
-  wget -q -O - https://bitbucket.org/mhulden/foma/downloads/foma-0.9.18.tar.gz | tar xz && \
-  cd foma-0.9.18 && \
-  make && \
-  make install
 
 # fetch voikko source
 RUN cd /usr/src && \
