@@ -49,7 +49,6 @@ using namespace std;
 
 enum CheckMode {NORMAL, ONLY_C_W, ONLY_INCORRECT, NONE};
 
-static const int MAX_WORD_LENGTH = 5000;
 static const int MAX_THREADS = 200;
 static const size_t WORDS_PER_BLOCK = 500;
 
@@ -481,35 +480,38 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
-	
 	// Use stdout in wide character mode and stderr in narrow character mode.
 	setlocale(LC_ALL, "");
 	wcout.imbue(locale(""));
 	fwide(stdout, 1);
 	fwide(stderr, -1);
 	initThreads();
-	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
-		size_t lineLen = wcslen(line);
-		if (lineLen == 0) {
-			continue;
+
+	std::string utf8_line;
+	while (std::getline(std::cin, utf8_line)) {
+		if (utf8_line.empty()) continue;
+
+		const char * src = utf8_line.c_str();
+		std::mbstate_t state = std::mbstate_t();
+		size_t len = mbsrtowcs(nullptr, &src, 0, &state);
+
+		if (len != (size_t)-1) {
+			std::wstring wline(len, L'\0');
+			src = utf8_line.c_str();
+			mbsrtowcs(&wline[0], &src, len, &state);
+			size_t lineLen = wline.size();
+			if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
+				cerr << "E: Too long word" << endl;
+				continue;
+			}
+			handleWord(wline.c_str());
 		}
-		if (line[lineLen - 1] == L'\n') {
-			line[lineLen - 1] = L'\0';
-			lineLen--;
-		}
-		if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
-			cerr << "E: Too long word" << endl;
-			continue;
-		}
-		handleWord(line);
 	}
 	finishProcessing();
 	int error = ferror(stdin);
 	if (error) {
 		cerr << "E: Error while reading from stdin" << endl;
 	}
-	delete[] line;
 	
 	for (int i = 0; i < threadCount; i++) {
 		voikkoTerminate(spellers[i].handle);
