@@ -39,8 +39,6 @@
 
 using namespace std;
 
-static const int MAX_WORD_LENGTH = 5000;
-
 static void hyphenateWord(VoikkoHandle * handle, const wchar_t * word, size_t wlen, wchar_t separator) {
 	char * result = voikkoHyphenateUcs4(handle, word);
 	if (result == 0) {
@@ -152,32 +150,31 @@ int main(int argc, char ** argv) {
 			return 1;
 		}
 	}
-	
-	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
-	
+
 	setlocale(LC_ALL, "");
 	wcout.imbue(locale(""));
-	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
-		size_t lineLen = wcslen(line);
-		if (lineLen == 0) {
-			continue;
+
+	std::string utf8_line;
+	while (std::getline(std::cin, utf8_line)) {
+		if (utf8_line.empty()) continue;
+
+		const char * src = utf8_line.c_str();
+		std::mbstate_t state = std::mbstate_t();
+		size_t len = mbsrtowcs(nullptr, &src, 0, &state);
+
+		if (len != (size_t)-1) {
+			std::wstring wline(len, L'\0');
+			src = utf8_line.c_str();
+			mbsrtowcs(&wline[0], &src, len, &state);
+			size_t lineLen = wline.size();
+			if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
+				cerr << "E: Too long word" << endl;
+				continue;
+			}
+			hyphenateWord(handle, wline.c_str(), lineLen, separator);
 		}
-		if (line[lineLen - 1] == L'\n') {
-			line[lineLen - 1] = L'\0';
-			lineLen--;
-		}
-		if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
-			cerr << "E: Too long word" << endl;
-			continue;
-		}
-		hyphenateWord(handle, line, lineLen, separator);
 	}
-	int error = ferror(stdin);
-	if (error) {
-		cerr << "E: Error while reading from stdin" << endl;
-	}
-	delete[] line;
-	
+
 	voikkoTerminate(handle);
 	return 0;
 }

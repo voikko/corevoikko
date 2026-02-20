@@ -244,36 +244,40 @@ int main(int argc, char ** argv) {
 			return 1;
 		}
 	}
-	
-	wchar_t * line = new wchar_t[MAX_PARAGRAPH_LENGTH + 1];
-	
+
 	setlocale(LC_ALL, "");
 	wcout.imbue(locale(""));
-	while (fgetws(line, MAX_PARAGRAPH_LENGTH, stdin)) {
-		lineNumber++;
-		size_t lineLen = wcslen(line);
-		if (lineLen == 0) continue;
-		if (line[lineLen - 1] == L'\n') {
-			line[lineLen - 1] = L'\0';
-			lineLen--;
-		}
-		switch (op) {
-			case TOKENIZE:
-				print_tokens(handle, line, lineLen);
-				break;
-			case SPLIT_SENTENCES:
-				split_sentences(handle, line, lineLen);
-				break;
-			case CHECK_GRAMMAR:
-				check_grammar(handle, line, lineLen, explanation_language);
+
+	std::string utf8_line;
+	while (std::getline(std::cin, utf8_line)) {
+		if (utf8_line.empty()) continue;
+
+		const char * src = utf8_line.c_str();
+		std::mbstate_t state = std::mbstate_t();
+		size_t len = mbsrtowcs(nullptr, &src, 0, &state);
+
+		if (len != (size_t)-1) {
+			std::wstring wline(len, L'\0');
+			src = utf8_line.c_str();
+			mbsrtowcs(&wline[0], &src, len, &state);
+			size_t lineLen = wline.size();
+			if (lineLen > MAX_PARAGRAPH_LENGTH) {
+				cerr << "E: Too long paragraph" << endl;
+				continue;
+			}
+			switch (op) {
+				case TOKENIZE:
+					print_tokens(handle, wline.c_str(), lineLen);
+					break;
+				case SPLIT_SENTENCES:
+					split_sentences(handle, wline.c_str(), lineLen);
+					break;
+				case CHECK_GRAMMAR:
+					check_grammar(handle, wline.c_str(), lineLen, explanation_language);
+			}
 		}
 	}
-	int error = ferror(stdin);
-	if (error) {
-		cerr << "E: Error while reading from stdin" << endl;
-	}
-	delete[] line;
-	
+
 	voikkoTerminate(handle);
 	return 0;
 }
