@@ -671,6 +671,46 @@ word:talonne
 word:talonsa
  analysis
   POSSESSIVE=3
+word:koirani
+ expected:3
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=1s
+  SIJAMUOTO=nimento
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=1s
+  SIJAMUOTO=omanto
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=plural
+  POSSESSIVE=1s
+  SIJAMUOTO=nimento
+word:koiransa
+ expected:3
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=nimento
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=omanto
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=plural
+  POSSESSIVE=3
+  SIJAMUOTO=nimento
 word:-legenda
  expected:1
  analysis
