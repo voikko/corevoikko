@@ -1,0 +1,6 @@
+LANGUAGE="fi-x-fmvfstd"
+SOURCEDIR=COREVOIKKO + "/voikko-fi"
+BUILDCMD='make vvfst VVFST_BUILDDIR="%s" GENLEX_OPTS="--sourceid" FULL_MORPHO=yes VOIKKO_VARIANT=fmvfstd' % (BUILDDIR + "/fi-x-fmvfstd")
+INSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" VOIKKO_VARIANT=fmvfstd DESTDIR="%s"' % (BUILDDIR + "/fi-x-fmvfstd", INSTALLDIR)
+BASEINSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" VOIKKO_VARIANT=fmvfstd DESTDIR="%s"' % (BUILDDIR + "/fi-x-fmvfstd", BASEINSTALLDIR)
+CLEANCMD='make clean VVFST_BUILDDIR="%s"' % (BUILDDIR + "/fi-x-fmvfstd")
