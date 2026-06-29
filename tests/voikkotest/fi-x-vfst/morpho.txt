@@ -671,44 +671,23 @@ word:talonne
 word:talonsa
  analysis
   POSSESSIVE=3
+# Default build (FULL_MORPHO=no): possessive nouns return only the
+# nominative-singular reading. The homophonous genitive-sg / nominative-pl
+# readings are gated behind FULL_MORPHO=yes (see tests/voikkotest/fi-x-fmvfst).
 word:koirani
- expected:3
+ expected:1
  analysis
   BASEFORM=koira
   CLASS=nimisana
   NUMBER=singular
-  POSSESSIVE=1s
-  SIJAMUOTO=nimento
- analysis
-  BASEFORM=koira
-  CLASS=nimisana
-  NUMBER=singular
-  POSSESSIVE=1s
-  SIJAMUOTO=omanto
- analysis
-  BASEFORM=koira
-  CLASS=nimisana
-  NUMBER=plural
   POSSESSIVE=1s
   SIJAMUOTO=nimento
 word:koiransa
- expected:3
+ expected:1
  analysis
   BASEFORM=koira
   CLASS=nimisana
   NUMBER=singular
-  POSSESSIVE=3
-  SIJAMUOTO=nimento
- analysis
-  BASEFORM=koira
-  CLASS=nimisana
-  NUMBER=singular
-  POSSESSIVE=3
-  SIJAMUOTO=omanto
- analysis
-  BASEFORM=koira
-  CLASS=nimisana
-  NUMBER=plural
   POSSESSIVE=3
   SIJAMUOTO=nimento
 word:-legenda

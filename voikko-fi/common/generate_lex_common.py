@@ -104,7 +104,7 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 # Parse command line options and return them in a dictionary
 def get_options():
 	try:
-		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "no-baseform", "sourceid", "vanhat", "sukija", "sukija-ys"]
+		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "no-baseform", "sourceid", "vanhat", "sukija", "sukija-ys", "full-morpho"]
 		(opts, args) = getopt.getopt([f for f in sys.argv[1:] if f.startswith("--")], "", optlist)
 	except getopt.GetoptError:
 		sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
@@ -117,7 +117,8 @@ def get_options():
 	           "destdir": None,
 	           "no-baseform": False,
 		   "sukija": False,
-		   "sukija-ys": False}
+		   "sukija-ys": False,
+		   "full-morpho": False}
 	for (name, value) in opts:
 		if name == "--min-frequency":
 			options["frequency"] = int(value)
@@ -137,6 +138,8 @@ def get_options():
 			options["sukija"] = True
 		elif name == "--sukija-ys":
 			options["sukija-ys"] = True
+		elif name == "--full-morpho":
+			options["full-morpho"] = True
 	return options
 
 # Strip whitespace and comments from LEXC input file
@@ -147,6 +150,11 @@ def stripWhitespaceAndComments(line):
 
 # Filter LEXC input according to options
 def filterVfstInput(line_orig, OPTIONS):
+	if line_orig.startswith('?FullMorpho'):
+		if OPTIONS["full-morpho"]:
+			line_orig = line_orig[11:]
+		else:
+			return None
 	if line_orig.startswith('?Sukija'):
 		if OPTIONS["sukija"]:
 			line_orig = line_orig[7:]
