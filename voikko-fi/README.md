@@ -118,6 +118,10 @@ Variables for tuning the build process
   * VANHAT_MUODOT=yes|no  
     Accept word forms that were present in old Finnish but are no longer
     considered valid in standard Finnish. Default: no
+  * FULL_MORPHO=yes|no  
+    Generate homophonous readings for morphological analysis even when these
+    would not have effect on spelling or grammar checks. For performance reasons
+    the default is not to generate these readings. Default: no
   * VOIKKO_VARIANT=variant  
     Set the short name for the language variant of this vocabulary. The
     name should match the regular expression [a-z][a-z0-9_]*  
