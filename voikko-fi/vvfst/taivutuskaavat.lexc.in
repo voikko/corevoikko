@@ -264,6 +264,9 @@ LEXICON NOUN Arvelu_w
 
 LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]k<O>:k<O>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]k<O>:k<O>	Omistusliite_<A>	;
 [Sn][Nm]<O>t:<O>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<O>n:<O>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]k<O>j:k<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -350,6 +353,9 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Autio
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -850,6 +856,11 @@ LEXICON NOUN Koira_w_monikko
 
 LEXICON NOUN Koira_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! Possessive after genitive sg / nominative pl: single-char case endings (-n, -t)
+! are deleted, so surface equals bare vowel; route straight to Omistusliite
+! (corevoikko #67). Omistusliite is obligatory — bare koira stays nom sg only.
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlAA_<A>	;
@@ -867,6 +878,9 @@ LEXICON NOUN Koira_s
 
 LEXICON NOUN Pitkä
 [Sn][Ny]tk<A>:tk<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]tk<A>:tk<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]tk<A>:tk<A>	Omistusliite_<A>	;
 [Sn][Nm]tk<A>t:tk<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]tk<A>n:tk<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 tk<A>:tk<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -897,6 +911,9 @@ LEXICON NOUN Ruoka
 ! Oikea esimerkkisana "hattara"
 LEXICON NOUN Matala
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -989,6 +1006,9 @@ LEXICON NOUN Video
 
 LEXICON NOUN Apila_y
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]:	<WC>MonikonGenetiiviInJatko_<A>	;
@@ -1013,6 +1033,9 @@ LEXICON NOUN Apila_m
 
 LEXICON NOUN Karahka
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]<O>j:<O>j	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1086,6 +1109,9 @@ LEXICON NOUN Solakka_s
 ! Harhaanjohtava nimi, oikea esimerkkisana "hunaja"
 LEXICON NOUN Apaja
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1113,6 +1139,9 @@ LEXICON NOUN Apaja
 ! Parempi esimerkkisana "pakana"
 LEXICON NOUN Peruna
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1151,6 +1180,9 @@ e:e	<WC>Ainoa_<A>	;
 
 LEXICON NOUN Ainoa
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]<A>:<A>	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1208,6 +1240,9 @@ LEXICON NOUN Vapaa_s
 
 LEXICON NOUN Vapaa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
@@ -1252,6 +1287,9 @@ LEXICON NOUN Kamee_s
 
 LEXICON NOUN Kamee_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
@@ -1293,6 +1331,9 @@ LEXICON NOUN Maa_s
 
 LEXICON NOUN Maa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
@@ -1323,6 +1364,9 @@ LEXICON NOUN Suo_s
 
 LEXICON NOUN Suo_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
@@ -1413,6 +1457,9 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Rosé
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+! #67 homophonous gen sg / nom pl possessive (deleted -n / -t)
+?FullMorpho ?NotLaatusana	[Sg][Ny]:	Omistusliite_<A>	;
+?FullMorpho ?NotLaatusana	[Sn][Nm]:	Omistusliite_<A>	;
 [Sn][Nm]t:t	<WC>MonikonNominatiivinJatko_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;

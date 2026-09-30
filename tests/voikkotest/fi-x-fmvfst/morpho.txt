@@ -1,0 +1,48 @@
+# Full-morphology variant (built with FULL_MORPHO=yes).
+#
+# With a possessive suffix the single-character genitive-singular (-n) and
+# nominative-plural (-t) case endings are deleted, so the surface is identical
+# to the nominative singular. This variant exposes those homophonous readings
+# as separate analyses (corevoikko #67); the default build does not (see
+# tests/voikkotest/fi-x-vfst/morpho.txt for the lean, single-reading guard).
+
+word:koirani
+ expected:3
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=1s
+  SIJAMUOTO=nimento
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=1s
+  SIJAMUOTO=omanto
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=plural
+  POSSESSIVE=1s
+  SIJAMUOTO=nimento
+word:koiransa
+ expected:3
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=nimento
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=singular
+  POSSESSIVE=3
+  SIJAMUOTO=omanto
+ analysis
+  BASEFORM=koira
+  CLASS=nimisana
+  NUMBER=plural
+  POSSESSIVE=3
+  SIJAMUOTO=nimento
